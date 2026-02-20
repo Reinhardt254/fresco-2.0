@@ -1,0 +1,1210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fresco - Freeze-Dried Herbs & Organic Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/footer.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <!-- Mobile Hamburger Menu Button (left) -->
+        <div class="menu-toggle-container">
+          <button
+            class="menu-toggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <span class="sr-only">Open menu</span>
+            <span class="menu-toggle__bar"></span>
+          </button>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="nav left-nav desktop-nav">
+          <div class="nav-links">
+            <a class="active" href="/">Home</a>
+            <a href="/shop">Catalogue</a>
+            <div class="nav-dropdown">
+              <a href="/about" class="nav-dropdown-trigger">Our Story</a>
+              <div class="nav-dropdown-menu">
+                <div class="nav-dropdown-menu-content">
+                  <a href="/about" class="dropdown-section">
+                    <div class="dropdown-icon">
+                      <img src="https://newvashaepz.com/wp-content/uploads/2026/02/herb.png" alt="">
+                    </div>
+                    <h3 class="dropdown-title">Our Story</h3>
+                  </a>
+                  <a href="/mission" class="dropdown-section">
+                    <div class="dropdown-icon">
+                      <img src="https://newvashaepz.com/wp-content/uploads/2026/02/mortar-1-1.png" alt="">
+                    </div>
+                    <h3 class="dropdown-title">Our Mission</h3>
+                  </a>
+                  <a href="/commitment" class="dropdown-section">
+                    <div class="dropdown-icon">
+                      <img src="https://newvashaepz.com/wp-content/uploads/2026/02/herbs.png" alt="">
+                    </div>
+                    <h3 class="dropdown-title">Our Commitment</h3>
+                  </a>
+                  <a href="/buzz" class="dropdown-section">
+                    <div class="dropdown-icon">
+                      <img src="https://newvashaepz.com/wp-content/uploads/2026/02/idea.png" alt="">
+                    </div>
+                    <h3 class="dropdown-title">Our Buzz</h3>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logo (center - both mobile and desktop) -->
+        <div class="logo logo-desktop">
+          <a href="/">
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
+              alt="Fresco Flavors"
+            />
+          </a>
+        </div>
+
+        <div class="logo logo-mobile">
+          <a href="/">
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
+              alt="Fresco Flavors"
+            />
+          </a>
+        </div>
+
+        <!-- Desktop Right Navigation -->
+        <div class="nav right-nav desktop-nav">
+          <div class="nav-links">
+            <a href="/about">Shop Now</a>
+            <a href="/contact">Contact Us</a>
+          </div>
+          <div class="header-actions">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <i class="fa-solid fa-user user-icon"></i>
+            <i class="fa-solid fa-bag-shopping bag-icon"></i>
+          </div>
+        </div>
+
+        <!-- Mobile Header Actions (right) -->
+        <div class="header-actions header-actions-mobile">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <i class="fa-solid fa-user user-icon"></i>
+          <i class="fa-solid fa-bag-shopping bag-icon"></i>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+          <div class="mobile-menu-header">
+            <!-- <div class="mobile-menu-logo">
+              <img
+                src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
+                alt="Fresco Flavors"
+              />
+            </div> -->
+            <button class="mobile-menu-close" aria-label="Close menu">
+              <i class="fa-solid fa-times"></i>
+            </button>
+          </div>
+          <nav class="mobile-nav-links">
+            <a href="/" class="mobile-nav-link">Home</a>
+            <a href="/shop" class="mobile-nav-link">Catalogue</a>
+            <div class="mobile-nav-dropdown">
+              <a href="/about" class="mobile-nav-link mobile-dropdown-trigger">
+                Our Story
+                <i class="fa-solid fa-chevron-down"></i>
+              </a>
+              <div class="mobile-dropdown-menu">
+                <a href="/about" class="mobile-dropdown-link">Our Story</a>
+                <a href="/mission" class="mobile-dropdown-link">Our Mission</a>
+                <a href="/commitment" class="mobile-dropdown-link">Our Commitment</a>
+                <a href="/buzz" class="mobile-dropdown-link">Our Buzz</a>
+              </div>
+            </div>
+            <a href="/about" class="mobile-nav-link">Shop Now</a>
+            <a href="/contact" class="mobile-nav-link">Contact Us</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="home-main-content">
+      <section class="hero">
+        <div class="swiper hero-swiper">
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide hero__slide hero__slide-one"
+              style="
+                --hero-bg: url(&quot;https://st.ourhtmldemo.com/template/organic_store/images/home/slide-2.jpg&quot;);
+              "
+            >
+              <div class="hero__bg-reveal" aria-hidden="true">
+                <div class="hero__slice hero__slice-1"></div>
+                <div class="hero__slice hero__slice-2"></div>
+                <div class="hero__slice hero__slice-3"></div>
+              </div>
+              <div class="hero__content">
+                <div class="hero__content-inner">
+                  <h1>FRESCO FLAVORS</h1>
+                  <div class="eyrow-container">
+                    <div class="eyrow-line"></div>
+                    <p class="eyrow">Premium Natural Taste</p>
+                    <div class="eyrow-line"></div>
+                  </div>
+                </div>
+                <p class="description">
+                  Discover the taste of nature with our premium natural
+                  products.
+                </p>
+                <!-- <a href="/shop" class="cta">SHOP NOW</a> -->
+              </div>
+            </div>
+
+            <div
+              class="swiper-slide hero__slide hero__slide-two"
+              style="
+                --hero-bg: url(&quot;https://st.ourhtmldemo.com/template/organic_store/images/home/slide-2.jpg&quot;);
+              "
+            >
+            <div class="hero-slide-two-content-container hero__slide__inner">
+              <div class="hero__content hero-slide-two-content">
+                <div class="hero-slide-two-content-inner">
+                  <h1>ORGANIC, Premium, AND NATURAL</h1>
+                  <p class="description">
+                    Our crops are hand-picked at peak ripeness, capturing
+                    nature&apos;s fullest flavor, highest nutritional value, and
+                    aroma in every harvest.
+                  </p>
+                  <a href="/shop" class="cta primary-button">SHOP NOW</a>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <div
+              class="swiper-slide hero__slide hero__slide-three"
+              style="
+                --hero-bg: url(&quot;https://st.ourhtmldemo.com/template/organic_store/images/home/slide-3.jpg&quot;);
+              "
+            >
+            <div class="hero__slide__inner">
+              <div class="hero__content hero-slide-three-content">
+                <div class="hero-slide-three-content-inner">
+                  <div class="hero-slide-three-content-inner-title">
+                    <h1>Everyday cooking made better.</h1>
+                  </div>
+                  <div class="hero-slide-three-content-inner-description">
+                    <div
+                      class="hero-slide-three-content-inner-description-inner"
+                    >
+                      <p class="description">
+                        In our jars, lies the promise of ready-to-use
+                        freeze-dried herbs —bold and vibrant in taste, beyond
+                        fresh.
+                      </p>
+                      <a href="/shop" class="cta primary-button">Shop Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+ 
+          <div class="hero__controls">
+            <button
+              class="hero__control hero__control--prev"
+              aria-label="Previous slide"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button
+              class="hero__control hero__control--next"
+              aria-label="Next slide"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <div class="hero__pagination"></div>
+        </div>
+      </section>
+
+      <!-- Welcome to Fresco Section -->
+      <section class="welcome-to-fresco-section">
+        <div class="welcome-to-fresco-container container">
+          <div class="sub-heading">
+            Pure Organic Herbs
+
+            <div class="sub-heading-image">
+              <img
+                src="https://newvashaepz.com/wp-content/uploads/2026/02/symbol-02.png"
+                alt="IMG"
+              />
+            </div>
+          </div>
+          <h1 class="section-title">Welcome to Fresco</h1>
+          <div class="title-underline"></div>
+          <p class="welcome-to-fresco-description">
+            Discover organic freeze-dried herbs packed with natural aroma and long-lasting flavor.
+          </p>
+          <div class="cards">
+            <div class="card space-top-card">
+              <div class="icon">
+                <img
+                  src="https://newvashaepz.com/wp-content/uploads/2026/02/organic.png"
+                  alt=""
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="sw-js-blob-svg"
+                  viewBox="2 0 95 95"
+                  version="1.1"
+                >
+                  <defs>
+                    <linearGradient
+                      id="sw-gradient"
+                      x1="0"
+                      x2="1"
+                      y1="1"
+                      y2="0"
+                    >
+                      <stop
+                        id="stop1"
+                        stop-color=" var(--primary-green)"
+                        offset="0%"
+                      />
+                      <stop
+                        id="stop2"
+                        stop-color=" var(--primary-green)"
+                        offset="100%"
+                      />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    fill="url(#sw-gradient)"
+                    d="M32.6,-25.8C40.5,-16.1,43.9,-2.6,41.3,9.6C38.7,21.9,29.9,32.9,18.9,37.6C7.9,42.3,-5.4,40.6,-16.8,35.1C-28.2,29.6,-37.7,20.2,-40.4,9C-43.1,-2.1,-38.9,-14.9,-31.1,-24.6C-23.2,-34.4,-11.6,-41,0.4,-41.3C12.3,-41.6,24.7,-35.6,32.6,-25.8Z"
+                    width="100%"
+                    height="100%"
+                    transform="translate(50 50)"
+                    stroke-width="0"
+                    style="transition: 0.3s"
+                    stroke="url(#sw-gradient)"
+                  ></path>
+                </svg>
+              </div>
+              <div class="content">
+                <h3 class="title">100% Organic</h3>
+                <p class="description">
+                  Single-source ingredients sustainably grown to meet strict
+                  USDA standards.
+                </p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="icon">
+                <img
+                  src="https://newvashaepz.com/wp-content/uploads/2026/02/no-preservatives.png"
+                  alt=""
+                />
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="sw-js-blob-svg"
+                  viewBox="2 0 95 95"
+                  version="1.1"
+                >
+                  <defs>
+                    <linearGradient
+                      id="sw-gradient"
+                      x1="0"
+                      x2="1"
+                      y1="1"
+                      y2="0"
+                    >
+                      <stop
+                        id="stop1"
+                        stop-color=" var(--primary-green)"
+                        offset="0%"
+                      />
+                      <stop
+                        id="stop2"
+                        stop-color=" var(--primary-green)"
+                        offset="100%"
+                      />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    fill="url(#sw-gradient)"
+                    d="M32.6,-25.8C40.5,-16.1,43.9,-2.6,41.3,9.6C38.7,21.9,29.9,32.9,18.9,37.6C7.9,42.3,-5.4,40.6,-16.8,35.1C-28.2,29.6,-37.7,20.2,-40.4,9C-43.1,-2.1,-38.9,-14.9,-31.1,-24.6C-23.2,-34.4,-11.6,-41,0.4,-41.3C12.3,-41.6,24.7,-35.6,32.6,-25.8Z"
+                    width="100%"
+                    height="100%"
+                    transform="translate(50 50)"
+                    stroke-width="0"
+                    style="transition: 0.3s"
+                    stroke="url(#sw-gradient)"
+                  ></path>
+                </svg>
+              </div>
+              <div class="content">
+                <h3 class="title">Preservative-free</h3>
+                <p class="description">
+                  Harvested and processed at source with absolutely no
+                  additives.
+                </p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="icon">
+                <img
+                  src="https://newvashaepz.com/wp-content/uploads/2026/02/agree.png"
+                  alt=""
+                />
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="sw-js-blob-svg"
+                  viewBox="2 0 95 95"
+                  version="1.1"
+                >
+                  <defs>
+                    <linearGradient
+                      id="sw-gradient"
+                      x1="0"
+                      x2="1"
+                      y1="1"
+                      y2="0"
+                    >
+                      <stop
+                        id="stop1"
+                        stop-color=" var(--primary-green)"
+                        offset="0%"
+                      />
+                      <stop
+                        id="stop2"
+                        stop-color=" var(--primary-green)"
+                        offset="100%"
+                      />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    fill="url(#sw-gradient)"
+                    d="M32.6,-25.8C40.5,-16.1,43.9,-2.6,41.3,9.6C38.7,21.9,29.9,32.9,18.9,37.6C7.9,42.3,-5.4,40.6,-16.8,35.1C-28.2,29.6,-37.7,20.2,-40.4,9C-43.1,-2.1,-38.9,-14.9,-31.1,-24.6C-23.2,-34.4,-11.6,-41,0.4,-41.3C12.3,-41.6,24.7,-35.6,32.6,-25.8Z"
+                    width="100%"
+                    height="100%"
+                    transform="translate(50 50)"
+                    stroke-width="0"
+                    style="transition: 0.3s"
+                    stroke="url(#sw-gradient)"
+                  ></path>
+                </svg>
+              </div>
+              <div class="content">
+                <h3 class="title">Flavor-intense</h3>
+                <p class="description">
+                  Seals in aromatic oils for bold flavor, zero prep.
+                </p>
+              </div>
+            </div>
+
+            <div class="card space-top-card">
+              <div class="icon">
+                <img
+                  src="https://newvashaepz.com/wp-content/uploads/2026/02/delivery-time.png"
+                  alt=""
+                />
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="sw-js-blob-svg"
+                  viewBox="2 0 95 95"
+                  version="1.1"
+                >
+                  <defs>
+                    <linearGradient
+                      id="sw-gradient"
+                      x1="0"
+                      x2="1"
+                      y1="1"
+                      y2="0"
+                    >
+                      <stop
+                        id="stop1"
+                        stop-color=" var(--primary-green)"
+                        offset="0%"
+                      />
+                      <stop
+                        id="stop2"
+                        stop-color=" var(--primary-green)"
+                        offset="100%"
+                      />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    fill="url(#sw-gradient)"
+                    d="M32.6,-25.8C40.5,-16.1,43.9,-2.6,41.3,9.6C38.7,21.9,29.9,32.9,18.9,37.6C7.9,42.3,-5.4,40.6,-16.8,35.1C-28.2,29.6,-37.7,20.2,-40.4,9C-43.1,-2.1,-38.9,-14.9,-31.1,-24.6C-23.2,-34.4,-11.6,-41,0.4,-41.3C12.3,-41.6,24.7,-35.6,32.6,-25.8Z"
+                    width="100%"
+                    height="100%"
+                    transform="translate(50 50)"
+                    stroke-width="0"
+                    style="transition: 0.3s"
+                    stroke="url(#sw-gradient)"
+                  ></path>
+                </svg>
+              </div>
+              <div class="content">
+                <h3 class="title">Longer shelf life</h3>
+                <p class="description">
+                  Freeze-dried to stay pantry-fresh for months, not days.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mask-main-image">
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/02/0A0A9704.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Banner Section -->
+      <section class="banner-section">
+        <div class="banner-container">
+          <!-- Left Banner -->
+          <div class="banner left-banner">
+            <div class="column-left">
+              <div class="banner-heading-container">
+                <div class="banner-label">Culinay Herbs</div>
+                <div class="discount-tag">30% OFF</div>
+                <div class="banner-design"></div>
+                <div class="banner-design-two"></div>
+              </div>
+              <div class="banner-content">
+                <h1 class="banner-headline">Natural flavor</h1>
+                <p class="banner-description">
+                  Discover culinary herbs perfect for your favorite recipes.
+                  Fresh flavor, freeze-dried for convenience.
+                </p>
+                <a href="#" class="banner-link">More Products ></a>
+              </div>
+            </div>
+            <div class="banner-image-left column-right">
+              <div class="product-jar">
+                <img
+                  src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-ginger.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="banner right-banner">
+            <div class="column-left">
+              <div class="banner-heading-container">
+                <div class="banner-label">All Purpose Herbs</div>
+                <div class="discount-tag">30% OFF</div>
+                <div class="banner-design"></div>
+                <div class="banner-design-two"></div>
+              </div>
+              <div class="banner-content">
+                <h1 class="banner-headline">Essential flavor</h1>
+                <p class="banner-description">
+                  Versatile herbs for every meal. Add rich, nuanced flavor to
+                  any dish with our all-purpose selections.
+                </p>
+                <a href="#" class="banner-link">More Products ></a>
+              </div>
+            </div>
+            <div class="banner-image-left column-right">
+              <div class="product-jar">
+                <img
+                  src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-basil.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Products Section -->
+      <section class="featured-products">
+        <div class="products-container">
+          <div class="sub-heading">
+            Nature’s Best
+
+            <div class="sub-heading-image">
+              <img
+                src="https://newvashaepz.com/wp-content/uploads/2026/02/symbol-02.png"
+                alt="IMG"
+              />
+            </div>
+          </div>
+          <h2 class="section-title">FEATURED PRODUCTS</h2>
+          <div class="title-underline"></div>
+
+          <!-- Category Navigation -->
+          <!-- <nav class="category-nav">
+            <button class="category-btn active" data-category="all">
+              ALL PRODUCTS
+            </button>
+            <button class="category-btn" data-category="herbs">HERBS</button>
+            <button class="category-btn" data-category="bulk-formats">
+              BULK FORMATS
+            </button>
+            <button class="category-btn" data-category="specialty-ingredients">
+              SPECIALTY
+            </button>
+          </nav> -->
+
+          <!-- Product Grid -->
+          <div class="product-grid">
+            <!-- Product 1 - Basil -->
+            <div
+              class="product-card"
+              data-category="herbs"
+              data-collections="herbs"
+            >
+              <a href="/products/basil" class="product-card__link">
+                <div class="product-image">
+                  <img
+                    class="product-card__image"
+                    src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-basil.png"
+                    alt="Freeze-Dried Basil"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="product-name">
+                  <span>Freeze-Dried Basil</span>
+                </h3>
+                <div class="product-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <div class="product-price">
+                  <span class="current-price">$14.00</span>
+                  <span class="price-unit">/ each</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 2 - Chives -->
+            <div
+              class="product-card"
+              data-category="bulk-formats"
+              data-collections="bulk-formats,herbs"
+            >
+              <a
+                href="/products/freeze-dried-chives"
+                class="product-card__link"
+              >
+                <div class="product-image">
+                  <img
+                    class="product-card__image"
+                    src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-Chives.png"
+                    alt="Freeze-Dried Chives"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="product-name">
+                  <span>Freeze-Dried Chives</span>
+                </h3>
+                <div class="product-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <div class="product-price">
+                  <span class="current-price">$19.00</span>
+                  <span class="price-unit">/ each</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 3 - Cilantro -->
+            <div
+              class="product-card"
+              data-category="bulk-formats"
+              data-collections="bulk-formats,herbs"
+            >
+              <a href="/products/cilantro" class="product-card__link">
+                <div class="product-image">
+                  <img
+                    class="product-card__image"
+                    src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-parsley.png"
+                    alt="Freeze-Dried Cilantro"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3 class="product-name">
+                  <span>Freeze-Dried Cilantro</span>
+                </h3>
+                <div class="product-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <div class="product-price">
+                  <span class="current-price">$9.00</span>
+                  <span class="price-unit">/ each</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 4 - Ginger -->
+            <div
+              class="product-card"
+              data-category="herbs"
+              data-collections="herbs,specialty-ingredients"
+            >
+              <a
+                href="/products/freeze-dried-ginger"
+                class="product-card__link"
+              >
+                <div class="product-image">
+                  <img
+                    class="product-card__image"
+                    src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-ginger.png"
+                    alt="Freeze-Dried Ginger"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3 class="product-name">
+                  <span>Freeze-Dried Ginger</span>
+                </h3>
+                <div class="product-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <div class="product-price">
+                  <span class="current-price">$14.00</span>
+                  <span class="price-unit">/ each</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 5 - Mint -->
+            <div
+              class="product-card"
+              data-category="herbs"
+              data-collections="herbs"
+            >
+              <a href="/products/freeze-dried-mint" class="product-card__link">
+                <div class="product-image">
+                  <img
+                    class="product-card__image"
+                    src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-thyme.png"
+                    alt="Freeze-Dried Mint"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3 class="product-name">
+                  <span>Freeze-Dried Thyme</span>
+                </h3>
+                <div class="product-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <div class="product-price">
+                  <span class="current-price">$19.00</span>
+                  <span class="price-unit">/ each</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 6 - Oregano -->
+            <div
+              class="product-card"
+              data-category="herbs"
+              data-collections="herbs"
+            >
+              <a
+                href="/products/freeze-dried-oregano"
+                class="product-card__link"
+              >
+                <div class="product-image">
+                  <img
+                    class="product-card__image"
+                    src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-oregano.png"
+                    alt="Freeze-Dried Oregano"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="product-name">
+                  <span>Freeze-Dried Oregano</span>
+                </h3>
+                <div class="product-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <div class="product-price">
+                  <span class="current-price">$19.00</span>
+                  <span class="price-unit">/ each</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 7 - Rosemary -->
+            <div
+              class="product-card"
+              data-category="herbs"
+              data-collections="herbs"
+            >
+              <a href="/products/rosemary" class="product-card__link">
+                <div class="product-image">
+                  <img
+                    class="product-card__image"
+                    src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-dill.png"
+                    alt="Freeze-Dried Rosemary"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="product-name">
+                  <span>Freeze-Dried Dill</span>
+                </h3>
+                <div class="product-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <div class="product-price">
+                  <span class="current-price">$14.00</span>
+                  <span class="price-unit">/ each</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 8 - Sage -->
+            <div
+              class="product-card"
+              data-category="herbs"
+              data-collections="herbs"
+            >
+              <a href="/products/sage" class="product-card__link">
+                <div class="product-image">
+                  <img
+                    class="product-card__image"
+                    src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-garlic.png"
+                    alt="Freeze-Dried Sage"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="product-name">
+                  <span>Freeze-Dried Garlic</span>
+                </h3>
+                <div class="product-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <div class="product-price">
+                  <span class="current-price">$9.00</span>
+                  <span class="price-unit">/ each</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="why-choose-us">
+        <div class="why-choose-us-container">
+          <div class="sub-heading">
+            Our Promise
+
+            <div class="sub-heading-image">
+              <img
+                src="https://newvashaepz.com/wp-content/uploads/2026/02/symbol-02.png"
+                alt="IMG"
+              />
+            </div>
+          </div>
+          <h2 class="why-choose-us-title">Why Choose Us</h2>
+          <div class="why-choose-us-decorative"></div>
+          <p class="why-choose-us-intro">
+            Our herbs are organically grown and gently freeze-dried to maintain purity, aroma, and long-lasting quality you can trust.
+          </p>
+
+          <div class="why-choose-us-grid">
+            <div class="why-choose-us-card">
+              <div class="why-choose-us-icon">
+                <i class="fa-solid fa-leaf"></i>
+              </div>
+              <div class="why-choose-us-content">
+                <h3 class="why-choose-us-card-title">100% Organic Products</h3>
+                <p class="why-choose-us-card-desc">
+                  Carefully sourced organic herbs, naturally grown and freeze-dried to preserve flavor, aroma, and nutrients without artificial additives or preservatives.
+                </p>
+              </div>
+            </div>
+
+            <div class="why-choose-us-card">
+              <div class="why-choose-us-icon">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <div class="why-choose-us-content">
+                <h3 class="why-choose-us-card-title">
+                  Anytime, Anywhere Convenience
+                </h3>
+                <p class="why-choose-us-card-desc">
+                  Enjoy fresh herb flavor whenever you cook. Our freeze-dried herbs are easy to store, quick to use, and perfect for everyday meals at home.
+                </p>
+              </div>
+            </div>
+
+            <div class="why-choose-us-card">
+              <div class="why-choose-us-icon">
+                <i class="fa-solid fa-heartbeat"></i>
+              </div>
+              <div class="why-choose-us-content">
+                <h3 class="why-choose-us-card-title">
+                  Supporting Healthy Living
+                </h3>
+                <p class="why-choose-us-card-desc">
+                  Packed with natural goodness, our herbs help you prepare wholesome meals while maintaining authentic taste and nutritional value for your family.
+                </p>
+              </div>
+            </div>
+
+            <div class="why-choose-us-card">
+              <div class="why-choose-us-icon">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+              <div class="why-choose-us-content">
+                <h3 class="why-choose-us-card-title">Pure, Natural and Reliable</h3>
+                <p class="why-choose-us-card-desc">
+                  Processed with care to maintain cleanliness and freshness, our herbs deliver safe, high-quality ingredients you can trust in every recipe.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================quality commitment section================== -->
+    <section class="section partners-new">
+      <div class="container">
+        <div class="swiper-partners swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="card">
+                <img
+                  src="https://newvashaepz.com/wp-content/uploads/2026/02/images.png"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card">
+                <img
+                  src="https://newvashaepz.com/wp-content/uploads/2026/02/images-1.png"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card">
+                <img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/10/pngtree-all-natural-grunge-rubber-stamp-on-white-background-png-image_4756626.png"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card">
+                <img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/fssc22000-2-300x225-removebg-preview.png"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card">
+                <img
+                  src="https://frescoflavors.myshopify.com/cdn/shop/files/no-additives-sign-for-healthy-natural-food-products-label-isolated-pictogram-with-plant-leaf-vector-removebg-preview_1.png?v=1764936793&width=300"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card">
+                <img
+                  src="https://newvashaepz.com/wp-content/uploads/2026/02/188cdb_0a663e987dae4d80ae3587a8c313fcb0_mv2.png"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card">
+                <img
+                  src="https://newvashaepz.com/wp-content/uploads/2026/02/images.png"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card">
+                <img
+                  src="https://newvashaepz.com/wp-content/uploads/2026/02/images-1.png"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card">
+                <img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/10/pngtree-all-natural-grunge-rubber-stamp-on-white-background-png-image_4756626.png"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card">
+                <img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/fssc22000-2-300x225-removebg-preview.png"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card">
+                <img
+                  src="https://frescoflavors.myshopify.com/cdn/shop/files/no-additives-sign-for-healthy-natural-food-products-label-isolated-pictogram-with-plant-leaf-vector-removebg-preview_1.png?v=1764936793&width=300"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card">
+                <img
+                  src="https://newvashaepz.com/wp-content/uploads/2026/02/188cdb_0a663e987dae4d80ae3587a8c313fcb0_mv2.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-newsletter">
+        <div class="footer-container footer-newsletter-inner">
+          <div class="footer-newsletter-text">
+            <h2 class="footer-newsletter-heading">Subscribe Newsletter.</h2>
+            <p class="footer-newsletter-desc">
+              Get e-mail updates about our latest shop and special offers.
+            </p>
+          </div>
+          <form
+            class="footer-newsletter-form"
+            action="#"
+            method="get"
+            aria-label="Newsletter signup"
+          >
+            <input
+              type="email"
+              name="email"
+              class="footer-newsletter-input"
+              placeholder="Your email address"
+              required
+            />
+            <button type="submit" class="footer-newsletter-btn">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-newsletter-divider"></div>
+      <div class="footer-main">
+        <div class="footer-container footer-columns">
+          <div class="footer-col footer-col-company">
+            <div class="footer-logo">
+              <img
+                src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
+                alt="Fresco Flavors Logo"
+              />
+            </div>
+            <!-- <p class="footer-tagline">— Organic — Store —</p> -->
+            <p class="footer-company-desc">
+              Bringing the best herbs in every jar. 100% Organic, from Kenya to
+              the World.
+            </p>
+            <ul class="footer-contact" aria-label="Contact information">
+              <li>
+                <i class="fa-regular fa-envelope" aria-hidden="true"></i
+                ><a href="mailto:info@frescoflavors.com"
+                  >info@frescoflavors.com</a
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i
+                ><span>
+                  7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA</span
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-phone" aria-hidden="true"></i
+                ><a href="tel:+19018965814">+1 (901) 896-5814</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col footer-col-links">
+            <h3 class="footer-col-heading">Information</h3>
+            <ul class="footer-links">
+              <li><a href="/about">About our shop</a></li>
+              <li><a href="/shop#bestsellers">Top sellers</a></li>
+              <li><a href="/blog">Our blog</a></li>
+              <li><a href="/shop#new">New products</a></li>
+              <li><a href="/faq">Secure shopping</a></li>
+            </ul>
+          </div>
+          <div class="footer-col footer-col-links">
+            <h3 class="footer-col-heading">My Account</h3>
+            <ul class="footer-links">
+              <li><a href="/account">My account</a></li>
+              <li><a href="/account/discount">Discount</a></li>
+              <li><a href="/account/profile">Personal Information</a></li>
+              <li><a href="/account/address">My address</a></li>
+              <li><a href="/account/orders">Order history</a></li>
+            </ul>
+          </div>
+          <div class="footer-col footer-col-instagram">
+            <h3 class="footer-col-heading">Instagram</h3>
+            <div class="footer-instagram-grid" aria-label="Instagram feed">
+              <a href="#" class="footer-instagram-item"
+                ><img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/0A0A1563-scaled.jpeg"
+                  alt="Produce"
+              /></a>
+              <a href="#" class="footer-instagram-item"
+                ><img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A1046-scaled.jpg"
+                  alt="Produce"
+              /></a>
+              <a href="#" class="footer-instagram-item"
+                ><img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A9375-1-scaled.jpg"
+                  alt="Produce"
+              /></a>
+              <a href="#" class="footer-instagram-item"
+                ><img
+                  src="https://newvashaepz.com/wp-content/uploads/2026/02/team.jpg"
+                  alt="Produce"
+              /></a>
+              <a href="#" class="footer-instagram-item"
+                ><img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/10/DJI_20250826170440_0288_D.jpg"
+                  alt="Produce"
+              /></a>
+              <a href="#" class="footer-instagram-item"
+                ><img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A9347.jpg"
+                  alt="Produce"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-container footer-bottom-inner">
+          <p class="footer-copyright">
+            Copyright © 2026 Fresco. All rights reserved.
+          </p>
+          <div class="footer-payments" aria-label="Payment methods">
+            <i class="fa-brands fa-cc-mastercard" aria-hidden="true"></i>
+            <i class="fa-brands fa-cc-paypal" aria-hidden="true"></i>
+            <i class="fa-brands fa-cc-visa" aria-hidden="true"></i>
+            <i class="fa-brands fa-cc-amex" aria-hidden="true"></i>
+            <i class="fa-brands fa-cc-discover" aria-hidden="true"></i>
+          </div>
+        </div>
+        <button
+          type="button"
+          class="footer-scroll-top"
+          aria-label="Scroll to top"
+        >
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>
