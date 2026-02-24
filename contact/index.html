@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/footer.css" />
+    <link rel="stylesheet" href="/contact/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <!-- Mobile Hamburger Menu Button (left) -->
+        <div class="menu-toggle-container">
+          <button
+            class="menu-toggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <span class="sr-only">Open menu</span>
+            <span class="menu-toggle__bar"></span>
+          </button>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="nav left-nav desktop-nav">
+          <div class="nav-links">
+            <a class="active" href="/">Home</a>
+            <a href="/shop">Catalogue</a>
+            <div class="nav-dropdown">
+              <a href="/about" class="nav-dropdown-trigger">Our Story</a>
+              <div class="nav-dropdown-menu">
+                <div class="nav-dropdown-menu-content">
+                  <a href="/about" class="dropdown-section">
+                    <div class="dropdown-icon">
+                      <img
+                        src="https://newvashaepz.com/wp-content/uploads/2026/02/herb.png"
+                        alt=""
+                      />
+                    </div>
+                    <h3 class="dropdown-title">Our Story</h3>
+                  </a>
+                  <a href="/mission" class="dropdown-section">
+                    <div class="dropdown-icon">
+                      <img
+                        src="https://newvashaepz.com/wp-content/uploads/2026/02/mortar-1-1.png"
+                        alt=""
+                      />
+                    </div>
+                    <h3 class="dropdown-title">Our Mission</h3>
+                  </a>
+                  <a href="/commitment" class="dropdown-section">
+                    <div class="dropdown-icon">
+                      <img
+                        src="https://newvashaepz.com/wp-content/uploads/2026/02/herbs.png"
+                        alt=""
+                      />
+                    </div>
+                    <h3 class="dropdown-title">Our Commitment</h3>
+                  </a>
+                  <a href="/buzz" class="dropdown-section">
+                    <div class="dropdown-icon">
+                      <img
+                        src="https://newvashaepz.com/wp-content/uploads/2026/02/idea.png"
+                        alt=""
+                      />
+                    </div>
+                    <h3 class="dropdown-title">Our Buzz</h3>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logo (center - both mobile and desktop) -->
+        <div class="logo logo-desktop">
+          <a href="/">
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
+              alt="Fresco Flavors"
+            />
+          </a>
+        </div>
+
+        <div class="logo logo-mobile">
+          <a href="/">
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
+              alt="Fresco Flavors"
+            />
+          </a>
+        </div>
+
+        <!-- Desktop Right Navigation -->
+        <div class="nav right-nav desktop-nav">
+          <div class="nav-links">
+            <a href="/about">Shop Now</a>
+            <a href="/contact">Contact Us</a>
+          </div>
+          <div class="header-actions">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <i class="fa-solid fa-user user-icon"></i>
+            <i class="fa-solid fa-bag-shopping bag-icon"></i>
+          </div>
+        </div>
+
+        <!-- Mobile Header Actions (right) -->
+        <div class="header-actions header-actions-mobile">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <i class="fa-solid fa-user user-icon"></i>
+          <i class="fa-solid fa-bag-shopping bag-icon"></i>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+          <div class="mobile-menu-header">
+            <!-- <div class="mobile-menu-logo">
+              <img
+                src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
+                alt="Fresco Flavors"
+              />
+            </div> -->
+            <button class="mobile-menu-close" aria-label="Close menu">
+              <i class="fa-solid fa-times"></i>
+            </button>
+          </div>
+          <nav class="mobile-nav-links">
+            <a href="/" class="mobile-nav-link">Home</a>
+            <a href="/shop" class="mobile-nav-link">Catalogue</a>
+            <div class="mobile-nav-dropdown">
+              <a href="/about" class="mobile-nav-link mobile-dropdown-trigger">
+                Our Story
+                <i class="fa-solid fa-chevron-down"></i>
+              </a>
+              <div class="mobile-dropdown-menu">
+                <a href="/about" class="mobile-dropdown-link">Our Story</a>
+                <a href="/mission" class="mobile-dropdown-link">Our Mission</a>
+                <a href="/commitment" class="mobile-dropdown-link"
+                  >Our Commitment</a
+                >
+                <a href="/buzz" class="mobile-dropdown-link">Our Buzz</a>
+              </div>
+            </div>
+            <a href="/about" class="mobile-nav-link">Shop Now</a>
+            <a href="/contact" class="mobile-nav-link">Contact Us</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="contact-page">
+      <section class="contact-page-layout">
+        <img
+          src="https://freebw.com/templates/oragnive-v1/images/bg-07.jpg"
+          alt=""
+        />
+        <div class="layout-content">
+          <h1>Contact Us</h1>
+          <p>
+            We're here to help you with any questions or concerns you may have.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-form">
+        <div class="contact-form-container">
+          <div class="contact-form-image-wrap">
+            <img
+              src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A9375-1-scaled.jpg"
+              alt="Farmer with fresh produce"
+              class="contact-form-image"
+            />
+          </div>
+          <div class="contact-form-content">
+            <div class="sub-heading">
+              Get In Touch
+
+              <div class="sub-heading-image">
+                <img
+                  src="https://newvashaepz.com/wp-content/uploads/2026/02/symbol-02.png"
+                  alt="IMG"
+                />
+              </div>
+            </div>
+            <h2 class="contact-form-title">Leave Us a Message!</h2>
+            <form
+              class="contact-form-fields"
+              action="#"
+              method="post"
+              aria-label="Contact form"
+            >
+              <div class="contact-form-row">
+                <label for="contact-name" class="sr-only">Your Full Name</label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  placeholder="Your Full Name*"
+                  required
+                  class="contact-form-input"
+                />
+                <label for="contact-email" class="sr-only">Your Email</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  placeholder="Your Email*"
+                  required
+                  class="contact-form-input"
+                />
+              </div>
+              <div class="contact-form-row">
+                <label for="contact-address" class="sr-only"
+                  >Your Address</label
+                >
+                <input
+                  type="text"
+                  id="contact-address"
+                  name="address"
+                  placeholder="Your Address"
+                  class="contact-form-input"
+                />
+                <label for="contact-phone" class="sr-only">Your Phone</label>
+                <input
+                  type="tel"
+                  id="contact-phone"
+                  name="phone"
+                  placeholder="Your Phone*"
+                  required
+                  class="contact-form-input"
+                />
+              </div>
+              <div class="contact-form-row contact-form-row-full">
+                <label for="contact-message" class="sr-only"
+                  >Your Message</label
+                >
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  placeholder="Your Message"
+                  rows="5"
+                  class="contact-form-textarea"
+                ></textarea>
+              </div>
+              <button type="submit" class="contact-form-submit">
+                Send Us Now
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section">
+        <div class="container">
+          <div class="contact-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d61881.489831128325!2d-89.83236344471175!3d35.19412175135412!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2ske!4v1764248724074!5m2!1sen!2ske"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Location map"
+            ></iframe>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="contact-info-card-content">
+              <p class="eyebrow">Direct contact</p>
+              <h2>Reach out to us</h2>
+              <div class="contact-info-list">
+                <article>
+                  <i class="fa-solid fa-phone"></i>
+                  <div>
+                    <a href="tel:+1 (901) 896-5814">+1 (901) 896-5814</a>
+                  </div>
+                </article>
+                <article>
+                  <i class="fa-solid fa-envelope"></i>
+                  <div>
+                    <a href="mailto:info@frescoflavors.com"
+                      >info@frescoflavors.com</a
+                    >
+                  </div>
+                </article>
+                <article>
+                  <i class="fa-solid fa-location-dot"></i>
+                  <div>
+                    <div class="rte">
+                      <p>7910 Moriarty Rd<br />Cordova, TN 38018</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="contact-socials">
+                <h3>Follow Us</h3>
+                <div class="contact-socials-list">
+                  <a href="https://facebook.com" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i> </a
+                  ><a
+                    href="https://frescoflavors.myshopify.com/"
+                    aria-label="Instagram"
+                  >
+                    <i class="fa-brands fa-instagram"></i> </a
+                  ><a
+                    href="https://frescoflavors.myshopify.com/"
+                    aria-label="YouTube"
+                  >
+                    <i class="fa-brands fa-youtube"></i> </a
+                  ><a
+                    href="https://frescoflavors.myshopify.com/"
+                    aria-label="LinkedIn"
+                  >
+                    <i class="fa-brands fa-linkedin"></i>
+                  </a>
+                </div>
+              </div>
+              <p class="contact-hours">
+                Support hours: Monday–Friday, 9am–6pm EST
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+ 
+    <footer class="site-footer">
+      <div class="footer-newsletter">
+        <div class="footer-container footer-newsletter-inner">
+          <div class="footer-newsletter-text">
+            <h2 class="footer-newsletter-heading">Subscribe Newsletter.</h2>
+            <p class="footer-newsletter-desc">
+              Get e-mail updates about our latest shop and special offers.
+            </p>
+          </div>
+          <form
+            class="footer-newsletter-form"
+            action="#"
+            method="get"
+            aria-label="Newsletter signup"
+          >
+            <input
+              type="email"
+              name="email"
+              class="footer-newsletter-input"
+              placeholder="Your email address"
+              required
+            />
+            <button type="submit" class="footer-newsletter-btn">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-newsletter-divider"></div>
+      <div class="footer-main">
+        <div class="footer-container footer-columns">
+          <div class="footer-col footer-col-company">
+            <div class="footer-logo">
+              <img
+                src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
+                alt="Fresco Flavors Logo"
+              />
+            </div>
+            <!-- <p class="footer-tagline">— Organic — Store —</p> -->
+            <p class="footer-company-desc">
+              Bringing the best herbs in every jar. 100% Organic, from Kenya to
+              the World.
+            </p>
+            <ul class="footer-contact" aria-label="Contact information">
+              <li>
+                <i class="fa-regular fa-envelope" aria-hidden="true"></i
+                ><a href="mailto:info@frescoflavors.com"
+                  >info@frescoflavors.com</a
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i
+                ><span>
+                  7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA</span
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-phone" aria-hidden="true"></i
+                ><a href="tel:+19018965814">+1 (901) 896-5814</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col footer-col-links">
+            <h3 class="footer-col-heading">Information</h3>
+            <ul class="footer-links">
+              <li><a href="/about">About our shop</a></li>
+              <li><a href="/shop#bestsellers">Top sellers</a></li>
+              <li><a href="/blog">Our blog</a></li>
+              <li><a href="/shop#new">New products</a></li>
+              <li><a href="/faq">Secure shopping</a></li>
+            </ul>
+          </div>
+          <div class="footer-col footer-col-links">
+            <h3 class="footer-col-heading">My Account</h3>
+            <ul class="footer-links">
+              <li><a href="/account">My account</a></li>
+              <li><a href="/account/discount">Discount</a></li>
+              <li><a href="/account/profile">Personal Information</a></li>
+              <li><a href="/account/address">My address</a></li>
+              <li><a href="/account/orders">Order history</a></li>
+            </ul>
+          </div>
+          <div class="footer-col footer-col-instagram">
+            <h3 class="footer-col-heading">Instagram</h3>
+            <div class="footer-instagram-grid" aria-label="Instagram feed">
+              <a href="#" class="footer-instagram-item"
+                ><img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/0A0A1563-scaled.jpeg"
+                  alt="Produce"
+              /></a>
+              <a href="#" class="footer-instagram-item"
+                ><img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A1046-scaled.jpg"
+                  alt="Produce"
+              /></a>
+              <a href="#" class="footer-instagram-item"
+                ><img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A9375-1-scaled.jpg"
+                  alt="Produce"
+              /></a>
+              <a href="#" class="footer-instagram-item"
+                ><img
+                  src="https://newvashaepz.com/wp-content/uploads/2026/02/team.jpg"
+                  alt="Produce"
+              /></a>
+              <a href="#" class="footer-instagram-item"
+                ><img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/10/DJI_20250826170440_0288_D.jpg"
+                  alt="Produce"
+              /></a>
+              <a href="#" class="footer-instagram-item"
+                ><img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A9347.jpg"
+                  alt="Produce"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-container footer-bottom-inner">
+          <p class="footer-copyright">
+            Copyright © 2026 Fresco. All rights reserved.
+          </p>
+          <div class="footer-payments" aria-label="Payment methods">
+            <i class="fa-brands fa-cc-mastercard" aria-hidden="true"></i>
+            <i class="fa-brands fa-cc-paypal" aria-hidden="true"></i>
+            <i class="fa-brands fa-cc-visa" aria-hidden="true"></i>
+            <i class="fa-brands fa-cc-amex" aria-hidden="true"></i>
+            <i class="fa-brands fa-cc-discover" aria-hidden="true"></i>
+          </div>
+        </div>
+        <button
+          type="button"
+          class="footer-scroll-top"
+          aria-label="Scroll to top"
+        >
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </div>
+    </footer>
+  </body>
+</html>
