@@ -43,6 +43,8 @@ body {
   background-color: var(--white-color);
   color: var(--dark-text-color);
   line-height: 1.6;
+  position:  relative!important;
+  min-height: 100vh;
 }
 
 .section-title {
@@ -228,6 +230,7 @@ div.sub-heading {
   backdrop-filter: blur(6px);
   z-index: 10;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 1000 !important;
 }
 
 .site-header .container {
@@ -239,7 +242,7 @@ div.sub-heading {
   justify-content: space-between;
   align-items: center;
   gap: 1.25rem;
-  position: relative;
+  position: relative !important;
 }
 
 .nav {
@@ -291,7 +294,7 @@ div.sub-heading {
   /* position: relative; */
 
 }
-
+ 
 .nav-dropdown-trigger {
   /* position: relative; */
 }
