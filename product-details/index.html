@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fresco - Freeze-Dried Herbs & Organic Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/product-details/styles.css" />
+    <link rel="stylesheet" href="/footer.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <!-- Mobile Hamburger Menu Button (left) -->
+        <div class="menu-toggle-container">
+          <button
+            class="menu-toggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <span class="sr-only">Open menu</span>
+            <span class="menu-toggle__bar"></span>
+          </button>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="nav left-nav desktop-nav">
+          <div class="nav-links">
+            <a class="active" href="/">Home</a>
+            <a href="/shop">Shop Now</a>
+            <div class="nav-dropdown">
+              <a href="/about" class="nav-dropdown-trigger">Our Story</a>
+              <div class="nav-dropdown-menu">
+                <div class="nav-dropdown-menu-content">
+                  <a href="/about/#our-story" class="dropdown-section">
+                    <div class="dropdown-icon">
+                      <img
+                        src="https://newvashaepz.com/wp-content/uploads/2026/02/herb.png"
+                        alt=""
+                      />
+                    </div>
+                    <h3 class="dropdown-title">Our Story</h3>
+                  </a>
+                  <a href="/about/#our-process" class="dropdown-section">
+                    <div class="dropdown-icon">
+                      <img
+                        src="https://newvashaepz.com/wp-content/uploads/2026/02/mortar-1-1.png"
+                        alt=""
+                      />
+                    </div>
+                    <h3 class="dropdown-title">Our Process</h3>
+                  </a>
+                  <a href="/about/#our-mission" class="dropdown-section">
+                    <div class="dropdown-icon">
+                      <img
+                        src="https://newvashaepz.com/wp-content/uploads/2026/02/herbs.png"
+                        alt=""
+                      />
+                    </div>
+                    <h3 class="dropdown-title">Our Mission</h3>
+                  </a>
+                  <a href="/about/#our-commitment" class="dropdown-section">
+                    <div class="dropdown-icon">
+                      <img
+                        src="https://newvashaepz.com/wp-content/uploads/2026/02/idea.png"
+                        alt=""
+                      />
+                    </div>
+                    <h3 class="dropdown-title">Our Commitment</h3>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logo (center - both mobile and desktop) -->
+        <div class="logo logo-desktop">
+          <a href="/">
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
+              alt="Fresco Flavors"
+            />
+          </a>
+        </div>
+
+        <div class="logo logo-mobile">
+          <a href="/">
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
+              alt="Fresco Flavors"
+            />
+          </a>
+        </div>
+
+        <!-- Desktop Right Navigation -->
+        <div class="nav right-nav desktop-nav">
+          <div class="nav-links">
+            <a href="/contact">Contact</a>
+          </div>
+          <div class="header-actions">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <i class="fa-solid fa-user user-icon"></i>
+            <i class="fa-solid fa-bag-shopping bag-icon"></i>
+          </div>
+        </div>
+
+        <!-- Mobile Header Actions (right) -->
+        <div class="header-actions header-actions-mobile">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <i class="fa-solid fa-user user-icon"></i>
+          <i class="fa-solid fa-bag-shopping bag-icon"></i>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+          <div class="mobile-menu-header">
+            <!-- <div class="mobile-menu-logo">
+              <img
+                src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
+                alt="Fresco Flavors"
+              />
+            </div> -->
+            <button class="mobile-menu-close" aria-label="Close menu">
+              <i class="fa-solid fa-times"></i>
+            </button>
+          </div>
+          <nav class="mobile-nav-links">
+            <a href="/" class="mobile-nav-link">Home</a>
+            <a href="/shop" class="mobile-nav-link">Catalogue</a>
+            <div class="mobile-nav-dropdown">
+              <a href="/about" class="mobile-nav-link mobile-dropdown-trigger">
+                Our Story
+                <i class="fa-solid fa-chevron-down"></i>
+              </a>
+              <div class="mobile-dropdown-menu">
+                <a href="/about" class="mobile-dropdown-link">Our Story</a>
+                <a href="/mission" class="mobile-dropdown-link">Our Mission</a>
+                <a href="/commitment" class="mobile-dropdown-link"
+                  >Our Commitment</a
+                >
+                <a href="/buzz" class="mobile-dropdown-link">Our Buzz</a>
+              </div>
+            </div>
+            <a href="/about" class="mobile-nav-link">Shop Now</a>
+            <a href="/contact" class="mobile-nav-link">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="product-details-main">
+      <section class="product-details-section">
+        <div class="product-details-container container">
+          <div class="product-details-grid">
+            <!-- Left: Main product image -->
+            <div class="product-details-gallery">
+              <div class="product-details-main-image-container">
+                <div class="product-details-main-image-wrap">
+                  <img
+                    src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-basil.png"
+                    alt="Cauliflower"
+                    class="product-details-main-image"
+                    id="product-main-image"
+                  />
+                </div>
+
+                <div class="product-details-thumbnails-wrap">
+                  <div class="swiper product-details-thumbnails-swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide product-details-thumb-slide">
+                        <div class="product-details-thumb-frame">
+                          <img
+                            src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-basil.png"
+                            alt="Cauliflower view 1"
+                            class="product-details-thumb-img"
+                            data-main-src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-basil.png"
+                          />
+                        </div>
+                      </div>
+                      <div class="swiper-slide product-details-thumb-slide">
+                        <div class="product-details-thumb-frame">
+                          <img
+                            src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-ginger.png"
+                            alt="Cauliflower view 2"
+                            class="product-details-thumb-img"
+                            data-main-src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-ginger.png"
+                          />
+                        </div>
+                      </div>
+                      <div class="swiper-slide product-details-thumb-slide">
+                        <div class="product-details-thumb-frame">
+                          <img
+                            src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-Chives.png"
+                            alt="Cauliflower view 3"
+                            class="product-details-thumb-img"
+                            data-main-src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-Chives.png"
+                          />
+                        </div>
+                      </div>
+                      <div class="swiper-slide product-details-thumb-slide">
+                        <div class="product-details-thumb-frame">
+                          <img
+                            src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-thyme.png"
+                            alt="Cauliflower view 2"
+                            class="product-details-thumb-img"
+                            data-main-src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-thyme.png"
+                          />
+                        </div>
+                      </div>
+                      <div class="swiper-slide product-details-thumb-slide">
+                        <div class="product-details-thumb-frame">
+                          <img
+                            src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-garlic.png"
+                            alt="Cauliflower view 3"
+                            class="product-details-thumb-img"
+                            data-main-src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-garlic.png"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-button-next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                  <div class="swiper-button-prev">
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Product info -->
+            <div class="product-details-info">
+              <h1 class="product-details-title">Cauliflower</h1>
+              <p class="product-details-price">19$</p>
+              <div class="product-details-rating">
+                <div class="product-details-stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <span class="product-details-review-count"
+                  >(1 customer review)</span
+                >
+              </div>
+              <p class="product-details-desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit.
+              </p>
+              <div class="product-details-actions">
+                <div class="product-details-quantity">
+                  <button
+                    type="button"
+                    class="product-details-qty-btn product-details-qty-minus"
+                    aria-label="Decrease quantity"
+                  >
+                    <i class="fa-solid fa-minus"></i>
+                  </button>
+                  <input
+                    type="number"
+                    class="product-details-qty-input"
+                    value="3"
+                    min="1"
+                    max="99"
+                    aria-label="Quantity"
+                  />
+                  <button
+                    type="button"
+                    class="product-details-qty-btn product-details-qty-plus"
+                    aria-label="Increase quantity"
+                  >
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <button type="button" class="product-details-add-to-cart">
+                  ADD TO CART
+                </button>
+              </div>
+              <div class="product-details-meta">
+                <p class="product-details-meta-line">SKU: 156</p>
+                <p class="product-details-meta-line">CATEGORY: FRUIT</p>
+                <p class="product-details-meta-line">TAGS: HEALTHY, ORGANIC</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-details-tabs-section">
+        <div class="product-details-container">
+          <div class="product-details-tabs-nav" role="tablist">
+            <button
+              type="button"
+              class="product-details-tab-btn is-active"
+              role="tab"
+              aria-selected="true"
+              aria-controls="tab-description"
+              id="tab-btn-description"
+            >
+              Description
+            </button>
+            <button
+              type="button"
+              class="product-details-tab-btn"
+              role="tab"
+              aria-selected="false"
+              aria-controls="tab-additional"
+              id="tab-btn-additional"
+            >
+              Additional Information
+            </button>
+            <button
+              type="button"
+              class="product-details-tab-btn"
+              role="tab"
+              aria-selected="false"
+              aria-controls="tab-reviews"
+              id="tab-btn-reviews"
+            >
+              Reviews (01)
+            </button>
+          </div>
+          <div class="product-details-tabs-underline"></div>
+
+          <div
+            id="tab-description"
+            class="product-details-tab-panel is-visible"
+            role="tabpanel"
+            aria-labelledby="tab-btn-description"
+          >
+            <p class="product-details-tab-content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+
+          <div
+            id="tab-additional"
+            class="product-details-tab-panel"
+            role="tabpanel"
+            aria-labelledby="tab-btn-additional"
+            hidden
+          >
+            <dl class="product-details-info-list">
+              <div class="product-details-info-row">
+                <dt class="product-details-info-label">Weight</dt>
+                <dd class="product-details-info-value">0.5 kg</dd>
+              </div>
+              <div class="product-details-info-row">
+                <dt class="product-details-info-label">Country of Origin</dt>
+                <dd class="product-details-info-value">Imported</dd>
+              </div>
+              <div class="product-details-info-row">
+                <dt class="product-details-info-label">Quality</dt>
+                <dd class="product-details-info-value">Organic</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div
+            id="tab-reviews"
+            class="product-details-tab-panel"
+            role="tabpanel"
+            aria-labelledby="tab-btn-reviews"
+            hidden
+          >
+            <p class="product-details-tab-content">
+              Customer reviews will appear here. (01 review)
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="related-products-section">
+        <div class="product-details-container">
+          <div class="related-products-header">
+            <h2 class="related-products-title">Related Products</h2>
+            <div class="related-products-nav">
+              <button type="button" class="related-products-prev" aria-label="Previous products">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button type="button" class="related-products-next" aria-label="Next products">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="swiper related-products-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="/product-details" class="related-product-card">
+                  <div class="related-product-image">
+                    <img src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-basil.png" alt="Freeze-Dried Basil" loading="lazy" />
+                    <span class="related-product-tag">NEW!</span>
+                  </div>
+                  <h3 class="related-product-name">Freeze-Dried Basil</h3>
+                  <div class="related-product-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <div class="related-product-price">
+                    <span class="related-product-price-amount">$14.00</span>
+                    <span class="related-product-price-unit">/ each</span>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="/product-details" class="related-product-card">
+                  <div class="related-product-image">
+                    <img src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-Chives.png" alt="Freeze-Dried Chives" loading="lazy" />
+                    <span class="related-product-tag">NEW!</span>
+                  </div>
+                  <h3 class="related-product-name">Freeze-Dried Chives</h3>
+                  <div class="related-product-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <div class="related-product-price">
+                    <span class="related-product-price-amount">$19.00</span>
+                    <span class="related-product-price-unit">/ each</span>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="/product-details" class="related-product-card">
+                  <div class="related-product-image">
+                    <img src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-parsley.png" alt="Freeze-Dried Cilantro" loading="lazy" />
+                    <span class="related-product-tag">NEW!</span>
+                  </div>
+                  <h3 class="related-product-name">Freeze-Dried Cilantro</h3>
+                  <div class="related-product-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <div class="related-product-price">
+                    <span class="related-product-price-amount">$9.00</span>
+                    <span class="related-product-price-unit">/ each</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var thumbSwiper = new Swiper(".product-details-thumbnails-swiper", {
+          slidesPerView: 3,
+          spaceBetween: 16,
+          freeMode: true,
+          loop: true,
+          watchSlidesProgress: true,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          breakpoints: {
+            320: { slidesPerView: 2, spaceBetween: 12 },
+            640: { slidesPerView: 3, spaceBetween: 16 },
+            1024: { slidesPerView: 3, spaceBetween: 20 },
+          },
+        });
+        var relatedSwiper = new Swiper(".related-products-swiper", {
+          slidesPerView: 3,
+          spaceBetween: 24,
+          loop: true,
+          navigation: {
+            nextEl: ".related-products-next",
+            prevEl: ".related-products-prev",
+          },
+          breakpoints: {
+            320: { slidesPerView: 1, spaceBetween: 16 },
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            900: { slidesPerView: 3, spaceBetween: 24 },
+          },
+        });
+        document
+          .querySelectorAll(".product-details-thumb-img")
+          .forEach(function (img) {
+            img.addEventListener("click", function () {
+              var mainSrc = this.getAttribute("data-main-src");
+              if (mainSrc) {
+                document.getElementById("product-main-image").src = mainSrc;
+              }
+            });
+          });
+        var qtyInput = document.querySelector(".product-details-qty-input");
+        var qtyMin = document.querySelector(".product-details-qty-minus");
+        var qtyPlus = document.querySelector(".product-details-qty-plus");
+        if (qtyInput && qtyMin) {
+          qtyMin.addEventListener("click", function () {
+            var v = parseInt(qtyInput.value, 10) || 1;
+            if (v > 1) qtyInput.value = v - 1;
+          });
+        }
+        if (qtyInput && qtyPlus) {
+          qtyPlus.addEventListener("click", function () {
+            var v = parseInt(qtyInput.value, 10) || 0;
+            if (v < 99) qtyInput.value = v + 1;
+          });
+        }
+        var tabBtns = document.querySelectorAll(".product-details-tab-btn");
+        var tabPanels = document.querySelectorAll(".product-details-tab-panel");
+        tabBtns.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var targetId = this.getAttribute("aria-controls");
+            tabBtns.forEach(function (b) {
+              b.classList.remove("is-active");
+              b.setAttribute("aria-selected", "false");
+            });
+            this.classList.add("is-active");
+            this.setAttribute("aria-selected", "true");
+            tabPanels.forEach(function (panel) {
+              if (panel.id === targetId) {
+                panel.classList.add("is-visible");
+                panel.removeAttribute("hidden");
+              } else {
+                panel.classList.remove("is-visible");
+                panel.setAttribute("hidden", "");
+              }
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+
+  <footer class="site-footer">
+    <div class="footer-newsletter">
+      <div class="footer-container footer-newsletter-inner">
+        <div class="footer-newsletter-text">
+          <h2 class="footer-newsletter-heading">Subscribe Newsletter.</h2>
+          <p class="footer-newsletter-desc">
+            Get e-mail updates about our latest shop and special offers.
+          </p>
+        </div>
+        <form
+          class="footer-newsletter-form"
+          action="#"
+          method="get"
+          aria-label="Newsletter signup"
+        >
+          <input
+            type="email"
+            name="email"
+            class="footer-newsletter-input"
+            placeholder="Your email address"
+            required
+          />
+          <button type="submit" class="footer-newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-newsletter-divider"></div>
+    <div class="footer-main">
+      <div class="footer-container footer-columns">
+        <div class="footer-col footer-col-company">
+          <div class="footer-logo">
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
+              alt="Fresco Flavors Logo"
+            />
+          </div>
+          <!-- <p class="footer-tagline">— Organic — Store —</p> -->
+          <p class="footer-company-desc">
+            Bringing the best herbs in every jar. 100% Organic, from Kenya to
+            the World.
+          </p>
+          <ul class="footer-contact" aria-label="Contact information">
+            <li>
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i
+              ><a href="mailto:info@frescoflavors.com"
+                >info@frescoflavors.com</a
+              >
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i
+              ><span> 7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone" aria-hidden="true"></i
+              ><a href="tel:+19018965814">+1 (901) 896-5814</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col-links">
+          <h3 class="footer-col-heading">Information</h3>
+          <ul class="footer-links">
+            <li><a href="/about">About our shop</a></li>
+            <li><a href="/shop#bestsellers">Top sellers</a></li>
+            <li><a href="/blog">Our blog</a></li>
+            <li><a href="/shop#new">New products</a></li>
+            <li><a href="/faq">Secure shopping</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col-links">
+          <h3 class="footer-col-heading">My Account</h3>
+          <ul class="footer-links">
+            <li><a href="/account">My account</a></li>
+            <li><a href="/account/discount">Discount</a></li>
+            <li><a href="/account/profile">Personal Information</a></li>
+            <li><a href="/account/address">My address</a></li>
+            <li><a href="/account/orders">Order history</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col-instagram">
+          <h3 class="footer-col-heading">Instagram</h3>
+          <div class="footer-instagram-grid" aria-label="Instagram feed">
+            <a href="#" class="footer-instagram-item"
+              ><img
+                src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/0A0A1563-scaled.jpeg"
+                alt="Produce"
+            /></a>
+            <a href="#" class="footer-instagram-item"
+              ><img
+                src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A1046-scaled.jpg"
+                alt="Produce"
+            /></a>
+            <a href="#" class="footer-instagram-item"
+              ><img
+                src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A9375-1-scaled.jpg"
+                alt="Produce"
+            /></a>
+            <a href="#" class="footer-instagram-item"
+              ><img
+                src="https://newvashaepz.com/wp-content/uploads/2026/02/team.jpg"
+                alt="Produce"
+            /></a>
+            <a href="#" class="footer-instagram-item"
+              ><img
+                src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/10/DJI_20250826170440_0288_D.jpg"
+                alt="Produce"
+            /></a>
+            <a href="#" class="footer-instagram-item"
+              ><img
+                src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A9347.jpg"
+                alt="Produce"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-container footer-bottom-inner">
+        <p class="footer-copyright">
+          Copyright © 2026 Fresco. All rights reserved.
+        </p>
+        <div class="footer-payments" aria-label="Payment methods">
+          <i class="fa-brands fa-cc-mastercard" aria-hidden="true"></i>
+          <i class="fa-brands fa-cc-paypal" aria-hidden="true"></i>
+          <i class="fa-brands fa-cc-visa" aria-hidden="true"></i>
+          <i class="fa-brands fa-cc-amex" aria-hidden="true"></i>
+          <i class="fa-brands fa-cc-discover" aria-hidden="true"></i>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="footer-scroll-top"
+        aria-label="Scroll to top"
+      >
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    </div>
+  </footer>
+</html>

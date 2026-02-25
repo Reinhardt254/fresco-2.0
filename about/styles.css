@@ -429,3 +429,99 @@
   align-items: center;
   gap: 2rem;
 }
+
+/* -----------Commitment Section Start----------- */
+.commitment {
+  padding: 5rem 0 4rem 0;
+  background: #ffffff;
+}
+
+.commitment-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.commitment-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.5rem 0;
+}
+
+.commitment-title-underline {
+  margin: 0 0 1rem 0;
+}
+
+.commitment-text {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+}
+
+.commitment-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+  height: auto;
+}
+
+.commitment-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: auto;
+  background: #f7f7f7;
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+}
+
+.commitment-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background-color: var(--primary-green);
+  border-radius: 100%;
+  padding: 0.5rem;
+}
+
+.commitment-item-icon i {
+  font-size: 1.75rem;
+  color: #ffffff;
+}
+
+.commitment-item-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+  padding-top: 0.8rem;
+  text-align: center;
+}
+
+.commitment-item-text {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+}
