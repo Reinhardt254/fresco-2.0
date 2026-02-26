@@ -2,7 +2,9 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector("#mobile-menu");
 const mobileMenuClose = document.querySelector(".mobile-menu-close");
-const mobileDropdownTriggers = document.querySelectorAll(".mobile-dropdown-trigger");
+const mobileDropdownTriggers = document.querySelectorAll(
+  ".mobile-dropdown-trigger",
+);
 
 if (menuToggle && mobileMenu) {
   const setExpanded = (isOpen) => {
@@ -21,7 +23,7 @@ if (menuToggle && mobileMenu) {
     menuToggle.classList.remove("is-active");
     document.body.classList.remove("no-scroll");
     setExpanded(false);
-    
+
     // Close all dropdowns when closing menu
     mobileDropdownTriggers.forEach((trigger) => {
       const dropdown = trigger.nextElementSibling;
@@ -58,7 +60,9 @@ if (menuToggle && mobileMenu) {
   });
 
   // Close menu when clicking on nav links (excluding dropdown triggers)
-  const mobileNavLinks = mobileMenu.querySelectorAll(".mobile-nav-link:not(.mobile-dropdown-trigger)");
+  const mobileNavLinks = mobileMenu.querySelectorAll(
+    ".mobile-nav-link:not(.mobile-dropdown-trigger)",
+  );
   mobileNavLinks.forEach((link) => {
     link.addEventListener("click", () => {
       closeMobileMenu();
@@ -66,7 +70,9 @@ if (menuToggle && mobileMenu) {
   });
 
   // Close menu when clicking on dropdown links
-  const mobileDropdownLinks = mobileMenu.querySelectorAll(".mobile-dropdown-link");
+  const mobileDropdownLinks = mobileMenu.querySelectorAll(
+    ".mobile-dropdown-link",
+  );
   mobileDropdownLinks.forEach((link) => {
     link.addEventListener("click", () => {
       closeMobileMenu();
@@ -79,10 +85,10 @@ if (menuToggle && mobileMenu) {
       e.preventDefault();
       const dropdown = trigger.nextElementSibling;
       const icon = trigger.querySelector("i");
-      
+
       if (dropdown) {
         const isOpen = dropdown.classList.contains("mobile-dropdown-open");
-        
+
         // Close all other dropdowns
         mobileDropdownTriggers.forEach((otherTrigger) => {
           if (otherTrigger !== trigger) {
@@ -96,7 +102,7 @@ if (menuToggle && mobileMenu) {
             }
           }
         });
-        
+
         // Toggle current dropdown
         if (isOpen) {
           dropdown.classList.remove("mobile-dropdown-open");
@@ -115,14 +121,20 @@ if (menuToggle && mobileMenu) {
 
   // Close menu on window resize if desktop
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 900 && mobileMenu.classList.contains("mobile-menu-open")) {
+    if (
+      window.innerWidth > 900 &&
+      mobileMenu.classList.contains("mobile-menu-open")
+    ) {
       closeMobileMenu();
     }
   });
 
   // Close menu on Escape key
   window.addEventListener("keyup", (event) => {
-    if (event.key === "Escape" && mobileMenu.classList.contains("mobile-menu-open")) {
+    if (
+      event.key === "Escape" &&
+      mobileMenu.classList.contains("mobile-menu-open")
+    ) {
       closeMobileMenu();
     }
   });
