@@ -14,7 +14,7 @@
   --hot-tag-color: #ff6b35;
   --black-color: #000000;
 }
-
+ 
 p {
   font-family: "Poppins", serif !important;
 }
@@ -876,7 +876,7 @@ body.no-scroll {
   height: 100%;
   width: 33.333333333333333333%;
   flex-shrink: 0;
-  background-image: url("https://st.ourhtmldemo.com/template/organic_store/images/home/slide-1.jpg");
+  background-image: url("https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/organic-herbs-spices-wooden-bowl-generated-by-ai-scaled.jpg");
   background-size: 300% 100%;
   background-repeat: no-repeat;
   transform: translateY(-100%);
@@ -2032,6 +2032,569 @@ body.no-scroll {
     font-size: 28px;
   }
 }
+
+/* =========== Food Recipes / Behind the Brand Section START =========== */
+.food-recipes {
+  background-color: #0f3d2e;
+  padding: 6rem 0;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.food-recipes-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 48px;
+}
+
+.food-recipes-text {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  height: 100%;
+  width: 100%;
+}
+
+.food-recipes-kicker {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.food-recipes-heading {
+  font-size: 40px;
+  line-height: 1.1;
+  margin: 5px 0;
+  font-weight: 800;
+}
+
+.food-recipes-separator {
+  width: 300px;
+  max-width: 80%;
+  height: 2px;
+  background-color: var(--primary-green);
+  margin: 0.5rem 0;
+}
+
+.food-recipes-copy {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0 0 15px;
+  color: #ffecec;
+}
+
+.food-recipes-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+.food-recipes-stat-card {
+  background-color:var(--primary-green);
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+}
+
+.food-recipes-stat-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  background-color: #113803;
+  border-radius: 50%;
+  padding: 10px;
+  margin-bottom: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.food-recipes-stat-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.food-recipes-stat-icon i {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.food-recipes-stat-value {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.food-recipes-stat-label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+}
+
+.food-recipes-social-card {
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 18px 20px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.food-recipes-social-card .separator {
+  width: 60%;
+  height: 2px;
+  background-color: var(--primary-green);
+  margin: 0px 0 10px 0;
+}
+
+.food-recipes-social-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f3d2e;
+  margin-bottom: 8px;
+}
+
+.food-recipes-social-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #0f3d2e;
+  display: inline-block;
+  position: relative;
+}
+
+.food-recipes-social-dot::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background-color: #0f3d2e;
+}
+
+.food-recipes-social-text {
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+  color: #333333;
+}
+
+.food-recipes-gallery {
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.food-recipes-badge {
+  position: absolute;
+  top: -36px;
+  left: -40px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: var(--primary-green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  z-index: 3;
+}
+
+.food-recipes-badge img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.food-recipes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  height: 100%;
+}
+
+.food-recipes-grid .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  height: 100%;
+  width: 100%;
+}
+
+.food-recipes-image {
+  border-radius: 18px;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.food-recipes-image.small-image {
+  height: 35%;
+}
+
+.food-recipes-image.large-image {
+  height: 65%;
+}
+
+.food-recipes-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.food-recipes-image-large {
+
+}
+
+@media (max-width: 992px) {
+  .food-recipes {
+    padding: 60px 0;
+  }
+
+  .food-recipes-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .food-recipes-gallery {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .food-recipes-badge {
+    left: 20px;
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media (max-width: 600px) {
+  .food-recipes-container {
+    padding: 0 20px;
+  }
+
+  .food-recipes-kicker {
+    font-size: 14px;
+    letter-spacing: 0.18em;
+  }
+
+  .food-recipes-heading {
+    font-size: 30px;
+  }
+
+  .food-recipes-stats {
+    gap: 10px;
+  }
+
+  .food-recipes-stat-card {
+    padding: 10px 12px;
+    min-width: 120px;
+  }
+
+  .food-recipes-social-card {
+    max-width: 100%;
+  }
+
+  .food-recipes-grid {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 10px;
+  }
+
+  .food-recipes-badge {
+    top: -26px;
+    left: 10px;
+    width: 96px;
+    height: 96px;
+    font-size: 9px;
+  }
+}
+
+/* =========== Home CTA Section START =========== */
+.home-cta {
+  background-color: #ffffff;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-cta-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 10;
+}
+
+.home-cta .top-container {
+  background: url("https://img.freepik.com/free-photo/traditional-yerba-mate-wooden-bowl-wooden-table_123827-32783.jpg?t=st=1772198010~exp=1772201610~hmac=0947d8ad30b0727a809894afa5e0f8dbdfa183afbe4ebb40fb0988e4be3181dd&w=1480");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  border-radius: 10px;
+  height: 600px;
+  width: 100%;
+
+  position: relative;
+  z-index: 1;
+  margin-bottom: 300px;
+}
+
+.home-cta .top-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.home-cta .top-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/02/slider-leafs.png");
+}
+
+.home-cta .top-container .overlay-content {
+  width: 90%;
+  max-width: 900px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  margin-top: 200px;
+}
+
+.home-cta .top-container .overlay-content .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.home-cta .top-container .overlay-content .text h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+}
+
+.home-cta .top-container .overlay-content .text h2 span {
+  color: var(--primary-green);
+}
+
+.home-cta .top-container .overlay-content .text p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+}
+
+.home-cta .top-container .overlay-content .video-thumbnail {
+  position: relative;
+  z-index: 1;
+}
+
+.home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  padding-top: 20px;
+}
+
+.home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-color: var(--primary-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 9px solid #ffffff;
+}
+
+.home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-play-button i {
+  font-size: 40px;
+  color: #ffffff;
+}
+
+.home-cta .bottom-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  min-height: 400px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.home-cta .bottom-container .text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.home-cta .bottom-container .text-content h2 {
+  font-size: 7rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin: 0;
+  line-height: 1;
+}
+
+.home-cta .bottom-container .text-content h3 {
+  font-size: 20px;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.home-cta .bottom-container .text-content p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.home-cta .bottom-container .text-content a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+}
+
+.home-cta .bottom-container .overlay-right-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 500px;
+  max-width: 30vw;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.home-cta .bottom-container .overlay-right-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.home-cta .bottom-container .overlay-left-bottom {
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 500px;
+  max-width: 30vw;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+  transform: rotate(10deg);
+}
+
+.home-cta .bottom-container .overlay-left-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.home-cta .bottom-container .overlay-center-bottom {
+  position: absolute;
+  bottom: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  max-width: 30vw;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.home-cta .bottom-container .overlay-center-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0.1;
+}
+
+/* =========== Food Recipes / Behind the Brand Section END =========== */
 
 /* =========== Why Choose Us Section START =========== */
 .why-choose-us {

@@ -193,3 +193,100 @@ const swiperPartners = new Swiper(".swiper-partners", {
     },
   },
 });
+
+// =======================ABOUT PAGE HERO SWIPER===================================
+const aboutImageSwiperEl = document.querySelector(".about-page-layout .image-slider");
+
+if (aboutImageSwiperEl) {
+  const aboutImageSwiper = new Swiper(".about-page-layout .image-slider", {
+    loop: true,
+    speed: 1000,
+    effect: "fade",
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    slidesPerView: 1,
+    spaceBetween: 0,
+    pagination: {
+      el: ".pagination-custom-inner",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".about-page-layout .image-slider .swiper-button-next",
+      prevEl: ".about-page-layout .image-slider .swiper-button-prev",
+    },
+    fadeEffect: {
+      crossFade: true,
+    },
+  });
+}
+
+// =======================ABOUT PAGE OUR MISSION SWIPER===================================
+const aboutSwiperEl = document.querySelector(".our-mission .about-swiper");
+
+if (aboutSwiperEl) {
+  const setMissionDepthClasses = (swiper) => {
+    const slides = swiper.slides;
+
+    slides.forEach((slide) => {
+      slide.classList.remove("prev-2", "next-2");
+    });
+
+    const { activeIndex } = swiper;
+    const prev2 = slides[activeIndex - 2];
+    const next2 = slides[activeIndex + 2];
+
+    if (prev2) prev2.classList.add("prev-2");
+    if (next2) next2.classList.add("next-2");
+  };
+
+  const aboutSwiper = new Swiper(".our-mission .about-swiper", {
+    effect: "creative",
+    creativeEffect: {
+      prev: {
+        shadow: false,
+        translate: ["-10%", "0%", -1],
+        rotate: [0, 0, 0],
+        origin: ["50%", "50%", 0],
+        scale: 0.95,
+      },
+      next: {
+        shadow: false,
+        translate: ["10%", "0%", -1],
+        rotate: [0, 0, 0],
+        origin: ["50%", "50%", 0],
+        scale: 0.95,
+      },
+
+      limitProgress: 1,
+    },
+    centeredSlides: true,
+    slidesPerView: 1,
+    spaceBetween: 5,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: true,
+      pauseOnMouseEnter: false,
+    },
+    navigation: {
+      nextEl: ".about-swiper-button-next",
+      prevEl: ".about-swiper-button-prev",
+    },
+    pagination: {
+      el: ".about-swiper-pagination",
+      clickable: true,
+    },
+    loop: true,
+    loopedSlides: 10,
+    loopAdditionalSlides: 3,
+    on: {
+      init(swiper) {
+        setMissionDepthClasses(swiper);
+      },
+      slideChange(swiper) {
+        setMissionDepthClasses(swiper);
+      },
+    },
+  });
+}

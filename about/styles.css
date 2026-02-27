@@ -12,8 +12,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
-
+  
 .about-page-layout::before {
   content: "";
   position: absolute;
@@ -21,14 +22,113 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #061f16f1;
-  /* background: linear-gradient(to right, #061f16e3, rgba(0, 0, 0, 0.432)); */
+  background-color: #061f16;
+  opacity: 0.7;
+  z-index: 10;
 }
 
-.about-page-layout img {
+.about-page-layout::after {
+  content: "";
+  background: url("https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/02/slider-leafs.png") no-repeat center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 12;
+}
+
+@keyframes zoom-in {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.about-page-layout .image-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.about-page-layout .image-slider .swiper-wrapper,
+.about-page-layout .image-slider .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.about-page-layout .image-slider img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  animation: zoom-in 12s ease-in-out infinite alternate;
+}
+
+.about-page-layout .image-slider .swiper-button-prev,
+.about-page-layout .image-slider .swiper-button-next {
+  color: #ffffff;
+}
+
+.about-page-layout .pagination-custom {
+  right: 0rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) rotate(90deg);
+  width: fit-content !important;
+  height: fit-content !important;
+  z-index: 1000000000000000000 !important;
+
+  position: absolute !important;
+}
+
+.about-page-layout .pagination-custom .pagination-custom-inner {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  width: fit-content !important;
+  height: fit-content !important;
+  background-color: transparent !important;
+  position: relative !important;
+}
+
+.about-page-layout .pagination-custom .swiper-pagination-bullet {
+  background: rgb(255, 255, 255);
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 50% !important;
+  opacity: 1 !important;
+  margin: 0.5rem !important;
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
+  position: relative !important;
+}
+
+.about-page-layout .pagination-custom .swiper-pagination-bullet-active {
+  background: #81b03f !important;
+  opacity: 1 !important;
+  z-index: 15 !important;
+}
+
+.about-page-layout .pagination-custom .swiper-pagination-bullet-active::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  background: #81b03f52 !important;
+  border: 2px solid #81b03f !important;
+  border-radius: 50% !important;
+  z-index: 10 !important;
 }
 
 .about-page-layout .layout-content {
@@ -43,7 +143,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  z-index: 10;
+  z-index: 15;
   gap: 2rem;
 }
 
@@ -58,38 +158,75 @@
   gap: 2rem;
 }
 
-.about-page-layout .layout-content-inner .column {
-  width: 50%;
+
+.about-page-layout .layout-content-inner .layout-content-inner-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.about-page-layout .layout-content-inner .column.layout-content-inner-image {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  border-radius: 12px;
-  overflow: hidden;
-  height: 100%;
-}
-
-
-.about-page-layout .layout-content-inner .column.layout-content-inner-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
-.about-page-layout .layout-content-inner .column.layout-content-inner-text {
+.about-page-layout .socials {
+  position: absolute;
+  top: 50%;
+  left: -5rem;
+  right: auto;
+  transform: translateY(-50%) rotate(-90deg);
+  width: fit-content;
+  height: fit-content;
+  z-index: 1000;
+
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-page-layout .socials-inner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-page-layout .socials-inner {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-page-layout .socials-item {
+  width: auto;
   height: auto;
+  border-radius: 50%;
+  transform:  rotate(90deg);
+}
+
+.about-page-layout .socials-item i {
+  font-size: 1.35rem;
+  color: #fff;
+}
+
+.about-page-layout .separator {
+  width: 50px;
+  height: 1px;
+  background-color: var(--primary-green);
+  margin: 1rem 0;
+}
+
+.about-page-layout .socials-text p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--primary-green);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .about-page-layout .layout-content h1 {
@@ -97,7 +234,7 @@
   line-height: 1.1;
   font-weight: 700;
   color: #fff;
-  text-align: left;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.025em;
   margin-bottom: 0.5rem;
@@ -110,10 +247,12 @@
 .about-page-layout .layout-content p {
   font-size: 1.25rem;
   font-weight: 400;
-  text-align: left;
+  text-align: center;
   color: #fff;
   letter-spacing: normal;
   margin-bottom: 2rem;
+  width: 100%;
+  max-width: 900px;
 }
 
 .contact-us-btn {
@@ -134,10 +273,17 @@
   outline: none;
 }
 
-.contact-us-btn svg {
-  width: 16px;
-  height: 16px;
-  fill: #fff;
+.contact-us-btn i {
+   font-size: 10px;
+   height: 16px;
+   width: 16px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #ffffffce;
+   border-radius: 50%;
+   padding: 0rem;
+   color: var(--primary-green);
 }
 
 .contact-us-btn:hover {
@@ -145,15 +291,13 @@
   color: var(--primary-green);
 }
 
-.contact-us-btn:hover svg {
-  fill: var(--primary-green);
-}
+
 
 /* ====================Our Mission section================= */
 .our-mission {
   background: #0f3d2e;
   color: #fff;
-  padding: 4rem 1.5rem 7rem;
+  padding: 4rem 1.5rem 10rem;
 }
 
 .our-mission-inner {
@@ -182,7 +326,7 @@
 .our-mission-center {
   position: relative;
   min-height: 420px;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -191,58 +335,121 @@
 
 .our-mission-images {
   position: relative;
-  width: auto;
-  height: auto;
+  width: 100%;
+  max-width: 380px;
+  height: 380px;
 }
 
 .mission-img {
-  position: absolute;
-  width: auto;
-  aspect-ratio: 4/5.5;
-  height: 350px;
+  position: relative;
+  width: 80%;
+  height: 100%;
   object-fit: cover;
   border-radius: 12px;
   border: 3px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-.mission-img-center {
-  transform: rotate(0deg), scale(1.1);
-  z-index: 30;
+.our-mission-images .about-swiper,
+.our-mission-images .about-swiper .swiper-wrapper,
+.our-mission-images .about-swiper .swiper-slide {
+  width: 100%;
+  height: 100%;
+  overflow: visible !important;
+}
+
+.our-mission-images .about-swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.our-mission-images .about-swiper .swiper-slide-active {
+  width: 100%;
+  height: 100%;
+}
+
+.our-mission-images .about-swiper .swiper-slide-active .mission-img {
+  width: 80% !important;
+  height: 100%;
+  object-fit: cover;
+  margin-top: -6%;
+}
+
+/* Tilted card effect for mission Swiper slides */
+.our-mission-images .about-swiper .swiper-slide {
+  transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
+  transform-origin: center center;
+  opacity: 0.4;
+}
+
+.our-mission-images .about-swiper .swiper-slide-active {
+  opacity: 1;
+  z-index: 3;
+}
+
+.our-mission-images .about-swiper .swiper-slide-prev img {
+  transform: translateX(-25%) rotate(-10deg) scale(0.9);
+  z-index: 2;
+  margin-bottom: -2%;
+}
+
+.our-mission-images .about-swiper .swiper-slide-next img {
+  transform: translateX(25%) rotate(10deg) scale(0.9);
+  z-index: 2;
+  margin-bottom: -2%;
+}
+
+.our-mission-images .about-swiper .swiper-slide.prev-2 img {
+  transform: translateX(-55%) rotate(-18deg) scale(0.8);
+  opacity: 0.6;
+  z-index: 1;
+  margin-bottom: -16%;
+}
+
+.our-mission-images .about-swiper .swiper-slide.next-2 img {
+  transform: translateX(55%) rotate(18deg) scale(0.8);
+  opacity: 0.6;
+  z-index: 1;
+  margin-bottom: -16%;
+}
+
+.our-mission-images .about-swiper .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-prev):not(.swiper-slide-next):not(.prev-2):not(.next-2) img {
+  transform: translateX(0) scale(0.85);
+  z-index: 1;
+}
+
+.about-swiper-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
   position: relative;
+  padding-top: 3rem;
 }
 
-.mission-img-left {
-  left: -30%;
-  bottom: 5%;
-  height: 90%;
-  transform: rotate(-10deg);
-  z-index: 10;
+.our-mission-images .about-swiper .about-swiper-button-prev,
+.our-mission-images .about-swiper .about-swiper-button-next {
+  color: #ffffff;
+  background-color: #81b03f;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.mission-img-left-2 {
-  left: -55%;
-  bottom: 2%;
-  height: 80%;
-  transform: rotate(-14deg);
-  z-index: 5;
+.our-mission-images .about-swiper .about-swiper-pagination .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.6);
 }
-
-.mission-img-right {
-  right: -30%;
-  bottom: 5%;
-  height: 90%;
-  transform: rotate(10deg);
-  z-index: 10;
-}
-
-.mission-img-right-2 {
-  right: -55%;
-  bottom: 2%;
-  height: 80%;
-  transform: rotate(12deg);
-  z-index: 5;
-}
+/* 
+.our-mission-images .about-swiper .about-swiper-pagination .swiper-pagination-bullet-active {
+  background: #ffffff;
+} */
 
 .our-mission-point {
   position: absolute;
@@ -661,7 +868,7 @@
   padding: 0rem;
   width: 100%;
   height: auto;
-  height: 650px;
+  height: 750px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -677,7 +884,7 @@
   object-position: center;
   z-index: 1;
   margin-bottom: 0px;
-}
+} 
 
 
 .cta-inner {
@@ -689,7 +896,7 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
