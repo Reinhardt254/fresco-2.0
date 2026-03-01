@@ -2448,6 +2448,36 @@ body.no-scroll {
 .home-cta .top-container .overlay-content .video-thumbnail {
   position: relative;
   z-index: 1;
+  width: 100%;
+  height: auto;
+}
+
+.home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+
+  display: none;
+}
+
+.home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-video.active {
+  display: block;
+}
+
+.home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-video iframe {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
 }
 
 .home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-image {

@@ -887,16 +887,42 @@
           <div class="overlay-content">
             <div class="text">
               <h2>How to use our <span>freeze-dried herbs</span></h2>
-              <p>Watch our video tutorial to learn how to use our freeze-dried herbs.</p>
+              <p>
+                Watch our video tutorial to learn how to use our freeze-dried
+                herbs.
+              </p>
             </div>
 
             <div class="video-thumbnail">
               <div class="video-thumbnail-image">
-                <img src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/bowl-green-olive-oil-with-wooden-bowl-basil.jpg" alt="">
+                <img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/bowl-green-olive-oil-with-wooden-bowl-basil.jpg"
+                  alt=""
+                />
 
                 <div class="video-thumbnail-play-button">
                   <i class="fa-solid fa-play"></i>
                 </div>
+              </div>
+
+              <div class="video-thumbnail-video">
+                <iframe
+                  id="video-thumbnail-iframe"
+                  src="https://www.youtube.com/embed/-yx83j6jiIc?enablejsapi=1&rel=0"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
               </div>
             </div>
           </div>
@@ -905,22 +931,82 @@
           <div class="text-content">
             <h2>20+</h2>
             <h3>Products</h3>
-            <p>We offer a wide range of freeze-dried herbs and spices to suit your cooking needs. From basil condiments to savory blends, we have you covered. Our products are 100% natural, organic, and free from any synthetic additives or preservatives. Whether you're looking for a quick herb blend or a long-lasting spice, we have the perfect product for you.</p>
+            <p>
+              Explore 20+ premium organic herbs, carefully harvested at peak
+              freshness and freeze-dried to lock in vibrant flavor, color, and
+              aroma. From everyday essentials like basil and oregano to savory
+              signature blends, our collection brings farm-fresh taste straight
+              to your kitchen
+            </p>
           </div>
 
           <div class="overlay-center-bottom">
-            <img src="https://img.freepik.com/free-vector/hand-drawn-basil-drawing-illustration_23-2150840443.jpg?t=st=1772199783~exp=1772203383~hmac=583c9e5091c503b937e1a469a4e432b1d28c290b7792b9a4316e593d827c635c&w=1480" alt="">
+            <img
+              src="https://img.freepik.com/free-vector/hand-drawn-basil-drawing-illustration_23-2150840443.jpg?t=st=1772199783~exp=1772203383~hmac=583c9e5091c503b937e1a469a4e432b1d28c290b7792b9a4316e593d827c635c&w=1480"
+              alt=""
+            />
           </div>
 
           <div class="overlay-left-bottom">
-            <img src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview.png" alt="">
+            <img
+              src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview.png"
+              alt=""
+            />
           </div>
 
           <div class="overlay-right-bottom">
-            <img src="https://plantechkenya.com/wp-content/uploads/2026/02/dried-herbs-spilled-from-glass-jar-white-background_1012140-1044.png" alt="">
+            <img
+              src="https://plantechkenya.com/wp-content/uploads/2026/02/dried-herbs-spilled-from-glass-jar-white-background_1012140-1044.png"
+              alt=""
+            />
           </div>
         </div>
       </section>
+
+      <script src="https://www.youtube.com/iframe_api"></script>
+      <script>
+        const videoThumbnail = document.querySelector('.video-thumbnail-video');
+        const videoThumbnailPlayButton = document.querySelector('.video-thumbnail-play-button');
+        let player;
+        let pendingPlay = false;
+
+        function initPlayer() {
+          if (player) return;
+          player = new YT.Player('video-thumbnail-iframe', {
+            events: {
+              onStateChange: (e) => {
+                if (e.data === YT.PlayerState.PAUSED) {
+                  videoThumbnail.classList.remove('active');
+                }
+              },
+              onReady: () => {
+                if (pendingPlay && player.playVideo) {
+                  player.playVideo();
+                  pendingPlay = false;
+                }
+              }
+            }
+          });
+        }
+
+        window.onYouTubeIframeAPIReady = () => {
+          initPlayer();
+        };
+
+        videoThumbnailPlayButton.addEventListener('click', () => {
+          videoThumbnail.classList.add('active');
+          if (typeof YT === 'undefined') {
+            pendingPlay = true;
+            return;
+          }
+          if (!player) initPlayer();
+          if (player && player.playVideo) {
+            player.playVideo();
+          } else {
+            pendingPlay = true;
+          }
+        });
+      </script>
 
       <section class="food-recipes">
         <div class="food-recipes-container">
@@ -1049,7 +1135,9 @@
               <div class="why-choose-us-content">
                 <h3 class="why-choose-us-card-title">100% Organic</h3>
                 <p class="why-choose-us-card-desc">
-                  Carefully sourced organic herbs, naturally grown and freeze-dried to preserve flavor, aroma, and nutrients without artificial additives or preservatives.
+                  Carefully sourced organic herbs, naturally grown and
+                  freeze-dried to preserve flavor, aroma, and nutrients without
+                  artificial additives or preservatives.
                 </p>
               </div>
             </div>
