@@ -1,0 +1,588 @@
+/* ==================== Retail Page Styles ==================== */
+
+/* Base button (shared with about page pattern) */
+.contact-us-btn {
+  background-color: var(--primary-green);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+.contact-us-btn i {
+  font-size: 10px;
+  height: 16px;
+  width: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  color: var(--primary-green);
+}
+
+.contact-us-btn:hover {
+  background-color: #fff;
+  color: var(--primary-green);
+}
+
+.retail-page {
+  background: #ffffff;
+  color: #2c2c2c;
+  padding: 0;
+  min-height: 60vh;
+}
+
+/* Hero */
+.retail-hero {
+  position: relative;
+  width: 100%;
+  min-height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.retail-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.retail-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.retail-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #061f16;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.retail-hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.retail-hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 0.75rem;
+}
+
+.retail-hero-tagline {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+/* ==================== Content Sections ==================== */
+
+/* Section 1: Intro */
+.retail-section-intro {
+  background-color: #f4e5c9;
+}
+
+.retail-intro-text {
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #0f3d2e;
+  margin: 0;
+}
+
+.retail-section {
+  padding: 4rem 0;
+  background-color: #f4e5c9;
+  width: 100%;
+}
+
+.retail-section-alt {
+  background-color: #fff;
+}
+
+.retail-section-dark {
+  background-color: #0f3d2e;
+  color: #fff;
+}
+
+.retail-section-inner {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.retail-section-reverse {
+  flex-direction: row-reverse;
+}
+
+.retail-section-narrow {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 1000px;
+}
+
+.retail-section-media {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.retail-media-shape {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 420px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f0d8b0;
+}
+
+.retail-media-shape img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.retail-section-content {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #0f3d2e;
+}
+
+.retail-section-dark .retail-section-content {
+  width: 100%;
+  align-items: center;
+}
+
+.retail-section-heading {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 1.25rem;
+}
+
+.retail-section-dark .retail-section-heading {
+  color: #fff;
+}
+
+.retail-section-heading-center {
+  text-align: center;
+}
+
+.retail-section-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.retail-section-text p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #0f3d2e;
+  margin: 0;
+}
+
+.retail-section-lead {
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.7;
+  margin: 0 0 2.5rem;
+  max-width: 700px;
+}
+
+/* Buttons */
+.retail-btn {
+  margin-top: 1.5rem;
+  background-color: #0f3d2e;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.retail-btn:hover {
+  background-color: #fff;
+  color: #0f3d2e;
+}
+
+.retail-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.retail-btn-dark:hover {
+  background-color: #fff;
+  color: #0f3d2e;
+}
+
+.retail-btn-dark:hover svg {
+  stroke: #0f3d2e;
+}
+
+.retail-btn-light {
+  background-color: var(--primary-green);
+  color: #fff;
+  margin-top: 2rem;
+}
+
+.retail-btn-light:hover {
+  background-color: #fff;
+  color: var(--primary-green);
+}
+
+.retail-btn-light svg {
+  stroke: #fff;
+}
+
+.retail-btn-light:hover svg {
+  stroke: var(--primary-green);
+}
+
+/* Benefits Grid */
+.retail-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.retail-benefit {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.retail-benefit-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.25rem;
+  background: var(--primary-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.retail-benefit-icon i {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.retail-benefit-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.75rem;
+}
+
+.retail-benefit-desc {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* CTA Section */
+.retail-cta {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.retail-cta-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+.retail-cta::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 61, 46, 0.7);
+  z-index: 2;
+}
+
+.retail-cta-inner {
+  position: relative;
+  z-index: 3;
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+}
+
+.retail-cta-heading {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 1rem;
+}
+
+.retail-cta-desc {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 2rem;
+  line-height: 1.6;
+}
+
+.retail-cta-btn {
+  background-color: var(--primary-green);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.retail-cta-btn:hover {
+  background-color: #fff;
+  color: var(--primary-green);
+}
+
+.retail-cta-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: #fff;
+}
+
+.retail-cta-btn:hover svg {
+  stroke: var(--primary-green);
+}
+
+/* ==================== Mobile Responsive ==================== */
+
+@media (max-width: 1024px) {
+  .retail-hero {
+    min-height: 500px;
+  }
+
+  .retail-section-inner {
+    gap: 2rem;
+  }
+
+  .retail-benefits-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .retail-section-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+
+  .retail-section-reverse {
+    flex-direction: column;
+  }
+
+  .retail-section-media,
+  .retail-section-content {
+    width: 100%;
+  }
+
+  .retail-section-media {
+    order: 1;
+  }
+
+  .retail-section-content {
+    order: 2;
+    align-items: flex-start;
+  }
+
+  .retail-media-shape {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .retail-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .retail-hero {
+    min-height: 450px;
+  }
+
+  .retail-hero-content {
+    padding: 3rem 1rem;
+  }
+
+  .retail-hero-title {
+    font-size: 1.75rem;
+  }
+
+  .retail-hero-tagline {
+    font-size: 1rem;
+  }
+
+  .retail-intro-text {
+    font-size: 1rem;
+  }
+
+  .retail-section {
+    padding: 3rem 0;
+  }
+
+  .retail-section-heading {
+    font-size: 1.5rem;
+  }
+
+  .retail-section-text p {
+    font-size: 0.9375rem;
+  }
+
+  .retail-section-lead {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .retail-benefit {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .retail-cta {
+    height: 400px;
+  }
+
+  .retail-cta-heading {
+    font-size: 1.5rem;
+  }
+
+  .retail-cta-desc {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .retail-hero {
+    min-height: 400px;
+  }
+
+  .retail-hero-title {
+    font-size: 1.5rem;
+  }
+
+  .retail-hero-tagline {
+    font-size: 0.9375rem;
+  }
+
+  .retail-intro-text {
+    font-size: 0.9375rem;
+  }
+
+  .retail-section {
+    padding: 2.5rem 0;
+  }
+
+  .retail-section-inner {
+    width: 92%;
+  }
+
+  .retail-section-heading {
+    font-size: 1.375rem;
+  }
+
+  .retail-benefit-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .retail-benefit-icon i {
+    font-size: 1.25rem;
+  }
+
+  .retail-benefit-title {
+    font-size: 1rem;
+  }
+
+  .retail-benefit-desc {
+    font-size: 0.875rem;
+  }
+
+  .retail-cta {
+    height: 350px;
+  }
+
+  .retail-cta-heading {
+    font-size: 1.375rem;
+  }
+}

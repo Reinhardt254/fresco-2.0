@@ -33,6 +33,21 @@ button {
   font-family: "Josefin Sans", sans-serif !important;
 }
 
+.contact-us-btn-icon {
+  font-size: 10px;
+  height: 16px;
+  width: 16px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffffce !important;
+  border-radius: 50% !important;
+  padding: 0rem !important;
+  color: var(--primary-green) !important;
+}
+
+
+
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -1361,6 +1376,14 @@ body.no-scroll {
     padding-right: 0px;
   }
 
+  .hero__content h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+ }
+  
+  .hero__content {
+    max-width: 95%;
+  }
+
   .hero-slide-two-content {
     width: 95%;
     padding-right: 0px;
@@ -1439,7 +1462,8 @@ body.no-scroll {
 }
 
 .welcome-to-fresco-section .cards .space-top-card {
-  margin-bottom: -300px;
+  margin-bottom: 0;
+  padding-top: 100px;
 }
 
 .welcome-to-fresco-section .cards .card .icon {
@@ -1465,8 +1489,8 @@ body.no-scroll {
 }
 
 .welcome-to-fresco-section .cards .card .icon img {
-  width: 80px;
-  height: 80px;
+  width: 50%;
+  height: 50%;
   position: relative;
   z-index: 1;
 }
@@ -1505,6 +1529,7 @@ body.no-scroll {
   height: 100%;
   position: relative;
   z-index: 1;
+  margin-top: -100px;
 }
 
 .welcome-to-fresco-section .mask-main-image img {
@@ -1530,11 +1555,31 @@ body.no-scroll {
 
   .welcome-to-fresco-section .cards .space-top-card {
     margin-bottom: 0px;
+    padding-top: 0px;
+  }
+
+  .welcome-to-fresco-section .cards .card .icon {
+    width: 120px;
+    height: 120px;
+  
+    background-color: var(--primary-green) 13;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+  
+    position: relative;
   }
 
   .welcome-to-fresco-section .cards .card .content .title {
     text-align: center;
     font-size: 1rem;
+  }
+
+  .welcome-to-fresco-section .mask-main-image {
+    width: 100%;
+    margin: 0;
   }
 }
 
