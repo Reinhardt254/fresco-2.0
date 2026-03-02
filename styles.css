@@ -1375,6 +1375,10 @@ body.no-scroll {
     align-items: center;
   }
 
+  .hero__controls {
+    display: none;
+  }
+
   .hero-slide-two-content h1 {
     font-size: 2rem;
     text-align: center;
@@ -1418,7 +1422,7 @@ body.no-scroll {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   gap: 20px;
 
   padding-top: 2rem;
@@ -1429,7 +1433,7 @@ body.no-scroll {
   height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:flex-start;
   align-items: center;
   gap: 20px;
 }
@@ -1524,17 +1528,13 @@ body.no-scroll {
     text-align: center;
   }
 
-  .welcome-to-fresco-section .cards {
-    flex-direction: column;
-  }
-
   .welcome-to-fresco-section .cards .space-top-card {
     margin-bottom: 0px;
   }
 
   .welcome-to-fresco-section .cards .card .content .title {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
 
@@ -2020,9 +2020,13 @@ body.no-scroll {
 
 @media (max-width: 480px) {
   .product-grid {
-    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
+  .featured-products{
+    padding: 30px 10px;
+  }
+ 
   .banner {
     padding: 40px 30px;
     min-height: 350px;
@@ -2308,7 +2312,14 @@ body.no-scroll {
 
 @media (max-width: 600px) {
   .food-recipes-container {
-    padding: 0 20px;
+    padding: 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    width: 95%;
   }
 
   .food-recipes-kicker {
@@ -2325,8 +2336,7 @@ body.no-scroll {
   }
 
   .food-recipes-stat-card {
-    padding: 10px 12px;
-    min-width: 120px;
+    padding: 10px 5px;
   }
 
   .food-recipes-social-card {
@@ -2344,6 +2354,14 @@ body.no-scroll {
     width: 96px;
     height: 96px;
     font-size: 9px;
+  }
+
+  .food-recipes-stat-value {
+    font-size: 16px;
+  }
+
+  .food-recipes-stat-label {
+    font-size: 12px;
   }
 }
 
@@ -2450,6 +2468,10 @@ body.no-scroll {
   z-index: 1;
   width: 100%;
   height: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-video {
@@ -2470,7 +2492,9 @@ body.no-scroll {
 }
 
 .home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-video.active {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-video iframe {
@@ -2485,7 +2509,10 @@ body.no-scroll {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
-  padding-top: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-image img {
@@ -2622,6 +2649,65 @@ body.no-scroll {
   object-fit: cover;
   border-radius: 10px;
   opacity: 0.1;
+}
+
+@media (max-width: 480px) {
+  .home-cta .top-container {
+    height: 350px;
+    margin-bottom: 150px;
+  }
+
+  .home-cta .top-container {
+   padding: 10px;
+  }
+
+  .home-cta .top-container .overlay-content {
+    margin-top: 100px;
+    width: 100%;
+  }
+
+  .home-cta .bottom-container
+ {
+  padding: 10px;
+  padding-bottom: 120px;
+ }
+
+ .home-cta .bottom-container .overlay-right-bottom {
+  width: 300px;
+  max-width: 50vw;
+  bottom: -10%;
+ }
+
+ .home-cta .bottom-container .overlay-left-bottom {
+  width: 300px;
+  max-width: 20vw;
+ }
+
+ .home-cta .bottom-container .overlay-center-bottom {
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  max-width: 90vw;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.home-cta .bottom-container .overlay-left-bottom
+ {
+    position: absolute;
+    bottom: -15%;
+    left: -15%;
+    width: 500px;
+    max-width: 50vw;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+    transform: rotate(10deg);
+}
+ 
 }
 
 /* =========== Food Recipes / Behind the Brand Section END =========== */
@@ -2805,7 +2891,11 @@ body.no-scroll {
 
 @media (max-width: 768px) {
   .why-choose-us {
-    padding: 60px 0;
+    padding: 30px 0;
+  }
+
+  .why-choose-us-container {
+    width: 95%;
   }
 
   .why-choose-us-title {
@@ -2816,13 +2906,11 @@ body.no-scroll {
   .why-choose-us-intro {
     font-size: 14px;
     margin-bottom: 40px;
-    padding: 0 16px;
   }
 
   .why-choose-us-grid {
     grid-template-columns: 1fr;
     gap: 24px;
-    padding: 0 16px;
   }
 
   .why-choose-us-card {
@@ -2880,7 +2968,7 @@ body.no-scroll {
 .partners-new .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -2944,10 +3032,15 @@ body.no-scroll {
   backface-visibility: hidden;
   will-change: transform;
 }
-
+ 
 @media only screen and (max-width: 768px) {
   .partners-new {
     padding: 2.5rem 0;
+    padding-top: 0;
+  }
+
+  .partners-new .container {
+    width: 95%;
   }
 
   .partners-new .swiper-wrapper {
