@@ -1,5 +1,5 @@
 /* ==================== Retail Page Styles ==================== */
-
+ 
 /* Base button (shared with about page pattern) */
 .contact-us-btn {
   background-color: var(--primary-green);
@@ -17,6 +17,7 @@
   border: none;
   outline: none;
   text-decoration: none;
+  margin-top: 2rem;
 }
 
 .contact-us-btn i {
@@ -47,7 +48,7 @@
 .retail-hero {
   position: relative;
   width: 100%;
-  min-height: 550px;
+  min-height: 700px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,7 +76,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #061f16;
+  background-color: #0d2920;
   opacity: 0.7;
   z-index: 2;
 }
@@ -83,20 +84,24 @@
 .retail-hero-content {
   position: relative;
   z-index: 3;
-  max-width: 900px;
+  max-width: 1000px;
   width: 90%;
   margin: 0 auto;
   text-align: center;
-  padding: 4rem 1.5rem;
+  padding: 4rem 0rem;
 }
 
 .retail-hero-title {
   font-family: "Playfair Display", serif;
-  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 4.5rem);
   font-weight: 600;
   line-height: 1.2;
   color: #fff;
   margin: 0 0 0.75rem;
+}
+
+.retail-hero-title .highlight {
+  color: var(--primary-green);
 }
 
 .retail-hero-tagline {
@@ -144,7 +149,7 @@
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 .retail-section-reverse {
@@ -199,11 +204,19 @@
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 600;
   line-height: 1.25;
-  margin: 0 0 1.25rem;
+  margin: 0rem 0;
 }
 
 .retail-section-dark .retail-section-heading {
   color: #fff;
+}
+
+.divider {
+  width: 100%;
+  max-width: 300px;
+  height: 2px;
+  background-color: var(--primary-green);
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .retail-section-heading-center {
@@ -274,7 +287,7 @@
 .retail-btn-light {
   background-color: var(--primary-green);
   color: #fff;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 }
 
 .retail-btn-light:hover {
@@ -308,8 +321,8 @@
 }
 
 .retail-benefit-icon {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   margin: 0 auto 1.25rem;
   background: var(--primary-green);
   border-radius: 50%;
@@ -319,7 +332,7 @@
 }
 
 .retail-benefit-icon i {
-  font-size: 1.5rem;
+  font-size: 1.85rem;
   color: #fff;
 }
 
@@ -339,91 +352,95 @@
 }
 
 /* CTA Section */
-.retail-cta {
-  position: relative;
-  width: 100%;
-  height: 450px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
 
-.retail-cta-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: 1;
-}
-
-.retail-cta::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(15, 61, 46, 0.7);
-  z-index: 2;
-}
-
-.retail-cta-inner {
-  position: relative;
-  z-index: 3;
-  max-width: 700px;
-  width: 90%;
-  text-align: center;
-}
-
-.retail-cta-heading {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  font-weight: 600;
-  color: #fff;
-  margin: 0 0 1rem;
-}
-
-.retail-cta-desc {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.95);
-  margin: 0 0 2rem;
-  line-height: 1.6;
-}
-
-.retail-cta-btn {
-  background-color: var(--primary-green);
-  color: #fff;
-  padding: 1rem 2rem;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: none;
-}
-
-.retail-cta-btn:hover {
-  background-color: #fff;
-  color: var(--primary-green);
-}
-
-.retail-cta-btn svg {
-  width: 18px;
-  height: 18px;
-  stroke: #fff;
-}
-
-.retail-cta-btn:hover svg {
-  stroke: var(--primary-green);
-}
+/* -----------CTA Section Start----------- */
+.cta {
+   color: #f5f2ed;
+   padding: 0rem;
+   width: 100%;
+   height: auto;
+   height: 750px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   background-color: #f9f9f900;
+   overflow: hidden;
+ }
+ 
+ .cta-bg {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: center;
+   z-index: 1;
+   margin-bottom: 0px;
+ }
+ 
+ .cta-inner {
+   max-width: 1200px;
+   width: 90%;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   top: 25%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 2;
+ }
+ 
+ .cta-heading {
+   font-size: 2.5rem;
+   font-weight: 700;
+   color: #0f3d2e;
+   text-transform: uppercase;
+   letter-spacing: 0.05em;
+   margin-bottom: 0.5rem;
+ }
+ 
+ .cta-desc {
+   font-size: 1.25rem;
+   font-weight: 400;
+   color: #0f3d2e;
+   letter-spacing: normal;
+   margin-bottom: 2rem;
+ }
+ 
+ .cta-btn {
+   background-color: var(--primary-green);
+   color: #fff;
+   padding: 1rem 2rem;
+   border-radius: 5px;
+   font-size: 1.2rem;
+   font-weight: 500;
+ 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 0.5rem;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   border: none;
+   outline: none;
+ }
+ 
+ .cta-btn svg {
+   width: 16px;
+   height: 16px;
+   fill: #fff;
+ }
+ 
+ .cta-btn:hover {
+   background-color: #fff;
+   color: var(--primary-green);
+ }
+ 
+ .cta-btn:hover svg {
+   fill: var(--primary-green);
+ }
 
 /* ==================== Mobile Responsive ==================== */
 
