@@ -1040,7 +1040,7 @@ body.no-scroll {
 /* ---------------------------------Banner Section--------------------------------- */
 
 .banner {
-  padding: 5rem 0 5rem;
+  padding: 5rem 0;
   background-color: #e6eae9;
   position: relative;
   z-index: 10;
@@ -1060,7 +1060,8 @@ body.no-scroll {
 }
 
 .banner-container {
-  max-width: 1200px;
+  max-width: 1400px;
+  width: 90%;
   margin: 0 auto;
   position: relative;
   z-index: 10;
