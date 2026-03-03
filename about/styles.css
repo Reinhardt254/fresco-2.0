@@ -5,6 +5,353 @@
   min-height: 60vh;
 }
 
+.about-page-top-layout {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+ 
+.about-page-top-layout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #061f16;
+  opacity: 0.7;
+  z-index: 10;
+}
+
+.about-page-top-layout::after {
+  content: "";
+  background: url("https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/02/slider-leafs.png")
+    no-repeat center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 12;
+}
+
+@keyframes zoom-in {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.about-page-top-layout .image-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.about-page-top-layout .image-slider .swiper-wrapper,
+.about-page-top-layout .image-slider .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.about-page-top-layout .image-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoom-in 12s ease-in-out infinite alternate;
+}
+
+.about-page-top-layout .image-slider .swiper-button-prev,
+.about-page-top-layout .image-slider .swiper-button-next {
+  color: #ffffff;
+}
+
+.about-page-top-layout .pagination-custom {
+  right: 0rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) rotate(90deg);
+  width: fit-content !important;
+  height: fit-content !important;
+  z-index: 1000000000000000000 !important;
+
+  position: absolute !important;
+}
+
+.about-page-top-layout .pagination-custom .pagination-custom-inner {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  width: fit-content !important;
+  height: fit-content !important;
+  background-color: transparent !important;
+  position: relative !important;
+}
+
+.about-page-top-layout .pagination-custom .swiper-pagination-bullet {
+  background: rgb(255, 255, 255);
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 50% !important;
+  opacity: 1 !important;
+  margin: 0.5rem !important;
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
+  position: relative !important;
+}
+
+.about-page-top-layout .pagination-custom .swiper-pagination-bullet-active {
+  background: #81b03f !important;
+  opacity: 1 !important;
+  z-index: 15 !important;
+}
+
+.about-page-top-layout .pagination-custom .swiper-pagination-bullet-active::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  background: #81b03f52 !important;
+  border: 2px solid #81b03f !important;
+  border-radius: 50% !important;
+  z-index: 10 !important;
+}
+
+.about-page-top-layout .layout-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 1200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 15;
+  gap: 2rem;
+}
+
+.about-page-top-layout .layout-content-inner {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+}
+
+.about-page-top-layout .layout-content-inner .layout-content-inner-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
+}
+
+.about-page-top-layout .socials {
+  position: absolute;
+  top: 50%;
+  left: -5rem;
+  right: auto;
+  transform: translateY(-50%) rotate(-90deg);
+  width: fit-content;
+  height: fit-content;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-page-top-layout .socials-inner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-page-top-layout .socials-inner {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-page-top-layout .socials-item {
+  width: auto;
+  height: auto;
+  border-radius: 50%;
+  transform: rotate(90deg);
+}
+
+.about-page-top-layout .socials-item i {
+  font-size: 1.35rem;
+  color: #fff;
+}
+
+.about-page-top-layout .separator {
+  width: 50px;
+  height: 1px;
+  background-color: var(--primary-green);
+  margin: 1rem 0;
+}
+
+.about-page-top-layout .socials-text p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--primary-green);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.about-page-top-layout .layout-content h1 {
+  font-size: 5rem;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  margin-bottom: 0.5rem;
+}
+
+.about-page-top-layout .layout-content h1 .highlight {
+  color: #81b03f;
+}
+
+.about-page-top-layout .layout-content p {
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+  letter-spacing: normal;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.contact-us-btn {
+  background-color: var(--primary-green);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+.contact-us-btn i {
+  font-size: 10px;
+  height: 16px;
+  width: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffffce;
+  border-radius: 50%;
+  padding: 0rem;
+  color: var(--primary-green);
+}
+
+.contact-us-btn:hover {
+  background-color: #fff;
+  color: var(--primary-green);
+}
+
+@media (max-width: 768px) {
+  .about-page-top-layout {
+    height: 500px;
+    min-height: fit-content;
+  }
+
+  .about-page-top-layout .pagination-custom {
+    right: auto !important;
+    top: auto !important;
+    bottom: 1.5rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) rotate(0deg) !important;
+  }
+
+  .about-page-top-layout .pagination-custom .swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+    margin: 0 0.35rem !important;
+  }
+
+  .about-page-top-layout
+    .pagination-custom
+    .swiper-pagination-bullet-active::before {
+    width: calc(100% + 8px) !important;
+    height: calc(100% + 8px) !important;
+  }
+
+  .about-swiper-button-container {
+    padding-top: 2rem;
+  }
+
+  .about-page-top-layout .layout-content h1 {
+    font-size: 1.875rem;
+  }
+
+  .about-page-top-layout .layout-content p {
+    font-size: 0.9375rem;
+  }
+
+  .about-page-top-layout .socials {
+    position: relative;
+    right: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    padding-bottom: 10rem;
+
+    display: none;
+  }
+
+  .about-page-top-layout .socials-item {
+    transform: none;
+  }
+}
+
+
 .about-page-layout {
   position: relative;
   width: 100%;

@@ -190,6 +190,64 @@ const swiperPartners = new Swiper(".swiper-partners", {
   },
 });
 
+// =======================FEATURED PRODUCTS CAROUSEL===================================
+const featuredProductsSwiperEl = document.querySelector(
+  ".featured-products .featured-products-swiper",
+);
+
+if (featuredProductsSwiperEl) {
+  const featuredProductsSwiper = new Swiper(".featured-products-swiper", {
+    slidesPerView: 1.2,
+    spaceBetween: 20,
+    loop: false,
+    grabCursor: true,
+    pagination: {
+      el: ".featured-products-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2.2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 24,
+      },
+    },
+  });
+}
+
+// =======================CATEGORY DEALS CAROUSEL===================================
+const categorySwiperEl = document.querySelector(".category-swiper");
+
+if (categorySwiperEl) {
+  const categorySwiper = new Swiper(".category-swiper", {
+    slidesPerView: 1.1,
+    spaceBetween: 16,
+    loop: true,
+    grabCursor: true,
+    navigation: {
+      nextEl: ".category-swiper-next",
+      prevEl: ".category-swiper-prev",
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1.6,
+        spaceBetween: 18,
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      // 1320: {
+      //   slidesPerView: 3,
+      //   spaceBetween: 24,
+      // },
+    },
+  });
+}
+
 // =======================ABOUT PAGE HERO SWIPER===================================
 const homeHeroSwiperEl = document.querySelector(".home-hero-swiper");
 
