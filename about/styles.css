@@ -5,6 +5,7 @@
   min-height: 60vh;
 }
 
+
 .about-page-layout {
   position: relative;
   width: 100%;
@@ -12,7 +13,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 .about-page-layout::before {
@@ -22,114 +22,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #061f16;
-  opacity: 0.7;
-  z-index: 10;
+  background-color: #061f16f1;
+  /* background: linear-gradient(to right, #061f16e3, rgba(0, 0, 0, 0.432)); */
 }
 
-.about-page-layout::after {
-  content: "";
-  background: url("https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/02/slider-leafs.png")
-    no-repeat center center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 12;
-}
-
-@keyframes zoom-in {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-  }
-}
-
-.about-page-layout .image-slider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.about-page-layout .image-slider .swiper-wrapper,
-.about-page-layout .image-slider .swiper-slide {
-  width: 100%;
-  height: 100%;
-}
-
-.about-page-layout .image-slider img {
+.about-page-layout img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: zoom-in 12s ease-in-out infinite alternate;
-}
-
-.about-page-layout .image-slider .swiper-button-prev,
-.about-page-layout .image-slider .swiper-button-next {
-  color: #ffffff;
-}
-
-.about-page-layout .pagination-custom {
-  right: 0rem !important;
-  top: 50% !important;
-  transform: translateY(-50%) rotate(90deg);
-  width: fit-content !important;
-  height: fit-content !important;
-  z-index: 1000000000000000000 !important;
-
-  position: absolute !important;
-}
-
-.about-page-layout .pagination-custom .pagination-custom-inner {
-  position: relative !important;
-  top: auto !important;
-  left: auto !important;
-  transform: none !important;
-  width: fit-content !important;
-  height: fit-content !important;
-  background-color: transparent !important;
-  position: relative !important;
-}
-
-.about-page-layout .pagination-custom .swiper-pagination-bullet {
-  background: rgb(255, 255, 255);
-  width: 18px !important;
-  height: 18px !important;
-  border-radius: 50% !important;
-  opacity: 1 !important;
-  margin: 0.5rem !important;
-  margin-left: 1rem !important;
-  margin-right: 1rem !important;
-  position: relative !important;
-}
-
-.about-page-layout .pagination-custom .swiper-pagination-bullet-active {
-  background: #81b03f !important;
-  opacity: 1 !important;
-  z-index: 15 !important;
-}
-
-.about-page-layout .pagination-custom .swiper-pagination-bullet-active::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(100% + 12px);
-  height: calc(100% + 12px);
-  background: #81b03f52 !important;
-  border: 2px solid #81b03f !important;
-  border-radius: 50% !important;
-  z-index: 10 !important;
 }
 
 .about-page-layout .layout-content {
@@ -144,7 +44,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  z-index: 15;
+  z-index: 10;
   gap: 2rem;
 }
 
@@ -159,74 +59,38 @@
   gap: 2rem;
 }
 
-.about-page-layout .layout-content-inner .layout-content-inner-text {
+.about-page-layout .layout-content-inner .column {
+  width: 50%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: auto;
+  align-items: flex-start;
+}
+
+.about-page-layout .layout-content-inner .column.layout-content-inner-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+}
+
+
+.about-page-layout .layout-content-inner .column.layout-content-inner-image img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.about-page-layout .socials {
-  position: absolute;
-  top: 50%;
-  left: -5rem;
-  right: auto;
-  transform: translateY(-50%) rotate(-90deg);
-  width: fit-content;
-  height: fit-content;
-  z-index: 1000;
-
+.about-page-layout .layout-content-inner .column.layout-content-inner-text {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-.about-page-layout .socials-inner-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-.about-page-layout .socials-inner {
-  display: flex;
-  flex-direction: row;
-  /* justify-content: center; */
-  align-items: center;
-  gap: 1rem;
-}
-
-.about-page-layout .socials-item {
-  width: auto;
+  align-items: flex-start;
   height: auto;
-  border-radius: 50%;
-  transform: rotate(90deg);
-}
-
-.about-page-layout .socials-item i {
-  font-size: 1.35rem;
-  color: #fff;
-}
-
-.about-page-layout .separator {
-  width: 50px;
-  height: 1px;
-  background-color: var(--primary-green);
-  margin: 1rem 0;
-}
-
-.about-page-layout .socials-text p {
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--primary-green);
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 .about-page-layout .layout-content h1 {
@@ -234,7 +98,7 @@
   line-height: 1.1;
   font-weight: 700;
   color: #fff;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
   letter-spacing: 0.025em;
   margin-bottom: 0.5rem;
@@ -247,12 +111,10 @@
 .about-page-layout .layout-content p {
   font-size: 1.25rem;
   font-weight: 400;
-  text-align: center;
+  text-align: left;
   color: #fff;
   letter-spacing: normal;
   margin-bottom: 2rem;
-  width: 100%;
-  max-width: 900px;
 }
 
 .contact-us-btn {
@@ -273,22 +135,19 @@
   outline: none;
 }
 
-.contact-us-btn i {
-  font-size: 10px;
-  height: 16px;
+.contact-us-btn svg {
   width: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffffffce;
-  border-radius: 50%;
-  padding: 0rem;
-  color: var(--primary-green);
+  height: 16px;
+  fill: #fff;
 }
 
 .contact-us-btn:hover {
   background-color: #fff;
   color: var(--primary-green);
+}
+
+.contact-us-btn:hover svg {
+  fill: var(--primary-green);
 }
 
 /* ====================Our Mission section================= */

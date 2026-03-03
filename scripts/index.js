@@ -181,10 +181,6 @@ const swiperPartners = new Swiper(".swiper-partners", {
     disableOnInteraction: false,
     pauseOnMouseEnter: false,
   },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
   grabCursor: false, // Allows free scrolling
   breakpoints: {
     // Responsive breakpoints
@@ -195,10 +191,10 @@ const swiperPartners = new Swiper(".swiper-partners", {
 });
 
 // =======================ABOUT PAGE HERO SWIPER===================================
-const aboutImageSwiperEl = document.querySelector(".about-page-layout .image-slider");
+const homeHeroSwiperEl = document.querySelector(".home-hero-swiper");
 
-if (aboutImageSwiperEl) {
-  const aboutImageSwiper = new Swiper(".about-page-layout .image-slider", {
+if (homeHeroSwiperEl) {
+  const homeHeroSwiper = new Swiper(".home-hero-swiper", {
     loop: true,
     speed: 1000,
     effect: "fade",
@@ -213,8 +209,8 @@ if (aboutImageSwiperEl) {
       clickable: true,
     },
     navigation: {
-      nextEl: ".about-page-layout .image-slider .swiper-button-next",
-      prevEl: ".about-page-layout .image-slider .swiper-button-prev",
+      nextEl: ".home-hero-swiper .swiper-button-next",
+      prevEl: ".home-hero-swiper .swiper-button-prev",
     },
     fadeEffect: {
       crossFade: true,
