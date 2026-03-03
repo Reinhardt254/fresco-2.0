@@ -1120,6 +1120,66 @@ body.no-scroll {
   color: var(--primary-green);
 }
 
+@media (max-width: 768px) {
+  .home-page-layout {
+    height: 500px;
+    min-height: fit-content;
+  }
+
+  .home-page-layout .pagination-custom {
+    right: auto !important;
+    top: auto !important;
+    bottom: 1.5rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) rotate(0deg) !important;
+  }
+
+  .home-page-layout .pagination-custom .swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+    margin: 0 0.35rem !important;
+  }
+
+  .home-page-layout
+    .pagination-custom
+    .swiper-pagination-bullet-active::before {
+    width: calc(100% + 8px) !important;
+    height: calc(100% + 8px) !important;
+  }
+
+  .about-swiper-button-container {
+    padding-top: 2rem;
+  }
+
+  .home-page-layout .layout-content h1 {
+    font-size: 1.875rem;
+  }
+
+  .home-page-layout .layout-content p {
+    font-size: 0.9375rem;
+  }
+
+  .home-page-layout .socials {
+    position: relative;
+    right: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    padding-bottom: 10rem;
+
+    display: none;
+  }
+
+  .home-page-layout .socials-item {
+    transform: none;
+  }
+}
+
 
 /* ---------------------------------Welcome to Fresco Section--------------------------------- */
 
