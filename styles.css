@@ -1116,13 +1116,13 @@ body.no-scroll {
   width: 60px;
   height: 60px;
   background-color: #245811;
-  border-radius: 5%;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 0.5rem;
 
-  display: none;
+  /* display: none; */
 }
 
 .benefit-card .icon-container img {
