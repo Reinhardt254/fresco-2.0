@@ -192,9 +192,21 @@
 }
 
 .retail-section-fullwidth .retail-section-content {
-  width: 50%;
-  padding: 3rem 4rem;
-  max-width: none;
+  width: 46%;
+  padding: 3rem 0rem;
+  max-width: 700px;
+}
+
+.retail-section-image-left  .retail-section-content  {
+  margin-right: auto;
+  padding-left: 3rem;
+  box-sizing: border-box;
+}
+
+.retail-section-image-right  .retail-section-content  {
+  margin-left: auto;
+  padding-right: 3rem;
+  box-sizing: border-box;
 }
 
 .retail-section-fullwidth .retail-media-shape {
@@ -479,7 +491,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 1200px;
+  max-width: 1400px;
   width: 92%;
   margin: 0 auto;
 }
