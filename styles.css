@@ -19,7 +19,7 @@
   --section-subheading-size: 1.25rem;
   --section-description-size: 1rem;
 }
- 
+
 p {
   font-family: "Poppins", serif !important;
 }
@@ -50,8 +50,6 @@ button {
   padding: 0rem !important;
   color: var(--primary-green) !important;
 }
-
-
 
 /* Reset and Base Styles */
 * {
@@ -101,11 +99,20 @@ div.sub-heading {
 
 .sub-heading-image {
   position: absolute;
-  height: auto;
-  width: auto;
+  height: 50px;
+  width: 50px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.sub-heading-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.10;
+  display: block;
+  margin: 0 auto;
 }
 
 .title-underline {
@@ -864,8 +871,6 @@ body.no-scroll {
   z-index: 5;
 }
 
-
-
 /* Hero Section - full bleed, background image */
 .hero-section {
   position: relative;
@@ -1006,7 +1011,9 @@ body.no-scroll {
   padding: 1rem 2rem;
   font-size: 0.875rem;
   letter-spacing: 0.2rem;
-  transition: background-color 0.25s ease, transform 0.2s ease;
+  transition:
+    background-color 0.25s ease,
+    transform 0.2s ease;
 }
 
 .hero-cta:hover {
@@ -1015,8 +1022,12 @@ body.no-scroll {
 }
 
 @media (max-width: 768px) {
+  .home-page-layout {
+    height: 500px;
+  }
+
   .hero-section {
-    min-height: 85vh;
+    height: 100%;
   }
 
   .hero-content {
@@ -1035,6 +1046,26 @@ body.no-scroll {
   .hero-description {
     margin-bottom: 1.5rem;
   }
+
+  .eyrow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .eyrow {
+    font-size: 0.8rem;
+  }
+
+  .eyrow-line {
+    width: 80px;
+  }
+
+  .eyrow-line.left {
+    display: none;
+  }
 }
 
 /* ---------------------------------Banner Section--------------------------------- */
@@ -1048,7 +1079,8 @@ body.no-scroll {
 
 .banner::after {
   content: "";
-  background: url("https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f2e489e095f583f994d26f169e443606816f1bec1ea82ee8c0c19cb9d0&w=1060") no-repeat center center;
+  background: url("https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f2e489e095f583f994d26f169e443606816f1bec1ea82ee8c0c19cb9d0&w=1060")
+    no-repeat center center;
   background-size: cover;
   position: absolute;
   top: 0;
@@ -1108,8 +1140,22 @@ body.no-scroll {
 
 .benefit-card {
   text-align: left;
-  border-left: 2px solid #245811;
+  /* border-left: 2px solid #245811; */
   padding-left: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.benefit-card .benefit-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0rem;
+  width: calc(100% - 60px);
 }
 
 .benefit-card .icon-container {
@@ -1191,7 +1237,9 @@ body.no-scroll {
   font-weight: 600;
   letter-spacing: 0.05em;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
 }
 
 .banner-cta-button:hover {
@@ -1201,33 +1249,93 @@ body.no-scroll {
 
 @media (max-width: 992px) {
   .banner-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
   }
 
   .banner-column {
     align-items: center;
   }
 
-  .benefit-card {
-    max-width: 320px;
-  }
-
   .benefit-title-row {
     justify-content: center;
   }
 }
+  
+  .banner-center-mobile {
+    display: none;
+  }
 
 @media (max-width: 600px) {
   .banner {
     padding: 3rem 0 3.5rem;
   }
 
+  .banner-grid {
+    gap: 1rem;
+  }
+
   .banner-center-image {
     width: 220px;
   }
-}
 
+  .banner-column {
+    gap: 1rem;
+  }
+
+  .benefit-card {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #f5f5f5;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .benefit-card .icon-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .banner-center {
+    order: 3;
+  }
+
+  .benefit-card .benefit-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+    width: 100%;
+  }
+
+  .benefit-description {
+    text-align: center;
+  }
+
+  .banner-center-image {
+    display: none;
+  }
+
+  .banner-center-mobile {
+    display: block;
+  }
+
+  .banner-center-image-mobile {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+  }
+}
 
 /* ---------------------------------category Section--------------------------------- */
 .category-section {
@@ -1239,24 +1347,16 @@ body.no-scroll {
   height: 100%;
 }
 
-/* .category-section::after {
-  content: "";
-  background: url("https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/02/slider-leafs.png")
-    no-repeat center center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
-} */
-
+.category-section .container {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+}
 
 .category-section::before {
   content: "";
-  background: url("https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f2e489e095f583f994d26f169e443606816f1bec1ea82ee8c0c19cb9d0&w=1060") no-repeat center center;
+  background: url("https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f2e489e095f583f994d26f169e443606816f1bec1ea82ee8c0c19cb9d0&w=1060")
+    no-repeat center center;
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
@@ -1275,11 +1375,20 @@ body.no-scroll {
 }
 
 .category-container {
-  max-width: 1400px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   z-index: 10;
+}
+
+.category-swiper {
+  height: 100%;
+}
+
+.category-swiper-wrapper {
+  height: auto;
+  display: flex;
+  align-items: stretch;
 }
 
 .category-header-row {
@@ -1323,7 +1432,10 @@ body.no-scroll {
   justify-content: center;
   cursor: pointer;
   color: #163323;
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
 }
 
 .category-nav-button i {
@@ -1337,16 +1449,12 @@ body.no-scroll {
   transform: translateY(-1px);
 }
 
-.category-container {
-  max-width: 1400px;
-  width: 90%;
-  margin: 0 auto;
-}
-
-.category {
+.category-swiper-wrapper .category {
   position: relative;
   padding: 20px 24px;
   border-radius: 16px;
+  box-sizing: border-box;
+  height: auto;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -1357,7 +1465,8 @@ body.no-scroll {
 
 .category::after {
   content: "";
-  background: url("https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f2e489e095f583f994d26f169e443606816f1bec1ea82ee8c0c19cb9d0&w=1060") no-repeat center center;
+  background: url("https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f2e489e095f583f994d26f169e443606816f1bec1ea82ee8c0c19cb9d0&w=1060")
+    no-repeat center center;
   background-size: cover;
   position: absolute;
   top: 0;
@@ -1486,23 +1595,50 @@ body.no-scroll {
 }
 
 @media (max-width: 640px) {
-  .category {
+  .category-section {
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
+    padding: 0.5rem 0 2.5rem 0;
   }
 
-  .category .column-left,
-  .category .column-right {
-    width: 100%;
+  .category-section .container {
+    width: 95%;
   }
 
   .category-section .column-right {
     justify-content: flex-start;
   }
 
+  .category-swiper-wrapper .category {
+    padding: 1.5rem 1rem;
+  }
+
   .category-section .column-right .product-jar {
     max-width: 180px;
+  }
+
+  .category .column-left {
+    width: 65%;
+  }
+
+  .category .column-right {
+    width: 35%;
+  }
+
+  .category .category-heading-container {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .category-swiper-wrapper .category
+    {
+      border-radius: 5px;
+  }
+
+  .category-footer-controls {
+    margin-top: 2rem;
   }
 }
 
@@ -1516,7 +1652,8 @@ body.no-scroll {
 
 .featured-products::after {
   content: "";
-  background: url("https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f2e489e095f583f994d26f169e443606816f1bec1ea82ee8c0c19cb9d0&w=1060") no-repeat center center;
+  background: url("https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f2e489e095f583f994d26f169e443606816f1bec1ea82ee8c0c19cb9d0&w=1060")
+    no-repeat center center;
   background-size: cover;
   position: absolute;
   top: 0;
@@ -1600,7 +1737,7 @@ body.no-scroll {
 }
 
 .featured-products-pagination {
-  margin-top: 24px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -1811,13 +1948,16 @@ body.no-scroll {
     gap: 10px;
   }
 
-  .featured-products{
+  .featured-products {
     padding: 30px 10px;
   }
- 
+
   .banner {
-    padding: 40px 30px;
     min-height: 350px;
+  }
+
+  .banner-container {
+    width: 95%;
   }
 
   .banner-headline {
@@ -1895,7 +2035,7 @@ body.no-scroll {
 }
 
 .food-recipes-stat-card {
-  background-color:var(--primary-green);
+  background-color: var(--primary-green);
   border-radius: 10px;
   padding: 14px 18px;
   display: flex;
@@ -2073,7 +2213,6 @@ body.no-scroll {
 }
 
 .food-recipes-image-large {
-
 }
 
 @media (max-width: 992px) {
@@ -2258,7 +2397,11 @@ body.no-scroll {
   align-items: center;
 }
 
-.home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-video {
+.home-cta
+  .top-container
+  .overlay-content
+  .video-thumbnail
+  .video-thumbnail-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -2275,20 +2418,33 @@ body.no-scroll {
   display: none;
 }
 
-.home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-video.active {
+.home-cta
+  .top-container
+  .overlay-content
+  .video-thumbnail
+  .video-thumbnail-video.active {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-video iframe {
+.home-cta
+  .top-container
+  .overlay-content
+  .video-thumbnail
+  .video-thumbnail-video
+  iframe {
   width: 100%;
   height: 100%;
   aspect-ratio: 16/9;
   border-radius: 10px;
 }
 
-.home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-image {
+.home-cta
+  .top-container
+  .overlay-content
+  .video-thumbnail
+  .video-thumbnail-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -2299,14 +2455,23 @@ body.no-scroll {
   align-items: center;
 }
 
-.home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-image img {
+.home-cta
+  .top-container
+  .overlay-content
+  .video-thumbnail
+  .video-thumbnail-image
+  img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
 }
 
-.home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-play-button {
+.home-cta
+  .top-container
+  .overlay-content
+  .video-thumbnail
+  .video-thumbnail-play-button {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -2322,7 +2487,12 @@ body.no-scroll {
   border: 9px solid #ffffff;
 }
 
-.home-cta .top-container .overlay-content .video-thumbnail .video-thumbnail-play-button i {
+.home-cta
+  .top-container
+  .overlay-content
+  .video-thumbnail
+  .video-thumbnail-play-button
+  i {
   font-size: 40px;
   color: #ffffff;
 }
@@ -2442,7 +2612,7 @@ body.no-scroll {
   }
 
   .home-cta .top-container {
-   padding: 10px;
+    padding: 10px;
   }
 
   .home-cta .top-container .overlay-content {
@@ -2450,37 +2620,35 @@ body.no-scroll {
     width: 100%;
   }
 
-  .home-cta .bottom-container
- {
-  padding: 10px;
-  padding-bottom: 120px;
- }
+  .home-cta .bottom-container {
+    padding: 10px;
+    padding-bottom: 120px;
+  }
 
- .home-cta .bottom-container .overlay-right-bottom {
-  width: 300px;
-  max-width: 50vw;
-  bottom: -10%;
- }
+  .home-cta .bottom-container .overlay-right-bottom {
+    width: 300px;
+    max-width: 50vw;
+    bottom: -10%;
+  }
 
- .home-cta .bottom-container .overlay-left-bottom {
-  width: 300px;
-  max-width: 20vw;
- }
+  .home-cta .bottom-container .overlay-left-bottom {
+    width: 300px;
+    max-width: 20vw;
+  }
 
- .home-cta .bottom-container .overlay-center-bottom {
-  position: absolute;
-  bottom: -10%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 500px;
-  max-width: 90vw;
-  height: auto;
-  object-fit: cover;
-  z-index: 1;
-}
+  .home-cta .bottom-container .overlay-center-bottom {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    max-width: 90vw;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+  }
 
-.home-cta .bottom-container .overlay-left-bottom
- {
+  .home-cta .bottom-container .overlay-left-bottom {
     position: absolute;
     bottom: -15%;
     left: -15%;
@@ -2490,8 +2658,7 @@ body.no-scroll {
     object-fit: cover;
     z-index: 1;
     transform: rotate(10deg);
-}
- 
+  }
 }
 
 /* =========== Food Recipes / Behind the Brand Section END =========== */
@@ -2519,10 +2686,11 @@ body.no-scroll {
   justify-content: space-around;
   pointer-events: none;
   z-index: 2;
-  background: url("https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f2e489e095f583f994d26f169e443606816f1bec1ea82ee8c0c19cb9d0&w=1060") no-repeat center center;
+  background: url("https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f2e489e095f583f994d26f169e443606816f1bec1ea82ee8c0c19cb9d0&w=1060")
+    no-repeat center center;
   background-size: cover;
   background-repeat: no-repeat;
-} 
+}
 
 .why-choose-us-container {
   max-width: 1400px;
@@ -2537,7 +2705,7 @@ body.no-scroll {
 .why-choose-us-decorative {
   width: 200px;
   height: 3px;
- 
+
   margin: 0 auto 24px;
   position: relative;
 }
@@ -2678,6 +2846,403 @@ body.no-scroll {
 }
 /* =========== Why Choose Us Section END =========== */
 
+/* =========== Reviews Section START =========== */
+.reviews {
+  background-color: #0f3d2e;
+  padding: 5rem 0 5rem 0;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 10;
+}
+
+.reviews::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f2e489e095f583f994d26f169e443606816f1bec1ea82ee8c0c19cb9d0&w=1060") no-repeat center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.015;
+  z-index: 1;
+}
+
+.reviews-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px;
+  position: relative;
+  z-index: 5;
+  width: 90%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0rem;
+}
+
+.reviews-container .section-title {
+  color: #ffffff;
+}
+
+.reviews-container .section-title .highlight-text {
+  color: var(--primary-green);
+}
+
+.reviews-container .section-description {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Josefin Sans", sans-serif !important;
+}
+
+.review-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  
+}
+
+.review-heading .left-row {
+  width: 50%;
+}
+
+.review-heading .left-row .reviews-heading {
+  font-size: var(--section-title-size);
+  line-height: 1.5;
+  color: #ffffff;
+  font-family: "Josefin Sans", sans-serif !important;
+}
+
+.review-heading .left-row .reviews-heading-span {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+  font-family: "Josefin Sans", sans-serif !important;
+}
+
+.review-heading .right-row {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.review-heading .right-row .reviews-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: auto;
+}
+
+.reviews-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  width: 100%;
+}
+
+.reviews-left,
+.reviews-right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.reviews-hero-swiper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.reviews-hero-swiper .underlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.reviews-hero-swiper .underlay svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+
+  transform: rotate(45deg);
+}
+
+.reviews-hero-swiper .swiper-wrapper {
+  align-items: stretch;
+  height: 100%;
+}
+
+.reviews-hero-swiper .swiper-wrapper .swiper-slide {
+  box-shadow: none;
+  height: auto;
+}
+
+.review-hero-card {
+  border-radius: 10px;
+  padding: 3rem 3rem;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0rem;
+}
+
+
+.review-hero-avatar {
+  position: relative;
+  z-index: 2;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  margin: 0 auto 1.5rem;
+}
+
+.review-hero-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.review-hero-text {
+  position: relative;
+  z-index: 2;
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: center;
+  max-width: 440px;
+  margin: 0 auto 1.5rem;
+  color: #ffffff;
+}
+
+.review-hero-name {
+  position: relative;
+  z-index: 2;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  margin: 0 0 1.75rem;
+}
+
+.review-hero-nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.review-nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #ff9f1c;
+  color: #ffffff;
+  box-shadow: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.review-nav-btn i {
+  font-size: 14px;
+}
+
+.review-nav-btn:hover {
+  box-shadow: none;
+  background-color: #ffb627;
+}
+
+/* .review-nav-btn-prev {
+  background-color: #ffffff;
+  color: #0f3f24;
+} */
+
+.review-nav-btn-prev:hover {
+  background-color: #f2f5f0;
+}
+
+.reviews-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.reviews-image-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.reviews-image-container img {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.reviews-heading {
+  font-size: var(--section-title-size);
+  line-height: 1.1;
+  color: #213029;
+  font-family: "Josefin Sans", sans-serif !important;
+}
+
+.reviews-stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.reviews-stars i {
+  color: var(--star-rating-color);
+  font-size: 18px;
+}
+
+.reviews-right-avatars {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.reviews-right-avatars img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+}
+
+.reviews-right-avatars img + img {
+  margin-left: -14px;
+}
+
+.reviews-trusted-text {
+  margin: 0.5rem 0 0;
+  font-size: 15px;
+  color: #4a5c52;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .reviews-inner {
+    gap: 2.5rem;
+  }
+
+  .review-hero-card {
+    padding: 2.6rem 2.4rem 2.3rem;
+  }
+
+  .reviews-heading {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews {
+    padding: 3.5rem 0 4rem 0;
+  }
+
+  .reviews-container {
+    width: 95%;
+    padding: 0 12px;
+  }
+
+  .reviews-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .reviews-right {
+    align-items: center;
+  }
+
+  .reviews-heading {
+    font-size: 30px;
+  }
+}
+
+/* =========== Reviews Section END =========== */
+/* =========== Bottom Overlay Section START =========== */
+.bottom-overlay {
+  background-color: #ffffff;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.bottom-overlay-image {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-overlay-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  object-position: top;
+  object-fit: cover;
+}
+/* =========== Bottom Overlay Section END =========== */
 /* ================== Quality Commitment Section START ================== */
 .partners-new {
   padding: 3rem 0 3rem 0;
@@ -2762,7 +3327,7 @@ body.no-scroll {
   backface-visibility: hidden;
   will-change: transform;
 }
- 
+
 @media only screen and (max-width: 768px) {
   .partners-new {
     padding: 2.5rem 0;

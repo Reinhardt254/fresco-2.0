@@ -197,8 +197,8 @@ const featuredProductsSwiperEl = document.querySelector(
 
 if (featuredProductsSwiperEl) {
   const featuredProductsSwiper = new Swiper(".featured-products-swiper", {
-    slidesPerView: 1.2,
-    spaceBetween: 20,
+    slidesPerView: 2,
+    spaceBetween: 10,
     loop: false,
     grabCursor: true,
     pagination: {
@@ -207,7 +207,7 @@ if (featuredProductsSwiperEl) {
     },
     breakpoints: {
       640: {
-        slidesPerView: 2.2,
+        slidesPerView: 2,
         spaceBetween: 20,
       },
       1024: {
@@ -223,7 +223,7 @@ const categorySwiperEl = document.querySelector(".category-swiper");
 
 if (categorySwiperEl) {
   const categorySwiper = new Swiper(".category-swiper", {
-    slidesPerView: 1.1,
+    slidesPerView: 1,
     spaceBetween: 16,
     loop: true,
     grabCursor: true,
@@ -233,7 +233,7 @@ if (categorySwiperEl) {
     },
     breakpoints: {
       640: {
-        slidesPerView: 1.6,
+        slidesPerView: 1,
         spaceBetween: 18,
       },
       1024: {
@@ -341,6 +341,31 @@ if (aboutSwiperEl) {
       slideChange(swiper) {
         setMissionDepthClasses(swiper);
       },
+    },
+  });
+}
+
+// =======================REVIEWS HERO SWIPER===================================
+const reviewsHeroSwiperEl = document.querySelector(".reviews-hero-swiper");
+
+if (reviewsHeroSwiperEl) {
+  const reviewsHeroSwiper = new Swiper(".reviews-hero-swiper", {
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 20,
+    effect: "slide",
+    speed: 900,
+    navigation: {
+      nextEl: ".review-nav-btn-next",
+      prevEl: ".review-nav-btn-prev",
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: false,
+    },
+    fadeEffect: {
+      crossFade: true,
     },
   });
 }
