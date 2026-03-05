@@ -1,0 +1,545 @@
+.cart-page {
+  background-color: #ffffff;
+  color: #222;
+}
+
+.cart-hero {
+  padding: 3rem 0 1rem;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background-color: #e9eeed;
+  overflow: hidden;
+}
+
+.cart-hero::after {
+  content: "";
+  background: url("https://img.freepik.com/premium-vector/spices-herbs-hand-sketch-seamless-pattern-background-greenery-plants-engraving_514903-1234.jpg?w=1480")
+    no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  z-index: 5;
+}
+
+/* .cart-hero::before {
+  content: "";
+  background: url("https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/02/slider-leafs.png")
+    no-repeat;
+  background-size: contain;
+  background-position: top;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100% ;
+  opacity: 1;
+  z-index: 7;
+} */
+
+.cart-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 0%;
+}
+
+.cart-title {
+  font-size: 2.85rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.cart-title .highlight {
+  color: var(--primary-green);
+}
+
+.cart-breadcrumb {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0;
+}
+
+.cart-layout {
+  padding: 4rem 0 3rem;
+}
+
+.cart-layout-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 92%;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 0.9fr);
+  gap: 1.75rem;
+  align-items: flex-start;
+}
+
+.cart-table {
+  background-color: #ffffff;
+  border-radius: 0px;
+  overflow: hidden;
+}
+
+.cart-table-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(0, 0.8fr) minmax(
+      0,
+      0.8fr
+    ) minmax(0, 0.9fr);
+  gap: 1rem;
+  padding: 0.9rem 1.5rem;
+  background-color: #1c755700;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #3b3b3b;
+  border-radius: 5px;
+}
+
+.cart-table-header span {
+  color: #000000;
+}
+
+.cart-col-product {
+  text-align: left;
+  padding-left: 20%;
+}
+
+.cart-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1.8fr) minmax(0, 0.8fr) minmax(
+      0,
+      0.8fr
+    ) minmax(0, 0.9fr);
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  padding-left: 0%;
+  border-top: 1px solid #f0f0f0;
+}
+
+.cart-col-qty {
+  text-align: center;
+}
+
+.cart-col-price {
+  text-align: center;
+}
+
+.cart-col-subtotal {
+  text-align: center;
+}
+
+.cart-row:nth-child(odd) {
+  background-color: #fdfdfd;
+}
+
+.cart-remove {
+  border: none;
+  background: none;
+  color: #999;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.cart-remove:hover {
+  color: #e06a5f;
+}
+
+.cart-product {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cart-product-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-product-image img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.cart-product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.cart-product-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif !important;
+}
+
+.cart-product-meta {
+  font-size: 1rem;
+  color: #888;
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif !important;
+}
+
+.cart-price,
+.cart-subtotal {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.cart-qty {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  max-width: fit-content;
+}
+
+.cart-qty-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-qty-input {
+  width: 42px;
+  border: none;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 0;
+}
+
+.cart-qty-input:focus {
+  outline: none;
+}
+
+/* Hide native number input spinners for cart quantity */
+.cart-qty-input::-webkit-outer-spin-button,
+.cart-qty-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cart-qty-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.cart-actions-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem 1.25rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.cart-actions-row--simple {
+  justify-content: flex-start;
+  padding-top: 2rem;
+  padding-left: 0 !important;
+}
+
+.cart-clear {
+  border: none;
+  background: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #e06a5f;
+  cursor: pointer;
+  border-bottom: 1px solid #e06a5f;
+}
+
+.cart-summary {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(15, 61, 46, 0.027);
+  padding: 1.75rem 1.5rem 2rem;
+  border: 1px solid #f0f0f0;
+}
+
+.cart-summary-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+
+.cart-summary-list {
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+.cart-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  padding: 0.4rem 0;
+}
+
+.cart-summary-row-discount dd {
+  color: #e06a5f;
+}
+
+.cart-summary-row-total {
+  border-top: 1px solid #f0f0f0;
+  margin-top: 0.4rem;
+  padding-top: 0.7rem;
+  font-weight: 700;
+}
+
+.cart-summary-row dt {
+  color: #666;
+}
+
+.cart-summary-row dd {
+  margin: 0;
+  color: #333;
+}
+
+.cart-summary-checkout {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--primary-green);
+  cursor: pointer;
+}
+
+.cart-summary-checkout:hover {
+  background-color: #009f5d;
+}
+
+.cart-benefits {
+  padding: 4rem 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-benefits-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 92%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.cart-benefit {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cart-benefit-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  background-color: #226e55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-benefit-icon i {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.cart-benefit-text h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.2rem;
+}
+
+.cart-benefit-text p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+  font-family: "Poppins", sans-serif !important;
+}
+
+/* ==========================Recommended products carousel ==============================*/
+.cart-recommended {
+  padding: 4rem 0;
+  background-color: #ffffff;
+  position: relative;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.cart-recommended::before {
+  content: "";
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif")
+    no-repeat;
+  background-size: cover;
+  background-position: top;
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.02;
+  z-index: 5;
+}
+
+.cart-recommended-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 92%;
+  position: relative;
+  z-index: 10;
+}
+
+.cart-recommended-header {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-recommended-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.3rem;
+}
+
+.cart-recommended-subtitle {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+.cart-recommended-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.cart-recommended-track {
+  padding: 0.25rem 0.1rem 0.5rem;
+}
+
+.product-card-add {
+  width: 100%;
+  max-width: fit-content;
+  padding: 0.85rem 1rem 0.6rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary-green);
+  color: #fff;
+  margin: 0.6rem 0 0.3rem;
+}
+
+.product-card-add:hover {
+  background-color: #0f3d2e;
+}
+
+.cart-recommended-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 3rem;
+}
+
+.cart-recommended-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #666;
+}
+
+.cart-recommended-btn:hover {
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+}
+
+@media (max-width: 960px) {
+  .cart-layout-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .cart-table-header {
+    display: none;
+  }
+
+  .cart-row {
+    grid-template-columns: auto minmax(0, 1.8fr);
+    grid-template-rows: auto auto auto;
+    align-items: flex-start;
+  }
+
+  .cart-price,
+  .cart-qty,
+  .cart-subtotal {
+    font-size: 0.85rem;
+  }
+
+  .cart-price {
+    grid-column: 2 / 3;
+  }
+
+  .cart-qty {
+    grid-column: 2 / 3;
+  }
+
+  .cart-subtotal {
+    grid-column: 2 / 3;
+  }
+
+  .cart-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cart-benefits-inner {
+    grid-template-columns: 1fr;
+  }
+}

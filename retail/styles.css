@@ -19,7 +19,7 @@
   text-decoration: none;
   margin-top: 2rem;
 }
-
+ 
 .contact-us-btn i {
   font-size: 10px;
   height: 16px;
@@ -115,13 +115,23 @@
 /* ==================== Content Sections ==================== */
 
 /* Section 1: Intro */
+.retail-section  {
+  position: relative;
+  z-index: 1;
+}
+
 .retail-section-intro {
   background-color: #e6eae9;
   position: relative;
   z-index: 1;
 }
 
-.retail-section-intro::after {
+.retail-section-content {
+  position: relative;
+  z-index: 1;
+}
+
+.retail-section-content::after {
   content: "";
   background: url(https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f…&w=1060)
     no-repeat center center;
@@ -131,11 +141,15 @@
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.02;
+  opacity: 0.03;
   z-index: 5;
 }
 
+
+
 .retail-intro-text {
+  position: relative;
+  z-index: 10;
   font-size: 1.15rem;
   font-weight: 400;
   line-height: 1.75;
@@ -145,12 +159,12 @@
 
 .retail-section {
   padding: 4rem 0;
-  background-color: #f4e5c9;
+  background-color: #0f3d2e;
   width: 100%;
 }
 
 .retail-section-alt {
-  background-color: #fff;
+  background-color: #e6eae9;
 }
 
 .retail-section-dark {
@@ -228,6 +242,11 @@
   min-height: 420px;
   object-fit: cover;
   display: block;
+
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  object-fit: cover;
 }
 
 .retail-section-narrow {
@@ -255,13 +274,6 @@
   align-items: center;
 }
 
-.retail-media-shape img {
-  width: 100%;
-  height: 100%;
-  max-height: 420px;
-  object-fit: cover;
-}
-
 .retail-section-content {
   width: 55%;
   display: flex;
@@ -283,9 +295,15 @@
   font-weight: 600;
   line-height: 1.25;
   margin: 0rem 0;
+  position: relative;
+  z-index: 10;
 }
 
 .retail-section-dark .retail-section-heading {
+  color: #fff;
+}
+
+.retail-section.text-white .retail-section-heading {
   color: #fff;
 }
 
@@ -313,6 +331,10 @@
   line-height: 1.7;
   color: #0f3d2e;
   margin: 0;
+}
+
+.retail-section.text-white p {
+  color: #fff;
 }
 
 .retail-section-lead {
@@ -433,7 +455,7 @@
 .retail-how-it-works {
   position: relative;
   padding: 4.5rem 0 5rem;
-  background-color: #fafaf8;
+  background-color: #e6eae9;
   overflow: hidden;
   position: relative;
   z-index: 1;
@@ -453,13 +475,13 @@
   z-index: 5;
 }
 
-.retail-how-it-works-bg {
+/* .retail-how-it-works-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
   background-color: #fafaf8;
   opacity: 1;
-}
+} */
 
 /* Subtle light green organic swirl pattern */
 .retail-how-it-works-bg::before {
@@ -487,7 +509,7 @@
 
 .retail-how-it-works-inner {
   position: relative;
-  z-index: 1;
+  z-index: 10;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -500,7 +522,7 @@
   font-family: "Playfair Display", serif;
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 600;
-  color: #2c2c2c;
+  color: #0f3d2e;
   margin: 0 0 0.5rem;
   letter-spacing: 0.02em;
 }
@@ -511,7 +533,7 @@
   color: #4a4a4a;
   line-height: 1.65;
   max-width: 640px;
-  margin: 0 0 3rem;
+  margin: 0rem 0 3rem 0;
 }
 
 .retail-steps-grid {
@@ -610,8 +632,9 @@
 
 /* CTA Section */
 
+
 /* -----------CTA Section Start----------- */
-.cta {
+.retail-page .cta {
   color: #f5f2ed;
   padding: 0rem;
   width: 100%;
@@ -625,7 +648,7 @@
   overflow: hidden;
 }
 
-.cta-bg {
+.retail-page .cta-bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -634,7 +657,7 @@
   margin-bottom: 0px;
 }
 
-.cta-inner {
+.retail-page .cta-inner {
   max-width: 1200px;
   width: 90%;
   margin: 0 auto;
@@ -643,13 +666,13 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 25%;
+  top: 26%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
 }
 
-.cta-heading {
+.retail-page .cta-heading {
   font-size: 2.5rem;
   font-weight: 700;
   color: #0f3d2e;
@@ -658,15 +681,15 @@
   margin-bottom: 0.5rem;
 }
 
-.cta-desc {
+.retail-page .cta-desc {
   font-size: 1.25rem;
   font-weight: 400;
   color: #0f3d2e;
   letter-spacing: normal;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
 }
 
-.cta-btn {
+.retail-page .cta-btn {
   background-color: var(--primary-green);
   color: #fff;
   padding: 1rem 2rem;
@@ -684,18 +707,18 @@
   outline: none;
 }
 
-.cta-btn svg {
+.retail-page .cta-btn svg {
   width: 16px;
   height: 16px;
   fill: #fff;
 }
 
-.cta-btn:hover {
+.retail-page .cta-btn:hover {
   background-color: #fff;
   color: var(--primary-green);
 }
 
-.cta-btn:hover svg {
+.retail-page .cta-btn:hover svg {
   fill: var(--primary-green);
 }
 

@@ -118,9 +118,16 @@
             <a href="/retail">Retail</a>
           </div>
           <div class="header-actions">
-            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            <i class="fa-solid fa-user user-icon"></i>
-            <i class="fa-solid fa-bag-shopping bag-icon"></i>
+            <i
+              id="search-open-icon"
+              class="fa-solid fa-magnifying-glass search-icon"
+            ></i>
+            <a href="/account">
+              <i class="fa-solid fa-user user-icon"></i>
+            </a>
+            <a href="/cart">
+              <i class="fa-solid fa-bag-shopping bag-icon"></i>
+            </a>
           </div>
         </div>
 
@@ -185,164 +192,122 @@
         </div>
       </section>
 
-      <section class="contact-form">
-        <div class="contact-form-container">
-          <div class="contact-form-image-wrap">
-            <img
-              src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A9375-1-scaled.jpg"
-              alt="Farmer with fresh produce"
-              class="contact-form-image"
-            />
-          </div>
-          <div class="contact-form-content">
-            <div class="sub-heading">
-              Get In Touch
-
-              <div class="sub-heading-image">
-                <img
-                  src="https://cdn-icons-png.freepik.com/512/12504/12504700.png?uid=R146131911&ga=GA1.1.1724219820.1772450282"
-                  alt="IMG"
-                />
+      <section class="contact-main">
+        <div class="contact-main-container">
+          <!-- Left: contact cards 2x2 + map -->
+          <div class="contact-main-left">
+            <div class="contact-cards-grid">
+              <div class="contact-card">
+                <div class="contact-card-icon">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                </div>
+                <h3 class="contact-card-label">Phone</h3>
+                <p class="contact-card-detail">
+                  <a href="tel:+19018965814">+1 (901) 896-5814</a>
+                </p>
+              </div>
+              <div class="contact-card">
+                <div class="contact-card-icon">
+                  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                </div>
+                <h3 class="contact-card-label">Whatsapp</h3>
+                <p class="contact-card-detail">
+                  <a href="https://wa.me/19018965814">+1 (901) 896-5814</a>
+                </p>
+              </div>
+              <div class="contact-card">
+                <div class="contact-card-icon">
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                </div>
+                <h3 class="contact-card-label">Email</h3>
+                <p class="contact-card-detail">
+                  <a href="mailto:info@frescoflavors.com"
+                    >info@frescoflavors.com</a
+                  >
+                </p>
+              </div>
+              <div class="contact-card">
+                <div class="contact-card-icon">
+                  <i class="fa-solid fa-shop" aria-hidden="true"></i>
+                </div>
+                <h3 class="contact-card-label">Our Shop</h3>
+                <p class="contact-card-detail">
+                  7910 Moriarty Rd, Cordova, TN 38018
+                </p>
               </div>
             </div>
-            <h2 class="contact-form-title">Leave Us a Message!</h2>
+            <div class="contact-map-wrap">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d61881.489831128325!2d-89.83236344471175!3d35.19412175135412!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2ske!4v1764248724074!5m2!1sen!2ske"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Location map"
+              ></iframe>
+            </div>
+          </div>
+          <!-- Right: Get In Touch form -->
+          <div class="contact-main-right">
+            <h2 class="contact-form-heading">Get In Touch</h2>
+            <p class="contact-form-desc">
+              We're here to help you with any questions or concerns. Send us a
+              message and we'll get back to you as soon as we can.
+            </p>
             <form
               class="contact-form-fields"
               action="#"
               method="post"
               aria-label="Contact form"
             >
-              <div class="contact-form-row">
-                <label for="contact-name" class="sr-only">Your Full Name</label>
+              <div class="contact-field">
+                <label for="contact-name">Name</label>
                 <input
                   type="text"
                   id="contact-name"
                   name="name"
-                  placeholder="Your Full Name*"
+                  placeholder="Your name"
                   required
                   class="contact-form-input"
                 />
-                <label for="contact-email" class="sr-only">Your Email</label>
+              </div>
+              <div class="contact-field">
+                <label for="contact-email">Email</label>
                 <input
                   type="email"
                   id="contact-email"
                   name="email"
-                  placeholder="Your Email*"
+                  placeholder="example@yourmail.com"
                   required
                   class="contact-form-input"
                 />
               </div>
-              <div class="contact-form-row">
-                <label for="contact-address" class="sr-only"
-                  >Your Address</label
-                >
+              <div class="contact-field">
+                <label for="contact-subject">Subject</label>
                 <input
                   type="text"
-                  id="contact-address"
-                  name="address"
-                  placeholder="Your Address"
-                  class="contact-form-input"
-                />
-                <label for="contact-phone" class="sr-only">Your Phone</label>
-                <input
-                  type="tel"
-                  id="contact-phone"
-                  name="phone"
-                  placeholder="Your Phone*"
-                  required
+                  id="contact-subject"
+                  name="subject"
+                  placeholder="Title..."
                   class="contact-form-input"
                 />
               </div>
-              <div class="contact-form-row contact-form-row-full">
-                <label for="contact-message" class="sr-only"
-                  >Your Message</label
-                >
+              <div class="contact-field">
+                <label for="contact-message">Message</label>
                 <textarea
                   id="contact-message"
                   name="message"
-                  placeholder="Your Message"
+                  placeholder="Type here..."
                   rows="5"
                   class="contact-form-textarea"
                 ></textarea>
               </div>
               <button type="submit" class="contact-form-submit">
-                Send Us Now
+                Send Now
               </button>
             </form>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact-section">
-        <div class="container">
-          <div class="contact-map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d61881.489831128325!2d-89.83236344471175!3d35.19412175135412!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2ske!4v1764248724074!5m2!1sen!2ske"
-              width="600"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Location map"
-            ></iframe>
-          </div>
-
-          <div class="contact-info-card">
-            <div class="contact-info-card-content">
-              <p class="eyebrow">Direct contact</p>
-              <h2>Reach out to us</h2>
-              <div class="contact-info-list">
-                <article>
-                  <i class="fa-solid fa-phone"></i>
-                  <div>
-                    <a href="tel:+1 (901) 896-5814">+1 (901) 896-5814</a>
-                  </div>
-                </article>
-                <article>
-                  <i class="fa-solid fa-envelope"></i>
-                  <div>
-                    <a href="mailto:info@frescoflavors.com"
-                      >info@frescoflavors.com</a
-                    >
-                  </div>
-                </article>
-                <article>
-                  <i class="fa-solid fa-location-dot"></i>
-                  <div>
-                    <div class="rte">
-                      <p>7910 Moriarty Rd<br />Cordova, TN 38018</p>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="contact-socials">
-                <h3>Follow Us</h3>
-                <div class="contact-socials-list">
-                  <a href="https://facebook.com" aria-label="Facebook">
-                    <i class="fa-brands fa-facebook"></i> </a
-                  ><a
-                    href="https://frescoflavors.myshopify.com/"
-                    aria-label="Instagram"
-                  >
-                    <i class="fa-brands fa-instagram"></i> </a
-                  ><a
-                    href="https://frescoflavors.myshopify.com/"
-                    aria-label="YouTube"
-                  >
-                    <i class="fa-brands fa-youtube"></i> </a
-                  ><a
-                    href="https://frescoflavors.myshopify.com/"
-                    aria-label="LinkedIn"
-                  >
-                    <i class="fa-brands fa-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-              <p class="contact-hours">
-                Support hours: Monday–Friday, 9am–6pm EST
-              </p>
-            </div>
           </div>
         </div>
       </section>

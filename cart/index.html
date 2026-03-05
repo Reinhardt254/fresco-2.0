@@ -3,14 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Products - Fresco Flavors</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
+    <title>Shopping Cart - Fresco Flavors</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,9 +17,14 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/footer.css" />
-    <link rel="stylesheet" href="/shop/styles.css" />
+    <link rel="stylesheet" href="/cart/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -35,7 +33,6 @@
   <body>
     <header class="site-header">
       <div class="container">
-        <!-- Mobile Hamburger Menu Button (left) -->
         <div class="menu-toggle-container">
           <button
             class="menu-toggle"
@@ -48,10 +45,9 @@
           </button>
         </div>
 
-        <!-- Desktop Navigation -->
         <div class="nav left-nav desktop-nav">
           <div class="nav-links">
-            <a class="active" href="/">Home</a>
+            <a href="/">Home</a>
             <a href="/shop">Shop Now</a>
             <div class="nav-dropdown">
               <a href="/about" class="nav-dropdown-trigger">Our Story</a>
@@ -99,7 +95,6 @@
           </div>
         </div>
 
-        <!-- Logo (center - both mobile and desktop) -->
         <div class="logo logo-desktop">
           <a href="/">
             <img
@@ -118,7 +113,6 @@
           </a>
         </div>
 
-        <!-- Desktop Right Navigation -->
         <div class="nav right-nav desktop-nav">
           <div class="nav-links">
             <a href="/contact">Contact</a>
@@ -138,7 +132,6 @@
           </div>
         </div>
 
-        <!-- Mobile Header Actions (right) -->
         <div class="header-actions header-actions-mobile">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
           <i class="fa-solid fa-user user-icon"></i>
@@ -146,16 +139,9 @@
         </div>
       </div>
 
-      <!-- Mobile Menu Overlay -->
       <div class="mobile-menu-overlay" id="mobile-menu">
         <div class="mobile-menu-content">
           <div class="mobile-menu-header">
-            <!-- <div class="mobile-menu-logo">
-              <img
-                src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
-                alt="Fresco Flavors"
-              />
-            </div> -->
             <button class="mobile-menu-close" aria-label="Close menu">
               <i class="fa-solid fa-times"></i>
             </button>
@@ -185,132 +171,201 @@
       </div>
     </header>
 
-    <main class="products-page">
-      <section class="products-page-layout">
-        <img
-          src="https://freebw.com/templates/oragnive-v1/images/bg-07.jpg"
-          alt=""
-        />
-
-        <div class="layout-content">
-          <h1>Products</h1>
+    <main class="cart-page">
+      <section class="cart-hero">
+        <div class="cart-hero-inner">
+          <h1 class="cart-title">
+            Shopping <span class="highlight">Cart</span>
+          </h1>
         </div>
       </section>
-      <section class="products-page-section">
-        <div class="products-page-container">
-          <!-- Toolbar -->
-          <div class="products-toolbar">
-            <div class="products-search-wrap">
-              <input
-                type="search"
-                class="products-search"
-                id="products-search-input"
-                placeholder="Search products..."
-                aria-label="Search products"
-                autocomplete="off"
-              />
-              <i class="fa-solid fa-magnifying-glass products-search-icon"></i>
+
+      <section class="cart-layout">
+        <div class="cart-layout-inner">
+          <!-- Left: cart items table -->
+          <div class="cart-table">
+            <div class="cart-table-header">
+              <span class="cart-col-product">Product</span>
+              <span class="cart-col-price">Price</span>
+              <span class="cart-col-qty">Quantity</span>
+              <span class="cart-col-subtotal">Subtotal</span>
             </div>
-            <p class="products-results-count">Showing 1-8 of 8 results</p>
-            <div class="products-toolbar-right">
-              <div class="products-sort-wrap">
-                <select
-                  class="products-sort"
-                  id="products-sort"
-                  aria-label="Sort by"
-                >
-                  <option value="default">Default</option>
-                  <option value="price-asc">Price: Low to High</option>
-                  <option value="price-desc">Price: High to Low</option>
-                  <option value="name-asc">Name: A to Z</option>
-                  <option value="name-desc">Name: Z to A</option>
-                </select>
-                <i class="fa-solid fa-chevron-down products-sort-arrow"></i>
+
+            <div class="cart-row">
+              <button
+                class="cart-remove"
+                type="button"
+                aria-label="Remove item"
+              >
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+              </button>
+              <div class="cart-product">
+                <div class="cart-product-image">
+                  <img
+                    src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-basil.png"
+                    alt="Freeze-Dried Basil"
+                  />
+                </div>
+                <div class="cart-product-info">
+                  <p class="cart-product-name">Freeze-Dried Basil</p>
+                  <p class="cart-product-meta">50 g • Organic herbs</p>
+                </div>
               </div>
-              <!-- <div class="products-view-toggle">
-                 <button type="button" class="view-btn view-list" aria-label="List view"><i class="fa-solid fa-list"></i></button>
-                 <button type="button" class="view-btn view-grid active" aria-label="Grid view"><i class="fa-solid fa-grip"></i></button>
-               </div> -->
+              <div class="cart-price">$14.00</div>
+              <div class="cart-qty">
+                <button type="button" class="cart-qty-btn">−</button>
+                <input type="number" value="1" min="1" class="cart-qty-input" />
+                <button type="button" class="cart-qty-btn">+</button>
+              </div>
+              <div class="cart-subtotal">$14.00</div>
+            </div>
+
+            <div class="cart-row">
+              <button
+                class="cart-remove"
+                type="button"
+                aria-label="Remove item"
+              >
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+              </button>
+              <div class="cart-product">
+                <div class="cart-product-image">
+                  <img
+                    src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-ginger.png"
+                    alt="Freeze-Dried Ginger"
+                  />
+                </div>
+                <div class="cart-product-info">
+                  <p class="cart-product-name">Freeze-Dried Ginger</p>
+                  <p class="cart-product-meta">100 g • Specialty</p>
+                </div>
+              </div>
+              <div class="cart-price">$19.00</div>
+              <div class="cart-qty">
+                <button type="button" class="cart-qty-btn">−</button>
+                <input type="number" value="2" min="1" class="cart-qty-input" />
+                <button type="button" class="cart-qty-btn">+</button>
+              </div>
+              <div class="cart-subtotal">$38.00</div>
+            </div>
+
+            <div class="cart-row">
+              <button
+                class="cart-remove"
+                type="button"
+                aria-label="Remove item"
+              >
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+              </button>
+              <div class="cart-product">
+                <div class="cart-product-image">
+                  <img
+                    src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-Chives.png"
+                    alt="Freeze-Dried Chives"
+                  />
+                </div>
+                <div class="cart-product-info">
+                  <p class="cart-product-name">Freeze-Dried Chives</p>
+                  <p class="cart-product-meta">50 g • Herbs</p>
+                </div>
+              </div>
+              <div class="cart-price">$19.00</div>
+              <div class="cart-qty">
+                <button type="button" class="cart-qty-btn">−</button>
+                <input type="number" value="1" min="1" class="cart-qty-input" />
+                <button type="button" class="cart-qty-btn">+</button>
+              </div>
+              <div class="cart-subtotal">$19.00</div>
+            </div>
+
+            <div class="cart-actions-row cart-actions-row--simple">
+              <button type="button" class="cart-clear">
+                Clear Shopping Cart
+              </button>
             </div>
           </div>
 
-          <div class="products-layout">
-            <!-- Sidebar -->
-            <aside class="products-sidebar">
-              <section class="sidebar-block">
-                <h3 class="sidebar-title">Filter by price</h3>
-                <!-- <div class="sidebar-title-underline"></div> -->
-                <div class="price-range-wrap" id="price-range-wrap">
-                  <div class="range-fill" id="range-fill"></div>
-                  <input
-                    type="range"
-                    class="price-range price-range-min"
-                    min="0"
-                    max="250"
-                    value="0"
-                    aria-label="Min price"
-                  />
-                  <input
-                    type="range"
-                    class="price-range price-range-max"
-                    min="0"
-                    max="250"
-                    value="250"
-                    aria-label="Max price"
-                  />
-                </div>
-                <div class="price-range-labels">
-                  <span class="price-label"
-                    >Price: <span id="price-min">0</span>$ -
-                    <span id="price-max">250</span>$</span
-                  >
-                </div>
-              </section>
+          <!-- Right: order summary -->
+          <aside class="cart-summary" aria-label="Order summary">
+            <h2 class="cart-summary-title">Order Summary</h2>
+            <dl class="cart-summary-list">
+              <div class="cart-summary-row">
+                <dt>Items</dt>
+                <dd>3</dd>
+              </div>
+              <div class="cart-summary-row">
+                <dt>Sub Total</dt>
+                <dd>$71.00</dd>
+              </div>
+              <div class="cart-summary-row">
+                <dt>Shipping</dt>
+                <dd>$0.00</dd>
+              </div>
+              <div class="cart-summary-row">
+                <dt>Taxes</dt>
+                <dd>$0.00</dd>
+              </div>
+              <div class="cart-summary-row cart-summary-row-discount">
+                <dt>Coupon Discount</dt>
+                <dd>−$10.00</dd>
+              </div>
+              <div class="cart-summary-row cart-summary-row-total">
+                <dt>Total</dt>
+                <dd>$61.00</dd>
+              </div>
+            </dl>
+            <button type="button" class="cart-summary-checkout">
+              Proceed to Checkout
+            </button>
+          </aside>
+        </div>
+      </section>
 
-              <section class="sidebar-block">
-                <h3 class="sidebar-title">Categories</h3>
-                <!-- <div class="sidebar-title-underline"></div> -->
-                <ul class="sidebar-categories">
-                  <li>
-                    <a href="#" class="category-link active" data-category="all"
-                      >All Products <span class="count">8</span></a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="category-link" data-category="herbs"
-                      >Freeze-dried Herbs <span class="count">8</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="category-link"
-                      data-category="specialty-ingredients"
-                      >Specialty Ingredients <span class="count">2</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="category-link"
-                      data-category="bulk-formats"
-                      >Bulk Formats <span class="count">2</span></a
-                    >
-                  </li>
-                </ul>
-              </section>
-            </aside>
+      <section class="cart-benefits">
+        <div class="cart-benefits-inner">
+          <article class="cart-benefit">
+            <div class="cart-benefit-icon">
+              <i class="fa-solid fa-truck-fast" aria-hidden="true"></i>
+            </div>
+            <div class="cart-benefit-text">
+              <h3>Free Shipping</h3>
+              <p>Free shipping for orders above $50.</p>
+            </div>
+          </article>
+          <article class="cart-benefit">
+            <div class="cart-benefit-icon">
+              <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
+            </div>
+            <div class="cart-benefit-text">
+              <h3>Flexible Payment</h3>
+              <p>Multiple secure payment options.</p>
+            </div>
+          </article>
+          <article class="cart-benefit">
+            <div class="cart-benefit-icon">
+              <i class="fa-solid fa-headset" aria-hidden="true"></i>
+            </div>
+            <div class="cart-benefit-text">
+              <h3>24×7 Support</h3>
+              <p>We support online all day long.</p>
+            </div>
+          </article>
+        </div>
+      </section>
 
-            <!-- Product grid -->
-            <div class="products-main">
-              <div class="product-grid products-grid" id="products-grid">
-                <div
-                  class="product-card"
-                  data-category="herbs"
-                  data-collections="herbs"
-                  data-price="14"
-                >
-                  <a href="../products/basil" class="product-card__link">
+      <section class="cart-recommended">
+        <div class="cart-recommended-inner">
+          <div class="cart-recommended-header">
+            <h2 class="cart-recommended-title">Recommended Products</h2>
+            <p class="cart-recommended-subtitle">
+              Complete your cart with these freeze-dried favorites.
+            </p>
+          </div>
+          <div class="cart-recommended-carousel swiper cart-recommended-swiper">
+            <div class="cart-recommended-track swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="product-card">
+                  <a href="/products/basil" class="product-card__link">
                     <div class="product-image">
                       <img
                         class="product-card__image"
@@ -330,14 +385,39 @@
                     Add to cart
                   </button>
                 </div>
-                <div
-                  class="product-card"
-                  data-category="bulk-formats"
-                  data-collections="bulk-formats,herbs"
-                  data-price="19"
-                >
+              </div>
+
+              <div class="swiper-slide">
+                <div class="product-card">
                   <a
-                    href="../products/freeze-dried-chives"
+                    href="/products/freeze-dried-ginger"
+                    class="product-card__link"
+                  >
+                    <div class="product-image">
+                      <img
+                        class="product-card__image"
+                        src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-ginger.png"
+                        alt="Freeze-Dried Ginger"
+                        loading="lazy"
+                      />
+                    </div>
+                    <h3 class="product-name">
+                      <span>Freeze-Dried Ginger</span>
+                    </h3>
+                  </a>
+                  <div class="product-price">
+                    <span class="current-price">$19.00</span>
+                  </div>
+                  <button type="button" class="product-card-add">
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="product-card">
+                  <a
+                    href="/products/freeze-dried-chives"
                     class="product-card__link"
                   >
                     <div class="product-image">
@@ -359,126 +439,11 @@
                     Add to cart
                   </button>
                 </div>
-                <div
-                  class="product-card"
-                  data-category="bulk-formats"
-                  data-collections="bulk-formats,herbs"
-                  data-price="9"
-                >
-                  <a href="../products/cilantro" class="product-card__link">
-                    <div class="product-image">
-                      <img
-                        class="product-card__image"
-                        src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-parsley.png"
-                        alt="Freeze-Dried Cilantro"
-                        loading="lazy"
-                      />
-                    </div>
-                    <h3 class="product-name">
-                      <span>Freeze-Dried Cilantro</span>
-                    </h3>
-                  </a>
-                  <div class="product-price">
-                    <span class="current-price">$9.00</span>
-                  </div>
-                  <button type="button" class="product-card-add">
-                    Add to cart
-                  </button>
-                </div>
-                <div
-                  class="product-card"
-                  data-category="specialty-ingredients"
-                  data-collections="herbs,specialty-ingredients"
-                  data-price="14"
-                >
-                  <a
-                    href="../products/freeze-dried-ginger"
-                    class="product-card__link"
-                  >
-                    <div class="product-image">
-                      <img
-                        class="product-card__image"
-                        src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-ginger.png"
-                        alt="Freeze-Dried Ginger"
-                        loading="lazy"
-                      />
-                    </div>
-                    <h3 class="product-name">
-                      <span>Freeze-Dried Ginger</span>
-                    </h3>
-                  </a>
-                  <div class="product-price">
-                    <span class="current-price">$14.00</span>
-                  </div>
-                  <button type="button" class="product-card-add">
-                    Add to cart
-                  </button>
-                </div>
-                <div
-                  class="product-card"
-                  data-category="herbs"
-                  data-collections="herbs"
-                  data-price="19"
-                >
-                  <a
-                    href="../products/freeze-dried-mint"
-                    class="product-card__link"
-                  >
-                    <div class="product-image">
-                      <img
-                        class="product-card__image"
-                        src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-thyme.png"
-                        alt="Freeze-Dried Thyme"
-                        loading="lazy"
-                      />
-                    </div>
-                    <h3 class="product-name">
-                      <span>Freeze-Dried Thyme</span>
-                    </h3>
-                  </a>
-                  <div class="product-price">
-                    <span class="current-price">$19.00</span>
-                  </div>
-                  <button type="button" class="product-card-add">
-                    Add to cart
-                  </button>
-                </div>
-                <div
-                  class="product-card"
-                  data-category="herbs"
-                  data-collections="herbs"
-                  data-price="19"
-                >
-                  <a
-                    href="../products/freeze-dried-oregano"
-                    class="product-card__link"
-                  >
-                    <div class="product-image">
-                      <img
-                        class="product-card__image"
-                        src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-oregano.png"
-                        alt="Freeze-Dried Oregano"
-                        loading="lazy"
-                      />
-                    </div>
-                    <h3 class="product-name">
-                      <span>Freeze-Dried Oregano</span>
-                    </h3>
-                  </a>
-                  <div class="product-price">
-                    <span class="current-price">$19.00</span>
-                  </div>
-                  <button type="button" class="product-card-add">
-                    Add to cart
-                  </button>
-                </div>
-                <div
-                  class="product-card"
-                  data-category="herbs"
-                  data-collections="herbs"
-                  data-price="14"
-                >
-                  <a href="../products/rosemary" class="product-card__link">
+              </div>
+
+              <div class="swiper-slide">
+                <div class="product-card">
+                  <a href="/products/rosemary" class="product-card__link">
                     <div class="product-image">
                       <img
                         class="product-card__image"
@@ -487,7 +452,9 @@
                         loading="lazy"
                       />
                     </div>
-                    <h3 class="product-name"><span>Freeze-Dried Dill</span></h3>
+                    <h3 class="product-name">
+                      <span>Freeze-Dried Dill</span>
+                    </h3>
                   </a>
                   <div class="product-price">
                     <span class="current-price">$14.00</span>
@@ -496,37 +463,31 @@
                     Add to cart
                   </button>
                 </div>
-                <div
-                  class="product-card"
-                  data-category="specialty-ingredients"
-                  data-collections="herbs,specialty-ingredients"
-                  data-price="9"
-                >
-                  <a href="../products/sage" class="product-card__link">
-                    <div class="product-image">
-                      <img
-                        class="product-card__image"
-                        src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-garlic.png"
-                        alt="Freeze-Dried Garlic"
-                        loading="lazy"
-                      />
-                    </div>
-                    <h3 class="product-name">
-                      <span>Freeze-Dried Garlic</span>
-                    </h3>
-                  </a>
-                  <div class="product-price">
-                    <span class="current-price">$9.00</span>
-                  </div>
-                  <button type="button" class="product-card-add">
-                    Add to cart
-                  </button>
-                </div>
               </div>
+            </div>
+
+            <div class="cart-recommended-nav">
+              <button
+                type="button"
+                class="cart-recommended-btn cart-recommended-prev"
+                aria-label="Previous products"
+              >
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+              </button>
+              <button
+                type="button"
+                class="cart-recommended-btn cart-recommended-next"
+                aria-label="Next products"
+              >
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+              </button>
             </div>
           </div>
         </div>
       </section>
+
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script src="/scripts/cart.js"></script>
     </main>
 
     <footer class="site-footer">
@@ -557,6 +518,7 @@
           </form>
         </div>
       </div>
+
       <div class="footer-newsletter-divider"></div>
       <div class="footer-main">
         <div class="footer-container footer-columns">
@@ -580,8 +542,8 @@
               </li>
               <li>
                 <i class="fa-solid fa-location-dot" aria-hidden="true"></i
-                ><span
-                  >7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA</span
+                ><span>
+                  7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA</span
                 >
               </li>
               <li>
@@ -593,21 +555,21 @@
           <div class="footer-col footer-col-links">
             <h3 class="footer-col-heading">Information</h3>
             <ul class="footer-links">
-              <li><a href="../about">About our shop</a></li>
-              <li><a href="../products/#bestsellers">Top sellers</a></li>
-              <li><a href="../blog">Our blog</a></li>
-              <li><a href="../products/#new">New products</a></li>
-              <li><a href="../faq">Secure shopping</a></li>
+              <li><a href="/about">About our shop</a></li>
+              <li><a href="/shop#bestsellers">Top sellers</a></li>
+              <li><a href="/blog">Our blog</a></li>
+              <li><a href="/shop#new">New products</a></li>
+              <li><a href="/faq">Secure shopping</a></li>
             </ul>
           </div>
           <div class="footer-col footer-col-links">
             <h3 class="footer-col-heading">My Account</h3>
             <ul class="footer-links">
-              <li><a href="../account">My account</a></li>
-              <li><a href="../account/discount">Discount</a></li>
-              <li><a href="../account/profile">Personal Information</a></li>
-              <li><a href="../account/address">My address</a></li>
-              <li><a href="../account/orders">Order history</a></li>
+              <li><a href="/account">My account</a></li>
+              <li><a href="/account/discount">Discount</a></li>
+              <li><a href="/account/profile">Personal Information</a></li>
+              <li><a href="/account/address">My address</a></li>
+              <li><a href="/account/orders">Order history</a></li>
             </ul>
           </div>
           <div class="footer-col footer-col-instagram">
@@ -647,6 +609,7 @@
           </div>
         </div>
       </div>
+
       <div class="footer-bottom">
         <div class="footer-container footer-bottom-inner">
           <p class="footer-copyright">
@@ -669,8 +632,5 @@
         </button>
       </div>
     </footer>
-
-    <script src="/scripts/index.js"></script>
-    <script src="/shop/products.js"></script>
   </body>
 </html>
