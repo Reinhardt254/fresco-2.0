@@ -217,7 +217,7 @@ if (featuredProductsSwiperEl) {
     },
   });
 }
-
+ 
 // =======================CATEGORY DEALS CAROUSEL===================================
 const categorySwiperEl = document.querySelector(".category-swiper");
 
@@ -367,5 +367,29 @@ if (reviewsHeroSwiperEl) {
     fadeEffect: {
       crossFade: true,
     },
+  });
+}
+
+// ==========================================Footer scroll to top==============================================
+const footerScrollTop = document.querySelector(".footer-scroll-top");
+if (footerScrollTop) {
+  // 150svh ≈ 150% of viewport height
+  const getScrollThreshold = () => (150 / 100) * window.innerHeight;
+
+  const updateScrollTopVisibility = () => {
+    const threshold = getScrollThreshold();
+    if (window.scrollY >= threshold) {
+      footerScrollTop.classList.add("is-visible");
+    } else {
+      footerScrollTop.classList.remove("is-visible");
+    }
+  };
+
+  updateScrollTopVisibility();
+  window.addEventListener("scroll", updateScrollTopVisibility, { passive: true });
+  window.addEventListener("resize", updateScrollTopVisibility);
+
+  footerScrollTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }

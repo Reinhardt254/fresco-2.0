@@ -3,32 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Terms of Service | Fresco Flavors</title>
+
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/footer.css" />
+    <link rel="stylesheet" href="/terms-of-service/styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="/footer.css" />
-    <link rel="stylesheet" href="/contact/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
   <body>
     <header class="site-header">
       <div class="container">
-        <!-- Mobile Hamburger Menu Button (left) -->
         <div class="menu-toggle-container">
           <button
             class="menu-toggle"
@@ -41,7 +39,6 @@
           </button>
         </div>
 
-        <!-- Desktop Navigation -->
         <div class="nav left-nav desktop-nav">
           <div class="nav-links">
             <a href="/">Home</a>
@@ -88,30 +85,25 @@
                 </div>
               </div>
             </div>
-            <a class="active" href="/contact">Contact</a>
+            <a href="/contact">Contact</a>
           </div>
         </div>
 
-        <!-- Logo (center - both mobile and desktop) -->
         <div class="logo logo-desktop">
-          <a href="/">
-            <img
+          <a href="/"
+            ><img
               src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
               alt="Fresco Flavors"
-            />
-          </a>
+          /></a>
         </div>
-
         <div class="logo logo-mobile">
-          <a href="/">
-            <img
+          <a href="/"
+            ><img
               src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
               alt="Fresco Flavors"
-            />
-          </a>
+          /></a>
         </div>
 
-        <!-- Desktop Right Navigation -->
         <div class="nav right-nav desktop-nav">
           <div class="nav-links">
             <a href="/shop">Shop Now</a>
@@ -129,8 +121,6 @@
             </a>
           </div>
         </div>
-
-        <!-- Mobile Header Actions (right) -->
         <div class="header-actions header-actions-mobile">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
           <i class="fa-solid fa-user user-icon"></i>
@@ -138,7 +128,6 @@
         </div>
       </div>
 
-      <!-- Mobile Menu Overlay -->
       <div class="mobile-menu-overlay" id="mobile-menu">
         <div class="mobile-menu-content">
           <div class="mobile-menu-header">
@@ -146,7 +135,7 @@
               <i class="fa-solid fa-times"></i>
             </button>
           </div>
-          <nav class="mobile-nav-links">
+          <nav class="mobile-nav-links" aria-label="Mobile navigation links">
             <a href="/" class="mobile-nav-link">Home</a>
             <div class="mobile-nav-dropdown">
               <a href="/about" class="mobile-nav-link mobile-dropdown-trigger">
@@ -166,143 +155,215 @@
                 >
               </div>
             </div>
-            <a href="/contact" class="mobile-nav-link active">Contact</a>
+            <a href="/contact" class="mobile-nav-link">Contact</a>
             <a href="/shop" class="mobile-nav-link">Shop Now</a>
           </nav>
         </div>
       </div>
     </header>
 
-    <main class="contact-page">
-      <section class="contact-page-layout">
-        <img
-          src="https://freebw.com/templates/oragnive-v1/images/bg-07.jpg"
-          alt=""
-        />
-        <div class="layout-content">
-          <h1>Contact</h1>
-          <p>
-            We're here to help you with any questions or concerns you may have.
+    <main class="policy-page">
+      <section class="policy-hero" aria-labelledby="terms-title">
+        <div class="policy-container">
+          <p class="policy-eyebrow">Legal</p>
+          <h1 id="terms-title" class="policy-title">Terms of Service</h1>
+          <p class="policy-subtitle">
+            These terms govern your use of the Fresco Flavors website and
+            services. By using our site or placing an order, you agree to these
+            terms.
+          </p>
+          <p class="policy-meta">
+            <strong>Last updated:</strong> March 6, 2026
           </p>
         </div>
       </section>
 
-      <section class="contact-main">
-        <div class="contact-main-container">
-          <!-- Left: contact cards 2x2 + map -->
-          <div class="contact-main-left">
-            <div class="contact-cards-grid">
-              <div class="contact-card">
-                <div class="contact-card-icon">
-                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                </div>
-                <h3 class="contact-card-label">Phone</h3>
-                <p class="contact-card-detail">
-                  <a href="tel:+19018965814">+1 (901) 896-5814</a>
-                </p>
-              </div>
-              <div class="contact-card">
-                <div class="contact-card-icon">
-                  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                </div>
-                <h3 class="contact-card-label">Whatsapp</h3>
-                <p class="contact-card-detail">
-                  <a href="https://wa.me/19018965814">+1 (901) 896-5814</a>
-                </p>
-              </div>
-              <div class="contact-card">
-                <div class="contact-card-icon">
-                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                </div>
-                <h3 class="contact-card-label">Email</h3>
-                <p class="contact-card-detail">
-                  <a href="mailto:info@frescoflavors.com"
-                    >info@frescoflavors.com</a
-                  >
-                </p>
-              </div>
-              <div class="contact-card">
-                <div class="contact-card-icon">
-                  <i class="fa-solid fa-shop" aria-hidden="true"></i>
-                </div>
-                <h3 class="contact-card-label">Our Shop</h3>
-                <p class="contact-card-detail">
-                  7910 Moriarty Rd, Cordova, TN 38018
-                </p>
-              </div>
-            </div>
-            <div class="contact-map-wrap">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d61881.489831128325!2d-89.83236344471175!3d35.19412175135412!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2ske!4v1764248724074!5m2!1sen!2ske"
-                width="100%"
-                height="100%"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Location map"
-              ></iframe>
-            </div>
-          </div>
-          <!-- Right: Get In Touch form -->
-          <div class="contact-main-right">
-            <h2 class="contact-form-heading">Get In Touch</h2>
-            <p class="contact-form-desc">
-              We're here to help you with any questions or concerns. Send us a
-              message and we'll get back to you as soon as we can.
-            </p>
-            <form
-              class="contact-form-fields"
-              action="#"
-              method="post"
-              aria-label="Contact form"
-            >
-              <div class="contact-field">
-                <label for="contact-name">Name</label>
-                <input
-                  type="text"
-                  id="contact-name"
-                  name="name"
-                  placeholder="Your name"
-                  required
-                  class="contact-form-input"
-                />
-              </div>
-              <div class="contact-field">
-                <label for="contact-email">Email</label>
-                <input
-                  type="email"
-                  id="contact-email"
-                  name="email"
-                  placeholder="example@yourmail.com"
-                  required
-                  class="contact-form-input"
-                />
-              </div>
-              <div class="contact-field">
-                <label for="contact-subject">Subject</label>
-                <input
-                  type="text"
-                  id="contact-subject"
-                  name="subject"
-                  placeholder="Title..."
-                  class="contact-form-input"
-                />
-              </div>
-              <div class="contact-field">
-                <label for="contact-message">Message</label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  placeholder="Type here..."
-                  rows="5"
-                  class="contact-form-textarea"
-                ></textarea>
-              </div>
-              <button type="submit" class="contact-form-submit">
-                Send Now
-              </button>
-            </form>
+      <section class="policy-content" aria-label="Terms of Service details">
+        <div class="policy-container policy-grid">
+          <aside class="policy-toc" aria-label="On this page">
+            <h2 class="policy-toc-title">On this page</h2>
+            <ul class="policy-toc-list">
+              <li><a href="#acceptance">Acceptance</a></li>
+              <li><a href="#use">Use of our service</a></li>
+              <li><a href="#accounts">Accounts</a></li>
+              <li><a href="#orders">Orders &amp; payment</a></li>
+              <li><a href="#intellectual">Intellectual property</a></li>
+              <li><a href="#prohibited">Prohibited conduct</a></li>
+              <li><a href="#disclaimer">Disclaimer</a></li>
+              <li><a href="#liability">Limitation of liability</a></li>
+              <li><a href="#indemnity">Indemnity</a></li>
+              <li><a href="#changes">Changes</a></li>
+              <li><a href="#governing">Governing law</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </aside>
+
+          <div class="policy-sections">
+            <section id="acceptance" class="policy-section">
+              <h2>Acceptance</h2>
+              <p>
+                By accessing or using the Fresco Flavors website (“Fresco,”
+                “we,” “us,” or “our”), you agree to be bound by these Terms of
+                Service and our
+                <a href="/privacy-policy">Privacy Policy</a>. If you do not
+                agree, do not use our site or services.
+              </p>
+            </section>
+
+            <section id="use" class="policy-section">
+              <h2>Use of our service</h2>
+              <p>
+                Our website and services are provided for personal,
+                non-commercial use. You may browse, shop, and use information
+                offered on the site in accordance with these terms and
+                applicable law.
+              </p>
+              <ul>
+                <li>
+                  You must be at least 18 years old (or the age of majority in
+                  your jurisdiction) to place an order.
+                </li>
+                <li>
+                  You are responsible for keeping your account credentials
+                  secure and for all activity under your account.
+                </li>
+              </ul>
+            </section>
+
+            <section id="accounts" class="policy-section">
+              <h2>Accounts</h2>
+              <p>
+                Creating an account may be required for certain features. You
+                agree to provide accurate, current information and to update it
+                as needed. We may suspend or terminate accounts that violate
+                these terms or that we reasonably believe are fraudulent or
+                abusive.
+              </p>
+            </section>
+
+            <section id="orders" class="policy-section">
+              <h2>Orders &amp; payment</h2>
+              <p>
+                All orders are subject to availability and acceptance. We
+                reserve the right to refuse or cancel orders (e.g., pricing
+                errors, suspected fraud, or stock issues). Payment is due at
+                checkout in the currency and methods we offer. Prices and
+                shipping costs are as displayed at checkout; see our
+                <a href="/shipping">Shipping Policy</a> for delivery details.
+              </p>
+            </section>
+
+            <section id="intellectual" class="policy-section">
+              <h2>Intellectual property</h2>
+              <p>
+                The Fresco Flavors name, logo, and all content on this site
+                (text, images, design, and software) are owned by us or our
+                licensors and are protected by copyright and other intellectual
+                property laws. You may not copy, modify, distribute, or use our
+                content for commercial purposes without our written permission.
+              </p>
+            </section>
+
+            <section id="prohibited" class="policy-section">
+              <h2>Prohibited conduct</h2>
+              <p>You agree not to:</p>
+              <ul>
+                <li>
+                  Use the site for any illegal purpose or in violation of any
+                  law.
+                </li>
+                <li>Impersonate others or misrepresent your affiliation.</li>
+                <li>
+                  Attempt to gain unauthorized access to our systems, accounts,
+                  or data.
+                </li>
+                <li>Transmit viruses, malware, or other harmful code.</li>
+                <li>
+                  Scrape, harvest, or use automated means to collect data from
+                  the site without permission.
+                </li>
+                <li>
+                  Interfere with the proper functioning of the site or our
+                  services.
+                </li>
+              </ul>
+            </section>
+
+            <section id="disclaimer" class="policy-section">
+              <h2>Disclaimer</h2>
+              <p>
+                The site and our products are provided “as is” and “as
+                available.” We do not warrant that the site will be
+                uninterrupted, error-free, or free of harmful components. We
+                disclaim all warranties, express or implied, to the fullest
+                extent permitted by law. Product descriptions and imagery are
+                for illustration; we strive for accuracy but do not warrant that
+                descriptions or other content are complete or error-free.
+              </p>
+            </section>
+
+            <section id="liability" class="policy-section">
+              <h2>Limitation of liability</h2>
+              <p>
+                To the maximum extent permitted by law, Fresco Flavors and its
+                officers, directors, employees, and agents shall not be liable
+                for any indirect, incidental, special, consequential, or
+                punitive damages, or for any loss of profits, data, or goodwill,
+                arising from your use of the site or products, even if we have
+                been advised of the possibility of such damages. Our total
+                liability for any claim arising from these terms or your use of
+                the site or products shall not exceed the amount you paid us for
+                the products or services giving rise to the claim in the twelve
+                months before the claim.
+              </p>
+            </section>
+
+            <section id="indemnity" class="policy-section">
+              <h2>Indemnity</h2>
+              <p>
+                You agree to indemnify and hold harmless Fresco Flavors and its
+                officers, directors, employees, and agents from and against any
+                claims, damages, losses, and expenses (including reasonable
+                attorneys’ fees) arising from your use of the site, your
+                violation of these terms, or your violation of any third-party
+                rights.
+              </p>
+            </section>
+
+            <section id="changes" class="policy-section">
+              <h2>Changes</h2>
+              <p>
+                We may update these Terms of Service from time to time. We will
+                post the revised terms on this page and update the “Last
+                updated” date. Your continued use of the site after changes
+                constitutes acceptance of the updated terms. For material
+                changes, we may provide additional notice (e.g., by email or a
+                notice on the site).
+              </p>
+            </section>
+
+            <section id="governing" class="policy-section">
+              <h2>Governing law</h2>
+              <p>
+                These terms are governed by the laws of the State of Tennessee,
+                United States, without regard to conflict of law principles. Any
+                dispute arising from these terms or your use of the site shall
+                be subject to the exclusive jurisdiction of the state and
+                federal courts located in Tennessee, to the extent permitted by
+                applicable law.
+              </p>
+            </section>
+
+            <section id="contact" class="policy-section">
+              <h2>Contact</h2>
+              <p>
+                Questions about these terms? Contact us at
+                <a href="mailto:info@frescoflavors.com"
+                  >info@frescoflavors.com</a
+                >
+                or via our <a href="/contact">Contact</a> page.
+              </p>
+            </section>
           </div>
         </div>
       </section>
@@ -336,7 +397,6 @@
           </form>
         </div>
       </div>
-
       <div class="footer-newsletter-divider"></div>
       <div class="footer-main">
         <div class="footer-container footer-columns">
@@ -347,7 +407,6 @@
                 alt="Fresco Flavors Logo"
               />
             </div>
-            <!-- <p class="footer-tagline">— Organic — Store —</p> -->
             <p class="footer-company-desc">
               Bringing the best herbs in every jar. 100% Organic, from Kenya to
               the World.
@@ -361,8 +420,8 @@
               </li>
               <li>
                 <i class="fa-solid fa-location-dot" aria-hidden="true"></i
-                ><span>
-                  7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA</span
+                ><span
+                  >7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA</span
                 >
               </li>
               <li>
@@ -439,7 +498,6 @@
           </div>
         </div>
       </div>
-
       <div class="footer-bottom">
         <div class="footer-container footer-bottom-inner">
           <p class="footer-copyright">
@@ -473,5 +531,7 @@
         </button>
       </div>
     </footer>
+
+    <script src="/scripts/index.js"></script>
   </body>
 </html>

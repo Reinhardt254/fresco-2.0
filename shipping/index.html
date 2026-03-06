@@ -3,32 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Shipping Policy | Fresco Flavors</title>
+
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/footer.css" />
+    <link rel="stylesheet" href="/shipping/styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="/footer.css" />
-    <link rel="stylesheet" href="/contact/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
   <body>
     <header class="site-header">
       <div class="container">
-        <!-- Mobile Hamburger Menu Button (left) -->
         <div class="menu-toggle-container">
           <button
             class="menu-toggle"
@@ -41,7 +39,6 @@
           </button>
         </div>
 
-        <!-- Desktop Navigation -->
         <div class="nav left-nav desktop-nav">
           <div class="nav-links">
             <a href="/">Home</a>
@@ -88,30 +85,25 @@
                 </div>
               </div>
             </div>
-            <a class="active" href="/contact">Contact</a>
+            <a href="/contact">Contact</a>
           </div>
         </div>
 
-        <!-- Logo (center - both mobile and desktop) -->
         <div class="logo logo-desktop">
-          <a href="/">
-            <img
+          <a href="/"
+            ><img
               src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
               alt="Fresco Flavors"
-            />
-          </a>
+          /></a>
         </div>
-
         <div class="logo logo-mobile">
-          <a href="/">
-            <img
+          <a href="/"
+            ><img
               src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
               alt="Fresco Flavors"
-            />
-          </a>
+          /></a>
         </div>
 
-        <!-- Desktop Right Navigation -->
         <div class="nav right-nav desktop-nav">
           <div class="nav-links">
             <a href="/shop">Shop Now</a>
@@ -129,8 +121,6 @@
             </a>
           </div>
         </div>
-
-        <!-- Mobile Header Actions (right) -->
         <div class="header-actions header-actions-mobile">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
           <i class="fa-solid fa-user user-icon"></i>
@@ -138,7 +128,6 @@
         </div>
       </div>
 
-      <!-- Mobile Menu Overlay -->
       <div class="mobile-menu-overlay" id="mobile-menu">
         <div class="mobile-menu-content">
           <div class="mobile-menu-header">
@@ -146,7 +135,7 @@
               <i class="fa-solid fa-times"></i>
             </button>
           </div>
-          <nav class="mobile-nav-links">
+          <nav class="mobile-nav-links" aria-label="Mobile navigation links">
             <a href="/" class="mobile-nav-link">Home</a>
             <div class="mobile-nav-dropdown">
               <a href="/about" class="mobile-nav-link mobile-dropdown-trigger">
@@ -166,143 +155,232 @@
                 >
               </div>
             </div>
-            <a href="/contact" class="mobile-nav-link active">Contact</a>
+            <a href="/contact" class="mobile-nav-link">Contact</a>
             <a href="/shop" class="mobile-nav-link">Shop Now</a>
           </nav>
         </div>
       </div>
     </header>
 
-    <main class="contact-page">
-      <section class="contact-page-layout">
-        <img
-          src="https://freebw.com/templates/oragnive-v1/images/bg-07.jpg"
-          alt=""
-        />
-        <div class="layout-content">
-          <h1>Contact</h1>
-          <p>
-            We're here to help you with any questions or concerns you may have.
+    <main class="policy-page">
+      <section class="policy-hero" aria-labelledby="shipping-policy-title">
+        <div class="policy-container">
+          <p class="policy-eyebrow">Information</p>
+          <h1 id="shipping-policy-title" class="policy-title">
+            Shipping Policy
+          </h1>
+          <p class="policy-subtitle">
+            This Shipping Policy explains how orders are processed, shipped, and
+            delivered when you purchase from Fresco Flavors.
+          </p>
+          <p class="policy-meta">
+            <strong>Last updated:</strong> March 6, 2026
           </p>
         </div>
       </section>
 
-      <section class="contact-main">
-        <div class="contact-main-container">
-          <!-- Left: contact cards 2x2 + map -->
-          <div class="contact-main-left">
-            <div class="contact-cards-grid">
-              <div class="contact-card">
-                <div class="contact-card-icon">
-                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                </div>
-                <h3 class="contact-card-label">Phone</h3>
-                <p class="contact-card-detail">
-                  <a href="tel:+19018965814">+1 (901) 896-5814</a>
+      <section class="policy-content" aria-label="Shipping policy details">
+        <div class="policy-container policy-grid">
+          <aside class="policy-toc" aria-label="On this page">
+            <h2 class="policy-toc-title">On this page</h2>
+            <ul class="policy-toc-list">
+              <li><a href="#processing">Order processing</a></li>
+              <li><a href="#rates">Shipping rates</a></li>
+              <li><a href="#delivery">Delivery estimates</a></li>
+              <li><a href="#tracking">Tracking</a></li>
+              <li><a href="#addresses">Address accuracy</a></li>
+              <li><a href="#missing">Lost, stolen, or damaged packages</a></li>
+              <li>
+                <a href="#international">International shipping & customs</a>
+              </li>
+              <li><a href="#changes">Changes & cancellations</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </aside>
+
+          <div class="policy-sections">
+            <section id="processing" class="policy-section">
+              <h2>Order processing</h2>
+              <p>
+                Orders are typically processed within
+                <strong>1–2 business days</strong> (excluding weekends and
+                holidays). During high volume periods, processing times may be
+                slightly longer.
+              </p>
+              <ul>
+                <li>
+                  <strong>Order cut-off:</strong> Orders placed after 12:00 PM
+                  (local time) may begin processing the next business day.
+                </li>
+                <li>
+                  <strong>Confirmation:</strong> You’ll receive an order
+                  confirmation email after checkout.
+                </li>
+                <li>
+                  <strong>Shipment notification:</strong> Once your order ships,
+                  we’ll email your tracking details (when available).
+                </li>
+              </ul>
+            </section>
+
+            <section id="rates" class="policy-section">
+              <h2>Shipping rates</h2>
+              <p>
+                Shipping charges are calculated at checkout based on destination
+                and order size. We may occasionally offer free-shipping
+                promotions.
+              </p>
+
+              <div class="policy-callout" role="note" aria-label="Rate note">
+                <p>
+                  <strong>Note:</strong> The examples below are common service
+                  levels. Your available options and prices will always appear
+                  at checkout.
                 </p>
               </div>
-              <div class="contact-card">
-                <div class="contact-card-icon">
-                  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                </div>
-                <h3 class="contact-card-label">Whatsapp</h3>
-                <p class="contact-card-detail">
-                  <a href="https://wa.me/19018965814">+1 (901) 896-5814</a>
-                </p>
+
+              <div
+                class="policy-table-wrap"
+                role="region"
+                aria-label="Rates table"
+              >
+                <table class="policy-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Service</th>
+                      <th scope="col">Typical cost</th>
+                      <th scope="col">Best for</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Standard Shipping</td>
+                      <td>Calculated at checkout</td>
+                      <td>Everyday orders</td>
+                    </tr>
+                    <tr>
+                      <td>Expedited Shipping</td>
+                      <td>Calculated at checkout</td>
+                      <td>Faster delivery</td>
+                    </tr>
+                    <tr>
+                      <td>Local delivery / pickup (if available)</td>
+                      <td>Varies by location</td>
+                      <td>Nearby customers</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <div class="contact-card">
-                <div class="contact-card-icon">
-                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                </div>
-                <h3 class="contact-card-label">Email</h3>
-                <p class="contact-card-detail">
-                  <a href="mailto:info@frescoflavors.com"
-                    >info@frescoflavors.com</a
-                  >
-                </p>
-              </div>
-              <div class="contact-card">
-                <div class="contact-card-icon">
-                  <i class="fa-solid fa-shop" aria-hidden="true"></i>
-                </div>
-                <h3 class="contact-card-label">Our Shop</h3>
-                <p class="contact-card-detail">
-                  7910 Moriarty Rd, Cordova, TN 38018
-                </p>
-              </div>
-            </div>
-            <div class="contact-map-wrap">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d61881.489831128325!2d-89.83236344471175!3d35.19412175135412!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2ske!4v1764248724074!5m2!1sen!2ske"
-                width="100%"
-                height="100%"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Location map"
-              ></iframe>
-            </div>
-          </div>
-          <!-- Right: Get In Touch form -->
-          <div class="contact-main-right">
-            <h2 class="contact-form-heading">Get In Touch</h2>
-            <p class="contact-form-desc">
-              We're here to help you with any questions or concerns. Send us a
-              message and we'll get back to you as soon as we can.
-            </p>
-            <form
-              class="contact-form-fields"
-              action="#"
-              method="post"
-              aria-label="Contact form"
-            >
-              <div class="contact-field">
-                <label for="contact-name">Name</label>
-                <input
-                  type="text"
-                  id="contact-name"
-                  name="name"
-                  placeholder="Your name"
-                  required
-                  class="contact-form-input"
-                />
-              </div>
-              <div class="contact-field">
-                <label for="contact-email">Email</label>
-                <input
-                  type="email"
-                  id="contact-email"
-                  name="email"
-                  placeholder="example@yourmail.com"
-                  required
-                  class="contact-form-input"
-                />
-              </div>
-              <div class="contact-field">
-                <label for="contact-subject">Subject</label>
-                <input
-                  type="text"
-                  id="contact-subject"
-                  name="subject"
-                  placeholder="Title..."
-                  class="contact-form-input"
-                />
-              </div>
-              <div class="contact-field">
-                <label for="contact-message">Message</label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  placeholder="Type here..."
-                  rows="5"
-                  class="contact-form-textarea"
-                ></textarea>
-              </div>
-              <button type="submit" class="contact-form-submit">
-                Send Now
-              </button>
-            </form>
+            </section>
+
+            <section id="delivery" class="policy-section">
+              <h2>Delivery estimates</h2>
+              <p>
+                Delivery times are estimates and begin after your order ships
+                (not when it is placed). Carrier delays, weather, and peak
+                seasons can affect delivery.
+              </p>
+              <ul>
+                <li>
+                  <strong>Standard:</strong> typically 3–7 business days after
+                  shipment
+                </li>
+                <li>
+                  <strong>Expedited:</strong> typically 2–3 business days after
+                  shipment
+                </li>
+              </ul>
+            </section>
+
+            <section id="tracking" class="policy-section">
+              <h2>Tracking</h2>
+              <p>
+                If tracking is available for your shipment, we’ll send a
+                tracking link to the email address used at checkout. Tracking
+                can take up to 24 hours to update after your label is created.
+              </p>
+            </section>
+
+            <section id="addresses" class="policy-section">
+              <h2>Address accuracy</h2>
+              <p>
+                Please double-check your shipping address at checkout. If an
+                address is incomplete or incorrect, delivery may be delayed, or
+                the package may be returned to us.
+              </p>
+              <ul>
+                <li>
+                  <strong>Returned packages:</strong> If a package is returned
+                  due to an address issue, we may require an additional shipping
+                  payment to reship it.
+                </li>
+              </ul>
+            </section>
+
+            <section id="missing" class="policy-section">
+              <h2>Lost, stolen, or damaged packages</h2>
+              <p>
+                If your package appears lost, is marked delivered but you
+                haven’t received it, or arrives damaged, contact us as soon as
+                possible so we can help.
+              </p>
+              <ul>
+                <li>
+                  <strong>Marked delivered:</strong> Please check with neighbors
+                  or building management and look around your delivery area
+                  first.
+                </li>
+                <li>
+                  <strong>Damaged items:</strong> Save the packaging and take
+                  photos of the box and product(s) before reaching out.
+                </li>
+                <li>
+                  <strong>Time window:</strong> Report issues within
+                  <strong>7 days</strong> of delivery (or expected delivery when
+                  tracking shows no movement).
+                </li>
+              </ul>
+            </section>
+
+            <section id="international" class="policy-section">
+              <h2>International shipping &amp; customs</h2>
+              <p>
+                International shipping may be available depending on your
+                location. If you place an international order, you may be
+                responsible for import duties, taxes, and customs fees imposed
+                by your country.
+              </p>
+              <ul>
+                <li>
+                  <strong>Customs delays:</strong> Customs processing can cause
+                  additional delays outside our control.
+                </li>
+                <li>
+                  <strong>Restricted items:</strong> Some destinations may have
+                  restrictions on food products and herbs.
+                </li>
+              </ul>
+            </section>
+
+            <section id="changes" class="policy-section">
+              <h2>Changes &amp; cancellations</h2>
+              <p>
+                If you need to update your address or cancel an order, contact
+                us immediately. Once an order has shipped, we can’t guarantee
+                changes or cancellations.
+              </p>
+            </section>
+
+            <section id="contact" class="policy-section">
+              <h2>Contact</h2>
+              <p>
+                Questions about shipping? Reach us at
+                <a href="mailto:info@frescoflavors.com"
+                  >info@frescoflavors.com</a
+                >
+                or via our <a href="/contact">Contact</a> page.
+              </p>
+            </section>
           </div>
         </div>
       </section>
@@ -336,7 +414,6 @@
           </form>
         </div>
       </div>
-
       <div class="footer-newsletter-divider"></div>
       <div class="footer-main">
         <div class="footer-container footer-columns">
@@ -347,7 +424,6 @@
                 alt="Fresco Flavors Logo"
               />
             </div>
-            <!-- <p class="footer-tagline">— Organic — Store —</p> -->
             <p class="footer-company-desc">
               Bringing the best herbs in every jar. 100% Organic, from Kenya to
               the World.
@@ -361,8 +437,8 @@
               </li>
               <li>
                 <i class="fa-solid fa-location-dot" aria-hidden="true"></i
-                ><span>
-                  7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA</span
+                ><span
+                  >7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA</span
                 >
               </li>
               <li>
@@ -439,7 +515,6 @@
           </div>
         </div>
       </div>
-
       <div class="footer-bottom">
         <div class="footer-container footer-bottom-inner">
           <p class="footer-copyright">
@@ -473,5 +548,7 @@
         </button>
       </div>
     </footer>
+
+    <script src="/scripts/index.js"></script>
   </body>
 </html>

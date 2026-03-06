@@ -1,6 +1,6 @@
 /* ========== Footer - Pixel-perfect layout ========== */
 .site-footer {
-  background-color: #f5f2ed;
+  background-color: var(--light-white-background);
   color: #2c2c2c;
   font-family:
     "Poppins",
@@ -9,8 +9,25 @@
     "Segoe UI",
     Roboto,
     sans-serif;
+  position: relative;
+  z-index: 10;
 }
- 
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 15;
+  opacity: 0.025;
+}
+
 .footer-container {
   max-width: 1400px;
   width: 90%;
@@ -19,6 +36,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 20;
 }
 
 /* ---------- Newsletter block ---------- */
@@ -293,11 +312,21 @@
   color: #777;
   margin: 0;
 }
-
+ 
 .footer-payments {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.footer-payments img {
+  width: auto;
+  height: 40px;
+  aspect-ratio: 16/9;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+  box-sizing: border-box;
 }
 
 .footer-payments i {
@@ -306,9 +335,10 @@
 }
 
 .footer-scroll-top {
-  position: absolute;
-  right: 24px;
+  position: fixed;
+  z-index: 20;
   bottom: 24px;
+  right: 24px;
   width: 44px;
   height: 44px;
   display: flex;
@@ -320,7 +350,16 @@
   border: none;
   border-radius: 0;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease, background-color 0.2s ease;
+}
+
+.footer-scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .footer-scroll-top:hover {

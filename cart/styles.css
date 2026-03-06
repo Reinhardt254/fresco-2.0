@@ -3,61 +3,270 @@
   color: #222;
 }
 
-.cart-hero {
-  padding: 3rem 0 1rem;
-  min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+
+
+/* =========== Home CTA Section START =========== */
+.cart-page-layout {
+  background-color: var(--light-green);
+  padding: 0;
   position: relative;
-  background-color: #e9eeed;
   overflow: hidden;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
 }
 
-.cart-hero::after {
+.cart-page-layout-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 10;
+}
+
+.cart-page-layout .bottom-container {
+  background-color: inherit;
+  padding: 70px 0;
+  border-radius: 10px;
+  min-height: 400px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-page-layout .bottom-container::before {
   content: "";
-  background: url("https://img.freepik.com/premium-vector/spices-herbs-hand-sketch-seamless-pattern-background-greenery-plants-engraving_514903-1234.jpg?w=1480")
-    no-repeat center center;
-  background-size: cover;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.05;
-  z-index: 5;
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  opacity: 0.035;
 }
 
-/* .cart-hero::before {
-  content: "";
-  background: url("https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/02/slider-leafs.png")
-    no-repeat;
-  background-size: contain;
-  background-position: top;
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100% ;
-  opacity: 1;
-  z-index: 7;
-} */
-
-.cart-hero-inner {
-  max-width: 1200px;
+.cart-page-layout .bottom-container .text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  max-width: 700px;
   margin: 0 auto;
-  margin-top: 0%;
+  text-align: center;
+  position: relative;
+  z-index: 10;
 }
 
-.cart-title {
-  font-size: 2.85rem;
+.cart-page-layout .bottom-container .cart-title {
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
-  margin: 0 0 0.5rem;
+  color: #000000;
+  margin: 0;
+  line-height: 1;
 }
 
-.cart-title .highlight {
+.cart-page-layout .bottom-container .cart-title .highlight {
   color: var(--primary-green);
 }
+
+.cart-page-layout .bottom-container .text-content h3 {
+  font-size: 20px;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.cart-page-layout .bottom-container .text-content p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.cart-page-layout .bottom-container .text-content a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+}
+
+.cart-page-layout .bottom-container .overlay-right-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 500px;
+  max-width: 30vw;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.cart-page-layout .bottom-container .overlay-right-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cart-page-layout .bottom-container .overlay-left-bottom {
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 500px;
+  max-width: 30vw;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+  transform: rotate(10deg);
+}
+
+.cart-page-layout .bottom-container .overlay-left-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cart-page-layout .bottom-container .overlay-center-bottom {
+  position: absolute;
+  bottom: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  max-width: 30vw;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.cart-page-layout .bottom-container .overlay-center-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0.1;
+}
+
+@media (max-width: 480px) {
+  .cart-page-layout .top-container {
+    height: 350px;
+    margin-bottom: 150px;
+  }
+
+  .cart-page-layout .top-container {
+    padding: 10px;
+  }
+
+  .cart-page-layout .top-container .overlay-content {
+    margin-top: 100px;
+    width: 100%;
+  }
+
+  .cart-page-layout .bottom-container {
+    padding: 50px 10px;
+    padding-bottom: 120px;
+  }
+
+  .cart-page-layout .bottom-container .overlay-right-bottom {
+    width: 300px;
+    max-width: 50vw;
+    bottom: -10%;
+  }
+
+  .cart-page-layout .bottom-container .overlay-left-bottom {
+    width: 300px;
+    max-width: 20vw;
+  }
+
+  .cart-page-layout .bottom-container .overlay-center-bottom {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    max-width: 90vw;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .cart-page-layout .bottom-container .overlay-left-bottom {
+    position: absolute;
+    bottom: -15%;
+    left: -15%;
+    width: 500px;
+    max-width: 50vw;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-page-layout .top-container {
+    height: 350px;
+    margin-bottom: 150px;
+  }
+
+  .cart-page-layout .top-container {
+    padding: 10px;
+  }
+
+  .cart-page-layout .top-container .overlay-content {
+    margin-top: 100px;
+    width: 100%;
+  }
+
+  .cart-page-layout .bottom-container {
+    padding: 50px 10px;
+    padding-bottom: 120px;
+  }
+
+  .cart-page-layout .bottom-container .overlay-right-bottom {
+    width: 300px;
+    max-width: 50vw;
+    bottom: -10%;
+  }
+
+  .cart-page-layout .bottom-container .overlay-left-bottom {
+    width: 300px;
+    max-width: 20vw;
+  }
+
+  .cart-page-layout .bottom-container .overlay-center-bottom {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    max-width: 90vw;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .cart-page-layout .bottom-container .overlay-left-bottom {
+    position: absolute;
+    bottom: -15%;
+    left: -15%;
+    width: 500px;
+    max-width: 50vw;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+    transform: rotate(10deg);
+  }
+}
+
 
 .cart-breadcrumb {
   font-size: 0.9rem;

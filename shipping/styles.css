@@ -1,0 +1,248 @@
+/* Shipping Policy page */
+
+.policy-page {
+  background: #fff;
+}
+
+.policy-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+ 
+.policy-hero {
+  padding: 56px 0 28px;
+  min-height: 300px;
+  background: var(--light-white-background);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  width: 100%;
+}
+
+.policy-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 15;
+  opacity: 0.025;
+}
+
+.policy-hero .policy-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  width: 100%;
+}
+
+.policy-eyebrow {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.policy-title {
+  margin: 0 0 10px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.05;
+  color: #111;
+  text-align: left;
+}
+
+.policy-subtitle {
+  margin: 0 0 10px;
+  max-width: 72ch;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.72);
+  text-align: left;
+}
+
+.policy-meta {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.55);
+  text-align: left;
+}
+
+.policy-content {
+  padding: 34px 0 72px;
+}
+
+.policy-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.policy-toc {
+  position: sticky;
+  top: 120px;
+  align-self: start;
+  padding: 18px 18px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: none;
+}
+
+.policy-toc-title {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.policy-toc-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.policy-toc-list a {
+  display: block;
+  padding: 10px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 14px;
+  line-height: 1.3;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.policy-toc-list a:hover {
+  background: var(--light-grey-background);
+  color: var(--dark-text-color);
+}
+
+.policy-sections h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+}
+
+.policy-sections p {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.policy-sections ul {
+  margin: 0 0 2px 18px;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.72);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.policy-section {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.policy-section:last-child {
+  border-bottom: none;
+}
+
+.policy-callout {
+  margin: 16px 0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--light-grey-border);
+  background: var(--light-white-background);
+}
+
+.policy-callout p {
+  margin: 0;
+}
+
+.policy-table-wrap {
+  width: 100%;
+  overflow: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+}
+
+.policy-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+}
+
+.policy-table th,
+.policy-table td {
+  padding: 14px 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  vertical-align: top;
+  text-align: left;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.policy-table th {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.policy-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.policy-sections a {
+  color: var(--primary-green);
+  text-decoration: none;
+}
+
+.policy-sections a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 980px) {
+  .policy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .policy-toc {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .policy-hero {
+    padding: 42px 0 22px;
+  }
+
+  .policy-content {
+    padding: 26px 0 60px;
+  }
+}

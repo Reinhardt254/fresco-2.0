@@ -5,52 +5,203 @@
    min-height: 60vh;
  }
 
-.products-page-layout {
-   position: relative;
-   width: 100%;
-   height: 500px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
- 
-.products-page-layout::before {
-   content: "";
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background-color: rgba(0, 0, 0, 0.5);
+
+/* =========== Home CTA Section START =========== */
+.product-page-layout {
+  background-color: var(--light-green);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
 }
 
-.products-page-layout img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
+.product-page-layout-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 10;
 }
 
-.products-page-layout .layout-content {
-
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   width: 100%;
-   height: 100%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   z-index: 10;
+.product-page-layout .bottom-container {
+  background-color: inherit;
+  padding: 70px 0;
+  border-radius: 10px;
+  min-height: 400px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
-.products-page-layout .layout-content h1 {
-   font-size: 4rem;
-   font-weight: 700;
-   color: #fff;
-   text-align: center;
-   text-transform: uppercase;
-   letter-spacing: 0.05em;
+.product-page-layout .bottom-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  opacity: 0.035;
+}
+
+.product-page-layout .bottom-container .text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.product-page-layout .bottom-container .text-content h2 {
+  font-size: 7rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin: 0;
+  line-height: 1;
+}
+
+.product-page-layout .bottom-container .text-content h3 {
+  font-size: 20px;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.product-page-layout .bottom-container .text-content p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.product-page-layout .bottom-container .text-content a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+}
+
+.product-page-layout .bottom-container .overlay-right-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 500px;
+  max-width: 30vw;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.product-page-layout .bottom-container .overlay-right-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-page-layout .bottom-container .overlay-left-bottom {
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 500px;
+  max-width: 30vw;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+  transform: rotate(10deg);
+}
+
+.product-page-layout .bottom-container .overlay-left-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-page-layout .bottom-container .overlay-center-bottom {
+  position: absolute;
+  bottom: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  max-width: 30vw;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.product-page-layout .bottom-container .overlay-center-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0.1;
+}
+
+@media (max-width: 480px) {
+  .product-page-layout .top-container {
+    height: 350px;
+    margin-bottom: 150px;
+  }
+
+  .product-page-layout .top-container {
+    padding: 10px;
+  }
+
+  .product-page-layout .top-container .overlay-content {
+    margin-top: 100px;
+    width: 100%;
+  }
+
+  .product-page-layout .bottom-container {
+    padding: 50px 10px;
+    padding-bottom: 120px;
+  }
+
+  .product-page-layout .bottom-container .overlay-right-bottom {
+    width: 300px;
+    max-width: 50vw;
+    bottom: -10%;
+  }
+
+  .product-page-layout .bottom-container .overlay-left-bottom {
+    width: 300px;
+    max-width: 20vw;
+  }
+
+  .product-page-layout .bottom-container .overlay-center-bottom {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    max-width: 90vw;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .product-page-layout .bottom-container .overlay-left-bottom {
+    position: absolute;
+    bottom: -15%;
+    left: -15%;
+    width: 500px;
+    max-width: 50vw;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+    transform: rotate(10deg);
+  }
 }
 
 /* ========== Products Page Section ========== */
@@ -394,6 +545,7 @@
 .sidebar-categories a:hover,
 .sidebar-categories .category-link.active {
   color: var(--primary-green);
+  background-color: transparent;
 }
 
 .sidebar-categories .category-link.active {
