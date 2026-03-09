@@ -805,10 +805,41 @@
     align-items: flex-start;
   }
 
+  .retail-section-fullwidth .retail-section-content {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0rem;
+    box-sizing: border-box;
+  }
+
+  .retail-section-image-left .retail-section-content,
+  .retail-section-image-right .retail-section-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .retail-media-shape {
-    max-width: 500px;
+    max-width: 100%;
     margin: 0 auto;
   }
+
+  .retail-section-fullwidth .retail-section-media {
+    min-height: 300px;
+    width: 100%;
+  }
+
+  .retail-section-fullwidth .retail-media-shape img {
+    min-height: 300px;
+    width: 100%;
+  }
+
+  /* .retail-step-text-top .retail-step-content {
+    order: 2;
+  }
+
+  .retail-step-text-top .retail-step-image-wrap {
+    order: 1;
+  } */
 
   .retail-benefits-grid {
     grid-template-columns: 1fr;
@@ -816,15 +847,52 @@
 
   .retail-steps-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 1.5rem;
     max-width: 360px;
     margin-left: auto;
     margin-right: auto;
   }
 
   .retail-step-image-wrap {
-    max-width: 320px;
+    max-width: 100%;
     margin: 0 auto;
+    border-radius: 0;
+  }
+
+  .retail-step {
+    position: relative;
+    padding: 0rem;
+    border-radius: 7px;
+    overflow: hidden;
+  }
+  
+  .retail-step-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0f3d2ead;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .retail-step-num {
+    font-size: 2.5rem;
+  }
+
+  .retail-step-title {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+
+  .retail-step-desc {
+    font-size: 0.875rem;
+    color: #fff;
   }
 }
 
@@ -853,8 +921,35 @@
     padding: 3rem 0;
   }
 
-  .retail-section-heading {
-    font-size: 1.5rem;
+  .retail-section-image-left .retail-section-content, .retail-section-image-right .retail-section-content {
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+  }
+
+  .retail-section-fullwidth .retail-section-inner.retail-section-fullwidth-inner {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+  }
+
+  .retail-section .retail-section-heading {
+    text-align: left;
+    font-size: 1.6rem;
+  }
+
+  .retail-intro-text {
+    text-align: left;
+  }
+
+  .retail-section-text {
+    text-align: left;
+  }
+
+  .retail-section-fullwidth .retail-media-shape {
+    min-height: fit-content;
+    max-height: fit-content;
   }
 
   .retail-section-text p {
@@ -867,12 +962,16 @@
   }
 
   .retail-how-it-works {
-    padding: 3.5rem 0 4rem;
+    padding: 2rem 0 1rem 0rem;
   }
 
   .retail-how-it-works-lead {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
     font-size: 1rem;
+  }
+
+  .retail-section-inner {
+    gap: 0.5rem;
   }
 
   .retail-step-num {
@@ -880,7 +979,7 @@
   }
 
   .retail-step-title {
-    font-size: 1.0625rem;
+    font-size: 1.25rem;
   }
 
   .retail-step-desc {
@@ -891,18 +990,57 @@
     padding: 1.5rem 1.25rem;
   }
 
-  .retail-cta {
-    height: 400px;
+  .retail-page .cta {
+    height: 500px;
+    display: flex;
+    align-items: flex-end;
+    background-color: #f9f9f9;
   }
 
-  .retail-cta-heading {
-    font-size: 1.5rem;
+  .retail-page .cta-bg {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 0;
   }
 
-  .retail-cta-desc {
+  .retail-page .cta-inner {
+    top: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 0;
+    width: 90%;
+  }
+
+  .retail-page .cta-heading {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .retail-page .cta-desc {
     font-size: 1rem;
-    margin-bottom: 1.5rem;
+    text-align: center;
   }
+
+  .retail-page .cta-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .retail-section-fullwidth .retail-media-shape img {
+    min-height: 300px;
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 5/4;
+}
+
+.contact-us-btn {
+  margin-top: 0rem;
+}
 }
 
 @media (max-width: 480px) {
@@ -911,11 +1049,11 @@
   }
 
   .retail-hero-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .retail-hero-tagline {
-    font-size: 0.9375rem;
+    font-size: 1.1rem;
   }
 
   .retail-intro-text {
@@ -951,11 +1089,20 @@
     font-size: 0.875rem;
   }
 
-  .retail-cta {
-    height: 350px;
+  .retail-page .cta {
+    min-height: 500px;
+    height: 500px;
+    display: flex;
+    align-items: flex-end;
+    background-color: #f9f9f9;
   }
 
-  .retail-cta-heading {
-    font-size: 1.375rem;
+  .retail-page .cta-heading {
+    font-size: 1.35rem;
+  }
+
+  .retail-page .cta-desc {
+    font-size: 0.9375rem;
+    margin-bottom: 1.5rem;
   }
 }

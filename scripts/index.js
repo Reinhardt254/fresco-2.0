@@ -351,8 +351,8 @@ const reviewsHeroSwiperEl = document.querySelector(".reviews-hero-swiper");
 if (reviewsHeroSwiperEl) {
   const reviewsHeroSwiper = new Swiper(".reviews-hero-swiper", {
     loop: true,
-    slidesPerView: 3,
-    spaceBetween: 20,
+    slidesPerView: 1,
+    spaceBetween: 0,
     effect: "slide",
     speed: 900,
     navigation: {
@@ -366,6 +366,12 @@ if (reviewsHeroSwiperEl) {
     },
     fadeEffect: {
       crossFade: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
     },
   });
 }

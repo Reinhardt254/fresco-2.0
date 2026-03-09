@@ -2635,7 +2635,7 @@ body.no-scroll {
 .reviews-trusted-text {
   margin: 0.5rem 0 0;
   font-size: 15px;
-  color: #4a5c52;
+  color: #ffffff;
   font-weight: 500;
 }
 
@@ -2669,12 +2669,24 @@ body.no-scroll {
     text-align: center;
   }
 
+  .review-hero-card {
+    padding: 2rem 1rem;
+  }
+
   .reviews-right {
     align-items: center;
   }
 
+  .reviews-left {
+    gap: 0rem;
+  }
+
   .reviews-heading {
     font-size: 30px;
+  }
+
+  .reviews-stars {
+    padding-top: 1rem;
   }
 }
 

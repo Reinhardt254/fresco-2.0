@@ -316,9 +316,9 @@
    }
  
    .home-page-top-layout .pagination-custom .swiper-pagination-bullet {
-     width: 12px !important;
-     height: 12px !important;
-     margin: 0 0.35rem !important;
+     width: 14px !important;
+     height: 14px !important;
+     margin: 0 0.45rem !important;
    }
  
    .home-page-top-layout
@@ -517,7 +517,7 @@
  
  @media (max-width: 768px) {
    .home-page-layout .layout-content-inner {
-     flex-direction: column !important;
+     flex-direction: column-reverse !important;
      align-items: center !important;
      justify-content: center !important;
      gap: 2rem !important;
@@ -553,11 +553,13 @@
      justify-content: center !important;
      align-items: center !important;
      border-radius: 5px;
+     aspect-ratio: 5/4;
    }
  
    .home-page-layout {
-     height: 580px;
+     height: auto;
      min-height: fit-content;
+     padding: 3rem 0 3rem 0;
    }
  }
  
@@ -949,6 +951,17 @@
      right: 0 !important;
      bottom: 0 !important;
    }
+ }
+
+ @media (max-width: 768px) {
+  .our-mission {
+    padding: 1rem 0 3rem 0;
+  }
+
+  .our-mission-points-container {
+    max-width: 90vw;
+    padding-top: 6rem;
+  }
  }
   
  /* ====================Our Commitment section================= */
