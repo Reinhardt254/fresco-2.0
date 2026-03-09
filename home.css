@@ -84,7 +84,7 @@
    transform: translateY(-50%) rotate(90deg);
    width: fit-content !important;
    height: fit-content !important;
-   z-index: 10!important;
+   z-index: 100!important;
  
    position: absolute !important;
  }
@@ -110,6 +110,11 @@
    margin-left: 1rem !important;
    margin-right: 1rem !important;
    position: relative !important;
+   transition: all 0.3s ease;
+ }
+
+ .home-page-top-layout .pagination-custom .swiper-pagination-bullet:hover {
+  background-color: var(--primary-green);
  }
  
  .home-page-top-layout .pagination-custom .swiper-pagination-bullet-active {
@@ -211,6 +216,11 @@
  .home-page-top-layout .socials-item i {
    font-size: 1.35rem;
    color: #fff;
+   transition: all 0.3s ease;
+ }
+
+ .home-page-top-layout .socials-item:hover i {
+  color: var(--primary-green);
  }
  
  .home-page-top-layout .separator {
