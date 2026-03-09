@@ -46,6 +46,8 @@
   justify-content: center;
   align-items: flex-start;
   width: 100%;
+  position: relative;
+  z-index: 30;
 }
 
 .faq-eyebrow {
@@ -137,10 +139,10 @@
 }
 
 .faq-category-btn.active {
-  background: rgba(129, 176, 63, 0.12);
-  color: var(--primary-green);
+  background: #0f3d2e17;
+  color: var(--dark-green-background);
 }
-
+ 
 /* Right: accordion panels */
 .faq-accordion-panels {
   position: relative;

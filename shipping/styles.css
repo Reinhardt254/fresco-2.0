@@ -48,6 +48,8 @@
   align-items: flex-start;
   text-align: center;
   width: 100%;
+  position: relative;
+  z-index: 30;
 }
 
 .policy-eyebrow {

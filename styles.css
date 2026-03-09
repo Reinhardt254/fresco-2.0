@@ -45,6 +45,10 @@ button {
   font-family: "Josefin Sans", sans-serif !important;
 }
 
+button {
+  border-radius: 1px !important;
+}
+
 .contact-us-btn-icon {
   font-size: 10px;
   height: 16px;
@@ -1230,7 +1234,7 @@ body.no-scroll {
 .category-nav-button {
   width: 45px;
   height: 45px;
-  border-radius: 50%;
+  border-radius: 50% !important;
   border: 1px solid #d4d9d2;
   background-color: #ffffff;
   display: flex;
@@ -1783,6 +1787,24 @@ body.no-scroll {
   position: relative;
   height: 100%;
   width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.food-recipes::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2;
+  opacity: 0.025;
+  pointer-events: none;
 }
 
 .food-recipes-container {
@@ -1795,6 +1817,8 @@ body.no-scroll {
   justify-content: space-between;
   align-items: stretch;
   gap: 48px;
+  position: relative;
+  z-index: 3;
 }
 
 .food-recipes-text {

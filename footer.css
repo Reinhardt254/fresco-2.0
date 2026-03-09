@@ -336,7 +336,7 @@
 
 .footer-scroll-top {
   position: fixed;
-  z-index: 20;
+  z-index: 2000000000000;
   bottom: 24px;
   right: 24px;
   width: 44px;
