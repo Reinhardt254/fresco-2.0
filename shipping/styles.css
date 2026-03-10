@@ -247,4 +247,9 @@
   .policy-content {
     padding: 26px 0 60px;
   }
+
+  .policy-container {
+    max-width: 95%;
+    width: 95%;
+  }
 }

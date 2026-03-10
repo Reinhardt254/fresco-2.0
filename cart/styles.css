@@ -296,10 +296,10 @@
 
 .cart-table-header {
   display: grid;
-  grid-template-columns: minmax(0, 1.8fr) minmax(0, 0.8fr) minmax(
-      0,
-      0.8fr
-    ) minmax(0, 0.9fr);
+    grid-template-columns: minmax(0, 1.8fr) minmax(0, 0.8fr) minmax(
+        0,
+        0.8fr
+      ) ;
   gap: 1rem;
   padding: 0.9rem 1.5rem;
   background-color: #1c755700;
@@ -322,10 +322,10 @@
 
 .cart-row {
   display: grid;
-  grid-template-columns: auto minmax(0, 1.8fr) minmax(0, 0.8fr) minmax(
-      0,
-      0.8fr
-    ) minmax(0, 0.9fr);
+    grid-template-columns: auto minmax(0, 1.8fr) minmax(0, 0.8fr) minmax(
+        0,
+        0.8fr
+      ) ;
   gap: 1rem;
   align-items: center;
   padding: 1rem 1.5rem;
@@ -723,6 +723,22 @@
     grid-template-columns: auto minmax(0, 1.8fr);
     grid-template-rows: auto auto auto;
     align-items: flex-start;
+  }
+
+  .cart-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .cart-product-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    overflow: hidden;
+    background-color: #f3f3f3;
+    flex-shrink: 0;
   }
 
   .cart-price,

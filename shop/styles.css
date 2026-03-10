@@ -777,4 +777,14 @@
     height: 200px;
     margin-right: 0;
   }
+
+  /* .products-sort-wrap {
+    flex: 1 1 80%;
+    max-width: none;
+  } */
+
+  .products-sort {
+    min-width: 100%;
+    width: 100%;
+  }
 }

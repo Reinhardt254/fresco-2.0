@@ -290,6 +290,10 @@
     max-width: 90vw;
   }
 
+  .contact-page-layout {
+    height: 350px;
+  }
+
   .contact-main-container {
     display: flex;
     flex-direction: column;
@@ -304,6 +308,14 @@
   
   .contact-cards-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-page-layout .layout-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact-page-layout .layout-content p {
+    font-size: 1rem;
   }
 }
 
