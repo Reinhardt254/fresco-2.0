@@ -206,98 +206,211 @@
 
       <section class="cart-layout">
         <div class="cart-layout-inner">
-          <!-- Left: cart items table -->
-          <div class="cart-table">
-            <div class="cart-table-header">
-              <span class="cart-col-product">Product</span>
-              <!-- <span class="cart-col-price">Price</span> -->
-              <span class="cart-col-qty">Quantity</span>
-              <span class="cart-col-subtotal">Price</span>
-            </div>
-
-            <div class="cart-row">
-              <button
-                class="cart-remove"
-                type="button"
-                aria-label="Remove item"
-              >
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-              </button>
-              <div class="cart-product">
-                <div class="cart-product-image">
-                  <img
-                    src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-basil.png"
-                    alt="Freeze-Dried Basil"
+          <!-- Cart items list (no tables) -->
+          <div class="cart-list">
+            <article class="cart-item">
+              <div class="cart-item-image">
+                <img
+                  src="https://newvashaepz.com/wp-content/uploads/2026/03/Basil-scaled.png"
+                  alt="Freeze-Dried Basil"
+                />
+              </div>
+              <div class="cart-item-body">
+                <p class="cart-product-name">Freeze-Dried Basil</p>
+                <p class="cart-product-meta">50 g • Organic herbs</p>
+                <p class="cart-unit-price">$14.00</p>
+                <div class="cart-qty cart-qty-desktop">
+                  <button type="button" class="cart-qty-btn cart-qty-btn-minus">
+                    −
+                  </button>
+                  <input
+                    type="number"
+                    value="1"
+                    min="1"
+                    class="cart-qty-input"
                   />
-                </div>
-                <div class="cart-product-info">
-                  <p class="cart-product-name">Freeze-Dried Basil</p>
-                  <p class="cart-product-meta">50 g • Organic herbs</p>
+                  <button type="button" class="cart-qty-btn cart-qty-btn-plus">
+                    +
+                  </button>
                 </div>
               </div>
-              <div class="cart-qty">
-                <button type="button" class="cart-qty-btn">−</button>
-                <input type="number" value="1" min="1" class="cart-qty-input" />
-                <button type="button" class="cart-qty-btn">+</button>
-              </div>
-              <div class="cart-price">$14.00</div>
-            </div>
-
-            <div class="cart-row">
-              <button
-                class="cart-remove"
-                type="button"
-                aria-label="Remove item"
-              >
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-              </button>
-              <div class="cart-product">
-                <div class="cart-product-image">
-                  <img
-                    src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-ginger.png"
-                    alt="Freeze-Dried Ginger"
+              <div class="cart-item-right">
+                <button
+                  type="button"
+                  class="cart-item-remove"
+                  aria-label="Remove item"
+                >
+                  <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <span class="cart-price">$14.00</span>
+                <div class="cart-item-actions">
+                  <button
+                    type="button"
+                    class="cart-btn-edit"
+                    aria-label="Edit item"
+                  >
+                    <i class="fa-solid fa-pen" aria-hidden="true"></i> Edit
+                  </button>
+                  <button
+                    type="button"
+                    class="cart-btn-delete"
+                    aria-label="Delete item"
+                  >
+                    <i class="fa-solid fa-trash" aria-hidden="true"></i> Delete
+                  </button>
+                </div>
+                <div class="cart-qty cart-qty-mobile">
+                  <button type="button" class="cart-qty-btn cart-qty-btn-minus">
+                    −
+                  </button>
+                  <input
+                    type="number"
+                    value="1"
+                    min="1"
+                    class="cart-qty-input"
                   />
-                </div>
-                <div class="cart-product-info">
-                  <p class="cart-product-name">Freeze-Dried Ginger</p>
-                  <p class="cart-product-meta">100 g • Specialty</p>
+                  <button type="button" class="cart-qty-btn cart-qty-btn-plus">
+                    +
+                  </button>
                 </div>
               </div>
-              <div class="cart-qty">
-                <button type="button" class="cart-qty-btn">−</button>
-                <input type="number" value="2" min="1" class="cart-qty-input" />
-                <button type="button" class="cart-qty-btn">+</button>
-              </div>
-              <div class="cart-price">$38.00</div>
-            </div>
+            </article>
 
-            <div class="cart-row">
-              <button
-                class="cart-remove"
-                type="button"
-                aria-label="Remove item"
-              >
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-              </button>
-              <div class="cart-product">
-                <div class="cart-product-image">
-                  <img
-                    src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-Chives.png"
-                    alt="Freeze-Dried Chives"
+            <article class="cart-item">
+              <div class="cart-item-image">
+                <img
+                  src="https://newvashaepz.com/wp-content/uploads/2026/03/Ginger-scaled.png"
+                  alt="Freeze-Dried Ginger"
+                />
+              </div>
+              <div class="cart-item-body">
+                <p class="cart-product-name">Freeze-Dried Ginger</p>
+                <p class="cart-product-meta">100 g • Specialty</p>
+                <p class="cart-unit-price">$19.00</p>
+                <div class="cart-qty cart-qty-desktop">
+                  <button type="button" class="cart-qty-btn cart-qty-btn-minus">
+                    −
+                  </button>
+                  <input
+                    type="number"
+                    value="2"
+                    min="1"
+                    class="cart-qty-input"
                   />
-                </div>
-                <div class="cart-product-info">
-                  <p class="cart-product-name">Freeze-Dried Chives</p>
-                  <p class="cart-product-meta">50 g • Herbs</p>
+                  <button type="button" class="cart-qty-btn cart-qty-btn-plus">
+                    +
+                  </button>
                 </div>
               </div>
-              <div class="cart-qty">
-                <button type="button" class="cart-qty-btn">−</button>
-                <input type="number" value="1" min="1" class="cart-qty-input" />
-                <button type="button" class="cart-qty-btn">+</button>
+              <div class="cart-item-right">
+                <button
+                  type="button"
+                  class="cart-item-remove"
+                  aria-label="Remove item"
+                >
+                  <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <span class="cart-price">$38.00</span>
+                <div class="cart-item-actions">
+                  <button
+                    type="button"
+                    class="cart-btn-edit"
+                    aria-label="Edit item"
+                  >
+                    <i class="fa-solid fa-pen" aria-hidden="true"></i> Edit
+                  </button>
+                  <button
+                    type="button"
+                    class="cart-btn-delete"
+                    aria-label="Delete item"
+                  >
+                    <i class="fa-solid fa-trash" aria-hidden="true"></i> Delete
+                  </button>
+                </div>
+                <div class="cart-qty cart-qty-mobile">
+                  <button type="button" class="cart-qty-btn cart-qty-btn-minus">
+                    −
+                  </button>
+                  <input
+                    type="number"
+                    value="2"
+                    min="1"
+                    class="cart-qty-input"
+                  />
+                  <button type="button" class="cart-qty-btn cart-qty-btn-plus">
+                    +
+                  </button>
+                </div>
               </div>
-              <div class="cart-price">$19.00</div>
-            </div>
+            </article>
+
+            <article class="cart-item">
+              <div class="cart-item-image">
+                <img
+                  src="https://newvashaepz.com/wp-content/uploads/2026/03/Parsley-scaled.png"
+                  alt="Freeze-Dried Parsley"
+                />
+              </div>
+              <div class="cart-item-body">
+                <p class="cart-product-name">Freeze-Dried Parsley</p>
+                <p class="cart-product-meta">50 g • Herbs</p>
+                <p class="cart-unit-price">$19.00</p>
+                <div class="cart-qty cart-qty-desktop">
+                  <button type="button" class="cart-qty-btn cart-qty-btn-minus">
+                    −
+                  </button>
+                  <input
+                    type="number"
+                    value="1"
+                    min="1"
+                    class="cart-qty-input"
+                  />
+                  <button type="button" class="cart-qty-btn cart-qty-btn-plus">
+                    +
+                  </button>
+                </div>
+              </div>
+              <div class="cart-item-right">
+                <button
+                  type="button"
+                  class="cart-item-remove"
+                  aria-label="Remove item"
+                >
+                  <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <span class="cart-price">$19.00</span>
+                <div class="cart-item-actions">
+                  <button
+                    type="button"
+                    class="cart-btn-edit"
+                    aria-label="Edit item"
+                  >
+                    <i class="fa-solid fa-pen" aria-hidden="true"></i> Edit
+                  </button>
+                  <button
+                    type="button"
+                    class="cart-btn-delete"
+                    aria-label="Delete item"
+                  >
+                    <i class="fa-solid fa-trash" aria-hidden="true"></i> Delete
+                  </button>
+                </div>
+                <div class="cart-qty cart-qty-mobile">
+                  <button type="button" class="cart-qty-btn cart-qty-btn-minus">
+                    −
+                  </button>
+                  <input
+                    type="number"
+                    value="1"
+                    min="1"
+                    class="cart-qty-input"
+                  />
+                  <button type="button" class="cart-qty-btn cart-qty-btn-plus">
+                    +
+                  </button>
+                </div>
+              </div>
+            </article>
 
             <div class="cart-actions-row cart-actions-row--simple">
               <button type="button" class="cart-clear">
@@ -377,7 +490,9 @@
       <section class="cart-recommended">
         <div class="cart-recommended-inner">
           <div class="cart-recommended-header">
-            <h2 class="cart-recommended-title">Recommended Products</h2>
+            <h2 class="cart-recommended-title">
+              Recommended <span class="highlight">Products</span>
+            </h2>
             <p class="cart-recommended-subtitle">
               Complete your cart with these freeze-dried favorites.
             </p>
@@ -390,7 +505,7 @@
                     <div class="product-image">
                       <img
                         class="product-card__image"
-                        src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-basil.png"
+                        src="https://newvashaepz.com/wp-content/uploads/2026/03/Basil-scaled.png"
                         alt="Freeze-Dried Basil"
                         loading="lazy"
                       />
@@ -414,7 +529,7 @@
                     <div class="product-image">
                       <img
                         class="product-card__image"
-                        src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-ginger.png"
+                        src="https://newvashaepz.com/wp-content/uploads/2026/03/Ginger-scaled.png"
                         alt="Freeze-Dried Ginger"
                         loading="lazy"
                       />
@@ -438,13 +553,13 @@
                     <div class="product-image">
                       <img
                         class="product-card__image"
-                        src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-Chives.png"
-                        alt="Freeze-Dried Chives"
+                        src="https://newvashaepz.com/wp-content/uploads/2026/03/Parsley-scaled.png"
+                        alt="Freeze-Dried Parsley"
                         loading="lazy"
                       />
                     </div>
                     <h3 class="product-name">
-                      <span>Freeze-Dried Chives</span>
+                      <span>Freeze-Dried Parsley</span>
                     </h3>
                   </a>
                   <div class="product-price">
@@ -462,7 +577,103 @@
                     <div class="product-image">
                       <img
                         class="product-card__image"
-                        src="https://www.eatgreengarden.com/wp-content/uploads/sites/5/2021/04/green-garden-dill.png"
+                        src="https://newvashaepz.com/wp-content/uploads/2026/03/Dill-scaled.png"
+                        alt="Freeze-Dried Dill"
+                        loading="lazy"
+                      />
+                    </div>
+                    <h3 class="product-name">
+                      <span>Freeze-Dried Dill</span>
+                    </h3>
+                  </a>
+                  <div class="product-price">
+                    <span class="current-price">$14.00</span>
+                  </div>
+                  <button type="button" class="product-card-add">
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="product-card">
+                  <a href="/product-details" class="product-card__link">
+                    <div class="product-image">
+                      <img
+                        class="product-card__image"
+                        src="https://newvashaepz.com/wp-content/uploads/2026/03/Basil-scaled.png"
+                        alt="Freeze-Dried Basil"
+                        loading="lazy"
+                      />
+                    </div>
+                    <h3 class="product-name">
+                      <span>Freeze-Dried Basil</span>
+                    </h3>
+                  </a>
+                  <div class="product-price">
+                    <span class="current-price">$14.00</span>
+                  </div>
+                  <button type="button" class="product-card-add">
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="product-card">
+                  <a href="/product-details" class="product-card__link">
+                    <div class="product-image">
+                      <img
+                        class="product-card__image"
+                        src="https://newvashaepz.com/wp-content/uploads/2026/03/Ginger-scaled.png"
+                        alt="Freeze-Dried Ginger"
+                        loading="lazy"
+                      />
+                    </div>
+                    <h3 class="product-name">
+                      <span>Freeze-Dried Ginger</span>
+                    </h3>
+                  </a>
+                  <div class="product-price">
+                    <span class="current-price">$19.00</span>
+                  </div>
+                  <button type="button" class="product-card-add">
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="product-card">
+                  <a href="/product-details" class="product-card__link">
+                    <div class="product-image">
+                      <img
+                        class="product-card__image"
+                        src="https://newvashaepz.com/wp-content/uploads/2026/03/Parsley-scaled.png"
+                        alt="Freeze-Dried Parsley"
+                        loading="lazy"
+                      />
+                    </div>
+                    <h3 class="product-name">
+                      <span>Freeze-Dried Parsley</span>
+                    </h3>
+                  </a>
+                  <div class="product-price">
+                    <span class="current-price">$19.00</span>
+                  </div>
+                  <button type="button" class="product-card-add">
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="product-card">
+                  <a href="/product-details" class="product-card__link">
+                    <div class="product-image">
+                      <img
+                        class="product-card__image"
+                        src="https://newvashaepz.com/wp-content/uploads/2026/03/Dill-scaled.png"
                         alt="Freeze-Dried Dill"
                         loading="lazy"
                       />

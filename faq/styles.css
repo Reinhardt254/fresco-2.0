@@ -1,7 +1,7 @@
 /* FAQ page – hero matches info pages, accordion layout */
 
 .faq-page {
-  background: var(--light-white-background);
+  background: #fcfcfc;
 }
 
 .faq-container {
@@ -14,7 +14,7 @@
 .faq-hero {
   padding: 56px 0 28px;
   min-height: 280px;
-  background: var(--light-white-background);
+  background: var(--light-green);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   position: relative;
   z-index: 10;
@@ -67,6 +67,10 @@
   text-align: left;
 }
 
+.faq-title .highlight {
+  color: var(--primary-green);
+}
+
 .faq-subtitle {
   margin: 0;
   max-width: 72ch;
@@ -78,7 +82,7 @@
 
 /* Content grid – left categories, right accordion */
 .faq-content {
-  padding: 34px 0 72px;
+  padding: 50px 0 72px 0;
 }
 
 .faq-grid {

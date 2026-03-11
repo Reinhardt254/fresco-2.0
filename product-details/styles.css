@@ -2,7 +2,7 @@
 
 .product-details-main {
   background: #ffffff;
-  padding: 48px 0 64px;
+  padding: 3rem 0 0 0;
   min-height: 60vh;
   width: 100%;
   display: flex;
@@ -222,12 +222,13 @@
 
 .product-details-size-option {
   min-width: 60px;
-  padding: 8px 16px;
+  padding: 10px 16px;
   border-radius: 999px;
   border: 1px solid #d8d8d8;
+  border-radius: 4px !important;
   background: #ffffff;
   font-family: "Poppins", sans-serif;
-  font-size: 13px;
+  font-size: 1rem;
   font-weight: 500;
   color: #4a4a4a;
   cursor: pointer;
@@ -254,50 +255,75 @@
   margin-bottom: 24px;
 }
 
+.product-details-actions button {
+  border-radius: 5px !important;
+}
+
 .product-details-quantity {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
+  border-radius: 5px;
+  border: 0px solid #c5c5c53b;
+  overflow: hidden;
+  max-width: fit-content;
+  padding: 0rem;
+  background-color: #2e7d3200;
 }
 
 .product-details-qty-btn {
-  width: 40px;
-  height: 40px;
-  border: 1px solid #d8d8d8;
-  border-radius: 50%;
-  background: #ffffff;
-  color: #3a3a3a;
+  width: 38px;
+  height: 38px;
+  border: none;
+  background-color: #f5f5f5;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
-.product-details-qty-btn:hover {
-  background: #f5f5f5;
-  border-color: #c8c8c8;
-  color: #1a1a1a;
+.product-details-qty-minus {
+  border-right: 1px solid #e0e0e0;
+  background-color: #ebebebd3;
+}
+
+.product-details-qty-plus {
+  background-color: var(--primary-green);
+  color: #ffffff;
+}
+
+.product-details-qty-minus:hover {
+  background-color: #c2c2c2;
+  color: #ffffff;
+}
+
+.product-details-qty-plus:hover {
+  background-color: #d6d6d6;
+  color: #ffffff;
 }
 
 .product-details-qty-input {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 38px;
   border: none;
-  background: #f5f5f5;
   text-align: center;
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+  font-size: 0.9rem;
   font-weight: 500;
   color: #1a1a1a;
-  border-radius: 4px;
+  padding: 0;
+  border-radius: 5px;
+  border: 1px solid #afafaf7c;
+  background-color: inherit;
   -moz-appearance: textfield;
+  background-color: #ffffff;
+  margin: 0 5px;
 }
 
 .product-details-qty-input:focus {
   outline: none;
-  background: #eeeeee;
 }
 
 .product-details-qty-input::-webkit-outer-spin-button,
@@ -381,57 +407,94 @@
   margin: 0rem 0 1rem 0;
 }
 
-/* Meta (SKU, Category, Tags) */
-.product-details-meta {
+/* Promo / product benefits card */
+.promo {
+  margin: 0.5rem 0 1rem 0;
+}
+
+.promo-card {
+  border-radius: 5px;
+  border: 1px solid #e3e3e38a;
+  background: var(--light-white-background);
+  padding: 1.2rem 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1rem;
+}
+
+.promo-item {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin: 0;
-}
-
-.product-details-meta-line {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 0.9rem;
-  color: #5a5a5a;
-  margin: 0;
-  font-weight: 500;
-}
-
-.product-details-meta-label {
-  font-weight: 600;
-  margin-right: 4px;
-}
-
-.product-details-meta-value {
-  font-weight: 400;
-  color: #757575;
-}
-
-.product-details-meta-share-icons {
-  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: #757575;
+  gap: 0.75rem;
 }
 
-.product-details-meta-share-icons i {
-  cursor: pointer;
-  transition: color 0.2s, transform 0.1s;
-  background-color: #2e7d32;
-  width: 20px;
-  height: 20px;
+.promo-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 14px;
+  color: #6cb24c;
+  font-size: 1.1rem;
+  flex-shrink: 0;
 }
 
-.product-details-meta-share-icons i:hover {
+.promo-text h3 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+  color: #333333;
+}
+
+.promo-text p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  margin: 0;
+  color: #7a7a7a;
+}
+
+@media (max-width: 768px) {
+  .promo-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Product actions: Chat / Wishlist / Share */
+.product-details-actions--two {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 0.75rem;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.product-details-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-size: 0.9rem;
+  color: #666666;
+  cursor: pointer;
+}
+
+.product-details-action i {
+  font-size: 0.95rem;
+  color: #9e9e9e;
+}
+
+.product-details-action:hover {
+  color: #333333;
+}
+
+.product-details-action:hover i {
   color: #6cb24c;
-  transform: translateY(-1px);
 }
 
 /* Thumbnails – Swiper */
@@ -590,7 +653,7 @@
   left: -2px;
   right: -2px;
   bottom: -2px;
-  height: 3px;
+  height: 2px;
   background: #6DBF44;
 }
 
@@ -659,13 +722,32 @@
 .related-products-section {
   width: 100%;
   padding: 48px 0 64px;
-  background: #ffffff;
+  background: #fcfcfc;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+.related-products-section::before {
+  content: "";
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat;
+  background-size: cover;
+  background-position: top;
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.015;
+  z-index: 5;
 }
 
 .related-products-section .product-details-container {
   width: 90%;
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+  z-index: 10;
 }
 
 .related-products-header {
@@ -699,6 +781,10 @@
   font-weight: 700;
   color: #1a1a1a;
   margin: 0;
+}
+
+.cart-recommended-title .highlight {
+  color: var(--primary-green);
 }
 
 .cart-recommended-nav {
@@ -755,6 +841,7 @@
   height: 100%;
   min-height: 320px;
   transition: box-shadow 0.2s, border-color 0.2s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
 .product-card-add {
@@ -772,6 +859,11 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
+}
+
+.product-card__link {
+  margin-bottom: 0rem;
+  padding: 0;
 }
 
 .related-product-card:hover {

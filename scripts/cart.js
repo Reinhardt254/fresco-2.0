@@ -12,19 +12,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartRecommendedSwiper = new Swiper(".cart-recommended-swiper", {
     slidesPerView: 3,
     spaceBetween: 20,
+    loop: true,
     navigation: {
       nextEl: ".cart-recommended-next",
       prevEl: ".cart-recommended-prev",
     },
     breakpoints: {
       0: {
-        slidesPerView: 1.2,
+        slidesPerView: 2,
+        spaceBetween: 10,
       },
       640: {
         slidesPerView: 2.2,
+        spaceBetween: 10,
       },
       1024: {
-        slidesPerView: 3,
+        slidesPerView: 4,
       },
     },
   });
