@@ -1,0 +1,76 @@
+.hero-overlay-global {
+   position: absolute;
+   inset: 0;
+   background: #0f3d2e00;
+   opacity: 0.75;
+   pointer-events: none;
+   height: 100%;
+   width: 100%;
+   z-index: 20;
+   overflow: hidden;
+  }
+ 
+  .hero-overlay-global .overlay-items {
+   height: 100%;
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem;
+  }
+ 
+  .hero-overlay-global .overlay-item {
+   position: absolute;
+   width: 150px;
+   height: 150px;
+   object-fit: contain;
+  }
+ 
+  .hero-overlay-global .overlay-item img {
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
+  }
+ 
+ 
+  .hero-overlay-global .top-left-overlay {
+   top: 0;
+   left: -10px;
+   transform: rotate(90deg);
+  }
+ 
+  .hero-overlay-global .top-right-overlay {
+   top: 0;
+   right: -10px;
+   transform: rotate(180deg);
+  }
+ 
+  .hero-overlay-global .bottom-left-overlay {
+   bottom: 0;
+   left: -10px;
+  }
+ 
+   .hero-overlay-global .bottom-right-overlay {
+      bottom: -70px;
+      right: 0;
+      transform: rotate(0deg);
+      height: 300px;
+      width: auto;
+   }
+
+   .hero-overlay-global .bottom-right-overlay.leaf {
+      bottom: -90px;
+      right: -40px;
+      transform: rotate(-90deg);
+      height: 300px;
+      width: auto;
+   }
+ 
+ 
+  .hero-overlay-global img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
