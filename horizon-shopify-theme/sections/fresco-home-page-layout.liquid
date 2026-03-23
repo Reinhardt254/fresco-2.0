@@ -1,0 +1,140 @@
+{%- comment -%}
+  Fresco home layout section - EXACT structure from the HTML template.
+  Class names are intentionally kept identical to `index.html` markup.
+{%- endcomment -%}
+
+<section class="home-page-layout" {{ section.shopify_attributes }}>
+  <img
+    class="home-page-layout-image"
+    src="{% if section.settings.left_image != blank %}{{ section.settings.left_image | image_url: width: 2000 }}{% else %}{{ section.settings.left_image_url }}{% endif %}"
+    alt=""
+    loading="lazy"
+    width="2000"
+    height="700"
+  >
+
+  <div class="layout-content">
+    <div class="layout-content-inner">
+      <div class="layout-content-inner-text column">
+        {%- if section.settings.heading_prefix != blank -%}
+          <h1>
+            {{ section.settings.heading_prefix }} <span class="highlight">{{ section.settings.highlight_1 }}</span> <span class="highlight">{{ section.settings.highlight_2 }}</span> {{ section.settings.heading_suffix }}
+          </h1>
+        {%- endif -%}
+
+        {%- if section.settings.description != blank -%}
+          <p>{{ section.settings.description }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+          <button
+            type="button"
+            onclick="window.location.href = '{{ section.settings.button_link }}'"
+            class="contact-us-btn"
+          >
+            {{ section.settings.button_label }}
+          </button>
+        {%- endif -%}
+      </div>
+
+      <div class="layout-content-inner-image column">
+        <img
+          src="{% if section.settings.right_image != blank %}{{ section.settings.right_image | image_url: width: 1400 }}{% else %}{{ section.settings.right_image_url }}{% endif %}"
+          alt=""
+          loading="lazy"
+          width="1400"
+          height="900"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Home Page Layout",
+  "tag": "section",
+  "class": "section-fresco-home-page-layout",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Background image (full-width)"
+    },
+    {
+      "type": "text",
+      "id": "left_image_url",
+      "label": "Background image URL (fallback)",
+      "default": "https://newvashaepz.com/wp-content/uploads/2025/11/DJI_20250826170440_0288_D.jpg"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Right side image"
+    },
+    {
+      "type": "text",
+      "id": "right_image_url",
+      "label": "Right side image URL (fallback)",
+      "default": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4520-scaled.jpg"
+    },
+    {
+      "type": "text",
+      "id": "heading_prefix",
+      "label": "Heading prefix",
+      "default": "Harvested at"
+    },
+    {
+      "type": "text",
+      "id": "highlight_1",
+      "label": "First highlighted text",
+      "default": "Peak,"
+    },
+    {
+      "type": "text",
+      "id": "highlight_2",
+      "label": "Second highlighted text",
+      "default": "Preserved"
+    },
+    {
+      "type": "text",
+      "id": "heading_suffix",
+      "label": "Heading suffix",
+      "default": "with Purpose."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Paragraph text",
+      "default": "Fresco herbs are organically grown, harvested at peak, and freeze-dried at origin to capture the true taste of nature."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Explore Fresco Flavors"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Home Page Layout",
+      "settings": {
+        "left_image_url": "https://newvashaepz.com/wp-content/uploads/2025/11/DJI_20250826170440_0288_D.jpg",
+        "right_image_url": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4520-scaled.jpg",
+        "heading_prefix": "Harvested at",
+        "highlight_1": "Peak,",
+        "highlight_2": "Preserved",
+        "heading_suffix": "with Purpose.",
+        "description": "Fresco herbs are organically grown, harvested at peak, and freeze-dried at origin to capture the true taste of nature.",
+        "button_label": "Explore Fresco Flavors"
+      }
+    }
+  ]
+}
+{% endschema %}
+

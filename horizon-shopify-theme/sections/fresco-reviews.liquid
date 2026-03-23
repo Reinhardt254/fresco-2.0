@@ -1,0 +1,338 @@
+<section class="reviews" {{ section.shopify_attributes }}>
+  <div class="reviews-container">
+    <h2 class="section-title">
+      {{ section.settings.title_prefix }}
+      <span class="highlight-text">{{ section.settings.highlight_customers }}</span>
+      {{ section.settings.title_mid }}
+      <span class="highlight-text">{{ section.settings.highlight_saying }}</span>
+    </h2>
+    <div class="title-underline"></div>
+
+    <div class="reviews-inner">
+      <div class="reviews-left">
+        <div class="swiper reviews-hero-swiper">
+          <div class="underlay"></div>
+          <div class="swiper-wrapper">
+            {% if section.blocks.size > 0 %}
+              {% for block in section.blocks %}
+                {% if block.type == 'review_slide' %}
+                  <div class="swiper-slide">
+                    <article class="review-hero-card">
+                      <div class="review-hero-content">
+                        <div class="review-hero-avatar">
+                          <img
+                            src="{% if block.settings.avatar_image != blank %}{{ block.settings.avatar_image | image_url: width: 300 }}{% else %}{{ block.settings.avatar_image_url_fallback }}{% endif %}"
+                            alt="{{ block.settings.avatar_alt | escape }}"
+                            loading="lazy"
+                            width="140"
+                            height="140"
+                          >
+                        </div>
+                        <p class="review-hero-text">{{ block.settings.review_text }}</p>
+                      </div>
+                      <p class="review-hero-name">{{ block.settings.review_name }}</p>
+                    </article>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            {% else %}
+              {%- assign fallback_reviews = '1,2,3,4,5,6' | split: ',' -%}
+              {% for i in fallback_reviews %}
+                <div class="swiper-slide">
+                  <article class="review-hero-card">
+                    <div class="review-hero-content">
+                      <div class="review-hero-avatar">
+                        <img
+                          src="{% if i == '1' or i == '4' %}
+                            https://img.freepik.com/free-photo/elderly-baker-adding-flour-metallic-sieve-sprinkling-dough-happy-elderly-chef-with-kitchen-uniform-mixing-sprinkling-adding-sifting-spreading-raw-ingredients-baking-traditional-bread_482257-5869.jpg?uid=R146131911&ga=GA1.1.1724219820.1772450282&semt=ais_hybrid&w=740&q=80
+                          {% elsif i == '2' or i == '5' %}
+                            https://img.freepik.com/free-photo/smiling-chef-kitchen_23-2148006651.jpg?uid=R146131911&ga=GA1.1.1724219820.1772450282&semt=ais_hybrid&w=740&q=80
+                          {% else %}
+                            https://img.freepik.com/free-photo/cropped-portrait-beautiful-professional-female-chef-cooking-restaurant-cutting-grilled-meat-with-scissors-copyspace_7502-5550.jpg?uid=R146131911&ga=GA1.1.1724219820.1772450282&semt=ais_hybrid&w=740&q=80
+                          {% endif %}"
+                          alt="Chef avatar"
+                          loading="lazy"
+                          width="140"
+                          height="140"
+                        >
+                      </div>
+                      <p class="review-hero-text">
+                        {% if i == '1' or i == '4' %}
+                          The herbs from Fresco are incredibly fresh and fragrant. They've completely changed the flavor of my dishes—so much better than anything I used before!
+                        {% elsif i == '2' or i == '5' %}
+                          I love how convenient and long-lasting these freeze-dried herbs are. They keep their taste and color for months—truly a game changer in my kitchen.
+                        {% else %}
+                          These organic products really bring out the best in my recipes. I always recommend Fresco to fellow cooks who want pure, vibrant flavors.
+                        {% endif %}
+                      </p>
+                    </div>
+                    <p class="review-hero-name">
+                      {% if i == '1' or i == '4' %}
+                        Chef Jessica Khan Doe
+                      {% elsif i == '2' or i == '5' %}
+                        Chef David Nguyen
+                      {% else %}
+                        Chef Samir Ali
+                      {% endif %}
+                    </p>
+                  </article>
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="review-hero-nav">
+          <button
+            class="review-nav-btn review-nav-btn-prev"
+            aria-label="Previous review"
+            type="button"
+          >
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button
+            class="review-nav-btn review-nav-btn-next"
+            aria-label="Next review"
+            type="button"
+          >
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="reviews-right">
+        <div class="reviews-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+
+        <div class="reviews-right-avatars">
+          <img
+            src="{% if section.settings.right_avatar_1 != blank %}{{ section.settings.right_avatar_1 | image_url: width: 300 }}{% else %}{{ section.settings.right_avatar_1_url_fallback }}{% endif %}"
+            alt="{{ section.settings.right_avatar_1_alt | escape }}"
+            loading="lazy"
+            width="140"
+            height="140"
+          >
+          <img
+            src="{% if section.settings.right_avatar_2 != blank %}{{ section.settings.right_avatar_2 | image_url: width: 300 }}{% else %}{{ section.settings.right_avatar_2_url_fallback }}{% endif %}"
+            alt="{{ section.settings.right_avatar_2_alt | escape }}"
+            loading="lazy"
+            width="140"
+            height="140"
+          >
+          <img
+            src="{% if section.settings.right_avatar_3 != blank %}{{ section.settings.right_avatar_3 | image_url: width: 300 }}{% else %}{{ section.settings.right_avatar_3_url_fallback }}{% endif %}"
+            alt="{{ section.settings.right_avatar_3_alt | escape }}"
+            loading="lazy"
+            width="140"
+            height="140"
+          >
+        </div>
+
+        <p class="reviews-trusted-text">{{ section.settings.trusted_text }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Reviews",
+  "tag": "section",
+  "class": "section-fresco-reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title_prefix",
+      "label": "Title prefix",
+      "default": "What Our"
+    },
+    {
+      "type": "text",
+      "id": "highlight_customers",
+      "label": "Highlighted text (Customers)",
+      "default": "Customers"
+    },
+    {
+      "type": "text",
+      "id": "title_mid",
+      "label": "Title middle text",
+      "default": "are"
+    },
+    {
+      "type": "text",
+      "id": "highlight_saying",
+      "label": "Highlighted text (Saying)",
+      "default": "saying"
+    },
+    {
+      "type": "text",
+      "id": "trusted_text",
+      "label": "Trusted text",
+      "default": "Trusted by 3.5k+ Fresco lovers"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_avatar_1",
+      "label": "Right avatar 1 (optional)"
+    },
+    {
+      "type": "text",
+      "id": "right_avatar_1_url_fallback",
+      "label": "Right avatar 1 URL fallback",
+      "default": "https://images.pexels.com/photos/3760853/pexels-photo-3760853.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "type": "text",
+      "id": "right_avatar_1_alt",
+      "label": "Right avatar 1 alt text",
+      "default": "Happy Fresco customer"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_avatar_2",
+      "label": "Right avatar 2 (optional)"
+    },
+    {
+      "type": "text",
+      "id": "right_avatar_2_url_fallback",
+      "label": "Right avatar 2 URL fallback",
+      "default": "https://images.pexels.com/photos/3760852/pexels-photo-3760852.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "type": "text",
+      "id": "right_avatar_2_alt",
+      "label": "Right avatar 2 alt text",
+      "default": "Happy Fresco customer"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_avatar_3",
+      "label": "Right avatar 3 (optional)"
+    },
+    {
+      "type": "text",
+      "id": "right_avatar_3_url_fallback",
+      "label": "Right avatar 3 URL fallback",
+      "default": "https://images.pexels.com/photos/3760850/pexels-photo-3760850.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "type": "text",
+      "id": "right_avatar_3_alt",
+      "label": "Right avatar 3 alt text",
+      "default": "Happy Fresco customer"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review_slide",
+      "name": "Review slide",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "avatar_image",
+          "label": "Avatar image (optional)"
+        },
+        {
+          "type": "text",
+          "id": "avatar_image_url_fallback",
+          "label": "Avatar image URL fallback",
+          "default": "https://img.freepik.com/free-photo/elderly-baker-adding-flour-metallic-sieve-sprinkling-dough-happy-elderly-chef-with-kitchen-uniform-mixing-sprinkling-adding-sifting-spreading-raw-ingredients-baking-traditional-bread_482257-5869.jpg?uid=R146131911&ga=GA1.1.1724219820.1772450282&semt=ais_hybrid&w=740&q=80"
+        },
+        {
+          "type": "text",
+          "id": "avatar_alt",
+          "label": "Avatar alt text",
+          "default": "Chef avatar"
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review text",
+          "default": "The herbs from Fresco are incredibly fresh and fragrant. They've completely changed the flavor of my dishes—so much better than anything I used before!"
+        },
+        {
+          "type": "text",
+          "id": "review_name",
+          "label": "Reviewer name",
+          "default": "Chef Jessica Khan Doe"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Reviews",
+      "blocks": [
+        {
+          "type": "review_slide",
+          "settings": {
+            "avatar_image_url_fallback": "https://img.freepik.com/free-photo/elderly-baker-adding-flour-metallic-sieve-sprinkling-dough-happy-elderly-chef-with-kitchen-uniform-mixing-sprinkling-adding-sifting-spreading-raw-ingredients-baking-traditional-bread_482257-5869.jpg?uid=R146131911&ga=GA1.1.1724219820.1772450282&semt=ais_hybrid&w=740&q=80",
+            "avatar_alt": "Chef Jessica",
+            "review_text": "The herbs from Fresco are incredibly fresh and fragrant. They've completely changed the flavor of my dishes—so much better than anything I used before!",
+            "review_name": "Chef Jessica Khan Doe"
+          }
+        },
+        {
+          "type": "review_slide",
+          "settings": {
+            "avatar_image_url_fallback": "https://img.freepik.com/free-photo/smiling-chef-kitchen_23-2148006651.jpg?uid=R146131911&ga=GA1.1.1724219820.1772450282&semt=ais_hybrid&w=740&q=80",
+            "avatar_alt": "Chef David",
+            "review_text": "I love how convenient and long-lasting these freeze-dried herbs are. They keep their taste and color for months—truly a game changer in my kitchen.",
+            "review_name": "Chef David Nguyen"
+          }
+        },
+        {
+          "type": "review_slide",
+          "settings": {
+            "avatar_image_url_fallback": "https://img.freepik.com/free-photo/cropped-portrait-beautiful-professional-female-chef-cooking-restaurant-cutting-grilled-meat-with-scissors-copyspace_7502-5550.jpg?uid=R146131911&ga=GA1.1.1724219820.1772450282&semt=ais_hybrid&w=740&q=80",
+            "avatar_alt": "Chef Samir",
+            "review_text": "These organic products really bring out the best in my recipes. I always recommend Fresco to fellow cooks who want pure, vibrant flavors.",
+            "review_name": "Chef Samir Ali"
+          }
+        },
+        {
+          "type": "review_slide",
+          "settings": {
+            "avatar_image_url_fallback": "https://img.freepik.com/free-photo/elderly-baker-adding-flour-metallic-sieve-sprinkling-dough-happy-elderly-chef-with-kitchen-uniform-mixing-sprinkling-adding-sifting-spreading-raw-ingredients-baking-traditional-bread_482257-5869.jpg?uid=R146131911&ga=GA1.1.1724219820.1772450282&semt=ais_hybrid&w=740&q=80",
+            "avatar_alt": "Chef Jessica",
+            "review_text": "The herbs from Fresco are incredibly fresh and fragrant. They've completely changed the flavor of my dishes—so much better than anything I used before!",
+            "review_name": "Chef Jessica Khan Doe"
+          }
+        },
+        {
+          "type": "review_slide",
+          "settings": {
+            "avatar_image_url_fallback": "https://img.freepik.com/free-photo/smiling-chef-kitchen_23-2148006651.jpg?uid=R146131911&ga=GA1.1.1724219820.1772450282&semt=ais_hybrid&w=740&q=80",
+            "avatar_alt": "Chef David",
+            "review_text": "I love how convenient and long-lasting these freeze-dried herbs are. They keep their taste and color for months—truly a game changer in my kitchen.",
+            "review_name": "Chef David Nguyen"
+          }
+        },
+        {
+          "type": "review_slide",
+          "settings": {
+            "avatar_image_url_fallback": "https://img.freepik.com/free-photo/cropped-portrait-beautiful-professional-female-chef-cooking-restaurant-cutting-grilled-meat-with-scissors-copyspace_7502-5550.jpg?uid=R146131911&ga=GA1.1.1724219820.1772450282&semt=ais_hybrid&w=740&q=80",
+            "avatar_alt": "Chef Samir",
+            "review_text": "These organic products really bring out the best in my recipes. I always recommend Fresco to fellow cooks who want pure, vibrant flavors.",
+            "review_name": "Chef Samir Ali"
+          }
+        }
+      ],
+      "settings": {
+        "title_prefix": "What Our",
+        "highlight_customers": "Customers",
+        "title_mid": "are",
+        "highlight_saying": "saying",
+        "trusted_text": "Trusted by 3.5k+ Fresco lovers"
+      }
+    }
+  ]
+}
+{% endschema %}
+

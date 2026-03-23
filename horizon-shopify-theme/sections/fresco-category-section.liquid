@@ -1,0 +1,274 @@
+{%- comment -%}
+  Fresco Categories section - dynamic blocks, each linked to a Shopify collection.
+  Uses existing Swiper init in `assets/fresco/scripts/index.js` for `.category-swiper`.
+{%- endcomment -%}
+
+<section class="category-section" {{ section.shopify_attributes }}>
+  <div class="container">
+    <div class="category-header-row">
+      <div class="sub-heading">
+        {{ section.settings.sub_heading_text }}
+        <div class="sub-heading-image">
+          <img
+            src="{% if section.settings.sub_heading_image != blank %}{{ section.settings.sub_heading_image | image_url: width: 180 }}{% else %}{{ section.settings.sub_heading_image_url_fallback }}{% endif %}"
+            alt=""
+            loading="lazy"
+            width="180"
+            height="180"
+          >
+        </div>
+      </div>
+
+      <h2 class="section-title">
+        {{ section.settings.section_title }}
+      </h2>
+      <div class="title-underline"></div>
+    </div>
+
+    <div class="category-container swiper category-swiper">
+      <div class="swiper-wrapper category-swiper-wrapper">
+        {%- assign color_classes = 'left-category,combos-category,right-category' | split: ',' -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'category_slide' -%}
+            {%- assign col = block.settings.collection -%}
+            {%- assign color_index = forloop.index0 | modulo: 3 -%}
+            {%- assign color_class = color_classes[color_index] -%}
+
+            <div
+              class="category {{ color_class }} swiper-slide"
+              {% if block.settings.bg_gradient != blank %}style="background: {{ block.settings.bg_gradient }};"{% endif %}
+              {{ block.shopify_attributes }}
+            >
+              <div class="category-inner">
+                <div class="column-left">
+                  <div class="category-heading-container">
+                    <div class="category-label">
+                      {%- if col != blank -%}
+                        {{ col.title }}
+                      {%- else -%}
+                        {{ block.settings.label }}
+                      {%- endif -%}
+                    </div>
+                    {%- if block.settings.discount_tag != blank -%}
+                      <div class="discount-tag">{{ block.settings.discount_tag }}</div>
+                    {%- endif -%}
+                  </div>
+
+                  <div class="category-content">
+                    <h3 class="category-headline">
+                      {{ block.settings.headline }}
+                    </h3>
+                    <p class="category-description">
+                      {%- if block.settings.description != blank -%}
+                        {{ block.settings.description }}
+                      {%- elsif col != blank and col.description != blank -%}
+                        {{ col.description | strip_html | truncate: 200 }}
+                      {%- endif -%}
+                    </p>
+                    <a
+                      href="{% if col != blank %}{{ col.url }}{% else %}/collections{% endif %}"
+                      class="category-link"
+                    >
+                      {{ block.settings.link_text }}
+                    </a>
+                  </div>
+                </div>
+
+                <div class="category-image-left column-right">
+                  <div class="product-jar">
+                    {%- if block.settings.image != blank -%}
+                      <img
+                        src="{{ block.settings.image | image_url: width: 800 }}"
+                        alt="{{ block.settings.image.alt | default: block.settings.image_alt | escape }}"
+                        loading="lazy"
+                        width="800"
+                        height="600"
+                      >
+                    {%- elsif block.settings.image_url_fallback != blank -%}
+                      <img
+                        src="{{ block.settings.image_url_fallback }}"
+                        alt="{{ block.settings.image_alt | escape }}"
+                        loading="lazy"
+                        width="800"
+                        height="600"
+                      >
+                    {%- elsif col != blank and col.image != blank -%}
+                      <img
+                        src="{{ col.image | image_url: width: 800 }}"
+                        alt="{{ col.image.alt | default: col.title | escape }}"
+                        loading="lazy"
+                        width="800"
+                        height="600"
+                      >
+                    {%- else -%}
+                      {{ 'collection-1' | placeholder_svg_tag: 'product-jar placeholder' }}
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="category-footer-controls">
+      <button
+        class="category-nav-button category-swiper-prev"
+        type="button"
+        aria-label="Previous deals"
+      >
+        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button
+        class="category-nav-button category-swiper-next"
+        type="button"
+        aria-label="Next deals"
+      >
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Categories",
+  "tag": "section",
+  "class": "section-fresco-categories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "sub_heading_text",
+      "label": "Sub heading",
+      "default": "Categories"
+    },
+    {
+      "type": "image_picker",
+      "id": "sub_heading_image",
+      "label": "Sub heading icon (optional)"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading_image_url_fallback",
+      "label": "Sub heading icon URL fallback",
+      "default": "https://cdn-icons-png.freepik.com/512/12504/12504700.png?uid=R146131911&ga=GA1.1.1724219820.1772450282"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Fresco Herbs for Every Kitchen"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category_slide",
+      "name": "Category slide",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label (fallback if no collection)",
+          "default": "Category"
+        },
+        {
+          "type": "text",
+          "id": "discount_tag",
+          "label": "Discount tag (optional)",
+          "default": "30% OFF"
+        },
+        {
+          "type": "text",
+          "id": "headline",
+          "label": "Headline",
+          "default": "Chef-Friendly Format for Culinary Service"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description (leave blank to use collection description)"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link text",
+          "default": "Explore collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Slide image (optional)"
+        },
+        {
+          "type": "text",
+          "id": "image_url_fallback",
+          "label": "Slide image URL fallback"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text",
+          "default": "Category image"
+        },
+        {
+          "type": "text",
+          "id": "bg_gradient",
+          "label": "Background gradient override (optional)",
+          "info": "e.g. linear-gradient(90deg, #7f0a2b, #c73456). Leave blank to use default cycling colors."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Categories",
+      "blocks": [
+        {
+          "type": "category_slide",
+          "settings": {
+            "label": "Professional kitchens",
+            "discount_tag": "30% OFF",
+            "headline": "Chef-Friendly Format for Culinary Service",
+            "link_text": "Explore Chefs collection",
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/Untitled-design-8-6.png",
+            "image_alt": "Culinary herb jar"
+          }
+        },
+        {
+          "type": "category_slide",
+          "settings": {
+            "label": "Home cooking",
+            "discount_tag": "20% OFF",
+            "headline": "Everyday flavours made effortless",
+            "link_text": "Shop home favourites",
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/Untitled-design-4.png",
+            "image_alt": "Combo herb pack"
+          }
+        },
+        {
+          "type": "category_slide",
+          "settings": {
+            "label": "Retail",
+            "discount_tag": "30% OFF",
+            "headline": "Built for Retail Success",
+            "link_text": "Partner With Fresco",
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/Untitled_design__7_-removebg-preview.png",
+            "image_alt": "All-purpose herb jar"
+          }
+        }
+      ],
+      "settings": {
+        "sub_heading_text": "Categories",
+        "section_title": "Fresco Herbs for Every Kitchen"
+      }
+    }
+  ]
+}
+{% endschema %}

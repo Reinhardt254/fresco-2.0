@@ -1,0 +1,76 @@
+{%- comment -%}
+  Fresco Partners Carousel (quality commitment)
+  Markup mirrors `index.html` so `assets/fresco/scripts/index.js` can initialize Swiper.
+{%- endcomment -%}
+
+<section class="section partners-new" {{ section.shopify_attributes }}>
+  <div class="container">
+    <div class="swiper-partners swiper">
+      <div class="swiper-wrapper">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'partner_slide' -%}
+            <div class="swiper-slide" {{ block.shopify_attributes }}>
+              <div class="card">
+                <img
+                  src="{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 800 }}{% else %}{{ block.settings.image_url_fallback }}{% endif %}"
+                  alt=""
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                >
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Partners New",
+  "tag": "section",
+  "class": "section-fresco-partners-new",
+  "blocks": [
+    {
+      "type": "partner_slide",
+      "name": "Partner Logo",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Partner image (optional)"
+        },
+        {
+          "type": "text",
+          "id": "image_url_fallback",
+          "label": "Partner image URL fallback",
+          "default": "https://newvashaepz.com/wp-content/uploads/2026/02/images.png"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Partners New",
+      "blocks": [
+        { "type": "partner_slide" },
+        { "type": "partner_slide" },
+        { "type": "partner_slide" },
+        { "type": "partner_slide" },
+        { "type": "partner_slide" },
+        { "type": "partner_slide" },
+        { "type": "partner_slide" },
+        { "type": "partner_slide" },
+        { "type": "partner_slide" },
+        { "type": "partner_slide" },
+        { "type": "partner_slide" },
+        { "type": "partner_slide" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

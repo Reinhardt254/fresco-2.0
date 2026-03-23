@@ -1,0 +1,397 @@
+{%- comment -%}
+  Fresco Our Mission section - EXACT structure from index.html.
+  Keeps the same class names so existing Swiper init in `assets/fresco/scripts/index.js` works.
+{%- endcomment -%}
+
+<section
+  class="our-mission"
+  id="our-mission"
+  {{ section.shopify_attributes }}
+>
+  <div class="our-mission-inner">
+    <div class="category-header-row">
+      <div class="sub-heading">
+        {{ section.settings.discover_text }}
+        <div class="sub-heading-image">
+          <img
+            src="{% if section.settings.discover_image != blank %}{{ section.settings.discover_image | image_url: width: 200 }}{% else %}{{ section.settings.discover_image_url_fallback }}{% endif %}"
+            alt=""
+            loading="lazy"
+            width="80"
+            height="80"
+          >
+        </div>
+      </div>
+
+      <h2 class="section-title">
+        {{ section.settings.section_title }}
+      </h2>
+      <div class="title-underline"></div>
+      <p class="section-description">
+        {{ section.settings.section_description }}
+      </p>
+    </div>
+
+    <div class="our-mission-center">
+      <div class="our-mission-images">
+        <div class="swiper about-swiper">
+          <div class="swiper-wrapper">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'mission_slide' -%}
+                <div class="swiper-slide">
+                  <img
+                    class="mission-img"
+                    src="{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 1200 }}{% else %}{{ block.settings.image_url_fallback }}{% endif %}"
+                    alt="{{ block.settings.image_alt | escape }}"
+                    loading="lazy"
+                    width="800"
+                    height="650"
+                  >
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+
+          <div class="about-swiper-button-container">
+            <div class="about-swiper-button-prev">
+              <i class="fa-solid fa-chevron-left"></i>
+            </div>
+            <div class="about-swiper-button-next">
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+          </div>
+          {%- comment -%} Pagination is optional; keep markup aligned with HTML (it was commented out). {%- endcomment -%}
+        </div>
+      </div>
+
+      <div class="our-mission-points-container">
+        <div class="our-mission-point our-mission-point-tl">
+          <div class="our-mission-icon">
+            <img
+              src="{% if section.settings.point1_icon != blank %}{{ section.settings.point1_icon | image_url: width: 200 }}{% else %}{{ section.settings.point1_icon_url_fallback }}{% endif %}"
+              alt=""
+              loading="lazy"
+              width="120"
+              height="120"
+            >
+            <svg
+              class="our-mission-icon-blob"
+              viewBox="2 0 95 95"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="sw-gradient-m1" x1="0" x2="1" y1="1" y2="0">
+                  <stop stop-color="var(--primary-green)" offset="0%" />
+                  <stop stop-color="var(--primary-green)" offset="100%" />
+                </linearGradient>
+              </defs>
+              <path
+                fill="url(#sw-gradient-m1)"
+                d="M32.6,-25.8C40.5,-16.1,43.9,-2.6,41.3,9.6C38.7,21.9,29.9,32.9,18.9,37.6C7.9,42.3,-5.4,40.6,-16.8,35.1C-28.2,29.6,-37.7,20.2,-40.4,9C-43.1,-2.1,-38.9,-14.9,-31.1,-24.6C-23.2,-34.4,-11.6,-41,0.4,-41.3C12.3,-41.6,24.7,-35.6,32.6,-25.8Z"
+                transform="translate(50 50)"
+                stroke-width="0"
+                stroke="url(#sw-gradient-m1)"
+                style="transition: 0.3s"
+              />
+            </svg>
+          </div>
+          <span class="our-mission-label">{{ section.settings.point1_label }}</span>
+          <p>{{ section.settings.point1_description }}</p>
+        </div>
+
+        <div class="our-mission-point our-mission-point-tr">
+          <div class="our-mission-icon">
+            <img
+              src="{% if section.settings.point2_icon != blank %}{{ section.settings.point2_icon | image_url: width: 200 }}{% else %}{{ section.settings.point2_icon_url_fallback }}{% endif %}"
+              alt=""
+              loading="lazy"
+              width="120"
+              height="120"
+            >
+            <svg
+              class="our-mission-icon-blob"
+              viewBox="2 0 95 95"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="sw-gradient-m2" x1="0" x2="1" y1="1" y2="0">
+                  <stop stop-color="var(--primary-green)" offset="0%" />
+                  <stop stop-color="var(--primary-green)" offset="100%" />
+                </linearGradient>
+              </defs>
+              <path
+                fill="url(#sw-gradient-m2)"
+                d="M32.6,-25.8C40.5,-16.1,43.9,-2.6,41.3,9.6C38.7,21.9,29.9,32.9,18.9,37.6C7.9,42.3,-5.4,40.6,-16.8,35.1C-28.2,29.6,-37.7,20.2,-40.4,9C-43.1,-2.1,-38.9,-14.9,-31.1,-24.6C-23.2,-34.4,-11.6,-41,0.4,-41.3C12.3,-41.6,24.7,-35.6,32.6,-25.8Z"
+                transform="translate(50 50)"
+                stroke-width="0"
+                stroke="url(#sw-gradient-m2)"
+                style="transition: 0.3s"
+              />
+            </svg>
+          </div>
+          <span class="our-mission-label">{{ section.settings.point2_label }}</span>
+          <p>{{ section.settings.point2_description }}</p>
+        </div>
+
+        <div class="our-mission-point our-mission-point-bl">
+          <div class="our-mission-icon">
+            <img
+              src="{% if section.settings.point3_icon != blank %}{{ section.settings.point3_icon | image_url: width: 200 }}{% else %}{{ section.settings.point3_icon_url_fallback }}{% endif %}"
+              alt=""
+              loading="lazy"
+              width="120"
+              height="120"
+            >
+            <svg
+              class="our-mission-icon-blob"
+              viewBox="2 0 95 95"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="sw-gradient-m3" x1="0" x2="1" y1="1" y2="0">
+                  <stop stop-color="var(--primary-green)" offset="0%" />
+                  <stop stop-color="var(--primary-green)" offset="100%" />
+                </linearGradient>
+              </defs>
+              <path
+                fill="url(#sw-gradient-m3)"
+                d="M32.6,-25.8C40.5,-16.1,43.9,-2.6,41.3,9.6C38.7,21.9,29.9,32.9,18.9,37.6C7.9,42.3,-5.4,40.6,-16.8,35.1C-28.2,29.6,-37.7,20.2,-40.4,9C-43.1,-2.1,-38.9,-14.9,-31.1,-24.6C-23.2,-34.4,-11.6,-41,0.4,-41.3C12.3,-41.6,24.7,-35.6,32.6,-25.8Z"
+                transform="translate(50 50)"
+                stroke-width="0"
+                stroke="url(#sw-gradient-m3)"
+                style="transition: 0.3s"
+              />
+            </svg>
+          </div>
+          <span class="our-mission-label">{{ section.settings.point3_label }}</span>
+          <p>{{ section.settings.point3_description }}</p>
+        </div>
+
+        <div class="our-mission-point our-mission-point-br">
+          <div class="our-mission-icon">
+            <img
+              src="{% if section.settings.point4_icon != blank %}{{ section.settings.point4_icon | image_url: width: 200 }}{% else %}{{ section.settings.point4_icon_url_fallback }}{% endif %}"
+              alt=""
+              loading="lazy"
+              width="120"
+              height="120"
+            >
+            <svg
+              class="our-mission-icon-blob"
+              viewBox="2 0 95 95"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="sw-gradient-m4" x1="0" x2="1" y1="1" y2="0">
+                  <stop stop-color="var(--primary-green)" offset="0%" />
+                  <stop stop-color="var(--primary-green)" offset="100%" />
+                </linearGradient>
+              </defs>
+              <path
+                fill="url(#sw-gradient-m4)"
+                d="M32.6,-25.8C40.5,-16.1,43.9,-2.6,41.3,9.6C38.7,21.9,29.9,32.9,18.9,37.6C7.9,42.3,-5.4,40.6,-16.8,35.1C-28.2,29.6,-37.7,20.2,-40.4,9C-43.1,-2.1,-38.9,-14.9,-31.1,-24.6C-23.2,-34.4,-11.6,-41,0.4,-41.3C12.3,-41.6,24.7,-35.6,32.6,-25.8Z"
+                transform="translate(50 50)"
+                stroke-width="0"
+                stroke="url(#sw-gradient-m4)"
+                style="transition: 0.3s"
+              />
+            </svg>
+          </div>
+          <span class="our-mission-label">{{ section.settings.point4_label }}</span>
+          <p>{{ section.settings.point4_description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Our Mission",
+  "tag": "section",
+  "class": "section-fresco-our-mission",
+  "blocks": [
+    {
+      "type": "mission_slide",
+      "name": "Mission Slide",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Slide image"
+        },
+        {
+          "type": "text",
+          "id": "image_url_fallback",
+          "label": "Slide image URL (fallback)"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Slide alt text",
+          "default": "Mission slide image"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "discover_text",
+      "label": "Discover text",
+      "default": "Discover"
+    },
+    {
+      "type": "image_picker",
+      "id": "discover_image",
+      "label": "Discover icon (image)"
+    },
+    {
+      "type": "text",
+      "id": "discover_image_url_fallback",
+      "label": "Discover icon URL (fallback)",
+      "default": "https://cdn-icons-png.freepik.com/512/12504/12504700.png?uid=R146131911&ga=GA1.1.1724219820.1772450282"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Pure Herbs. Perfectly Preserved"
+    },
+    {
+      "type": "textarea",
+      "id": "section_description",
+      "label": "Section description",
+      "default": "Organically grown, freeze dried at harvest, locked in natural flavour"
+    },
+    {
+      "type": "header",
+      "content": "Mission point 1 (Top Left)"
+    },
+    {
+      "type": "image_picker",
+      "id": "point1_icon",
+      "label": "Icon image"
+    },
+    {
+      "type": "text",
+      "id": "point1_icon_url_fallback",
+      "label": "Icon URL (fallback)",
+      "default": "https://newvashaepz.com/wp-content/uploads/2026/02/organic.png"
+    },
+    {
+      "type": "text",
+      "id": "point1_label",
+      "label": "Label",
+      "default": "100% Organic"
+    },
+    {
+      "type": "textarea",
+      "id": "point1_description",
+      "label": "Description",
+      "default": "Single-source herbs sustainably grown to meet strict USDA standards."
+    },
+    {
+      "type": "header",
+      "content": "Mission point 2 (Top Right)"
+    },
+    {
+      "type": "image_picker",
+      "id": "point2_icon",
+      "label": "Icon image"
+    },
+    {
+      "type": "text",
+      "id": "point2_icon_url_fallback",
+      "label": "Icon URL (fallback)",
+      "default": "https://newvashaepz.com/wp-content/uploads/2026/02/agree.png"
+    },
+    {
+      "type": "text",
+      "id": "point2_label",
+      "label": "Label",
+      "default": "Locked in flavour"
+    },
+    {
+      "type": "textarea",
+      "id": "point2_description",
+      "label": "Description",
+      "default": "Seals in aromatic oils for bold flavor, zero prep hassle, zero waste."
+    },
+    {
+      "type": "header",
+      "content": "Mission point 3 (Bottom Left)"
+    },
+    {
+      "type": "image_picker",
+      "id": "point3_icon",
+      "label": "Icon image"
+    },
+    {
+      "type": "text",
+      "id": "point3_icon_url_fallback",
+      "label": "Icon URL (fallback)",
+      "default": "https://newvashaepz.com/wp-content/uploads/2026/02/no-preservatives.png"
+    },
+    {
+      "type": "text",
+      "id": "point3_label",
+      "label": "Label",
+      "default": "Preservative-free"
+    },
+    {
+      "type": "textarea",
+      "id": "point3_description",
+      "label": "Description",
+      "default": "Harvested and processed at source with no additives."
+    },
+    {
+      "type": "header",
+      "content": "Mission point 4 (Bottom Right)"
+    },
+    {
+      "type": "image_picker",
+      "id": "point4_icon",
+      "label": "Icon image"
+    },
+    {
+      "type": "text",
+      "id": "point4_icon_url_fallback",
+      "label": "Icon URL (fallback)",
+      "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/03/hand.png"
+    },
+    {
+      "type": "text",
+      "id": "point4_label",
+      "label": "Label",
+      "default": "Longer shelf life"
+    },
+    {
+      "type": "textarea",
+      "id": "point4_description",
+      "label": "Description",
+      "default": "Freeze-dried to stay pantry-fresh for months, not days."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Our Mission",
+      "blocks": [
+        { "type": "mission_slide" },
+        { "type": "mission_slide" },
+        { "type": "mission_slide" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

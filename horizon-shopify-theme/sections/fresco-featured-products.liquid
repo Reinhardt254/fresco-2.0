@@ -1,0 +1,162 @@
+{%- comment -%}
+  Fresco Featured Products - fetches real Shopify products from a collection.
+  Uses existing Swiper init in `assets/fresco/scripts/index.js` for:
+  `.featured-products .featured-products-swiper`
+{%- endcomment -%}
+
+{%- assign collection = section.settings.collection -%}
+{%- assign max_products = section.settings.max_products -%}
+
+<section class="featured-products" {{ section.shopify_attributes }}>
+  <div class="products-container">
+    <div class="sub-heading">
+      {{ section.settings.sub_heading_text }}
+      <div class="sub-heading-image">
+        <img
+          src="{% if section.settings.sub_heading_image != blank %}{{ section.settings.sub_heading_image | image_url: width: 300 }}{% else %}{{ section.settings.sub_heading_image_url_fallback }}{% endif %}"
+          alt=""
+          loading="lazy"
+          width="120"
+          height="120"
+        >
+      </div>
+    </div>
+
+    <h2 class="section-title">{{ section.settings.section_title }}</h2>
+    <div class="title-underline"></div>
+    <p class="section-description">{{ section.settings.section_description }}</p>
+
+    <div class="product-grid swiper featured-products-swiper">
+      <div class="swiper-wrapper">
+        {%- if collection != blank and collection.products.size > 0 -%}
+          {%- for product in collection.products limit: max_products -%}
+            <div class="product-card swiper-slide">
+              <a href="{{ product.url }}" class="product-card__link">
+                <div class="product-image">
+                  {%- if product.featured_image != blank -%}
+                    <img
+                      class="product-card__image"
+                      src="{{ product.featured_image | image_url: width: 900 }}"
+                      alt="{{ product.featured_image.alt | escape }}"
+                      loading="lazy"
+                      width="600"
+                      height="600"
+                    >
+                  {%- else -%}
+                    {{ 'product-1' | placeholder_svg_tag: 'product-card__image placeholder' }}
+                  {%- endif -%}
+                </div>
+
+                <h3 class="product-name">
+                  <span>{{ product.title }}</span>
+                </h3>
+
+                <div class="product-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+
+                <div class="product-price">
+                  <span class="current-price">{{ product.price | money }}</span>
+                  {%- if product.compare_at_price > product.price -%}
+                    <span class="compare-price">{{ product.compare_at_price | money }}</span>
+                  {%- endif -%}
+                </div>
+              </a>
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          {%- for i in (1..max_products) -%}
+            <div class="product-card swiper-slide">
+              <a href="#" class="product-card__link">
+                <div class="product-image">
+                  {{ 'product-1' | placeholder_svg_tag: 'product-card__image placeholder' }}
+                </div>
+                <h3 class="product-name"><span>Sample Product {{ i }}</span></h3>
+                <div class="product-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <div class="product-price">
+                  <span class="current-price">$14.00</span>
+                </div>
+              </a>
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+
+      <div class="featured-products-pagination"></div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Featured Products",
+  "tag": "section",
+  "class": "section-fresco-featured-products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "sub_heading_text",
+      "label": "Sub heading text",
+      "default": "Nature's Best"
+    },
+    {
+      "type": "image_picker",
+      "id": "sub_heading_image",
+      "label": "Sub heading icon (optional)"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading_image_url_fallback",
+      "label": "Sub heading icon URL fallback",
+      "default": "https://cdn-icons-png.freepik.com/512/12504/12504700.png?uid=R146131911&ga=GA1.1.1724219820.1772450282"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Featured Products"
+    },
+    {
+      "type": "textarea",
+      "id": "section_description",
+      "label": "Section description",
+      "default": "Fresco flavors, organic freeze-dried herbs deliver vibrant, lasting flavor in every dish."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "max_products",
+      "label": "Maximum products to show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Featured Products",
+      "settings": {
+        "sub_heading_text": "Nature's Best",
+        "section_title": "Featured Products",
+        "section_description": "Fresco flavors, organic freeze-dried herbs deliver vibrant, lasting flavor in every dish.",
+        "max_products": 8
+      }
+    }
+  ]
+}
+{% endschema %}

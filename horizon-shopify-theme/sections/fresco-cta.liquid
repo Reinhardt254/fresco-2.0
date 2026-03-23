@@ -1,0 +1,80 @@
+<section class="cta" {{ section.shopify_attributes }}>
+  <img
+    class="cta-bg"
+    src="{% if section.settings.cta_bg_image != blank %}{{ section.settings.cta_bg_image | image_url: width: 2000 }}{% elsif section.settings.cta_bg_image_url_fallback contains '//' %}{{ section.settings.cta_bg_image_url_fallback | escape }}{% else %}{{ section.settings.cta_bg_image_url_fallback | asset_url }}{% endif %}"
+    alt=""
+    width="2000"
+    height="600"
+  >
+  <div class="cta-inner">
+    <h2 class="cta-heading">{{ section.settings.cta_heading }}</h2>
+    <p class="cta-desc">
+      {{ section.settings.cta_description }}
+    </p>
+    <button
+      type="button"
+      onClick="window.location.href='{{ section.settings.cta_button_link }}'"
+      class="cta-btn"
+    >
+      {{ section.settings.cta_button_label }}
+      <!-- <i class="fa-solid fa-chevron-right contact-us-btn-icon"></i> -->
+    </button>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco CTA",
+  "tag": "section",
+  "class": "section-fresco-cta",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "cta_bg_image",
+      "label": "CTA background image (optional)"
+    },
+    {
+      "type": "text",
+      "id": "cta_bg_image_url_fallback",
+      "label": "CTA background image URL fallback",
+      "default": "https://plantechkenya.com/wp-content/uploads/2026/02/copy-space-greens-condimentsrtger-1.jpg"
+    },
+    {
+      "type": "text",
+      "id": "cta_heading",
+      "label": "CTA heading",
+      "default": "Ready to Elevate Your Kitchen?"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_description",
+      "label": "CTA description",
+      "default": "Experience the full, natural taste of Fresco herbs."
+    },
+    {
+      "type": "text",
+      "id": "cta_button_label",
+      "label": "CTA button label",
+      "default": "Explore our collection"
+    },
+    {
+      "type": "url",
+      "id": "cta_button_link",
+      "label": "CTA button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco CTA",
+      "settings": {
+        "cta_bg_image_url_fallback": "https://plantechkenya.com/wp-content/uploads/2026/02/copy-space-greens-condimentsrtger-1.jpg",
+        "cta_heading": "Ready to Elevate Your Kitchen?",
+        "cta_description": "Experience the full, natural taste of Fresco herbs.",
+        "cta_button_label": "Explore our collection",
+        "cta_button_link": "shopify://collections/all"
+      }
+    }
+  ]
+}
+{% endschema %}
+

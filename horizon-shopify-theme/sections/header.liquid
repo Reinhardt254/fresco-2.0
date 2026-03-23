@@ -1,0 +1,239 @@
+{%- comment -%}
+  Fresco-style header. Uses site-header, menu-toggle, mobile-menu-overlay structure
+  expected by assets/fresco/styles/global.css and assets/fresco/scripts/global.js.
+  Menu is read from _header-menu block if present, else section.settings.menu.
+{%- endcomment -%}
+
+{% liquid
+  assign menu = blank
+  if section.settings.menu != blank
+    assign menu = linklists[section.settings.menu]
+  endif
+  if menu == blank
+    assign menu = linklists['main-menu']
+  endif
+
+  assign search_style = 'none'
+  if section.settings.show_search
+    assign search_style = 'modal'
+  endif
+%}
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": {{ shop.name | json }},
+    {% if settings.logo %}
+      "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
+    {% endif %}
+    "url": {{ request.origin | append: page.url | json }}
+  }
+</script>
+
+<header class="site-header" id="header-component">
+  <div class="container">
+    {%- if menu != blank -%}
+      <div class="menu-toggle-container">
+        <button
+          class="menu-toggle"
+          aria-label="{{ 'accessibility.menu' | t }}"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="visually-hidden">{{ 'accessibility.menu' | t }}</span>
+          <span class="menu-toggle__bar"></span>
+        </button>
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} Desktop left nav {%- endcomment -%}
+    <div class="nav left-nav desktop-nav">
+      <div class="nav-links">
+        {%- if menu != blank -%}
+          {%- for link in menu.links -%}
+            {%- if link.links != blank -%}
+              <div class="nav-dropdown">
+                <a href="{{ link.url }}" class="nav-dropdown-trigger{% if link.active %} active{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
+                  {{ link.title | escape }}
+                </a>
+                <div class="nav-dropdown-menu">
+                  <div class="nav-dropdown-menu-content">
+                    {%- for child_link in link.links -%}
+                      <a href="{{ child_link.url }}" class="dropdown-section" {% if child_link.current %}aria-current="page"{% endif %}>
+                        {{ child_link.title | escape }}
+                      </a>
+                    {%- endfor -%}
+                  </div>
+                </div>
+              </div>
+            {%- else -%}
+              <a href="{{ link.url }}" class="{% if link.active %}active{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
+                {{ link.title | escape }}
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- comment -%} Logo {%- endcomment -%}
+    <div class="logo logo-desktop">
+      <a href="{{ routes.root_url }}" class="header__heading-link">
+        {%- if settings.logo != blank -%}
+          {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+          {%- assign logo_height = settings.logo_width | default: 150 | divided_by: settings.logo.aspect_ratio -%}
+          {{
+            settings.logo
+            | image_url: width: 300
+            | image_tag:
+              class: 'motion-reduce',
+              alt: logo_alt,
+              height: logo_height,
+              loading: 'eager',
+              widths: '100, 150, 200, 250, 300'
+          }}
+        {%- else -%}
+          <span class="h2">{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
+    </div>
+
+    <div class="logo logo-mobile">
+      <a href="{{ routes.root_url }}">
+        {%- if settings.logo != blank -%}
+          {{ settings.logo | image_url: width: 200 | image_tag: alt: shop.name }}
+        {%- else -%}
+          <span class="h2">{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
+    </div>
+
+    {%- comment -%} Desktop right nav + header actions {%- endcomment -%}
+    <div class="nav right-nav desktop-nav">
+      <div class="nav-links">
+        <a href="{{ routes.all_products_collection_url }}">Shop</a>
+      </div>
+      <div class="header-actions">
+        {%- if search_style == 'modal' -%}
+          {% render 'search', style: search_style, display_style: 'icon' %}
+        {%- else -%}
+          <a href="{{ routes.search_url }}" class="link" aria-label="{{ 'content.search_input_label' | t }}">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          </a>
+        {%- endif -%}
+
+        {%- if shop.customer_accounts_enabled -%}
+          <a
+            href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+            class="user-icon link"
+            aria-label="{%- if customer -%}{{ 'accessibility.account' | t }}{%- else -%}{{ 'actions.log_in' | t }}{%- endif -%}"
+          >
+            <i class="fa-solid fa-user"></i>
+          </a>
+        {%- endif -%}
+
+        <a href="{{ routes.cart_url }}" class="bag-icon link" id="cart-icon-bubble" aria-label="{{ 'accessibility.cart' | t }}">
+          <i class="fa-solid fa-bag-shopping"></i>
+          {%- if cart != empty -%}
+            <span class="cart-count-bubble" aria-hidden="true">
+              {%- if cart.item_count < 100 -%}{{ cart.item_count }}{%- endif -%}
+            </span>
+          {%- endif -%}
+        </a>
+
+        <a href="{{ routes.all_products_collection_url }}" class="cta nav-shop-button">Shop</a>
+      </div>
+    </div>
+
+    {%- comment -%} Mobile header actions {%- endcomment -%}
+    <div class="header-actions header-actions-mobile">
+      {%- if search_style == 'modal' -%}
+        {% render 'search', style: search_style, display_style: 'icon' %}
+      {%- else -%}
+        <a href="{{ routes.search_url }}" class="link" aria-label="{{ 'content.search_input_label' | t }}">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        </a>
+      {%- endif -%}
+      {%- if shop.customer_accounts_enabled -%}
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="user-icon link">
+          <i class="fa-solid fa-user"></i>
+        </a>
+      {%- endif -%}
+      <a href="{{ routes.cart_url }}" class="bag-icon link">
+        <i class="fa-solid fa-bag-shopping"></i>
+        {%- if cart != empty -%}
+          <span class="cart-count-bubble" aria-hidden="true">{%- if cart.item_count < 100 -%}{{ cart.item_count }}{%- endif -%}</span>
+        {%- endif -%}
+      </a>
+    </div>
+  </div>
+
+  {%- comment -%} Mobile menu overlay - required by global.js {%- endcomment -%}
+  {%- if menu != blank -%}
+    <div class="mobile-menu-overlay" id="mobile-menu">
+      <div class="mobile-menu-content">
+        <div class="mobile-menu-header">
+          <a href="{{ routes.root_url }}" class="mobile-menu-logo">
+            {%- if settings.logo != blank -%}
+              {{ settings.logo | image_url: width: 150 | image_tag: alt: shop.name }}
+            {%- else -%}
+              <span>{{ shop.name }}</span>
+            {%- endif -%}
+          </a>
+          <button class="mobile-menu-close" aria-label="{{ 'accessibility.close_dialog' | t }}">
+            <i class="fa-solid fa-times"></i>
+          </button>
+        </div>
+        <nav class="mobile-nav-links" aria-label="{{ 'accessibility.header_navigation_label' | t }}">
+          {%- for link in menu.links -%}
+            {%- if link.links != blank -%}
+              <div class="mobile-nav-dropdown">
+                <a href="{{ link.url }}" class="mobile-nav-link mobile-dropdown-trigger" {% if link.current %}aria-current="page"{% endif %}>
+                  {{ link.title | escape }}
+                  <i class="fa-solid fa-chevron-down"></i>
+                </a>
+                <div class="mobile-dropdown-menu">
+                  {%- for child_link in link.links -%}
+                    <a href="{{ child_link.url }}" class="mobile-dropdown-link" {% if child_link.current %}aria-current="page"{% endif %}>
+                      {{ child_link.title | escape }}
+                    </a>
+                  {%- endfor -%}
+                </div>
+              </div>
+            {%- else -%}
+              <a href="{{ link.url }}" class="mobile-nav-link{% if link.active %} active{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
+                {{ link.title | escape }}
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
+          <a href="{{ routes.all_products_collection_url }}" class="mobile-nav-link">Shop</a>
+        </nav>
+      </div>
+    </div>
+  {%- endif -%}
+</header>
+
+{% schema %}
+{
+  "name": "t:names.header",
+  "tag": "header",
+  "class": "header-section",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "t:settings.search_icon",
+      "default": true
+    }
+  ],
+  "blocks": [],
+  "presets": []
+}
+{% endschema %}

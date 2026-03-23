@@ -1,0 +1,1108 @@
+/* ==================== Retail Page Styles ==================== */
+
+/* Base button (shared with about page pattern) */
+.contact-us-btn {
+  background-color: var(--primary-green);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  margin-top: 2rem;
+}
+ 
+.contact-us-btn i {
+  font-size: 10px;
+  height: 16px;
+  width: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  color: var(--primary-green);
+}
+
+.contact-us-btn:hover {
+  background-color: #fff;
+  color: var(--primary-green);
+}
+
+.retail-page {
+  background: #ffffff;
+  color: #2c2c2c;
+  padding: 0;
+  min-height: 60vh;
+}
+
+/* Hero */
+.retail-hero {
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.retail-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/02/slider-leafs.png") no-repeat center center;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 15;
+  opacity: 1;
+}
+
+.retail-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.retail-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.retail-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0d2920;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.retail-hero-content {
+  position: relative;
+  z-index: 30;
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem 0rem;
+
+}
+
+.retail-hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 0.75rem;
+}
+
+.retail-hero-title .highlight {
+  color: var(--primary-green);
+}
+
+.retail-hero-tagline {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+/* ==================== Content Sections ==================== */
+
+/* Section 1: Intro */
+.retail-section  {
+  position: relative;
+  z-index: 1;
+}
+
+.retail-section-intro {
+  background-color: #e6eae9;
+  position: relative;
+  z-index: 1;
+}
+
+.retail-section-content {
+  position: relative;
+  z-index: 1;
+}
+
+.retail-section-content::after {
+  content: "";
+  background: url(https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f…&w=1060)
+    no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  z-index: 5;
+}
+
+
+
+.retail-intro-text {
+  position: relative;
+  z-index: 10;
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #0f3d2e;
+  margin: 0;
+}
+
+.retail-section {
+  padding: 4rem 0;
+  background-color: #0f3d2e;
+  width: 100%;
+}
+
+.retail-section-alt {
+  background-color: var(--light-green);
+}
+
+.retail-section-dark {
+  background-color: #0f3d2e;
+  color: #fff;
+}
+
+.retail-section-inner {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.retail-section-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Full-width sections 1 & 2: 50/50 columns, enlarged image */
+.retail-section-fullwidth {
+  padding: 0 !important;
+}
+.retail-section-fullwidth .retail-section-inner.retail-section-fullwidth-inner {
+  max-width: none;
+  width: 100%;
+  gap: 0;
+}
+
+.retail-section-image-left {
+  flex-direction: row-reverse;
+}
+
+.retail-section-fullwidth .retail-section-media {
+  width: 50%;
+  flex-shrink: 0;
+}
+
+.retail-section-fullwidth .retail-section-content {
+  width: 46%;
+  padding: 3rem 0rem;
+  max-width: 700px;
+}
+
+.retail-section-image-left  .retail-section-content  {
+  margin-right: auto;
+  padding-left: 3rem;
+  box-sizing: border-box;
+}
+
+.retail-section-image-right  .retail-section-content  {
+  margin-left: auto;
+  padding-right: 3rem;
+  box-sizing: border-box;
+}
+
+.retail-section-fullwidth .retail-media-shape {
+  max-height: none;
+  min-height: 420px;
+  height: 100%;
+  border-radius: 0;
+}
+
+.retail-section-fullwidth .retail-section-media {
+  min-height: 420px;
+  align-items: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.retail-section-fullwidth .retail-media-shape img {
+  min-height: 420px;
+  object-fit: cover;
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.retail-section-narrow {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 1000px;
+}
+
+.retail-section-media {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.retail-media-shape {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 420px;
+  border-radius: 0px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.retail-section-content {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #0f3d2e;
+}
+
+.retail-section-dark .retail-section-content {
+  width: 100%;
+  max-width: 500px;
+  align-items: center;
+}
+
+.retail-section-heading {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.retail-section-dark .retail-section-heading {
+  color: #fff;
+}
+
+.retail-section.text-white .retail-section-heading {
+  color: #fff;
+}
+
+.divider {
+  width: 100%;
+  max-width: 300px;
+  height: 2px;
+  background-color: var(--primary-green);
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.retail-section-heading-center {
+  text-align: center;
+}
+
+.retail-section-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.retail-section-text p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #0f3d2e;
+  margin: 0;
+}
+
+.retail-section.text-white p {
+  color: #fff;
+}
+
+.retail-section-lead {
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.7;
+  margin: 0 0 2.5rem;
+  max-width: 700px;
+}
+
+/* Buttons */
+.retail-btn {
+  margin-top: 1.5rem;
+  background-color: #0f3d2e;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.retail-btn:hover {
+  background-color: #fff;
+  color: #0f3d2e;
+}
+
+.retail-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.retail-btn-dark:hover {
+  background-color: #fff;
+  color: #0f3d2e;
+}
+
+.retail-btn-dark:hover svg {
+  stroke: #0f3d2e;
+}
+
+.retail-btn-light {
+  background-color: var(--primary-green);
+  color: #fff;
+  margin-top: 0.5rem;
+}
+
+.retail-btn-light:hover {
+  background-color: #fff;
+  color: var(--primary-green);
+}
+
+.retail-btn-light svg {
+  stroke: #fff;
+}
+
+.retail-btn-light:hover svg {
+  stroke: var(--primary-green);
+}
+
+/* Benefits Grid (legacy, kept for other pages if needed) */
+.retail-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.retail-benefit {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.retail-benefit-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.25rem;
+  background: var(--primary-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.retail-benefit-icon i {
+  font-size: 1.85rem;
+  color: #fff;
+}
+
+.retail-benefit-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.75rem;
+}
+
+.retail-benefit-desc {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==================== How it Works / Steps Section ==================== */
+.retail-how-it-works {
+  position: relative;
+  padding: 4.5rem 0 5rem;
+  background-color: var(--light-green);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.retail-how-it-works::after {
+  content: "";
+  background: url(https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f…&w=1060)
+    no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.02;
+  z-index: 5;
+}
+
+/* .retail-how-it-works-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #fafaf8;
+  opacity: 1;
+} */
+
+/* Subtle light green organic swirl pattern */
+.retail-how-it-works-bg::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background-image:
+    radial-gradient(
+      ellipse 80% 50% at 20% 30%,
+      rgba(129, 176, 63, 0.06) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 60% 70% at 80% 70%,
+      rgba(129, 176, 63, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 70% 40% at 50% 10%,
+      rgba(129, 176, 63, 0.04) 0%,
+      transparent 45%
+    );
+  pointer-events: none;
+}
+
+.retail-how-it-works-inner {
+  position: relative;
+  z-index: 10;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 1400px;
+  width: 92%;
+  margin: 0 auto;
+}
+
+.retail-how-it-works-heading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.retail-how-it-works-heading {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 600;
+  color: #0f3d2e;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.retail-how-it-works-lead {
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: #4a4a4a;
+  line-height: 1.65;
+  max-width: 640px;
+  margin: 0rem 0 3rem 0;
+}
+
+.retail-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 2rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+.retail-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.retail-step-image-top {
+  flex-direction: column;
+}
+
+.retail-step-text-top {
+  flex-direction: column;
+}
+
+.retail-step-text-top .retail-step-content {
+  order: 1;
+}
+
+.retail-step-text-top .retail-step-image-wrap {
+  order: 2;
+}
+
+.retail-step-image-wrap {
+  width: 100%;
+  aspect-ratio: 5/4;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #eee;
+  flex-shrink: 0;
+}
+
+.retail-step-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.retail-step-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.retail-step-num {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.retail-step-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.retail-step-desc {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 280px;
+}
+
+.retail-how-it-works-cta {
+  margin-top: 0.5rem;
+  background-color: var(--primary-green);
+  color: #fff;
+}
+
+.retail-how-it-works-cta:hover {
+  background-color: #fff;
+  color: var(--primary-green);
+}
+
+/* CTA Section */
+
+
+/* -----------CTA Section Start----------- */
+.retail-page .cta {
+  color: #fff;
+  padding: 0rem;
+  width: 100%;
+  height: auto;
+  height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: var(--light-green);
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.retail-page .cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 15;
+  opacity: 0.025;
+}
+
+.retail-page .cta-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  margin-bottom: 0px;
+}
+
+.retail-page .cta-inner {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 26%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+.retail-page .cta-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f3d2e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.retail-page .cta-desc {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #0f3d2e;
+  letter-spacing: normal;
+  margin-bottom: 0rem;
+}
+
+.retail-page .cta-btn {
+  background-color: var(--primary-green);
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+.retail-page .cta-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+}
+
+.retail-page .cta-btn:hover {
+  background-color: #fff;
+  color: var(--primary-green);
+}
+
+.retail-page .cta-btn:hover svg {
+  fill: var(--primary-green);
+}
+
+/* ==================== Mobile Responsive ==================== */
+
+@media (max-width: 1024px) {
+  .retail-hero {
+    min-height: 500px;
+  }
+
+  .retail-section-inner {
+    gap: 2rem;
+  }
+
+  .retail-benefits-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .retail-section-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+
+  .retail-section-reverse {
+    flex-direction: column;
+  }
+
+  .retail-section-media,
+  .retail-section-content {
+    width: 100%;
+  }
+
+  .retail-section-media {
+    order: 1;
+  }
+
+  .retail-section-content {
+    order: 2;
+    align-items: flex-start;
+  }
+
+  .retail-section-fullwidth .retail-section-content {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0rem;
+    box-sizing: border-box;
+  }
+
+  .retail-section-image-left .retail-section-content,
+  .retail-section-image-right .retail-section-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .retail-media-shape {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .retail-section-fullwidth .retail-section-media {
+    min-height: 300px;
+    width: 100%;
+  }
+
+  .retail-section-fullwidth .retail-media-shape img {
+    min-height: 300px;
+    width: 100%;
+  }
+
+  /* .retail-step-text-top .retail-step-content {
+    order: 2;
+  }
+
+  .retail-step-text-top .retail-step-image-wrap {
+    order: 1;
+  } */
+
+  .retail-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .retail-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .retail-step-image-wrap {
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 0;
+  }
+
+  .retail-step {
+    position: relative;
+    padding: 0rem;
+    border-radius: 7px;
+    overflow: hidden;
+  }
+  
+  .retail-step-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0f3d2ead;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .retail-step-num {
+    font-size: 2.5rem;
+  }
+
+  .retail-step-title {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+
+  .retail-step-desc {
+    font-size: 0.875rem;
+    color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .retail-hero {
+    min-height: 450px;
+  }
+
+  .retail-hero-content {
+    padding: 3rem 1rem;
+  }
+
+  .retail-hero-title {
+    font-size: 1.75rem;
+  }
+
+  .retail-hero-tagline {
+    font-size: 1rem;
+  }
+
+  .retail-intro-text {
+    font-size: 1rem;
+  }
+
+  .retail-section {
+    padding: 3rem 0;
+  }
+
+  .retail-section-image-left .retail-section-content, .retail-section-image-right .retail-section-content {
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+  }
+
+  .retail-section-fullwidth .retail-section-inner.retail-section-fullwidth-inner {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+  }
+
+  .retail-section .retail-section-heading {
+    text-align: left;
+    font-size: 1.6rem;
+  }
+
+  .retail-intro-text {
+    text-align: left;
+  }
+
+  .retail-section-text {
+    text-align: left;
+  }
+
+  .retail-section-fullwidth .retail-media-shape {
+    min-height: fit-content;
+    max-height: fit-content;
+  }
+
+  .retail-section-text p {
+    font-size: 0.9375rem;
+  }
+
+  .retail-section-lead {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .retail-how-it-works {
+    padding: 2rem 0 1rem 0rem;
+  }
+
+  .retail-how-it-works-lead {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  .retail-section-inner {
+    gap: 0.5rem;
+  }
+
+  .retail-step-num {
+    font-size: 2.25rem;
+  }
+
+  .retail-step-title {
+    font-size: 1.25rem;
+  }
+
+  .retail-step-desc {
+    font-size: 0.875rem;
+  }
+
+  .retail-benefit {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .retail-page .cta {
+    height: 500px;
+    display: flex;
+    align-items: flex-end;
+    background-color: #f9f9f9;
+  }
+
+  .retail-page .cta-bg {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 0;
+  }
+
+  .retail-page .cta-inner {
+    top: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 0;
+    width: 90%;
+  }
+
+  .retail-page .cta-heading {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .retail-page .cta-desc {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .retail-page .cta-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .retail-section-fullwidth .retail-media-shape img {
+    min-height: 300px;
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 5/4;
+}
+
+.contact-us-btn {
+  margin-top: 0rem;
+}
+}
+
+@media (max-width: 480px) {
+  .retail-hero {
+    min-height: 400px;
+  }
+
+  .retail-hero-title {
+    font-size: 2rem;
+  }
+
+  .retail-hero-tagline {
+    font-size: 1.1rem;
+  }
+
+  .retail-intro-text {
+    font-size: 0.9375rem;
+  }
+
+  .retail-section {
+    padding: 2.5rem 0;
+  }
+
+  .retail-section-inner {
+    width: 92%;
+  }
+
+  .retail-section-heading {
+    font-size: 1.375rem;
+  }
+
+  .retail-benefit-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .retail-benefit-icon i {
+    font-size: 1.25rem;
+  }
+
+  .retail-benefit-title {
+    font-size: 1rem;
+  }
+
+  .retail-benefit-desc {
+    font-size: 0.875rem;
+  }
+
+  .retail-page .cta {
+    min-height: 500px;
+    height: 500px;
+    display: flex;
+    align-items: flex-end;
+    background-color: #f9f9f9;
+  }
+
+  .retail-page .cta-heading {
+    font-size: 1.35rem;
+  }
+
+  .retail-page .cta-desc {
+    font-size: 0.9375rem;
+    margin-bottom: 1.5rem;
+  }
+}

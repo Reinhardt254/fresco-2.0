@@ -1,0 +1,405 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "fresco_hero_4jemWn": {
+      "type": "fresco-hero",
+      "blocks": {
+        "slide_VcBfjC": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/0A0A1642.jpg"
+          }
+        },
+        "slide_rTz4N9": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/0A0A4468-scaled.jpg"
+          }
+        },
+        "slide_ky6trA": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/0A0A1046-scaled.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "slide_VcBfjC",
+        "slide_rTz4N9",
+        "slide_ky6trA"
+      ],
+      "name": "Fresco Hero",
+      "settings": {
+        "heading": "Bringing the Best Herbs",
+        "highlight_text": "Best",
+        "subheading": "100% Organic, from Kenya to the World.",
+        "button_label": "Shop Now",
+        "button_link": "shopify://collections/all",
+        "button_open_new_tab": false,
+        "social_heading": "Follow Us",
+        "social_facebook": "",
+        "social_instagram": "",
+        "social_youtube": "",
+        "social_linkedin": ""
+      }
+    },
+    "fresco_home_page_layout_Gm7pKq": {
+      "type": "fresco-home-page-layout",
+      "name": "Fresco Home Page Layout",
+      "settings": {
+        "left_image_url": "https://newvashaepz.com/wp-content/uploads/2025/11/DJI_20250826170440_0288_D.jpg",
+        "right_image_url": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4520-scaled.jpg",
+        "heading_prefix": "Harvested at",
+        "highlight_1": "Peak,",
+        "highlight_2": "Preserved",
+        "heading_suffix": "with Purpose.",
+        "description": "Fresco herbs are organically grown, harvested at peak, and freeze-dried at origin to capture the true taste of nature.",
+        "button_label": "Explore Fresco Flavors",
+        "button_link": "shopify://collections/frontpage"
+      }
+    },
+    "fresco_our_mission_f7xjdL": {
+      "type": "fresco-our-mission",
+      "blocks": {
+        "mission_slide_UhnyWR": {
+          "type": "mission_slide",
+          "settings": {
+            "image": "shopify://shop_images/0A0A9909.jpg",
+            "image_url_fallback": "",
+            "image_alt": "Mission slide image"
+          }
+        },
+        "mission_slide_JnEHTY": {
+          "type": "mission_slide",
+          "settings": {
+            "image": "shopify://shop_images/0A0A8720-1.jpg",
+            "image_url_fallback": "",
+            "image_alt": "Mission slide image"
+          }
+        },
+        "mission_slide_Cph8Hn": {
+          "type": "mission_slide",
+          "settings": {
+            "image": "shopify://shop_images/chives.jpg",
+            "image_url_fallback": "",
+            "image_alt": "Mission slide image"
+          }
+        },
+        "mission_slide_jFzixk": {
+          "type": "mission_slide",
+          "settings": {
+            "image": "shopify://shop_images/Thyme-0A0A9679.jpg",
+            "image_url_fallback": "",
+            "image_alt": "Mission slide image"
+          }
+        },
+        "mission_slide_PczALF": {
+          "type": "mission_slide",
+          "settings": {
+            "image": "shopify://shop_images/Parsley-0A0A9943.jpg",
+            "image_url_fallback": "",
+            "image_alt": "Mission slide image"
+          }
+        }
+      },
+      "block_order": [
+        "mission_slide_UhnyWR",
+        "mission_slide_JnEHTY",
+        "mission_slide_Cph8Hn",
+        "mission_slide_jFzixk",
+        "mission_slide_PczALF"
+      ],
+      "name": "Fresco Our Mission",
+      "settings": {
+        "discover_text": "Discover",
+        "discover_image": "shopify://shop_images/12504700.png",
+        "discover_image_url_fallback": "https://cdn-icons-png.freepik.com/512/12504/12504700.png?uid=R146131911&ga=GA1.1.1724219820.1772450282",
+        "section_title": "Pure Herbs. Perfectly Preserved",
+        "section_description": "Organically grown, freeze dried at harvest, locked in natural flavour",
+        "point1_icon": "shopify://shop_images/organic.png",
+        "point1_icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/organic.png",
+        "point1_label": "100% Organic",
+        "point1_description": "Single-source herbs sustainably grown to meet strict USDA standards.",
+        "point2_icon": "shopify://shop_images/agree.png",
+        "point2_icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/agree.png",
+        "point2_label": "Locked in flavour",
+        "point2_description": "Seals in aromatic oils for bold flavor, zero prep hassle, zero waste.",
+        "point3_icon": "shopify://shop_images/no-preservatives.png",
+        "point3_icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/no-preservatives.png",
+        "point3_label": "Preservative-free",
+        "point3_description": "Harvested and processed at source with no additives.",
+        "point4_icon": "shopify://shop_images/hand.png",
+        "point4_icon_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/03/hand.png",
+        "point4_label": "Longer shelf life",
+        "point4_description": "Freeze-dried to stay pantry-fresh for months, not days."
+      }
+    },
+    "fresco_partners_new_8tQm2p": {
+      "type": "fresco-partners-new",
+      "blocks": {
+        "partner_slide_1": {
+          "type": "partner_slide",
+          "settings": {
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/images.png"
+          }
+        },
+        "partner_slide_2": {
+          "type": "partner_slide",
+          "settings": {
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/images-1.png"
+          }
+        },
+        "partner_slide_3": {
+          "type": "partner_slide",
+          "settings": {
+            "image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/10/pngtree-all-natural-grunge-rubber-stamp-on-white-background-png-image_4756626.png"
+          }
+        },
+        "partner_slide_4": {
+          "type": "partner_slide",
+          "settings": {
+            "image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/fssc22000-2-300x225-removebg-preview.png"
+          }
+        },
+        "partner_slide_5": {
+          "type": "partner_slide",
+          "settings": {
+            "image_url_fallback": "https://frescoflavors.myshopify.com/cdn/shop/files/no-additives-sign-for-healthy-natural-food-products-label-isolated-pictogram-with-plant-leaf-vector-removebg-preview_1.png?v=1764936793&width=300"
+          }
+        },
+        "partner_slide_6": {
+          "type": "partner_slide",
+          "settings": {
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/188cdb_0a663e987dae4d80ae3587a8c313fcb0_mv2.png"
+          }
+        },
+        "partner_slide_7": {
+          "type": "partner_slide",
+          "settings": {
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/images.png"
+          }
+        },
+        "partner_slide_8": {
+          "type": "partner_slide",
+          "settings": {
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/images-1.png"
+          }
+        },
+        "partner_slide_9": {
+          "type": "partner_slide",
+          "settings": {
+            "image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/10/pngtree-all-natural-grunge-rubber-stamp-on-white-background-png-image_4756626.png"
+          }
+        },
+        "partner_slide_10": {
+          "type": "partner_slide",
+          "settings": {
+            "image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/fssc22000-2-300x225-removebg-preview.png"
+          }
+        },
+        "partner_slide_11": {
+          "type": "partner_slide",
+          "settings": {
+            "image_url_fallback": "https://frescoflavors.myshopify.com/cdn/shop/files/no-additives-sign-for-healthy-natural-food-products-label-isolated-pictogram-with-plant-leaf-vector-removebg-preview_1.png?v=1764936793&width=300"
+          }
+        },
+        "partner_slide_12": {
+          "type": "partner_slide",
+          "settings": {
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/188cdb_0a663e987dae4d80ae3587a8c313fcb0_mv2.png"
+          }
+        }
+      },
+      "block_order": [
+        "partner_slide_1",
+        "partner_slide_2",
+        "partner_slide_3",
+        "partner_slide_4",
+        "partner_slide_5",
+        "partner_slide_6",
+        "partner_slide_7",
+        "partner_slide_8",
+        "partner_slide_9",
+        "partner_slide_10",
+        "partner_slide_11",
+        "partner_slide_12"
+      ],
+      "name": "Fresco Partners New",
+      "settings": {}
+    },
+    "fresco_category_section_9k2pXw": {
+      "type": "fresco-category-section",
+      "name": "Fresco Categories",
+      "blocks": {
+        "cat_slide_1": {
+          "type": "category_slide",
+          "settings": {
+            "label": "Professional kitchens",
+            "discount_tag": "30% OFF",
+            "headline": "Chef-Friendly Format for Culinary Service",
+            "description": "Our premium organic herbs, packed in larger chef-ready formats for high-volume culinary service. Consistent flavor, and reliable performance for busy kitchens.",
+            "link_text": "Explore Chefs collection",
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/Untitled-design-8-6.png",
+            "image_alt": "Culinary herb jar"
+          }
+        },
+        "cat_slide_2": {
+          "type": "category_slide",
+          "settings": {
+            "label": "Home cooking",
+            "discount_tag": "20% OFF",
+            "headline": "Everyday flavours made effortless",
+            "description": "Premium organic herbs that turn simple meals into something memorable. Freeze-dried freshness with zero prep, ready whenever you cook.",
+            "link_text": "Shop home favourites",
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/Untitled-design-4.png",
+            "image_alt": "Combo herb pack"
+          }
+        },
+        "cat_slide_3": {
+          "type": "category_slide",
+          "settings": {
+            "label": "Retail",
+            "discount_tag": "30% OFF",
+            "headline": "Built for Retail Success",
+            "description": "Retail-ready organic herbs designed for strong shelf presence and dependable supply. Traceable sourcing and consistent quality your customers can trust.",
+            "link_text": "Partner With Fresco",
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/Untitled_design__7_-removebg-preview.png",
+            "image_alt": "All-purpose herb jar"
+          }
+        }
+      },
+      "block_order": [
+        "cat_slide_1",
+        "cat_slide_2",
+        "cat_slide_3"
+      ],
+      "settings": {
+        "sub_heading_text": "Categories",
+        "sub_heading_image_url_fallback": "https://cdn-icons-png.freepik.com/512/12504/12504700.png?uid=R146131911&ga=GA1.1.1724219820.1772450282",
+        "section_title": "Fresco Herbs for Every Kitchen"
+      }
+    },
+    "fresco_featured_products_4zM9pV": {
+      "type": "fresco-featured-products",
+      "name": "Fresco Featured Products",
+      "settings": {
+        "sub_heading_text": "Nature's Best",
+        "sub_heading_image_url_fallback": "https://cdn-icons-png.freepik.com/512/12504/12504700.png?uid=R146131911&ga=GA1.1.1724219820.1772450282",
+        "section_title": "Featured Products",
+        "section_description": "Fresco flavors, organic freeze-dried herbs deliver vibrant, lasting flavor in every dish.",
+        "collection": "herbs",
+        "max_products": 8
+      }
+    },
+    "fresco_reviews_k7Lx3Q": {
+      "type": "fresco-reviews",
+      "name": "Fresco Reviews",
+      "blocks": {
+        "review_slide_1": {
+          "type": "review_slide",
+          "settings": {
+            "avatar_image_url_fallback": "https://img.freepik.com/free-photo/elderly-baker-adding-flour-metallic-sieve-sprinkling-dough-happy-elderly-chef-with-kitchen-uniform-mixing-sprinkling-adding-sifting-spreading-raw-ingredients-baking-traditional-bread_482257-5869.jpg?uid=R146131911&ga=GA1.1.1724219820.1772450282&semt=ais_hybrid&w=740&q=80",
+            "avatar_alt": "Chef Jessica",
+            "review_text": "The herbs from Fresco are incredibly fresh and fragrant. They've completely changed the flavor of my dishes—so much better than anything I used before!",
+            "review_name": "Chef Jessica Khan Doe"
+          }
+        },
+        "review_slide_2": {
+          "type": "review_slide",
+          "settings": {
+            "avatar_image_url_fallback": "https://img.freepik.com/free-photo/smiling-chef-kitchen_23-2148006651.jpg?uid=R146131911&ga=GA1.1.1724219820.1772450282&semt=ais_hybrid&w=740&q=80",
+            "avatar_alt": "Chef David",
+            "review_text": "I love how convenient and long-lasting these freeze-dried herbs are. They keep their taste and color for months—truly a game changer in my kitchen.",
+            "review_name": "Chef David Nguyen"
+          }
+        },
+        "review_slide_3": {
+          "type": "review_slide",
+          "settings": {
+            "avatar_image_url_fallback": "https://img.freepik.com/free-photo/cropped-portrait-beautiful-professional-female-chef-cooking-restaurant-cutting-grilled-meat-with-scissors-copyspace_7502-5550.jpg?uid=R146131911&ga=GA1.1.1724219820.1772450282&semt=ais_hybrid&w=740&q=80",
+            "avatar_alt": "Chef Samir",
+            "review_text": "These organic products really bring out the best in my recipes. I always recommend Fresco to fellow cooks who want pure, vibrant flavors.",
+            "review_name": "Chef Samir Ali"
+          }
+        },
+        "review_slide_4": {
+          "type": "review_slide",
+          "settings": {
+            "avatar_image_url_fallback": "https://img.freepik.com/free-photo/elderly-baker-adding-flour-metallic-sieve-sprinkling-dough-happy-elderly-chef-with-kitchen-uniform-mixing-sprinkling-adding-sifting-spreading-raw-ingredients-baking-traditional-bread_482257-5869.jpg?uid=R146131911&ga=GA1.1.1724219820.1772450282&semt=ais_hybrid&w=740&q=80",
+            "avatar_alt": "Chef Jessica",
+            "review_text": "The herbs from Fresco are incredibly fresh and fragrant. They've completely changed the flavor of my dishes—so much better than anything I used before!",
+            "review_name": "Chef Jessica Khan Doe"
+          }
+        },
+        "review_slide_5": {
+          "type": "review_slide",
+          "settings": {
+            "avatar_image_url_fallback": "https://img.freepik.com/free-photo/smiling-chef-kitchen_23-2148006651.jpg?uid=R146131911&ga=GA1.1.1724219820.1772450282&semt=ais_hybrid&w=740&q=80",
+            "avatar_alt": "Chef David",
+            "review_text": "I love how convenient and long-lasting these freeze-dried herbs are. They keep their taste and color for months—truly a game changer in my kitchen.",
+            "review_name": "Chef David Nguyen"
+          }
+        },
+        "review_slide_6": {
+          "type": "review_slide",
+          "settings": {
+            "avatar_image_url_fallback": "https://img.freepik.com/free-photo/cropped-portrait-beautiful-professional-female-chef-cooking-restaurant-cutting-grilled-meat-with-scissors-copyspace_7502-5550.jpg?uid=R146131911&ga=GA1.1.1724219820.1772450282&semt=ais_hybrid&w=740&q=80",
+            "avatar_alt": "Chef Samir",
+            "review_text": "These organic products really bring out the best in my recipes. I always recommend Fresco to fellow cooks who want pure, vibrant flavors.",
+            "review_name": "Chef Samir Ali"
+          }
+        }
+      },
+      "block_order": [
+        "review_slide_1",
+        "review_slide_2",
+        "review_slide_3",
+        "review_slide_4",
+        "review_slide_5",
+        "review_slide_6"
+      ],
+      "settings": {
+        "title_prefix": "What Our",
+        "highlight_customers": "Customers",
+        "title_mid": "are",
+        "highlight_saying": "saying",
+        "trusted_text": "Trusted by 3.5k+ Fresco lovers",
+        "right_avatar_1_url_fallback": "https://images.pexels.com/photos/3760853/pexels-photo-3760853.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "right_avatar_1_alt": "Happy Fresco customer",
+        "right_avatar_2_url_fallback": "https://images.pexels.com/photos/3760852/pexels-photo-3760852.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "right_avatar_2_alt": "Happy Fresco customer",
+        "right_avatar_3_url_fallback": "https://images.pexels.com/photos/3760850/pexels-photo-3760850.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "right_avatar_3_alt": "Happy Fresco customer"
+      }
+    },
+    "fresco_cta_p8rL2g": {
+      "type": "fresco-cta",
+      "name": "Fresco CTA",
+      "settings": {
+        "cta_bg_image_url_fallback": "https://plantechkenya.com/wp-content/uploads/2026/02/copy-space-greens-condimentsrtger-1.jpg",
+        "cta_heading": "Ready to Elevate Your Kitchen?",
+        "cta_description": "Experience the full, natural taste of Fresco herbs.",
+        "cta_button_label": "Explore our collection",
+        "cta_button_link": "shopify://collections/all"
+      }
+    }
+  },
+  "order": [
+    "fresco_hero_4jemWn",
+    "fresco_home_page_layout_Gm7pKq",
+    "fresco_our_mission_f7xjdL",
+    "fresco_partners_new_8tQm2p",
+    "fresco_category_section_9k2pXw",
+    "fresco_featured_products_4zM9pV",
+    "fresco_reviews_k7Lx3Q",
+    "fresco_cta_p8rL2g"
+  ]
+}

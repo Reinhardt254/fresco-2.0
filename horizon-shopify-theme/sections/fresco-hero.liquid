@@ -1,0 +1,292 @@
+{%- comment -%}
+  Fresco hero section - EXACT layout from HTML template.
+  Swiper carousel, overlay images, centered content, pagination, socials.
+{%- endcomment -%}
+
+<section
+  id="FrescoHero-{{ section.id }}"
+  class="fresco-hero home-page-top-layout"
+  {{ section.shopify_attributes }}
+>
+  {%- comment -%} Decorative overlay images (corners) {%- endcomment -%}
+  <div class="hero-overlay-global">
+    <div class="overlay-items">
+      {%- if section.settings.overlay_top_left != blank -%}
+        <div class="top-left-overlay overlay-item">
+          <img
+            src="{{ section.settings.overlay_top_left | image_url: width: 300 }}"
+            alt=""
+            width="150"
+            height="150"
+            loading="lazy"
+          >
+        </div>
+      {%- endif -%}
+      {%- if section.settings.overlay_top_right != blank -%}
+        <div class="top-right-overlay overlay-item">
+          <img
+            src="{{ section.settings.overlay_top_right | image_url: width: 300 }}"
+            alt=""
+            width="150"
+            height="150"
+            loading="lazy"
+          >
+        </div>
+      {%- endif -%}
+      {%- if section.settings.overlay_bottom_left != blank -%}
+        <div class="bottom-left-overlay overlay-item">
+          <img
+            src="{{ section.settings.overlay_bottom_left | image_url: width: 300 }}"
+            alt=""
+            width="150"
+            height="150"
+            loading="lazy"
+          >
+        </div>
+      {%- endif -%}
+      {%- if section.settings.overlay_bottom_right != blank -%}
+        <div class="bottom-right-overlay overlay-item leaf">
+          <img
+            src="{{ section.settings.overlay_bottom_right | image_url: width: 400 }}"
+            alt=""
+            width="250"
+            height="300"
+            loading="lazy"
+          >
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- comment -%} Swiper carousel {%- endcomment -%}
+  {%- assign slide_blocks = section.blocks | where: 'type', 'slide' -%}
+  {%- assign has_slides = false -%}
+  {%- for b in slide_blocks -%}
+    {%- if b.settings.image != blank -%}
+      {%- assign has_slides = true -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  <div class="swiper image-slider home-hero-swiper">
+    <div class="swiper-wrapper">
+      {%- if has_slides -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'slide' and block.settings.image != blank -%}
+            <div class="swiper-slide" {{ block.shopify_attributes }}>
+              <img
+                src="{{ block.settings.image | image_url: width: 1920 }}"
+                alt="{{ block.settings.image.alt | default: '' | escape }}"
+                width="1920"
+                height="700"
+                {% if forloop.first %}fetchpriority="high" loading="eager"{% else %}loading="lazy"{% endif %}
+              >
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- else -%}
+        <div class="swiper-slide">
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder' }}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- comment -%} Centered content {%- endcomment -%}
+  <div class="layout-content">
+    <div class="layout-content-inner">
+      <div class="layout-content-inner-text">
+        {%- if section.settings.heading != blank -%}
+          <h1>
+            {%- if section.settings.highlight_text != blank and section.settings.heading contains section.settings.highlight_text -%}
+              {%- assign parts = section.settings.heading | split: section.settings.highlight_text -%}
+              {{ parts.first | strip }}<br>
+              <span class="highlight">{{ section.settings.highlight_text }}</span>{{ parts.last }}
+            {%- else -%}
+              {{ section.settings.heading | newline_to_br }}
+            {%- endif -%}
+          </h1>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p>{{ section.settings.subheading }}</p>
+        {%- endif -%}
+        {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+          <a
+            href="{{ section.settings.button_link }}"
+            class="contact-us-btn"
+            {% if section.settings.button_open_new_tab %}target="_blank" rel="noopener"{% endif %}
+          >
+            {{ section.settings.button_label }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} Swiper pagination (vertical, right side) {%- endcomment -%}
+  <div class="pagination-custom">
+    <div class="swiper-pagination pagination-custom-inner"></div>
+  </div>
+
+  {%- comment -%} Social links (left side, vertical) {%- endcomment -%}
+  <div class="socials">
+    <div class="socials-inner-container">
+      <div class="socials-text">
+        <p>{{ section.settings.social_heading | default: 'Follow Us' }}</p>
+      </div>
+      <div class="separator"></div>
+      <div class="socials-inner">
+        <a href="{% if section.settings.social_facebook != blank %}{{ section.settings.social_facebook }}{% else %}#{% endif %}" class="socials-item" {% if section.settings.social_facebook != blank %}target="_blank" rel="noopener"{% endif %} aria-label="Facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="{% if section.settings.social_instagram != blank %}{{ section.settings.social_instagram }}{% else %}#{% endif %}" class="socials-item" {% if section.settings.social_instagram != blank %}target="_blank" rel="noopener"{% endif %} aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="{% if section.settings.social_youtube != blank %}{{ section.settings.social_youtube }}{% else %}#{% endif %}" class="socials-item" {% if section.settings.social_youtube != blank %}target="_blank" rel="noopener"{% endif %} aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="{% if section.settings.social_linkedin != blank %}{{ section.settings.social_linkedin }}{% else %}#{% endif %}" class="socials-item" {% if section.settings.social_linkedin != blank %}target="_blank" rel="noopener"{% endif %} aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Fresco Hero",
+  "tag": "section",
+  "class": "section-fresco-hero",
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "limit": 9,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Slide image"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Overlay images (optional decorative)"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay_top_left",
+      "label": "Top left overlay"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay_top_right",
+      "label": "Top right overlay"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay_bottom_left",
+      "label": "Bottom left overlay"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay_bottom_right",
+      "label": "Bottom right overlay (leaf)"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Discover the taste of Nature",
+      "info": "Include the phrase to highlight for line break + green styling"
+    },
+    {
+      "type": "text",
+      "id": "highlight_text",
+      "label": "Highlighted phrase",
+      "default": "of Nature",
+      "info": "Wrapped in green, shown on new line"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Freshness without fragility"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_open_new_tab",
+      "label": "Open in new tab",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Social links"
+    },
+    {
+      "type": "text",
+      "id": "social_heading",
+      "label": "Social heading",
+      "default": "Follow Us"
+    },
+    {
+      "type": "url",
+      "id": "social_facebook",
+      "label": "Facebook"
+    },
+    {
+      "type": "url",
+      "id": "social_instagram",
+      "label": "Instagram"
+    },
+    {
+      "type": "url",
+      "id": "social_youtube",
+      "label": "YouTube"
+    },
+    {
+      "type": "url",
+      "id": "social_linkedin",
+      "label": "LinkedIn"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Hero",
+      "blocks": [
+        { "type": "slide" },
+        { "type": "slide" },
+        { "type": "slide" }
+      ],
+      "settings": {
+        "heading": "Discover the taste of Nature",
+        "highlight_text": "of Nature",
+        "subheading": "Freshness without fragility",
+        "button_label": "Shop Now",
+        "button_link": "shopify://collections/all",
+        "social_heading": "Follow Us"
+      }
+    }
+  ]
+}
+{% endschema %}

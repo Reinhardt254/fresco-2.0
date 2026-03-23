@@ -1,0 +1,202 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:names.footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "instagram_image_4GLGrP": {
+          "type": "instagram_image",
+          "settings": {
+            "image": "shopify://shop_images/0A0A1046-scaled_3688b51f-b420-4ef8-9810-102f25e49f74.jpg",
+            "link": ""
+          }
+        },
+        "instagram_image_RVfWxD": {
+          "type": "instagram_image",
+          "settings": {
+            "image": "shopify://shop_images/0A0A4468-scaled_ff919582-a338-4198-ba22-fe9f7d728cd1.jpg",
+            "link": ""
+          }
+        },
+        "instagram_image_g9dxLd": {
+          "type": "instagram_image",
+          "settings": {
+            "image": "shopify://shop_images/0A0A9375-1-scaled.jpg",
+            "link": ""
+          }
+        },
+        "instagram_image_HkEzxX": {
+          "type": "instagram_image",
+          "settings": {
+            "image": "shopify://shop_images/0A0A4520-scaled.jpg",
+            "link": ""
+          }
+        },
+        "instagram_image_Q7rpqE": {
+          "type": "instagram_image",
+          "settings": {
+            "image": "shopify://shop_images/DJI_20250826170440_0288_D.jpg",
+            "link": ""
+          }
+        },
+        "instagram_image_GWDPdU": {
+          "type": "instagram_image",
+          "settings": {
+            "image": "shopify://shop_images/team.jpg",
+            "link": ""
+          }
+        },
+        "payment_icon_Uc3Hcf": {
+          "type": "payment_icon",
+          "settings": {
+            "image": "shopify://shop_images/American-Express-Color-1.png"
+          }
+        },
+        "payment_icon_qrHaAL": {
+          "type": "payment_icon",
+          "settings": {
+            "image": "shopify://shop_images/visa-logo-png-transparent-1.png"
+          }
+        },
+        "payment_icon_CUkg4a": {
+          "type": "payment_icon",
+          "settings": {
+            "image": "shopify://shop_images/discover_card-logo-512x512-1-1.png"
+          }
+        },
+        "payment_icon_7bBUFY": {
+          "type": "payment_icon",
+          "settings": {
+            "image": "shopify://shop_images/paypal-logo-png_seeklogo-336407.png"
+          }
+        },
+        "logo_block": {
+          "type": "logo_text",
+          "settings": {
+            "tagline_text": "",
+            "description": "Bringing the best herbs in every jar. 100% Organic, from Kenya to the World.",
+            "show_contact_in_column": true,
+            "phone": "+1 (901) 896-5814",
+            "email": "info@frescoflavors.com",
+            "address": "7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA"
+          }
+        },
+        "quick_links_block": {
+          "type": "quick_links",
+          "settings": {
+            "heading": "Quick Links",
+            "menu": "footer"
+          }
+        },
+        "contact_block": {
+          "type": "contact_info",
+          "settings": {
+            "heading": "Contact",
+            "address": "",
+            "phone": "",
+            "email": ""
+          }
+        },
+        "instagram_grid_JxMWmh": {
+          "type": "instagram_grid",
+          "settings": {
+            "heading": "Instagram"
+          }
+        }
+      },
+      "block_order": [
+        "instagram_image_4GLGrP",
+        "instagram_image_RVfWxD",
+        "instagram_image_g9dxLd",
+        "instagram_image_HkEzxX",
+        "instagram_image_Q7rpqE",
+        "instagram_image_GWDPdU",
+        "payment_icon_Uc3Hcf",
+        "payment_icon_qrHaAL",
+        "payment_icon_CUkg4a",
+        "payment_icon_7bBUFY",
+        "logo_block",
+        "quick_links_block",
+        "contact_block",
+        "instagram_grid_JxMWmh"
+      ],
+      "name": "t:names.footer",
+      "settings": {
+        "enable_newsletter": true,
+        "newsletter_heading": "Subscribe Newsletter",
+        "newsletter_desc": "Get e-mail updates about our latest shop and special offers.",
+        "show_policy": true,
+        "show_payment_icons": true
+      }
+    },
+    "utilities": {
+      "type": "footer-utilities",
+      "blocks": {
+        "copyright": {
+          "type": "footer-copyright",
+          "settings": {
+            "show_powered_by": true,
+            "font_size": "0.75rem",
+            "case": "none"
+          },
+          "blocks": {}
+        },
+        "policy_list": {
+          "type": "footer-policy-list",
+          "settings": {
+            "font_size": "0.75rem",
+            "case": "none"
+          },
+          "blocks": {}
+        },
+        "social_icons": {
+          "type": "social-links",
+          "settings": {
+            "facebook_url": "https://www.facebook.com",
+            "instagram_url": "https://www.instagram.com",
+            "youtube_url": "https://www.youtube.com",
+            "tiktok_url": "https://www.tiktok.com",
+            "twitter_url": "https://www.twitter.com",
+            "threads_url": "",
+            "linkedin_url": "",
+            "bluesky_url": "",
+            "snapchat_url": "",
+            "pinterest_url": "",
+            "tumblr_url": "",
+            "vimeo_url": "",
+            "custom_url": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "copyright",
+        "policy_list",
+        "social_icons"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_width": "page-width",
+        "gap": 24,
+        "divider_thickness": 1,
+        "color_scheme": "scheme-5",
+        "padding-block-start": 12,
+        "padding-block-end": 16
+      }
+    }
+  },
+  "order": [
+    "footer",
+    "utilities"
+  ]
+}
