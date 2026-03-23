@@ -1,0 +1,88 @@
+<section class="about-story {% if section.settings.layout == 'image_right' %}one{% else %}two{% endif %}">
+  <style>
+    .about-story.one .about-story__image {
+      order: 1;
+    }
+    .about-story.two .about-story__text {
+      order: 1;
+    }
+  </style>
+  <div class="container">
+    <div class="about-story__content">
+      <div class="about-story__text">
+        {%- if section.settings.heading != blank -%}
+          <h2>{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.content != blank -%}
+          <div class="rte">{{ section.settings.content }}</div>
+        {%- endif -%}
+      </div>
+      <div class="about-story__image">
+        {%- if section.settings.image != blank -%}
+          <img
+            src="{{ section.settings.image | image_url: width: 1200 }}"
+            alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}"
+            loading="lazy"
+            width="1200"
+            height="auto"
+          >
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco About Story",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Story Section Settings"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Story"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>We grow and produce premium organic freeze-dried herbs in Kenya, where year-round sunshine and ideal soils allow continuous cultivation with no seasonal gaps. Through full vertical integration from our own farms to our certified freeze-drying facility we deliver consistent, traceable, and globally compliant herbs trusted by chefs, food-service providers, and private-label brands worldwide. Certified under FSSC 22000 and OU Kosher, with USDA Organic underway, we provide global buyers with reliability they can trust.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "image_right",
+          "label": "Text Left, Image Right"
+        },
+        {
+          "value": "image_left",
+          "label": "Image Left, Text Right"
+        }
+      ],
+      "default": "image_right"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco About Story"
+    }
+  ]
+}
+{% endschema %}
+

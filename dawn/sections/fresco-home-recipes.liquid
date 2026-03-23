@@ -1,0 +1,264 @@
+<section class="recipes">
+  <div class="container">
+    <div class="recipes__card">
+      <figure class="recipes__media">
+        {%- if section.settings.video_url != blank -%}
+          <video
+            src="{{ section.settings.video_url }}"
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            {% if section.settings.video_poster != blank %}
+              poster="{{ section.settings.video_poster | image_url: width: 1200 }}"
+            {% endif %}
+          ></video>
+        {%- elsif section.settings.video_poster != blank -%}
+          <img
+            src="{{ section.settings.video_poster | image_url: width: 1200 }}"
+            alt="{{ section.settings.video_poster.alt | default: 'Recipe video' | escape }}"
+            loading="lazy"
+            width="1200"
+            height="auto"
+          >
+        {%- endif -%}
+        <button type="button" class="recipes__play" aria-label="Play recipe video">
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </figure>
+
+      <div class="recipes__content">
+        {%- if section.settings.heading != blank -%}
+          <h3 class="recipes__heading">{{ section.settings.heading }}</h3>
+        {%- endif -%}
+        {%- if section.settings.recipe_title != blank -%}
+          <p class="recipes__title">{{ section.settings.recipe_title }}</p>
+        {%- endif -%}
+        {%- if section.settings.chef_name != blank -%}
+          <p class="recipes__chef">
+            Made by <span>{{ section.settings.chef_name }}</span>
+          </p>
+        {%- endif -%}
+
+        <ul class="recipes__meta">
+          {%- if section.settings.prep_time != blank -%}
+            <li>
+              <span>Prep Time</span>
+              <strong>{{ section.settings.prep_time }}</strong>
+            </li>
+          {%- endif -%}
+          {%- if section.settings.cook_time != blank -%}
+            <li>
+              <span>Cook Time</span>
+              <strong>{{ section.settings.cook_time }}</strong>
+            </li>
+          {%- endif -%}
+          {%- if section.settings.serves != blank -%}
+            <li>
+              <span>Serves</span>
+              <strong>{{ section.settings.serves }}</strong>
+            </li>
+          {%- endif -%}
+        </ul>
+
+        <div class="recipes__ingredients">
+          <div class="recipes__ingredients-head">
+            <h4>Ingredients</h4>
+            {%- if section.settings.ingredients_subtitle != blank -%}
+              <span>{{ section.settings.ingredients_subtitle }}</span>
+            {%- endif -%}
+          </div>
+
+          <div class="swiper recipes-ingredients-swiper" data-section-id="{{ section.id }}">
+            <div class="swiper-wrapper">
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'ingredient' -%}
+                  <div class="swiper-slide" {{ block.shopify_attributes }}>
+                    <div class="ingredient-card">
+                      {%- if block.settings.ingredient_image != blank -%}
+                        <img
+                          src="{{ block.settings.ingredient_image | image_url: width: 300 }}"
+                          alt="{{ block.settings.ingredient_image.alt | default: block.settings.ingredient_name | escape }}"
+                          loading="lazy"
+                          width="300"
+                          height="300"
+                        >
+                      {%- endif -%}
+                      {%- if block.settings.ingredient_name != blank -%}
+                        <p>{{ block.settings.ingredient_name }}</p>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+
+            <button
+              class="recipes-ingredients__nav recipes-ingredients__nav--prev"
+              aria-label="Previous ingredient"
+              data-section-id="{{ section.id }}"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button
+              class="recipes-ingredients__nav recipes-ingredients__nav--next"
+              aria-label="Next ingredient"
+              data-section-id="{{ section.id }}"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        {%- if section.settings.cta_text != blank and section.settings.cta_link != blank -%}
+          <a href="{{ section.settings.cta_link }}" class="cta recipes__cta">{{ section.settings.cta_text }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Home Recipes",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Recipe Settings"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "FEATURED RECIPES"
+    },
+    {
+      "type": "text",
+      "id": "recipe_title",
+      "label": "Recipe Title",
+      "default": "Creamy Scrambled Eggs with Chives"
+    },
+    {
+      "type": "text",
+      "id": "chef_name",
+      "label": "Chef Name",
+      "default": "Chef Anya Gatimu"
+    },
+    {
+      "type": "header",
+      "content": "Recipe Meta"
+    },
+    {
+      "type": "text",
+      "id": "prep_time",
+      "label": "Prep Time",
+      "default": "5 minutes"
+    },
+    {
+      "type": "text",
+      "id": "cook_time",
+      "label": "Cook Time",
+      "default": "5 minutes"
+    },
+    {
+      "type": "text",
+      "id": "serves",
+      "label": "Serves",
+      "default": "2 people"
+    },
+    {
+      "type": "header",
+      "content": "Video Settings"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL",
+      "info": "URL to the recipe video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "video_poster",
+      "label": "Video Poster Image",
+      "info": "Image shown before video plays"
+    },
+    {
+      "type": "header",
+      "content": "Ingredients Settings"
+    },
+    {
+      "type": "text",
+      "id": "ingredients_subtitle",
+      "label": "Ingredients Subtitle",
+      "default": "Featuring Fresco freeze-dried herbs"
+    },
+    {
+      "type": "header",
+      "content": "CTA Settings"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "View Scrambled Eggs Recipe"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "ingredient_image",
+          "label": "Ingredient Image"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_name",
+          "label": "Ingredient Name",
+          "default": "Free-range Eggs"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Home Recipes",
+      "blocks": [
+        {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_name": "Free-range Eggs"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_name": "Sweet Cream Butter"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_name": "Heavy Cream Milk"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_name": "Freeze-Dried Chives"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

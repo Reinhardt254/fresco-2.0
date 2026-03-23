@@ -1,0 +1,380 @@
+{{ 'fresco/shop-styles.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<main class="shop-main section-{{ section.id }}-padding" data-section-id="{{ section.id }}">
+  <div class="shop-container">
+    <!-- Left Sidebar Filters -->
+    <aside class="shop-sidebar">
+      <button
+        type="button"
+        class="sidebar-close"
+        aria-label="Close filters"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      {% comment %}
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Filters</h3>
+        </div>
+      {% endcomment %}
+
+      {% comment %} Catalogue Download Button {% endcomment %}
+      {%- if section.settings.catalogue_download_url != blank -%}
+        <div class="sidebar-section">
+          <a
+            href="{{ section.settings.catalogue_download_url }}"
+            class="catalogue-download-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download Catalogue
+          </a>
+        </div>
+      {%- endif -%}
+
+      <!-- Search Filter -->
+      <div class="sidebar-section">
+        <h4 class="filter-title">Search</h4>
+        <div class="filter-search">
+          <input
+            type="text"
+            id="search-input-{{ section.id }}"
+            placeholder="Search products..."
+            class="search-input"
+          >
+          <i class="fa-solid fa-magnifying-glass filter-search-icon"></i>
+        </div>
+      </div>
+
+      <!-- Price Filter -->
+      <div class="sidebar-section">
+        <h4 class="filter-title">Price Range</h4>
+        <div class="price-filter">
+          <div class="price-inputs">
+            <input
+              type="number"
+              id="min-price-{{ section.id }}"
+              placeholder="Min"
+              min="0"
+              class="price-input"
+            >
+            <span class="price-separator">-</span>
+            <input
+              type="number"
+              id="max-price-{{ section.id }}"
+              placeholder="Max"
+              min="0"
+              class="price-input"
+            >
+          </div>
+          <button class="filter-btn" type="button">Apply</button>
+        </div>
+      </div>
+
+      <!-- Categories Filter -->
+      <div class="sidebar-section">
+        <h4 class="filter-title">Categories</h4>
+        <div class="category-filters">
+          {%- liquid
+            comment
+              Fetch all collections from Shopify store
+              Exclude the 'all' collection and any collections with no products
+            endcomment
+            assign shop_collections = collections | sort: 'title'
+          -%}
+
+          {%- if shop_collections.size > 0 -%}
+            {%- for collection in shop_collections -%}
+              {%- comment -%} Skip the 'all' collection and empty collections {%- endcomment -%}
+              {%- unless collection.handle == 'all' or collection.products_count == 0 -%}
+                <label class="checkbox-label">
+                  <input
+                    type="checkbox"
+                    name="category-{{ section.id }}"
+                    value="{{ collection.handle }}"
+                    data-collection-title="{{ collection.title | escape }}"
+                  >
+                  <span>{{ collection.title }}</span>
+                </label>
+              {%- endunless -%}
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+      </div>
+
+      <!-- Clear Filters -->
+      <div class="sidebar-section">
+        <button class="clear-filters-btn" type="button">Clear All Filters</button>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" aria-hidden="true"></div>
+
+    <!-- Products Section -->
+    <section class="shop-products">
+      <div class="products-header">
+        {%- if section.settings.heading != blank -%}
+          <h1>{{ section.settings.heading }}</h1>
+        {%- else -%}
+          <h1>Shop</h1>
+        {%- endif -%}
+        {%- if section.settings.subtitle != blank -%}
+          <p class="products-subtitle">{{ section.settings.subtitle }}</p>
+        {%- else -%}
+          <p class="products-subtitle">
+            100% Organic Herbs and Specialty Ingredients for Food Service, Creative Kitchens and Home Use - Freeze-dried
+            To Perfection
+          </p>
+        {%- endif -%}
+      </div>
+
+      {%- liquid
+        assign products_to_display = section.settings.products_to_show
+        if section.settings.collection != blank
+          assign product_collection = section.settings.collection
+        else
+          assign product_collection = collections.all
+        endif
+      -%}
+
+      <div class="products-toolbar">
+        <p class="products-count">
+          Showing
+          <span id="product-count-{{ section.id }}">
+            {%- assign displayed_count = product_collection.products.size -%}
+            {%- if displayed_count > products_to_display -%}
+              {%- assign displayed_count = products_to_display -%}
+            {%- endif -%}
+            {{ displayed_count }}
+          </span>
+          products
+        </p>
+        <div class="sort-options">
+          <label for="sort-select-{{ section.id }}">Sort by:</label>
+          <select id="sort-select-{{ section.id }}" class="sort-select">
+            <option value="default">Default</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name-asc">Name: A to Z</option>
+            <option value="name-desc">Name: Z to A</option>
+          </select>
+          <button
+            class="filter-toggle"
+            type="button"
+            aria-label="Toggle filters"
+            aria-expanded="false"
+          >
+            <span>Filters</span>
+            <i class="fa-solid fa-sliders"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="products__grid" id="products-grid-{{ section.id }}">
+        {%- if product_collection.products.size > 0 -%}
+          {%- for product in product_collection.products limit: products_to_display -%}
+            {%- liquid
+              comment
+                Get product collections - use the first collection handle as category
+                If product has no collections, use product type as fallback
+              endcomment
+              assign product_category = 'uncategorized'
+              if product.collections.size > 0
+                assign first_collection = product.collections.first
+                assign product_category = first_collection.handle
+              elsif product.type != blank
+                assign product_category = product.type | downcase | replace: ' ', '-' | replace: '&', 'and' | replace: '/', '-'
+              endif
+            -%}
+            {%- comment -%} Store all collection handles for this product {%- endcomment -%}
+            {%- assign product_collection_handles = '' -%}
+            {%- for collection in product.collections -%}
+              {%- if product_collection_handles == blank -%}
+                {%- assign product_collection_handles = collection.handle -%}
+              {%- else -%}
+                {%- assign product_collection_handles = product_collection_handles
+                  | append: ','
+                  | append: collection.handle
+                -%}
+              {%- endif -%}
+            {%- endfor -%}
+            <article
+              class="product-card"
+              data-name="{{ product.title | downcase | escape }}"
+              data-price="{{ product.price | money_without_currency | remove: ',' | remove: ' ' }}"
+              data-category="{{ product_category }}"
+              data-collections="{{ product_collection_handles }}"
+            >
+              <a href="{{ product.url }}" class="product-card__link">
+                {%- if product.featured_image != blank -%}
+                  <img
+                    class="product-card__image"
+                    src="{{ product.featured_image | image_url: width: 600 }}"
+                    alt="{{ product.featured_image.alt | escape }}"
+                    width="600"
+                    height="auto"
+                    loading="lazy"
+                  >
+                {%- else -%}
+                  {{ 'product-apparel-2' | placeholder_svg_tag: 'product-card__image' }}
+                {%- endif -%}
+              </a>
+              <p class="product-card__price">{{ product.price | money }} / each</p>
+              <h3>
+                <a href="{{ product.url }}">{{ product.title }}</a>
+              </h3>
+              {%- if product.available -%}
+                <p class="product-card__stock">
+                  {{ product.selected_or_first_available_variant.inventory_quantity | default: 'In stock' }} items in
+                  stock
+                </p>
+              {%- else -%}
+                <p class="product-card__stock">Out of stock</p>
+              {%- endif -%}
+              <div class="product-card__actions">
+                {%- liquid
+                  assign fallback_contact_url = pages.contact.url
+                  if fallback_contact_url == blank
+                    assign fallback_contact_url = routes.root_url | append: 'pages/contact'
+                  endif
+
+                  assign buy_now_url = section.settings.buy_now_url | default: fallback_contact_url
+                -%}
+
+                {%- if product.available -%}
+                  <a class="product-card__btn" href="{{ buy_now_url }}">
+                    {{- section.settings.buy_now_label | escape -}}
+                  </a>
+                {%- else -%}
+                  <button type="button" class="product-card__btn" disabled>Out of stock</button>
+                {%- endif -%}
+
+                {% comment %}
+                  Original Add to cart (kept for easy retrieval)
+                  {%- if product.available -%}
+                    <form action="{{ routes.cart_add_url }}" method="post" enctype="multipart/form-data">
+                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                      <button type="submit" class="product-card__btn">Add to cart</button>
+                    </form>
+                  {%- else -%}
+                    <button type="button" class="product-card__btn" disabled>Out of stock</button>
+                  {%- endif -%}
+                {% endcomment %}
+              </div>
+            </article>
+          {%- endfor -%}
+        {%- else -%}
+          {%- comment -%} Show placeholder if no products found {%- endcomment -%}
+          <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem;">
+            <p style="font-size: 1.1rem; color: #6d6d6d;">
+              {%- if section.settings.collection == blank -%}
+                Please select a collection in the section settings.
+              {%- else -%}
+                No products found in this collection.
+              {%- endif -%}
+            </p>
+          </div>
+        {%- endif -%}
+      </div>
+    </section>
+  </div>
+</main>
+
+<script src="{{ 'fresco/fresco-custom--catalogue-filters.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Fresco Catalogue",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "100% Organic Herbs and Specialty Ingredients for Food Service, Creative Kitchens and Home Use - Freeze-dried To Perfection"
+    },
+    {
+      "type": "url",
+      "id": "catalogue_download_url",
+      "label": "Catalogue download URL",
+      "info": "Paste a link to your catalogue PDF (upload it in Shopify Admin → Content → Files, then copy the URL)."
+    },
+    {
+      "type": "url",
+      "id": "buy_now_url",
+      "label": "Buy now link",
+      "info": "Where the Buy now button should go (e.g., your Contact page)."
+    },
+    {
+      "type": "text",
+      "id": "buy_now_label",
+      "label": "Buy now button label",
+      "default": "Buy now"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Select a collection to display products from"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 4,
+      "max": 50,
+      "step": 1,
+      "default": 20,
+      "label": "Maximum products to show"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Catalogue"
+    }
+  ]
+}
+{% endschema %}

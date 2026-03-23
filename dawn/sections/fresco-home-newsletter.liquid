@@ -1,0 +1,105 @@
+<section class="newsletter">
+  <div class="container">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="newsletter__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+    {%- if section.settings.subtitle != blank -%}
+      <p class="newsletter__subtitle">{{ section.settings.subtitle }}</p>
+    {%- endif -%}
+    
+    {% form 'customer', class: 'newsletter__form' %}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <input
+        type="email"
+        name="contact[email]"
+        class="newsletter__input"
+        value="{{ form.email }}"
+        placeholder="{{ section.settings.placeholder | default: 'email@example.com' }}"
+        aria-label="{{ section.settings.placeholder | default: 'Email address' }}"
+        aria-required="true"
+        autocorrect="off"
+        autocapitalize="off"
+        autocomplete="email"
+        {% if form.errors %}
+          autofocus
+          aria-invalid="true"
+          aria-describedby="Newsletter-error--{{ section.id }}"
+        {% elsif form.posted_successfully? %}
+          aria-describedby="Newsletter-success--{{ section.id }}"
+        {% endif %}
+        required
+      >
+      <button type="submit" class="newsletter__button">
+        {{ section.settings.button_text | default: 'Subscribe' }}
+      </button>
+      
+      {%- if form.errors -%}
+        <small class="newsletter__message newsletter__message--error" id="Newsletter-error--{{ section.id }}">
+          {{ form.errors.translated_fields.email | capitalize }}
+          {{ form.errors.messages.email }}
+        </small>
+      {%- endif -%}
+      
+      {%- if form.posted_successfully? -%}
+        <p
+          class="newsletter__message newsletter__message--success"
+          id="Newsletter-success--{{ section.id }}"
+          tabindex="-1"
+          autofocus
+        >
+          {{ section.settings.success_message | default: 'Thank you for subscribing!' }}
+        </p>
+      {%- endif -%}
+    {% endform %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Home Newsletter",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Newsletter Settings"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Sign up to our newsletter"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Receive special offers and first look at new products."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Email Placeholder",
+      "default": "email@example.com"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Subscribe"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success Message",
+      "default": "Thank you for subscribing!"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Home Newsletter"
+    }
+  ]
+}
+{% endschema %}
+

@@ -1,0 +1,72 @@
+{{ 'fresco/contact-styles.css' | asset_url | stylesheet_tag }}
+
+<section class="contact-map">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}
+      <h2>{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.map_url != blank -%}
+      <iframe
+        src="{{ section.settings.map_url }}"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="{{ section.settings.map_title | default: 'Location map' }}"
+      ></iframe>
+    {%- else -%}
+      <div class="contact-map__placeholder">
+        <p>{{ section.settings.placeholder_text | default: 'Map will be displayed here' }}</p>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Contact Map",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Map Settings"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Optional heading above the map"
+    },
+    {
+      "type": "textarea",
+      "id": "map_url",
+      "label": "Google Maps Embed URL",
+      "info": "Paste the iframe src URL from Google Maps embed code",
+      "default": "https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d61881.489831128325!2d-89.83236344471175!3d35.19412175135412!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2ske!4v1764248724074!5m2!1sen!2ske"
+    },
+    {
+      "type": "text",
+      "id": "map_title",
+      "label": "Map Title",
+      "default": "Location map",
+      "info": "Accessibility title for the iframe"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_text",
+      "label": "Placeholder Text",
+      "default": "Map will be displayed here",
+      "info": "Text shown when no map URL is provided"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Contact Map"
+    }
+  ]
+}
+{% endschema %}

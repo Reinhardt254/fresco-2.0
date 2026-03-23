@@ -1,0 +1,167 @@
+{%- style -%}
+  .partners-new {
+    padding: 4rem 0 2rem 0;
+    background-color: #ffffff !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .partners-new .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .partners-new .head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0rem;
+    padding: 0;
+  }
+
+  .partners-new .head .sub-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000000;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .partners-new .head .sub-head-text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .partners-new {
+      padding: 2.5rem 0;
+    }
+  }
+{%- endstyle -%}
+
+<section class="section partners-new">
+  <div class="container">
+    {%- if section.settings.show_heading -%}
+      <div class="head">
+        {%- if section.settings.heading != blank -%}
+          <p class="sub-heading">{{ section.settings.heading }}</p>
+        {%- endif -%}
+        {%- if section.settings.sub_heading != blank -%}
+          <p class="sub-head-text">{{ section.settings.sub_heading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    <div class="swiper-partners swiper">
+      <div class="swiper-wrapper">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'partner_logo' -%}
+            <div class="swiper-slide" {{ block.shopify_attributes }}>
+              <div class="card">
+                {%- if block.settings.logo_image != blank -%}
+                  <img
+                    src="{{ block.settings.logo_image | image_url: width: 300 }}"
+                    alt="{{ block.settings.logo_image.alt | default: block.settings.alt_text | escape }}"
+                    loading="lazy"
+                    width="300"
+                    height="auto"
+                  >
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Home Partners",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Partners Section Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show Heading",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Quality Commitment"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Sub Heading",
+      "default": "Premium freeze-dried products with superior nutrition and natural flavor—freshness preserved in every bite!"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "partner_logo",
+      "name": "Partner Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Logo Image"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Alt Text",
+          "info": "Alternative text for the image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Home Partners",
+      "blocks": [
+        {
+          "type": "partner_logo"
+        },
+        {
+          "type": "partner_logo"
+        },
+        {
+          "type": "partner_logo"
+        },
+        {
+          "type": "partner_logo"
+        },
+        {
+          "type": "partner_logo"
+        },
+        {
+          "type": "partner_logo"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

@@ -1,0 +1,429 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "fresco_home_hero_EBJLk4": {
+      "type": "fresco-home-hero",
+      "blocks": {
+        "slide_neMf9n": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/0A0A1642.jpg",
+            "eyebrow": "",
+            "heading": "FARM-TO-TABLE FLAVOR, READY TO USE",
+            "description": "Harvested in Kenya at peak freshness, freeze-dried at source, and packed for chefs who need flavor, consistency, and zero waste— year-round.",
+            "button_text": "SHOP NOW",
+            "button_link": "/collections/all"
+          }
+        },
+        "slide_cJpjTa": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/DJI_20250826170440_0288_D.jpg",
+            "eyebrow": "",
+            "heading": "ORGANIC, Premium, AND NATURAL",
+            "description": "Our crops are hand-picked at peak ripeness, capturing nature's fullest flavor, highest nutritional value, and aroma in every harvest.",
+            "button_text": "SHOP NOW",
+            "button_link": "/collections/all"
+          }
+        },
+        "slide_gHqRRd": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/0A0A1673-scaled.jpg",
+            "eyebrow": "",
+            "heading": "Everyday cooking made better.",
+            "description": "In our jars, lies the promise of ready-to-use freeze-dried herbs —bold and vibrant in taste, beyond fresh.",
+            "button_text": "Shop Now",
+            "button_link": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "slide_neMf9n",
+        "slide_cJpjTa",
+        "slide_gHqRRd"
+      ],
+      "name": "Fresco Home Hero",
+      "settings": {
+        "autoplay_delay": 7000
+      }
+    },
+    "fresco_home_about_fYC6ma": {
+      "type": "fresco-home-about",
+      "name": "Fresco Home About",
+      "settings": {
+        "kicker": "",
+        "heading": "We turn Fresh Harvests into reliable superior quality products.",
+        "content": "<p>Fresco Flavors is the in-house freeze-dried organic herbs brand of Freezedry Harvest EPZ Kenya Ltd, one of Africa's leading freeze-drying facilities. We grow our own herbs and specialty ingredients in over 14 acres of our organic farms in Kenya.</p><p>Every crop is carefully tended, harvested at peak ripeness, and delivered to our Freezedry Harvest facility within hours – preserving the integrity of every herb. This enables us to deliver premium farm-to-table products to the world in a format that is stable, convenient, and uncompromising in quality beyond fresh.</p><p>We lock in the flavor so those once-elusive dishes can now be enjoyed everyday, the result? Rich, aromatic herbs directly to your kitchen. By perfectly freeze-drying, we offer you extended shelf-life and guarantee a year-round supply and culinary convenience right at your fingertips.</p>",
+        "button_text": "More About Us",
+        "button_link": "shopify://pages/about"
+      }
+    },
+    "fresco_home_partners_mEw9V8": {
+      "type": "fresco-home-partners",
+      "blocks": {
+        "partner_logo_bYGbTX": {
+          "type": "partner_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/images.png",
+            "alt_text": ""
+          }
+        },
+        "partner_logo_L6ipjM": {
+          "type": "partner_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/images-1.png",
+            "alt_text": ""
+          }
+        },
+        "partner_logo_UQPVNE": {
+          "type": "partner_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/188cdb_0a663e987dae4d80ae3587a8c313fcb0_mv2.gif",
+            "alt_text": ""
+          }
+        },
+        "partner_logo_WxdzXF": {
+          "type": "partner_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/pngtree-all-natural-grunge-rubber-stamp-on-white-background-png-image_4756626.png",
+            "alt_text": ""
+          }
+        },
+        "partner_logo_TpD3Fz": {
+          "type": "partner_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/fssc22000-2-300x225-removebg-preview_1.png",
+            "alt_text": ""
+          }
+        },
+        "partner_logo_gKTR9g": {
+          "type": "partner_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/no-additives-sign-for-healthy-natural-food-products-label-isolated-pictogram-with-plant-leaf-vector-removebg-preview_1.png",
+            "alt_text": ""
+          }
+        },
+        "partner_logo_TXz843": {
+          "type": "partner_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/images.png",
+            "alt_text": ""
+          }
+        },
+        "partner_logo_WzxPq3": {
+          "type": "partner_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/images-1.png",
+            "alt_text": ""
+          }
+        },
+        "partner_logo_CDffp6": {
+          "type": "partner_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/188cdb_0a663e987dae4d80ae3587a8c313fcb0_mv2.gif",
+            "alt_text": ""
+          }
+        },
+        "partner_logo_mj4bwV": {
+          "type": "partner_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/pngtree-all-natural-grunge-rubber-stamp-on-white-background-png-image_4756626.png",
+            "alt_text": ""
+          }
+        },
+        "partner_logo_CRxikY": {
+          "type": "partner_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/fssc22000-2-300x225-removebg-preview_1.png",
+            "alt_text": ""
+          }
+        },
+        "partner_logo_HU9aQD": {
+          "type": "partner_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/no-additives-sign-for-healthy-natural-food-products-label-isolated-pictogram-with-plant-leaf-vector-removebg-preview_1.png",
+            "alt_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "partner_logo_bYGbTX",
+        "partner_logo_L6ipjM",
+        "partner_logo_UQPVNE",
+        "partner_logo_WxdzXF",
+        "partner_logo_TpD3Fz",
+        "partner_logo_gKTR9g",
+        "partner_logo_TXz843",
+        "partner_logo_WzxPq3",
+        "partner_logo_CDffp6",
+        "partner_logo_mj4bwV",
+        "partner_logo_CRxikY",
+        "partner_logo_HU9aQD"
+      ],
+      "name": "Fresco Home Partners",
+      "settings": {
+        "show_heading": false,
+        "heading": "Quality Commitment",
+        "sub_heading": "Premium freeze-dried products with superior nutrition and natural flavor—freshness preserved in every bite!"
+      }
+    },
+    "fresco_home_categories_TTjwMj": {
+      "type": "fresco-home-categories",
+      "blocks": {
+        "category_card_846aJp": {
+          "type": "category_card",
+          "settings": {
+            "category_image": "shopify://shop_images/0A0A1563-scaled.jpg",
+            "title": "Freeze-Dried Herbs",
+            "link": "/collections/all"
+          }
+        },
+        "category_card_JP4enD": {
+          "type": "category_card",
+          "settings": {
+            "category_image": "shopify://shop_images/0A0A7343-scaled.jpg",
+            "title": "Specialty Ingredients",
+            "link": "/collections/all"
+          }
+        },
+        "category_card_bKgtAp": {
+          "type": "category_card",
+          "settings": {
+            "category_image": "shopify://shop_images/0A0A9375-2.jpg",
+            "title": "Bulk Formats",
+            "link": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "category_card_846aJp",
+        "category_card_JP4enD",
+        "category_card_bKgtAp"
+      ],
+      "name": "Fresco Home Categories",
+      "settings": {}
+    },
+    "fresco_download_catalogue_RyTkLx": {
+      "type": "fresco-download-catalogue",
+      "name": "Fresco Download Catalogue",
+      "settings": {
+        "catalogue_download_url": "https://harvestepz.com/wp-content/uploads/2025/12/fresco-intro-v4.pdf",
+        "button_label": "Download Catalogue",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "fresco_home_products_A3c4rQ": {
+      "type": "fresco-home-products",
+      "name": "Fresco Home Products",
+      "settings": {
+        "eyebrow": "",
+        "heading": "Our Products",
+        "description": "100% Organic Herbs and Specialty Ingredients for Food Service and Home Use - Freeze-dried To Perfection.",
+        "collection": "herbs",
+        "products_to_show": 4
+      }
+    },
+    "fresco_home_why_us_VfP6pz": {
+      "type": "fresco-home-why-us",
+      "blocks": {
+        "benefit_card_pr8nCJ": {
+          "type": "benefit_card",
+          "settings": {
+            "icon": "fa-solid fa-leaf",
+            "title": "Zero waste, longer shelf life",
+            "description": "Fresh herbs spoil in days; ours last up to 24 months while holding their full aroma, color, and brightness."
+          }
+        },
+        "benefit_card_6VRMQd": {
+          "type": "benefit_card",
+          "settings": {
+            "icon": "fa-solid fa-scissors",
+            "title": "Labor-saving",
+            "description": "Skip washing, trimming, and chopping—just measure, sprinkle, and serve. Every flake is service-ready."
+          }
+        },
+        "benefit_card_PU36zF": {
+          "type": "benefit_card",
+          "settings": {
+            "icon": "fa-solid fa-truck-fast",
+            "title": "Consistent supply",
+            "description": "No seasonal gaps, no inconsistent quality, and no dependency on fragile cold-chain logistics."
+          }
+        },
+        "benefit_card_wNAqqw": {
+          "type": "benefit_card",
+          "settings": {
+            "icon": "fa-solid fa-seedling",
+            "title": "Sustainable & Sourcing",
+            "description": "Responsibly grown and processed at origin, supporting local communities and reducing environmental impact."
+          }
+        },
+        "benefit_card_LQWc43": {
+          "type": "benefit_card",
+          "settings": {
+            "icon": "fa-solid fa-fire-flame-curved",
+            "title": "Full flavor",
+            "description": "Freeze-drying locks in essential oils and aroma to deliver near-fresh intensity in hot or cold dishes."
+          }
+        },
+        "benefit_card_KxcYBx": {
+          "type": "benefit_card",
+          "settings": {
+            "icon": "fa-solid fa-chart-line",
+            "title": "Cost efficient",
+            "description": "Lower spoilage, reduced storage needs, and predictable pricing help kitchens protect their margins."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_card_pr8nCJ",
+        "benefit_card_6VRMQd",
+        "benefit_card_PU36zF",
+        "benefit_card_wNAqqw",
+        "benefit_card_LQWc43",
+        "benefit_card_KxcYBx"
+      ],
+      "name": "Fresco Home Why Us",
+      "settings": {
+        "heading": "Why chefs and foodservice partners choose Fresco Flavors",
+        "description": "Fresco Flavors delivers the essence of fresh herbs—preserved at peak flavor and color—in a format that saves chefs time, reduces waste, and guarantees consistency year-round. Our herbs are 100% natural, single-ingredient, and freeze-dried at source to capture nature's best in every flake.",
+        "show_badge": true,
+        "badge_text_top": "Cook Like",
+        "badge_text_main": "CARMY",
+        "badge_text_bottom": "In No Time",
+        "show_cta": true,
+        "cta_text": "Feature Our Product",
+        "cta_link": "shopify://pages/contact"
+      }
+    },
+    "fresco_home_testimonials_TY9Bfb": {
+      "type": "fresco-home-testimonials",
+      "blocks": {
+        "testimonial_iQjbQK": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "\"It's the extended shelf-life for me. Fresh herbs last for days, at best, but freeze-dried herbs we are looking at up to two years before the seal is broken. This shelf-life reduces to two-weeks on usage, which still eliminates spoilage and daily purchasing. I run a seasonal restaurant and it's painful to always have to throw away ingredients.\"",
+            "author_name": "Henali Shah",
+            "author_title": "Chef"
+          }
+        },
+        "testimonial_pnLwa3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "\"Same flavor profiles, everytime! As good as fresh, isn't it? Expect Fresco Flavors products are unaffected by weather or logistics. I love using their jar herbs, no washing, chopping or water, saves me a lot of prep time for my ever busy kitchen here in Tennessee.\"",
+            "author_name": "Richards Brown",
+            "author_title": "Restaurant Owner"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_iQjbQK",
+        "testimonial_pnLwa3"
+      ],
+      "name": "Fresco Home Testimonials",
+      "settings": {
+        "heading": "CHEF'S VERDICT",
+        "media_image": "shopify://shop_images/0A0A1673-scaled.jpg",
+        "video_url": "https://www.youtube.com/embed/bqb1rItLbkk?si=GOpbd-lds4K2YPji"
+      }
+    },
+    "fresco_home_recipes_WzMLm8": {
+      "type": "fresco-home-recipes",
+      "blocks": {
+        "ingredient_kXHH8c": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_image": "shopify://shop_images/easter-egg-basket-wodden-table_55883-6785.avif",
+            "ingredient_name": "Free-range Eggs"
+          }
+        },
+        "ingredient_3mbiip": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_image": "shopify://shop_images/creamy-butter-swirl-wooden-spoon_1096472-9232.avif",
+            "ingredient_name": "Sweet Cream Butter"
+          }
+        },
+        "ingredient_f7pxXK": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_image": "shopify://shop_images/pitchers-milk-table-room_392895-307971.avif",
+            "ingredient_name": "Heavy Cream Milk"
+          }
+        },
+        "ingredient_DLaDFe": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_image": "shopify://shop_images/Cilantro-4.jpg",
+            "ingredient_name": "Freeze-Dried Chives"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_kXHH8c",
+        "ingredient_3mbiip",
+        "ingredient_f7pxXK",
+        "ingredient_DLaDFe"
+      ],
+      "name": "Fresco Home Recipes",
+      "settings": {
+        "heading": "FEATURED RECIPES",
+        "recipe_title": "Creamy Scrambled Eggs with Chives",
+        "chef_name": "Chef Anya Gatimu",
+        "prep_time": "5 minutes",
+        "cook_time": "5 minutes",
+        "serves": "2 people",
+        "video_url": "https://frescoflavors.com/cdn/shop/videos/c/vp/465631317f964ab580d8888318897174/465631317f964ab580d8888318897174.HD-720p-4.5Mbps-62895616.mp4?v=0",
+        "video_poster": "shopify://shop_images/0A0A1642.jpg",
+        "ingredients_subtitle": "Featuring Fresco freeze-dried herbs",
+        "cta_text": "View Recipe",
+        "cta_link": "shopify://blogs/news/perfect-scrambled-eggs-with-fresh-herbs"
+      }
+    },
+    "fresco_home_products_ApqiUA": {
+      "type": "fresco-home-products",
+      "name": "Fresco Home Products",
+      "settings": {
+        "eyebrow": "",
+        "heading": "SPECIALTY INGREDIENTS",
+        "description": "Our specialty ingredients are carefully selected to bring unique flavors and textures to your dishes.",
+        "collection": "herbs",
+        "products_to_show": 4
+      }
+    },
+    "fresco_home_newsletter_HqVWPC": {
+      "type": "fresco-home-newsletter",
+      "name": "Fresco Home Newsletter",
+      "settings": {
+        "eyebrow": "Sign up to our newsletter",
+        "subtitle": "Receive special offers and first look at new products.",
+        "placeholder": "email@example.com",
+        "button_text": "Subscribe",
+        "success_message": "Thank you for subscribing!"
+      }
+    }
+  },
+  "order": [
+    "fresco_home_hero_EBJLk4",
+    "fresco_home_about_fYC6ma",
+    "fresco_home_partners_mEw9V8",
+    "fresco_home_categories_TTjwMj",
+    "fresco_download_catalogue_RyTkLx",
+    "fresco_home_products_A3c4rQ",
+    "fresco_home_why_us_VfP6pz",
+    "fresco_home_testimonials_TY9Bfb",
+    "fresco_home_recipes_WzMLm8",
+    "fresco_home_products_ApqiUA",
+    "fresco_home_newsletter_HqVWPC"
+  ]
+}

@@ -1,0 +1,63 @@
+<section class="about-hero">
+  <div class="about-hero__content">
+    {%- if section.settings.kicker != blank -%}
+      <span class="kicker">{{ section.settings.kicker }}</span>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h1>{{ section.settings.heading }}</h1>
+    {%- endif -%}
+    {%- if section.settings.description != blank -%}
+      <p class="description">{{ section.settings.description }}</p>
+    {%- endif -%}
+  </div>
+  <div
+    class="about-hero__image"
+    {% if section.settings.background_image != blank %}
+      style="--hero-bg: url('{{ section.settings.background_image | image_url: width: 1920 }}');"
+    {% endif %}
+  ></div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco About Hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero Settings"
+    },
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker Text",
+      "info": "Optional small text above the heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "We turn fresh harvests into reliable, ready-to-use flavors."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "From our farms across Kenya to your kitchen, we preserve nature's finest moments through innovative freeze-drying technology."
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image",
+      "info": "Hero background image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco About Hero"
+    }
+  ]
+}
+{% endschema %}
+

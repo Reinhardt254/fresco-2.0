@@ -1,11 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
-</head>
-<body>
-   
-</body>
-</html>
+<div
+  id="search-popup-overlay"
+  class="search-popup-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Search"
+  aria-hidden="true"
+>
+  <div class="search-popup-panel">
+    <button
+      type="button"
+      class="search-popup-close"
+      aria-label="Close search popup"
+      data-search-close
+    >
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+
+    <div class="search-popup-content">
+      <div class="search-popup-input-wrap">
+        <label for="search-popup-input" class="sr-only">Search</label>
+        <input
+          id="search-popup-input"
+          class="search-popup-input"
+          type="text"
+          placeholder="Search Fresco"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="search-popup-section">
+        <p class="search-popup-heading">Popular</p>
+        <div class="search-popup-tags">
+          <button type="button" class="search-popup-tag">basil</button>
+          <button type="button" class="search-popup-tag">oregano</button>
+          <button type="button" class="search-popup-tag">parsley</button>
+          <button type="button" class="search-popup-tag">garlic</button>
+          <button type="button" class="search-popup-tag">thyme</button>
+        </div>
+      </div>
+
+      <div class="search-popup-section">
+        <p class="search-popup-heading">Spotlight</p>
+        <div class="search-popup-spotlight-grid">
+          <a href="/shop" class="search-popup-card">
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/03/Basil-scaled.png"
+              alt="Basil"
+            />
+            <span>Fresh Basil</span>
+          </a>
+          <a href="/shop" class="search-popup-card">
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/03/Oregano-scaled.png"
+              alt="Oregano"
+            />
+            <span>Pure Oregano</span>
+          </a>
+          <a href="/shop" class="search-popup-card">
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/03/Parsley-scaled.png"
+              alt="Parsley"
+            />
+            <span>Organic Parsley</span>
+          </a>
+          <a href="/shop" class="search-popup-card">
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/03/Garlic-scaled.png"
+              alt="Garlic"
+            />
+            <span>Kitchen Essentials</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

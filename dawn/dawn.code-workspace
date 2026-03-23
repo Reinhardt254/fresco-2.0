@@ -1,0 +1,14 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "../fresco - shopify"
+	}
+],
+  "settings": {
+    "themeCheck.checkOnSave": true,
+    "liveServer.settings.multiRootWorkspaceName": "fresco - shopify"
+  }
+}

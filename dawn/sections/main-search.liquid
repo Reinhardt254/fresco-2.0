@@ -1,0 +1,555 @@
+{{ 'fresco/shop-styles.css' | asset_url | stylesheet_tag }}
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-search.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.image_shape == 'blob' %}
+  {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+<script src="{{ 'main-search.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+
+-%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% paginate search.results by 24 %}
+  {%- liquid
+    assign product_results_count = 0
+    for item in search.results
+      if item.object_type == 'product'
+        assign product_results_count = product_results_count | plus: 1
+      endif
+    endfor
+
+    assign fallback_contact_url = pages.contact.url
+    if fallback_contact_url == blank
+      assign fallback_contact_url = routes.root_url | append: 'pages/contact'
+    endif
+    assign buy_now_url = section.settings.buy_now_url | default: fallback_contact_url
+  -%}
+
+  <main
+    class="shop-main section-{{ section.id }}-padding"
+    data-section-id="{{ section.id }}"
+    data-template="search"
+  >
+    <div class="shop-container">
+      <aside class="shop-sidebar" id="main-search-filters" data-id="{{ section.id }}" aria-label="Filters">
+        <button type="button" class="sidebar-close" aria-label="Close filters">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Filters</h3>
+        </div>
+
+        <!-- Search Filter (client-side within results) -->
+        <div class="sidebar-section">
+          <h4 class="filter-title">Search</h4>
+          <div class="filter-search">
+            <input
+              type="text"
+              id="search-input-{{ section.id }}"
+              placeholder="Search products..."
+              class="search-input"
+            >
+            <i class="fa-solid fa-magnifying-glass filter-search-icon"></i>
+          </div>
+        </div>
+
+        <!-- Price Filter -->
+        <div class="sidebar-section">
+          <h4 class="filter-title">Price Range</h4>
+          <div class="price-filter">
+            <div class="price-inputs">
+              <input
+                type="number"
+                id="min-price-{{ section.id }}"
+                placeholder="Min"
+                min="0"
+                class="price-input"
+              >
+              <span class="price-separator">-</span>
+              <input
+                type="number"
+                id="max-price-{{ section.id }}"
+                placeholder="Max"
+                min="0"
+                class="price-input"
+              >
+            </div>
+            <button class="filter-btn" type="button">Apply</button>
+          </div>
+        </div>
+
+        <!-- Categories Filter -->
+        <div class="sidebar-section">
+          <h4 class="filter-title">Categories</h4>
+          <div class="category-filters">
+            {%- liquid
+              assign shop_collections = collections | sort: 'title'
+            -%}
+
+            {%- if shop_collections.size > 0 -%}
+              {%- for collection in shop_collections -%}
+                {%- unless collection.handle == 'all' or collection.products_count == 0 -%}
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="category-{{ section.id }}"
+                      value="{{ collection.handle }}"
+                      data-collection-title="{{ collection.title | escape }}"
+                    >
+                    <span>{{ collection.title }}</span>
+                  </label>
+                {%- endunless -%}
+              {%- endfor -%}
+            {%- endif -%}
+          </div>
+        </div>
+
+        <!-- Clear Filters -->
+        <div class="sidebar-section">
+          <button class="clear-filters-btn" type="button">Clear All Filters</button>
+        </div>
+      </aside>
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+
+      <section class="shop-products">
+        <div class="products-header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+          <h1>
+            {%- if search.performed -%}
+              {{- 'templates.search.title' | t -}}
+            {%- else -%}
+              {{- 'general.search.search' | t -}}
+            {%- endif -%}
+          </h1>
+
+          <div class="template-search__search">
+            {%- if settings.predictive_search_enabled -%}
+              <predictive-search data-loading-text="{{ 'accessibility.loading' | t }}">
+            {%- endif -%}
+            <main-search>
+              <form action="{{ routes.search_url }}" method="get" role="search" class="search">
+                <div class="field">
+                  <input
+                    class="search__input field__input"
+                    id="Search-In-Template"
+                    type="search"
+                    name="q"
+                    value="{{ search.terms | escape }}"
+                    placeholder="{{ 'general.search.search' | t }}"
+                    {%- if settings.predictive_search_enabled -%}
+                      role="combobox"
+                      aria-expanded="false"
+                      aria-owns="predictive-search-results"
+                      aria-controls="predictive-search-results"
+                      aria-haspopup="listbox"
+                      aria-autocomplete="list"
+                      autocorrect="off"
+                      autocomplete="off"
+                      autocapitalize="off"
+                      spellcheck="false"
+                    {%- endif -%}
+                  >
+                  <label class="field__label" for="Search-In-Template">{{ 'general.search.search' | t }}</label>
+                  <input name="options[prefix]" type="hidden" value="last">
+
+                  {%- if settings.predictive_search_enabled -%}
+                    <div
+                      class="predictive-search predictive-search--search-template"
+                      tabindex="-1"
+                      data-predictive-search
+                    >
+                      {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
+                    </div>
+
+                    <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+                  {%- endif -%}
+
+                  <button
+                    type="reset"
+                    class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}"
+                    aria-label="{{ 'general.search.reset' | t }}"
+                  >
+                    <span class="svg-wrapper">
+                      {{- 'icon-reset.svg' | inline_asset_content -}}
+                    </span>
+                  </button>
+                  <button
+                    type="submit"
+                    class="search__button field__button"
+                    aria-label="{{ 'general.search.search' | t }}"
+                  >
+                    <span class="svg-wrapper">
+                      {{- 'icon-search.svg' | inline_asset_content -}}
+                    </span>
+                  </button>
+                </div>
+              </form>
+            </main-search>
+            {%- if settings.predictive_search_enabled -%}
+              </predictive-search>
+            {%- endif -%}
+          </div>
+
+          {%- if search.performed -%}
+            {%- if search.results_count == 0 and search.filters == empty -%}
+              <p role="status">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
+            {%- endif -%}
+          {%- endif -%}
+        </div>
+
+        {%- if search.performed -%}
+          <div class="products-toolbar">
+            <p class="products-count">
+              Showing
+              <span id="product-count-{{ section.id }}">{{ product_results_count }}</span>
+              results
+            </p>
+            <div class="sort-options">
+              <label for="sort-select-{{ section.id }}">Sort by:</label>
+              <select id="sort-select-{{ section.id }}" class="sort-select">
+                <option value="default" selected="selected">Default</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="name-asc">Name: A to Z</option>
+                <option value="name-desc">Name: Z to A</option>
+              </select>
+              <button
+                class="filter-toggle"
+                type="button"
+                aria-label="Toggle filters"
+                aria-expanded="false"
+              >
+                <span>Filters</span>
+                <i class="fa-solid fa-sliders"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="products__grid" id="products-grid-{{ section.id }}">
+            {%- if product_results_count > 0 -%}
+              {%- for item in search.results -%}
+                {%- if item.object_type == 'product' -%}
+                  {%- assign product = item -%}
+                  {%- liquid
+                    comment
+                      Match Fresco catalogue filtering:
+                      - data-category: primary category handle
+                      - data-collections: comma-separated collection handles
+                    endcomment
+                    assign product_category = 'uncategorized'
+                    if product.collections.size > 0
+                      assign first_collection = product.collections.first
+                      assign product_category = first_collection.handle
+                    elsif product.type != blank
+                      assign product_category = product.type | downcase | replace: ' ', '-' | replace: '&', 'and' | replace: '/', '-'
+                    endif
+
+                    assign product_collection_handles = ''
+                    for collection in product.collections
+                      if product_collection_handles == blank
+                        assign product_collection_handles = collection.handle
+                      else
+                        assign product_collection_handles = product_collection_handles | append: ',' | append: collection.handle
+                      endif
+                    endfor
+                  -%}
+                  <article
+                    class="product-card"
+                    data-name="{{ product.title | downcase | escape }}"
+                    data-price="{{ product.price | money_without_currency | remove: ',' | remove: ' ' }}"
+                    data-category="{{ product_category }}"
+                    data-collections="{{ product_collection_handles }}"
+                  >
+                    <a href="{{ product.url }}" class="product-card__link">
+                      {%- if product.featured_image != blank -%}
+                        <img
+                          class="product-card__image"
+                          src="{{ product.featured_image | image_url: width: 600 }}"
+                          alt="{{ product.featured_image.alt | default: product.title | escape }}"
+                          width="600"
+                          height="auto"
+                          loading="lazy"
+                        >
+                      {%- else -%}
+                        {{ 'product-1' | placeholder_svg_tag: 'product-card__image' }}
+                      {%- endif -%}
+                    </a>
+
+                    <p class="product-card__price">{{ product.price | money }} / each</p>
+                    <h3>
+                      <a href="{{ product.url }}">{{ product.title }}</a>
+                    </h3>
+
+                    {%- if product.available -%}
+                      {%- assign qty = product.selected_or_first_available_variant.inventory_quantity -%}
+                      <p class="product-card__stock">
+                        {%- if qty != blank and qty > 0 -%}
+                          {{ qty }} items in stock
+                        {%- else -%}
+                          In stock
+                        {%- endif -%}
+                      </p>
+                    {%- else -%}
+                      <p class="product-card__stock">Out of stock</p>
+                    {%- endif -%}
+
+                    <div class="product-card__actions">
+                      {%- if product.available -%}
+                        <a class="product-card__btn" href="{{ buy_now_url }}">
+                          {{- section.settings.buy_now_label | escape -}}
+                        </a>
+                      {%- else -%}
+                        <button type="button" class="product-card__btn" disabled>Out of stock</button>
+                      {%- endif -%}
+                    </div>
+                  </article>
+                {%- endif -%}
+              {%- endfor -%}
+            {%- else -%}
+              <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem;">
+                <p style="font-size: 1.1rem; color: #6d6d6d;">
+                  {{ 'templates.search.no_results' | t: terms: search.terms }}
+                </p>
+              </div>
+            {%- endif -%}
+          </div>
+
+          {%- if paginate.pages > 1 -%}
+            {% render 'pagination', paginate: paginate %}
+          {%- endif -%}
+        {%- endif -%}
+      </section>
+    </div>
+  </main>
+{% endpaginate %}
+{% if section.settings.image_shape == 'arch' %}
+  {{ 'mask-arch.svg' | inline_asset_content }}
+{%- endif -%}
+
+<script src="{{ 'fresco/fresco-custom--catalogue-filters.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "t:sections.main-search.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "url",
+      "id": "buy_now_url",
+      "label": "Buy now link",
+      "info": "Where the Buy now button should go (e.g., your Contact page)."
+    },
+    {
+      "type": "text",
+      "id": "buy_now_label",
+      "label": "Buy now button label",
+      "default": "Buy now"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.main-search.settings.columns_desktop.label"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "default": "2",
+      "label": "t:sections.main-search.settings.columns_mobile.label",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.main-search.settings.columns_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.main-search.settings.columns_mobile.options__2.label"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-search.settings.header__1.content"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.main-search.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.main-search.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.main-search.settings.image_ratio.options__3.label"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.main-search.settings.image_ratio.label"
+    },
+    {
+      "type": "select",
+      "id": "image_shape",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:sections.all.image_shape.options__1.label"
+        },
+        {
+          "value": "arch",
+          "label": "t:sections.all.image_shape.options__2.label"
+        },
+        {
+          "value": "blob",
+          "label": "t:sections.all.image_shape.options__3.label"
+        },
+        {
+          "value": "chevronleft",
+          "label": "t:sections.all.image_shape.options__4.label"
+        },
+        {
+          "value": "chevronright",
+          "label": "t:sections.all.image_shape.options__5.label"
+        },
+        {
+          "value": "diamond",
+          "label": "t:sections.all.image_shape.options__6.label"
+        },
+        {
+          "value": "parallelogram",
+          "label": "t:sections.all.image_shape.options__7.label"
+        },
+        {
+          "value": "round",
+          "label": "t:sections.all.image_shape.options__8.label"
+        }
+      ],
+      "default": "default",
+      "label": "t:sections.all.image_shape.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "t:sections.main-search.settings.show_secondary_image.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "t:sections.main-search.settings.show_vendor.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "default": false,
+      "label": "t:sections.main-search.settings.show_rating.label",
+      "info": "t:sections.main-search.settings.show_rating.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-collection-product-grid.settings.header__1.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_filtering",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.enable_filtering.label",
+      "info": "t:sections.main-collection-product-grid.settings.enable_filtering.info"
+    },
+    {
+      "type": "select",
+      "id": "filter_type",
+      "options": [
+        {
+          "value": "horizontal",
+          "label": "t:sections.main-collection-product-grid.settings.filter_type.options__1.label"
+        },
+        {
+          "value": "vertical",
+          "label": "t:sections.main-collection-product-grid.settings.filter_type.options__2.label"
+        },
+        {
+          "value": "drawer",
+          "label": "t:sections.main-collection-product-grid.settings.filter_type.options__3.label"
+        }
+      ],
+      "default": "horizontal",
+      "label": "t:sections.main-collection-product-grid.settings.filter_type.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-search.settings.header__2.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "article_show_date",
+      "default": true,
+      "label": "t:sections.main-search.settings.article_show_date.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "article_show_author",
+      "default": false,
+      "label": "t:sections.main-search.settings.article_show_author.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}
