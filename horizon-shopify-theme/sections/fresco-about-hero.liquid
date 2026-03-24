@@ -1,0 +1,88 @@
+<section class="about-page-layout" {{ section.shopify_attributes }}>
+  <div class="hero-section">
+    <div class="hero-background" aria-hidden="true">
+      <img
+        class="hero-background-image"
+        src="{% if section.settings.hero_image != blank %}{{ section.settings.hero_image | image_url: width: 2000 }}{% else %}{{ section.settings.hero_image_url_fallback }}{% endif %}"
+        alt=""
+        width="2000"
+        height="700"
+      >
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <div class="hero-content-inner">
+        <h1 class="hero-title">
+          {{ section.settings.hero_title }}
+        </h1>
+        <p class="hero-description">
+          {{ section.settings.hero_description }}
+        </p>
+        {%- if section.settings.hero_button_label != blank -%}
+          <a
+            href="{{ section.settings.hero_button_link }}"
+            class="hero-cta primary-button"
+          >
+            {{ section.settings.hero_button_label }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco About Hero",
+  "tag": "section",
+  "class": "section-fresco-about-hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero background image"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_url_fallback",
+      "label": "Hero background image URL fallback",
+      "default": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4403.jpg"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Hero title",
+      "default": "Peak Harvest Quality, Perfectly Preserved."
+    },
+    {
+      "type": "textarea",
+      "id": "hero_description",
+      "label": "Hero description",
+      "default": "Flash freeze-dried at origin to lock in nutrients and aroma."
+    },
+    {
+      "type": "text",
+      "id": "hero_button_label",
+      "label": "Button label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "hero_button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco About Hero",
+      "settings": {
+        "hero_image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4403.jpg",
+        "hero_title": "Peak Harvest Quality, Perfectly Preserved.",
+        "hero_description": "Flash freeze-dried at origin to lock in nutrients and aroma.",
+        "hero_button_label": "Shop Now",
+        "hero_button_link": "shopify://collections/all"
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,76 @@
+<section
+  class="retail-section retail-section-intro retail-section-fullwidth text-white"
+  id="retail-overview"
+  {{ section.shopify_attributes }}
+>
+  <div class="retail-section-inner retail-section-fullwidth-inner retail-section-image-left">
+    <div class="retail-section-content">
+      <h2 class="retail-section-heading">
+        {{ section.settings.heading }}
+      </h2>
+      <p class="retail-intro-text">
+        {{ section.settings.description }}
+      </p>
+    </div>
+    <div class="retail-section-media">
+      <div class="retail-media-shape">
+        <img
+          src="{% if section.settings.image != blank %}{{ section.settings.image | image_url: width: 1400 }}{% else %}{{ section.settings.image_url_fallback }}{% endif %}"
+          alt="{{ section.settings.image_alt | escape }}"
+          width="1400"
+          height="1000"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Retail Overview",
+  "tag": "section",
+  "class": "section-fresco-retail-overview",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Reliable Quality, Consistent Supply"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Our vertically integrated system minimizes supply disruptions and ensures dependable availability. Fresco Flavors delivers premium organic herbs with consistent quality, helping retailers maintain reliable shelf presence and meet customer demand."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Section image"
+    },
+    {
+      "type": "text",
+      "id": "image_url_fallback",
+      "label": "Section image URL fallback",
+      "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A1028-scaled.jpg"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "Vertically integrated organic herb production"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Retail Overview",
+      "settings": {
+        "heading": "Reliable Quality, Consistent Supply",
+        "description": "Our vertically integrated system minimizes supply disruptions and ensures dependable availability. Fresco Flavors delivers premium organic herbs with consistent quality, helping retailers maintain reliable shelf presence and meet customer demand.",
+        "image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A1028-scaled.jpg",
+        "image_alt": "Vertically integrated organic herb production"
+      }
+    }
+  ]
+}
+{% endschema %}

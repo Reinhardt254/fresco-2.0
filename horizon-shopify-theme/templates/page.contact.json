@@ -9,136 +9,45 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "blocks": {
-        "title": {
-          "type": "text",
-          "name": "t:names.title",
-          "settings": {
-            "text": "<h1>{{ closest.page.title }}</h1>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "h2",
-            "font": "var(--font-primary--family)",
-            "font_size": "",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "content": {
-          "type": "text",
-          "name": "t:names.content",
-          "settings": {
-            "text": "{{ closest.page.content }}",
-            "width": "100%",
-            "max_width": "narrow",
-            "alignment": "center",
-            "type_preset": "rte",
-            "font": "var(--font-primary--family)",
-            "font_size": "",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": ["title", "content"],
+    "fresco_contact_hero_Q2v4Lm": {
+      "type": "fresco-contact-hero",
+      "name": "Fresco Contact Hero",
       "settings": {
-        "content_direction": "column",
-        "gap": 32,
-        "color_scheme": "",
-        "padding-block-start": 40,
-        "padding-block-end": 0
+        "background_image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4367.jpg",
+        "heading_prefix": "Contact",
+        "heading_highlight": "Us",
+        "subheading": "We're here to help you with any questions or concerns you may have.",
+        "overlay_top_left_url": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A7607.png",
+        "overlay_top_right_url": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A0462-scaled-1-1.png",
+        "overlay_bottom_left_url": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview-1.png",
+        "overlay_bottom_right_url": "https://plantechkenya.com/wp-content/uploads/2026/02/dried-herbs-spilled-from-glass-jar-white-background_1012140-1044.png"
       }
     },
-    "form": {
-      "type": "section",
-      "blocks": {
-        "contact_form_UwiCkQ": {
-          "type": "contact-form",
-          "settings": {
-            "width": "custom",
-            "custom_width": 50,
-            "width_mobile": "custom",
-            "custom_width_mobile": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "submit-button": {
-              "type": "contact-form-submit-button",
-              "static": true,
-              "settings": {
-                "label": "Submit",
-                "style_class": "button",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": []
-        }
-      },
-      "block_order": ["contact_form_UwiCkQ"],
-      "name": "t:names.contact_form",
+    "fresco_contact_main_t8Ns5W": {
+      "type": "fresco-contact-main",
+      "name": "Fresco Contact Main",
       "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 32,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "scheme-1",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 32,
-        "padding-block-end": 84
+        "card1_icon": "fa-solid fa-phone",
+        "card1_label": "Phone",
+        "card1_text": "+1 (901) 896-5814",
+        "card1_link": "tel:+19018965814",
+        "card2_icon": "fa-brands fa-whatsapp",
+        "card2_label": "Whatsapp",
+        "card2_text": "+1 (901) 896-5814",
+        "card2_link": "https://wa.me/19018965814",
+        "card3_icon": "fa-solid fa-envelope",
+        "card3_label": "Email",
+        "card3_text": "info@frescoflavors.com",
+        "card3_link": "mailto:info@frescoflavors.com",
+        "card4_icon": "fa-solid fa-shop",
+        "card4_label": "Our Shop",
+        "card4_text": "7910 Moriarty Rd, Cordova, TN 38018",
+        "map_embed_url": "https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d61881.489831128325!2d-89.83236344471175!3d35.19412175135412!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2ske!4v1764248724074!5m2!1sen!2ske",
+        "form_heading": "Get In Touch",
+        "form_description": "We're here to help you with any questions or concerns. Send us a message and we'll get back to you as soon as we can.",
+        "submit_label": "Send Now"
       }
     }
   },
-  "order": ["main", "form"]
+  "order": ["fresco_contact_hero_Q2v4Lm", "fresco_contact_main_t8Ns5W"]
 }

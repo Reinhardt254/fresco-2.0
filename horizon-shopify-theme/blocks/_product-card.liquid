@@ -6,7 +6,7 @@
   {% content_for 'blocks', closest.product: product %}
 {% endcapture %}
 
-{% render 'product-card', children: children, product: product %}
+{% render 'product-card', children: children, product: product, section_id: section.id %}
 
 {% schema %}
 {

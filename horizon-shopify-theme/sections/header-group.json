@@ -44,8 +44,55 @@
     },
     "header_section": {
       "type": "header",
+      "blocks": {
+        "explore_item_DXxJ8C": {
+          "type": "explore_item",
+          "settings": {
+            "title": "Our Story",
+            "url": "shopify://pages/about",
+            "icon_image": "shopify://shop_images/herb.png"
+          }
+        },
+        "explore_item_CPUyzP": {
+          "type": "explore_item",
+          "settings": {
+            "title": "Our Process",
+            "url": "shopify://pages/about",
+            "icon_image": "shopify://shop_images/mortar-1-1.png"
+          }
+        },
+        "explore_item_m7pQ3m": {
+          "type": "explore_item",
+          "settings": {
+            "title": "Retail",
+            "url": "shopify://pages/about",
+            "icon_image": "shopify://shop_images/supply-chain.png"
+          }
+        },
+        "explore_item_UywpMy": {
+          "type": "explore_item",
+          "settings": {
+            "title": "Recipes",
+            "url": "shopify://pages/about",
+            "icon_image": "shopify://shop_images/mortar.png"
+          }
+        }
+      },
+      "block_order": [
+        "explore_item_DXxJ8C",
+        "explore_item_CPUyzP",
+        "explore_item_m7pQ3m",
+        "explore_item_UywpMy"
+      ],
       "settings": {
-        "menu": "main-menu",
+        "home_label": "Home",
+        "home_url": "/",
+        "explore_label": "Explore",
+        "explore_url": "shopify://pages/about",
+        "contact_label": "Contact",
+        "contact_url": "shopify://pages/contact",
+        "shop_label": "Shop",
+        "shop_url": "shopify://collections/all",
         "show_search": false
       }
     }

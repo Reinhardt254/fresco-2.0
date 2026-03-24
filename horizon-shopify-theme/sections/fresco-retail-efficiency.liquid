@@ -1,0 +1,171 @@
+<section class="retail-how-it-works" id="operational-efficiency" {{ section.shopify_attributes }}>
+  <div class="retail-how-it-works-bg" aria-hidden="true"></div>
+  <div class="retail-section-inner retail-how-it-works-inner">
+    <div class="retail-how-it-works-heading-container">
+      <h2 class="retail-how-it-works-heading">{{ section.settings.heading }}</h2>
+      <div class="divider"></div>
+      <p class="retail-how-it-works-lead">
+        {{ section.settings.lead_text }}
+      </p>
+    </div>
+    <div class="retail-steps-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'efficiency_step' %}
+          <div class="retail-step {% if block.settings.layout == 'image_top' %}retail-step-image-top{% else %}retail-step-text-top{% endif %}" {{ block.shopify_attributes }}>
+            {% if block.settings.layout == 'image_top' %}
+              <div class="retail-step-image-wrap">
+                <img
+                  src="{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 900 }}{% else %}{{ block.settings.image_url_fallback }}{% endif %}"
+                  alt="{{ block.settings.image_alt | escape }}"
+                  loading="lazy"
+                  width="900"
+                  height="700"
+                >
+              </div>
+              <div class="retail-step-content">
+                <span class="retail-step-num">{{ block.settings.step_number }}</span>
+                <h3 class="retail-step-title">{{ block.settings.title }}</h3>
+                <p class="retail-step-desc">{{ block.settings.description }}</p>
+              </div>
+            {% else %}
+              <div class="retail-step-content">
+                <span class="retail-step-num">{{ block.settings.step_number }}</span>
+                <h3 class="retail-step-title">{{ block.settings.title }}</h3>
+                <p class="retail-step-desc">{{ block.settings.description }}</p>
+              </div>
+              <div class="retail-step-image-wrap">
+                <img
+                  src="{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 900 }}{% else %}{{ block.settings.image_url_fallback }}{% endif %}"
+                  alt="{{ block.settings.image_alt | escape }}"
+                  loading="lazy"
+                  width="900"
+                  height="700"
+                >
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Retail Efficiency",
+  "tag": "section",
+  "class": "section-fresco-retail-efficiency",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Operational Efficiency"
+    },
+    {
+      "type": "textarea",
+      "id": "lead_text",
+      "label": "Lead text",
+      "default": "Partnering with Fresco Flavors means optimizing your operations and mitigating common retail challenges."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "efficiency_step",
+      "name": "Efficiency step",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "select",
+          "id": "layout",
+          "label": "Layout",
+          "options": [
+            { "value": "image_top", "label": "Image top" },
+            { "value": "text_top", "label": "Text top" }
+          ],
+          "default": "image_top"
+        },
+        {
+          "type": "text",
+          "id": "step_number",
+          "label": "Step number",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Longer Shelf Life"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Extended shelf stability helps retailers reduce spoilage, lower shrink, and maintain consistent quality."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_url_fallback",
+          "label": "Image URL fallback",
+          "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-28-at-16.00.37-e1764335434457.jpeg"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text",
+          "default": "Retail step image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Retail Efficiency",
+      "blocks": [
+        {
+          "type": "efficiency_step",
+          "settings": {
+            "layout": "image_top",
+            "step_number": "01",
+            "title": "Longer Shelf Life",
+            "description": "Extended shelf stability helps retailers reduce spoilage, lower shrink, and maintain consistent quality.",
+            "image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-28-at-16.00.37-e1764335434457.jpeg",
+            "image_alt": "Freeze-dried herbs with extended shelf life"
+          }
+        },
+        {
+          "type": "efficiency_step",
+          "settings": {
+            "layout": "text_top",
+            "step_number": "02",
+            "title": "Ready to Use",
+            "description": "Lightweight freeze-dried herbs in smart, convenient packs designed for effortless cooking and everyday versatility.",
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A2210.jpg",
+            "image_alt": "Ready-to-use herb formats"
+          }
+        },
+        {
+          "type": "efficiency_step",
+          "settings": {
+            "layout": "image_top",
+            "step_number": "03",
+            "title": "Year-Round Availability",
+            "description": "All-year availability eliminates seasonal shortfalls and concerns on stock outs.",
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4532-scaled.jpg",
+            "image_alt": "Year-round supply chain"
+          }
+        }
+      ],
+      "settings": {
+        "heading": "Operational Efficiency",
+        "lead_text": "Partnering with Fresco Flavors means optimizing your operations and mitigating common retail challenges."
+      }
+    }
+  ]
+}
+{% endschema %}

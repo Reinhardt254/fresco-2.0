@@ -1,0 +1,289 @@
+<div class="search-page-wrapper">
+  <div class="search-popup-panel">
+    <div class="search-popup-content">
+
+      {%- assign query = search.terms | escape -%}
+
+      <div class="search-popup-input-wrap">
+        <label for="search-page-input" class="sr-only">Search</label>
+        <form action="{{ routes.search_url }}" method="get" class="search-popup-form" role="search">
+          <input
+            id="search-page-input"
+            class="search-popup-input"
+            type="text"
+            name="q"
+            value="{{ query }}"
+            placeholder="Search Fresco"
+            autocomplete="off"
+          >
+          <input type="hidden" name="type" value="product">
+        </form>
+      </div>
+
+      {%- if search.performed and search.results_count > 0 -%}
+        <div class="search-popup-section">
+          <p class="search-popup-heading">
+            {{ search.results_count }}
+            {{ search.results_count | pluralize: 'result', 'results' }}
+            for &ldquo;{{ search.terms }}&rdquo;
+          </p>
+          {%- paginate search.results by section.settings.products_per_page -%}
+            <div class="search-popup-spotlight-grid">
+              {%- for item in search.results -%}
+                {%- if item.object_type == 'product' -%}
+                  <a href="{{ item.url }}" class="search-popup-card">
+                    {%- if item.featured_image != blank -%}
+                      <img
+                        src="{{ item.featured_image | image_url: width: 400 }}"
+                        alt="{{ item.featured_image.alt | escape }}"
+                        loading="lazy"
+                        width="400"
+                        height="400"
+                      >
+                    {%- else -%}
+                      {{ 'product-1' | placeholder_svg_tag }}
+                    {%- endif -%}
+                    <span>{{ item.title }}</span>
+                    <span class="search-page-price">{{ item.price | money }}</span>
+                  </a>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+
+            {%- if paginate.pages > 1 -%}
+              <nav class="search-page-pagination" aria-label="Search pagination">
+                {%- if paginate.previous -%}
+                  <a href="{{ paginate.previous.url }}" class="pagination-link">
+                    <i class="fa-solid fa-chevron-left"></i> Previous
+                  </a>
+                {%- endif -%}
+                {%- for part in paginate.parts -%}
+                  {%- if part.is_link -%}
+                    <a href="{{ part.url }}" class="pagination-link">{{ part.title }}</a>
+                  {%- else -%}
+                    <span class="pagination-link pagination-current">{{ part.title }}</span>
+                  {%- endif -%}
+                {%- endfor -%}
+                {%- if paginate.next -%}
+                  <a href="{{ paginate.next.url }}" class="pagination-link">
+                    Next <i class="fa-solid fa-chevron-right"></i>
+                  </a>
+                {%- endif -%}
+              </nav>
+            {%- endif -%}
+          {%- endpaginate -%}
+        </div>
+
+      {%- elsif search.performed and search.results_count == 0 -%}
+        <div class="search-popup-section search-page-no-results">
+          <p class="search-popup-heading">No results for &ldquo;{{ search.terms }}&rdquo;</p>
+          <p class="search-page-hint">Try a different term or browse popular searches below.</p>
+        </div>
+
+        <div class="search-popup-section">
+          <p class="search-popup-heading">Popular</p>
+          <div class="search-popup-tags">
+            {%- assign popular_terms = 'basil,oregano,parsley,garlic,thyme' | split: ',' -%}
+            {%- for term in popular_terms -%}
+              <a href="{{ routes.search_url }}?type=product&q={{ term }}" class="search-popup-tag">{{ term }}</a>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <div class="search-popup-section">
+          <p class="search-popup-heading">Spotlight</p>
+          <div class="search-popup-spotlight-grid">
+            {%- assign spotlight = collections['all'] -%}
+            {%- if spotlight != blank -%}
+              {%- for product in spotlight.products limit: 4 -%}
+                <a href="{{ product.url }}" class="search-popup-card">
+                  {%- if product.featured_image != blank -%}
+                    <img
+                      src="{{ product.featured_image | image_url: width: 400 }}"
+                      alt="{{ product.featured_image.alt | escape }}"
+                      loading="lazy"
+                      width="400"
+                      height="400"
+                    >
+                  {%- else -%}
+                    {{ 'product-1' | placeholder_svg_tag }}
+                  {%- endif -%}
+                  <span>{{ product.title }}</span>
+                </a>
+              {%- endfor -%}
+            {%- else -%}
+              <a href="{{ routes.all_products_collection_url }}" class="search-popup-card">
+                {{ 'product-1' | placeholder_svg_tag }}
+                <span>Fresh Basil</span>
+              </a>
+              <a href="{{ routes.all_products_collection_url }}" class="search-popup-card">
+                {{ 'product-2' | placeholder_svg_tag }}
+                <span>Pure Oregano</span>
+              </a>
+              <a href="{{ routes.all_products_collection_url }}" class="search-popup-card">
+                {{ 'product-3' | placeholder_svg_tag }}
+                <span>Organic Parsley</span>
+              </a>
+              <a href="{{ routes.all_products_collection_url }}" class="search-popup-card">
+                {{ 'product-4' | placeholder_svg_tag }}
+                <span>Kitchen Essentials</span>
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+
+      {%- else -%}
+        <div class="search-popup-section">
+          <p class="search-popup-heading">Popular</p>
+          <div class="search-popup-tags">
+            {%- assign popular_terms = 'basil,oregano,parsley,garlic,thyme' | split: ',' -%}
+            {%- for term in popular_terms -%}
+              <a href="{{ routes.search_url }}?type=product&q={{ term }}" class="search-popup-tag">{{ term }}</a>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <div class="search-popup-section">
+          <p class="search-popup-heading">Spotlight</p>
+          <div class="search-popup-spotlight-grid">
+            {%- assign spotlight = collections['all'] -%}
+            {%- if spotlight != blank -%}
+              {%- for product in spotlight.products limit: 4 -%}
+                <a href="{{ product.url }}" class="search-popup-card">
+                  {%- if product.featured_image != blank -%}
+                    <img
+                      src="{{ product.featured_image | image_url: width: 400 }}"
+                      alt="{{ product.featured_image.alt | escape }}"
+                      loading="lazy"
+                      width="400"
+                      height="400"
+                    >
+                  {%- else -%}
+                    {{ 'product-1' | placeholder_svg_tag }}
+                  {%- endif -%}
+                  <span>{{ product.title }}</span>
+                </a>
+              {%- endfor -%}
+            {%- else -%}
+              <a href="{{ routes.all_products_collection_url }}" class="search-popup-card">
+                {{ 'product-1' | placeholder_svg_tag }}
+                <span>Fresh Basil</span>
+              </a>
+              <a href="{{ routes.all_products_collection_url }}" class="search-popup-card">
+                {{ 'product-2' | placeholder_svg_tag }}
+                <span>Pure Oregano</span>
+              </a>
+              <a href="{{ routes.all_products_collection_url }}" class="search-popup-card">
+                {{ 'product-3' | placeholder_svg_tag }}
+                <span>Organic Parsley</span>
+              </a>
+              <a href="{{ routes.all_products_collection_url }}" class="search-popup-card">
+                {{ 'product-4' | placeholder_svg_tag }}
+                <span>Kitchen Essentials</span>
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .search-page-wrapper {
+    background: #ffffff;
+    min-height: 80vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+  .search-page-wrapper .search-popup-panel {
+    position: static;
+    width: 95%;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+  .search-page-wrapper .search-popup-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .search-page-price {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-top: 4px;
+  }
+  .search-page-no-results .search-page-hint {
+    font-size: 15px;
+    color: #888;
+    margin: 0;
+  }
+  .search-page-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+  }
+  .search-page-pagination .pagination-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #2c2c2c;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .search-page-pagination .pagination-link:hover {
+    background: #f5f5f5;
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+  }
+  .search-page-pagination .pagination-current {
+    background: var(--primary-green);
+    color: #fff;
+    border-color: var(--primary-green);
+  }
+
+  @media (max-width: 768px) {
+    .search-page-wrapper {
+      padding: 1rem 0;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Fresco Search",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "label": "Products per page",
+      "min": 4,
+      "max": 48,
+      "step": 4,
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Search"
+    }
+  ]
+}
+{% endschema %}

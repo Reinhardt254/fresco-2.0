@@ -347,11 +347,11 @@ div.sub-heading {
 
 /* Nav Dropdown Styles */
 .nav-dropdown {
-  /* position: relative; */
+  position: relative;
 }
 
 .nav-dropdown-trigger {
-  /* position: relative; */
+  position: relative;
 }
 
 .nav-dropdown-menu {

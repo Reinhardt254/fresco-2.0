@@ -1,0 +1,95 @@
+<div
+  id="search-popup-overlay"
+  class="search-popup-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Search"
+  aria-hidden="true"
+>
+  <div class="search-popup-panel">
+    <button
+      type="button"
+      class="search-popup-close"
+      aria-label="Close search popup"
+      data-search-close
+    >
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+
+    <div class="search-popup-content">
+      <div class="search-popup-input-wrap">
+        <label for="search-popup-input" class="sr-only">Search</label>
+        <form action="{{ routes.search_url }}" method="get" class="search-popup-form" role="search">
+          <input
+            id="search-popup-input"
+            class="search-popup-input"
+            type="text"
+            name="q"
+            placeholder="Search Fresco"
+            autocomplete="off"
+          >
+          <input type="hidden" name="type" value="product">
+        </form>
+      </div>
+
+      <div id="search-popup-results" class="search-popup-section" style="display:none;">
+        <p class="search-popup-heading">Results</p>
+        <div id="search-popup-results-grid" class="search-popup-spotlight-grid"></div>
+      </div>
+
+      <div id="search-popup-defaults" class="search-popup-defaults">
+        <div class="search-popup-section">
+          <p class="search-popup-heading">Popular</p>
+          <div class="search-popup-tags">
+            {%- assign popular_terms = 'basil,oregano,parsley,garlic,thyme' | split: ',' -%}
+            {%- for term in popular_terms -%}
+              <button type="button" class="search-popup-tag">{{ term }}</button>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <div class="search-popup-section">
+          <p class="search-popup-heading">Spotlight</p>
+          <div class="search-popup-spotlight-grid">
+            {%- assign spotlight = collections['all'] -%}
+            {%- if spotlight != blank -%}
+              {%- for product in spotlight.products limit: 4 -%}
+                <a href="{{ product.url }}" class="search-popup-card">
+                  {%- if product.featured_image != blank -%}
+                    <img
+                      src="{{ product.featured_image | image_url: width: 400 }}"
+                      alt="{{ product.featured_image.alt | escape }}"
+                      loading="lazy"
+                      width="400"
+                      height="400"
+                    >
+                  {%- else -%}
+                    {{ 'product-1' | placeholder_svg_tag }}
+                  {%- endif -%}
+                  <span>{{ product.title }}</span>
+                </a>
+              {%- endfor -%}
+            {%- else -%}
+              <a href="{{ routes.all_products_collection_url }}" class="search-popup-card">
+                {{ 'product-1' | placeholder_svg_tag }}
+                <span>Fresh Basil</span>
+              </a>
+              <a href="{{ routes.all_products_collection_url }}" class="search-popup-card">
+                {{ 'product-2' | placeholder_svg_tag }}
+                <span>Pure Oregano</span>
+              </a>
+              <a href="{{ routes.all_products_collection_url }}" class="search-popup-card">
+                {{ 'product-3' | placeholder_svg_tag }}
+                <span>Organic Parsley</span>
+              </a>
+              <a href="{{ routes.all_products_collection_url }}" class="search-popup-card">
+                {{ 'product-4' | placeholder_svg_tag }}
+                <span>Kitchen Essentials</span>
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -339,6 +339,30 @@ div.sub-heading {
   font-family: "Poppins", serif !important;
 }
 
+#cart-icon-bubble {
+  position: relative;
+}
+
+.cart-count-bubble {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  min-height: fit-content;
+  min-width: fit-content;
+  background-color: var(--primary-green);
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 0rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 500;
+  font-family: "Poppins", serif !important;
+}
+
 .nav a.active {
   color: var(--primary);
 }
@@ -352,13 +376,9 @@ div.sub-heading {
   /* position: relative; */
 }
 
-.nav-dropdown-trigger {
-  /* position: relative; */
-}
-
 .nav-dropdown-menu {
   position: absolute;
-  top: 0;
+  top: 100%;
   left: 0%;
   width: 100%;
   right: 0%;
@@ -368,6 +388,9 @@ div.sub-heading {
   margin-top: 20px;
   z-index: 1000;
   padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-dropdown-menu-content {
@@ -379,11 +402,13 @@ div.sub-heading {
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   padding: 40px 20px 60px;
+  width: 100%;
 }
 
 .nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu,
 .nav-dropdown-menu:hover {
-  display: grid;
+  display: block;
 }
 
 .dropdown-section {
@@ -1747,11 +1772,11 @@ body.no-scroll {
  
 /* Product Grid */
 .product-grid {
-   display: grid;
-   grid-template-columns: repeat(4, 1fr);
-   gap: 25px;
-   height: 100%;
-   width: 100%;
+   display: grid !important;
+   grid-template-columns: repeat(4, 1fr) !important;
+   gap: 25px !important;
+   height: 100% !important;
+   width: 100% !important;
  }
  
  .featured-products-pagination {
@@ -1777,7 +1802,7 @@ body.no-scroll {
    border: 1px solid var(--light-grey-border);
    border-radius: 6px;
    padding: 0px;
-   padding-bottom: 20px;
+   padding-bottom: 14px !important;
    position: relative;
    transition:
      transform 0.3s,

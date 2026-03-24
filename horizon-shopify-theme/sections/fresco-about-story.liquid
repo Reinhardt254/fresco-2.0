@@ -1,0 +1,113 @@
+<section class="our-commitment" id="our-story" {{ section.shopify_attributes }}>
+  <div class="our-commitment-inner">
+    <div class="our-commitment-media">
+      <div class="our-commitment-media-shape">
+        <img
+          src="{% if section.settings.story_image != blank %}{{ section.settings.story_image | image_url: width: 1200 }}{% else %}{{ section.settings.story_image_url_fallback }}{% endif %}"
+          alt="{{ section.settings.story_image_alt | escape }}"
+          width="1200"
+          height="900"
+        >
+      </div>
+    </div>
+
+    <div class="our-commitment-content">
+      <h2 class="our-commitment-heading">{{ section.settings.heading }}</h2>
+      <div class="title-underline"></div>
+      <div class="story-content">
+        <p class="story-content-text">
+          {{ section.settings.paragraph_1 }}
+        </p>
+
+        <p class="story-content-text">
+          {{ section.settings.paragraph_2 }}
+        </p>
+        <p class="story-content-text">
+          {{ section.settings.paragraph_3 }}
+        </p>
+        <button
+          onclick="window.location.href = '{{ section.settings.button_link }}'"
+          class="contact-us-btn"
+          type="button"
+        >
+          {{ section.settings.button_label }}
+          <!-- <i class="fa-solid fa-chevron-right contact-us-btn-icon"></i> -->
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco About Story",
+  "tag": "section",
+  "class": "section-fresco-about-story",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "story_image",
+      "label": "Story image"
+    },
+    {
+      "type": "text",
+      "id": "story_image_url_fallback",
+      "label": "Story image URL fallback",
+      "default": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4383-scaled-1.jpg"
+    },
+    {
+      "type": "text",
+      "id": "story_image_alt",
+      "label": "Story image alt text",
+      "default": "Team preparing fresh ingredients"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "OUR STORY"
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_1",
+      "label": "Paragraph 1",
+      "default": "In a global supply chain often defined by blended origins and fragmented processing, we choose a different path. We operate close to the source, working within a tightly controlled agricultural ecosystem where cultivation, harvesting, and freeze-drying are strategically aligned."
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_2",
+      "label": "Paragraph 2",
+      "default": "Fresco operates in Kenya's equatorial growing belt, one of the few regions globally that allows continuous, year-round organic herb cultivation. This consistency eliminates seasonal gaps and reduces the volatility often associated with multi-origin sourcing. By harvesting at peak vitality and freeze-drying immediately at our on-site facility, we capture herbs at their freshest moment preserving flavor, nutrients, and integrity before degradation begins."
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_3",
+      "label": "Paragraph 3",
+      "default": "Fresco was designed with modern retail in mind. Our systems prioritize traceability, clean-label integrity, and predictable supply ensuring consistent SKU performance across regional and national distribution."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Contact Us"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco About Story",
+      "settings": {
+        "story_image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4383-scaled-1.jpg",
+        "story_image_alt": "Team preparing fresh ingredients",
+        "heading": "OUR STORY",
+        "button_label": "Contact Us",
+        "button_link": "shopify://pages/contact"
+      }
+    }
+  ]
+}
+{% endschema %}

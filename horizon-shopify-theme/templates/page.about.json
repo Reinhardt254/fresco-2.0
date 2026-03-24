@@ -1,0 +1,204 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "fresco_about_hero_jR4kWn": {
+      "type": "fresco-about-hero",
+      "name": "Fresco About Hero",
+      "settings": {
+        "hero_image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4403.jpg",
+        "hero_title": "Peak Harvest Quality, Perfectly Preserved.",
+        "hero_description": "Flash freeze-dried at origin to lock in nutrients and aroma.",
+        "hero_button_label": "Shop Now",
+        "hero_button_link": "shopify://collections/all"
+      }
+    },
+    "fresco_about_story_q9Mp2V": {
+      "type": "fresco-about-story",
+      "name": "Fresco About Story",
+      "settings": {
+        "story_image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4383-scaled-1.jpg",
+        "story_image_alt": "Team preparing fresh ingredients",
+        "heading": "OUR STORY",
+        "paragraph_1": "In a global supply chain often defined by blended origins and fragmented processing, we choose a different path. We operate close to the source, working within a tightly controlled agricultural ecosystem where cultivation, harvesting, and freeze-drying are strategically aligned.",
+        "paragraph_2": "Fresco operates in Kenya's equatorial growing belt, one of the few regions globally that allows continuous, year-round organic herb cultivation. This consistency eliminates seasonal gaps and reduces the volatility often associated with multi-origin sourcing. By harvesting at peak vitality and freeze-drying immediately at our on-site facility, we capture herbs at their freshest moment preserving flavor, nutrients, and integrity before degradation begins.",
+        "paragraph_3": "Fresco was designed with modern retail in mind. Our systems prioritize traceability, clean-label integrity, and predictable supply ensuring consistent SKU performance across regional and national distribution.",
+        "button_label": "Contact Us",
+        "button_link": "shopify://pages/contact"
+      }
+    },
+    "fresco_about_process_w8Nq4L": {
+      "type": "fresco-about-process",
+      "blocks": {
+        "process_step_1": {
+          "type": "process_step",
+          "settings": {
+            "step_number": "1",
+            "icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/sprout.png",
+            "icon_alt": "Planting icon",
+            "step_subhead": "Step 01",
+            "step_description": "Planting"
+          }
+        },
+        "process_step_2": {
+          "type": "process_step",
+          "settings": {
+            "step_number": "2",
+            "icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/farming.png",
+            "icon_alt": "Harvesting icon",
+            "step_subhead": "Step 02",
+            "step_description": "Harvesting"
+          }
+        },
+        "process_step_3": {
+          "type": "process_step",
+          "settings": {
+            "step_number": "3",
+            "icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/production-automation.png",
+            "icon_alt": "Processing icon",
+            "step_subhead": "Step 03",
+            "step_description": "Processing & Packaging"
+          }
+        },
+        "process_step_4": {
+          "type": "process_step",
+          "settings": {
+            "step_number": "4",
+            "icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/supply-chain.png",
+            "icon_alt": "Distribution icon",
+            "step_subhead": "Step 04",
+            "step_description": "Distribution & Retail"
+          }
+        }
+      },
+      "block_order": [
+        "process_step_1",
+        "process_step_2",
+        "process_step_3",
+        "process_step_4"
+      ],
+      "name": "Fresco About Process",
+      "settings": {
+        "title": "OUR PROCESS"
+      }
+    },
+    "fresco_about_commitment_c7Tn5H": {
+      "type": "fresco-about-commitment",
+      "blocks": {
+        "commitment_item_1": {
+          "type": "commitment_item",
+          "settings": {
+            "item_number": "-01",
+            "item_title": "Quality & Natural Integrity",
+            "item_text": "Our herbs are organically grown and freeze-dried to preserve natural qualities without artificial additives, delivering pure flavor and consistent quality."
+          }
+        },
+        "commitment_item_2": {
+          "type": "commitment_item",
+          "settings": {
+            "item_number": "-02",
+            "item_title": "Commitment to Transparency",
+            "item_text": "We believe customers should know what goes into their food. That's why we provide clear sourcing and production information, ensuring confidence."
+          }
+        },
+        "commitment_item_3": {
+          "type": "commitment_item",
+          "settings": {
+            "item_number": "-03",
+            "item_title": "Social & Environmental Impact",
+            "item_text": "We support sustainable agriculture and responsible production while creating employment opportunities for local communities across Kenya, from farms to processing facilities."
+          }
+        }
+      },
+      "block_order": [
+        "commitment_item_1",
+        "commitment_item_2",
+        "commitment_item_3"
+      ],
+      "name": "Fresco About Commitment",
+      "settings": {
+        "heading": "What We Stand For",
+        "side_image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4464.jpg",
+        "side_image_alt": "Team preparing fresh ingredients"
+      }
+    },
+    "fresco_about_recipes_n3Pw6D": {
+      "type": "fresco-about-recipes",
+      "blocks": {
+        "stat_card_1": {
+          "type": "stat_card",
+          "settings": {
+            "icon_class": "fa-solid fa-fire-flame-curved",
+            "value": "Full flavor",
+            "label": "100% natural <br>in every recipe"
+          }
+        },
+        "stat_card_2": {
+          "type": "stat_card",
+          "settings": {
+            "icon_class": "fa-solid fa-seedling",
+            "value": "Zero waste",
+            "label": "24 + Months <br>shelf life"
+          }
+        },
+        "stat_card_3": {
+          "type": "stat_card",
+          "settings": {
+            "icon_class": "fa-solid fa-scissors",
+            "value": "Labor saving",
+            "label": "Quick & Easy<br>to use"
+          }
+        }
+      },
+      "block_order": [
+        "stat_card_1",
+        "stat_card_2",
+        "stat_card_3"
+      ],
+      "name": "Fresco About Recipes",
+      "settings": {
+        "kicker": "Everyday Recipes",
+        "heading": "Cook with Our Freeze-Dried Herbs",
+        "copy": "Turn simple dishes into standout meals with a single sprinkle. Our freeze-dried herbs lock in garden-fresh flavor, so you can cook vibrant pastas, soups, salads, and grills in minutes-no washing, chopping, or waste.",
+        "badge_image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/organic.png",
+        "badge_image_alt": "Organic badge",
+        "col1_large_image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/Product-development45.jpg",
+        "col1_large_image_alt": "Fresh artisan salad bowl",
+        "col1_small_image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/closeup-tumeric-powder-spice-spoon.jpg",
+        "col1_small_image_alt": "Artisan pasta dish",
+        "col2_small_image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/Supplementspic.jpg",
+        "col2_small_image_alt": "Gourmet sandwich stack",
+        "col2_large_image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/bowl-green-olive-oil-with-wooden-bowl-basil.jpg",
+        "col2_large_image_alt": "Crispy side dish platter",
+        "button_label": "View All Recipes",
+        "button_link": "shopify://blogs/news"
+      }
+    },
+    "fresco_cta_UihjDD": {
+      "type": "fresco-cta",
+      "name": "Fresco CTA",
+      "settings": {
+        "cta_bg_image_url_fallback": "https://plantechkenya.com/wp-content/uploads/2026/02/copy-space-greens-condimentsrtger-1.jpg",
+        "cta_heading": "Ready to Elevate Your Kitchen?",
+        "cta_description": "Experience the full, natural taste of Fresco herbs.",
+        "cta_button_label": "Explore our collection",
+        "cta_button_link": "shopify://collections/all"
+      }
+    }
+  },
+  "order": [
+    "fresco_about_hero_jR4kWn",
+    "fresco_about_story_q9Mp2V",
+    "fresco_about_process_w8Nq4L",
+    "fresco_about_commitment_c7Tn5H",
+    "fresco_about_recipes_n3Pw6D",
+    "fresco_cta_UihjDD"
+  ]
+}

@@ -1,0 +1,92 @@
+<section class="retail-hero" {{ section.shopify_attributes }}>
+  <div class="retail-hero-bg">
+    <img
+      src="{% if section.settings.hero_image != blank %}{{ section.settings.hero_image | image_url: width: 2200 }}{% else %}{{ section.settings.hero_image_url_fallback }}{% endif %}"
+      alt=""
+      width="2200"
+      height="1100"
+    >
+  </div>
+  <div class="retail-hero-overlay"></div>
+  <div class="retail-hero-content">
+    <h1 class="retail-hero-title">
+      {{ section.settings.title_prefix }}
+      <span class="highlight">{{ section.settings.title_highlight }}</span>
+      {{ section.settings.title_suffix }}
+    </h1>
+    <p class="retail-hero-tagline">
+      {{ section.settings.tagline }}
+    </p>
+    <a href="{{ section.settings.button_link }}" class="contact-us-btn">{{ section.settings.button_label }}</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Retail Hero",
+  "tag": "section",
+  "class": "section-fresco-retail-hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero background image"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_url_fallback",
+      "label": "Hero background image URL fallback",
+      "default": "https://newvashaepz.com/wp-content/uploads/2026/03/african-young-couple-with-shopping-trolley-shoppin-2026-01-07-00-04-03-utc-scaled.jpg"
+    },
+    {
+      "type": "text",
+      "id": "title_prefix",
+      "label": "Title prefix",
+      "default": "Vertically Integrated"
+    },
+    {
+      "type": "text",
+      "id": "title_highlight",
+      "label": "Highlighted title text",
+      "default": "Organic Herbs"
+    },
+    {
+      "type": "text",
+      "id": "title_suffix",
+      "label": "Title suffix",
+      "default": "You Can Rely On."
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Premium organic herbs for US supermarkets"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Contact Us"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Retail Hero",
+      "settings": {
+        "hero_image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/african-young-couple-with-shopping-trolley-shoppin-2026-01-07-00-04-03-utc-scaled.jpg",
+        "title_prefix": "Vertically Integrated",
+        "title_highlight": "Organic Herbs",
+        "title_suffix": "You Can Rely On.",
+        "tagline": "Premium organic herbs for US supermarkets",
+        "button_label": "Contact Us",
+        "button_link": "shopify://pages/contact"
+      }
+    }
+  ]
+}
+{% endschema %}

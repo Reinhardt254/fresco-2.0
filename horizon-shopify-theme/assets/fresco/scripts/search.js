@@ -1,118 +1,123 @@
-const SEARCH_TEMPLATE_URL = "/search/index.html";
-const SEARCH_STYLES_URL = "/assets/styles/search.css";
+(function () {
+  const popupOverlay = document.getElementById("search-popup-overlay");
+  if (!popupOverlay) return;
 
-let popupInitialized = false;
-let popupOverlay = null;
-let popupInput = null;
+  const popupInput = document.getElementById("search-popup-input");
+  const resultsSection = document.getElementById("search-popup-results");
+  const resultsGrid = document.getElementById("search-popup-results-grid");
+  const defaultsSection = document.getElementById("search-popup-defaults");
 
-const ensureSearchStyles = () => {
-  const existingStyles = document.querySelector(
-    `link[data-search-popup-styles="${SEARCH_STYLES_URL}"]`,
+  let debounceTimer = null;
+
+  const closeSearchPopup = () => {
+    popupOverlay.classList.remove("is-open");
+    popupOverlay.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("search-popup-open");
+  };
+
+  const openSearchPopup = () => {
+    popupOverlay.classList.add("is-open");
+    popupOverlay.setAttribute("aria-hidden", "false");
+    document.body.classList.add("search-popup-open");
+    if (popupInput) popupInput.focus();
+  };
+
+  popupOverlay.addEventListener("click", (e) => {
+    if (e.target === popupOverlay) closeSearchPopup();
+  });
+
+  popupOverlay.querySelectorAll("[data-search-close]").forEach((btn) =>
+    btn.addEventListener("click", closeSearchPopup)
   );
-  if (existingStyles) return;
 
-  const link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.href = SEARCH_STYLES_URL;
-  link.dataset.searchPopupStyles = SEARCH_STYLES_URL;
-  document.head.appendChild(link);
-};
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && popupOverlay.classList.contains("is-open")) {
+      closeSearchPopup();
+    }
+  });
 
-const injectSearchTemplate = async () => {
-  const response = await fetch(SEARCH_TEMPLATE_URL);
-  if (!response.ok) {
-    throw new Error("Could not load search template");
-  }
+  popupOverlay.querySelectorAll(".search-popup-tag").forEach((tag) =>
+    tag.addEventListener("click", () => {
+      if (popupInput) {
+        popupInput.value = tag.textContent.trim();
+        popupInput.focus();
+        popupInput.dispatchEvent(new Event("input"));
+      }
+    })
+  );
 
-  const templateHtml = await response.text();
-  document.body.insertAdjacentHTML("beforeend", templateHtml);
+  const renderResults = (products) => {
+    if (!resultsGrid) return;
+    resultsGrid.innerHTML = "";
 
-  popupOverlay = document.getElementById("search-popup-overlay");
-  popupInput = document.getElementById("search-popup-input");
-};
+    if (!products || products.length === 0) {
+      resultsGrid.innerHTML =
+        '<p style="grid-column:1/-1;color:#888;font-size:14px;">No products found.</p>';
+      return;
+    }
 
-const closeSearchPopup = () => {
-  if (!popupOverlay) return;
+    products.forEach((product) => {
+      const img = product.featured_image
+        ? product.featured_image.url
+        : "";
+      const card = document.createElement("a");
+      card.href = product.url;
+      card.className = "search-popup-card";
+      card.innerHTML =
+        (img
+          ? '<img src="' + img + '" alt="' + (product.title || "") + '" width="400" height="400" loading="lazy">'
+          : "") +
+        "<span>" + product.title + "</span>";
+      resultsGrid.appendChild(card);
+    });
+  };
 
-  popupOverlay.classList.remove("is-open");
-  popupOverlay.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("search-popup-open");
-};
+  const fetchPredictiveSearch = async (query) => {
+    if (!query || query.length < 2) {
+      if (resultsSection) resultsSection.style.display = "none";
+      if (defaultsSection) defaultsSection.style.display = "";
+      return;
+    }
 
-const openSearchPopup = () => {
-  if (!popupOverlay) return;
+    try {
+      const res = await fetch(
+        "/search/suggest.json?q=" +
+          encodeURIComponent(query) +
+          "&resources[type]=product&resources[limit]=8"
+      );
+      if (!res.ok) return;
+      const data = await res.json();
+      const products =
+        data.resources && data.resources.results && data.resources.results.products
+          ? data.resources.results.products
+          : [];
 
-  popupOverlay.classList.add("is-open");
-  popupOverlay.setAttribute("aria-hidden", "false");
-  document.body.classList.add("search-popup-open");
+      renderResults(products);
+      if (resultsSection) resultsSection.style.display = "";
+      if (defaultsSection) defaultsSection.style.display = "none";
+    } catch (err) {
+      console.error("Predictive search error:", err);
+    }
+  };
 
   if (popupInput) {
-    popupInput.focus();
-  }
-};
- 
-const bindPopupInteractions = () => {
-  if (!popupOverlay) return;
-
-  popupOverlay.addEventListener("click", (event) => {
-    if (event.target === popupOverlay) {
-      closeSearchPopup();
-    }
-  });
-
-  popupOverlay
-    .querySelectorAll("[data-search-close]")
-    .forEach((closeButton) =>
-      closeButton.addEventListener("click", closeSearchPopup),
-    );
-
-  popupOverlay
-    .querySelectorAll(".search-popup-tag")
-    .forEach((tagButton) =>
-      tagButton.addEventListener("click", () => {
-        if (popupInput) {
-          popupInput.value = tagButton.textContent.trim();
-          popupInput.focus();
-        }
-      }),
-    );
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && popupOverlay.classList.contains("is-open")) {
-      closeSearchPopup();
-    }
-  });
-};
-
-const initSearchPopup = async () => {
-  if (popupInitialized) return;
-
-  ensureSearchStyles();
-  await injectSearchTemplate();
-  bindPopupInteractions();
-  popupInitialized = true;
-};
-
-const setupSearchTriggers = () => {
-  const triggers = document.querySelectorAll(".search-icon");
-  if (!triggers.length) return;
-
-  triggers.forEach((trigger) => {
-    trigger.style.cursor = "pointer";
-    trigger.addEventListener("click", async (event) => {
-      event.preventDefault();
-      try {
-        await initSearchPopup();
-        openSearchPopup();
-      } catch (error) {
-        console.error("Search popup failed to initialize:", error);
+    popupInput.addEventListener("input", () => {
+      clearTimeout(debounceTimer);
+      const q = popupInput.value.trim();
+      if (q.length < 2) {
+        if (resultsSection) resultsSection.style.display = "none";
+        if (defaultsSection) defaultsSection.style.display = "";
+        return;
       }
+      debounceTimer = setTimeout(() => fetchPredictiveSearch(q), 300);
+    });
+  }
+
+  document.querySelectorAll(".search-icon, #search-open-icon").forEach((trigger) => {
+    trigger.style.cursor = "pointer";
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      openSearchPopup();
     });
   });
-};
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", setupSearchTriggers);
-} else {
-  setupSearchTriggers();
-}
+})();

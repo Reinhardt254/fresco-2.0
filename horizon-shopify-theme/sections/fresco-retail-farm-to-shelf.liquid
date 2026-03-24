@@ -1,0 +1,78 @@
+<section
+  class="retail-section retail-section-alt retail-section-fullwidth retail-section-image-right"
+  id="farm-to-shelf"
+  {{ section.shopify_attributes }}
+>
+  <div class="retail-section-inner retail-section-fullwidth-inner retail-section-reverse">
+    <div class="retail-section-media">
+      <div class="retail-media-shape">
+        <img
+          src="{% if section.settings.image != blank %}{{ section.settings.image | image_url: width: 1400 }}{% else %}{{ section.settings.image_url_fallback }}{% endif %}"
+          alt="{{ section.settings.image_alt | escape }}"
+          width="1400"
+          height="1000"
+        >
+      </div>
+    </div>
+    <div class="retail-section-content">
+      <h2 class="retail-section-heading">
+        {{ section.settings.heading }}
+      </h2>
+      <div class="retail-section-text">
+        <p>
+          {{ section.settings.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Retail Farm Shelf",
+  "tag": "section",
+  "class": "section-fresco-retail-farm-shelf",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Single-Source Control"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Fresco Flavors operates on a single-source supply model, overseeing cultivation, harvesting, freeze-drying, and packaging. This vertical integration ensures quality consistency, full production oversight, and a dependable supply chain from farm to shelf."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Section image"
+    },
+    {
+      "type": "text",
+      "id": "image_url_fallback",
+      "label": "Section image URL fallback",
+      "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A5318-scaled.jpg"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "Farm to shelf supply chain"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Retail Farm Shelf",
+      "settings": {
+        "heading": "Single-Source Control",
+        "description": "Fresco Flavors operates on a single-source supply model, overseeing cultivation, harvesting, freeze-drying, and packaging. This vertical integration ensures quality consistency, full production oversight, and a dependable supply chain from farm to shelf.",
+        "image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A5318-scaled.jpg",
+        "image_alt": "Farm to shelf supply chain"
+      }
+    }
+  ]
+}
+{% endschema %}

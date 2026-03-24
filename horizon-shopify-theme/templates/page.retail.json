@@ -1,0 +1,123 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "fresco_retail_hero_v4Km8Q": {
+      "type": "fresco-retail-hero",
+      "name": "Fresco Retail Hero",
+      "settings": {
+        "hero_image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/african-young-couple-with-shopping-trolley-shoppin-2026-01-07-00-04-03-utc-scaled.jpg",
+        "title_prefix": "Vertically Integrated",
+        "title_highlight": "Organic Herbs",
+        "title_suffix": "You Can Rely On.",
+        "tagline": "Premium organic herbs for US supermarkets",
+        "button_label": "Contact Us",
+        "button_link": "shopify://pages/contact"
+      }
+    },
+    "fresco_retail_overview_m9Qp2A": {
+      "type": "fresco-retail-overview",
+      "name": "Fresco Retail Overview",
+      "settings": {
+        "heading": "Reliable Quality, Consistent Supply",
+        "description": "Our vertically integrated system minimizes supply disruptions and ensures dependable availability. Fresco Flavors delivers premium organic herbs with consistent quality, helping retailers maintain reliable shelf presence and meet customer demand.",
+        "image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A1028-scaled.jpg",
+        "image_alt": "Vertically integrated organic herb production"
+      }
+    },
+    "fresco_retail_farm_shelf_f7Rm3X": {
+      "type": "fresco-retail-farm-to-shelf",
+      "name": "Fresco Retail Farm Shelf",
+      "settings": {
+        "heading": "Single-Source Control",
+        "description": "Fresco Flavors operates on a single-source supply model, overseeing cultivation, harvesting, freeze-drying, and packaging. This vertical integration ensures quality consistency, full production oversight, and a dependable supply chain from farm to shelf.",
+        "image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A5318-scaled.jpg",
+        "image_alt": "Farm to shelf supply chain"
+      }
+    },
+    "fresco_retail_traceability_u2Pn6D": {
+      "type": "fresco-retail-traceability",
+      "name": "Fresco Retail Traceability",
+      "settings": {
+        "heading": "Food Safety & Full Traceability",
+        "description": "Our operations follow internationally recognized food safety standards and meet U.S. regulatory expectations, including FDA guidelines. Every pack is batch-coded and fully traceable from harvest date to processing providing accountability and retailer confidence.",
+        "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4403.jpg",
+        "image_alt": "Vertically integrated organic herb production"
+      }
+    },
+    "fresco_retail_efficiency_a8Dz1M": {
+      "type": "fresco-retail-efficiency",
+      "blocks": {
+        "efficiency_step_1": {
+          "type": "efficiency_step",
+          "settings": {
+            "layout": "image_top",
+            "step_number": "01",
+            "title": "Longer Shelf Life",
+            "description": "Extended shelf stability helps retailers reduce spoilage, lower shrink, and maintain consistent quality.",
+            "image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-28-at-16.00.37-e1764335434457.jpeg",
+            "image_alt": "Freeze-dried herbs with extended shelf life"
+          }
+        },
+        "efficiency_step_2": {
+          "type": "efficiency_step",
+          "settings": {
+            "layout": "text_top",
+            "step_number": "02",
+            "title": "Ready to Use",
+            "description": "Lightweight freeze-dried herbs in smart, convenient packs designed for effortless cooking and everyday versatility.",
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A2210.jpg",
+            "image_alt": "Ready-to-use herb formats"
+          }
+        },
+        "efficiency_step_3": {
+          "type": "efficiency_step",
+          "settings": {
+            "layout": "image_top",
+            "step_number": "03",
+            "title": "Year-Round Availability",
+            "description": "All-year availability eliminates seasonal shortfalls and concerns on stock outs.",
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4532-scaled.jpg",
+            "image_alt": "Year-round supply chain"
+          }
+        }
+      },
+      "block_order": [
+        "efficiency_step_1",
+        "efficiency_step_2",
+        "efficiency_step_3"
+      ],
+      "name": "Fresco Retail Efficiency",
+      "settings": {
+        "heading": "Operational Efficiency",
+        "lead_text": "Partnering with Fresco Flavors means optimizing your operations and mitigating common retail challenges."
+      }
+    },
+    "fresco_cta_tN9cWh": {
+      "type": "fresco-cta",
+      "name": "Fresco CTA",
+      "settings": {
+        "cta_bg_image_url_fallback": "https://plantechkenya.com/wp-content/uploads/2026/02/copy-space-greens-condimentsrtger-1.jpg",
+        "cta_heading": "Ready to Elevate Your Kitchen?",
+        "cta_description": "Experience the full, natural taste of Fresco herbs.",
+        "cta_button_label": "Explore our collection",
+        "cta_button_link": "shopify://collections/all"
+      }
+    }
+  },
+  "order": [
+    "fresco_retail_hero_v4Km8Q",
+    "fresco_retail_overview_m9Qp2A",
+    "fresco_retail_farm_shelf_f7Rm3X",
+    "fresco_retail_traceability_u2Pn6D",
+    "fresco_retail_efficiency_a8Dz1M",
+    "fresco_cta_tN9cWh"
+  ]
+}

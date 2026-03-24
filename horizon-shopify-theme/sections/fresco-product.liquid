@@ -1,0 +1,763 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign product_form_id = 'fresco-product-form-' | append: section.id -%}
+
+<main class="product-details-main">
+  <section class="product-details-section">
+    <div class="product-details-container container">
+      <div class="product-details-grid">
+
+        <div class="product-details-gallery">
+          <div class="product-details-main-image-container">
+            <div class="product-details-main-image-wrap">
+              {%- if product.featured_media != blank -%}
+                <img
+                  src="{{ product.featured_media | image_url: width: 800 }}"
+                  alt="{{ product.featured_media.alt | escape }}"
+                  class="product-details-main-image"
+                  id="product-main-image"
+                  width="800"
+                  height="800"
+                />
+              {%- else -%}
+                {{ 'product-1' | placeholder_svg_tag: 'product-details-main-image' }}
+              {%- endif -%}
+            </div>
+
+            {%- if product.media.size > 1 -%}
+              <div class="product-details-thumbnails-wrap">
+                <div class="swiper product-details-thumbnails-swiper">
+                  <div class="swiper-wrapper">
+                    {%- for media in product.media -%}
+                      {%- if media.media_type == 'image' -%}
+                        <div class="swiper-slide product-details-thumb-slide">
+                          <div class="product-details-thumb-frame">
+                            <img
+                              src="{{ media | image_url: width: 200 }}"
+                              alt="{{ media.alt | escape }}"
+                              class="product-details-thumb-img"
+                              data-main-src="{{ media | image_url: width: 800 }}"
+                              loading="lazy"
+                              width="200"
+                              height="200"
+                            />
+                          </div>
+                        </div>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                </div>
+
+                <div class="swiper-button-next product-details-thumb-next">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="swiper-button-prev product-details-thumb-prev">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </div>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div class="product-details-info">
+          <div class="product-details-title-row">
+            <h1 class="product-details-title">{{ product.title }}</h1>
+            {%- if current_variant.available -%}
+              <span class="product-details-stock-pill">In Stock</span>
+            {%- else -%}
+              <span class="product-details-stock-pill" style="background-color:#fde8e8;color:#c62828;">Sold Out</span>
+            {%- endif -%}
+          </div>
+
+          <div class="product-details-rating">
+            <div class="product-details-stars" aria-hidden="true">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <span class="product-details-review-count">{{ section.settings.rating_text }}</span>
+          </div>
+
+          <div class="product-details-price-row">
+            <span class="product-details-price-current" data-product-price>
+              {{ current_variant.price | money }}
+            </span>
+            {%- if current_variant.compare_at_price > current_variant.price -%}
+              <span class="product-details-price-old" data-compare-price>
+                {{ current_variant.compare_at_price | money }}
+              </span>
+            {%- endif -%}
+          </div>
+
+          <p class="product-details-desc">{{ product.description | strip_html | truncate: 300 }}</p>
+
+          {%- if product.has_only_default_variant == false -%}
+            {%- for option in product.options_with_values -%}
+              <div class="product-details-size">
+                <div class="product-details-size-header">
+                  <span class="product-details-size-label">{{ option.name }}</span>
+                </div>
+                <div
+                  class="product-details-size-options"
+                  role="radiogroup"
+                  aria-label="Select {{ option.name }}"
+                  data-option-index="{{ option.position }}"
+                >
+                  {%- for value in option.values -%}
+                    <button
+                      type="button"
+                      class="product-details-size-option{% if option.selected_value == value %} is-active{% endif %}"
+                      aria-pressed="{% if option.selected_value == value %}true{% else %}false{% endif %}"
+                      data-option-value="{{ value | escape }}"
+                    >
+                      {{ value }}
+                    </button>
+                  {%- endfor -%}
+                </div>
+              </div>
+            {%- endfor -%}
+          {%- endif -%}
+
+          <div class="product-details-actions">
+            <div class="product-details-quantity">
+              <button
+                type="button"
+                class="product-details-qty-btn product-details-qty-minus"
+                aria-label="Decrease quantity"
+              >−</button>
+              <input
+                type="number"
+                class="product-details-qty-input"
+                id="fresco-qty-input"
+                value="1"
+                min="1"
+                max="99"
+                aria-label="Quantity"
+              />
+              <button
+                type="button"
+                class="product-details-qty-btn product-details-qty-plus"
+                aria-label="Increase quantity"
+              >+</button>
+            </div>
+
+            {%- form 'product', product, id: product_form_id, novalidate: 'novalidate' -%}
+              <input type="hidden" name="id" id="fresco-variant-id" value="{{ current_variant.id }}" />
+              <input type="hidden" name="quantity" id="fresco-form-qty" value="1" />
+              <button
+                type="submit"
+                class="product-details-add-to-cart"
+                {% unless current_variant.available %}disabled{% endunless %}
+              >
+                {%- if current_variant.available -%}Add To Cart{%- else -%}Sold Out{%- endif -%}
+              </button>
+            {%- endform -%}
+
+            <button
+              type="button"
+              class="product-details-buy-now"
+              id="fresco-buy-now"
+              {% unless current_variant.available %}disabled{% endunless %}
+            >
+              Buy Now
+            </button>
+          </div>
+
+          <section class="promo" aria-label="Product benefits">
+            <div class="promo-card">
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'benefit' -%}
+                  <div class="promo-item" {{ block.shopify_attributes }}>
+                    <div class="promo-icon">
+                      <i class="{{ block.settings.icon_class }}" aria-hidden="true"></i>
+                    </div>
+                    <div class="promo-text">
+                      <h3>{{ block.settings.title }}</h3>
+                      <p>{{ block.settings.description }}</p>
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </section>
+
+          <div class="product-details-actions--two" aria-label="Product actions">
+            <button type="button" class="product-details-action" aria-label="Chat about this product">
+              <i class="fa-regular fa-comment-dots" aria-hidden="true"></i>
+              <span>Chat</span>
+            </button>
+            <button type="button" class="product-details-action" aria-label="Add to wishlist">
+              <i class="fa-regular fa-heart" aria-hidden="true"></i>
+              <span>Wishlist</span>
+            </button>
+            <button type="button" class="product-details-action" aria-label="Share this product" id="fresco-share-btn">
+              <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+              <span>Share</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="product-details-tabs-section">
+    <div class="product-details-container">
+      <div class="product-details-tabs-nav" role="tablist">
+        <button
+          type="button"
+          class="product-details-tab-btn is-active"
+          role="tab"
+          aria-selected="true"
+          aria-controls="tab-description"
+          id="tab-btn-description"
+        >Description</button>
+        <button
+          type="button"
+          class="product-details-tab-btn"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tab-additional"
+          id="tab-btn-additional"
+        >Additional Information</button>
+        <button
+          type="button"
+          class="product-details-tab-btn"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tab-reviews"
+          id="tab-btn-reviews"
+        >Reviews</button>
+      </div>
+      <div class="product-details-tabs-underline"></div>
+
+      <div
+        id="tab-description"
+        class="product-details-tab-panel is-visible"
+        role="tabpanel"
+        aria-labelledby="tab-btn-description"
+      >
+        <div class="product-details-tab-content">
+          {{ product.description }}
+        </div>
+      </div>
+
+      <div
+        id="tab-additional"
+        class="product-details-tab-panel"
+        role="tabpanel"
+        aria-labelledby="tab-btn-additional"
+        hidden
+      >
+        {%- if product.metafields.custom.additional_info != blank -%}
+          <div class="product-details-tab-content">
+            {{ product.metafields.custom.additional_info | metafield_tag }}
+          </div>
+        {%- else -%}
+          <h3 class="product-details-info-heading">Nutritional Information</h3>
+          <dl class="product-details-info-list">
+            <div class="product-details-info-row">
+              <dt class="product-details-info-label">Item Code</dt>
+              <dd class="product-details-info-value">0712.90.90</dd>
+            </div>
+            <div class="product-details-info-row">
+              <dt class="product-details-info-label">Package Size</dt>
+              <dd class="product-details-info-value">6/5 oz</dd>
+            </div>
+            <div class="product-details-info-row">
+              <dt class="product-details-info-label">Servings Per Container</dt>
+              <dd class="product-details-info-value">44 g</dd>
+            </div>
+            <div class="product-details-info-row">
+              <dt class="product-details-info-label">Serving Size</dt>
+              <dd class="product-details-info-value">1 1/2 tbsp (4.5 g)</dd>
+            </div>
+            <div class="product-details-info-row">
+              <dt class="product-details-info-label">Calories</dt>
+              <dd class="product-details-info-value">0 g (0% DV)</dd>
+            </div>
+            <div class="product-details-info-row space-left">
+              <dt class="product-details-info-label">Fat Calories</dt>
+              <dd class="product-details-info-value">0 g (0% DV)</dd>
+            </div>
+            <div class="product-details-info-row">
+              <dt class="product-details-info-label">Total Fat</dt>
+              <dd class="product-details-info-value">0 g (0% DV)</dd>
+            </div>
+            <div class="product-details-info-row space-left">
+              <dt class="product-details-info-label">Saturated Fat</dt>
+              <dd class="product-details-info-value">0 g (0% DV)</dd>
+            </div>
+            <div class="product-details-info-row space-left">
+              <dt class="product-details-info-label">Trans Fat</dt>
+              <dd class="product-details-info-value">0 g</dd>
+            </div>
+            <div class="product-details-info-row">
+              <dt class="product-details-info-label">Cholesterol</dt>
+              <dd class="product-details-info-value">0 mg (0% DV)</dd>
+            </div>
+            <div class="product-details-info-row">
+              <dt class="product-details-info-label">Sodium</dt>
+              <dd class="product-details-info-value">0 mg (0% DV)</dd>
+            </div>
+            <div class="product-details-info-row">
+              <dt class="product-details-info-label">Total Carbohydrate</dt>
+              <dd class="product-details-info-value">0 g (0% DV)</dd>
+            </div>
+            <div class="product-details-info-row space-left">
+              <dt class="product-details-info-label">Fiber</dt>
+              <dd class="product-details-info-value">0 g (0% DV)</dd>
+            </div>
+            <div class="product-details-info-row space-left">
+              <dt class="product-details-info-label">Sugar</dt>
+              <dd class="product-details-info-value">0 g</dd>
+            </div>
+            <div class="product-details-info-row">
+              <dt class="product-details-info-label">Protein</dt>
+              <dd class="product-details-info-value">0 g</dd>
+            </div>
+          </dl>
+        {%- endif -%}
+      </div>
+
+      <div
+        id="tab-reviews"
+        class="product-details-tab-panel"
+        role="tabpanel"
+        aria-labelledby="tab-btn-reviews"
+        hidden
+      >
+        <p class="product-details-tab-content">No reviews yet.</p>
+      </div>
+    </div>
+  </section>
+
+  {%- assign rec_collection = collections[section.settings.related_collection] -%}
+  {%- if rec_collection != blank and rec_collection.products_count > 0 -%}
+    <section class="related-products-section">
+      <div class="product-details-container">
+        <div class="cart-recommended-inner">
+          <div class="cart-recommended-header">
+            <h2 class="cart-recommended-title">
+              {{ section.settings.related_title_prefix }} <span class="highlight">{{ section.settings.related_title_highlight }}</span>
+            </h2>
+            <p class="cart-recommended-subtitle">{{ section.settings.related_subtitle }}</p>
+          </div>
+          <div class="cart-recommended-carousel swiper related-products-swiper">
+            <div class="cart-recommended-track swiper-wrapper">
+              {%- for rec_product in rec_collection.products limit: section.settings.related_max -%}
+                {%- if rec_product.id != product.id -%}
+                  <div class="swiper-slide">
+                    <div class="product-card">
+                      <a href="{{ rec_product.url }}" class="product-card__link">
+                        <div class="product-image">
+                          {%- if rec_product.featured_image != blank -%}
+                            <img
+                              class="product-card__image"
+                              src="{{ rec_product.featured_image | image_url: width: 400 }}"
+                              alt="{{ rec_product.featured_image.alt | escape }}"
+                              loading="lazy"
+                              width="400"
+                              height="400"
+                            />
+                          {%- else -%}
+                            {{ 'product-1' | placeholder_svg_tag }}
+                          {%- endif -%}
+                        </div>
+                        <h3 class="product-name">
+                          <span>{{ rec_product.title }}</span>
+                        </h3>
+                      </a>
+                      <div class="product-price">
+                        <span class="current-price">{{ rec_product.price | money }}</span>
+                        {%- if rec_product.compare_at_price > rec_product.price -%}
+                          <span class="original-price">{{ rec_product.compare_at_price | money }}</span>
+                        {%- endif -%}
+                      </div>
+                      <button
+                        type="button"
+                        class="product-card-add"
+                        data-variant-id="{{ rec_product.selected_or_first_available_variant.id }}"
+                      >Add to cart</button>
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+
+            <div class="cart-recommended-nav">
+              <button type="button" class="cart-recommended-btn related-products-prev" aria-label="Previous products">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="cart-recommended-btn related-products-next" aria-label="Next products">
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+</main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    /* ── Variant JSON ── */
+    var productVariants = {{ product.variants | json }};
+    var productOptions = {{ product.options_with_values | json }};
+    var selectedOptions = {};
+
+    productOptions.forEach(function (opt) {
+      selectedOptions[opt.position] = opt.selected_value;
+    });
+
+    function findVariant() {
+      return productVariants.find(function (v) {
+        return v.options.every(function (val, i) {
+          return val === selectedOptions[i + 1];
+        });
+      });
+    }
+
+    function formatMoney(cents) {
+      return '$' + (cents / 100).toFixed(2);
+    }
+
+    function updateVariant(variant) {
+      var variantInput = document.getElementById('fresco-variant-id');
+      var priceEl = document.querySelector('[data-product-price]');
+      var compareEl = document.querySelector('[data-compare-price]');
+      var addBtn = document.querySelector('.product-details-add-to-cart');
+      var buyBtn = document.getElementById('fresco-buy-now');
+      var stockPill = document.querySelector('.product-details-stock-pill');
+
+      if (!variant) return;
+
+      if (variantInput) variantInput.value = variant.id;
+
+      if (priceEl) priceEl.textContent = formatMoney(variant.price);
+
+      if (compareEl) {
+        if (variant.compare_at_price && variant.compare_at_price > variant.price) {
+          compareEl.textContent = formatMoney(variant.compare_at_price);
+          compareEl.style.display = '';
+        } else {
+          compareEl.style.display = 'none';
+        }
+      }
+
+      if (addBtn) {
+        addBtn.disabled = !variant.available;
+        addBtn.textContent = variant.available ? 'Add To Cart' : 'Sold Out';
+      }
+      if (buyBtn) buyBtn.disabled = !variant.available;
+
+      if (stockPill) {
+        if (variant.available) {
+          stockPill.textContent = 'In Stock';
+          stockPill.style.backgroundColor = '#e6f6ea';
+          stockPill.style.color = '#2e7d32';
+        } else {
+          stockPill.textContent = 'Sold Out';
+          stockPill.style.backgroundColor = '#fde8e8';
+          stockPill.style.color = '#c62828';
+        }
+      }
+
+      if (variant.featured_image) {
+        var mainImg = document.getElementById('product-main-image');
+        if (mainImg) mainImg.src = variant.featured_image.src.replace(/(\.[^.]+)$/, '_800x$1');
+      }
+
+      var url = new URL(window.location);
+      url.searchParams.set('variant', variant.id);
+      window.history.replaceState({}, '', url.toString());
+    }
+
+    /* ── Option buttons ── */
+    document.querySelectorAll('.product-details-size-options').forEach(function (group) {
+      group.querySelectorAll('.product-details-size-option').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          group.querySelectorAll('.product-details-size-option').forEach(function (b) {
+            b.classList.remove('is-active');
+            b.setAttribute('aria-pressed', 'false');
+          });
+          btn.classList.add('is-active');
+          btn.setAttribute('aria-pressed', 'true');
+
+          var pos = parseInt(group.getAttribute('data-option-index'), 10);
+          selectedOptions[pos] = btn.getAttribute('data-option-value');
+
+          var variant = findVariant();
+          if (variant) updateVariant(variant);
+        });
+      });
+    });
+
+    /* ── Thumbnail Swiper ── */
+    if (document.querySelector('.product-details-thumbnails-swiper')) {
+      new Swiper('.product-details-thumbnails-swiper', {
+        slidesPerView: 3,
+        spaceBetween: 16,
+        freeMode: true,
+        loop: true,
+        watchSlidesProgress: true,
+        navigation: {
+          nextEl: '.product-details-thumb-next',
+          prevEl: '.product-details-thumb-prev'
+        },
+        breakpoints: {
+          320: { slidesPerView: 2, spaceBetween: 12 },
+          640: { slidesPerView: 3, spaceBetween: 16 },
+          1024: { slidesPerView: 3, spaceBetween: 20 }
+        }
+      });
+    }
+
+    /* ── Thumbnail click → main image ── */
+    document.querySelectorAll('.product-details-thumb-img').forEach(function (img) {
+      img.addEventListener('click', function () {
+        var mainSrc = this.getAttribute('data-main-src');
+        if (mainSrc) {
+          document.getElementById('product-main-image').src = mainSrc;
+        }
+      });
+    });
+
+    /* ── Quantity +/- ── */
+    var qtyInput = document.getElementById('fresco-qty-input');
+    var formQty = document.getElementById('fresco-form-qty');
+    var qtyMinus = document.querySelector('.product-details-qty-minus');
+    var qtyPlus = document.querySelector('.product-details-qty-plus');
+
+    function syncQty() {
+      if (formQty && qtyInput) formQty.value = qtyInput.value;
+    }
+
+    if (qtyInput && qtyMinus) {
+      qtyMinus.addEventListener('click', function () {
+        var v = parseInt(qtyInput.value, 10) || 1;
+        if (v > 1) { qtyInput.value = v - 1; syncQty(); }
+      });
+    }
+    if (qtyInput && qtyPlus) {
+      qtyPlus.addEventListener('click', function () {
+        var v = parseInt(qtyInput.value, 10) || 0;
+        if (v < 99) { qtyInput.value = v + 1; syncQty(); }
+      });
+    }
+    if (qtyInput) {
+      qtyInput.addEventListener('change', syncQty);
+    }
+
+    /* ── Tabs ── */
+    var tabBtns = document.querySelectorAll('.product-details-tab-btn');
+    var tabPanels = document.querySelectorAll('.product-details-tab-panel');
+    tabBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var targetId = this.getAttribute('aria-controls');
+        tabBtns.forEach(function (b) {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        this.classList.add('is-active');
+        this.setAttribute('aria-selected', 'true');
+        tabPanels.forEach(function (panel) {
+          if (panel.id === targetId) {
+            panel.classList.add('is-visible');
+            panel.removeAttribute('hidden');
+          } else {
+            panel.classList.remove('is-visible');
+            panel.setAttribute('hidden', '');
+          }
+        });
+      });
+    });
+
+    /* ── Related Products Swiper ── */
+    if (document.querySelector('.related-products-swiper')) {
+      new Swiper('.related-products-swiper', {
+        slidesPerView: 3,
+        spaceBetween: 24,
+        loop: true,
+        navigation: {
+          nextEl: '.related-products-next',
+          prevEl: '.related-products-prev'
+        },
+        breakpoints: {
+          320: { slidesPerView: 1, spaceBetween: 16 },
+          640: { slidesPerView: 2, spaceBetween: 20 },
+          900: { slidesPerView: 4, spaceBetween: 24 }
+        }
+      });
+    }
+
+    /* ── Buy Now ── */
+    var buyNowBtn = document.getElementById('fresco-buy-now');
+    if (buyNowBtn) {
+      buyNowBtn.addEventListener('click', function () {
+        var variantId = document.getElementById('fresco-variant-id').value;
+        var qty = document.getElementById('fresco-qty-input').value || 1;
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ items: [{ id: parseInt(variantId, 10), quantity: parseInt(qty, 10) }] })
+        }).then(function () {
+          window.location.href = '/checkout';
+        });
+      });
+    }
+
+    /* ── Related product quick-add ── */
+    document.querySelectorAll('.product-card-add').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var vid = this.getAttribute('data-variant-id');
+        if (!vid) return;
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ items: [{ id: parseInt(vid, 10), quantity: 1 }] })
+        }).then(function () {
+          btn.textContent = 'Added!';
+          setTimeout(function () { btn.textContent = 'Add to cart'; }, 1500);
+        });
+      });
+    });
+
+    /* ── Share ── */
+    var shareBtn = document.getElementById('fresco-share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', function () {
+        if (navigator.share) {
+          navigator.share({ title: document.title, url: window.location.href });
+        } else {
+          navigator.clipboard.writeText(window.location.href).then(function () {
+            alert('Link copied to clipboard!');
+          });
+        }
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Fresco Product",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Rating"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating text",
+      "default": "4.8 (245 Reviews)"
+    },
+    {
+      "type": "header",
+      "content": "Related Products"
+    },
+    {
+      "type": "collection",
+      "id": "related_collection",
+      "label": "Related products collection"
+    },
+    {
+      "type": "range",
+      "id": "related_max",
+      "label": "Max related products",
+      "min": 4,
+      "max": 16,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "text",
+      "id": "related_title_prefix",
+      "label": "Related title prefix",
+      "default": "Related"
+    },
+    {
+      "type": "text",
+      "id": "related_title_highlight",
+      "label": "Related title highlight",
+      "default": "Products"
+    },
+    {
+      "type": "text",
+      "id": "related_subtitle",
+      "label": "Related subtitle",
+      "default": "Discover more freeze-dried favorites to pair with this product."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon_class",
+          "label": "Icon class",
+          "default": "fa-solid fa-leaf"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "100% Organic"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Pure, naturally grown herbs."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Product",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon_class": "fa-solid fa-leaf",
+            "title": "100% Organic",
+            "description": "Pure, naturally grown herbs."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon_class": "fa-regular fa-clock",
+            "title": "Long Shelf Life",
+            "description": "Stays fresh for months."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon_class": "fa-solid fa-ban",
+            "title": "Preservative Free",
+            "description": "No artificial preservatives added."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon_class": "fa-solid fa-bolt",
+            "title": "Easy to Use",
+            "description": "Ready to sprinkle anytime."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

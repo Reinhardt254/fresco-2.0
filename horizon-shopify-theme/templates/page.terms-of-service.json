@@ -1,0 +1,55 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "fresco_policy_layout_terms_t7Qm5P": {
+      "type": "fresco-policy-layout",
+      "name": "Fresco Policy Layout",
+      "blocks": {
+        "toc_acceptance": { "type": "toc_item", "settings": { "label": "Acceptance", "anchor": "acceptance" } },
+        "toc_use": { "type": "toc_item", "settings": { "label": "Use of our service", "anchor": "use" } },
+        "toc_accounts": { "type": "toc_item", "settings": { "label": "Accounts", "anchor": "accounts" } },
+        "toc_orders": { "type": "toc_item", "settings": { "label": "Orders & payment", "anchor": "orders" } },
+        "toc_intellectual": { "type": "toc_item", "settings": { "label": "Intellectual property", "anchor": "intellectual" } },
+        "toc_prohibited": { "type": "toc_item", "settings": { "label": "Prohibited conduct", "anchor": "prohibited" } },
+        "toc_disclaimer": { "type": "toc_item", "settings": { "label": "Disclaimer", "anchor": "disclaimer" } },
+        "toc_liability": { "type": "toc_item", "settings": { "label": "Limitation of liability", "anchor": "liability" } },
+        "toc_indemnity": { "type": "toc_item", "settings": { "label": "Indemnity", "anchor": "indemnity" } },
+        "toc_changes": { "type": "toc_item", "settings": { "label": "Changes", "anchor": "changes" } },
+        "toc_governing": { "type": "toc_item", "settings": { "label": "Governing law", "anchor": "governing" } },
+        "toc_contact": { "type": "toc_item", "settings": { "label": "Contact", "anchor": "contact" } }
+      },
+      "block_order": [
+        "toc_acceptance",
+        "toc_use",
+        "toc_accounts",
+        "toc_orders",
+        "toc_intellectual",
+        "toc_prohibited",
+        "toc_disclaimer",
+        "toc_liability",
+        "toc_indemnity",
+        "toc_changes",
+        "toc_governing",
+        "toc_contact"
+      ],
+      "settings": {
+        "eyebrow": "Legal",
+        "title_prefix": "Terms of",
+        "title_highlight": "Service",
+        "subtitle": "These terms govern your use of the Fresco Flavors website and services. By using our site or placing an order, you agree to these terms.",
+        "meta_label": "Last updated:",
+        "meta_value": "March 6, 2026",
+        "toc_title": "On this page"
+      }
+    }
+  },
+  "order": ["fresco_policy_layout_terms_t7Qm5P"]
+}

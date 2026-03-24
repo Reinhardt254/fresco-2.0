@@ -1,21 +1,28 @@
 {%- comment -%}
-  Fresco-style header. Uses site-header, menu-toggle, mobile-menu-overlay structure
-  expected by assets/fresco/styles/global.css and assets/fresco/scripts/global.js.
-  Menu is read from _header-menu block if present, else section.settings.menu.
+  Fresco-style header. Navigation is editor-driven via section settings + blocks.
 {%- endcomment -%}
 
 {% liquid
-  assign menu = blank
-  if section.settings.menu != blank
-    assign menu = linklists[section.settings.menu]
-  endif
-  if menu == blank
-    assign menu = linklists['main-menu']
-  endif
-
   assign search_style = 'none'
   if section.settings.show_search
     assign search_style = 'modal'
+  endif
+
+  assign home_url = section.settings.home_url
+  if home_url == blank
+    assign home_url = routes.root_url
+  endif
+  assign explore_url = section.settings.explore_url
+  if explore_url == blank
+    assign explore_url = '/pages/about'
+  endif
+  assign contact_url = section.settings.contact_url
+  if contact_url == blank
+    assign contact_url = '/pages/contact'
+  endif
+  assign shop_url = section.settings.shop_url
+  if shop_url == blank
+    assign shop_url = routes.all_products_collection_url
   endif
 %}
 
@@ -33,47 +40,59 @@
 
 <header class="site-header" id="header-component">
   <div class="container">
-    {%- if menu != blank -%}
-      <div class="menu-toggle-container">
-        <button
-          class="menu-toggle"
-          aria-label="{{ 'accessibility.menu' | t }}"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-        >
-          <span class="visually-hidden">{{ 'accessibility.menu' | t }}</span>
-          <span class="menu-toggle__bar"></span>
-        </button>
-      </div>
-    {%- endif -%}
+    <div class="menu-toggle-container">
+      <button
+        class="menu-toggle"
+        aria-label="{{ 'accessibility.menu' | t }}"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span class="visually-hidden">{{ 'accessibility.menu' | t }}</span>
+        <span class="menu-toggle__bar"></span>
+      </button>
+    </div>
 
     {%- comment -%} Desktop left nav {%- endcomment -%}
     <div class="nav left-nav desktop-nav">
       <div class="nav-links">
-        {%- if menu != blank -%}
-          {%- for link in menu.links -%}
-            {%- if link.links != blank -%}
-              <div class="nav-dropdown">
-                <a href="{{ link.url }}" class="nav-dropdown-trigger{% if link.active %} active{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
-                  {{ link.title | escape }}
-                </a>
-                <div class="nav-dropdown-menu">
-                  <div class="nav-dropdown-menu-content">
-                    {%- for child_link in link.links -%}
-                      <a href="{{ child_link.url }}" class="dropdown-section" {% if child_link.current %}aria-current="page"{% endif %}>
-                        {{ child_link.title | escape }}
-                      </a>
-                    {%- endfor -%}
+        <a href="{{ home_url }}" class="{% if request.path == home_url %}active{% endif %}">
+          {{ section.settings.home_label | escape }}
+        </a>
+        <div class="nav-dropdown">
+          <a
+            href="{{ explore_url }}"
+            class="nav-dropdown-trigger{% if request.path contains explore_url %} active{% endif %}"
+            {% if request.path contains explore_url %}aria-current="page"{% endif %}
+          >
+            {{ section.settings.explore_label | escape }}
+          </a>
+          <div class="nav-dropdown-menu">
+            <div class="nav-dropdown-menu-content">
+              {%- for block in section.blocks -%}
+                <a href="{{ block.settings.url }}" class="dropdown-section" {{ block.shopify_attributes }}>
+                  <div class="dropdown-icon">
+                    {%- if block.settings.icon_image != blank -%}
+                      {{
+                        block.settings.icon_image
+                        | image_url: width: 200
+                        | image_tag:
+                          alt: block.settings.title,
+                          loading: 'lazy',
+                          widths: '60, 100, 140, 200'
+                      }}
+                    {%- else -%}
+                      {{ 'image' | placeholder_svg_tag }}
+                    {%- endif -%}
                   </div>
-                </div>
-              </div>
-            {%- else -%}
-              <a href="{{ link.url }}" class="{% if link.active %}active{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
-                {{ link.title | escape }}
-              </a>
-            {%- endif -%}
-          {%- endfor -%}
-        {%- endif -%}
+                  <h3 class="dropdown-title">{{ block.settings.title | escape }}</h3>
+                </a>
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+        <a href="{{ contact_url }}" class="{% if request.path == contact_url %}active{% endif %}">
+          {{ section.settings.contact_label | escape }}
+        </a>
       </div>
     </div>
 
@@ -112,7 +131,9 @@
     {%- comment -%} Desktop right nav + header actions {%- endcomment -%}
     <div class="nav right-nav desktop-nav">
       <div class="nav-links">
-        <a href="{{ routes.all_products_collection_url }}">Shop</a>
+        <a href="{{ shop_url }}" class="{% if request.path == shop_url %}active{% endif %}">
+          {{ section.settings.shop_label | escape }}
+        </a>
       </div>
       <div class="header-actions">
         {%- if search_style == 'modal' -%}
@@ -142,7 +163,7 @@
           {%- endif -%}
         </a>
 
-        <a href="{{ routes.all_products_collection_url }}" class="cta nav-shop-button">Shop</a>
+        <a href="{{ shop_url }}" class="cta nav-shop-button">{{ section.settings.shop_label | escape }}</a>
       </div>
     </div>
 
@@ -170,48 +191,48 @@
   </div>
 
   {%- comment -%} Mobile menu overlay - required by global.js {%- endcomment -%}
-  {%- if menu != blank -%}
-    <div class="mobile-menu-overlay" id="mobile-menu">
-      <div class="mobile-menu-content">
-        <div class="mobile-menu-header">
-          <a href="{{ routes.root_url }}" class="mobile-menu-logo">
-            {%- if settings.logo != blank -%}
-              {{ settings.logo | image_url: width: 150 | image_tag: alt: shop.name }}
-            {%- else -%}
-              <span>{{ shop.name }}</span>
-            {%- endif -%}
-          </a>
-          <button class="mobile-menu-close" aria-label="{{ 'accessibility.close_dialog' | t }}">
-            <i class="fa-solid fa-times"></i>
-          </button>
-        </div>
-        <nav class="mobile-nav-links" aria-label="{{ 'accessibility.header_navigation_label' | t }}">
-          {%- for link in menu.links -%}
-            {%- if link.links != blank -%}
-              <div class="mobile-nav-dropdown">
-                <a href="{{ link.url }}" class="mobile-nav-link mobile-dropdown-trigger" {% if link.current %}aria-current="page"{% endif %}>
-                  {{ link.title | escape }}
-                  <i class="fa-solid fa-chevron-down"></i>
-                </a>
-                <div class="mobile-dropdown-menu">
-                  {%- for child_link in link.links -%}
-                    <a href="{{ child_link.url }}" class="mobile-dropdown-link" {% if child_link.current %}aria-current="page"{% endif %}>
-                      {{ child_link.title | escape }}
-                    </a>
-                  {%- endfor -%}
-                </div>
-              </div>
-            {%- else -%}
-              <a href="{{ link.url }}" class="mobile-nav-link{% if link.active %} active{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
-                {{ link.title | escape }}
-              </a>
-            {%- endif -%}
-          {%- endfor -%}
-          <a href="{{ routes.all_products_collection_url }}" class="mobile-nav-link">Shop</a>
-        </nav>
+  <div class="mobile-menu-overlay" id="mobile-menu">
+    <div class="mobile-menu-content">
+      <div class="mobile-menu-header">
+        <a href="{{ routes.root_url }}" class="mobile-menu-logo">
+          {%- if settings.logo != blank -%}
+            {{ settings.logo | image_url: width: 150 | image_tag: alt: shop.name }}
+          {%- else -%}
+            <span>{{ shop.name }}</span>
+          {%- endif -%}
+        </a>
+        <button class="mobile-menu-close" aria-label="{{ 'accessibility.close_dialog' | t }}">
+          <i class="fa-solid fa-times"></i>
+        </button>
       </div>
+      <nav class="mobile-nav-links" aria-label="{{ 'accessibility.header_navigation_label' | t }}">
+        <a href="{{ home_url }}" class="mobile-nav-link{% if request.path == home_url %} active{% endif %}">
+          {{ section.settings.home_label | escape }}
+        </a>
+
+        <div class="mobile-nav-dropdown">
+          <a href="{{ explore_url }}" class="mobile-nav-link mobile-dropdown-trigger">
+            {{ section.settings.explore_label | escape }}
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <div class="mobile-dropdown-menu">
+            {%- for block in section.blocks -%}
+              <a href="{{ block.settings.url }}" class="mobile-dropdown-link" {{ block.shopify_attributes }}>
+                {{ block.settings.title | escape }}
+              </a>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <a href="{{ contact_url }}" class="mobile-nav-link{% if request.path == contact_url %} active{% endif %}">
+          {{ section.settings.contact_label | escape }}
+        </a>
+        <a href="{{ shop_url }}" class="mobile-nav-link{% if request.path == shop_url %} active{% endif %}">
+          {{ section.settings.shop_label | escape }}
+        </a>
+      </nav>
     </div>
-  {%- endif -%}
+  </div>
 </header>
 
 {% schema %}
@@ -221,10 +242,52 @@
   "class": "header-section",
   "settings": [
     {
-      "type": "link_list",
-      "id": "menu",
-      "label": "Menu",
-      "default": "main-menu"
+      "type": "text",
+      "id": "home_label",
+      "label": "Home label",
+      "default": "Home"
+    },
+    {
+      "type": "text",
+      "id": "home_url",
+      "label": "Home URL",
+      "default": "/"
+    },
+    {
+      "type": "text",
+      "id": "explore_label",
+      "label": "Explore label",
+      "default": "Explore"
+    },
+    {
+      "type": "text",
+      "id": "explore_url",
+      "label": "Explore URL",
+      "default": "/pages/about"
+    },
+    {
+      "type": "text",
+      "id": "contact_label",
+      "label": "Contact label",
+      "default": "Contact"
+    },
+    {
+      "type": "text",
+      "id": "contact_url",
+      "label": "Contact URL",
+      "default": "/pages/contact"
+    },
+    {
+      "type": "text",
+      "id": "shop_label",
+      "label": "Shop label",
+      "default": "Shop"
+    },
+    {
+      "type": "text",
+      "id": "shop_url",
+      "label": "Shop URL",
+      "default": "/collections/all"
     },
     {
       "type": "checkbox",
@@ -233,7 +296,31 @@
       "default": true
     }
   ],
-  "blocks": [],
+  "blocks": [
+    {
+      "type": "explore_item",
+      "name": "Explore item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Our Story"
+        },
+        {
+          "type": "text",
+          "id": "url",
+          "label": "URL (supports #anchors)",
+          "default": "/pages/about#our-story"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Icon image"
+        }
+      ]
+    }
+  ],
   "presets": []
 }
 {% endschema %}

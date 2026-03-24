@@ -1,0 +1,137 @@
+<section id="our-process" class="our-process" {{ section.shopify_attributes }}>
+  <div class="our-process-container">
+    <h2 class="our-process-title section-title">{{ section.settings.title }}</h2>
+    <div class="title-underline"></div>
+    <div class="process-container">
+      {% for block in section.blocks %}
+        {% if block.type == 'process_step' %}
+          <div class="process-item" {{ block.shopify_attributes }}>
+            <div class="process-item-icon-container">
+              <span class="process-step-num">{{ block.settings.step_number }}</span>
+              <img
+                src="{% if block.settings.icon != blank %}{{ block.settings.icon | image_url: width: 200 }}{% else %}{{ block.settings.icon_url_fallback }}{% endif %}"
+                alt="{{ block.settings.icon_alt | escape }}"
+                class="process-item-icon"
+                width="90"
+                height="90"
+              >
+            </div>
+            <h3 class="process-item-subhead">{{ block.settings.step_subhead }}</h3>
+            <p class="process-item-desc">{{ block.settings.step_description }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco About Process",
+  "tag": "section",
+  "class": "section-fresco-about-process",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "OUR PROCESS"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "process_step",
+      "name": "Process step",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "text",
+          "id": "step_number",
+          "label": "Step number",
+          "default": "1"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Step icon"
+        },
+        {
+          "type": "text",
+          "id": "icon_url_fallback",
+          "label": "Step icon URL fallback",
+          "default": "https://newvashaepz.com/wp-content/uploads/2026/02/sprout.png"
+        },
+        {
+          "type": "text",
+          "id": "icon_alt",
+          "label": "Icon alt text",
+          "default": "Process icon"
+        },
+        {
+          "type": "text",
+          "id": "step_subhead",
+          "label": "Step subhead",
+          "default": "Step 01"
+        },
+        {
+          "type": "text",
+          "id": "step_description",
+          "label": "Step description",
+          "default": "Planting"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco About Process",
+      "blocks": [
+        {
+          "type": "process_step",
+          "settings": {
+            "step_number": "1",
+            "icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/sprout.png",
+            "icon_alt": "Planting icon",
+            "step_subhead": "Step 01",
+            "step_description": "Planting"
+          }
+        },
+        {
+          "type": "process_step",
+          "settings": {
+            "step_number": "2",
+            "icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/farming.png",
+            "icon_alt": "Harvesting icon",
+            "step_subhead": "Step 02",
+            "step_description": "Harvesting"
+          }
+        },
+        {
+          "type": "process_step",
+          "settings": {
+            "step_number": "3",
+            "icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/production-automation.png",
+            "icon_alt": "Processing icon",
+            "step_subhead": "Step 03",
+            "step_description": "Processing & Packaging"
+          }
+        },
+        {
+          "type": "process_step",
+          "settings": {
+            "step_number": "4",
+            "icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/supply-chain.png",
+            "icon_alt": "Distribution icon",
+            "step_subhead": "Step 04",
+            "step_description": "Distribution & Retail"
+          }
+        }
+      ],
+      "settings": {
+        "title": "OUR PROCESS"
+      }
+    }
+  ]
+}
+{% endschema %}
+

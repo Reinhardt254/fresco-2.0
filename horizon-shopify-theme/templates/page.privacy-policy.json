@@ -1,0 +1,51 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "fresco_policy_layout_r4Vn8M": {
+      "type": "fresco-policy-layout",
+      "name": "Fresco Policy Layout",
+      "blocks": {
+        "toc_intro": { "type": "toc_item", "settings": { "label": "Introduction", "anchor": "intro" } },
+        "toc_information": { "type": "toc_item", "settings": { "label": "Information we collect", "anchor": "information" } },
+        "toc_use": { "type": "toc_item", "settings": { "label": "How we use your information", "anchor": "use" } },
+        "toc_sharing": { "type": "toc_item", "settings": { "label": "Sharing your information", "anchor": "sharing" } },
+        "toc_cookies": { "type": "toc_item", "settings": { "label": "Cookies & similar technologies", "anchor": "cookies" } },
+        "toc_security": { "type": "toc_item", "settings": { "label": "Security", "anchor": "security" } },
+        "toc_rights": { "type": "toc_item", "settings": { "label": "Your rights & choices", "anchor": "rights" } },
+        "toc_children": { "type": "toc_item", "settings": { "label": "Children", "anchor": "children" } },
+        "toc_changes": { "type": "toc_item", "settings": { "label": "Changes to this policy", "anchor": "changes" } },
+        "toc_contact": { "type": "toc_item", "settings": { "label": "Contact", "anchor": "contact" } }
+      },
+      "block_order": [
+        "toc_intro",
+        "toc_information",
+        "toc_use",
+        "toc_sharing",
+        "toc_cookies",
+        "toc_security",
+        "toc_rights",
+        "toc_children",
+        "toc_changes",
+        "toc_contact"
+      ],
+      "settings": {
+        "eyebrow": "Legal",
+        "title_prefix": "Privacy",
+        "title_highlight": "Policy",
+        "subtitle": "We respect your privacy. This policy describes what information we collect, how we use it, and your choices when you use the Fresco Flavors website and services.",
+        "meta_label": "Last updated:",
+        "meta_value": "March 6, 2026",
+        "toc_title": "On this page"
+      }
+    }
+  },
+  "order": ["fresco_policy_layout_r4Vn8M"]
+}

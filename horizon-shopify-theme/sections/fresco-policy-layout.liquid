@@ -1,0 +1,75 @@
+<div class="policy-page" {{ section.shopify_attributes }}>
+  <section class="policy-hero" aria-labelledby="policy-title">
+    <div class="policy-container">
+      <p class="policy-eyebrow">{{ section.settings.eyebrow }}</p>
+      <h1 id="policy-title" class="policy-title">
+        {{ section.settings.title_prefix }} <span class="highlight">{{ section.settings.title_highlight }}</span>
+      </h1>
+      <p class="policy-subtitle">
+        {{ section.settings.subtitle }}
+      </p>
+      <p class="policy-meta">
+        <strong>{{ section.settings.meta_label }}</strong> {{ section.settings.meta_value }}
+      </p>
+    </div>
+  </section>
+
+  <section class="policy-content" aria-label="Policy details">
+    <div class="policy-container policy-grid">
+      <aside class="policy-toc" aria-label="On this page">
+        <h2 class="policy-toc-title">{{ section.settings.toc_title }}</h2>
+        <ul class="policy-toc-list">
+          {% for block in section.blocks %}
+            {% if block.type == 'toc_item' %}
+              <li {{ block.shopify_attributes }}><a href="#{{ block.settings.anchor }}">{{ block.settings.label }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </aside>
+
+      <div class="policy-sections">
+        {% if page.content != blank %}
+          {{ page.content }}
+        {% else %}
+          <section class="policy-section" id="intro">
+            <h2>Introduction</h2>
+            <p>Add your policy body content in the page editor. This layout will keep the same design and table of contents structure.</p>
+          </section>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Fresco Policy Layout",
+  "tag": "section",
+  "class": "section-fresco-policy-layout",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Legal" },
+    { "type": "text", "id": "title_prefix", "label": "Title prefix", "default": "Privacy" },
+    { "type": "text", "id": "title_highlight", "label": "Title highlight", "default": "Policy" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "We respect your privacy. This policy describes what information we collect, how we use it, and your choices when you use the Fresco Flavors website and services." },
+    { "type": "text", "id": "meta_label", "label": "Meta label", "default": "Last updated:" },
+    { "type": "text", "id": "meta_value", "label": "Meta value", "default": "March 6, 2026" },
+    { "type": "text", "id": "toc_title", "label": "TOC title", "default": "On this page" }
+  ],
+  "blocks": [
+    {
+      "type": "toc_item",
+      "name": "TOC item",
+      "limit": 20,
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Introduction" },
+        { "type": "text", "id": "anchor", "label": "Anchor id", "default": "intro", "info": "Use the same id as headings in page content (without #)." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Policy Layout"
+    }
+  ]
+}
+{% endschema %}

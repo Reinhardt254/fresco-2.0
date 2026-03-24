@@ -128,13 +128,15 @@
     </footer>
 
     {% render 'search-modal' %}
+    {% render 'fresco-search-popup' %}
 
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
 
     {% if template.name == 'index' %}
-      <script src="{{ 'fresco/scripts/index.js' | asset_url }}"></script>
+      <script src="{{ 'fresco/scripts/index.js' | asset_url }}" defer></script>
     {% endif %}
+    <script src="{{ 'fresco/scripts/search.js' | asset_url }}" defer></script>
   </body>
 </html>

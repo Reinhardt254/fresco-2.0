@@ -1,0 +1,74 @@
+<section
+  class="retail-section retail-section-intro retail-section-fullwidth text-white"
+  id="retail-overview"
+  {{ section.shopify_attributes }}
+>
+  <div class="retail-section-inner retail-section-fullwidth-inner retail-section-image-left">
+    <div class="retail-section-content">
+      <h2 class="retail-section-heading">{{ section.settings.heading }}</h2>
+      <p class="retail-intro-text">
+        {{ section.settings.description }}
+      </p>
+    </div>
+    <div class="retail-section-media">
+      <div class="retail-media-shape">
+        <img
+          src="{% if section.settings.image != blank %}{{ section.settings.image | image_url: width: 1400 }}{% else %}{{ section.settings.image_url_fallback }}{% endif %}"
+          alt="{{ section.settings.image_alt | escape }}"
+          width="1400"
+          height="1000"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Retail Safety",
+  "tag": "section",
+  "class": "section-fresco-retail-traceability",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Food Safety & Full Traceability"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Our operations follow internationally recognized food safety standards and meet U.S. regulatory expectations, including FDA guidelines. Every pack is batch-coded and fully traceable from harvest date to processing providing accountability and retailer confidence."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Section image"
+    },
+    {
+      "type": "text",
+      "id": "image_url_fallback",
+      "label": "Section image URL fallback",
+      "default": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4403.jpg"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "Vertically integrated organic herb production"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Retail Traceability",
+      "settings": {
+        "heading": "Food Safety & Full Traceability",
+        "description": "Our operations follow internationally recognized food safety standards and meet U.S. regulatory expectations, including FDA guidelines. Every pack is batch-coded and fully traceable from harvest date to processing providing accountability and retailer confidence.",
+        "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4403.jpg",
+        "image_alt": "Vertically integrated organic herb production"
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -275,17 +275,22 @@
 }
 
 .cart-layout {
-  padding: 4rem 0 3rem;
+  width: 100% !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
 }
 
 .cart-layout-inner {
   max-width: 1200px;
   margin: 0 auto;
-  width: 92%;
+  width: 90%;
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(260px, 0.9fr);
   gap: 1.75rem;
   align-items: flex-start;
+  padding: 4rem 0 3rem 0;
 }
 
 .cart-list {

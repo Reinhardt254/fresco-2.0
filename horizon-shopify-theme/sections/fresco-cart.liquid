@@ -1,0 +1,485 @@
+<main class="cart-page">
+  {%- comment -%} Hero banner {%- endcomment -%}
+  <section class="cart-page-layout">
+    <div class="bottom-container">
+      <div class="text-content">
+        <h2 class="cart-title">
+          {{ section.settings.title_prefix }} <span class="highlight">{{ section.settings.title_highlight }}</span>
+        </h2>
+      </div>
+      <div class="overlay-center-bottom">
+        <img
+          src="{{ section.settings.overlay_center_url }}"
+          alt=""
+          width="500"
+          height="500"
+          loading="lazy"
+        >
+      </div>
+      <div class="overlay-left-bottom">
+        <img
+          src="{{ section.settings.overlay_left_url }}"
+          alt=""
+          width="500"
+          height="500"
+          loading="lazy"
+        >
+      </div>
+      <div class="overlay-right-bottom">
+        <img
+          src="{{ section.settings.overlay_right_url }}"
+          alt=""
+          width="500"
+          height="500"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} Cart items + Order summary {%- endcomment -%}
+  <section class="cart-layout">
+    <div class="cart-layout-inner">
+      {%- if cart.item_count > 0 -%}
+        <div class="cart-list">
+          {%- for item in cart.items -%}
+            <article class="cart-item" data-line="{{ forloop.index }}">
+              <div class="cart-item-image">
+                {%- if item.image != blank -%}
+                  <img
+                    src="{{ item.image | image_url: width: 240 }}"
+                    alt="{{ item.image.alt | escape }}"
+                    width="120"
+                    height="120"
+                    loading="lazy"
+                  >
+                {%- else -%}
+                  {{ 'product-1' | placeholder_svg_tag }}
+                {%- endif -%}
+              </div>
+              <div class="cart-item-body">
+                <p class="cart-product-name">{{ item.product.title }}</p>
+                {%- if item.variant.title != 'Default Title' -%}
+                  <p class="cart-product-meta">{{ item.variant.title }}</p>
+                {%- endif -%}
+                <p class="cart-unit-price">{{ item.original_price | money }}</p>
+                <div class="cart-qty cart-qty-desktop">
+                  <button type="button" class="cart-qty-btn cart-qty-btn-minus" data-line="{{ forloop.index }}">−</button>
+                  <input
+                    type="number"
+                    value="{{ item.quantity }}"
+                    min="1"
+                    class="cart-qty-input"
+                    data-line="{{ forloop.index }}"
+                    aria-label="Quantity for {{ item.product.title }}"
+                  >
+                  <button type="button" class="cart-qty-btn cart-qty-btn-plus" data-line="{{ forloop.index }}">+</button>
+                </div>
+              </div>
+              <div class="cart-item-right">
+                <button
+                  type="button"
+                  class="cart-item-remove"
+                  aria-label="Remove {{ item.product.title }}"
+                  data-line="{{ forloop.index }}"
+                >
+                  <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <span class="cart-price">{{ item.final_line_price | money }}</span>
+                <div class="cart-item-actions">
+                  <a href="{{ item.url }}" class="cart-btn-edit" aria-label="View {{ item.product.title }}">
+                    <i class="fa-solid fa-pen" aria-hidden="true"></i> Edit
+                  </a>
+                  <button
+                    type="button"
+                    class="cart-btn-delete"
+                    aria-label="Delete {{ item.product.title }}"
+                    data-line="{{ forloop.index }}"
+                  >
+                    <i class="fa-solid fa-trash" aria-hidden="true"></i> Delete
+                  </button>
+                </div>
+                <div class="cart-qty cart-qty-mobile">
+                  <button type="button" class="cart-qty-btn cart-qty-btn-minus" data-line="{{ forloop.index }}">−</button>
+                  <input
+                    type="number"
+                    value="{{ item.quantity }}"
+                    min="1"
+                    class="cart-qty-input"
+                    data-line="{{ forloop.index }}"
+                    aria-label="Quantity for {{ item.product.title }}"
+                  >
+                  <button type="button" class="cart-qty-btn cart-qty-btn-plus" data-line="{{ forloop.index }}">+</button>
+                </div>
+              </div>
+            </article>
+          {%- endfor -%}
+
+          <div class="cart-actions-row cart-actions-row--simple">
+            <a href="{{ routes.cart_url }}/clear" class="cart-clear">Clear Shopping Cart</a>
+          </div>
+        </div>
+
+        <aside class="cart-summary" aria-label="Order summary">
+          <h2 class="cart-summary-title">Order Summary</h2>
+          <dl class="cart-summary-list">
+            <div class="cart-summary-row">
+              <dt>Items</dt>
+              <dd>{{ cart.item_count }}</dd>
+            </div>
+            <div class="cart-summary-row">
+              <dt>Sub Total</dt>
+              <dd>{{ cart.total_price | money }}</dd>
+            </div>
+            <div class="cart-summary-row">
+              <dt>Shipping</dt>
+              <dd>Calculated at checkout</dd>
+            </div>
+            {%- if cart.total_discount > 0 -%}
+              <div class="cart-summary-row cart-summary-row-discount">
+                <dt>Discount</dt>
+                <dd>−{{ cart.total_discount | money }}</dd>
+              </div>
+            {%- endif -%}
+            <div class="cart-summary-row cart-summary-row-total">
+              <dt>Total</dt>
+              <dd>{{ cart.total_price | money }}</dd>
+            </div>
+          </dl>
+          <form action="{{ routes.cart_url }}" method="post">
+            <button type="submit" name="checkout" class="cart-summary-checkout">
+              Proceed to Checkout
+            </button>
+          </form>
+        </aside>
+
+      {%- else -%}
+        <div class="fresco-cart-empty">
+          <i class="fa-solid fa-bag-shopping" style="font-size:48px;color:#ccc;margin-bottom:20px;"></i>
+          <h2>Your cart is empty</h2>
+          <p>Looks like you haven't added any herbs yet.</p>
+          <a href="{{ routes.all_products_collection_url }}" class="fresco-cart-empty-btn">
+            Continue Shopping
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
+  </section>
+
+  {%- comment -%} Benefits bar {%- endcomment -%}
+  <section class="cart-benefits">
+    <div class="cart-benefits-inner">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'benefit' -%}
+          <article class="cart-benefit" {{ block.shopify_attributes }}>
+            <div class="cart-benefit-icon">
+              <i class="{{ block.settings.icon_class }}" aria-hidden="true"></i>
+            </div>
+            <div class="cart-benefit-text">
+              <h3>{{ block.settings.title }}</h3>
+              <p>{{ block.settings.description }}</p>
+            </div>
+          </article>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </section>
+
+  {%- comment -%} Recommended products carousel {%- endcomment -%}
+  {%- assign rec_collection = collections[section.settings.recommended_collection] -%}
+  {%- if rec_collection != blank and rec_collection.products.size > 0 -%}
+    <section class="cart-recommended">
+      <div class="cart-recommended-inner">
+        <div class="cart-recommended-header">
+          <h2 class="cart-recommended-title">
+            {{ section.settings.rec_title_prefix }} <span class="highlight">{{ section.settings.rec_title_highlight }}</span>
+          </h2>
+          <p class="cart-recommended-subtitle">{{ section.settings.rec_subtitle }}</p>
+        </div>
+        <div class="cart-recommended-carousel swiper cart-recommended-swiper">
+          <div class="cart-recommended-track swiper-wrapper">
+            {%- for product in rec_collection.products limit: section.settings.rec_max_products -%}
+              <div class="swiper-slide">
+                <div class="product-card">
+                  <a href="{{ product.url }}" class="product-card__link">
+                    <div class="product-image">
+                      {%- if product.featured_image != blank -%}
+                        <img
+                          class="product-card__image"
+                          src="{{ product.featured_image | image_url: width: 600 }}"
+                          alt="{{ product.featured_image.alt | escape }}"
+                          loading="lazy"
+                          width="600"
+                          height="600"
+                        >
+                      {%- else -%}
+                        {{ 'product-1' | placeholder_svg_tag }}
+                      {%- endif -%}
+                    </div>
+                    <h3 class="product-name">
+                      <span>{{ product.title }}</span>
+                    </h3>
+                  </a>
+                  <div class="product-price">
+                    <span class="current-price">{{ product.price | money }}</span>
+                  </div>
+                  {%- if product.available -%}
+                    <form method="post" action="{{ routes.cart_add_url }}">
+                      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                      <input type="hidden" name="quantity" value="1">
+                      <button type="submit" class="product-card-add">Add to cart</button>
+                    </form>
+                  {%- else -%}
+                    <button type="button" class="product-card-add" disabled>Sold out</button>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+          <div class="cart-recommended-nav">
+            <button type="button" class="cart-recommended-btn cart-recommended-prev" aria-label="Previous products">
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="cart-recommended-btn cart-recommended-next" aria-label="Next products">
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+</main>
+
+<style>
+  .fresco-cart-empty {
+    text-align: center;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1 / -1;
+  }
+  .fresco-cart-empty h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    color: #1b1b1b;
+    margin: 0 0 10px;
+  }
+  .fresco-cart-empty p {
+    font-size: 16px;
+    color: #666;
+    margin: 0 0 24px;
+  }
+  .fresco-cart-empty-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--primary-green);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    transition: background 0.2s;
+  }
+  .fresco-cart-empty-btn:hover {
+    background: #009f5d;
+  }
+</style>
+
+<script>
+(function () {
+  function updateCart(line, quantity) {
+    fetch('/cart/change.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ line: line, quantity: quantity })
+    }).then(function () { window.location.reload(); });
+  }
+
+  document.querySelectorAll('.cart-qty-btn-minus').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var line = parseInt(btn.dataset.line, 10);
+      var input = btn.closest('.cart-qty').querySelector('.cart-qty-input');
+      var qty = Math.max(1, parseInt(input.value, 10) - 1);
+      input.value = qty;
+      updateCart(line, qty);
+    });
+  });
+
+  document.querySelectorAll('.cart-qty-btn-plus').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var line = parseInt(btn.dataset.line, 10);
+      var input = btn.closest('.cart-qty').querySelector('.cart-qty-input');
+      var qty = parseInt(input.value, 10) + 1;
+      input.value = qty;
+      updateCart(line, qty);
+    });
+  });
+
+  document.querySelectorAll('.cart-qty-input').forEach(function (input) {
+    input.addEventListener('change', function () {
+      var line = parseInt(input.dataset.line, 10);
+      var qty = Math.max(1, parseInt(input.value, 10) || 1);
+      updateCart(line, qty);
+    });
+  });
+
+  document.querySelectorAll('.cart-item-remove, .cart-btn-delete').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var line = parseInt(btn.dataset.line, 10);
+      updateCart(line, 0);
+    });
+  });
+
+  if (typeof Swiper !== 'undefined') {
+    var el = document.querySelector('.cart-recommended-swiper');
+    if (el) {
+      new Swiper('.cart-recommended-swiper', {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        loop: true,
+        navigation: {
+          nextEl: '.cart-recommended-next',
+          prevEl: '.cart-recommended-prev'
+        },
+        breakpoints: {
+          0: { slidesPerView: 2, spaceBetween: 10 },
+          640: { slidesPerView: 2.2, spaceBetween: 10 },
+          1024: { slidesPerView: 4 }
+        }
+      });
+    }
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Fresco Cart",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title_prefix",
+      "label": "Title prefix",
+      "default": "Shopping"
+    },
+    {
+      "type": "text",
+      "id": "title_highlight",
+      "label": "Title highlight",
+      "default": "Cart"
+    },
+    {
+      "type": "text",
+      "id": "overlay_center_url",
+      "label": "Center overlay image URL",
+      "default": "https://img.freepik.com/free-vector/hand-drawn-basil-drawing-illustration_23-2150840443.jpg"
+    },
+    {
+      "type": "text",
+      "id": "overlay_left_url",
+      "label": "Left overlay image URL",
+      "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview.png"
+    },
+    {
+      "type": "text",
+      "id": "overlay_right_url",
+      "label": "Right overlay image URL",
+      "default": "https://plantechkenya.com/wp-content/uploads/2026/02/dried-herbs-spilled-from-glass-jar-white-background_1012140-1044.png"
+    },
+    {
+      "type": "collection",
+      "id": "recommended_collection",
+      "label": "Recommended products collection"
+    },
+    {
+      "type": "range",
+      "id": "rec_max_products",
+      "label": "Max recommended products",
+      "min": 4,
+      "max": 12,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "text",
+      "id": "rec_title_prefix",
+      "label": "Recommended title prefix",
+      "default": "Recommended"
+    },
+    {
+      "type": "text",
+      "id": "rec_title_highlight",
+      "label": "Recommended title highlight",
+      "default": "Products"
+    },
+    {
+      "type": "text",
+      "id": "rec_subtitle",
+      "label": "Recommended subtitle",
+      "default": "Complete your cart with these freeze-dried favorites."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon_class",
+          "label": "Font Awesome icon class",
+          "default": "fa-solid fa-truck-fast"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Free Shipping"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Free shipping for orders above $50."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Cart",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon_class": "fa-solid fa-truck-fast",
+            "title": "Free Shipping",
+            "description": "Free shipping for orders above $50."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon_class": "fa-solid fa-credit-card",
+            "title": "Flexible Payment",
+            "description": "Multiple secure payment options."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon_class": "fa-solid fa-headset",
+            "title": "24×7 Support",
+            "description": "We support online all day long."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

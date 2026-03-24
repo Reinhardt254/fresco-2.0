@@ -5,6 +5,33 @@
 {{ 'fresco/styles/global.css' | asset_url | stylesheet_tag }}
 {{ 'fresco/styles/home.css' | asset_url | stylesheet_tag }}
 {{ 'fresco/styles/search.css' | asset_url | stylesheet_tag }}
+{%- if template.suffix == 'about' -%}
+  {{ 'fresco/styles/about.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+{%- if template.suffix == 'retail' or template.suffix == 'retailers' -%}
+  {{ 'fresco/styles/retail.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+{%- if template.name == 'page' and template.suffix == 'contact' -%}
+  {{ 'fresco/styles/contact.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+{%- if template.suffix == 'privacy-policy' -%}
+  {{ 'fresco/styles/privacy-policy.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+{%- if template.suffix == 'terms-of-service' -%}
+  {{ 'fresco/styles/terms-of-service.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+{%- if template.suffix == 'shipping-policy' -%}
+  {{ 'fresco/styles/shipping.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+{%- if template.name == 'cart' -%}
+  {{ 'fresco/styles/cart.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+{%- if template.name == 'collection' -%}
+  {{ 'fresco/styles/shop.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+{%- if template.name == 'product' -%}
+  {{ 'fresco/styles/product-details.css.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
 
 {% comment %} Font Awesome and Swiper for Fresco UI {% endcomment %}
 <link

@@ -1,0 +1,49 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "fresco_policy_layout_shipping_h2Dn9K": {
+      "type": "fresco-policy-layout",
+      "name": "Fresco Policy Layout",
+      "blocks": {
+        "toc_processing": { "type": "toc_item", "settings": { "label": "Order processing", "anchor": "processing" } },
+        "toc_rates": { "type": "toc_item", "settings": { "label": "Shipping rates", "anchor": "rates" } },
+        "toc_delivery": { "type": "toc_item", "settings": { "label": "Delivery estimates", "anchor": "delivery" } },
+        "toc_tracking": { "type": "toc_item", "settings": { "label": "Tracking", "anchor": "tracking" } },
+        "toc_addresses": { "type": "toc_item", "settings": { "label": "Address accuracy", "anchor": "addresses" } },
+        "toc_missing": { "type": "toc_item", "settings": { "label": "Lost, stolen, or damaged packages", "anchor": "missing" } },
+        "toc_international": { "type": "toc_item", "settings": { "label": "International shipping & customs", "anchor": "international" } },
+        "toc_changes": { "type": "toc_item", "settings": { "label": "Changes & cancellations", "anchor": "changes" } },
+        "toc_contact": { "type": "toc_item", "settings": { "label": "Contact", "anchor": "contact" } }
+      },
+      "block_order": [
+        "toc_processing",
+        "toc_rates",
+        "toc_delivery",
+        "toc_tracking",
+        "toc_addresses",
+        "toc_missing",
+        "toc_international",
+        "toc_changes",
+        "toc_contact"
+      ],
+      "settings": {
+        "eyebrow": "Information",
+        "title_prefix": "Shipping",
+        "title_highlight": "Policy",
+        "subtitle": "This Shipping Policy explains how orders are processed, shipped, and delivered when you purchase from Fresco Flavors.",
+        "meta_label": "Last updated:",
+        "meta_value": "March 6, 2026",
+        "toc_title": "On this page"
+      }
+    }
+  },
+  "order": ["fresco_policy_layout_shipping_h2Dn9K"]
+}

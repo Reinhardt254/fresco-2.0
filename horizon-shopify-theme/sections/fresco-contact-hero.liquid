@@ -1,0 +1,54 @@
+<section class="contact-page-layout" {{ section.shopify_attributes }}>
+  <img
+    src="{% if section.settings.background_image != blank %}{{ section.settings.background_image | image_url: width: 2200 }}{% else %}{{ section.settings.background_image_url_fallback }}{% endif %}"
+    alt=""
+    width="2200"
+    height="1000"
+  >
+  <div class="layout-content">
+    <h1>{{ section.settings.heading_prefix }} <span class="highlight">{{ section.settings.heading_highlight }}</span></h1>
+    <p>
+      {{ section.settings.subheading }}
+    </p>
+  </div>
+
+  <div class="hero-overlay">
+    <div class="overlay-items">
+      <div class="top-left-overlay overlay-item">
+        <img src="{{ section.settings.overlay_top_left_url }}" alt="" width="400" height="400">
+      </div>
+
+      <div class="top-right-overlay overlay-item">
+        <img src="{{ section.settings.overlay_top_right_url }}" alt="" width="400" height="400">
+      </div>
+
+      <div class="bottom-left-overlay overlay-item">
+        <img src="{{ section.settings.overlay_bottom_left_url }}" alt="" width="400" height="400">
+      </div>
+
+      <div class="bottom-right-overlay overlay-item">
+        <img src="{{ section.settings.overlay_bottom_right_url }}" alt="" width="400" height="400">
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Contact Hero",
+  "tag": "section",
+  "class": "section-fresco-contact-hero",
+  "settings": [
+    { "type": "image_picker", "id": "background_image", "label": "Background image" },
+    { "type": "text", "id": "background_image_url_fallback", "label": "Background image URL fallback", "default": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4367.jpg" },
+    { "type": "text", "id": "heading_prefix", "label": "Heading prefix", "default": "Contact" },
+    { "type": "text", "id": "heading_highlight", "label": "Heading highlight", "default": "Us" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "We're here to help you with any questions or concerns you may have." },
+    { "type": "text", "id": "overlay_top_left_url", "label": "Top left overlay URL", "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A7607.png" },
+    { "type": "text", "id": "overlay_top_right_url", "label": "Top right overlay URL", "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A0462-scaled-1-1.png" },
+    { "type": "text", "id": "overlay_bottom_left_url", "label": "Bottom left overlay URL", "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview-1.png" },
+    { "type": "text", "id": "overlay_bottom_right_url", "label": "Bottom right overlay URL", "default": "https://plantechkenya.com/wp-content/uploads/2026/02/dried-herbs-spilled-from-glass-jar-white-background_1012140-1044.png" }
+  ],
+  "presets": [{ "name": "Fresco Contact Hero" }]
+}
+{% endschema %}

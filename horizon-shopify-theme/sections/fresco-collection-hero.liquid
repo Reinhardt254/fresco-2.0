@@ -1,0 +1,100 @@
+<section class="product-page-layout">
+  <div class="bottom-container">
+    <div class="text-content">
+      {%- if collection != blank -%}
+        <h2>{{ collection.products_count }}+</h2>
+        <h3>{{ collection.title }}</h3>
+        {%- if collection.description != blank -%}
+          <p>{{ collection.description }}</p>
+        {%- else -%}
+          <p>{{ section.settings.description }}</p>
+        {%- endif -%}
+      {%- else -%}
+        <h2>{{ section.settings.count_text }}</h2>
+        <h3>{{ section.settings.subtitle }}</h3>
+        <p>{{ section.settings.description }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="overlay-center-bottom">
+      <img
+        src="{{ section.settings.overlay_center_url }}"
+        alt=""
+        width="500"
+        height="500"
+        loading="lazy"
+      >
+    </div>
+    <div class="overlay-left-bottom">
+      <img
+        src="{{ section.settings.overlay_left_url }}"
+        alt=""
+        width="500"
+        height="500"
+        loading="lazy"
+      >
+    </div>
+    <div class="overlay-right-bottom">
+      <img
+        src="{{ section.settings.overlay_right_url }}"
+        alt=""
+        width="500"
+        height="500"
+        loading="lazy"
+      >
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Collection Hero",
+  "tag": "div",
+  "enabled_on": {
+    "templates": ["collection"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "count_text",
+      "label": "Count text (fallback)",
+      "default": "20+"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle (fallback)",
+      "default": "Herbs"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description (fallback)",
+      "default": "Organically grown herbs, carefully harvested at peak freshness and freeze dried to lock in flavor, color and aroma packed for convenience. No chopping, no cleaning, just instant fresco flavour added to soups, sauces and salads. Elevate your cooking from good to unforgettable."
+    },
+    {
+      "type": "text",
+      "id": "overlay_center_url",
+      "label": "Center overlay image URL",
+      "default": "https://img.freepik.com/free-vector/hand-drawn-basil-drawing-illustration_23-2150840443.jpg"
+    },
+    {
+      "type": "text",
+      "id": "overlay_left_url",
+      "label": "Left overlay image URL",
+      "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview.png"
+    },
+    {
+      "type": "text",
+      "id": "overlay_right_url",
+      "label": "Right overlay image URL",
+      "default": "https://plantechkenya.com/wp-content/uploads/2026/02/dried-herbs-spilled-from-glass-jar-white-background_1012140-1044.png"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Collection Hero"
+    }
+  ]
+}
+{% endschema %}
