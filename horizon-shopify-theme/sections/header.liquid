@@ -39,7 +39,7 @@
 </script>
 
 <header class="site-header" id="header-component">
-  <div class="container">
+  <div class="site-header-container">
     <div class="menu-toggle-container">
       <button
         class="menu-toggle"
@@ -163,7 +163,7 @@
           {%- endif -%}
         </a>
 
-        <a href="{{ shop_url }}" class="cta nav-shop-button">{{ section.settings.shop_label | escape }}</a>
+        {% comment %} <a href="{{ shop_url }}" class="cta nav-shop-button">{{ section.settings.shop_label | escape }}</a> {% endcomment %}
       </div>
     </div>
 

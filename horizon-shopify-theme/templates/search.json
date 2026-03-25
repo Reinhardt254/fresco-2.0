@@ -12,7 +12,7 @@
     "fresco_search_main": {
       "type": "fresco-search",
       "settings": {
-        "products_per_page": 18
+        "products_per_page": 20
       }
     }
   },

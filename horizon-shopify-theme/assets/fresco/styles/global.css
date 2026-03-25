@@ -164,6 +164,12 @@ div.sub-heading {
   line-height: 1 !important;
 }
 
+.contact-us-btn {
+  text-decoration: none !important;
+  line-height: 1 !important;
+  border-radius: 0 !important;
+}
+
 @media (max-width: 768px) {
   .section-title {
     font-size: var(--section-title-size-mobile);
@@ -291,8 +297,9 @@ div.sub-heading {
   z-index: 1000 !important;
 }
 
-.site-header .container {
+.site-header-container {
   width: 90% !important;
+  height: auto !important;
   max-width: 1400px !important;
   margin: 0 auto !important;
   padding: 0rem !important;
@@ -378,17 +385,17 @@ div.sub-heading {
 
 .nav-dropdown-menu {
   position: absolute;
-  top: 100%;
-  left: 0%;
+  left: 50%;
   width: 100%;
+  transform: translateX(-50%);
+  max-width: 1400px !important;
   right: 0%;
 
   display: none;
 
-  margin-top: 20px;
+  margin-top: 0px;
   z-index: 1000;
   padding-top: 10px;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -2020,3 +2027,162 @@ body.no-scroll {
      font-size: 28px;
    }
  }
+
+  /* -----------CTA Section Start----------- */
+  .cta {
+    color: #f5f2ed;
+    padding: 0rem;
+    width: 100%;
+    height: auto;
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: var(--light-green);
+    overflow: hidden;
+ 
+    position: relative;
+    z-index: 10;
+  }
+ 
+  .cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 15;
+    opacity: 0.025;
+  }
+  
+  .cta-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+    margin-bottom: 0px;
+  }
+  
+  .cta-inner {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+  }
+  
+  .cta-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0f3d2e;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+  
+  .cta-desc {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #0f3d2e;
+    letter-spacing: normal;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-btn {
+    background-color: var(--primary-green);
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    line-height: 1 !important;
+  }
+  
+  .cta-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+  }
+  
+  .cta-btn:hover {
+    background-color: #fff;
+    color: var(--primary-green);
+  }
+  
+  .cta-btn:hover svg {
+    fill: var(--primary-green);
+  }
+
+
+  @media (max-width: 768px) {
+   /* =====================CTA section======================= */
+   .cta {
+    height: 500px;
+    display: flex;
+    align-items: flex-end;
+    background-color: #f9f9f9;
+  }
+
+  .cta-bg {
+    height: 300px;
+  }
+
+  .cta-inner {
+    top: 35%;
+  }
+
+  .cta-heading {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .cta-desc {
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+
+  .cta-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+  }
+
+
+  @media (max-width: 480px) {
+    .cta {
+      min-height: 400px;
+    }
+  
+    .cta-heading {
+      font-size: 1.5rem;
+    }
+  
+    .cta-desc {
+      font-size: 0.9375rem;
+      margin-bottom: 1.5rem;
+    }
+  }

@@ -67,19 +67,19 @@
               {%- if block.settings.description != blank -%}
                 <p class="footer-company-desc">{{ block.settings.description }}</p>
               {%- endif -%}
-              {%- if block.settings.show_contact_in_column -%}
-                <ul class="footer-contact">
-                  {%- if block.settings.phone != blank -%}
-                    <li><i class="fa-solid fa-phone"></i><a href="tel:{{ block.settings.phone }}">{{ block.settings.phone }}</a></li>
-                  {%- endif -%}
-                  {%- if block.settings.email != blank -%}
-                    <li><i class="fa-solid fa-envelope"></i><a href="mailto:{{ block.settings.email }}">{{ block.settings.email }}</a></li>
-                  {%- endif -%}
-                  {%- if block.settings.address != blank -%}
-                    <li><i class="fa-solid fa-location-dot"></i><span>{{ block.settings.address }}</span></li>
-                  {%- endif -%}
+
+                <ul class="footer-contact" aria-label="Contact information">
+                  <li>
+                    <i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:info@frescoflavors.com">info@frescoflavors.com</a>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA</span>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:+19018965814">+1 (901) 896-5814</a>
+                  </li>
                 </ul>
-              {%- endif -%}
+  
             </div>
 
           {%- when 'quick_links' -%}
@@ -101,17 +101,15 @@
               {%- if block.settings.heading != blank -%}
                 <h3 class="footer-col-heading">{{ block.settings.heading }}</h3>
               {%- endif -%}
-              <ul class="footer-contact">
-                {%- if block.settings.address != blank -%}
-                  <li><i class="fa-solid fa-location-dot"></i><span class="rte">{{ block.settings.address }}</span></li>
-                {%- endif -%}
-                {%- if block.settings.phone != blank -%}
-                  <li><i class="fa-solid fa-phone"></i><a href="tel:{{ block.settings.phone }}">{{ block.settings.phone }}</a></li>
-                {%- endif -%}
-                {%- if block.settings.email != blank -%}
-                  <li><i class="fa-solid fa-envelope"></i><a href="mailto:{{ block.settings.email }}">{{ block.settings.email }}</a></li>
-                {%- endif -%}
-              </ul>
+              {%- if block.settings.menu != blank -%}
+                <ul class="footer-links">
+                  {%- for link in block.settings.menu.links -%}
+                    <li>
+                      <a href="{{ link.url }}">{{ link.title | escape }}</a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
             </div>
 
           {%- when 'social_links' -%}
@@ -274,19 +272,10 @@
           "default": false
         },
         {
-          "type": "text",
-          "id": "phone",
-          "label": "Phone"
-        },
-        {
-          "type": "text",
-          "id": "email",
-          "label": "Email"
-        },
-        {
-          "type": "textarea",
-          "id": "address",
-          "label": "Address"
+          "type": "link_list",
+          "id": "contact_menu",
+          "label": "Contact menu",
+          "default": "footer"
         }
       ]
     },
@@ -319,19 +308,10 @@
           "default": "Contact"
         },
         {
-          "type": "richtext",
-          "id": "address",
-          "label": "Address"
-        },
-        {
-          "type": "text",
-          "id": "phone",
-          "label": "Phone"
-        },
-        {
-          "type": "text",
-          "id": "email",
-          "label": "Email"
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu",
+          "default": "footer"
         }
       ]
     },

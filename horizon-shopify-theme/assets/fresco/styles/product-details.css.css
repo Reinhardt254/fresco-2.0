@@ -522,7 +522,9 @@
 
 .product-details-thumbnails-swiper .swiper-slide {
   width: auto;
-  flex-shrink: 0;
+  /* flex-shrink: 0; */
+  height: auto;
+  aspect-ratio: 4/5;
 }
 
 .product-details-thumb-slide {

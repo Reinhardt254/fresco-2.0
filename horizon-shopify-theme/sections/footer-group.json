@@ -95,7 +95,7 @@
           "type": "quick_links",
           "settings": {
             "heading": "Quick Links",
-            "menu": "footer"
+            "menu": "footer-menu"
           }
         },
         "contact_block": {
