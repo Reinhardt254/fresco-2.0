@@ -332,7 +332,7 @@
                   </button>
                 </div>
               </div>
-
+  
               <div class="product-details-actions">
                 <div class="product-details-quantity">
                   <button
@@ -361,16 +361,16 @@
                 <button type="button" class="product-details-add-to-cart">
                   Add To Cart
                 </button>
-                <button type="button" class="product-details-buy-now">
+                <!-- <button type="button" class="product-details-buy-now">
                   Buy Now
-                </button>
-                <!-- <button
+                </button> -->
+                <button
                   type="button"
                   class="product-details-wishlist"
                   aria-label="Add to wishlist"
                 >
                   <i class="fa-regular fa-heart"></i>
-                </button> -->
+                </button>
               </div>
 
               <!-- <div class="divider"></div> -->
@@ -818,13 +818,13 @@
         </div>
       </section>
     </main>
-
+ 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         var thumbSwiper = new Swiper(".product-details-thumbnails-swiper", {
           slidesPerView: 3,
-          spaceBetween: 16,
+          spaceBetween: 8,
           freeMode: true,
           loop: true,
           watchSlidesProgress: true,
@@ -833,9 +833,9 @@
             prevEl: ".swiper-button-prev",
           },
           breakpoints: {
-            320: { slidesPerView: 2, spaceBetween: 12 },
+            320: { slidesPerView: 3, spaceBetween: 12 },
             640: { slidesPerView: 3, spaceBetween: 16 },
-            1024: { slidesPerView: 3, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 10 },
           },
         });
         var relatedSwiper = new Swiper(".related-products-swiper", {

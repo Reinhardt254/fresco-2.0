@@ -16,13 +16,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
-} 
-  
+  position: relative;
+}
+
+.product-details-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat;
+  background-size: cover;
+  background-position: top;
+  opacity: 0.010;
+  z-index: 5;
+}
+
 .product-details-container {
   width: 90%;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0;
+  position: relative;
+  z-index: 10;
 }
 
 .product-details-grid {
@@ -53,9 +70,9 @@
 }
 
 .product-details-main-image-wrap {
-  background: #ffffff;
+  background: #f8f8f8;
   border-radius: 4px;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #e8e8e821;
   overflow: hidden;
   aspect-ratio: 1;
   display: flex;
@@ -76,7 +93,7 @@
 .product-details-main-image:hover {
   transform: scale(1.05);
 }
-
+ 
 /* Right column – product info */
 .product-details-info {
   width: 50%;
@@ -216,13 +233,15 @@
 
 .product-details-size-options {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 8px;
 }
 
 .product-details-size-option {
   min-width: 60px;
+  width: 100%;
   padding: 10px 16px;
+  box-sizing: border-box;
   border-radius: 999px;
   border: 1px solid #d8d8d8;
   border-radius: 4px !important;
@@ -232,7 +251,10 @@
   font-weight: 500;
   color: #4a4a4a;
   cursor: pointer;
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
 }
 
 .product-details-size-option:hover {
@@ -263,49 +285,51 @@
   display: inline-flex;
   align-items: center;
   border-radius: 5px;
-  border: 0px solid #c5c5c53b;
+  border: 1px solid #c5c5c5bb;
   overflow: hidden;
   max-width: fit-content;
-  padding: 0rem;
+  padding: 0.5rem 1rem;
   background-color: #2e7d3200;
+  height: 38px;
+  width: 100px;
 }
 
 .product-details-qty-btn {
-  width: 38px;
-  height: 38px;
+  width: auto;
+  height: auto;
   border: none;
-  background-color: #f5f5f5;
+  background-color: #f5f5f500;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   border-radius: 5px;
   transition: all 0.3s ease;
 }
 
 .product-details-qty-minus {
-  border-right: 1px solid #e0e0e0;
-  background-color: #ebebebd3;
+  /* border-right: 1px solid #e0e0e0; */
+  background-color: #ebebeb00;
 }
 
 .product-details-qty-plus {
-  background-color: var(--primary-green);
-  color: #ffffff;
+  /* background-color: var(--primary-green); */
+  color: #000000;
 }
 
 .product-details-qty-minus:hover {
   background-color: #c2c2c2;
   color: #ffffff;
 }
-
+ 
 .product-details-qty-plus:hover {
   background-color: #d6d6d6;
   color: #ffffff;
 }
 
 .product-details-qty-input {
-  width: 50px;
+  width: auto;
   height: 38px;
   border: none;
   text-align: center;
@@ -315,7 +339,7 @@
   color: #1a1a1a;
   padding: 0;
   border-radius: 5px;
-  border: 1px solid #afafaf7c;
+  border: 1px solid #afafaf00;
   background-color: inherit;
   -moz-appearance: textfield;
   background-color: #ffffff;
@@ -344,7 +368,10 @@
   border-radius: 6px;
   padding: 14px 28px;
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+  transition:
+    background 0.2s,
+    transform 0.1s;
+    width: calc(100% - 165px);
 }
 
 .product-details-add-to-cart:hover {
@@ -367,7 +394,11 @@
   border: 1px solid #d8d8d8;
   padding: 14px 24px;
   cursor: pointer;
-  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.1s;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s,
+    transform 0.1s;
 }
 
 .product-details-buy-now:hover {
@@ -390,7 +421,10 @@
   justify-content: center;
   cursor: pointer;
   color: #9e9e9e;
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
 }
 
 .product-details-wishlist:hover {
@@ -409,12 +443,12 @@
 
 /* Promo / product benefits card */
 .promo {
-  margin: 0.5rem 0 1rem 0;
+  margin: 0;
 }
 
 .promo-card {
   border-radius: 5px;
-  border: 1px solid #e3e3e38a;
+  border: 0px solid #e3e3e38a;
   background: var(--light-white-background);
   padding: 1.2rem 0.5rem;
   display: grid;
@@ -532,7 +566,8 @@
   position: relative;
 }
 
-.swiper-button-next:after, .swiper-button-prev:after {
+.swiper-button-next:after,
+.swiper-button-prev:after {
   display: none !important;
 }
 
@@ -572,16 +607,20 @@
 .product-details-thumb-frame {
   width: 100%;
   height: 100%;
+  aspect-ratio: 4/5;
   border-radius: 4px;
   overflow: hidden;
-  border: 1px solid #e8e8e8;
-  background: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-  transition: border-color 0.2s, box-shadow 0.2s;
+  border: 1px solid #e8e8e877;
+  background: #fafafa;
+  box-shadow: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
- 
+
 .product-details-thumb-slide:hover .product-details-thumb-frame,
-.product-details-thumb-slide.swiper-slide-thumb-active .product-details-thumb-frame {
+.product-details-thumb-slide.swiper-slide-thumb-active
+  .product-details-thumb-frame {
   border-color: #6cb24c;
   box-shadow: 0 2px 14px rgba(108, 178, 76, 0.2);
   width: 100%;
@@ -605,12 +644,6 @@
 .product-details-tabs-section {
   width: 100%;
   padding: 3rem 0 5rem 0;
-}
-
-.product-details-tabs-section .product-details-container {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 .product-details-tabs-nav {
@@ -643,7 +676,7 @@
 }
 
 .product-details-tab-btn.is-active {
-  color: #6DBF44;
+  color: #6dbf44;
   background: #ffffff;
 }
 
@@ -654,7 +687,7 @@
   right: -2px;
   bottom: -2px;
   height: 2px;
-  background: #6DBF44;
+  background: #6dbf44;
 }
 
 .product-details-tabs-underline {
@@ -728,10 +761,11 @@
   align-items: center;
   justify-content: center;
 }
-  
+
 .related-products-section::before {
   content: "";
-  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat;
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif")
+    no-repeat;
   background-size: cover;
   background-position: top;
   position: absolute;
@@ -744,7 +778,7 @@
 
 .related-products-section .product-details-container {
   width: 90%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 10;
@@ -812,7 +846,10 @@
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
 }
 
 .related-products-prev:hover,
@@ -840,7 +877,9 @@
   padding: 20px 16px 24px;
   height: 100%;
   min-height: 320px;
-  transition: box-shadow 0.2s, border-color 0.2s;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
@@ -858,7 +897,9 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 .product-card__link {
@@ -942,9 +983,17 @@
 /* Responsive */
 @media (max-width: 900px) {
   .product-details-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 32px;
     margin-bottom: 36px;
+  }
+
+  .product-details-gallery {
+    width: 100%;
+  }
+
+  .product-details-info {
+    width: 100%;
   }
 
   .product-details-main-image-wrap {
@@ -985,8 +1034,8 @@
   }
 
   .product-details-thumb-frame {
-    width: 100px;
-    height: 100px;
+    width: auto;
+    height: auto;
   }
 
   .related-products-section {
