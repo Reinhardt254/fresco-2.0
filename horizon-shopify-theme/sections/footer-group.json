@@ -86,9 +86,9 @@
             "tagline_text": "",
             "description": "Bringing the best herbs in every jar. 100% Organic, from Kenya to the World.",
             "show_contact_in_column": true,
-            "phone": "+1 (901) 896-5814",
-            "email": "info@frescoflavors.com",
-            "address": "7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA"
+            "contact_email": "info@frescoflavors.com",
+            "contact_address": "7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA",
+            "contact_phone": "+1 (901) 896-5814"
           }
         },
         "quick_links_block": {
@@ -102,9 +102,7 @@
           "type": "contact_info",
           "settings": {
             "heading": "Contact",
-            "address": "",
-            "phone": "",
-            "email": ""
+            "menu": "footer"
           }
         },
         "instagram_grid_JxMWmh": {
@@ -135,7 +133,7 @@
         "enable_newsletter": true,
         "newsletter_heading": "Subscribe Newsletter",
         "newsletter_desc": "Get e-mail updates about our latest shop and special offers.",
-        "show_policy": true,
+        "show_policy": false,
         "show_payment_icons": true
       }
     },

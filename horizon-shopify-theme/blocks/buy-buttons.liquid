@@ -223,6 +223,11 @@
           %}
 
           {% content_for 'block',
+            type: 'wishlist-button',
+            id: 'wishlist-button'
+          %}
+
+          {% content_for 'block',
             type: 'accelerated-checkout',
             id: 'accelerated-checkout',
             can_add_to_cart: can_add_to_cart,
@@ -379,17 +384,21 @@
     }
   }
 
-  .product-form-buttons > *:not(.quantity-selector-wrapper, .quantity-rules, .quantity-label, .volume-pricing) {
+  .product-form-buttons > *:not(.quantity-selector-wrapper, .quantity-rules, .quantity-label, .volume-pricing, .wishlist-button-block) {
     flex: 1 1 var(--buy-button-preferred-width, 0);
     min-width: fit-content;
   }
 
+  .product-form-buttons > .wishlist-button-block {
+    flex: 0 0 auto;
+  }
+
   .product-form-buttons--stacked
-    > *:not(.quantity-selector-wrapper, .quantity-rules, .quantity-label, .volume-pricing) {
+    > *:not(.quantity-selector-wrapper, .quantity-rules, .quantity-label, .volume-pricing, .wishlist-button-block) {
     flex-basis: 51%;
   }
 
-  .product-form-buttons button {
+  .product-form-buttons button:not(.product-details-wishlist) {
     width: 100%;
     padding-block: var(--padding-lg);
   }
@@ -452,6 +461,7 @@
   .add-to-cart-button {
     height: var(--height-buy-buttons);
     text-transform: var(--button-text-case-primary);
+    border-radius: 5px !important;
   }
 
   .add-to-cart-button.button-secondary {
@@ -743,6 +753,20 @@
       "default": 0
     }
   ],
+  "blocks": [
+    {
+      "type": "quantity"
+    },
+    {
+      "type": "add-to-cart"
+    },
+    {
+      "type": "wishlist-button"
+    },
+    {
+      "type": "accelerated-checkout"
+    }
+  ],
   "presets": [
     {
       "name": "t:names.product_buy_buttons",
@@ -757,6 +781,13 @@
           "static": true,
           "settings": {
             "style_class": "button-secondary"
+          }
+        },
+        "wishlist-button": {
+          "type": "wishlist-button",
+          "static": true,
+          "settings": {
+            "label": "Add to wishlist"
           }
         },
         "accelerated-checkout": {

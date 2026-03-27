@@ -154,13 +154,21 @@
               </button>
             {%- endform -%}
 
-            <button
+            {% comment %} <button
               type="button"
               class="product-details-buy-now"
               id="fresco-buy-now"
               {% unless current_variant.available %}disabled{% endunless %}
             >
               Buy Now
+            </button> {% endcomment %}
+
+            <button
+              type="button"
+              class="product-details-wishlist"
+              aria-label="Add to wishlist"
+            >
+              <i class="fa-regular fa-heart"></i>
             </button>
           </div>
 
@@ -508,7 +516,7 @@
           prevEl: '.product-details-thumb-prev'
         },
         breakpoints: {
-          320: { slidesPerView: 2, spaceBetween: 12 },
+          320: { slidesPerView: 3, spaceBetween: 12 },
           640: { slidesPerView: 3, spaceBetween: 16 },
           1024: { slidesPerView: 3, spaceBetween: 20 }
         }

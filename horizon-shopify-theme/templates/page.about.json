@@ -13,6 +13,11 @@
       "type": "fresco-about-hero",
       "name": "Fresco About Hero",
       "settings": {
+        "overlay_top_left": "shopify://shop_images/0A0A0462-scaled-1-1.png",
+        "overlay_top_right": "shopify://shop_images/0A0A7607.png",
+        "overlay_bottom_left": "shopify://shop_images/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview-1.png",
+        "overlay_bottom_right": "shopify://shop_images/0A0A9691-1-scaled-removebg-preview.png",
+        "hero_image": "shopify://shop_images/team.jpg",
         "hero_image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4403.jpg",
         "hero_title": "Peak Harvest Quality, Perfectly Preserved.",
         "hero_description": "Flash freeze-dried at origin to lock in nutrients and aroma.",

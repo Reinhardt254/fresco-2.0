@@ -1,0 +1,35 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "fresco_faq_layout_x7Lm2Q": {
+      "type": "fresco-faq-layout",
+      "name": "Fresco FAQ Layout",
+      "blocks": {
+        "toc_product": { "type": "toc_item", "settings": { "label": "Product FAQs", "anchor": "product-faqs" } },
+        "toc_retailer": { "type": "toc_item", "settings": { "label": "Retailer FAQs", "anchor": "retailer-faqs" } },
+        "toc_culinary": { "type": "toc_item", "settings": { "label": "Culinary FAQs", "anchor": "culinary-faqs" } }
+      },
+      "block_order": [
+        "toc_product",
+        "toc_retailer",
+        "toc_culinary"
+      ],
+      "settings": {
+        "eyebrow": "Support",
+        "title_prefix": "Frequently Asked",
+        "title_highlight": "Questions",
+        "subtitle": "Find answers about our products, retail partnerships, and culinary guidance.",
+        "toc_title": "Categories"
+      }
+    }
+  },
+  "order": ["fresco_faq_layout_x7Lm2Q"]
+}

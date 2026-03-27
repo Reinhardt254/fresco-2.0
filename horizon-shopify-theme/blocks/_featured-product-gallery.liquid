@@ -4,8 +4,10 @@
 
 {% capture children %}
   {% unless product == blank %}
-    {% if settings.quick_add or settings.mobile_quick_add %}
-      {% render 'quick-add', product: product, section_id: section.id %}
+    {% if template.name == 'collection' %}
+      {% if settings.quick_add or settings.mobile_quick_add %}
+        {% render 'quick-add', product: product, section_id: section.id %}
+      {% endif %}
     {% endif %}
   {% endunless %}
 {% endcapture %}

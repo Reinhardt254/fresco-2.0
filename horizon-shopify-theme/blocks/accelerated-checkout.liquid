@@ -24,7 +24,7 @@
 
 {% if accelerated_checkout_button != blank %}
   <div
-    class="accelerated-checkout-block"
+    class="accelerated-checkout-block{% if block.settings.show_buy_now_caption %} accelerated-checkout-block--captioned{% endif %}"
     ref="acceleratedCheckoutButtonContainer"
     {{ block.shopify_attributes }}
     {% if request.visual_preview_mode %}
@@ -34,11 +34,24 @@
       hidden
     {% endunless %}
   >
+    {% if block.settings.show_buy_now_caption %}
+      <p class="accelerated-checkout-block__caption">{{ block.settings.buy_now_caption | escape }}</p>
+    {% endif %}
     {{ accelerated_checkout_button }}
   </div>
 {% endif %}
 
 {% stylesheet %}
+  .accelerated-checkout-block__caption {
+    margin: 0 0 0.5rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+  }
+
   .accelerated-checkout-block[data-shopify-visual-preview] {
     width: 300px;
   }
@@ -63,6 +76,21 @@
 {% schema %}
 {
   "name": "t:names.accelerated_checkout",
-  "tag": null
+  "tag": null,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_buy_now_caption",
+      "label": "Show Buy it now caption",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "buy_now_caption",
+      "label": "Caption above dynamic checkout",
+      "default": "Buy it now",
+      "visible_if": "{{ block.settings.show_buy_now_caption }}"
+    }
+  ]
 }
 {% endschema %}

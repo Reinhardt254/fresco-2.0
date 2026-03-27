@@ -1,4 +1,53 @@
 <section class="retail-hero" {{ section.shopify_attributes }}>
+    {%- comment -%} Decorative overlay images (corners) {%- endcomment -%}
+  <div class="hero-overlay-global">
+      <div class="overlay-items">
+        {%- if section.settings.overlay_top_left != blank -%}
+          <div class="top-left-overlay overlay-item">
+            <img
+              src="{{ section.settings.overlay_top_left | image_url: width: 300 }}"
+              alt=""
+              width="150"
+              height="150"
+              loading="lazy"
+            >
+          </div>
+        {%- endif -%}
+        {%- if section.settings.overlay_top_right != blank -%}
+          <div class="top-right-overlay overlay-item">
+            <img
+              src="{{ section.settings.overlay_top_right | image_url: width: 300 }}"
+              alt=""
+              width="150"
+              height="150"
+              loading="lazy"
+            >
+          </div>
+        {%- endif -%}
+        {%- if section.settings.overlay_bottom_left != blank -%}
+          <div class="bottom-left-overlay overlay-item">
+            <img
+              src="{{ section.settings.overlay_bottom_left | image_url: width: 300 }}"
+              alt=""
+              width="150"
+              height="150"
+              loading="lazy"
+            >
+          </div>
+        {%- endif -%}
+        {%- if section.settings.overlay_bottom_right != blank -%}
+          <div class="bottom-right-overlay overlay-item leaf">
+            <img
+              src="{{ section.settings.overlay_bottom_right | image_url: width: 400 }}"
+              alt=""
+              width="250"
+              height="300"
+              loading="lazy"
+            >
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
   <div class="retail-hero-bg">
     <img
       src="{% if section.settings.hero_image != blank %}{{ section.settings.hero_image | image_url: width: 2200 }}{% else %}{{ section.settings.hero_image_url_fallback }}{% endif %}"
@@ -27,6 +76,26 @@
   "tag": "section",
   "class": "section-fresco-retail-hero",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "overlay_top_left",
+      "label": "Top left overlay"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay_top_right",
+      "label": "Top right overlay"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay_bottom_left",
+      "label": "Bottom left overlay"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay_bottom_right",
+      "label": "Bottom right overlay (leaf)"
+    },
     {
       "type": "image_picker",
       "id": "hero_image",
@@ -90,3 +159,4 @@
   ]
 }
 {% endschema %}
+ 

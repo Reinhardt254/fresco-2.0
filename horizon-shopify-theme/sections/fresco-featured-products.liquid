@@ -51,13 +51,13 @@
                   <span>{{ product.title }}</span>
                 </h3>
 
-                <div class="product-rating">
+                {% comment %} <div class="product-rating">
                   <span class="star">★</span>
                   <span class="star">★</span>
                   <span class="star">★</span>
                   <span class="star">★</span>
                   <span class="star">★</span>
-                </div>
+                </div> {% endcomment %}
 
                 <div class="product-price">
                   <span class="current-price">{{ product.price | money }}</span>
@@ -76,13 +76,13 @@
                   {{ 'product-1' | placeholder_svg_tag: 'product-card__image placeholder' }}
                 </div>
                 <h3 class="product-name"><span>Sample Product {{ i }}</span></h3>
-                <div class="product-rating">
+                {% comment %} <div class="product-rating">
                   <span class="star">★</span>
                   <span class="star">★</span>
                   <span class="star">★</span>
                   <span class="star">★</span>
                   <span class="star">★</span>
-                </div>
+                </div> {% endcomment %}
                 <div class="product-price">
                   <span class="current-price">$14.00</span>
                 </div>
@@ -92,8 +92,8 @@
         {%- endif -%}
       </div>
 
-      <div class="featured-products-pagination"></div>
     </div>
+    <div class="featured-products-pagination"></div>
   </div>
 </section>
 

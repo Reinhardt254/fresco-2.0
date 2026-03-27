@@ -9,51 +9,381 @@
  */
 {
   "sections": {
-    "fresco_product_main": {
-      "type": "fresco-product",
+    "main": {
+      "type": "product-information",
       "blocks": {
-        "benefit_organic": {
-          "type": "benefit",
+        "media-gallery": {
+          "type": "_product-media-gallery",
+          "static": true,
           "settings": {
-            "icon_class": "fa-solid fa-leaf",
-            "title": "100% Organic",
-            "description": "Pure, naturally grown herbs."
-          }
+            "media_presentation": "fresco_swiper",
+            "media_columns": "two",
+            "image_gap": 4,
+            "large_first_image": false,
+            "icons_style": "arrow",
+            "slideshow_controls_style": "counter",
+            "slideshow_mobile_controls_style": "dots",
+            "thumbnail_position": "right",
+            "thumbnail_width": 44,
+            "thumbnail_radius": 0,
+            "aspect_ratio": "adapt",
+            "constrain_to_viewport": true,
+            "media_fit": "contain",
+            "media_radius": 0,
+            "extend_media": false,
+            "zoom": true,
+            "video_loop": false,
+            "hide_variants": true,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         },
-        "benefit_shelf": {
-          "type": "benefit",
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
           "settings": {
-            "icon_class": "fa-regular fa-clock",
-            "title": "Long Shelf Life",
-            "description": "Stays fresh for months."
-          }
-        },
-        "benefit_preservative": {
-          "type": "benefit",
-          "settings": {
-            "icon_class": "fa-solid fa-ban",
-            "title": "Preservative Free",
-            "description": "No artificial preservatives added."
-          }
-        },
-        "benefit_easy": {
-          "type": "benefit",
-          "settings": {
-            "icon_class": "fa-solid fa-bolt",
-            "title": "Easy to Use",
-            "description": "Ready to sprinkle anytime."
-          }
+            "details_layout": "fresco",
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "details_position": "flex-start",
+            "gap": 28,
+            "sticky_details_desktop": true,
+            "inherit_color_scheme": true,
+            "color_scheme": "scheme-1",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 24,
+            "padding-block-end": 24,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "group_icgrde": {
+              "type": "group",
+              "name": "Header",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "text_xpVMaM": {
+                  "type": "text",
+                  "name": "t:names.title",
+                  "settings": {
+                    "text": "<h1>{{ closest.product.title }}</h1>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h3",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_xpVMaM"
+              ]
+            },
+            "text_fresco_rating": {
+              "type": "text",
+              "name": "Rating",
+              "settings": {
+                "text": "<p>★★★★☆ 4.9 · 128 reviews</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "price_tVjtKg": {
+              "type": "price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "paragraph",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_aEtTtq": {
+              "type": "text",
+              "name": "Product description",
+              "settings": {
+                "text": "{{ closest.product.description }}",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-primary--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "divider_VJhene": {
+              "type": "_divider",
+              "name": "t:names.divider",
+              "settings": {
+                "thickness": 1,
+                "corner_radius": "square",
+                "width_percent": 100,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "variant_picker_R3rGDr": {
+              "type": "variant-picker",
+              "settings": {
+                "variant_style": "buttons",
+                "show_swatches": false,
+                "alignment": "left",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "buy_buttons_eYQEYi": {
+              "type": "buy-buttons",
+              "settings": {
+                "stacking": true,
+                "show_pickup_availability": false,
+                "gift_card_form": true,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button"
+                  },
+                  "blocks": {}
+                },
+                "wishlist-button": {
+                  "type": "wishlist-button",
+                  "static": true,
+                  "settings": {
+                    "label": "Add to wishlist",
+                    "link": "",
+                    "open_in_new_tab": false,
+                    "icon": "fa-regular fa-heart"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "static": true,
+                  "settings": {
+                    "show_buy_now_caption": false,
+                    "buy_now_caption": "Buy now"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            },
+            "product_promo_mU8R33": {
+              "type": "product-promo",
+              "name": "Product promo",
+              "settings": {
+                "section_label": "Product benefits",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "promo_benefit_AxGqhW": {
+                  "type": "promo-benefit",
+                  "settings": {
+                    "icon_class": "fa-solid fa-truck",
+                    "title": "Free shipping",
+                    "description": "On orders over $50."
+                  },
+                  "blocks": {}
+                },
+                "promo_benefit_jpT337": {
+                  "type": "promo-benefit",
+                  "settings": {
+                    "icon_class": "fa-regular fa-clock",
+                    "title": "Long Shelf Life",
+                    "description": "Stays fresh for months."
+                  },
+                  "blocks": {}
+                },
+                "promo_benefit_wqHJPA": {
+                  "type": "promo-benefit",
+                  "settings": {
+                    "icon_class": "fa-solid fa-bolt",
+                    "title": "Easy to Use",
+                    "description": "Ready to sprinkle anytime."
+                  },
+                  "blocks": {}
+                },
+                "promo_benefit_Jb4xHi": {
+                  "type": "promo-benefit",
+                  "settings": {
+                    "icon_class": "fa-solid fa-rotate-left",
+                    "title": "Easy returns",
+                    "description": "30-day return policy."
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "promo_benefit_AxGqhW",
+                "promo_benefit_jpT337",
+                "promo_benefit_wqHJPA",
+                "promo_benefit_Jb4xHi"
+              ]
+            }
+          },
+          "block_order": [
+            "group_icgrde",
+            "text_fresco_rating",
+            "price_tVjtKg",
+            "text_aEtTtq",
+            "divider_VJhene",
+            "variant_picker_R3rGDr",
+            "buy_buttons_eYQEYi",
+            "product_promo_mU8R33"
+          ]
         }
       },
-      "block_order": [
-        "benefit_organic",
-        "benefit_shelf",
-        "benefit_preservative",
-        "benefit_easy"
-      ],
       "settings": {
-        "rating_text": "4.8 (245 Reviews)",
-        "related_collection": "all",
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "left",
+        "equal_columns": false,
+        "limit_details_width": false,
+        "gap": 48,
+        "enable_sticky_add_to_cart": true,
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "fresco_product_tabs_6anakC": {
+      "type": "fresco-product-tabs",
+      "name": "Fresco Product Tabs",
+      "settings": {
+        "description_tab_label": "Description",
+        "additional_tab_label": "Additional Information",
+        "reviews_tab_label": "Reviews",
+        "reviews_empty_text": "No reviews yet.",
+        "empty_description_text": "No description available."
+      }
+    },
+    "fresco_related_products_DDMRW8": {
+      "type": "fresco-related-products",
+      "name": "Fresco Related Products",
+      "settings": {
+        "related_collection": "herbs",
         "related_max": 8,
         "related_title_prefix": "Related",
         "related_title_highlight": "Products",
@@ -62,6 +392,8 @@
     }
   },
   "order": [
-    "fresco_product_main"
+    "main",
+    "fresco_product_tabs_6anakC",
+    "fresco_related_products_DDMRW8"
   ]
 }

@@ -1,0 +1,81 @@
+<div class="faq-page" {{ section.shopify_attributes }}>
+  <section class="faq-hero" aria-labelledby="faq-title">
+    <div class="faq-container">
+      <p class="faq-eyebrow">{{ section.settings.eyebrow }}</p>
+      <h1 id="faq-title" class="faq-title">
+        {{ section.settings.title_prefix }} <span class="highlight">{{ section.settings.title_highlight }}</span>
+      </h1>
+      <p class="faq-subtitle">
+        {{ section.settings.subtitle }}
+      </p>
+    </div>
+  </section>
+
+  <section class="faq-content" aria-label="FAQ details">
+    <div class="faq-container faq-grid">
+      <aside class="faq-categories" aria-label="FAQ categories">
+        <h2 class="faq-categories-title">{{ section.settings.toc_title }}</h2>
+        <ul class="faq-categories-list">
+          {% for block in section.blocks %}
+            {% if block.type == 'toc_item' %}
+              {% assign category_id = block.settings.anchor | remove: '-faqs' %}
+              <li {{ block.shopify_attributes }}>
+                <button
+                  type="button"
+                  class="faq-category-btn{% if forloop.first %} active{% endif %}"
+                  data-category="{{ category_id }}"
+                  aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
+                  aria-controls="{{ block.settings.anchor }}"
+                >
+                  {{ block.settings.label }}
+                </button>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </aside>
+
+      <div class="faq-sections">
+        {% if page.content != blank %}
+          {{ page.content }}
+        {% else %}
+          <section class="faq-section" id="product-faqs">
+            <h2>Product FAQs</h2>
+            <p>Add your FAQ content in the page editor and match section IDs with the categories listed on the left.</p>
+          </section>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Fresco FAQ Layout",
+  "tag": "section",
+  "class": "section-fresco-faq-layout",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Support" },
+    { "type": "text", "id": "title_prefix", "label": "Title prefix", "default": "Frequently Asked" },
+    { "type": "text", "id": "title_highlight", "label": "Title highlight", "default": "Questions" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Find answers about our products, retail partnerships, and culinary guidance." },
+    { "type": "text", "id": "toc_title", "label": "Categories title", "default": "Categories" }
+  ],
+  "blocks": [
+    {
+      "type": "toc_item",
+      "name": "Category item",
+      "limit": 20,
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Product FAQs" },
+        { "type": "text", "id": "anchor", "label": "Anchor id", "default": "product-faqs", "info": "Use the same id as section headings in page content (without #)." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco FAQ Layout"
+    }
+  ]
+}
+{% endschema %}

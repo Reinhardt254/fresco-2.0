@@ -1,0 +1,93 @@
+{%- doc -%}
+  Icon button for wishlist (visual + optional link). Place beside Add to cart via Buy buttons block order.
+{%- enddoc -%}
+{%- liquid
+  assign product = closest.product
+  if request.visual_preview_mode and product == blank
+    assign product = collections.all.products.first
+  endif
+  assign icon_class = block.settings.icon | strip
+  if icon_class == blank
+    assign icon_class = 'fa-regular fa-heart'
+  endif
+-%}
+<span
+  class="wishlist-button-block"
+  {{ block.shopify_attributes }}
+>
+  {%- if block.settings.link != blank -%}
+    <a
+      href="{{ block.settings.link }}"
+      class="product-details-wishlist"
+      {% if block.settings.open_in_new_tab %}
+        target="_blank" rel="noopener noreferrer"
+      {% endif %}
+      aria-label="{{ block.settings.label | escape }}"
+    >
+      <i class="{{ icon_class }}" aria-hidden="true"></i>
+    </a>
+  {%- else -%}
+    <button
+      type="button"
+      class="product-details-wishlist"
+      data-wishlist-product-id="{{ product.id }}"
+      aria-label="{{ block.settings.label | escape }}"
+      aria-pressed="false"
+    >
+      <i class="{{ icon_class }}" aria-hidden="true"></i>
+    </button>
+  {%- endif -%}
+</span>
+
+{% stylesheet %}
+  .wishlist-button-block {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .wishlist-button-block .product-details-wishlist {
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    .wishlist-button-block {
+      display: none !important;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Wishlist",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Accessible label",
+      "default": "Add to wishlist"
+    },
+    {
+      "type": "text",
+      "id": "link",
+      "label": "Wishlist page URL",
+      "info": "Optional. If empty, the button is visual only (connect a wishlist app later)."
+    },
+    {
+      "type": "checkbox",
+      "id": "open_in_new_tab",
+      "label": "Open link in new tab",
+      "default": false,
+      "visible_if": "{{ block.settings.link != blank }}"
+    },
+    {
+      "type": "text",
+      "id": "icon",
+      "label": "Font Awesome icon classes",
+      "default": "fa-regular fa-heart",
+      "info": "Uses theme Font Awesome. Example: fa-regular fa-heart"
+    }
+  ]
+}
+{% endschema %}

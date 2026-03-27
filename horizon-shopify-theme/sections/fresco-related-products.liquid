@@ -1,0 +1,191 @@
+<section
+  id="fresco-related-products-{{ section.id }}"
+  class="related-products-section"
+  data-fresco-related-products
+>
+  <div class="product-details-container">
+    <div class="cart-recommended-inner">
+      <div class="cart-recommended-header">
+        <h2 class="cart-recommended-title">
+          {{ section.settings.related_title_prefix | escape }} <span class="highlight">{{ section.settings.related_title_highlight | escape }}</span>
+        </h2>
+        {%- if section.settings.related_subtitle != blank -%}
+          <p class="cart-recommended-subtitle">{{ section.settings.related_subtitle }}</p>
+        {%- endif -%}
+      </div>
+
+      {%- assign rec_collection = collections[section.settings.related_collection] -%}
+      {%- if rec_collection != blank and rec_collection.products_count > 0 -%}
+        <div class="cart-recommended-carousel swiper related-products-swiper">
+          <div class="cart-recommended-track swiper-wrapper">
+            {%- for rec_product in rec_collection.products limit: section.settings.related_max -%}
+              {%- if rec_product.id != product.id -%}
+                <div class="swiper-slide">
+                  <div class="product-card">
+                    <a href="{{ rec_product.url }}" class="product-card__link">
+                      <div class="product-image">
+                        {%- if rec_product.featured_image != blank -%}
+                          <img
+                            class="product-card__image"
+                            src="{{ rec_product.featured_image | image_url: width: 400 }}"
+                            alt="{{ rec_product.featured_image.alt | escape }}"
+                            loading="lazy"
+                            width="400"
+                            height="400"
+                          />
+                        {%- else -%}
+                          {{ 'product-1' | placeholder_svg_tag }}
+                        {%- endif -%}
+                      </div>
+                      <h3 class="product-name">
+                        <span>{{ rec_product.title }}</span>
+                      </h3>
+                    </a>
+
+                    <div class="product-price">
+                      <span class="current-price">{{ rec_product.price | money }}</span>
+                      {%- if rec_product.compare_at_price > rec_product.price -%}
+                        <span class="original-price">{{ rec_product.compare_at_price | money }}</span>
+                      {%- endif -%}
+                    </div>
+
+                    <button
+                      type="button"
+                      class="product-card-add"
+                      data-variant-id="{{ rec_product.selected_or_first_available_variant.id }}"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+
+          <div class="cart-recommended-nav">
+            <button type="button" class="cart-recommended-btn related-products-prev" aria-label="Previous products">
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="cart-recommended-btn related-products-next" aria-label="Next products">
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      function initFrescoRelatedProducts(root) {
+        if (!root || root.dataset.frescoRelatedInit === 'true') return;
+        if (typeof Swiper === 'undefined') return;
+
+        var swiperEl = root.querySelector('.related-products-swiper');
+        if (!swiperEl) return;
+
+        var prevEl = root.querySelector('.related-products-prev');
+        var nextEl = root.querySelector('.related-products-next');
+        if (!prevEl || !nextEl) return;
+
+        // eslint-disable-next-line no-new
+        new Swiper(swiperEl, {
+          slidesPerView: 3,
+          spaceBetween: 24,
+          loop: true,
+          navigation: {
+            nextEl: nextEl,
+            prevEl: prevEl
+          },
+          breakpoints: {
+            320: { slidesPerView: 2, spaceBetween: 10 },
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            900: { slidesPerView: 4, spaceBetween: 24 }
+          }
+        });
+
+        root.dataset.frescoRelatedInit = 'true';
+
+        root.querySelectorAll('.product-card-add').forEach(function (btn) {
+          if (btn.dataset.frescoRelatedWired === 'true') return;
+          btn.dataset.frescoRelatedWired = 'true';
+
+          btn.addEventListener('click', function () {
+            var vid = btn.getAttribute('data-variant-id');
+            if (!vid) return;
+
+            fetch('/cart/add.js', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ items: [{ id: parseInt(vid, 10), quantity: 1 }] })
+            }).then(function () {
+              btn.textContent = 'Added!';
+              window.setTimeout(function () {
+                btn.textContent = 'Add to cart';
+              }, 1500);
+            });
+          });
+        });
+      }
+
+      function initAll() {
+        document.querySelectorAll('[data-fresco-related-products]').forEach(function (root) {
+          initFrescoRelatedProducts(root);
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAll);
+      } else {
+        initAll();
+      }
+    })();
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Related Products",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "related_collection",
+      "label": "Related products collection"
+    },
+    {
+      "type": "range",
+      "id": "related_max",
+      "label": "Max related products",
+      "min": 4,
+      "max": 16,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "text",
+      "id": "related_title_prefix",
+      "label": "Related title prefix",
+      "default": "Related"
+    },
+    {
+      "type": "text",
+      "id": "related_title_highlight",
+      "label": "Related title highlight",
+      "default": "Products"
+    },
+    {
+      "type": "text",
+      "id": "related_subtitle",
+      "label": "Related subtitle",
+      "default": "Discover more freeze-dried favorites to pair with this product."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Related Products"
+    }
+  ]
+}
+{% endschema %}
+

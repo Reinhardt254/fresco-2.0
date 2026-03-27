@@ -38,6 +38,10 @@
       ],
       "name": "Fresco Hero",
       "settings": {
+        "overlay_top_left": "shopify://shop_images/0A0A0462-scaled-1-1.png",
+        "overlay_top_right": "shopify://shop_images/0A0A7607.png",
+        "overlay_bottom_left": "shopify://shop_images/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview-1.png",
+        "overlay_bottom_right": "shopify://shop_images/0A0A9691-1-scaled-removebg-preview.png",
         "heading": "Bringing the Best Herbs",
         "highlight_text": "Best",
         "subheading": "100% Organic, from Kenya to the World.",
@@ -237,42 +241,47 @@
     },
     "fresco_category_section_9k2pXw": {
       "type": "fresco-category-section",
-      "name": "Fresco Categories",
       "blocks": {
         "cat_slide_1": {
           "type": "category_slide",
           "settings": {
+            "collection": "",
             "label": "Professional kitchens",
             "discount_tag": "30% OFF",
             "headline": "Chef-Friendly Format for Culinary Service",
             "description": "Our premium organic herbs, packed in larger chef-ready formats for high-volume culinary service. Consistent flavor, and reliable performance for busy kitchens.",
             "link_text": "Explore Chefs collection",
             "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/Untitled-design-8-6.png",
-            "image_alt": "Culinary herb jar"
+            "image_alt": "Culinary herb jar",
+            "bg_gradient": ""
           }
         },
         "cat_slide_2": {
           "type": "category_slide",
           "settings": {
+            "collection": "",
             "label": "Home cooking",
             "discount_tag": "20% OFF",
             "headline": "Everyday flavours made effortless",
             "description": "Premium organic herbs that turn simple meals into something memorable. Freeze-dried freshness with zero prep, ready whenever you cook.",
             "link_text": "Shop home favourites",
             "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/Untitled-design-4.png",
-            "image_alt": "Combo herb pack"
+            "image_alt": "Combo herb pack",
+            "bg_gradient": ""
           }
         },
         "cat_slide_3": {
           "type": "category_slide",
           "settings": {
+            "collection": "",
             "label": "Retail",
             "discount_tag": "30% OFF",
             "headline": "Built for Retail Success",
             "description": "Retail-ready organic herbs designed for strong shelf presence and dependable supply. Traceable sourcing and consistent quality your customers can trust.",
             "link_text": "Partner With Fresco",
             "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/Untitled_design__7_-removebg-preview.png",
-            "image_alt": "All-purpose herb jar"
+            "image_alt": "All-purpose herb jar",
+            "bg_gradient": ""
           }
         }
       },
@@ -281,6 +290,7 @@
         "cat_slide_2",
         "cat_slide_3"
       ],
+      "name": "Fresco Categories",
       "settings": {
         "sub_heading_text": "Categories",
         "sub_heading_image_url_fallback": "https://cdn-icons-png.freepik.com/512/12504/12504700.png?uid=R146131911&ga=GA1.1.1724219820.1772450282",
@@ -301,7 +311,6 @@
     },
     "fresco_reviews_k7Lx3Q": {
       "type": "fresco-reviews",
-      "name": "Fresco Reviews",
       "blocks": {
         "review_slide_1": {
           "type": "review_slide",
@@ -366,6 +375,7 @@
         "review_slide_5",
         "review_slide_6"
       ],
+      "name": "Fresco Reviews",
       "settings": {
         "title_prefix": "What Our",
         "highlight_customers": "Customers",

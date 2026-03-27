@@ -2432,7 +2432,9 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
 }
 
 .variant-option__button-label__pill {
-  background: var(--color-selected-variant-background);
+  background: #e6f6ea !important;
+  color: #ffffff !important;
+  border-color: #0f3d2e !important;
   position: absolute;
   top: calc(var(--options-border-width) * -1);
   bottom: calc(var(--options-border-width) * -1);
@@ -2497,7 +2499,9 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
   color: var(--color-selected-variant-hover-text);
 
   .variant-option__button-label__pill {
-    background-color: var(--color-selected-variant-hover-background);
+    background-color: #e6f6ea !important;
+    color: #0f3d2e !important;
+    border-color: #0f3d2e !important;
   }
 }
 
@@ -2982,6 +2986,23 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) > *:not(.tax-note) {
 
 .shopify-policy__container {
   padding-block: var(--padding-xl);
+  width: 90% !important;
+  max-width: 800px !important;
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+}
+
+.shopify-policy__title h1 {
+  text-align: left !important;
+}
+
+@media (max-width: 768px) {
+  .shopify-policy__container {
+    padding: 10px !important;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    width: 100% !important;
+  }
 }
 
 .checkbox {
@@ -3346,12 +3367,14 @@ label:has(input[type='checkbox']:disabled) {
 .quick-add-modal .quantity-selector .quantity-minus {
   border-start-start-radius: var(--style-border-radius-buttons-primary);
   border-end-start-radius: var(--style-border-radius-buttons-primary);
+  max-width: fit-content !important;
 }
 
 .product-details .quantity-selector .quantity-plus,
 .quick-add-modal .quantity-selector .quantity-plus {
   border-start-end-radius: var(--style-border-radius-buttons-primary);
   border-end-end-radius: var(--style-border-radius-buttons-primary);
+  max-width: fit-content !important;
 }
 
 .quantity-selector .svg-wrapper {
@@ -4964,4 +4987,9 @@ product-recommendations:has([data-has-recommendations='false']) {
     opacity: var(--atc-opacity, 1);
     translate: 0px var(--atc-destination, 0px);
   }
+}
+
+
+.variant-option__button-label:not(.variant-option__button-label--has-swatch):before {
+  display: none !important;
 }

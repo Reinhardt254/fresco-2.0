@@ -130,11 +130,13 @@
     {% render 'search-modal' %}
     {% render 'fresco-search-popup' %}
 
-    {% if settings.quick_add or settings.mobile_quick_add %}
-      {% render 'quick-add-modal' %}
+    {% if template.name == 'collection' %}
+      {% if settings.quick_add or settings.mobile_quick_add %}
+        {% render 'quick-add-modal' %}
+      {% endif %}
     {% endif %}
 
-    {% if template.name == 'index' %}
+    {% if template.name == 'index' or template.name == 'collection' or template.name == 'list-collections' %}
       <script src="{{ 'fresco/scripts/index.js' | asset_url }}" defer></script>
     {% endif %}
     <script src="{{ 'fresco/scripts/search.js' | asset_url }}" defer></script>

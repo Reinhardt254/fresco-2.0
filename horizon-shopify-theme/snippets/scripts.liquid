@@ -222,6 +222,11 @@
   fetchpriority="low"
 ></script>
 <script
+  src="{{ 'fresco-product-media-swiper.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+<script
   src="{{ 'rte-formatter.js' | asset_url }}"
   type="module"
   fetchpriority="low"
@@ -269,6 +274,9 @@
 
 {% comment %} Fresco global scripts (mobile menu, footer scroll-to-top) {% endcomment %}
 <script src="{{ 'fresco/scripts/global.js' | asset_url }}" defer="defer"></script>
+{% if template.suffix == 'faq' %}
+  <script src="{{ 'fresco/scripts/faq.js' | asset_url }}" defer="defer"></script>
+{% endif %}
 
 <script
   src="{{ 'auto-close-details.js' | asset_url }}"

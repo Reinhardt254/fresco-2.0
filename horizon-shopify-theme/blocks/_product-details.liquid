@@ -3,6 +3,7 @@
   id="ProductInformation-{{ section.id }}"
   class="
     product-details
+    {% if block_settings.details_layout == 'fresco' %} product-details--fresco{% endif %}
     {% if block_settings.sticky_details_desktop %} sticky-content--desktop{% endif %}
     {% if block_settings.height == 'fill' -%} full-height--desktop{% endif -%}
   "
@@ -24,7 +25,26 @@
     {% content_for 'blocks' %}
   {% endcapture %}
 
-  {% render 'group', children: children, settings: block_settings, shopify_attributes: block.shopify_attributes %}
+  {% if block_settings.details_layout == 'fresco' %}
+    {% liquid
+      assign fresco_variant = closest.product.selected_or_first_available_variant
+    %}
+    {% capture fresco_children %}
+      <div class="product-details-info fresco-product-details">
+        <div class="fresco-product-details__stock-pill-overlay">
+          {% if fresco_variant.available %}
+            <span class="product-details-stock-pill">{{ 'content.inventory_in_stock' | t }}</span>
+          {% else %}
+            <span class="product-details-stock-pill product-details-stock-pill--sold-out">{{ 'products.product.sold_out' | t }}</span>
+          {% endif %}
+        </div>
+        {{ children }}
+      </div>
+    {% endcapture %}
+    {% render 'group', children: fresco_children, settings: block_settings, shopify_attributes: block.shopify_attributes %}
+  {% else %}
+    {% render 'group', children: children, settings: block_settings, shopify_attributes: block.shopify_attributes %}
+  {% endif %}
 </div>
 
 {% stylesheet %}
@@ -110,6 +130,9 @@
       "type": "buy-buttons"
     },
     {
+      "type": "product-promo"
+    },
+    {
       "type": "product-description"
     },
     {
@@ -130,6 +153,22 @@
   ],
   "tag": null,
   "settings": [
+    {
+      "type": "select",
+      "id": "details_layout",
+      "label": "Product details layout",
+      "options": [
+        {
+          "value": "default",
+          "label": "Theme default"
+        },
+        {
+          "value": "fresco",
+          "label": "Fresco"
+        }
+      ],
+      "default": "default"
+    },
     {
       "type": "header",
       "content": "t:content.size"

@@ -1,0 +1,67 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "fresco_product_main": {
+      "type": "fresco-product",
+      "blocks": {
+        "benefit_organic": {
+          "type": "benefit",
+          "settings": {
+            "icon_class": "fa-solid fa-leaf",
+            "title": "100% Organic",
+            "description": "Pure, naturally grown herbs."
+          }
+        },
+        "benefit_shelf": {
+          "type": "benefit",
+          "settings": {
+            "icon_class": "fa-regular fa-clock",
+            "title": "Long Shelf Life",
+            "description": "Stays fresh for months."
+          }
+        },
+        "benefit_preservative": {
+          "type": "benefit",
+          "settings": {
+            "icon_class": "fa-solid fa-ban",
+            "title": "Preservative Free",
+            "description": "No artificial preservatives added."
+          }
+        },
+        "benefit_easy": {
+          "type": "benefit",
+          "settings": {
+            "icon_class": "fa-solid fa-bolt",
+            "title": "Easy to Use",
+            "description": "Ready to sprinkle anytime."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_organic",
+        "benefit_shelf",
+        "benefit_preservative",
+        "benefit_easy"
+      ],
+      "settings": {
+        "rating_text": "4.8 (245 Reviews)",
+        "related_collection": "all",
+        "related_max": 8,
+        "related_title_prefix": "Related",
+        "related_title_highlight": "Products",
+        "related_subtitle": "Discover more freeze-dried favorites to pair with this product."
+      }
+    }
+  },
+  "order": [
+    "fresco_product_main"
+  ]
+}

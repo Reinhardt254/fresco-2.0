@@ -1,0 +1,37 @@
+<div class="promo-item" {{ block.shopify_attributes }}>
+  <div class="promo-icon">
+    <i class="{{ block.settings.icon_class | escape }}" aria-hidden="true"></i>
+  </div>
+  <div class="promo-text">
+    <h3>{{ block.settings.title | escape }}</h3>
+    <p>{{ block.settings.description | escape }}</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Promo benefit",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "icon_class",
+      "label": "Icon class",
+      "default": "fa-solid fa-leaf",
+      "info": "Font Awesome classes, e.g. fa-solid fa-truck"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Benefit title"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Short supporting text."
+    }
+  ]
+}
+{% endschema %}

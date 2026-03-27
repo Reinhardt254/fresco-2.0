@@ -1,0 +1,312 @@
+{%- doc -%}
+  Fresco product gallery: main media stack + Swiper thumbnail strip (matches fresco-product section).
+  Expects `sorted_media` from product-media-gallery-content (variant order, hide_variants respected).
+{%- enddoc -%}
+{%- liquid
+  assign fresco_uid = block_id | replace: '/', '-' | replace: '_', '-'
+  assign lowest_aspect_ratio = 50
+  assign lowest_aspect_ratio_index = 0
+  if block_settings.aspect_ratio == 'adapt'
+    for media in sorted_media
+      if media.preview_image and media.preview_image.aspect_ratio
+        if media.preview_image.aspect_ratio < lowest_aspect_ratio
+          assign lowest_aspect_ratio = media.preview_image.aspect_ratio
+          assign lowest_aspect_ratio_index = forloop.index0
+        endif
+      endif
+    endfor
+  endif
+-%}
+{%- if sorted_media.size == 0 -%}
+  <media-gallery
+    class="
+      spacing-style
+      sticky-content
+      media-gallery--{{ media_presentation }}
+      {% if block_settings.extend_media %}
+        media-gallery--extend
+      {% endif %}
+    "
+    style="{% render 'spacing-style', settings: block_settings %} --thumbnail-width: {{ block_settings.thumbnail_width }}px; --media-radius: {{ block_settings.media_radius }}px; --gallery-media-border-radius: {{ block_settings.media_radius }}px;"
+    data-presentation="{{ media_presentation }}"
+    {{ block_shopify_attributes }}
+  >
+    <div class="fresco-product-media-swiper">
+      {{ 'product-apparel-1' | placeholder_svg_tag: 'product-media-gallery__placeholder-image' }}
+    </div>
+  </media-gallery>
+{%- else -%}
+<media-gallery
+  class="
+    spacing-style
+    sticky-content
+    media-gallery--{{ media_presentation }}
+    {% if block_settings.extend_media %}
+      media-gallery--extend
+    {% endif %}
+  "
+  style="{% render 'spacing-style', settings: block_settings %} --thumbnail-width: {{ block_settings.thumbnail_width }}px; --media-radius: {{ block_settings.media_radius }}px; --gallery-media-border-radius: {{ block_settings.media_radius }}px;"
+  data-presentation="{{ media_presentation }}"
+  {{ block_shopify_attributes }}
+>
+  <div class="fresco-product-media-swiper">
+    <div class="product-details-gallery">
+      <div class="product-details-main-image-container">
+        <div class="product-details-main-image-wrap fresco-main-image-stack">
+          {%- for media in sorted_media -%}
+            <div
+              class="fresco-main-media-item {{ product_media_container_class }} product-media-container--{{ media.media_type }}{% if block_settings.zoom and media.media_type == 'image' %} product-media-container--zoomable{% endif %}{% if forloop.index0 == lowest_aspect_ratio_index and block_settings.aspect_ratio == 'adapt' %} product-media-container--tallest{% endif %}{% if forloop.first %} is-active{% endif %}"
+              data-fresco-main-index="{{ forloop.index0 }}"
+              style="{% if block_settings.aspect_ratio == 'adapt' %} --media-preview-ratio: {{ media.preview_image.aspect_ratio | default: 1.0 }};{% endif %}"
+              {% unless forloop.first %}
+                hidden
+              {% endunless %}
+            >
+              {%- if block_settings.zoom and media.media_type == 'image' -%}
+                <button
+                  type="button"
+                  class="button button-unstyled product-media-container__zoom-button"
+                  aria-label="{{ 'actions.zoom' | t }}"
+                  on:click="/zoom/{{ forloop.index0 }}"
+                  {% if block_settings.zoom %}
+                    on:pointerenter="/preloadImage/{{ forloop.index0 }}"
+                  {% endif %}
+                >
+                  <span class="visually-hidden">{{ 'actions.open_image_in_full_screen' | t }}</span>
+                </button>
+              {%- endif -%}
+              {%- if block_settings.aspect_ratio != 'adapt' and block_settings.constrain_to_viewport -%}
+                <div class="product-media-constraint-wrapper">
+                  {%- render 'product-media',
+                    media: media,
+                    sizes: sizes,
+                    is_main_product_media: forloop.first
+                  -%}
+                </div>
+              {%- else -%}
+                {%- render 'product-media',
+                  media: media,
+                  sizes: sizes,
+                  is_main_product_media: forloop.first
+                -%}
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+
+        {%- if sorted_media.size > 1 -%}
+          <div class="product-details-thumbnails-wrap">
+            <div
+              class="swiper product-details-thumbnails-swiper"
+              data-fresco-product-swiper="{{ fresco_uid }}"
+            >
+              <div class="swiper-wrapper">
+                {%- for media in sorted_media -%}
+                  <div class="swiper-slide product-details-thumb-slide{% if forloop.first %} is-active{% endif %}">
+                    <button
+                      type="button"
+                      class="product-details-thumb-frame"
+                      data-fresco-media-index="{{ forloop.index0 }}"
+                      aria-label="{{ 'accessibility.scroll_to' | t: title: media.alt | default: media.media_type }}"
+                      aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
+                    >
+                      {{
+                        media.preview_image
+                        | image_url: width: 200
+                        | image_tag:
+                          loading: 'lazy',
+                          class: 'product-details-thumb-img',
+                          alt: media.alt,
+                          widths: '200, 400',
+                          sizes: '80px'
+                      }}
+                    </button>
+                  </div>
+                {%- endfor -%}
+              </div>
+            </div>
+            <div
+              class="swiper-button-next product-details-thumb-next"
+              data-fresco-thumb-next="{{ fresco_uid }}"
+            >
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </div>
+            <div
+              class="swiper-button-prev product-details-thumb-prev"
+              data-fresco-thumb-prev="{{ fresco_uid }}"
+            >
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  {%- if block_settings.zoom -%}
+    <zoom-dialog
+      ref="zoomDialogComponent"
+      id="zoom-dialog-{{ block_id }}"
+    >
+      <dialog
+        class="dialog-zoomed-gallery__dialog"
+        ref="dialog"
+        on:keydown="/handleKeyDown"
+        scroll-lock
+      >
+        <button
+          type="button"
+          class="button button-unstyled close-button dialog-zoomed-gallery__close-button"
+          aria-label="{{ 'actions.close' | t }}"
+          on:click="/close"
+        >
+          <span class="visually-hidden">{{ 'actions.close' | t }}</span>
+          {{ 'icon-close.svg' | inline_asset_content }}
+        </button>
+        <div class="dialog-thumbnails-list-container">
+          <scroll-hint
+            class="dialog-thumbnails-list list-unstyled"
+            ref="thumbnails"
+          >
+            {% if sorted_media.size > 1 %}
+              {%- for media in sorted_media -%}
+                {% liquid
+                  assign aspect_ratio = block_settings.aspect_ratio
+                  if block_settings.aspect_ratio == 'adapt'
+                    assign aspect_ratio = media.preview_image.aspect_ratio | default: 1.0
+                  endif
+                %}
+                <button
+                  type="button"
+                  class="button button-unstyled dialog-thumbnails-list__thumbnail"
+                  aria-label="{{ 'accessibility.scroll_to' | t: title: media.alt | default: media.media_type }}"
+                  on:click="/handleThumbnailClick/{{ forloop.index0 }}"
+                  on:pointerenter="/handleThumbnailPointerEnter/{{ forloop.index0 }}"
+                  style="--aspect-ratio: {{ aspect_ratio }}; --gallery-aspect-ratio: {{ aspect_ratio }};"
+                  {% if forloop.first %}
+                    aria-selected="true"
+                  {% endif %}
+                >
+                  {% liquid
+                    assign focal_point_style = ''
+                    if media.presentation.focal_point != blank
+                      assign focal_point_style = 'object-position: ' | append: media.presentation.focal_point | append: ';'
+                    endif
+                  %}
+                  {{
+                    media.preview_image
+                    | image_url: width: 1024
+                    | image_tag:
+                      loading: 'lazy',
+                      sizes: 'auto, 110, (min-width: 750px) 160',
+                      widths: '240, 352, 832, 1200',
+                      alt: media.alt,
+                      style: focal_point_style
+                  }}
+                </button>
+              {%- endfor -%}
+            {% endif %}
+          </scroll-hint>
+        </div>
+        <ul class="dialog-zoomed-gallery list-unstyled">
+          {%- for media in sorted_media -%}
+            <li
+              id="product-{{ media.id }}-{{ forloop.index }}"
+              class="{{ product_media_container_class | remove: 'media-fit-cover' }} product-media-container--{{ media.media_type }}{% if media.media_type == 'image' %} product-media-container--zoomable{% endif %}"
+              style="{% if block_settings.aspect_ratio == 'adapt' %} --media-preview-ratio: {{ media.preview_image.aspect_ratio | default: 1.0 }};{% endif %}"
+              ref="media[]"
+              {% if media.media_type == 'image' %}
+                on:click="/close"
+              {% endif %}
+            >
+              {% if media.media_type == 'image' %}
+                <drag-zoom-wrapper class="product-media__drag-zoom-wrapper">
+                  {%- render 'product-media',
+                    media: media,
+                    sizes: '100vw',
+                    loading: 'lazy',
+                    is_main_product_media: forloop.first,
+                    image_ref: 'image'
+                  -%}
+                </drag-zoom-wrapper>
+              {% else %}
+                {%- render 'product-media',
+                  media: media,
+                  sizes: '100vw',
+                  loading: 'lazy',
+                  is_main_product_media: forloop.first
+                -%}
+              {% endif %}
+            </li>
+          {%- endfor -%}
+        </ul>
+      </dialog>
+    </zoom-dialog>
+  {%- endif -%}
+ 
+  {%- if first_3d_model -%}
+    <link
+      id="ModelViewerStyle"
+      rel="stylesheet"
+      href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css"
+      media="print"
+      onload="this.media='all'"
+    >
+    <script>
+      window.ProductModel = {
+        loadShopifyXR() {
+          Shopify.loadFeatures([
+            {
+              name: 'shopify-xr',
+              version: '1.0',
+              onLoad: this.setupShopifyXR.bind(this),
+            },
+          ]);
+        },
+
+        setupShopifyXR(errors) {
+          if (errors) return;
+
+          if (!window.ShopifyXR) {
+            document.addEventListener('shopify_xr_initialized', () => this.setupShopifyXR());
+            return;
+          }
+
+          document.querySelectorAll('[id^="ProductModelJSON-"]').forEach((modelJSON) => {
+            window.ShopifyXR.addModels(JSON.parse(modelJSON.textContent));
+            modelJSON.remove();
+          });
+          window.ShopifyXR.setupXRElements();
+        },
+      };
+
+      window.ProductModel.loadShopifyXR();
+    </script>
+  {%- endif -%}
+</media-gallery>
+{%- endif -%}
+
+{% stylesheet %}
+  .fresco-product-media-swiper .product-details-gallery {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .fresco-main-image-stack {
+    position: relative;
+  }
+
+  .fresco-main-media-item {
+    position: relative;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .fresco-main-media-item[hidden] {
+    display: none !important;
+  }
+
+  .fresco-main-media-item .product-media {
+    width: 100%;
+  }
+{% endstylesheet %}

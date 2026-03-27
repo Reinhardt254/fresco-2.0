@@ -7,17 +7,86 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
+    "fresco_collection_hero_pxzPaP": {
+      "type": "fresco-collection-hero",
+      "name": "Fresco Collection Hero",
+      "settings": {
+        "count_text": "20+",
+        "subtitle": "Herbs",
+        "description": "Organically grown herbs, carefully harvested at peak freshness and freeze dried to lock in flavor, color and aroma packed for convenience. No chopping, no cleaning, just instant fresco flavour added to soups, sauces and salads. Elevate your cooking from good to unforgettable.",
+        "overlay_center_url": "https://img.freepik.com/free-vector/hand-drawn-basil-drawing-illustration_23-2150840443.jpg",
+        "overlay_left_url": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview.png",
+        "overlay_right_url": "https://plantechkenya.com/wp-content/uploads/2026/02/dried-herbs-spilled-from-glass-jar-white-background_1012140-1044.png"
+      }
+    },
+    "fresco_category_section_7fjYA3": {
+      "type": "fresco-category-section",
+      "blocks": {
+        "category_slide_Kkq7tn": {
+          "type": "category_slide",
+          "settings": {
+            "collection": "",
+            "label": "Professional kitchens",
+            "discount_tag": "30% OFF",
+            "headline": "Chef-Friendly Format for Culinary Service",
+            "description": "",
+            "link_text": "Explore Chefs collection",
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/Untitled-design-8-6.png",
+            "image_alt": "Culinary herb jar",
+            "bg_gradient": ""
+          }
+        },
+        "category_slide_AJ74Bb": {
+          "type": "category_slide",
+          "settings": {
+            "collection": "",
+            "label": "Home cooking",
+            "discount_tag": "20% OFF",
+            "headline": "Everyday flavours made effortless",
+            "description": "",
+            "link_text": "Shop home favourites",
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/Untitled-design-4.png",
+            "image_alt": "Combo herb pack",
+            "bg_gradient": ""
+          }
+        },
+        "category_slide_biX4zB": {
+          "type": "category_slide",
+          "settings": {
+            "collection": "",
+            "label": "Retail",
+            "discount_tag": "30% OFF",
+            "headline": "Built for Retail Success",
+            "description": "",
+            "link_text": "Partner With Fresco",
+            "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/Untitled_design__7_-removebg-preview.png",
+            "image_alt": "All-purpose herb jar",
+            "bg_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_slide_Kkq7tn",
+        "category_slide_AJ74Bb",
+        "category_slide_biX4zB"
+      ],
+      "name": "Fresco Categories",
+      "settings": {
+        "sub_heading_text": "Categories",
+        "sub_heading_image_url_fallback": "https://cdn-icons-png.freepik.com/512/12504/12504700.png?uid=R146131911&ga=GA1.1.1724219820.1772450282",
+        "section_title": "Fresco Herbs for Every Kitchen"
+      }
+    },
     "collection_list_Wfgh3m": {
       "type": "main-collection-list",
       "blocks": {
         "group_4FtiAg": {
           "type": "group",
           "name": "t:names.header",
+          "disabled": true,
           "settings": {
-            "link": "",
-            "open_in_new_tab": false,
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -45,6 +114,9 @@
             "overlay_color": "#00000026",
             "overlay_style": "solid",
             "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
             "padding-block-start": 0,
             "padding-block-end": 48,
             "padding-inline-start": 0,
@@ -150,6 +222,7 @@
       "block_order": [
         "group_4FtiAg"
       ],
+      "disabled": true,
       "name": "t:names.collection_list",
       "settings": {
         "layout_type": "grid",
@@ -168,9 +241,23 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "fresco_cta_NHfWUn": {
+      "type": "fresco-cta",
+      "name": "Fresco CTA",
+      "settings": {
+        "cta_bg_image_url_fallback": "https://plantechkenya.com/wp-content/uploads/2026/02/copy-space-greens-condimentsrtger-1.jpg",
+        "cta_heading": "Ready to Elevate Your Kitchen?",
+        "cta_description": "Experience the full, natural taste of Fresco herbs.",
+        "cta_button_label": "Explore our collection",
+        "cta_button_link": "shopify://collections/all"
+      }
     }
   },
   "order": [
-    "collection_list_Wfgh3m"
+    "fresco_collection_hero_pxzPaP",
+    "fresco_category_section_7fjYA3",
+    "collection_list_Wfgh3m",
+    "fresco_cta_NHfWUn"
   ]
 }

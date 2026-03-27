@@ -68,20 +68,28 @@
                 <p class="footer-company-desc">{{ block.settings.description }}</p>
               {%- endif -%}
 
+              {%- if block.settings.show_contact_in_column -%}
                 <ul class="footer-contact" aria-label="Contact information">
-                  <li>
-                    <i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:info@frescoflavors.com">info@frescoflavors.com</a>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA</span>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:+19018965814">+1 (901) 896-5814</a>
-                  </li>
+                  {%- if block.settings.contact_email != blank -%}
+                    <li>
+                      <i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:{{ block.settings.contact_email | escape }}">{{ block.settings.contact_email | escape }}</a>
+                    </li>
+                  {%- endif -%}
+                  {%- if block.settings.contact_address != blank -%}
+                    <li>
+                      <i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>{{ block.settings.contact_address }}</span>
+                    </li>
+                  {%- endif -%}
+                  {%- if block.settings.contact_phone != blank -%}
+                    <li>
+                      {%- assign phone_href = block.settings.contact_phone | strip | replace: ' ', '' | replace: '-', '' | replace: '(', '' | replace: ')', '' -%}
+                      <i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:{{ phone_href }}">{{ block.settings.contact_phone | escape }}</a>
+                    </li>
+                  {%- endif -%}
                 </ul>
-  
+              {%- endif -%}
             </div>
-
+  
           {%- when 'quick_links' -%}
             <div class="footer-col footer-col-links" {{ block.shopify_attributes }}>
               {%- if block.settings.heading != blank -%}
@@ -108,6 +116,11 @@
                       <a href="{{ link.url }}">{{ link.title | escape }}</a>
                     </li>
                   {%- endfor -%}
+                  {%- if shop.privacy_policy != blank -%}
+                    <li>
+                      <a href="{{ shop.privacy_policy.url }}">{{ shop.privacy_policy.title | escape }}</a>
+                    </li>
+                  {%- endif -%}
                 </ul>
               {%- endif -%}
             </div>
@@ -187,7 +200,7 @@
   <div class="footer-bottom">
     <div class="footer-container footer-bottom-inner">
       <p class="footer-copyright">&copy; {{ 'now' | date: '%Y' }}, {{ shop.name }}.</p>
-      {%- if section.settings.show_policy and shop.policies.size > 0 -%}
+      {% comment %} {%- if section.settings.show_policy and shop.policies.size > 0 -%}
         <div class="footer-policy-links">
           {%- for policy in shop.policies -%}
             {%- if policy != blank -%}
@@ -196,7 +209,7 @@
             {%- endif -%}
           {%- endfor -%}
         </div>
-      {%- endif -%}
+      {%- endif -%} {% endcomment %}
       {%- assign payment_icon_blocks = section.blocks | where: 'type', 'payment_icon' -%}
       {%- assign has_custom_payment_icons = false -%}
       {%- for block in payment_icon_blocks -%}
@@ -269,13 +282,25 @@
           "type": "checkbox",
           "id": "show_contact_in_column",
           "label": "Show contact in this column",
-          "default": false
+          "default": true
         },
         {
-          "type": "link_list",
-          "id": "contact_menu",
-          "label": "Contact menu",
-          "default": "footer"
+          "type": "text",
+          "id": "contact_email",
+          "label": "Contact email",
+          "default": "info@frescoflavors.com"
+        },
+        {
+          "type": "textarea",
+          "id": "contact_address",
+          "label": "Contact address",
+          "default": "7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA"
+        },
+        {
+          "type": "text",
+          "id": "contact_phone",
+          "label": "Contact phone",
+          "default": "+1 (901) 896-5814"
         }
       ]
     },

@@ -120,7 +120,7 @@
 
   # Determine if we're in single column mode (carousel or grid with one column)
   assign is_single_column = false
-  if media_presentation == 'carousel' or sorted_media.size == 1 or media_presentation == 'grid' and block_settings.media_columns == 'one'
+  if media_presentation == 'carousel' or sorted_media.size == 1 or media_presentation == 'grid' and block_settings.media_columns == 'one' or media_presentation == 'fresco_swiper'
     assign is_single_column = true
   endif
 
@@ -180,6 +180,7 @@
   ></script>
 {%- endif -%}
 
+{% unless media_presentation == 'fresco_swiper' %}
 {% style %}
   {% unless block_settings.aspect_ratio == 'adapt' %}
     .product-media-container {
@@ -319,6 +320,7 @@
 
   :root { --gallery-media-border-radius: {{ block_settings.media_radius }}px; }
 {% endstyle %}
+{% endunless %}
 
 {% if closest.product == blank %}
   <div
@@ -331,6 +333,17 @@
   >
     {{ 'product-apparel-1' | placeholder_svg_tag: 'product-media-gallery__placeholder-image' }}
   </div>
+{% elsif media_presentation == 'fresco_swiper' %}
+  {% render 'fresco-product-media-swiper',
+    sorted_media: sorted_media,
+    block_settings: block_settings,
+    block_id: block_id,
+    block_shopify_attributes: block_shopify_attributes,
+    media_presentation: media_presentation,
+    first_3d_model: first_3d_model,
+    sizes: sizes,
+    product_media_container_class: product_media_container_class
+  %}
 {% else %}
   <media-gallery
     class="

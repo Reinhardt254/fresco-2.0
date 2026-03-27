@@ -1,0 +1,108 @@
+{%- doc -%}
+  Fresco-style promo / benefits grid. Add “Promo benefit” rows in the theme editor.
+{%- enddoc -%}
+<section
+  class="promo product-promo-block spacing-style"
+  style="{% render 'spacing-style', settings: block.settings %}"
+  aria-label="{{ block.settings.section_label | escape }}"
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.section_label != blank %}
+    <h2 class="visually-hidden">{{ block.settings.section_label | escape }}</h2>
+  {% endif %}
+  <div class="promo-card">
+    {% content_for 'blocks' %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product promo",
+  "tag": null,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Click Add block below to add Promo benefit items (icon, title, and description). If you add this block and see an empty box, remove it and add Product promo again to load the sample benefits."
+    },
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section label (accessibility)",
+      "default": "Product benefits"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "Left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "Right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "promo-benefit"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product promo",
+      "blocks": {
+        "promo_benefit_1": {
+          "type": "promo-benefit",
+          "settings": {
+            "icon_class": "fa-solid fa-truck",
+            "title": "Free shipping",
+            "description": "On orders over $50."
+          }
+        },
+        "promo_benefit_2": {
+          "type": "promo-benefit",
+          "settings": {
+            "icon_class": "fa-solid fa-rotate-left",
+            "title": "Easy returns",
+            "description": "30-day return policy."
+          }
+        }
+      },
+      "block_order": ["promo_benefit_1", "promo_benefit_2"]
+    }
+  ]
+}
+{% endschema %}

@@ -23,10 +23,13 @@
 {%- if template.suffix == 'shipping-policy' -%}
   {{ 'fresco/styles/shipping.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
+{%- if template.suffix == 'faq' -%}
+  {{ 'fresco/styles/faq.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
 {%- if template.name == 'cart' -%}
   {{ 'fresco/styles/cart.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
-{%- if template.name == 'collection' -%}
+{%- if template.name == 'collection' or template.name == 'list-collections' -%}
   {{ 'fresco/styles/shop.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
 {%- if template.name == 'product' -%}

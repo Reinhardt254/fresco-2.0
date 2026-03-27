@@ -22,18 +22,11 @@
 
 {% stylesheet %}
   #quick-add-dialog {
-    display: none;
-  }
-
-  #quick-add-dialog[open] {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: contents;
   }
 
   @media screen and (min-width: 750px) {
     .quick-add-modal {
-      display: flex;
       width: var(--quick-add-modal-width);
       height: var(--quick-add-modal-height);
       max-width: none;
@@ -66,6 +59,7 @@
 
   .quick-add-modal[open] {
     @media screen and (min-width: 750px) {
+      display: flex;
       left: 50%;
       top: 50%;
       transform: translateX(-50%) translateY(-50%) !important;
@@ -487,6 +481,10 @@
     }
   }
 
+  .quick-add-modal__content .product-information__media media-gallery.media-gallery--fresco_swiper {
+    pointer-events: auto;
+  }
+
   .quick-add-modal media-gallery {
     padding: 0;
   }
@@ -550,6 +548,110 @@
   .quick-add-modal__content .text-block.rte:not(product-price),
   .quick-add-modal__content .view-more-details__wrapper {
     display: none;
+  }
+
+  /* Dialog-specific controls */
+  .quick-add-modal__content .dialog-variant-group {
+    margin-bottom: 10px;
+  }
+
+  .quick-add-modal__content .dialog-variant-button {
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+    min-height: 38px;
+    padding: 10px 16px;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4a4a4a;
+    background: #ffffff;
+    transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .variant-option__button-label input {
+    border-radius: 5px !important;
+  }
+
+  .quick-add-modal__content .dialog-variant-button:hover {
+    border-color: var(--primary-green, #1f6b4f);
+  }
+
+  .quick-add-modal__content .dialog-variant-button[aria-checked='true'],
+  .quick-add-modal__content .dialog-variant-button.is-selected {
+    border-color: #6cb24c;
+    background: #e6f6ea;
+    color: #2e7d32;
+  }
+
+  .product-details .quantity-selector, .quick-add-modal .quantity-selector {
+    border-radius: 5px !important;
+  }
+
+  .quick-add-modal__content .dialog-quantity-input {
+    border: 1px solid #afafaf00 !important;
+    border-radius: 5px;
+    min-height: 38px;
+    height: 38px;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    margin: 0 5px;
+  }
+
+  .quick-add-modal__content .dialog-quantity-button {
+    border: none;
+    border-radius: 5px;
+    min-width: 0;
+    min-height: 0;
+    background-color: #f5f5f500;
+    color: #000000;
+    font-size: 1.2rem;
+  }
+
+  .quick-add-modal__content .dialog-add-to-cart-button,
+  .quick-add-modal__content .dialog-buy-now-button {
+    border-radius: 6px;
+    min-height: 0;
+    padding: 14px 28px;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .quick-add-modal__content .dialog-add-to-cart-button {
+    background: #6cb24c;
+    border: none;
+    color: #fff;
+    border-radius: 5px !important;
+    font-family: "Poppins", sans-serif !important;
+  }
+
+  .quick-add-modal__content .dialog-add-to-cart-button:hover {
+    background: #5fa042 !important;
+  }
+
+  .quick-add-modal__content .dialog-buy-now-button {
+    background: #ffffff;
+    border: 1px solid #d8d8d8;
+    color: #1a1a1a;
+    border-radius: 5px !important;
+    font-family: "Poppins", sans-serif !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .quick-add-modal__content .dialog-buy-now-button:hover {
+    background:#000000 !important;
+    color: #ffffff !important;
+    border-color: #000000 !important;
+  }
+
+  .quick-add-modal__content .dialog-quantity-button:hover {
+    background-color: #d6d6d6;
+    color: #ffffff;
   }
 
   @keyframes fadeSlideIn {

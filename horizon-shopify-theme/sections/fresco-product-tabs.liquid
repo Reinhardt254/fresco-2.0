@@ -1,0 +1,227 @@
+{%- assign tabs_id = section.id -%}
+
+<section
+  id="fresco-product-tabs-{{ tabs_id }}"
+  class="product-details-tabs-section"
+  data-fresco-product-tabs
+>
+  <div class="product-details-container">
+    <div class="product-details-tabs-nav" role="tablist">
+      <button
+        type="button"
+        class="product-details-tab-btn is-active"
+        role="tab"
+        aria-selected="true"
+        aria-controls="tab-description-{{ tabs_id }}"
+        id="tab-btn-description-{{ tabs_id }}"
+      >
+        {{ section.settings.description_tab_label | escape }}
+      </button>
+      <button
+        type="button"
+        class="product-details-tab-btn"
+        role="tab"
+        aria-selected="false"
+        aria-controls="tab-additional-{{ tabs_id }}"
+        id="tab-btn-additional-{{ tabs_id }}"
+      >
+        {{ section.settings.additional_tab_label | escape }}
+      </button>
+      <button
+        type="button"
+        class="product-details-tab-btn"
+        role="tab"
+        aria-selected="false"
+        aria-controls="tab-reviews-{{ tabs_id }}"
+        id="tab-btn-reviews-{{ tabs_id }}"
+      >
+        {{ section.settings.reviews_tab_label | escape }}
+      </button>
+    </div>
+    <div class="product-details-tabs-underline"></div>
+
+    <div
+      id="tab-description-{{ tabs_id }}"
+      class="product-details-tab-panel is-visible"
+      role="tabpanel"
+      aria-labelledby="tab-btn-description-{{ tabs_id }}"
+    >
+      <div class="product-details-tab-content">
+        {%- if product != blank and product.description != blank -%}
+          {{ product.description }}
+        {%- else -%}
+          {{ section.settings.empty_description_text }}
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div
+      id="tab-additional-{{ tabs_id }}"
+      class="product-details-tab-panel"
+      role="tabpanel"
+      aria-labelledby="tab-btn-additional-{{ tabs_id }}"
+      hidden
+    >
+      {%- if product != blank and product.metafields.custom.additional_info != blank -%}
+        <div class="product-details-tab-content">
+          {{ product.metafields.custom.additional_info | metafield_tag }}
+        </div>
+      {%- else -%}
+        <h3 class="product-details-info-heading">Nutritional Information</h3>
+        <dl class="product-details-info-list">
+          <div class="product-details-info-row">
+            <dt class="product-details-info-label">Item Code</dt>
+            <dd class="product-details-info-value">0712.90.90</dd>
+          </div>
+          <div class="product-details-info-row">
+            <dt class="product-details-info-label">Package Size</dt>
+            <dd class="product-details-info-value">6/5 oz</dd>
+          </div>
+          <div class="product-details-info-row">
+            <dt class="product-details-info-label">Servings Per Container</dt>
+            <dd class="product-details-info-value">44 g</dd>
+          </div>
+          <div class="product-details-info-row">
+            <dt class="product-details-info-label">Serving Size</dt>
+            <dd class="product-details-info-value">1 1/2 tbsp (4.5 g)</dd>
+          </div>
+          <div class="product-details-info-row">
+            <dt class="product-details-info-label">Calories</dt>
+            <dd class="product-details-info-value">0 g (0% DV)</dd>
+          </div>
+          <div class="product-details-info-row space-left">
+            <dt class="product-details-info-label">Fat Calories</dt>
+            <dd class="product-details-info-value">0 g (0% DV)</dd>
+          </div>
+          <div class="product-details-info-row">
+            <dt class="product-details-info-label">Total Fat</dt>
+            <dd class="product-details-info-value">0 g (0% DV)</dd>
+          </div>
+          <div class="product-details-info-row space-left">
+            <dt class="product-details-info-label">Saturated Fat</dt>
+            <dd class="product-details-info-value">0 g (0% DV)</dd>
+          </div>
+          <div class="product-details-info-row space-left">
+            <dt class="product-details-info-label">Trans Fat</dt>
+            <dd class="product-details-info-value">0 g</dd>
+          </div>
+          <div class="product-details-info-row">
+            <dt class="product-details-info-label">Cholesterol</dt>
+            <dd class="product-details-info-value">0 mg (0% DV)</dd>
+          </div>
+          <div class="product-details-info-row">
+            <dt class="product-details-info-label">Sodium</dt>
+            <dd class="product-details-info-value">0 mg (0% DV)</dd>
+          </div>
+          <div class="product-details-info-row">
+            <dt class="product-details-info-label">Total Carbohydrate</dt>
+            <dd class="product-details-info-value">0 g (0% DV)</dd>
+          </div>
+          <div class="product-details-info-row space-left">
+            <dt class="product-details-info-label">Fiber</dt>
+            <dd class="product-details-info-value">0 g (0% DV)</dd>
+          </div>
+          <div class="product-details-info-row space-left">
+            <dt class="product-details-info-label">Sugar</dt>
+            <dd class="product-details-info-value">0 g</dd>
+          </div>
+          <div class="product-details-info-row">
+            <dt class="product-details-info-label">Protein</dt>
+            <dd class="product-details-info-value">0 g</dd>
+          </div>
+        </dl>
+      {%- endif -%}
+    </div>
+
+    <div
+      id="tab-reviews-{{ tabs_id }}"
+      class="product-details-tab-panel"
+      role="tabpanel"
+      aria-labelledby="tab-btn-reviews-{{ tabs_id }}"
+      hidden
+    >
+      <p class="product-details-tab-content">{{ section.settings.reviews_empty_text }}</p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.getElementById('fresco-product-tabs-{{ tabs_id }}');
+      if (!root || root.dataset.frescoTabsInit === 'true') return;
+
+      var tabBtns = root.querySelectorAll('.product-details-tab-btn');
+      var tabPanels = root.querySelectorAll('.product-details-tab-panel');
+
+      tabBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var targetId = btn.getAttribute('aria-controls');
+
+          tabBtns.forEach(function (b) {
+            b.classList.remove('is-active');
+            b.setAttribute('aria-selected', 'false');
+          });
+
+          btn.classList.add('is-active');
+          btn.setAttribute('aria-selected', 'true');
+
+          tabPanels.forEach(function (panel) {
+            if (panel.id === targetId) {
+              panel.classList.add('is-visible');
+              panel.removeAttribute('hidden');
+            } else {
+              panel.classList.remove('is-visible');
+              panel.setAttribute('hidden', '');
+            }
+          });
+        });
+      });
+
+      root.dataset.frescoTabsInit = 'true';
+    })();
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco Product Tabs",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "description_tab_label",
+      "label": "Description tab label",
+      "default": "Description"
+    },
+    {
+      "type": "text",
+      "id": "additional_tab_label",
+      "label": "Additional info tab label",
+      "default": "Additional Information"
+    },
+    {
+      "type": "text",
+      "id": "reviews_tab_label",
+      "label": "Reviews tab label",
+      "default": "Reviews"
+    },
+    {
+      "type": "text",
+      "id": "reviews_empty_text",
+      "label": "Reviews empty text",
+      "default": "No reviews yet."
+    },
+    {
+      "type": "text",
+      "id": "empty_description_text",
+      "label": "Description fallback text",
+      "default": "No description available."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco Product Tabs"
+    }
+  ]
+}
+{% endschema %}
+
