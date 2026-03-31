@@ -511,6 +511,11 @@ div.sub-heading {
     width: 40px;
     height: 40px;
   }
+  .cart-count-bubble {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -995,6 +1000,24 @@ body.no-scroll {
     height: 100%;
     object-fit: cover;
   }
+
+  
+@media (max-width: 768px) {
+  .hero-overlay-global .overlay-item {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .hero-overlay-global .bottom-right-overlay.leaf {
+    transform: rotate(-90deg);
+    height: 100px;
+    width: auto;
+    bottom: -20px;
+    right: -20px;
+  }
+}
 
   /* ========== Footer - Pixel-perfect layout ========== */
 .site-footer {
@@ -1882,10 +1905,11 @@ body.no-scroll {
    justify-content: center;
    width: 100%;
    height: 100%;
-   margin-bottom: 15px;
+   margin-bottom: 0px;
    text-decoration: none;
    background-color: var(--white-color);
    padding: 10px;
+   padding-bottom: 5px !important;
    position: relative !important;
    top: auto !important;
    left: auto !important;
@@ -2026,7 +2050,9 @@ body.no-scroll {
  
  @media (max-width: 480px) {
    .product-grid {
-     gap: 10px;
+     gap: 15px !important;
+     grid-template-columns: repeat(2, 1fr) !important;  
+     max-width: 95vw !important;   
    }
  
    .featured-products {

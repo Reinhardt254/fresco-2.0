@@ -10,7 +10,7 @@
   if icon_class == blank
     assign icon_class = 'fa-regular fa-heart'
   endif
--%}
+-%}  
 <span
   class="wishlist-button-block"
   {{ block.shopify_attributes }}
@@ -19,10 +19,13 @@
     <a
       href="{{ block.settings.link }}"
       class="product-details-wishlist"
+      data-wishlist-toggle="true"
+      data-wishlist-handle="{{ product.handle }}"
       {% if block.settings.open_in_new_tab %}
         target="_blank" rel="noopener noreferrer"
       {% endif %}
       aria-label="{{ block.settings.label | escape }}"
+      aria-pressed="false"
     >
       <i class="{{ icon_class }}" aria-hidden="true"></i>
     </a>
@@ -30,7 +33,8 @@
     <button
       type="button"
       class="product-details-wishlist"
-      data-wishlist-product-id="{{ product.id }}"
+      data-wishlist-toggle="true"
+      data-wishlist-handle="{{ product.handle }}"
       aria-label="{{ block.settings.label | escape }}"
       aria-pressed="false"
     >
@@ -50,11 +54,6 @@
     text-decoration: none;
   }
 
-  @media screen and (max-width: 749px) {
-    .wishlist-button-block {
-      display: none !important;
-    }
-  }
 {% endstylesheet %}
 
 {% schema %}

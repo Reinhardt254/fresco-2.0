@@ -53,6 +53,8 @@
                       type="button"
                       class="product-card-add"
                       data-variant-id="{{ rec_product.selected_or_first_available_variant.id }}"
+                      data-variants-count="{{ rec_product.variants_count }}"
+                      data-product-url="{{ rec_product.url }}"
                     >
                       Add to cart
                     </button>
@@ -112,7 +114,18 @@
 
           btn.addEventListener('click', function () {
             var vid = btn.getAttribute('data-variant-id');
+            var variantsCountRaw = btn.getAttribute('data-variants-count');
+            var variantsCount = parseInt(variantsCountRaw || '0', 10);
+            var productUrl = btn.getAttribute('data-product-url');
             if (!vid) return;
+
+            // Match Quick Add behavior:
+            // - Single-variant products: add directly.
+            // - Multi-variant products: redirect to product details to choose options.
+            if (Number.isFinite(variantsCount) && variantsCount > 1 && productUrl) {
+              window.location.href = productUrl;
+              return;
+            }
 
             fetch('/cart/add.js', {
               method: 'POST',

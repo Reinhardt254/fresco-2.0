@@ -3,6 +3,7 @@
   {% if request.design_mode %}
     class="shopify-design-mode"
   {% endif %}
+  data-customer-authenticated="{% if customer %}true{% else %}false{% endif %}"
   lang="{{ request.locale.iso_code }}"
 >
   <head>
@@ -45,6 +46,14 @@
     </div>
 
     <script>
+      window.ShopifyWishlist = {
+        loggedIn: {% if customer %}true{% else %}false{% endif %},
+        customerId: {{ customer.id | json }},
+        customerEmail: {{ customer.email | json }},
+        shopDomain: {{ shop.permanent_domain | json }},
+        storefrontToken: {{ settings.storefront_api_public_token | default: '' | json }}
+      };
+
       // Inline header height and menu style calculations to prevent layout shift
       // Note: Updates in calculateHeaderGroupHeight(), updateTransparentHeaderOffset() and setHeaderMenuStyle() utilities.js should be kept in sync with this function
       (function setHeaderHeighCustomProperties() {

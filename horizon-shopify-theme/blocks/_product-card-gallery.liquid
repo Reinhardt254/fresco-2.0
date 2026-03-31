@@ -59,6 +59,12 @@
   .product-badges--top-right {
     top: calc(var(--badge-inset) + var(--padding-block-start));
     right: calc(var(--badge-inset) + var(--padding-inline-start));
+
+    display: flex !important;
+  }
+
+  .product-card:hover .product-badges--top-right {
+    display: none !important;
   }
 
   .product-badges__badge {

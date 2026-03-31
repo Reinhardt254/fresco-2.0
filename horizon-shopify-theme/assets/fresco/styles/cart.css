@@ -3,8 +3,6 @@
   color: #222;
 }
 
-
-
 /* =========== Home CTA Section START =========== */
 .cart-page-layout {
   background-color: var(--light-green);
@@ -45,7 +43,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif")
+    no-repeat center center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -229,10 +228,11 @@
   .cart-page-layout .bottom-container {
     padding: 50px 10px;
     padding-bottom: 120px;
+    min-height: 300px;
   }
 
   .cart-page-layout .bottom-container .overlay-right-bottom {
-    width: 300px;
+    width: 330px;
     max-width: 50vw;
     bottom: -10%;
   }
@@ -266,7 +266,6 @@
     transform: rotate(10deg);
   }
 }
-
 
 .cart-breadcrumb {
   font-size: 0.9rem;
@@ -370,6 +369,11 @@
   display: none;
 }
 
+.cart-item-top-actions,
+.cart-item-edit-mobile {
+  display: none;
+}
+
 .cart-stock {
   font-size: 0.9rem;
   color: #666;
@@ -455,7 +459,6 @@
   justify-content: center;
   border-radius: 5px !important;
   transition: all 0.3s ease !important;
-
 }
 
 .cart-qty-btn-minus {
@@ -595,6 +598,10 @@
 
 .cart-summary-checkout:hover {
   background-color: #009f5d;
+}
+
+.cart-sticky-checkout {
+  display: none;
 }
 
 .cart-benefits {
@@ -777,13 +784,15 @@
 }
 
 @media (max-width: 720px) {
-  .cart-layout{
+  .cart-layout {
     padding: 2rem 0;
   }
 
-  .cart-layout-inner{
+  .cart-layout-inner {
     width: 95%;
     margin: 0 auto;
+    padding-top: 2rem;
+    padding-bottom: 110px;
   }
   .cart-list {
     display: flex;
@@ -798,7 +807,7 @@
     height: auto;
     gap: 1rem;
     padding: 0.5rem 0.5rem;
-    border-radius: 12px;
+    border-radius: 6px;
     border: 1px solid #eee;
     border-bottom: 1px solid #eee;
     background: #fafafa;
@@ -846,7 +855,14 @@
     height: auto;
   }
 
-  .cart-item-remove {
+  .cart-item-top-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+  }
+
+  .cart-item-remove,
+  .cart-item-edit-mobile {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -859,10 +875,16 @@
     font-size: 1.1rem;
     cursor: pointer;
     flex-shrink: 0;
+    text-decoration: none;
   }
 
-  .cart-item-remove:hover {
+  .cart-item-remove:hover,
+  .cart-item-edit-mobile:hover {
     color: #e06a5f;
+  }
+
+  .cart-item-edit-mobile i {
+    font-size: 0.9rem;
   }
 
   .cart-item-right .cart-price,
@@ -923,26 +945,63 @@
     object-fit: contain;
   }
 
-  .product-card__link
- {
+  .product-card__link {
     width: 100%;
     height: 100%;
     object-fit: contain;
     margin: 0;
     padding-bottom: 0rem;
- }
+  }
 
- .cart-recommended{
-  padding: 2rem 0;
- }
+  .cart-recommended {
+    padding: 2rem 0;
+  }
 
   .cart-recommended-nav {
     margin-top: 2rem;
   }
-  
-  .cart-recommended-btn
-   {
+
+  .cart-recommended-btn {
     width: 34px;
     height: 34px;
-   }
+  }
+
+  .cart-sticky-checkout {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: env(safe-area-inset-bottom, 0px);
+    z-index: 9999;
+    padding: 12px 5%;
+    background: #ffffff;
+    border-top: 1px solid #f0f0f0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
+    opacity: 0;
+    transform: translateY(16px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .cart-sticky-checkout.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .cart-sticky-checkout__btn {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border-radius: 999px;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--primary-green);
+    cursor: pointer;
+  }
+
+  .cart-sticky-checkout__btn:hover {
+    background-color: #009f5d;
+  }
 }

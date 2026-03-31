@@ -108,8 +108,21 @@
       {% if block_settings.padding-block-start > 0 %}--zoom-out-padding-block-start: min(var(--padding-xs), {{ block_settings.padding-block-start | times: 0.7}}px);{% endif %}
       {% if block_settings.padding-block-end > 0 %}--zoom-out-padding-block-end: min(var(--padding-xs), {{ block_settings.padding-block-end | times: 0.7}}px);{% endif %}
     "
-  >
+  > 
     {{ children }}
+    {%- unless onboarding -%}
+      <button
+        type="button"
+        class="wishlist-card-button"
+        data-wishlist-toggle="true"
+        data-wishlist-handle="{{ product.handle }}"
+        aria-label="Add to wishlist"
+        aria-pressed="false"
+        onclick="event.preventDefault(); event.stopPropagation();"
+      >
+        <i class="fa-regular fa-heart" aria-hidden="true"></i>
+      </button>
+    {%- endunless -%}
     {%- if template.name == 'collection' -%}
       {%- if settings.quick_add or settings.mobile_quick_add -%}
         {%- unless product == blank -%}
@@ -123,6 +136,45 @@
 {% stylesheet %}
   .product-card__placeholder-image svg {
     height: 100%;
+  }
+
+  .product-card__content {
+    position: relative;
+  }
+
+  .wishlist-card-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50% !important;
+    border: 1px solid #d8d8d8 !important;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #9e9e9e;
+    z-index: 5000;
+
+    display: none !important;
+  }
+
+  .product-card:hover .wishlist-card-button {
+    display: flex !important;
+  }
+
+  .wishlist-card-button i {
+    pointer-events: none;
+    font-size: 15px !important;
+    margin-top: 1px !important;
+  }
+
+  .wishlist-card-button.is-wishlisted {
+    background: #e6f6ea;
+    border-color: #6cb24c;
+    color: #2e7d32;
   }
 
   @media screen and (max-width: 749px) {

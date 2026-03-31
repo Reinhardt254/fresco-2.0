@@ -1,0 +1,115 @@
+{{ 'fresco/styles/wishlist.css' | asset_url | stylesheet_tag }}
+
+{%- if customer == blank -%}
+  <script>
+    window.location.href = "{{ routes.account_login_url }}?return_url={{ request.path | url_encode }}";
+  </script>
+  <noscript>
+    <section class="related-products-section">
+      <div class="product-details-container" style="padding: 40px 0; text-align: center;">
+        <p>Please <a href="{{ routes.account_login_url }}?return_url={{ request.path | url_encode }}">log in</a> to view your wishlist.</p>
+      </div>
+    </section>
+  </noscript>
+{%- else -%}
+<section class="wishlist-page-layout">
+  <div class="bottom-container">
+    <div class="text-content">
+      <h2 class="wishlist-title">
+        Your <span class="highlight">Wishlist</span>
+      </h2>
+    </div>
+    <div class="overlay-center-bottom">
+      <img src="https://img.freepik.com/free-vector/hand-drawn-basil-drawing-illustration_23-2150840443.jpg" alt="" width="500" height="500" loading="lazy">
+    </div>
+    <div class="overlay-left-bottom">
+      <img src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview.png" alt="" width="500" height="500" loading="lazy">
+    </div>
+    <div class="overlay-right-bottom">
+      <img src="https://plantechkenya.com/wp-content/uploads/2026/02/dried-herbs-spilled-from-glass-jar-white-background_1012140-1044.png" alt="" width="500" height="500" loading="lazy">
+    </div>
+  </div>
+</section>
+
+
+<section
+  class="related-products-section"
+  data-wishlist-page-root
+  data-wishlist-currency="{{ localization.country.currency.iso_code }}"
+>
+
+  <div class="product-details-container">
+    <div class="cart-recommended-inner">
+      <div class="cart-recommended-header">
+        {% comment %} <h2 class="cart-recommended-title">
+          Wishlist <span class="highlight">Items</span>
+        </h2>
+        <p class="cart-recommended-subtitle">Your saved freeze-dried favorites.</p> {% endcomment %}
+
+        <button
+          type="button"
+          class="wishlist-clear product-details-action"
+          data-wishlist-clear-all="true"
+        >
+          Clear all
+        </button>
+      </div>
+
+      <div class="wishlist-empty" data-wishlist-empty>
+        Your wishlist is empty.
+      </div>
+
+      <div class="wishlist-grid" data-wishlist-grid></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .wishlist-empty {
+    width: 100%;
+    padding: 24px;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    color: #6b6b6b;
+    background: #ffffff;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .wishlist-clear {
+    margin-left: auto;
+  }
+
+  .wishlist-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  @media screen and (max-width: 900px) {
+    .wishlist-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .wishlist-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Heart overlay */
+  .wishlist-heart-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    /* Visuals (size/border/colors) come from `.product-details-wishlist` in Fresco CSS */
+  }
+
+  .wishlist-heart-overlay i {
+    pointer-events: none;
+  }
+</style>
+{%- endif -%}
+

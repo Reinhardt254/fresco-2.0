@@ -34,6 +34,8 @@
 {%- endif -%}
 {%- if template.name == 'product' -%}
   {{ 'fresco/styles/product-details.css.css' | asset_url | stylesheet_tag }}
+{%- elsif template.name == 'page' and template.suffix == 'wishlist' -%}
+  {{ 'fresco/styles/product-details.css.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
 
 {% comment %} Font Awesome and Swiper for Fresco UI {% endcomment %}
@@ -48,4 +50,4 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 >
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer="defer"></script>

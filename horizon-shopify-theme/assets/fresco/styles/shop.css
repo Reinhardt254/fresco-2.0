@@ -672,6 +672,24 @@
   margin-left: 0;
   text-align: left;
 }
+
+ .price-container {
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.25rem;
+}
+
+product-price {
+  font-family: "Poppins", sans-serif !important;
+  text-align: center !important;
+}
+
+.product-title-link  p {
+  text-align: center !important;
+  font-weight: 500;
+}
   
 /* Product card: Add to cart button (shop page) */
 .products-main .product-card .product-card__link {

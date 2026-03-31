@@ -118,6 +118,14 @@ export class QuickAddComponent extends Component {
   handleClick = async (event) => {
     event.preventDefault();
 
+    // Quick-add popup disabled:
+    // For multi-variant products ("Choose" button), redirect to the product details page.
+    const url = this.productPageUrl;
+    if (url) {
+      window.location.href = url;
+      return;
+    }
+
     const currentUrl = this.productPageUrl;
 
     // Check if we have cached content for this URL

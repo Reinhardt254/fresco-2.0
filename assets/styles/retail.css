@@ -168,7 +168,7 @@
 .retail-intro-text {
   position: relative;
   z-index: 10;
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.75;
   color: #0f3d2e;
@@ -896,7 +896,7 @@
 
 @media (max-width: 480px) {
   .retail-hero {
-    min-height: 400px;
+    min-height: 450px;
   }
 
   .retail-hero-title {
@@ -905,6 +905,7 @@
 
   .retail-hero-tagline {
     font-size: 1.1rem;
+    margin-bottom: 1rem;
   }
 
   .retail-intro-text {

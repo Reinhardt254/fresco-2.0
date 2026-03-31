@@ -9,7 +9,7 @@
 
 {% liquid
   assign product_form_id = 'QuickAdd-ProductForm-' | append: product.id | append: '-' | append: block.id
-  assign add_to_cart_text = 'actions.add' | t
+  assign add_to_cart_text = 'actions.add_to_cart' | t
   assign color_scheme = color_scheme | default: settings.quick_add_color_scheme
 
   # Logic to determine which variant to use (matching swatch selection logic from product-card)
@@ -23,7 +23,7 @@
 
   assign quick_add_button = 'choose'
   if product.variants_count == 1 or product.options.size == 1 and product.selected_variant
-    assign quick_add_button = 'add'
+    assign quick_add_button = 'add to cart'
   endif
 %}
 
@@ -131,12 +131,14 @@
     justify-content: center;
     position: static;
     width: 100%;
+    max-width: fit-content !important;
+    margin: 0 auto !important;
     height: 40px;
     padding: 0 16px;
     border: 1.5px solid var(--primary-green, #81b03f);
     border-radius: 6px;
-    background: transparent;
-    color: var(--primary-green, #81b03f);
+    background: var(--primary-green, #81b03f);
+    color: #fff;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.02em;
@@ -149,7 +151,7 @@
   }
 
   .quick-add__button:hover {
-    background: var(--primary-green, #81b03f);
+    background:rgba(129, 176, 63, 0.8);
     color: #fff;
   }
 

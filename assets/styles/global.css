@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 /* 
 #f4e5c9; */
- 
+
 /* CSS Root Variables - All Colors */
 :root {
   --primary-green: #81b03f;
@@ -918,370 +918,386 @@ body.no-scroll {
   border: 1px solid var(--primary);
 }
 
-
 /* ================== Hero Overlay Global Section START ================== */
 .hero-overlay-global {
-   position: absolute;
-   inset: 0;
-   background: #0f3d2e00;
-   opacity: 0.75;
-   pointer-events: none;
-   height: 100%;
-   width: 100%;
-   z-index: 30;
-   overflow: hidden;
-  }
- 
-  .hero-overlay-global .overlay-items {
-   height: 100%;
-   width: 100%;
-   position: relative;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap: 1rem;
-  }
- 
+  position: absolute;
+  inset: 0;
+  background: #0f3d2e00;
+  opacity: 0.75;
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  z-index: 30;
+  overflow: hidden;
+}
+
+.hero-overlay-global .overlay-items {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-overlay-global .overlay-item {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.hero-overlay-global .overlay-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero-overlay-global .top-left-overlay {
+  top: 0;
+  left: -10px;
+  transform: rotate(90deg);
+}
+
+.hero-overlay-global .top-right-overlay {
+  top: 0;
+  right: -10px;
+  transform: rotate(180deg);
+}
+
+.hero-overlay-global .bottom-left-overlay {
+  bottom: 0;
+  left: -10px;
+}
+
+.hero-overlay-global .bottom-right-overlay {
+  bottom: -70px;
+  right: 0;
+  transform: rotate(0deg);
+  height: 300px;
+  width: auto;
+}
+
+.hero-overlay-global .bottom-right-overlay.leaf {
+  bottom: -90px;
+  right: -40px;
+  transform: rotate(-90deg);
+  height: 250px;
+  width: auto;
+}
+
+.hero-overlay-global img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
   .hero-overlay-global .overlay-item {
-   position: absolute;
-   width: 150px;
-   height: 150px;
-   object-fit: contain;
-  }
- 
-  .hero-overlay-global .overlay-item img {
-   width: 100%;
-   height: 100%;
-   object-fit: contain;
-  }
- 
- 
-  .hero-overlay-global .top-left-overlay {
-   top: 0;
-   left: -10px;
-   transform: rotate(90deg);
-  }
- 
-  .hero-overlay-global .top-right-overlay {
-   top: 0;
-   right: -10px;
-   transform: rotate(180deg);
-  }
- 
-  .hero-overlay-global .bottom-left-overlay {
-   bottom: 0;
-   left: -10px;
-  }
- 
-   .hero-overlay-global .bottom-right-overlay {
-      bottom: -70px;
-      right: 0;
-      transform: rotate(0deg);
-      height: 300px;
-      width: auto;
-   }
-
-   .hero-overlay-global .bottom-right-overlay.leaf {
-      bottom: -90px;
-      right: -40px;
-      transform: rotate(-90deg);
-      height: 250px;
-      width: auto;
-   }
- 
-  .hero-overlay-global img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
   }
 
-  /* ========== Footer - Pixel-perfect layout ========== */
+  .hero-overlay-global .bottom-right-overlay.leaf {
+    transform: rotate(-90deg);
+    height: 100px;
+    width: auto;
+    bottom: -20px;
+    right: -20px;
+  }
+}
+
+/* ========== Footer - Pixel-perfect layout ========== */
 .site-footer {
-   background-color: var(--light-white-background);
-   color: #2c2c2c;
-   font-family:
-     "Poppins",
-     -apple-system,
-     BlinkMacSystemFont,
-     "Segoe UI",
-     Roboto,
-     sans-serif;
-   position: relative;
-   z-index: 10;
- }
- 
- .site-footer::before {
-   content: "";
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
-   z-index: 15;
-   opacity: 0.025;
- }
- 
- .footer-container {
-   max-width: 1400px;
-   width: 90%;
-   margin: 0 auto;
-   padding: 0;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   position: relative;
-   z-index: 20;
- }
- 
- /* ---------- Newsletter block ---------- */
- .footer-newsletter {
-   padding: 0;
-   min-height: 200px;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
- }
- 
- .footer-newsletter-inner {
-   display: flex;
-   flex-wrap: wrap;
-   align-items: center;
-   justify-content: space-between;
-   gap: 24px;
- }
- 
- .footer-newsletter-text {
-   flex: 1 1 280px;
- }
- 
- .footer-newsletter-heading {
-   font-size: 18px;
-   font-weight: 700;
-   letter-spacing: 0.12em;
-   text-transform: uppercase;
-   color: #2c2c2c;
-   margin: 0 0 8px;
-   line-height: 1.3;
- }
- 
- .footer-newsletter-desc {
-   font-size: 14px;
-   font-weight: 400;
-   color: #555;
-   margin: 0;
-   line-height: 1.5;
- }
- 
- .footer-newsletter-form {
-   display: flex;
-   align-items: stretch;
-   gap: 0;
-   flex: 1 1 320px;
-   max-width: 440px;
- }
- 
- .footer-newsletter-input {
-   flex: 1;
-   min-width: 0;
-   height: 48px;
-   padding: 0 16px;
-   font-size: 14px;
-   color: #2c2c2c;
-   background-color: #fff;
-   border: 1px solid #ddd;
-   border-right: none;
-   border-radius: 0;
-   outline: none;
- }
- 
- .footer-newsletter-input::placeholder {
-   color: #888;
- }
- 
- .footer-newsletter-input:focus {
-   border-color: var(--primary-green);
- }
- 
- .footer-newsletter-btn {
-   height: 48px;
-   padding: 0 28px;
-   font-size: 12px;
-   font-weight: 600;
-   letter-spacing: 0.06em;
-   text-transform: uppercase;
-   color: #fff;
-   background-color: var(--primary-green);
-   border: none;
-   border-radius: 0;
-   cursor: pointer;
-   white-space: nowrap;
-   transition: background-color 0.2s ease;
- }
- 
- .footer-newsletter-btn:hover {
-   background-color: #4a7a3a;
- }
- 
- .footer-newsletter-divider {
-   height: 1px;
-   background-color: #e5e2dd;
-   margin-top: 0px;
-   width: 100%;
- }
- 
- /* ---------- Main 4-column block ---------- */
- .footer-main {
-   padding: 48px 0 56px;
- }
- 
- .footer-columns {
-   display: grid;
-   grid-template-columns: 1.2fr 1fr 1fr 1.4fr;
-   gap: 40px 32px;
-   align-items: start;
- }
- 
- .footer-col-heading {
-   font-size: 16px;
-   font-weight: 700;
-   letter-spacing: 0.02em;
-   color: #2c2c2c;
-   margin: 0 0 20px;
-   line-height: 1.3;
- }
- 
- /* Company column */
- .footer-col-company {
-   max-width: 300px;
- }
- 
- .footer-logo {
-   display: flex;
-   align-items: center;
-   gap: 10px;
-   margin-bottom: 6px;
-   margin-bottom: 10px;
- }
- 
- .footer-logo img {
-   width: 180px;
-   height: auto;
-   object-fit: contain;
- }
- 
- .footer-logo-icon {
-   font-size: 28px;
-   color: var(--primary-green);
-   line-height: 1;
- }
- 
- .footer-logo-text {
-   font-size: 24px;
-   font-weight: 700;
-   letter-spacing: 0.02em;
-   color: #2c2c2c;
- }
- 
- .footer-tagline {
-   font-size: 12px;
-   font-weight: 500;
-   letter-spacing: 0.04em;
-   color: var(--primary-green);
-   margin: 0 0 16px;
-   line-height: 1.4;
- }
- 
- .footer-company-desc {
-   font-size: 14px;
-   font-weight: 400;
-   color: #555;
-   line-height: 1.6;
-   margin: 0 0 20px;
- }
- 
- .footer-contact {
-   list-style: none;
-   margin: 0;
-   padding: 0;
- }
- 
- .footer-contact li {
-   display: flex;
-   align-items: center;
-   gap: 10px;
-   font-size: 14px;
-   color: #555;
-   margin-bottom: 10px;
-   line-height: 1.5;
- }
- 
- .footer-contact li:last-child {
-   margin-bottom: 0;
- }
- 
- .footer-contact i {
-   width: 16px;
-   color: #2c2c2c;
-   flex-shrink: 0;
- }
- 
- .footer-contact a,
- .footer-contact span {
-   color: #555;
-   text-decoration: none;
- }
- 
- .footer-contact a:hover {
-   color: var(--primary-green);
- }
- 
- /* Link columns */
- .footer-links {
-   list-style: none;
-   margin: 0;
-   padding: 0;
- }
- 
- .footer-links li {
-   margin-bottom: 12px;
- }
- 
- .footer-links li:last-child {
-   margin-bottom: 0;
- }
- 
- .footer-links a {
-   font-size: 14px;
-   font-weight: 400;
-   color: #555;
-   text-decoration: none;
-   transition: color 0.2s ease;
- }
- 
- .footer-links a:hover {
-   color: var(--primary-green);
- }
- 
- /* Instagram column */
- .footer-instagram-grid {
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   gap: 6px;
- }
- 
- .footer-instagram-item {
-   display: block;
-   aspect-ratio: 1;
-   overflow: hidden;
-   background-color: #ebe8e3;
- }
- 
+  background-color: var(--light-white-background);
+  color: #2c2c2c;
+  font-family:
+    "Poppins",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  position: relative;
+  z-index: 10;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif")
+    no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 15;
+  opacity: 0.025;
+}
+
+.footer-container {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 20;
+}
+
+/* ---------- Newsletter block ---------- */
+.footer-newsletter {
+  padding: 0;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-newsletter-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer-newsletter-text {
+  flex: 1 1 280px;
+}
+
+.footer-newsletter-heading {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2c2c2c;
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.footer-newsletter-desc {
+  font-size: 14px;
+  font-weight: 400;
+  color: #555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.footer-newsletter-form {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  flex: 1 1 320px;
+  max-width: 440px;
+}
+
+.footer-newsletter-input {
+  flex: 1;
+  min-width: 0;
+  height: 48px;
+  padding: 0 16px;
+  font-size: 14px;
+  color: #2c2c2c;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-right: none;
+  border-radius: 0;
+  outline: none;
+}
+
+.footer-newsletter-input::placeholder {
+  color: #888;
+}
+
+.footer-newsletter-input:focus {
+  border-color: var(--primary-green);
+}
+
+.footer-newsletter-btn {
+  height: 48px;
+  padding: 0 28px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: var(--primary-green);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.footer-newsletter-btn:hover {
+  background-color: #4a7a3a;
+}
+
+.footer-newsletter-divider {
+  height: 1px;
+  background-color: #e5e2dd;
+  margin-top: 0px;
+  width: 100%;
+}
+
+/* ---------- Main 4-column block ---------- */
+.footer-main {
+  padding: 48px 0 56px;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.4fr;
+  gap: 40px 32px;
+  align-items: start;
+}
+
+.footer-col-heading {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #2c2c2c;
+  margin: 0 0 20px;
+  line-height: 1.3;
+}
+
+/* Company column */
+.footer-col-company {
+  max-width: 300px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  margin-bottom: 10px;
+}
+
+.footer-logo img {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+}
+
+.footer-logo-icon {
+  font-size: 28px;
+  color: var(--primary-green);
+  line-height: 1;
+}
+
+.footer-logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #2c2c2c;
+}
+
+.footer-tagline {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--primary-green);
+  margin: 0 0 16px;
+  line-height: 1.4;
+}
+
+.footer-company-desc {
+  font-size: 14px;
+  font-weight: 400;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.footer-contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.footer-contact li:last-child {
+  margin-bottom: 0;
+}
+
+.footer-contact i {
+  width: 16px;
+  color: #2c2c2c;
+  flex-shrink: 0;
+}
+
+.footer-contact a,
+.footer-contact span {
+  color: #555;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: var(--primary-green);
+}
+
+/* Link columns */
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links li:last-child {
+  margin-bottom: 0;
+}
+
+.footer-links a {
+  font-size: 14px;
+  font-weight: 400;
+  color: #555;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary-green);
+}
+
+/* Instagram column */
+.footer-instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.footer-instagram-item {
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background-color: #ebe8e3;
+}
+
 .footer-instagram-item img {
   width: 100%;
   height: 100%;
@@ -1292,35 +1308,35 @@ body.no-scroll {
 .footer-col-instagram-grid .footer-instagram-grid-images {
   max-width: 100%;
 }
- 
- /* ---------- Bottom bar ---------- */
- .footer-bottom {
-   position: relative;
-   padding: 24px 0 28px;
-   border-top: 1px solid #e5e2dd;
- }
- 
- .footer-bottom-inner {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   flex-wrap: wrap;
-   gap: 16px;
- }
- 
- .footer-copyright {
-   font-size: 13px;
-   font-weight: 400;
-   color: #777;
-   margin: 0;
- }
-  
- .footer-payments {
-   display: flex;
-   align-items: center;
-   gap: 20px;
- }
- 
+
+/* ---------- Bottom bar ---------- */
+.footer-bottom {
+  position: relative;
+  padding: 24px 0 28px;
+  border-top: 1px solid #e5e2dd;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-copyright {
+  font-size: 13px;
+  font-weight: 400;
+  color: #777;
+  margin: 0;
+}
+
+.footer-payments {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .footer-payments img,
 .footer-payments-gallery .footer-payment-icon img {
   width: auto;
@@ -1336,507 +1352,508 @@ body.no-scroll {
   display: flex;
   align-items: center;
 }
- 
- .footer-payments i {
-   font-size: 28px;
-   color: #555;
- }
- 
- .footer-scroll-top {
-   position: fixed;
-   z-index: 2000000000000;
-   bottom: 24px;
-   right: 24px;
-   width: 44px;
-   height: 44px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   font-size: 16px;
-   color: #fff;
-   background-color: var(--primary-green);
-   border: none;
-   border-radius: 0;
-   cursor: pointer;
-   opacity: 0;
-   visibility: hidden;
-   pointer-events: none;
-   transition: opacity 0.25s ease, visibility 0.25s ease, background-color 0.2s ease;
- }
- 
- .footer-scroll-top.is-visible {
-   opacity: 1;
-   visibility: visible;
-   pointer-events: auto;
- }
- 
- .footer-scroll-top:hover {
-   background-color: #4a7a3a;
- }
- 
- /* Responsive */
- @media (max-width: 992px) {
-   .footer-columns {
-     grid-template-columns: 1fr 1fr;
-   }
- 
-   .footer-col-company {
-     max-width: none;
-   }
- 
-   .footer-newsletter-inner {
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-   }
- 
-   .footer-newsletter-form {
-     max-width: none;
-   }
- }
- 
- @media (max-width: 600px) {
-   .footer-newsletter {
-     padding: 32px 0 28px;
-     min-height: auto;
-   }
- 
-   .footer-newsletter-text {
-     display: flex;
-     flex-direction: column;
-     align-items: flex-start;
-     justify-content: flex-start;
-     flex: none;
-   }
- 
-   .footer-newsletter-form {
-     flex-direction: column;
-     flex: none;
-     display: flex;
-     flex-direction: column;
-     align-items: flex-start;
-     justify-content: flex-start;
-     width: 100%;
-     height: auto;
-     gap: 10px;
-   }
- 
-   .footer-newsletter-input {
-     flex: none;
-     border-right: 1px solid #ddd;
-     width: 100%;
-     height: 48px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-   }
- 
-   .footer-main {
-     padding: 32px 0 40px;
-   }
- 
-   .footer-columns {
-     grid-template-columns: 1fr;
-     gap: 32px;
-     padding: 36px 0 44px;
-   }
- 
-   .footer-bottom-inner {
-     flex-direction: column;
-     align-items: flex-start;
-   }
- 
-   .footer-scroll-top {
-     right: 16px;
-     bottom: 16px;
-   }
- }
- 
- 
+
+.footer-payments i {
+  font-size: 28px;
+  color: #555;
+}
+
+.footer-scroll-top {
+  position: fixed;
+  z-index: 2000000000000;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #fff;
+  background-color: var(--primary-green);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    background-color 0.2s ease;
+}
+
+.footer-scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.footer-scroll-top:hover {
+  background-color: #4a7a3a;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-col-company {
+    max-width: none;
+  }
+
+  .footer-newsletter-inner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-newsletter-form {
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-newsletter {
+    padding: 32px 0 28px;
+    min-height: auto;
+  }
+
+  .footer-newsletter-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex: none;
+  }
+
+  .footer-newsletter-form {
+    flex-direction: column;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .footer-newsletter-input {
+    flex: none;
+    border-right: 1px solid #ddd;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-main {
+    padding: 32px 0 40px;
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 36px 0 44px;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-scroll-top {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
 /* ---------------------------------category Section--------------------------------- */
 .category-section {
-   padding: 5rem 0;
-   background-color: #0f3d2e;
-   position: relative;
-   z-index: 10;
-   width: 100%;
-   height: 100%;
- }
- 
- .category-section .container {
-   max-width: 1400px;
-   width: 90%;
-   margin: 0 auto;
- }
- 
- .category-section::before {
-   content: "";
-   background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif")
-     no-repeat center center;
-   background-size: cover;
-   background-repeat: no-repeat;
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   width: 100%;
-   height: 100%;
-   z-index: 5;
-   opacity: 0.025;
- }
- 
- .category-section .container {
-   position: relative;
-   z-index: 10;
- }
- 
- .category-container {
-   width: 100%;
-   margin: 0 auto;
-   position: relative;
-   z-index: 10;
- }
- 
- .category-swiper {
-   height: 100%;
- }
- 
- .category-swiper-wrapper {
-   height: auto;
-   display: flex;
-   align-items: stretch;
- }
- 
- .category-header-row {
-   max-width: 1400px;
-   width: 90%;
-   margin: 0 auto 1.5rem;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   gap: 0.5rem;
-   text-align: center;
- }
- .category-header-row .title-underline {
-   margin-bottom: 0.5rem;
- }
- 
- /* Category section title on dark row – same .section-title, color override */
- .category-section .category-header-row .section-title {
-   color: var(--white-color);
- }
- 
- .category-footer-controls {
-   max-width: 1400px;
-   width: 90%;
-   margin: 3.5rem auto 0;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   gap: 0.75rem;
- }
- 
- .category-nav-button {
-   width: 45px;
-   height: 45px;
-   border-radius: 50% !important;
-   border: 1px solid #d4d9d2;
-   background-color: #ffffff;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   cursor: pointer;
-   color: #163323;
-   transition:
-     background-color 0.2s ease,
-     color 0.2s ease,
-     transform 0.15s ease;
- }
- 
- .category-nav-button i {
-   font-size: 1.2rem;
-   color: var(--primary-green);
- }
- 
- .category-nav-button:hover {
-   background-color: #163323;
-   color: #ffffff;
-   transform: translateY(-1px);
- }
- 
- .category-swiper-wrapper .category {
-   position: relative;
-   padding: 20px 24px;
-   border-radius: 16px;
-   box-sizing: border-box;
-   height: auto;
-   overflow: hidden;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center;
-   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
- }
- 
- .category::after {
-   content: "";
-   background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif")
-     no-repeat center center;
-   background-size: cover;
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   opacity: 0.025;
-   z-index: 10;
- }
- 
- .category .category-inner {
-   width: 100%;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center;
-   position: relative;
-   z-index: 20;
- }
- 
- .category.left-category {
-   background: linear-gradient(90deg, #7f0a2b, #c73456);
- }
- 
- .category.combos-category {
-   background: linear-gradient(90deg, #b6563e, #ffb88c);
- }
- 
- .category.right-category {
-   background: linear-gradient(135deg, #2f9f6b, #36c28a);
- }
- 
- .category .column-left {
-   width: 55%;
-   display: flex;
-   flex-direction: column;
-   justify-content: flex-start;
-   align-items: flex-start;
- }
- 
- .category .category-heading-container {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   width: 100%;
-   margin-bottom: 14px;
- }
- 
- .category-label {
-   color: #ffffff;
-   font-size: 0.9rem;
-   font-weight: 600;
-   text-transform: uppercase;
-   letter-spacing: 0.08em;
- }
- 
- .discount-tag {
-   background-color: #ff4d4f;
-   color: #ffffff;
-   padding: 0.4rem 0.9rem;
-   font-size: 0.85rem;
-   font-weight: 700;
-   border-radius: 999px;
- }
- 
- .category-content {
-   max-width: 100%;
- }
- 
- .category-headline {
-   font-family: "Josefin Sans", sans-serif !important;
-   font-size: 1.4rem;
-   font-weight: 700;
-   color: #ffffff;
-   margin-bottom: 10px;
- }
- 
- .category-description {
-   color: #fffdf5;
-   font-size: 0.9rem;
-   line-height: 1.6;
-   margin-bottom: 18px;
- }
- 
- .category-link {
-   display: inline-flex;
-   align-items: center;
-   justify-content: center;
-   padding: 0.55rem 1.5rem;
-   border-radius: 999px;
-   background-color: #ffffff;
-   color: #2b2521;
-   text-decoration: none;
-   font-size: 0.85rem;
-   font-weight: 600;
-   letter-spacing: 0.06em;
- }
- 
- .category-link:hover {
-   opacity: 0.9;
-   background-color: var(--primary-green);
-   color: #ffffff;
- }
- 
- .category-section .column-right {
-   width: 40%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
- 
- .category-section .column-right .product-jar {
-   width: 100%;
-   max-width: 220px;
- }
- 
- .category-section .column-right .product-jar img {
-   width: 100%;
-   height: auto;
-   object-fit: contain;
- }
- 
- @media (max-width: 900px) {
-   .category .column-left {
-     width: 60%;
-   }
- 
-   .category .column-right {
-     width: 40%;
-   }
- }
- 
- @media (max-width: 640px) {
-   .category-section {
-     flex-direction: column;
-     align-items: flex-start;
-     gap: 1.5rem;
-     padding: 0.5rem 0 2.5rem 0;
-   }
- 
-   .category-section .container {
-     width: 95%;
-   }
- 
-   .category-section .column-right {
-     justify-content: flex-start;
-   }
- 
-   .category-swiper-wrapper .category {
-     padding: 1.5rem 1rem;
-   }
- 
-   .category-section .column-right .product-jar {
-     max-width: 100%;
-   }
- 
-   .category-section .column-right .product-jar img {
-     width: 100%;
-     height: auto;
-     object-fit: contain;
-     margin-left: -22px;
-     margin-top: -20px;
-   }
- 
-   /* .category-section .column-right .product-jar {
+  padding: 5rem 0;
+  background-color: #0f3d2e;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+
+.category-section .container {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.category-section::before {
+  content: "";
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif")
+    no-repeat center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  opacity: 0.025;
+}
+
+.category-section .container {
+  position: relative;
+  z-index: 10;
+}
+
+.category-container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.category-swiper {
+  height: 100%;
+}
+
+.category-swiper-wrapper {
+  height: auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.category-header-row {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+.category-header-row .title-underline {
+  margin-bottom: 0.5rem;
+}
+
+/* Category section title on dark row – same .section-title, color override */
+.category-section .category-header-row .section-title {
+  color: var(--white-color);
+}
+
+.category-footer-controls {
+  max-width: 1400px;
+  width: 90%;
+  margin: 3.5rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.category-nav-button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50% !important;
+  border: 1px solid #d4d9d2;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #163323;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.category-nav-button i {
+  font-size: 1.2rem;
+  color: var(--primary-green);
+}
+
+.category-nav-button:hover {
+  background-color: #163323;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.category-swiper-wrapper .category {
+  position: relative;
+  padding: 20px 24px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.category::after {
+  content: "";
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif")
+    no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.025;
+  z-index: 10;
+}
+
+.category .category-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 20;
+}
+
+.category.left-category {
+  background: linear-gradient(90deg, #7f0a2b, #c73456);
+}
+
+.category.combos-category {
+  background: linear-gradient(90deg, #b6563e, #ffb88c);
+}
+
+.category.right-category {
+  background: linear-gradient(135deg, #2f9f6b, #36c28a);
+}
+
+.category .column-left {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.category .category-heading-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.category-label {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.discount-tag {
+  background-color: #ff4d4f;
+  color: #ffffff;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+.category-content {
+  max-width: 100%;
+}
+
+.category-headline {
+  font-family: "Josefin Sans", sans-serif !important;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.category-description {
+  color: #fffdf5;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.category-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.5rem;
+  border-radius: 999px;
+  background-color: #ffffff;
+  color: #2b2521;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.category-link:hover {
+  opacity: 0.9;
+  background-color: var(--primary-green);
+  color: #ffffff;
+}
+
+.category-section .column-right {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-section .column-right .product-jar {
+  width: 100%;
+  max-width: 220px;
+}
+
+.category-section .column-right .product-jar img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .category .column-left {
+    width: 60%;
+  }
+
+  .category .column-right {
+    width: 40%;
+  }
+}
+
+@media (max-width: 640px) {
+  .category-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 0.5rem 0 2.5rem 0;
+  }
+
+  .category-section .container {
+    width: 95%;
+  }
+
+  .category-section .column-right {
+    justify-content: flex-start;
+  }
+
+  .category-swiper-wrapper .category {
+    padding: 1.5rem 1rem;
+  }
+
+  .category-section .column-right .product-jar {
+    max-width: 100%;
+  }
+
+  .category-section .column-right .product-jar img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-left: -22px;
+    margin-top: -20px;
+  }
+
+  /* .category-section .column-right .product-jar {
      max-width: 180px;
    } */
- 
-   .category .category-inner {
-     flex-direction: column-reverse;
-     align-items: center;
-     justify-content: center;
-   }
- 
-   .category .column-left, .category .column-right {
-     width: 100%;
-   }
- 
-   /* .category .column-left {
+
+  .category .category-inner {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .category .column-left,
+  .category .column-right {
+    width: 100%;
+  }
+
+  /* .category .column-left {
      width: 65%;
    }
  
    .category .column-right {
      width: 35%;
    } */
- 
-   .category .category-heading-container {
-     flex-direction: row;
-     align-items: flex-start;
-     gap: 1.5rem;
-   }
- 
-   .category-swiper-wrapper .category {
-     border-radius: 5px;
-   }
- 
-   .category-footer-controls {
-     margin-top: 2rem;
-   }
- }
 
+  .category .category-heading-container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .category-swiper-wrapper .category {
+    border-radius: 5px;
+  }
+
+  .category-footer-controls {
+    margin-top: 2rem;
+  }
+}
 
 /* Product Grid */
 .product-grid {
-   display: grid !important;
-   grid-template-columns: repeat(4, 1fr) !important;
-   gap: 25px !important;
-   height: 100% !important;
-   width: 100% !important;
- }
- 
- .featured-products-pagination {
-   margin-top: 50px;
-   display: flex;
-   justify-content: center;
-   gap: 8px;
- }
- 
- .featured-products-pagination .swiper-pagination-bullet {
-   width: 11px;
-   height: 11px;
-   background-color: #c2c2c2;
-   opacity: 1;
- }
- 
- .featured-products-pagination .swiper-pagination-bullet-active {
-   background-color: var(--primary-green);
- }
- 
- .product-card {
-   background-color: var(--white-color);
-   border: 1px solid var(--light-grey-border);
-   border-radius: 6px;
-   padding: 0px;
-   padding-bottom: 14px !important;
-   position: relative;
-   transition:
-     transform 0.3s,
-     box-shadow 0.3s;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   overflow: hidden;
-   height: 100% !important;
- 
- }
- 
- .product-card:hover {
-   transform: translateY(0px);
-   /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
- }
- 
- /* .product-tag {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 25px !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.featured-products-pagination {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.featured-products-pagination .swiper-pagination-bullet {
+  width: 11px;
+  height: 11px;
+  background-color: #c2c2c2;
+  opacity: 1;
+}
+
+.featured-products-pagination .swiper-pagination-bullet-active {
+  background-color: var(--primary-green);
+}
+
+.product-card {
+  background-color: var(--white-color);
+  border: 1px solid var(--light-grey-border);
+  border-radius: 6px;
+  padding: 0px;
+  padding-bottom: 14px !important;
+  position: relative;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100% !important;
+}
+
+.product-card:hover {
+  transform: translateY(0px);
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
+}
+
+/* .product-tag {
     position: absolute;
     top: 15px;
     padding: 6px 20px;
@@ -1862,301 +1879,302 @@ body.no-scroll {
     clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
     transform: rotate(8deg);
  } */
- 
- .product-image {
-   width: 100%;
-   height: auto;
-   aspect-ratio: 1/1;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   margin-bottom: 15px;
-   background-color: var(--white-color);
-   padding: 0px;
- }
- 
- .product-card .product-card__link {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   width: 100%;
-   height: 100%;
-   margin-bottom: 15px;
-   text-decoration: none;
-   background-color: var(--white-color);
-   padding: 10px;
-   position: relative !important;
-   top: auto !important;
-   left: auto !important;
-   right: auto !important;
-   bottom: auto !important;
-   z-index: auto !important;
-   transform: none !important;
-   transition: none !important;
-   opacity: 1 !important;
-   visibility: visible !important;
- }
- 
- .product-card__image {
-   max-width: 100%;
-   max-height: 100%;
-   width: auto;
-   height: auto;
-   object-fit: contain;
-   display: block;
- }
- 
- .product-placeholder {
-   width: 80%;
-   height: 80%;
-   background-color: var(--light-grey-background);
-   border-radius: 4px;
-   position: relative;
- }
- 
- .product-placeholder::before {
-   content: "📦";
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   font-size: 48px;
-   opacity: 0.3;
- }
- 
- .product-name {
-   font-size: 15px;
-   font-weight: 600;
-   color: var(--dark-text-color);
-   margin-bottom: 8px;
-   line-height: 1.4;
- }
- 
- .product-name span {
-   color: var(--dark-text-color);
-   text-decoration: none;
-   transition: color 0.3s;
- }
- 
- .product-name a:hover {
-   color: var(--primary-green);
- }
- 
- .product-rating {
-   margin-bottom: 12px;
- }
- 
- .star {
-   color: var(--star-rating-color);
-   font-size: 14px;
-   margin-right: 1px;
-   display: inline-block;
- }
- 
- .product-price {
-   display: flex;
-   align-items: center;
-   gap: 10px;
-   margin-top: 0;
-   font-family: "Poppins", sans-serif !important;
- }
- 
- .current-price {
-   font-size: 18px;
-   font-weight: 700;
-   color: var(--dark-text-color);
-   font-family:
-     "Poppins", sans-serif !important;
- }
 
- .compare-price {
+.product-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  background-color: var(--white-color);
+  padding: 0px;
+}
+
+.product-card .product-card__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 15px;
+  text-decoration: none;
+  background-color: var(--white-color);
+  padding: 10px;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  z-index: auto !important;
+  transform: none !important;
+  transition: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.product-card__image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.product-placeholder {
+  width: 80%;
+  height: 80%;
+  background-color: var(--light-grey-background);
+  border-radius: 4px;
+  position: relative;
+}
+
+.product-placeholder::before {
+  content: "📦";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  opacity: 0.3;
+}
+
+.product-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dark-text-color);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.product-name span {
+  color: var(--dark-text-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.product-name a:hover {
+  color: var(--primary-green);
+}
+
+.product-rating {
+  margin-bottom: 12px;
+}
+
+.star {
+  color: var(--star-rating-color);
+  font-size: 14px;
+  margin-right: 1px;
+  display: inline-block;
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.current-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark-text-color);
+  font-family: "Poppins", sans-serif !important;
+}
+
+.compare-price {
   font-size: 12px;
   font-weight: 400;
   color: var(--strikethrough-price-color);
   text-decoration: line-through;
   font-family: "Poppins", sans-serif !important;
- }
- 
- .price-unit {
-   font-size: 12px;
-   color: var(--strikethrough-price-color);
-   font-weight: 400;
-   margin-left: 4px;
- }
- 
- .original-price {
-   font-size: 14px;
-   color: var(--strikethrough-price-color);
-   text-decoration: line-through;
-   font-weight: 400;
- }
- 
- /* Responsive Design */
- @media (max-width: 1200px) {
-   .product-grid {
-     grid-template-columns: repeat(3, 1fr);
-   }
- }
- 
- @media (max-width: 768px) {
-   .banner-container {
-     grid-template-columns: 1fr;
-   }
- 
-   .banner-headline {
-     font-size: 36px;
-   }
- 
-   .product-grid {
-     grid-template-columns: repeat(2, 1fr);
-     gap: 20px;
-   }
- 
-   .category-nav {
-     gap: 10px;
-   }
- 
-   .category-btn {
-     padding: 10px 20px;
-     font-size: 12px;
-   }
- }
- 
- @media (max-width: 480px) {
-   .product-grid {
-     gap: 10px;
-   }
- 
-   .featured-products {
-     padding: 30px 10px;
-   }
- 
-   .banner {
-     min-height: 350px;
-   }
- 
-   .banner-container {
-     width: 95%;
-   }
- 
-   .banner-headline {
-     font-size: 28px;
-   }
- }
+}
 
-  /* -----------CTA Section Start----------- */
+.price-unit {
+  font-size: 12px;
+  color: var(--strikethrough-price-color);
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.original-price {
+  font-size: 14px;
+  color: var(--strikethrough-price-color);
+  text-decoration: line-through;
+  font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-container {
+    grid-template-columns: 1fr;
+  }
+
+  .banner-headline {
+    font-size: 36px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .category-nav {
+    gap: 10px;
+  }
+
+  .category-btn {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    gap: 15px !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 95vw !important;
+  }
+
+  .featured-products {
+    padding: 30px 10px;
+  }
+
+  .banner {
+    min-height: 350px;
+  }
+
+  .banner-container {
+    width: 95%;
+  }
+
+  .banner-headline {
+    font-size: 28px;
+  }
+}
+
+/* -----------CTA Section Start----------- */
+.cta {
+  color: #f5f2ed;
+  padding: 0rem;
+  width: 100%;
+  height: auto;
+  height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: var(--light-green);
+  overflow: hidden;
+
+  position: relative;
+  z-index: 10;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif")
+    no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 15;
+  opacity: 0.025;
+}
+
+.cta-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  margin-bottom: 0px;
+}
+
+.cta-inner {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+.cta-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f3d2e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.cta-desc {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #0f3d2e;
+  letter-spacing: normal;
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  background-color: var(--primary-green);
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  line-height: 1 !important;
+}
+
+.cta-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+}
+
+.cta-btn:hover {
+  background-color: #fff;
+  color: var(--primary-green);
+}
+
+.cta-btn:hover svg {
+  fill: var(--primary-green);
+}
+
+@media (max-width: 768px) {
+  /* =====================CTA section======================= */
   .cta {
-    color: #f5f2ed;
-    padding: 0rem;
-    width: 100%;
-    height: auto;
-    height: 750px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-color: var(--light-green);
-    overflow: hidden;
- 
-    position: relative;
-    z-index: 10;
-  }
- 
-  .cta::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 15;
-    opacity: 0.025;
-  }
-  
-  .cta-bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: 1;
-    margin-bottom: 0px;
-  }
-  
-  .cta-inner {
-    max-width: 1200px;
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 20;
-  }
-  
-  .cta-heading {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #0f3d2e;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
-  }
-  
-  .cta-desc {
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: #0f3d2e;
-    letter-spacing: normal;
-    margin-bottom: 2rem;
-  }
-  
-  .cta-btn {
-    background-color: var(--primary-green);
-    color: #fff;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    font-weight: 500;
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-    outline: none;
-    text-decoration: none;
-    line-height: 1 !important;
-  }
-  
-  .cta-btn svg {
-    width: 16px;
-    height: 16px;
-    fill: #fff;
-  }
-  
-  .cta-btn:hover {
-    background-color: #fff;
-    color: var(--primary-green);
-  }
-  
-  .cta-btn:hover svg {
-    fill: var(--primary-green);
-  }
-
-
-  @media (max-width: 768px) {
-   /* =====================CTA section======================= */
-   .cta {
     height: 500px;
     display: flex;
     align-items: flex-end;
@@ -2180,26 +2198,24 @@ body.no-scroll {
     font-size: 1rem;
     text-align: center;
   }
-  
 
   .cta-btn {
     padding: 0.875rem 1.5rem;
     font-size: 1rem;
   }
+}
+
+@media (max-width: 480px) {
+  .cta {
+    min-height: 400px;
   }
 
-
-  @media (max-width: 480px) {
-    .cta {
-      min-height: 400px;
-    }
-  
-    .cta-heading {
-      font-size: 1.5rem;
-    }
-  
-    .cta-desc {
-      font-size: 0.9375rem;
-      margin-bottom: 1.5rem;
-    }
+  .cta-heading {
+    font-size: 1.5rem;
   }
+
+  .cta-desc {
+    font-size: 0.9375rem;
+    margin-bottom: 1.5rem;
+  }
+}

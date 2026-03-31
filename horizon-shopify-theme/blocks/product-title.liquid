@@ -5,7 +5,7 @@
 {% else %}
   {% assign product_title = '<p>' | append: closest.product.title | append: '</p>' %}
   <a
-    class="contents user-select-text"
+    class="contents user-select-text product-title-link"
     ref="productTitleLink"
     href="{{ closest.product.selected_or_first_available_variant.url }}"
   >

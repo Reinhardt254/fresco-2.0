@@ -1070,7 +1070,7 @@ body:has(.header[transparent]) #header-group > *:not(.header-section) {
   overflow: hidden;
   width: 100% !important;
   min-width: 100% !important;
-  padding: 12px !important;
+  padding: 12px 12px 20px 12px !important;
   margin: 0 !important;
   box-sizing: border-box !important;
   background-color: transparent !important;
@@ -2652,6 +2652,10 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) > *:not(.tax-note) {
 /* Hide "Add" button when "Choose" button is shown */
 [data-quick-add-button='choose'] add-to-cart-component {
   display: none;
+}
+
+add-to-cart-component {
+  display: none !important;
 }
 
 /* Hide "Choose" button when "Add" button is shown */
