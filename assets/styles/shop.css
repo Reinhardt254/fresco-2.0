@@ -112,13 +112,12 @@
 .product-page-layout .bottom-container .overlay-left-bottom {
   position: absolute;
   bottom: -20%;
-  left: -10%;
-  width: 500px;
-  max-width: 30vw;
-  height: auto;
+  left: -50px;
+  width: auto;
+  height: 100%;
   object-fit: cover;
   z-index: 1;
-  transform: rotate(10deg);
+  transform: rotate(25deg);
 }
 
 .product-page-layout .bottom-container .overlay-left-bottom img {

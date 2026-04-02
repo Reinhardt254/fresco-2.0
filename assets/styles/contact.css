@@ -79,6 +79,7 @@
  .contact-page-layout .bottom-left-overlay {
   bottom: 0;
   left: -10px;
+  transform: rotate(10deg);
  }
 
  .contact-page-layout .bottom-right-overlay {
