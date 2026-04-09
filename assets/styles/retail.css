@@ -111,11 +111,12 @@
 
 .retail-hero-title {
   font-family: "Playfair Display", serif;
-  font-size: clamp(2rem, 5vw, 4.5rem);
-  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
   line-height: 1.2;
   color: #fff;
   margin: 0 0 0.75rem;
+  text-transform: uppercase;
 }
 
 .retail-hero-title .highlight {
@@ -315,6 +316,7 @@
   margin: 0rem 0;
   position: relative;
   z-index: 10;
+  text-transform: capitalize;
 }
 
 .retail-section-dark .retail-section-heading {

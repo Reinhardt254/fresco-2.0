@@ -1675,6 +1675,7 @@ body.no-scroll {
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 10px;
+  text-transform: capitalize;
 }
 
 .category-description {
