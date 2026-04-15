@@ -1,279 +1,279 @@
 .related-products-section:before {
-   content: "";
-   background: url(https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif) no-repeat;
-   background-size: cover;
-   background-position: top;
-   position: absolute;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
-   height: 100%;
-   width: 100%;
-   opacity: .010 !important;
-   z-index: 5;
+  content: "";
+  background: url(https://harvestepz.com/wp-content/uploads/2026/04/Frsco-Herbs-Background.png)
+    no-repeat;
+  background-size: cover;
+  background-position: top;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.01 !important;
+  z-index: 5;
 }
-
 
 /* =========== Home CTA Section START =========== */
 .wishlist-page-layout {
-   background-color: var(--light-green);
-   padding: 0;
-   position: relative;
-   overflow: hidden;
-   z-index: 10;
-   width: 100%;
-   height: 100%;
- }
- 
- .wishlist-page-layout-container {
-   max-width: 1400px;
-   margin: 0 auto;
-   padding: 0 24px;
-   position: relative;
-   z-index: 10;
- }
- 
- .wishlist-page-layout .bottom-container {
-   background-color: inherit;
-   padding: 70px 0;
-   border-radius: 10px;
-   min-height: 400px;
-   width: 100%;
-   position: relative;
-   z-index: 1;
- 
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
- 
- .wishlist-page-layout .bottom-container::before {
-   content: "";
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
-   z-index: 1;
-   opacity: 0.035;
- }
- 
- .wishlist-page-layout .bottom-container .text-content {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap: 10px;
-   max-width: 700px;
-   margin: 0 auto;
-   text-align: center;
-   position: relative;
-   z-index: 10;
- }
- 
- .wishlist-page-layout .bottom-container .wishlist-title {
-   font-size: clamp(2rem, 5vw, 4rem);
-   font-weight: 700;
-   color: #000000;
-   margin: 0;
-   line-height: 1;
- }
- 
- .wishlist-page-layout .bottom-container .wishlist-title .highlight {
-   color: var(--primary-green);
- }
- 
- .wishlist-page-layout .bottom-container .text-content h3 {
-   font-size: 20px;
-   color: #2c2c2c;
-   margin: 0;
- }
- 
- .wishlist-page-layout .bottom-container .text-content p {
-   font-size: 16px;
-   font-weight: 400;
-   color: #2c2c2c;
-   margin: 0;
- }
- 
- .wishlist-page-layout .bottom-container .text-content a {
-   font-size: 16px;
-   font-weight: 400;
-   color: #ffffff;
-   margin: 0;
- }
- 
- .wishlist-page-layout .bottom-container .overlay-right-bottom {
-   position: absolute;
-   bottom: 0;
-   right: 0;
-   width: 500px;
-   max-width: 30vw;
-   height: auto;
-   object-fit: cover;
-   z-index: 1;
- }
- 
- .wishlist-page-layout .bottom-container .overlay-right-bottom img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   border-radius: 10px;
- }
- 
- .wishlist-page-layout .bottom-container .overlay-left-bottom {
-   position: absolute;
-   bottom: -20%;
-   left: -10%;
-   width: 500px;
-   max-width: 30vw;
-   height: auto;
-   object-fit: cover;
-   z-index: 1;
-   transform: rotate(10deg);
- }
- 
- .wishlist-page-layout .bottom-container .overlay-left-bottom img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   border-radius: 10px;
- }
- 
- .wishlist-page-layout .bottom-container .overlay-center-bottom {
-   position: absolute;
-   bottom: -15%;
-   left: 50%;
-   transform: translateX(-50%);
-   width: 500px;
-   max-width: 30vw;
-   height: auto;
-   object-fit: cover;
-   z-index: 1;
- }
- 
- .wishlist-page-layout .bottom-container .overlay-center-bottom img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   border-radius: 10px;
-   opacity: 0.1;
- }
- 
- @media (max-width: 480px) {
-   .wishlist-page-layout .top-container {
-     height: 350px;
-     margin-bottom: 150px;
-   }
- 
-   .wishlist-page-layout .top-container {
-     padding: 10px;
-   }
- 
-   .wishlist-page-layout .top-container .overlay-content {
-     margin-top: 100px;
-     width: 100%;
-   }
- 
-   .wishlist-page-layout .bottom-container {
-     padding: 50px 10px;
-     padding-bottom: 120px;
-   }
- 
-   .wishlist-page-layout .bottom-container .overlay-right-bottom {
-     width: 300px;
-     max-width: 50vw;
-     bottom: -10%;
-   }
- 
-   .wishlist-page-layout .bottom-container .overlay-left-bottom {
-     width: 300px;
-     max-width: 20vw;
-   }
- 
-   .wishlist-page-layout .bottom-container .overlay-center-bottom {
-     position: absolute;
-     bottom: -10%;
-     left: 50%;
-     transform: translateX(-50%);
-     width: 500px;
-     max-width: 90vw;
-     height: auto;
-     object-fit: cover;
-     z-index: 1;
-   }
- 
-   .wishlist-page-layout .bottom-container .overlay-left-bottom {
-     position: absolute;
-     bottom: -15%;
-     left: -15%;
-     width: 500px;
-     max-width: 50vw;
-     height: auto;
-     object-fit: cover;
-     z-index: 1;
-     transform: rotate(10deg);
-   }
- }
- 
- @media (max-width: 480px) {
-   .wishlist-page-layout .top-container {
-     height: 350px;
-     margin-bottom: 150px;
-   }
- 
-   .wishlist-page-layout .top-container {
-     padding: 10px;
-   }
- 
-   .wishlist-page-layout .top-container .overlay-content {
-     margin-top: 100px;
-     width: 100%;
-   }
- 
-   .wishlist-page-layout .bottom-container {
-     padding: 50px 10px;
-     padding-bottom: 120px;
-   }
- 
-   .wishlist-page-layout .bottom-container .overlay-right-bottom {
-     width: 300px;
-     max-width: 50vw;
-     bottom: -10%;
-   }
- 
-   .wishlist-page-layout .bottom-container .overlay-left-bottom {
-     width: 300px;
-     max-width: 20vw;
-   }
- 
-   .wishlist-page-layout .bottom-container .overlay-center-bottom {
-     position: absolute;
-     bottom: -10%;
-     left: 50%;
-     transform: translateX(-50%);
-     width: 500px;
-     max-width: 90vw;
-     height: auto;
-     object-fit: cover;
-     z-index: 1;
-   }
- 
-   .wishlist-page-layout .bottom-container .overlay-left-bottom {
-     position: absolute;
-     bottom: -15%;
-     left: -15%;
-     width: 500px;
-     max-width: 50vw;
-     height: auto;
-     object-fit: cover;
-     z-index: 1;
-     transform: rotate(10deg);
-   }
- }
- 
+  background-color: var(--light-green);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+
+.wishlist-page-layout-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 10;
+}
+
+.wishlist-page-layout .bottom-container {
+  background-color: inherit;
+  padding: 70px 0;
+  border-radius: 10px;
+  min-height: 400px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wishlist-page-layout .bottom-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://harvestepz.com/wp-content/uploads/2026/04/Frsco-Herbs-Background.png")
+    no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  opacity: 0.035;
+}
+
+.wishlist-page-layout .bottom-container .text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.wishlist-page-layout .bottom-container .wishlist-title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  line-height: 1;
+}
+
+.wishlist-page-layout .bottom-container .wishlist-title .highlight {
+  color: var(--primary-green);
+}
+
+.wishlist-page-layout .bottom-container .text-content h3 {
+  font-size: 20px;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.wishlist-page-layout .bottom-container .text-content p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.wishlist-page-layout .bottom-container .text-content a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+}
+
+.wishlist-page-layout .bottom-container .overlay-right-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 500px;
+  max-width: 30vw;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.wishlist-page-layout .bottom-container .overlay-right-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.wishlist-page-layout .bottom-container .overlay-left-bottom {
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 500px;
+  max-width: 30vw;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+  transform: rotate(10deg);
+}
+
+.wishlist-page-layout .bottom-container .overlay-left-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.wishlist-page-layout .bottom-container .overlay-center-bottom {
+  position: absolute;
+  bottom: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  max-width: 30vw;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.wishlist-page-layout .bottom-container .overlay-center-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0.1;
+}
+
+@media (max-width: 480px) {
+  .wishlist-page-layout .top-container {
+    height: 350px;
+    margin-bottom: 150px;
+  }
+
+  .wishlist-page-layout .top-container {
+    padding: 10px;
+  }
+
+  .wishlist-page-layout .top-container .overlay-content {
+    margin-top: 100px;
+    width: 100%;
+  }
+
+  .wishlist-page-layout .bottom-container {
+    padding: 50px 10px;
+    padding-bottom: 120px;
+  }
+
+  .wishlist-page-layout .bottom-container .overlay-right-bottom {
+    width: 300px;
+    max-width: 50vw;
+    bottom: -10%;
+  }
+
+  .wishlist-page-layout .bottom-container .overlay-left-bottom {
+    width: 300px;
+    max-width: 20vw;
+  }
+
+  .wishlist-page-layout .bottom-container .overlay-center-bottom {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    max-width: 90vw;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .wishlist-page-layout .bottom-container .overlay-left-bottom {
+    position: absolute;
+    bottom: -15%;
+    left: -15%;
+    width: 500px;
+    max-width: 50vw;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .wishlist-page-layout .top-container {
+    height: 350px;
+    margin-bottom: 150px;
+  }
+
+  .wishlist-page-layout .top-container {
+    padding: 10px;
+  }
+
+  .wishlist-page-layout .top-container .overlay-content {
+    margin-top: 100px;
+    width: 100%;
+  }
+
+  .wishlist-page-layout .bottom-container {
+    padding: 50px 10px;
+    padding-bottom: 120px;
+  }
+
+  .wishlist-page-layout .bottom-container .overlay-right-bottom {
+    width: 300px;
+    max-width: 50vw;
+    bottom: -10%;
+  }
+
+  .wishlist-page-layout .bottom-container .overlay-left-bottom {
+    width: 300px;
+    max-width: 20vw;
+  }
+
+  .wishlist-page-layout .bottom-container .overlay-center-bottom {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    max-width: 90vw;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .wishlist-page-layout .bottom-container .overlay-left-bottom {
+    position: absolute;
+    bottom: -15%;
+    left: -15%;
+    width: 500px;
+    max-width: 50vw;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+    transform: rotate(10deg);
+  }
+}

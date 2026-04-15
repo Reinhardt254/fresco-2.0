@@ -4,7 +4,7 @@
   padding: 0;
   min-height: 60vh;
 }
- 
+
 .home-page-top-layout {
   position: relative;
   width: 100%;
@@ -14,7 +14,7 @@
   align-items: center;
   overflow: hidden;
 }
-  
+
 .home-page-top-layout::before {
   content: "";
   position: absolute;
@@ -84,7 +84,7 @@
   transform: translateY(-50%) rotate(90deg);
   width: fit-content !important;
   height: fit-content !important;
-  z-index: 100!important;
+  z-index: 100 !important;
 
   position: absolute !important;
 }
@@ -114,7 +114,7 @@
 }
 
 .home-page-top-layout .pagination-custom .swiper-pagination-bullet:hover {
- background-color: var(--primary-green);
+  background-color: var(--primary-green);
 }
 
 .home-page-top-layout .pagination-custom .swiper-pagination-bullet-active {
@@ -123,7 +123,9 @@
   z-index: 15 !important;
 }
 
-.home-page-top-layout .pagination-custom .swiper-pagination-bullet-active::before {
+.home-page-top-layout
+  .pagination-custom
+  .swiper-pagination-bullet-active::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -220,7 +222,7 @@
 }
 
 .home-page-top-layout .socials-item:hover i {
- color: var(--primary-green);
+  color: var(--primary-green);
 }
 
 .home-page-top-layout .separator {
@@ -442,10 +444,7 @@
   position: relative;
 }
 
-.home-page-layout
-  .layout-content-inner
-  .column.layout-content-inner-image
-  img {
+.home-page-layout .layout-content-inner .column.layout-content-inner-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -458,7 +457,7 @@
   align-items: flex-start;
   height: auto;
 }
- 
+
 .home-page-layout .layout-content h1 {
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.1;
@@ -580,7 +579,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
+  background: url("https://harvestepz.com/wp-content/uploads/2026/04/Frsco-Herbs-Background.png")
+    no-repeat center center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -597,15 +597,15 @@
 }
 
 .our-mission-inner .sub-heading {
- color: #fff;
+  color: #fff;
 }
 
 .our-mission-inner .section-title {
- color: #fff;
+  color: #fff;
 }
 
 .our-mission-inner .section-description {
- color: #fff;
+  color: #fff;
 }
 
 .our-mission-desc {
@@ -615,7 +615,7 @@
   color: #fff;
   margin-bottom: 2rem;
 }
- 
+
 .our-mission-center {
   position: relative;
   min-height: 400px;
@@ -632,8 +632,6 @@
   max-width: 340px;
   height: 350px;
 }
-
-
 
 .mission-img {
   position: relative;
@@ -756,7 +754,7 @@
 .our-mission-images .about-swiper .about-swiper-pagination .swiper-pagination-bullet-active {
   background: #ffffff;
 } */
- 
+
 .our-mission-point {
   position: absolute;
   display: flex;
@@ -804,8 +802,8 @@
 }
 
 .our-mission-point p {
- font-size: 0.9rem;
- color: #eeeeee;
+  font-size: 0.9rem;
+  color: #eeeeee;
 }
 
 .our-mission-point-tl {
@@ -830,23 +828,23 @@
 
 @media (max-width: 1200px) and (min-width: 1000px) {
   .our-mission-images {
-   max-width: 280px;
-   max-height: 320px;
+    max-width: 280px;
+    max-height: 320px;
   }
 
   .our-mission-center {
-   max-width: 80vw;
+    max-width: 80vw;
   }
 
   .our-mission-point-bl {
-   bottom: -20%;
-   left: -5%;
- }
- 
- .our-mission-point-br {
-   bottom: -20%;
-   right: -5%;
- }
+    bottom: -20%;
+    left: -5%;
+  }
+
+  .our-mission-point-br {
+    bottom: -20%;
+    right: -5%;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -955,16 +953,15 @@
 }
 
 @media (max-width: 768px) {
- .our-mission {
-   padding: 1rem 0 3rem 0;
- }
+  .our-mission {
+    padding: 1rem 0 3rem 0;
+  }
 
- .our-mission-points-container {
-   max-width: 90vw;
-   padding-top: 6rem;
- }
+  .our-mission-points-container {
+    max-width: 90vw;
+    padding-top: 6rem;
+  }
 }
-
 
 /* -----------Our Process Section Start----------- */
 .our-process {
@@ -984,7 +981,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
+  background: url("https://harvestepz.com/wp-content/uploads/2026/04/Frsco-Herbs-Background.png")
+    no-repeat center center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1111,8 +1109,6 @@
   }
 }
 
-
-
 /* ==================== Mobile Responsive Styles ==================== */
 /* Hero section - mobile */
 @media (max-width: 768px) {
@@ -1157,7 +1153,6 @@
     height: 36px;
     width: 36px;
   }
-
 }
 
 /* Hero section - small mobile */
@@ -1193,169 +1188,166 @@
   .process-item-desc {
     font-size: 0.8125rem;
   }
-
-
 }
-
 
 /* =========== Bottom Overlay Section END =========== */
 /* ================== Quality Commitment Section START ================== */
 .partners-new {
- padding: 3rem 0 3rem 0;
- background-color: var(--light-green) !important;
+  padding: 3rem 0 3rem 0;
+  background-color: var(--light-green) !important;
 
- display: flex;
- justify-content: center;
- align-items: center;
- flex-direction: column;
- gap: 2rem;
- position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
 }
 
 .partners-new::before {
- content: "";
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- background: url("https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f…&w=1060") no-repeat center center;
- background-size: cover;
- background-position: center;
- background-repeat: no-repeat;
- z-index: 1;
- opacity: 0.02;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f…&w=1060")
+    no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  opacity: 0.02;
 }
 
 .partners-new .container {
- max-width: 1400px;
- margin: 0 auto;
- padding: 0;
- width: 100%;
- display: flex;
- justify-content: center;
- align-items: center;
- flex-direction: column;
- gap: 2rem;
- text-align: center;
- position: relative;
- z-index: 10;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
 }
 .partners-new .container .title-underline {
- margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .partners-new .head {
- display: flex;
- justify-content: center;
- align-items: center;
- flex-direction: column;
- gap: 0rem;
- padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0rem;
+  padding: 0;
 }
 
 .partners-new .head .sub-heading {
- font-size: 2rem;
- font-weight: 600;
- color: #000000;
- text-transform: uppercase;
- margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000000;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .partners-new .head .sub-head-text {
- font-size: 1.5rem;
- font-weight: 400;
- color: #000000;
- text-transform: uppercase;
- letter-spacing: 0.2rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
 }
 
 .partners-new .swiper-partners.swiper {
- width: 100%;
- height: 100% !important;
- overflow: hidden;
+  width: 100%;
+  height: 100% !important;
+  overflow: hidden;
 }
 
 .partners-new .swiper-wrapper {
- width: 100%;
- transition-timing-function: linear !important;
- -webkit-transition-timing-function: linear !important;
- -o-transition-timing-function: linear !important;
- height: 100% !important;
+  width: 100%;
+  transition-timing-function: linear !important;
+  -webkit-transition-timing-function: linear !important;
+  -o-transition-timing-function: linear !important;
+  height: 100% !important;
 }
 
 .partners-new .swiper-slide {
- width: 150px;
- height: 100% !important;
- box-shadow: none;
+  width: 150px;
+  height: 100% !important;
+  box-shadow: none;
 }
 
 .partners-new img {
- height: 100px;
- width: 100%;
- object-fit: contain;
- display: block;
+  height: 100px;
+  width: 100%;
+  object-fit: contain;
+  display: block;
 
- transform: translateZ(0);
- backface-visibility: hidden;
- will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 @media only screen and (max-width: 768px) {
- .partners-new {
-   padding: 2.5rem 0;
-   padding-top: 0;
- }
+  .partners-new {
+    padding: 2.5rem 0;
+    padding-top: 0;
+  }
 
- .partners-new .container {
-   width: 95%;
- }
+  .partners-new .container {
+    width: 95%;
+  }
 
- .partners-new .swiper-wrapper {
-   width: 100vw;
- }
+  .partners-new .swiper-wrapper {
+    width: 100vw;
+  }
 
- .partners-new .swiper-slide {
-   width: 100px;
-   padding: 0 1rem;
-   box-shadow: none;
- }
+  .partners-new .swiper-slide {
+    width: 100px;
+    padding: 0 1rem;
+    box-shadow: none;
+  }
 
- .partners-new img {
-   height: 100px;
-   width: 100%;
-   object-fit: contain;
- }
+  .partners-new img {
+    height: 100px;
+    width: 100%;
+    object-fit: contain;
+  }
 }
-
 
 /* ========================================Featured Products Section=================================== */
 .featured-products {
- padding: 60px 20px;
- background-color: var(--light-green);
- position: relative;
- z-index: 1;
+  padding: 60px 20px;
+  background-color: var(--light-green);
+  position: relative;
+  z-index: 1;
 }
 
 .featured-products::after {
- content: "";
- background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif")
-   no-repeat center center;
- background-size: cover;
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- opacity: 0.025;
- z-index: 5;
+  content: "";
+  background: url("https://harvestepz.com/wp-content/uploads/2026/04/Frsco-Herbs-Background.png")
+    no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.025;
+  z-index: 5;
 }
 
 .products-container {
- max-width: 1400px;
- margin: 0 auto;
- position: relative;
- z-index: 10;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
 }
 
 /* .title-underline::before,
@@ -1382,290 +1374,289 @@
 
 /* Category Navigation */
 .category-nav {
- display: flex;
- justify-content: center;
- gap: 15px;
- margin-bottom: 50px;
- flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
 }
 
 .category-btn {
- padding: 10px 25px;
- border: none;
- border-radius: 5px;
- font-size: 13px;
- font-weight: 600;
- text-transform: uppercase;
- letter-spacing: 0.8px;
- cursor: pointer;
- transition: all 0.3s;
- background-color: var(--light-grey-background);
- color: var(--dark-text-color);
- font-family:
-   -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: var(--light-grey-background);
+  color: var(--dark-text-color);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .category-btn.active {
- background-color: var(--primary-green);
- color: var(--white-color);
+  background-color: var(--primary-green);
+  color: var(--white-color);
 }
 
 .category-btn:hover:not(.active) {
- background-color: var(--light-grey-border);
+  background-color: var(--light-grey-border);
 }
-
 
 /* =========== Reviews Section START =========== */
 .reviews {
- background-color: #0f3d2e;
- padding: 5rem 0 5rem 0;
- position: relative;
- overflow: hidden;
- width: 100%;
- height: 100%;
- position: relative;
- overflow: hidden;
- display: flex;
- justify-content: center;
- align-items: center;
- flex-direction: column;
- gap: 2rem;
- z-index: 10;
+  background-color: #0f3d2e;
+  padding: 5rem 0 5rem 0;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 10;
 }
 
 .reviews::after {
- content: "";
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif")
-   no-repeat center center;
- background-size: cover;
- background-repeat: no-repeat;
- opacity: 0.015;
- z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://harvestepz.com/wp-content/uploads/2026/04/Frsco-Herbs-Background.png")
+    no-repeat center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.015;
+  z-index: 1;
 }
 
 .reviews-container {
- max-width: 1200px;
- margin: 0 auto;
- padding: 0px;
- position: relative;
- z-index: 5;
- width: 90%;
- height: 100%;
- position: relative;
- overflow: hidden;
- display: flex;
- justify-content: center;
- align-items: center;
- flex-direction: column;
- gap: 0rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px;
+  position: relative;
+  z-index: 5;
+  width: 90%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0rem;
 }
 
 .reviews-container .section-title {
- color: #ffffff;
+  color: #ffffff;
 }
 
 .reviews-container .section-title .highlight-text {
- color: var(--primary-green);
+  color: var(--primary-green);
 }
 
 .reviews-container .section-description {
- color: #ffffff;
- font-size: 16px;
- line-height: 1.5;
- font-family: "Josefin Sans", sans-serif !important;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Josefin Sans", sans-serif !important;
 }
 
 .review-heading {
- display: flex;
- align-items: center;
- justify-content: space-between;
- gap: 2rem;
- width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
 }
 
 .review-heading .left-row {
- width: 50%;
+  width: 50%;
 }
 
 .review-heading .left-row .reviews-heading {
- font-size: var(--section-title-size);
- line-height: 1.5;
- color: #ffffff;
- font-family: "Josefin Sans", sans-serif !important;
+  font-size: var(--section-title-size);
+  line-height: 1.5;
+  color: #ffffff;
+  font-family: "Josefin Sans", sans-serif !important;
 }
 
 .review-heading .left-row .reviews-heading-span {
- font-size: 16px;
- line-height: 1.5;
- color: #ffffff;
- font-family: "Josefin Sans", sans-serif !important;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+  font-family: "Josefin Sans", sans-serif !important;
 }
 
 .review-heading .right-row {
- width: 50%;
- display: flex;
- align-items: center;
- justify-content: flex-end;
- gap: 2rem;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
 }
 
 .review-heading .right-row .reviews-right {
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- gap: 1rem;
- width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: auto;
 }
 
 .reviews-inner {
- display: flex;
- align-items: center;
- justify-content: space-between;
- gap: 4rem;
- width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  width: 100%;
 }
 
 .reviews-left,
 .reviews-right {
- width: 100%;
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- gap: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .reviews-hero-swiper {
- width: 100%;
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- gap: 2rem;
- position: relative;
- z-index: 10;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 10;
 }
 
 .reviews-hero-swiper .underlay {
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .reviews-hero-swiper .underlay svg {
- width: 100%;
- height: 100%;
- object-fit: cover;
- z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 
- transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .reviews-hero-swiper .swiper-wrapper {
- align-items: stretch;
- height: 100%;
+  align-items: stretch;
+  height: 100%;
 }
 
 .reviews-hero-swiper .swiper-wrapper .swiper-slide {
- box-shadow: none;
- height: auto;
+  box-shadow: none;
+  height: auto;
 }
 
 .review-hero-card {
- border-radius: 10px;
- padding: 3rem 3rem;
- position: relative;
- overflow: hidden;
- height: 100%;
+  border-radius: 10px;
+  padding: 3rem 3rem;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
 
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: space-between;
- gap: 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0rem;
 }
 
 .review-hero-avatar {
- position: relative;
- z-index: 2;
- width: 88px;
- height: 88px;
- border-radius: 50%;
- overflow: hidden;
- border: 4px solid #ffffff;
- margin: 0 auto 1.5rem;
+  position: relative;
+  z-index: 2;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  margin: 0 auto 1.5rem;
 }
 
 .review-hero-avatar img {
- width: 100%;
- height: 100%;
- object-fit: cover;
- display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .review-hero-text {
- position: relative;
- z-index: 2;
- font-size: 15px;
- line-height: 1.8;
- text-align: center;
- max-width: 440px;
- margin: 0 auto 1.5rem;
- color: #ffffff;
+  position: relative;
+  z-index: 2;
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: center;
+  max-width: 440px;
+  margin: 0 auto 1.5rem;
+  color: #ffffff;
 }
 
 .review-hero-name {
- position: relative;
- z-index: 2;
- font-size: 17px;
- font-weight: 700;
- text-align: center;
- color: #ffffff;
- margin: 0 0 1.75rem;
+  position: relative;
+  z-index: 2;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  margin: 0 0 1.75rem;
 }
 
 .review-hero-nav {
- position: relative;
- z-index: 2;
- display: flex;
- justify-content: center;
- gap: 1rem;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .review-nav-btn {
- width: 40px;
- height: 40px;
- border-radius: 50% !important;
- border: none;
- display: flex;
- align-items: center;
- justify-content: center;
- cursor: pointer;
- background-color: var(--primary-green);
- color: #ffffff;
- box-shadow: none;
- transition:
-   transform 0.2s ease,
-   box-shadow 0.2s ease,
-   background-color 0.2s ease;
+  width: 40px;
+  height: 40px;
+  border-radius: 50% !important;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--primary-green);
+  color: #ffffff;
+  box-shadow: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .review-nav-btn i {
- font-size: 14px;
+  font-size: 14px;
 }
 
 .review-nav-btn:hover {
- box-shadow: none;
- background-color: #ffb627;
+  box-shadow: none;
+  background-color: #ffb627;
 }
 
 /* .review-nav-btn-prev {
@@ -1674,151 +1665,151 @@
 } */
 
 .review-nav-btn-prev:hover {
- background-color: #f2f5f0;
+  background-color: #f2f5f0;
 }
 
 .reviews-right {
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- gap: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
 }
 
 .reviews-image-container {
- width: 100%;
- height: 100%;
- display: flex;
- align-items: center;
- justify-content: center;
- gap: 2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .reviews-image-container img {
- width: 100%;
- height: 100%;
- max-height: 400px;
- object-fit: contain;
- border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 10px;
 }
 
 .reviews-heading {
- font-size: var(--section-title-size);
- line-height: 1.1;
- color: #213029;
- font-family: "Josefin Sans", sans-serif !important;
+  font-size: var(--section-title-size);
+  line-height: 1.1;
+  color: #213029;
+  font-family: "Josefin Sans", sans-serif !important;
 }
 
 .reviews-stars {
- display: flex;
- align-items: center;
- gap: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .reviews-stars i {
- color: var(--star-rating-color);
- font-size: 18px;
+  color: var(--star-rating-color);
+  font-size: 18px;
 }
 
 .reviews-right-avatars {
- display: flex;
- align-items: center;
- margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
 }
 
 .reviews-right-avatars img {
- width: 44px;
- height: 44px;
- border-radius: 50%;
- object-fit: cover;
- border: 3px solid #ffffff;
- box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
 }
 
 .reviews-right-avatars img + img {
- margin-left: -14px;
+  margin-left: -14px;
 }
 
 .reviews-trusted-text {
- margin: 0.5rem 0 0;
- font-size: 15px;
- color: #ffffff;
- font-weight: 500;
+  margin: 0.5rem 0 0;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 500;
 }
 
 @media (max-width: 1024px) {
- .reviews-inner {
-   gap: 2.5rem;
- }
+  .reviews-inner {
+    gap: 2.5rem;
+  }
 
- .review-hero-card {
-   padding: 2.6rem 2.4rem 2.3rem;
- }
+  .review-hero-card {
+    padding: 2.6rem 2.4rem 2.3rem;
+  }
 
- .reviews-heading {
-   font-size: 34px;
- }
+  .reviews-heading {
+    font-size: 34px;
+  }
 }
 
 @media (max-width: 768px) {
- .reviews {
-   padding: 3.5rem 0 4rem 0;
- }
+  .reviews {
+    padding: 3.5rem 0 4rem 0;
+  }
 
- .reviews-container {
-   width: 95%;
-   padding: 0 12px;
- }
+  .reviews-container {
+    width: 95%;
+    padding: 0 12px;
+  }
 
- .reviews-inner {
-   flex-direction: column;
-   align-items: center;
-   text-align: center;
- }
+  .reviews-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
- .review-hero-card {
-   padding: 2rem 1rem;
- }
+  .review-hero-card {
+    padding: 2rem 1rem;
+  }
 
- .reviews-right {
-   align-items: center;
- }
+  .reviews-right {
+    align-items: center;
+  }
 
- .reviews-left {
-   gap: 0rem;
- }
+  .reviews-left {
+    gap: 0rem;
+  }
 
- .reviews-heading {
-   font-size: 30px;
- }
+  .reviews-heading {
+    font-size: 30px;
+  }
 
- .reviews-stars {
-   padding-top: 1rem;
- }
+  .reviews-stars {
+    padding-top: 1rem;
+  }
 }
 
 /* =========== Reviews Section END =========== */
 /* =========== Bottom Overlay Section START =========== */
 .bottom-overlay {
- background-color: #ffffff;
- height: auto;
- position: relative;
- overflow: hidden;
+  background-color: #ffffff;
+  height: auto;
+  position: relative;
+  overflow: hidden;
 }
 
 .bottom-overlay-image {
- width: 100%;
- height: auto;
- position: relative;
- display: flex;
- justify-content: center;
- align-items: center;
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bottom-overlay-image img {
- width: 100%;
- height: 100%;
- max-height: 400px;
- object-position: top;
- object-fit: cover;
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  object-position: top;
+  object-fit: cover;
 }

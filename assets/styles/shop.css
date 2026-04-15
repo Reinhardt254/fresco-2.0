@@ -1,10 +1,9 @@
 .products-page {
-   background: #ffffff;
-   color: #2c2c2c;
-   padding: 0rem 0;
-   min-height: 60vh;
- }
-
+  background: #ffffff;
+  color: #2c2c2c;
+  padding: 0rem 0;
+  min-height: 60vh;
+}
 
 /* =========== Home CTA Section START =========== */
 .product-page-layout {
@@ -42,7 +41,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
+  background: url("https://harvestepz.com/wp-content/uploads/2026/04/Frsco-Herbs-Background.png")
+    no-repeat center center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -205,17 +205,16 @@
 
 /* ========== Products Page Section ========== */
 .products-page-section {
-   position: relative;
-   width: 100%;
-   height: auto;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding: 4rem 0 4rem 0;
-   position: relative;
-   background-color: #ffffff;
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0 4rem 0;
+  position: relative;
+  background-color: #ffffff;
 }
-
 
 .products-page-section::before {
   content: "";
@@ -224,7 +223,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
+  background: url("https://harvestepz.com/wp-content/uploads/2026/04/Frsco-Herbs-Background.png")
+    no-repeat center center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -354,7 +354,9 @@
   color: #2c2c2c;
   cursor: pointer;
   font-size: 16px;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .view-btn + .view-btn {
@@ -461,7 +463,7 @@
   cursor: pointer;
   pointer-events: auto;
   border: 2px solid #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .price-range-wrap input[type="range"]::-moz-range-thumb {
@@ -472,7 +474,7 @@
   cursor: pointer;
   pointer-events: auto;
   border: 2px solid #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .price-range-min {
@@ -508,7 +510,9 @@
   border-radius: 4px;
   cursor: pointer;
   font-family: "Josefin Sans", sans-serif;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .sidebar-filter-btn:hover {
@@ -626,7 +630,10 @@
   border-radius: 4px;
   text-decoration: none;
   font-family: "Josefin Sans", sans-serif;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .tag-btn:hover {
@@ -652,13 +659,19 @@
   grid-template-columns: 1fr;
 }
 
-.products-main .product-grid.products-grid.view-list .product-card .product-card__link {
+.products-main
+  .product-grid.products-grid.view-list
+  .product-card
+  .product-card__link {
   flex-direction: row;
   text-align: left;
   align-items: flex-start;
 }
 
-.products-main .product-grid.products-grid.view-list .product-card .product-image {
+.products-main
+  .product-grid.products-grid.view-list
+  .product-card
+  .product-image {
   width: 140px;
   min-width: 140px;
   height: 140px;
@@ -666,22 +679,28 @@
   margin-right: 20px;
 }
 
-.products-main .product-grid.products-grid.view-list .product-card .product-name,
-.products-main .product-grid.products-grid.view-list .product-card .product-price {
+.products-main
+  .product-grid.products-grid.view-list
+  .product-card
+  .product-name,
+.products-main
+  .product-grid.products-grid.view-list
+  .product-card
+  .product-price {
   margin-left: 0;
   text-align: left;
 }
-  
+
 /* Product card: Add to cart button (shop page) */
 .products-main .product-card .product-card__link {
   margin-bottom: 0rem;
   padding: 0;
 }
-     
+
 .products-main .product-card .product-price {
   margin-bottom: 0.5rem;
 }
- 
+
 .products-main .product-card .product-card-add {
   width: 100%;
   max-width: fit-content;
@@ -696,7 +715,9 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 .products-main .product-card .product-card-add:hover {
@@ -755,7 +776,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
-
 }
 
 @media (max-width: 480px) {
@@ -771,7 +791,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .products-main .product-grid.products-grid.view-list .product-card .product-image {
+  .products-main
+    .product-grid.products-grid.view-list
+    .product-card
+    .product-image {
     width: 100%;
     min-width: 100%;
     height: 200px;
