@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fresco - Freeze-Dried Herbs & Organic Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- <link rel="stylesheet" href="/styles.css" /> -->
+    <link rel="stylesheet" href="/assets/styles/home.css" />
+    <link rel="stylesheet" href="/assets/styles/global.css" />
+    <link rel="stylesheet" href="/assets/styles/recipe-details.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-container">
+        <!-- Mobile Hamburger Menu Button (left) -->
+        <div class="menu-toggle-container">
+          <button
+            class="menu-toggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <span class="sr-only">Open menu</span>
+            <span class="menu-toggle__bar"></span>
+          </button>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="nav left-nav desktop-nav">
+          <div class="nav-links">
+            <a class="active" href="/">Home</a>
+            <div class="nav-dropdown">
+              <a href="/about" class="nav-dropdown-trigger">Explore</a>
+              <div class="nav-dropdown-menu">
+                <div class="nav-dropdown-menu-content">
+                  <a href="/about/#our-story" class="dropdown-section">
+                    <div class="dropdown-icon">
+                      <img
+                        src="https://newvashaepz.com/wp-content/uploads/2026/02/herb.png"
+                        alt=""
+                      />
+                    </div>
+                    <h3 class="dropdown-title">Our Story</h3>
+                  </a>
+                  <a href="/about/#our-process" class="dropdown-section">
+                    <div class="dropdown-icon">
+                      <img
+                        src="https://newvashaepz.com/wp-content/uploads/2026/02/mortar-1-1.png"
+                        alt=""
+                      />
+                    </div>
+                    <h3 class="dropdown-title">Our Process</h3>
+                  </a>
+                  <a href="/retail" class="dropdown-section">
+                    <div class="dropdown-icon">
+                      <img
+                        src="https://newvashaepz.com/wp-content/uploads/2026/02/supply-chain.png"
+                        alt=""
+                      />
+                    </div>
+                    <h3 class="dropdown-title">Retail</h3>
+                  </a>
+                  <a href="/about/#recipes" class="dropdown-section">
+                    <div class="dropdown-icon">
+                      <img
+                        src="https://newvashaepz.com/wp-content/uploads/2026/02/mortar.png"
+                        alt=""
+                      />
+                    </div>
+                    <h3 class="dropdown-title">Recipes</h3>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <a href="/contact">Contact</a>
+          </div>
+        </div>
+
+        <!-- Logo (center - both mobile and desktop) -->
+        <div class="logo logo-desktop">
+          <a href="/">
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
+              alt="Fresco Flavors"
+            />
+          </a>
+        </div>
+
+        <div class="logo logo-mobile">
+          <a href="/">
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
+              alt="Fresco Flavors"
+            />
+          </a>
+        </div>
+
+        <!-- Desktop Right Navigation -->
+        <div class="nav right-nav desktop-nav">
+          <div class="nav-links">
+            <a href="/shop">Shop Now</a>
+          </div>
+          <div class="header-actions">
+            <i
+              id="search-open-icon"
+              class="fa-solid fa-magnifying-glass search-icon"
+            ></i>
+            <a href="/#">
+              <i class="fa-solid fa-user user-icon"></i>
+            </a>
+            <a href="/cart">
+              <i class="fa-solid fa-bag-shopping bag-icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile Header Actions (right) -->
+        <div class="header-actions header-actions-mobile">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <i class="fa-solid fa-user user-icon"></i>
+          <i class="fa-solid fa-bag-shopping bag-icon"></i>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+          <div class="mobile-menu-header">
+            <button class="mobile-menu-close" aria-label="Close menu">
+              <i class="fa-solid fa-times"></i>
+            </button>
+          </div>
+          <nav class="mobile-nav-links">
+            <a href="/" class="mobile-nav-link active">Home</a>
+            <div class="mobile-nav-dropdown">
+              <a href="/about" class="mobile-nav-link mobile-dropdown-trigger">
+                Explore
+                <i class="fa-solid fa-chevron-down"></i>
+              </a>
+              <div class="mobile-dropdown-menu">
+                <a href="/about/#our-story" class="mobile-dropdown-link"
+                  >Our Story</a
+                >
+                <a href="/about/#our-process" class="mobile-dropdown-link"
+                  >Our Process</a
+                >
+                <a href="/retail" class="mobile-dropdown-link">Retail</a>
+                <a href="/about/#recipes" class="mobile-dropdown-link"
+                  >Recipes</a
+                >
+              </div>
+            </div>
+            <a href="/contact" class="mobile-nav-link">Contact</a>
+            <a href="/shop" class="mobile-nav-link">Shop Now</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="recipe-details">
+      <section class="recipe-hero" aria-label="Recipe hero">
+        <div class="recipe-hero-inner">
+          <div class="recipe-hero-media" aria-hidden="true">
+            <img
+              class="recipe-hero-image"
+              src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=2200&q=80"
+              alt=""
+            />
+          </div>
+ 
+          <div class="recipe-hero-title">
+            <h1 class="recipe-title">
+              <span class="recipe-title-line">Chicken</span>
+              <span class="recipe-title-line">Spaghetti Bake</span>
+            </h1>
+          </div>
+        </div>
+      </section>
+ 
+      <section class="recipe-body" aria-label="Recipe content">
+        <div class="recipe-body-inner">
+          <!-- <aside class="recipe-share" aria-label="Share links">
+            <a class="recipe-share-btn" href="/#" aria-label="Share on Pinterest">
+              <i class="fa-brands fa-pinterest-p" aria-hidden="true"></i>
+            </a>
+            <a class="recipe-share-btn" href="/#" aria-label="Share on Facebook">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a class="recipe-share-btn" href="/#" aria-label="Share on Instagram">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+          </aside> -->
+
+          <div class="recipe-columns">
+            <article class="recipe-instructions" aria-label="Instructions">
+              <h2 class="recipe-section-heading">Instructions</h2>
+
+              <ol class="recipe-steps">
+                <li class="recipe-step">
+                  <span class="recipe-step-number" aria-hidden="true">1</span>
+                  <p class="recipe-step-text">
+                    Preheat the oven to 350°F (175°C)
+                  </p>
+                </li>
+                <li class="recipe-step">
+                  <span class="recipe-step-number" aria-hidden="true">2</span>
+                  <p class="recipe-step-text">
+                    Mix the dry ingredients in a large bowl. Bring the water to a boil
+                  </p>
+                </li>
+                <li class="recipe-step">
+                  <span class="recipe-step-number" aria-hidden="true">3</span>
+                  <p class="recipe-step-text">
+                    Add vinegar and egg whites to the dry ingredients, and combine well.
+                    Add boiling water, while beating with a hand mixer for about 30 seconds.
+                    Don't over mix the dough, the consistency should resemble Play-Doh.
+                  </p>
+                </li>
+                <li class="recipe-step">
+                  <span class="recipe-step-number" aria-hidden="true">4</span>
+                  <p class="recipe-step-text">
+                    Moisten hands with a little olive oil and shape dough into 6 separate rolls.
+                    Place on a greased baking sheet. Top with optional sesame seeds.
+                  </p>
+                </li>
+
+                <li class="recipe-step">
+                  <span class="recipe-step-number" aria-hidden="true">5</span>
+                  <p class="recipe-step-text">
+                    Preheat the oven to 350°F (175°C)
+                  </p>
+                </li>
+                <li class="recipe-step">
+                  <span class="recipe-step-number" aria-hidden="true">6</span>
+                  <p class="recipe-step-text">
+                    Mix the dry ingredients in a large bowl. Bring the water to a boil
+                  </p>
+                </li>
+                <li class="recipe-step">
+                  <span class="recipe-step-number" aria-hidden="true">7</span>
+                  <p class="recipe-step-text">
+                    Add vinegar and egg whites to the dry ingredients, and combine well.
+                    Add boiling water, while beating with a hand mixer for about 30 seconds.
+                    Don't over mix the dough, the consistency should resemble Play-Doh.
+                  </p>
+                </li>
+                <li class="recipe-step">
+                  <span class="recipe-step-number" aria-hidden="true">8</span>
+                  <p class="recipe-step-text">
+                    Moisten hands with a little olive oil and shape dough into 6 separate rolls.
+                    Place on a greased baking sheet. Top with optional sesame seeds.
+                  </p>
+                </li>
+              </ol>
+            </article>
+
+            <aside class="recipe-ingredients" aria-label="Ingredients">
+              <div class="ingredients-card">
+                <div class="ingredients-card-header">
+                  <h2 class="recipe-section-heading ingredients-heading">Ingredients</h2>
+                </div>
+
+                <div class="ingredients-controls">
+                  <div class="servings">
+                    <div class="servings-label">Servings</div>
+                    <div class="servings-control" role="group" aria-label="Servings">
+                      <button type="button" class="servings-btn" aria-label="Decrease servings">−</button>
+                      <div class="servings-value" aria-live="polite">4</div>
+                      <button type="button" class="servings-btn" aria-label="Increase servings">+</button>
+                    </div>
+                  </div>
+
+                  <div class="units" role="group" aria-label="Units">
+                    <button type="button" class="unit-btn unit-btn-active">Metric</button>
+                    <button type="button" class="unit-btn">US</button>
+                  </div>
+                </div>
+
+                <ul class="ingredients-list">
+                  <li class="ingredient">
+                    <span class="ingredient-name">Ground psyllium husk powder</span>
+                    <span class="ingredient-amount">80 ml (50 g)</span>
+                  </li>
+                  <li class="ingredient">
+                    <span class="ingredient-name">Almond flour</span>
+                    <span class="ingredient-amount">300 ml (140 g)</span>
+                  </li>
+                  <li class="ingredient">
+                    <span class="ingredient-name">Baking powder</span>
+                    <span class="ingredient-amount">2 tsp</span>
+                  </li>
+                  <li class="ingredient">
+                    <span class="ingredient-name">Sea salt</span>
+                    <span class="ingredient-amount">1 tsp</span>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-newsletter">
+        <div class="footer-container footer-newsletter-inner">
+          <div class="footer-newsletter-text">
+            <h2 class="footer-newsletter-heading">Subscribe Newsletter.</h2>
+            <p class="footer-newsletter-desc">
+              Get e-mail updates about our latest shop and special offers.
+            </p>
+          </div>
+          <form
+            class="footer-newsletter-form"
+            action="#"
+            method="get"
+            aria-label="Newsletter signup"
+          >
+            <input
+              type="email"
+              name="email"
+              class="footer-newsletter-input"
+              placeholder="Your email address"
+              required
+            />
+            <button type="submit" class="footer-newsletter-btn">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-newsletter-divider"></div>
+      <div class="footer-main">
+        <div class="footer-container footer-columns">
+          <div class="footer-col footer-col-company">
+            <div class="footer-logo">
+              <img
+                src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
+                alt="Fresco Flavors Logo"
+              />
+            </div>
+            <p class="footer-company-desc">
+              Bringing the best herbs in every jar. 100% Organic, from Kenya to
+              the World.
+            </p>
+            <ul class="footer-contact" aria-label="Contact information">
+              <li>
+                <i class="fa-regular fa-envelope" aria-hidden="true"></i
+                ><a href="mailto:info@frescoflavors.com"
+                  >info@frescoflavors.com</a
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i
+                ><span
+                  >7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA</span
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-phone" aria-hidden="true"></i
+                ><a href="tel:+19018965814">+1 (901) 896-5814</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col footer-col-links">
+            <h3 class="footer-col-heading">Important Links</h3>
+            <ul class="footer-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">Explore</a></li>
+              <li><a href="/retail">Retail</a></li>
+              <li><a href="/shop">Shop</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col footer-col-links">
+            <h3 class="footer-col-heading">Information</h3>
+            <ul class="footer-links">
+              <li><a href="/faq">FAQ</a></li>
+              <li><a href="/terms-of-service">Terms of Service</a></li>
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="/shipping">Shipping Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-col footer-col-instagram">
+            <h3 class="footer-col-heading">Social Media</h3>
+            <div class="footer-instagram-grid" aria-label="Instagram feed">
+              <a
+                href="https://www.instagram.com/freshlockedflavor/"
+                class="footer-instagram-item"
+                ><img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/0A0A1563-scaled.jpeg"
+                  alt="Produce"
+              /></a>
+              <a
+                href="https://www.instagram.com/freshlockedflavor/"
+                class="footer-instagram-item"
+                ><img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A1046-scaled.jpg"
+                  alt="Produce"
+              /></a>
+              <a
+                href="https://www.instagram.com/freshlockedflavor/"
+                class="footer-instagram-item"
+                ><img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A9375-1-scaled.jpg"
+                  alt="Produce"
+              /></a>
+              <a
+                href="https://www.instagram.com/freshlockedflavor/"
+                class="footer-instagram-item"
+                ><img
+                  src="https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4392-1-scaled.jpg"
+                  alt="Produce"
+              /></a>
+              <a
+                href="https://www.instagram.com/freshlockedflavor/"
+                class="footer-instagram-item"
+                ><img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/10/DJI_20250826170440_0288_D.jpg"
+                  alt="Produce"
+              /></a>
+              <a
+                href="https://www.instagram.com/freshlockedflavor/"
+                class="footer-instagram-item"
+                ><img
+                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A9347.jpg"
+                  alt="Produce"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-container footer-bottom-inner">
+          <p class="footer-copyright">
+            Copyright © 2026 Fresco. All rights reserved.
+          </p>
+          <div class="footer-payments" aria-label="Payment methods">
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/03/American-Express-Color-1.png"
+              alt=""
+            />
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/03/discover_card-logo-512x512-1-1.png"
+              alt=""
+            />
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/03/visa-logo-png-transparent-1.png"
+              alt=""
+            />
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/03/paypal-logo-png_seeklogo-336407.png"
+              alt=""
+            />
+          </div>
+        </div>
+        <button
+          type="button"
+          class="footer-scroll-top"
+          aria-label="Scroll to top"
+        >
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/assets/scripts/global.js"></script>
+    <script src="/assets/scripts/search.js"></script>
+  </body>
+</html>

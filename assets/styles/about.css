@@ -977,6 +977,10 @@
   .food-recipes-stat-label {
     font-size: 12px;
   }
+
+  .food-recipes-button-container {
+    padding-top: 3rem;
+  } 
 }
 
 /* ==================== Mobile Responsive Styles ==================== */
