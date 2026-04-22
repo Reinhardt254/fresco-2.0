@@ -312,7 +312,7 @@
   font-size: 1rem;
   font-weight: 700;
   color: #fff;
-  background-color: #0f3d2e;
+  background-color: var(--primary-green);
   border: none;
   border-radius: 5px !important;
   cursor: pointer;
@@ -321,7 +321,7 @@
 }
  
 .contact-form-submit:hover {
-  background-color: #9e4730;
+  background-color: var(--dark-green-background);
 }
 
 @media (max-width: 900px) {

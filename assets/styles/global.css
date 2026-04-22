@@ -53,6 +53,7 @@ div.sub-heading {
 
 button {
   border-radius: 1px !important;
+  text-transform: capitalize !important`;
 }
 
 .contact-us-btn-icon {
@@ -161,7 +162,7 @@ div.sub-heading {
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 1px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 0.2rem;
   text-align: center;
   text-decoration: none;
@@ -1690,13 +1691,14 @@ body.no-scroll {
 }
 
 .category-link {
+  text-transform: capitalize !important;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0.55rem 1.5rem;
   border-radius: 999px;
   background-color: #ffffff;
-  color: #2b2521;
+  color: var(--dark-green-background);
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 600;
@@ -2146,7 +2148,7 @@ body.no-scroll {
   background-color: var(--primary-green);
   color: #fff;
   padding: 1rem 2rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
 
   display: flex;
@@ -2154,7 +2156,8 @@ body.no-scroll {
   justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.7s ease;
+  text-transform: capitalize;
   border: none;
   outline: none;
   text-decoration: none;
@@ -2168,8 +2171,8 @@ body.no-scroll {
 }
 
 .cta-btn:hover {
-  background-color: #fff;
-  color: var(--primary-green);
+  background-color: var(--dark-green-background);
+  color: #fff;
 }
 
 .cta-btn:hover svg {

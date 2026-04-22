@@ -31,11 +31,7 @@
           }
         }
       },
-      "block_order": [
-        "slide_VcBfjC",
-        "slide_rTz4N9",
-        "slide_ky6trA"
-      ],
+      "block_order": ["slide_VcBfjC", "slide_rTz4N9", "slide_ky6trA"],
       "name": "Fresco Hero",
       "settings": {
         "overlay_top_left": "shopify://shop_images/0A0A0462-scaled-1-1.png",
@@ -127,14 +123,14 @@
         "discover_image": "shopify://shop_images/12504700.png",
         "discover_image_url_fallback": "https://cdn-icons-png.freepik.com/512/12504/12504700.png?uid=R146131911&ga=GA1.1.1724219820.1772450282",
         "section_title": "Pure Herbs. Perfectly Preserved",
-        "section_description": "Organically grown, freeze dried at harvest, locked in natural flavour",
+        "section_description": "Organically grown, freeze-dried at harvest, locked in natural flavor",
         "point1_icon": "shopify://shop_images/organic.png",
         "point1_icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/organic.png",
         "point1_label": "100% Organic",
         "point1_description": "Single-source herbs sustainably grown to meet strict USDA standards.",
         "point2_icon": "shopify://shop_images/agree.png",
         "point2_icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/agree.png",
-        "point2_label": "Locked in flavour",
+        "point2_label": "Locked in flavor",
         "point2_description": "Seals in aromatic oils for bold flavor, zero prep hassle, zero waste.",
         "point3_icon": "shopify://shop_images/no-preservatives.png",
         "point3_icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/no-preservatives.png",
@@ -262,7 +258,7 @@
             "collection": "",
             "label": "Home cooking",
             "discount_tag": "20% OFF",
-            "headline": "Everyday flavours made effortless",
+            "headline": "Everyday flavors made effortless",
             "description": "Premium organic herbs that turn simple meals into something memorable. Freeze-dried freshness with zero prep, ready whenever you cook.",
             "link_text": "Shop home favourites",
             "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/Untitled-design-4.png",
@@ -285,11 +281,7 @@
           }
         }
       },
-      "block_order": [
-        "cat_slide_1",
-        "cat_slide_2",
-        "cat_slide_3"
-      ],
+      "block_order": ["cat_slide_1", "cat_slide_2", "cat_slide_3"],
       "name": "Fresco Categories",
       "settings": {
         "sub_heading_text": "Categories",

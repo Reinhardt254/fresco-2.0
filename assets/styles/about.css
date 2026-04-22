@@ -153,8 +153,8 @@
 .hero-cta {
   display: inline-block;
   padding: 1rem 2rem;
-  font-size: 0.875rem;
-  letter-spacing: 0.2rem;
+  font-size: 1.1rem;
+  letter-spacing: normal;
   transition:
     background-color 0.25s ease,
     transform 0.2s ease;
@@ -397,7 +397,7 @@
 
 .our-commitment .contact-us-btn {
   padding: 1rem 2rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
