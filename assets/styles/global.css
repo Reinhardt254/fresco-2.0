@@ -53,7 +53,7 @@ div.sub-heading {
 
 button {
   border-radius: 1px !important;
-  text-transform: capitalize !important`;
+  text-transform: capitalize !important;
 }
 
 .contact-us-btn-icon {
@@ -2162,6 +2162,12 @@ body.no-scroll {
   outline: none;
   text-decoration: none;
   line-height: 1 !important;
+}
+
+.cta-btn span {
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  margin-top: 5px;
 }
 
 .cta-btn svg {
