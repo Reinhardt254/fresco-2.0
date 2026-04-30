@@ -204,72 +204,164 @@
 
       <section class="recipe-body" aria-label="Recipe content">
         <div class="recipe-body-inner">
-          <!-- <aside class="recipe-share" aria-label="Share links">
-            <a class="recipe-share-btn" href="/#" aria-label="Share on Pinterest">
-              <i class="fa-brands fa-pinterest-p" aria-hidden="true"></i>
-            </a>
-            <a class="recipe-share-btn" href="/#" aria-label="Share on Facebook">
-              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
-            </a>
-            <a class="recipe-share-btn" href="/#" aria-label="Share on Instagram">
-              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-            </a>
-          </aside> -->
-
           <div class="recipe-columns">
-            <article class="recipe-instructions" aria-label="Instructions">
-              <h2 class="recipe-section-heading">Instructions</h2>
+            <div class="recipe-column">
+              <div class="key-products" aria-label="Key products">
+                <h3 class="key-products__title">KEY PRODUCTS</h3>
 
-              <p class="recipe-intro">
-                Transform a simple breakfast into a gourmet experience using the
-                "instant-fresh" taste of Fresco Flavors. This simple everyday
-                breakfast recipe using Fresco Flavors Chives and Cilantro
-                sprinkled over creamy avocado and warm eggs, these herbs
-                rehydrate on contact, providing a burst of organic nutrients and
-                a professional-grade finish to your morning routine.
-              </p>
+                <div class="key-products__carousel">
+                  <div
+                    class="swiper key-products__swiper"
+                    aria-roledescription="carousel"
+                    aria-label="Key products carousel"
+                  >
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <article class="key-product">
+                          <a
+                            class="key-product__media"
+                            href="/shop"
+                            aria-label="Shop Freeze-Dried Cilantro"
+                          >
+                            <img
+                              class="key-product__image"
+                              src="https://newvashaepz.com/wp-content/uploads/2026/03/Cilantro-scaled.png"
+                              alt="Freeze-Dried Cilantro"
+                              loading="lazy"
+                            />
+                          </a>
 
-              <ol class="recipe-steps">
-                <li class="recipe-step">
-                  <span class="recipe-step-number" aria-hidden="true">1</span>
-                  <p class="recipe-step-text">
-                    The Mash: In a small bowl, mash the avocados with lemon
-                    juice, salt, pepper, and Fresco Flavors Scallions. The
-                    scallions will add a subtle, savory crunch to the creamy
-                    base.
-                  </p>
-                </li>
-                <li class="recipe-step">
-                  <span class="recipe-step-number" aria-hidden="true">2</span>
-                  <p class="recipe-step-text">
-                    The Toast: Spread the avocado mixture generously over each
-                    slice of warm toast.
-                  </p>
-                </li>
-                <li class="recipe-step">
-                  <span class="recipe-step-number" aria-hidden="true">3</span>
-                  <p class="recipe-step-text">
-                    The Eggs: Top each toast with a freshly cooked egg.
-                  </p>
-                </li>
-                <li class="recipe-step">
-                  <span class="recipe-step-number" aria-hidden="true">4</span>
-                  <p class="recipe-step-text">
-                    The Garnish: Immediately sprinkle the top with Fresco
-                    Flavors Chives and Cilantro. The steam from the egg will
-                    activate the herbs, releasing their fresh aroma.
-                  </p>
-                </li>
+                          <div class="key-product__info">
+                            <a class="key-product__name" href="/shop"
+                              >Freeze-Dried Cilantro</a
+                            >
+                            <div class="key-product__price">$9.00</div>
+                          </div>
+                          <button
+                            type="button"
+                            class="key-product__add"
+                            aria-label="Add Freeze-Dried Cilantro to cart"
+                          >
+                            <span class="key-product__add-text"
+                              >ADD TO CART</span
+                            >
+                          </button>
+                        </article>
+                      </div>
 
-                <li class="recipe-step">
-                  <span class="recipe-step-number" aria-hidden="true">5</span>
+                      <div class="swiper-slide">
+                        <article class="key-product">
+                          <a
+                            class="key-product__media"
+                            href="/shop"
+                            aria-label="Shop Freeze-Dried Scallions"
+                          >
+                            <img
+                              class="key-product__image"
+                              src="https://newvashaepz.com/wp-content/uploads/2026/03/Scallions-scaled.png"
+                              alt="Freeze-Dried Scallions"
+                              loading="lazy"
+                            />
+                          </a>
 
-                  <p class="recipe-step-text">
-                    Serve: Finish with a pinch of red pepper flakes if desired.
-                  </p>
-                </li>
-              </ol>
-            </article>
+                          <div class="key-product__info">
+                            <a class="key-product__name" href="/shop"
+                              >Freeze-Dried Scallions</a
+                            >
+                            <div class="key-product__price">$9.00</div>
+                          </div>
+                          <button
+                            type="button"
+                            class="key-product__add"
+                            aria-label="Add Freeze-Dried Scallions to cart"
+                          >
+                            <span class="key-product__add-text"
+                              >ADD TO CART</span
+                            >
+                          </button>
+                        </article>
+                      </div>
+                    </div>
+
+                    <button
+                      class="key-products__nav key-products__nav--prev"
+                      type="button"
+                      aria-label="Previous products"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-left"
+                        aria-hidden="true"
+                      ></i>
+                    </button>
+                    <button
+                      class="key-products__nav key-products__nav--next"
+                      type="button"
+                      aria-label="Next products"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-right"
+                        aria-hidden="true"
+                      ></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <article class="recipe-instructions" aria-label="Instructions">
+                <h2 class="recipe-section-heading">Instructions</h2>
+
+                <p class="recipe-intro">
+                  Transform a simple breakfast into a gourmet experience using
+                  the "instant-fresh" taste of Fresco Flavors. This simple
+                  everyday breakfast recipe using Fresco Flavors Chives and
+                  Cilantro sprinkled over creamy avocado and warm eggs, these
+                  herbs rehydrate on contact, providing a burst of organic
+                  nutrients and a professional-grade finish to your morning
+                  routine.
+                </p>
+
+                <ol class="recipe-steps">
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">1</span>
+                    <p class="recipe-step-text">
+                      The Mash: In a small bowl, mash the avocados with lemon
+                      juice, salt, pepper, and Fresco Flavors Scallions. The
+                      scallions will add a subtle, savory crunch to the creamy
+                      base.
+                    </p>
+                  </li>
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">2</span>
+                    <p class="recipe-step-text">
+                      The Toast: Spread the avocado mixture generously over each
+                      slice of warm toast.
+                    </p>
+                  </li>
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">3</span>
+                    <p class="recipe-step-text">
+                      The Eggs: Top each toast with a freshly cooked egg.
+                    </p>
+                  </li>
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">4</span>
+                    <p class="recipe-step-text">
+                      The Garnish: Immediately sprinkle the top with Fresco
+                      Flavors Chives and Cilantro. The steam from the egg will
+                      activate the herbs, releasing their fresh aroma.
+                    </p>
+                  </li>
+
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">5</span>
+
+                    <p class="recipe-step-text">
+                      Serve: Finish with a pinch of red pepper flakes if
+                      desired.
+                    </p>
+                  </li>
+                </ol>
+              </article>
+            </div>
 
             <aside class="recipe-ingredients" aria-label="Ingredients">
               <div class="ingredients-card">
@@ -361,70 +453,6 @@
                     <span class="ingredient-amount">to taste</span>
                   </li>
                 </ul>
-
-                <div class="key-products" aria-label="Key products">
-                  <h3 class="key-products__title">KEY PRODUCTS</h3>
-
-                  <div class="key-products__grid">
-                    <article class="key-product">
-                      <a
-                        class="key-product__media"
-                        href="/shop"
-                        aria-label="Shop Freeze-Dried Cilantro"
-                      >
-                        <img
-                          class="key-product__image"
-                          src="https://newvashaepz.com/wp-content/uploads/2026/03/Cilantro-scaled.png"
-                          alt="Freeze-Dried Cilantro"
-                          loading="lazy"
-                        />
-                      </a>
-
-                      <div class="key-product__info">
-                        <a class="key-product__name" href="/shop"
-                          >Freeze-Dried Cilantro</a
-                        >
-                        <div class="key-product__price">$9.00</div>
-                      </div>
-                      <button
-                        type="button"
-                        class="key-product__add"
-                        aria-label="Add Freeze-Dried Cilantro to cart"
-                      >
-                        ADD
-                      </button>
-                    </article>
-
-                    <article class="key-product">
-                      <a
-                        class="key-product__media"
-                        href="/shop"
-                        aria-label="Shop Freeze-Dried Scallions"
-                      >
-                        <img
-                          class="key-product__image"
-                          src="https://newvashaepz.com/wp-content/uploads/2026/03/Scallions-scaled.png"
-                          alt="Freeze-Dried Scallions"
-                          loading="lazy"
-                        />
-                      </a>
-
-                      <div class="key-product__info">
-                        <a class="key-product__name" href="/shop"
-                          >Freeze-Dried Scallions</a
-                        >
-                        <div class="key-product__price">$9.00</div>
-                      </div>
-                      <button
-                        type="button"
-                        class="key-product__add"
-                        aria-label="Add Freeze-Dried Scallions to cart"
-                      >
-                        ADD
-                      </button>
-                    </article>
-                  </div>
-                </div>
 
                 <div class="ingredients-card-footer">
                   <a
@@ -606,6 +634,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/assets/scripts/recipe.js"></script>
     <script src="/assets/scripts/global.js"></script>
     <script src="/assets/scripts/search.js"></script>
   </body>

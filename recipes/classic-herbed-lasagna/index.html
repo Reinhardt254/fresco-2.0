@@ -204,76 +204,232 @@
 
       <section class="recipe-body" aria-label="Recipe content">
         <div class="recipe-body-inner">
-          <!-- <aside class="recipe-share" aria-label="Share links">
-            <a class="recipe-share-btn" href="/#" aria-label="Share on Pinterest">
-              <i class="fa-brands fa-pinterest-p" aria-hidden="true"></i>
-            </a>
-            <a class="recipe-share-btn" href="/#" aria-label="Share on Facebook">
-              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
-            </a>
-            <a class="recipe-share-btn" href="/#" aria-label="Share on Instagram">
-              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-            </a>
-          </aside> -->
-
           <div class="recipe-columns">
-            <article class="recipe-instructions" aria-label="Instructions">
-              <h2 class="recipe-section-heading">Instructions</h2>
+            <div class="recipe-column">
+              <div class="key-products" aria-label="Key products">
+                <h3 class="key-products__title">KEY PRODUCTS</h3>
 
-              <p class="recipe-intro">
-                A great lasagna depends on a sauce with deep, layered aromatics.
-                Fresco Flavors Freeze-Dried Basil and Oregano for a superior
-                alternative to traditional dried herbs, offering the sweet,
-                peppery notes of fresh Italian herbs that permeate every layer
-                of cheese and pasta. By using freeze-dried herbs in the ricotta
-                mixture, you ensure the nutritional integrity and vibrant flavor
-                profile remain intact throughout the baking process.
-              </p>
+                <div class="key-products__carousel">
+                  <div
+                    class="swiper key-products__swiper"
+                    aria-roledescription="carousel"
+                    aria-label="Key products carousel"
+                  >
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <article class="key-product">
+                          <a
+                            class="key-product__media"
+                            href="/shop"
+                            aria-label="Shop Freeze-Dried Garlic"
+                          >
+                            <img
+                              class="key-product__image"
+                              src="https://newvashaepz.com/wp-content/uploads/2026/03/Garlic-scaled.png"
+                              alt="Freeze-Dried Garlic"
+                              loading="lazy"
+                            />
+                          </a>
 
-              <ol class="recipe-steps">
-                <li class="recipe-step">
-                  <span class="recipe-step-number" aria-hidden="true">1</span>
-                  <p class="recipe-step-text">
-                    The Meat Sauce: Brown the beef in a pan. Drain fat. Stir in
-                    Fresco Flavors Garlic, Basil, and Oregano. Add marinara
-                    sauce and simmer for 10 minutes to allow the freeze-dried
-                    herbs to fully rehydrate and flavor the sauce.
-                  </p>
-                </li>
-                <li class="recipe-step">
-                  <span class="recipe-step-number" aria-hidden="true">2</span>
-                  <p class="recipe-step-text">
-                    The Cheese Mix: In a medium bowl, combine ricotta, egg,
-                    parmesan, and Fresco Flavors Parsley.
-                  </p>
-                </li>
-                <li class="recipe-step">
-                  <span class="recipe-step-number" aria-hidden="true">3</span>
-                  <p class="recipe-step-text">
-                    Layer: In a 9x13 inch baking dish, layer sauce, noodles,
-                    then the ricotta mixture and mozzarella. Repeat layers,
-                    ending with mozzarella on top.
-                  </p>
-                </li>
-                <li class="recipe-step">
-                  <span class="recipe-step-number" aria-hidden="true">4</span>
-                  <p class="recipe-step-text">
-                    Bake: Cover with foil and bake at 190°C (375°F) for 25
-                    minutes. Remove foil and bake for another 15–20 minutes
-                    until bubbly and golden.
-                  </p>
-                </li>
+                          <div class="key-product__info">
+                            <a class="key-product__name" href="/shop"
+                              >Freeze-Dried Garlic</a
+                            >
+                            <div class="key-product__price">$9.00</div>
+                          </div>
+                          <button
+                            type="button"
+                            class="key-product__add"
+                            aria-label="Add Freeze-Dried Garlic to cart"
+                          >
+                            <span class="key-product__add-text"
+                              >ADD TO CART</span
+                            >
+                          </button>
+                        </article>
+                      </div>
 
-                <li class="recipe-step">
-                  <span class="recipe-step-number" aria-hidden="true">5</span>
+                      <div class="swiper-slide">
+                        <article class="key-product">
+                          <a
+                            class="key-product__media"
+                            href="/shop"
+                            aria-label="Shop Freeze-Dried Basil"
+                          >
+                            <img
+                              class="key-product__image"
+                              src="https://newvashaepz.com/wp-content/uploads/2026/03/Basil-scaled.png"
+                              alt="Freeze-Dried Basil"
+                              loading="lazy"
+                            />
+                          </a>
 
-                  <p class="recipe-step-text">
-                    Rest: Let stand for 10 minutes before slicing to allow the
-                    herb-infused layers to set.
-                  </p>
-                </li>
-              </ol>
-            </article>
+                          <div class="key-product__info">
+                            <a class="key-product__name" href="/shop"
+                              >Freeze-Dried Basil</a
+                            >
+                            <div class="key-product__price">$14.00</div>
+                          </div>
+                          <button
+                            type="button"
+                            class="key-product__add"
+                            aria-label="Add Freeze-Dried Basil to cart"
+                          >
+                            <span class="key-product__add-text"
+                              >ADD TO CART</span
+                            >
+                          </button>
+                        </article>
+                      </div>
+
+                      <div class="swiper-slide">
+                        <article class="key-product">
+                          <a
+                            class="key-product__media"
+                            href="/shop"
+                            aria-label="Shop Freeze-Dried Oregano"
+                          >
+                            <img
+                              class="key-product__image"
+                              src="https://newvashaepz.com/wp-content/uploads/2026/03/Oregano-scaled.png"
+                              alt="Freeze-Dried Oregano"
+                              loading="lazy"
+                            />
+                          </a>
+                          <div class="key-product__info">
+                            <a class="key-product__name" href="/shop"
+                              >Freeze-Dried Oregano</a
+                            >
+                            <div class="key-product__price">$19.00</div>
+                          </div>
+                          <button
+                            type="button"
+                            class="key-product__add"
+                            aria-label="Add Freeze-Dried Oregano to cart"
+                          >
+                            <span class="key-product__add-text"
+                              >ADD TO CART</span
+                            >
+                          </button>
+                        </article>
+                      </div>
+
+                      <div class="swiper-slide">
+                        <article class="key-product">
+                          <a
+                            class="key-product__media"
+                            href="/shop"
+                            aria-label="Shop Freeze-Dried Parsley"
+                          >
+                            <img
+                              class="key-product__image"
+                              src="https://newvashaepz.com/wp-content/uploads/2026/03/Parsley-scaled.png"
+                              alt="Freeze-Dried Parsley"
+                              loading="lazy"
+                            />
+                          </a>
+                          <div class="key-product__info">
+                            <a class="key-product__name" href="/shop"
+                              >Freeze-Dried Parsley</a
+                            >
+                            <div class="key-product__price">$19.00</div>
+                          </div>
+                          <button
+                            type="button"
+                            class="key-product__add"
+                            aria-label="Add Freeze-Dried Parsley to cart"
+                          >
+                            <span class="key-product__add-text"
+                              >ADD TO CART</span
+                            >
+                          </button>
+                        </article>
+                      </div>
+                    </div>
+
+                    <button
+                      class="key-products__nav key-products__nav--prev"
+                      type="button"
+                      aria-label="Previous products"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-left"
+                        aria-hidden="true"
+                      ></i>
+                    </button>
+                    <button
+                      class="key-products__nav key-products__nav--next"
+                      type="button"
+                      aria-label="Next products"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-right"
+                        aria-hidden="true"
+                      ></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <article class="recipe-instructions" aria-label="Instructions">
+                <h2 class="recipe-section-heading">Instructions</h2>
+
+                <p class="recipe-intro">
+                  A great lasagna depends on a sauce with deep, layered
+                  aromatics. Fresco Flavors Freeze-Dried Basil and Oregano for a
+                  superior alternative to traditional dried herbs, offering the
+                  sweet, peppery notes of fresh Italian herbs that permeate
+                  every layer of cheese and pasta. By using freeze-dried herbs
+                  in the ricotta mixture, you ensure the nutritional integrity
+                  and vibrant flavor profile remain intact throughout the baking
+                  process.
+                </p>
+
+                <ol class="recipe-steps">
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">1</span>
+                    <p class="recipe-step-text">
+                      The Meat Sauce: Brown the beef in a pan. Drain fat. Stir
+                      in Fresco Flavors Garlic, Basil, and Oregano. Add marinara
+                      sauce and simmer for 10 minutes to allow the freeze-dried
+                      herbs to fully rehydrate and flavor the sauce.
+                    </p>
+                  </li>
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">2</span>
+                    <p class="recipe-step-text">
+                      The Cheese Mix: In a medium bowl, combine ricotta, egg,
+                      parmesan, and Fresco Flavors Parsley.
+                    </p>
+                  </li>
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">3</span>
+                    <p class="recipe-step-text">
+                      Layer: In a 9x13 inch baking dish, layer sauce, noodles,
+                      then the ricotta mixture and mozzarella. Repeat layers,
+                      ending with mozzarella on top.
+                    </p>
+                  </li>
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">4</span>
+                    <p class="recipe-step-text">
+                      Bake: Cover with foil and bake at 190°C (375°F) for 25
+                      minutes. Remove foil and bake for another 15–20 minutes
+                      until bubbly and golden.
+                    </p>
+                  </li>
+
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">5</span>
+
+                    <p class="recipe-step-text">
+                      Rest: Let stand for 10 minutes before slicing to allow the
+                      herb-infused layers to set.
+                    </p>
+                  </li>
+                </ol>
+              </article>
+            </div>
 
             <aside class="recipe-ingredients" aria-label="Ingredients">
               <div class="ingredients-card">
@@ -376,126 +532,6 @@
                     <span class="ingredient-amount">1 tbsp</span>
                   </li>
                 </ul>
-
-                <div class="key-products" aria-label="Key products">
-                  <h3 class="key-products__title">KEY PRODUCTS</h3>
-
-                  <div class="key-products__grid">
-                    <article class="key-product">
-                      <a
-                        class="key-product__media"
-                        href="/shop"
-                        aria-label="Shop Freeze-Dried Garlic"
-                      >
-                        <img
-                          class="key-product__image"
-                          src="https://newvashaepz.com/wp-content/uploads/2026/03/Garlic-scaled.png"
-                          alt="Freeze-Dried Garlic"
-                          loading="lazy"
-                        />
-                      </a>
-
-                      <div class="key-product__info">
-                        <a class="key-product__name" href="/shop"
-                          >Freeze-Dried Garlic</a
-                        >
-                        <div class="key-product__price">$9.00</div>
-                      </div>
-                      <button
-                        type="button"
-                        class="key-product__add"
-                        aria-label="Add Freeze-Dried Garlic to cart"
-                      >
-                        ADD
-                      </button>
-                    </article>
-
-                    <article class="key-product">
-                      <a
-                        class="key-product__media"
-                        href="/shop"
-                        aria-label="Shop Freeze-Dried Basil"
-                      >
-                        <img
-                          class="key-product__image"
-                          src="https://newvashaepz.com/wp-content/uploads/2026/03/Basil-scaled.png"
-                          alt="Freeze-Dried Basil"
-                          loading="lazy"
-                        />
-                      </a>
-
-                      <div class="key-product__info">
-                        <a class="key-product__name" href="/shop"
-                          >Freeze-Dried Basil</a
-                        >
-                        <div class="key-product__price">$14.00</div>
-                      </div>
-                      <button
-                        type="button"
-                        class="key-product__add"
-                        aria-label="Add Freeze-Dried Basil to cart"
-                      >
-                        ADD
-                      </button>
-                    </article>
-
-                    <article class="key-product">
-                      <a
-                        class="key-product__media"
-                        href="/shop"
-                        aria-label="Shop Freeze-Dried Oregano"
-                      >
-                        <img
-                          class="key-product__image"
-                          src="https://newvashaepz.com/wp-content/uploads/2026/03/Oregano-scaled.png"
-                          alt="Freeze-Dried Oregano"
-                          loading="lazy"
-                        />
-                      </a>
-                      <div class="key-product__info">
-                        <a class="key-product__name" href="/shop"
-                          >Freeze-Dried Oregano</a
-                        >
-                        <div class="key-product__price">$19.00</div>
-                      </div>
-                      <button
-                        type="button"
-                        class="key-product__add"
-                        aria-label="Add Freeze-Dried Oregano to cart"
-                      >
-                        ADD
-                      </button>
-                    </article>
-
-                    <article class="key-product">
-                      <a
-                        class="key-product__media"
-                        href="/shop"
-                        aria-label="Shop Freeze-Dried Parsley"
-                      >
-                        <img
-                          class="key-product__image"
-                          src="https://newvashaepz.com/wp-content/uploads/2026/03/Parsley-scaled.png"
-                          alt="Freeze-Dried Parsley"
-                          loading="lazy"
-                        />
-                      </a>
-                      <div class="key-product__info">
-                        <a class="key-product__name" href="/shop"
-                          >Freeze-Dried Parsley</a
-                        >
-                        <div class="key-product__price">$19.00</div>
-                      </div>
-                      <button
-                        type="button"
-                        class="key-product__add"
-                        aria-label="Add Freeze-Dried Parsley to cart"
-                      >
-                        ADD
-                      </button>
-                    </article>
-                  </div>
-                </div>
 
                 <div class="ingredients-card-footer">
                   <a
@@ -677,6 +713,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/assets/scripts/recipe.js"></script>
     <script src="/assets/scripts/global.js"></script>
     <script src="/assets/scripts/search.js"></script>
   </body>

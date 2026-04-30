@@ -204,65 +204,219 @@
 
       <section class="recipe-body" aria-label="Recipe content">
         <div class="recipe-body-inner">
-          <!-- <aside class="recipe-share" aria-label="Share links">
-            <a class="recipe-share-btn" href="/#" aria-label="Share on Pinterest">
-              <i class="fa-brands fa-pinterest-p" aria-hidden="true"></i>
-            </a>
-            <a class="recipe-share-btn" href="/#" aria-label="Share on Facebook">
-              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
-            </a>
-            <a class="recipe-share-btn" href="/#" aria-label="Share on Instagram">
-              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-            </a>
-          </aside> -->
-
           <div class="recipe-columns">
-            <article class="recipe-instructions" aria-label="Instructions">
-              <h2 class="recipe-section-heading">Instructions</h2>
+            <div class="recipe-column">
+              <div class="key-products" aria-label="Key products">
+                <h3 class="key-products__title">KEY PRODUCTS</h3>
 
-              <p class="recipe-intro">
-                Achieve "farm-to-table" flavor on the grill without the hassle
-                of washing and chopping fresh bundles. Fresco Flavors
-                Freeze-Dried Rosemary and Oregano are uniquely suited for
-                high-heat grilling. Finishing with Fresco Flavors Parsley for a
-                bright, nutrient-rich pop of color that rehydrates instantly in
-                the steam of the charred vegetables.
-              </p>
+                <div class="key-products__carousel">
+                  <div
+                    class="swiper key-products__swiper"
+                    aria-roledescription="carousel"
+                    aria-label="Key products carousel"
+                  >
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <article class="key-product">
+                          <a
+                            class="key-product__media"
+                            href="/shop"
+                            aria-label="Shop Freeze-Dried Garlic"
+                          >
+                            <img
+                              class="key-product__image"
+                              src="https://newvashaepz.com/wp-content/uploads/2026/03/Garlic-scaled.png"
+                              alt="Freeze-Dried Garlic"
+                              loading="lazy"
+                            />
+                          </a>
 
-              <ol class="recipe-steps">
-                <li class="recipe-step">
-                  <span class="recipe-step-number" aria-hidden="true">1</span>
-                  <p class="recipe-step-text">
-                    The Marinade: In a large bowl, combine olive oil, Fresco
-                    Flavors Garlic, Rosemary, and Oregano. Let the herbs sit in
-                    the oil for 5 minutes to activate.
-                  </p>
-                </li>
-                <li class="recipe-step">
-                  <span class="recipe-step-number" aria-hidden="true">2</span>
-                  <p class="recipe-step-text">
-                    Coat: Add the vegetables to the bowl and toss thoroughly
-                    until the herbs are evenly distributed.
-                  </p>
-                </li>
-                <li class="recipe-step">
-                  <span class="recipe-step-number" aria-hidden="true">3</span>
-                  <p class="recipe-step-text">
-                    Grill: Place vegetables on a grill pan or skewers. Grill
-                    over medium-high heat for 10–12 minutes, turning
-                    occasionally until tender and charred.
-                  </p>
-                </li>
-                <li class="recipe-step">
-                  <span class="recipe-step-number" aria-hidden="true">4</span>
-                  <p class="recipe-step-text">
-                    The Finish: Remove from heat and immediately sprinkle with
-                    Fresco Flavors Parsley. The residual heat will "bloom" the
-                    parsley, adding a final layer of garden-fresh flavor.
-                  </p>
-                </li>
-              </ol>
-            </article>
+                          <div class="key-product__info">
+                            <a class="key-product__name" href="/shop"
+                              >Freeze-Dried Garlic</a
+                            >
+                            <div class="key-product__price">$9.00</div>
+                          </div>
+                          <button
+                            type="button"
+                            class="key-product__add"
+                            aria-label="Add Freeze-Dried Garlic to cart"
+                          >
+                            <span class="key-product__add-text"
+                              >ADD TO CART</span
+                            >
+                          </button>
+                        </article>
+                      </div>
+
+                      <div class="swiper-slide">
+                        <article class="key-product">
+                          <a
+                            class="key-product__media"
+                            href="/shop"
+                            aria-label="Shop Freeze-Dried Rosemary"
+                          >
+                            <img
+                              class="key-product__image"
+                              src="https://newvashaepz.com/wp-content/uploads/2026/03/Rosemary-scaled.png"
+                              alt="Freeze-Dried Rosemary"
+                              loading="lazy"
+                            />
+                          </a>
+
+                          <div class="key-product__info">
+                            <a class="key-product__name" href="/shop"
+                              >Freeze-Dried Rosemary</a
+                            >
+                            <div class="key-product__price">$9.00</div>
+                          </div>
+                          <button
+                            type="button"
+                            class="key-product__add"
+                            aria-label="Add Freeze-Dried Rosemary to cart"
+                          >
+                            <span class="key-product__add-text"
+                              >ADD TO CART</span
+                            >
+                          </button>
+                        </article>
+                      </div>
+
+                      <div class="swiper-slide">
+                        <article class="key-product">
+                          <a
+                            class="key-product__media"
+                            href="/shop"
+                            aria-label="Shop Freeze-Dried Oregano"
+                          >
+                            <img
+                              class="key-product__image"
+                              src="https://newvashaepz.com/wp-content/uploads/2026/03/Oregano-scaled.png"
+                              alt="Freeze-Dried Oregano"
+                              loading="lazy"
+                            />
+                          </a>
+                          <div class="key-product__info">
+                            <a class="key-product__name" href="/shop"
+                              >Freeze-Dried Oregano</a
+                            >
+                            <div class="key-product__price">$19.00</div>
+                          </div>
+                          <button
+                            type="button"
+                            class="key-product__add"
+                            aria-label="Add Freeze-Dried Oregano to cart"
+                          >
+                            <span class="key-product__add-text"
+                              >ADD TO CART</span
+                            >
+                          </button>
+                        </article>
+                      </div>
+
+                      <div class="swiper-slide">
+                        <article class="key-product">
+                          <a
+                            class="key-product__media"
+                            href="/shop"
+                            aria-label="Shop Freeze-Dried Parsley"
+                          >
+                            <img
+                              class="key-product__image"
+                              src="https://newvashaepz.com/wp-content/uploads/2026/03/Parsley-scaled.png"
+                              alt="Freeze-Dried Parsley"
+                              loading="lazy"
+                            />
+                          </a>
+                          <div class="key-product__info">
+                            <a class="key-product__name" href="/shop"
+                              >Freeze-Dried Parsley</a
+                            >
+                            <div class="key-product__price">$19.00</div>
+                          </div>
+                          <button
+                            type="button"
+                            class="key-product__add"
+                            aria-label="Add Freeze-Dried Parsley to cart"
+                          >
+                            <span class="key-product__add-text"
+                              >ADD TO CART</span
+                            >
+                          </button>
+                        </article>
+                      </div>
+                    </div>
+
+                    <button
+                      class="key-products__nav key-products__nav--prev"
+                      type="button"
+                      aria-label="Previous products"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-left"
+                        aria-hidden="true"
+                      ></i>
+                    </button>
+                    <button
+                      class="key-products__nav key-products__nav--next"
+                      type="button"
+                      aria-label="Next products"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-right"
+                        aria-hidden="true"
+                      ></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <article class="recipe-instructions" aria-label="Instructions">
+                <h2 class="recipe-section-heading">Instructions</h2>
+
+                <p class="recipe-intro">
+                  Achieve "farm-to-table" flavor on the grill without the hassle
+                  of washing and chopping fresh bundles. Fresco Flavors
+                  Freeze-Dried Rosemary and Oregano are uniquely suited for
+                  high-heat grilling. Finishing with Fresco Flavors Parsley for
+                  a bright, nutrient-rich pop of color that rehydrates instantly
+                  in the steam of the charred vegetables.
+                </p>
+
+                <ol class="recipe-steps">
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">1</span>
+                    <p class="recipe-step-text">
+                      The Marinade: In a large bowl, combine olive oil, Fresco
+                      Flavors Garlic, Rosemary, and Oregano. Let the herbs sit
+                      in the oil for 5 minutes to activate.
+                    </p>
+                  </li>
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">2</span>
+                    <p class="recipe-step-text">
+                      Coat: Add the vegetables to the bowl and toss thoroughly
+                      until the herbs are evenly distributed.
+                    </p>
+                  </li>
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">3</span>
+                    <p class="recipe-step-text">
+                      Grill: Place vegetables on a grill pan or skewers. Grill
+                      over medium-high heat for 10–12 minutes, turning
+                      occasionally until tender and charred.
+                    </p>
+                  </li>
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">4</span>
+                    <p class="recipe-step-text">
+                      The Finish: Remove from heat and immediately sprinkle with
+                      Fresco Flavors Parsley. The residual heat will "bloom" the
+                      parsley, adding a final layer of garden-fresh flavor.
+                    </p>
+                  </li>
+                </ol>
+              </article>
+            </div>
 
             <aside class="recipe-ingredients" aria-label="Ingredients">
               <div class="ingredients-card">
@@ -360,126 +514,6 @@
                     <span class="ingredient-amount">to taste</span>
                   </li>
                 </ul>
-
-                <div class="key-products" aria-label="Key products">
-                  <h3 class="key-products__title">KEY PRODUCTS</h3>
-
-                  <div class="key-products__grid">
-                    <article class="key-product">
-                      <a
-                        class="key-product__media"
-                        href="/shop"
-                        aria-label="Shop Freeze-Dried Garlic"
-                      >
-                        <img
-                          class="key-product__image"
-                          src="https://newvashaepz.com/wp-content/uploads/2026/03/Garlic-scaled.png"
-                          alt="Freeze-Dried Garlic"
-                          loading="lazy"
-                        />
-                      </a>
-
-                      <div class="key-product__info">
-                        <a class="key-product__name" href="/shop"
-                          >Freeze-Dried Garlic</a
-                        >
-                        <div class="key-product__price">$9.00</div>
-                      </div>
-                      <button
-                        type="button"
-                        class="key-product__add"
-                        aria-label="Add Freeze-Dried Garlic to cart"
-                      >
-                        ADD
-                      </button>
-                    </article>
-
-                    <article class="key-product">
-                      <a
-                        class="key-product__media"
-                        href="/shop"
-                        aria-label="Shop Freeze-Dried Rosemary"
-                      >
-                        <img
-                          class="key-product__image"
-                          src="https://newvashaepz.com/wp-content/uploads/2026/03/Rosemary-scaled.png"
-                          alt="Freeze-Dried Rosemary"
-                          loading="lazy"
-                        />
-                      </a>
-
-                      <div class="key-product__info">
-                        <a class="key-product__name" href="/shop"
-                          >Freeze-Dried Rosemary</a
-                        >
-                        <div class="key-product__price">$9.00</div>
-                      </div>
-                      <button
-                        type="button"
-                        class="key-product__add"
-                        aria-label="Add Freeze-Dried Rosemary to cart"
-                      >
-                        ADD
-                      </button>
-                    </article>
-
-                    <article class="key-product">
-                      <a
-                        class="key-product__media"
-                        href="/shop"
-                        aria-label="Shop Freeze-Dried Oregano"
-                      >
-                        <img
-                          class="key-product__image"
-                          src="https://newvashaepz.com/wp-content/uploads/2026/03/Oregano-scaled.png"
-                          alt="Freeze-Dried Oregano"
-                          loading="lazy"
-                        />
-                      </a>
-                      <div class="key-product__info">
-                        <a class="key-product__name" href="/shop"
-                          >Freeze-Dried Oregano</a
-                        >
-                        <div class="key-product__price">$19.00</div>
-                      </div>
-                      <button
-                        type="button"
-                        class="key-product__add"
-                        aria-label="Add Freeze-Dried Oregano to cart"
-                      >
-                        ADD
-                      </button>
-                    </article>
-
-                    <article class="key-product">
-                      <a
-                        class="key-product__media"
-                        href="/shop"
-                        aria-label="Shop Freeze-Dried Parsley"
-                      >
-                        <img
-                          class="key-product__image"
-                          src="https://newvashaepz.com/wp-content/uploads/2026/03/Parsley-scaled.png"
-                          alt="Freeze-Dried Parsley"
-                          loading="lazy"
-                        />
-                      </a>
-                      <div class="key-product__info">
-                        <a class="key-product__name" href="/shop"
-                          >Freeze-Dried Parsley</a
-                        >
-                        <div class="key-product__price">$19.00</div>
-                      </div>
-                      <button
-                        type="button"
-                        class="key-product__add"
-                        aria-label="Add Freeze-Dried Parsley to cart"
-                      >
-                        ADD
-                      </button>
-                    </article>
-                  </div>
-                </div>
 
                 <div class="ingredients-card-footer">
                   <a
@@ -661,6 +695,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/assets/scripts/recipe.js"></script>
     <script src="/assets/scripts/global.js"></script>
     <script src="/assets/scripts/search.js"></script>
   </body>

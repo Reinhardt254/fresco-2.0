@@ -1,5 +1,4 @@
 /* Recipe Listing Page */
-
 .recipe-page {
   background: var(--white-color);
   padding: 1.25rem 0 4rem;
@@ -14,7 +13,7 @@
 .recipe-hero {
   padding-top: 0.75rem;
 }
-
+ 
 .recipe-hero-card {
   position: relative;
   border-radius: 14px;
@@ -149,7 +148,7 @@
   transform: translateY(-2px);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
 }
-
+ 
 .recipe-card-image {
   width: 100%;
   height: auto;
