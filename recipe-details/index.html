@@ -3,30 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Retail Partners | Fresco Flavors – Quality & Reliability for US
-      Supermarkets
-    </title>
-    <link rel="stylesheet" href="/assets/styles/global.css" />
-    <link rel="stylesheet" href="/assets/styles/retail.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <title>Fresco - Freeze-Dried Herbs & Organic Products</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
+    />
+
+    <!-- <link rel="stylesheet" href="/styles.css" /> -->
+    <link rel="stylesheet" href="/assets/styles/home.css" />
+    <link rel="stylesheet" href="/assets/styles/global.css" />
+    <link rel="stylesheet" href="/assets/styles/recipe-details.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
   </head>
   <body>
     <header class="site-header">
       <div class="site-header-container">
+        <!-- Mobile Hamburger Menu Button (left) -->
         <div class="menu-toggle-container">
           <button
             class="menu-toggle"
@@ -39,9 +49,10 @@
           </button>
         </div>
 
+        <!-- Desktop Navigation -->
         <div class="nav left-nav desktop-nav">
           <div class="nav-links">
-            <a href="/">Home</a>
+            <a class="active" href="/">Home</a>
             <div class="nav-dropdown">
               <a href="/about" class="nav-dropdown-trigger">Explore</a>
               <div class="nav-dropdown-menu">
@@ -89,21 +100,26 @@
           </div>
         </div>
 
+        <!-- Logo (center - both mobile and desktop) -->
         <div class="logo logo-desktop">
-          <a href="/"
-            ><img
+          <a href="/">
+            <img
               src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
               alt="Fresco Flavors"
-          /></a>
-        </div>
-        <div class="logo logo-mobile">
-          <a href="/"
-            ><img
-              src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
-              alt="Fresco Flavors"
-          /></a>
+            />
+          </a>
         </div>
 
+        <div class="logo logo-mobile">
+          <a href="/">
+            <img
+              src="https://newvashaepz.com/wp-content/uploads/2026/02/Artboard-55-3.png"
+              alt="Fresco Flavors"
+            />
+          </a>
+        </div>
+
+        <!-- Desktop Right Navigation -->
         <div class="nav right-nav desktop-nav">
           <div class="nav-links">
             <a href="/shop">Shop Now</a>
@@ -113,7 +129,7 @@
               id="search-open-icon"
               class="fa-solid fa-magnifying-glass search-icon"
             ></i>
-            <a href="#">
+            <a href="/#">
               <i class="fa-solid fa-user user-icon"></i>
             </a>
             <a href="/cart">
@@ -122,6 +138,7 @@
           </div>
         </div>
 
+        <!-- Mobile Header Actions (right) -->
         <div class="header-actions header-actions-mobile">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
           <i class="fa-solid fa-user user-icon"></i>
@@ -129,6 +146,7 @@
         </div>
       </div>
 
+      <!-- Mobile Menu Overlay -->
       <div class="mobile-menu-overlay" id="mobile-menu">
         <div class="mobile-menu-content">
           <div class="mobile-menu-header">
@@ -137,7 +155,7 @@
             </button>
           </div>
           <nav class="mobile-nav-links">
-            <a href="/" class="mobile-nav-link">Home</a>
+            <a href="/" class="mobile-nav-link active">Home</a>
             <div class="mobile-nav-dropdown">
               <a href="/about" class="mobile-nav-link mobile-dropdown-trigger">
                 Explore
@@ -161,241 +179,236 @@
       </div>
     </header>
 
-    <main class="retail-page">
-      <!-- Hero -->
-      <section class="retail-hero">
-        <div class="hero-overlay-global">
-          <div class="overlay-items">
-            <div class="top-left-overlay overlay-item">
-              <img
-                src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A7607.png"
-                alt=""
-              />
-            </div>
-
-            <div class="top-right-overlay overlay-item">
-              <img
-                src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A0462-scaled-1-1.png"
-                alt=""
-              />
-            </div>
-
-            <div class="bottom-left-overlay overlay-item">
-              <img
-                src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A7607.png"
-                alt=""
-              />
-            </div>
-
-            <div class="bottom-right-overlay overlay-item leaf">
-              <img
-                src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A0462-scaled-1-1.png"
-                alt=""
-              />
-            </div>
+    <main class="recipe-details">
+      <section class="recipe-hero" aria-label="Recipe hero">
+        <div class="recipe-hero-inner">
+          <div class="recipe-hero-media" aria-hidden="true">
+            <img
+              class="recipe-hero-image"
+              src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=2200&q=80"
+              alt=""
+            />
           </div>
-        </div>
-        <div class="retail-hero-bg">
-          <img
-            src="https://newvashaepz.com/wp-content/uploads/2026/03/african-young-couple-with-shopping-trolley-shoppin-2026-01-07-00-04-03-utc-scaled.jpg"
-            alt=""
-          />
-        </div>
-        <div class="retail-hero-overlay"></div>
-        <div class="retail-hero-content">
-          <h1 class="retail-hero-title">
-            Vertically Integrated
-            <span class="highlight">Organic Herbs</span> for Reliable, Scalable
-            Supply.
-          </h1>
-          <p class="retail-hero-tagline">Compliant with US Market Standards</p>
-          <a href="/contact" class="contact-us-btn">Contact Us </a>
-        </div>
-      </section>
 
-      <!-- Section 1: Intro (full width, image left, text right) -->
-      <section
-        class="retail-section retail-section-intro retail-section-fullwidth text-white"
-        id="retail-overview"
-      >
-        <div
-          class="retail-section-inner retail-section-fullwidth-inner retail-section-image-left"
-        >
-          <div class="retail-section-content">
-            <h2 class="retail-section-heading">
-              Reliable Quality, Consistent Supply
-            </h2>
-            <p class="retail-intro-text">
-              Our vertically integrated system minimizes supply disruptions and
-              ensures dependable availability. Fresco Flavors delivers premium
-              organic herbs with consistent quality, helping retailers maintain
-              reliable shelf presence and meet customer demand.
-            </p>
-          </div>
-          <div class="retail-section-media">
-            <div class="retail-media-shape">
-              <img
-                src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A1028-scaled.jpg"
-                alt="Vertically integrated organic herb production"
-              />
-            </div>
+          <div class="recipe-hero-title">
+            <h1 class="recipe-title">
+              <span class="recipe-title-line">Chicken</span>
+              <span class="recipe-title-line">Spaghetti Bake</span>
+            </h1>
           </div>
         </div>
       </section>
 
-      <!-- Section 2: From Farm to Shelf (full width, text left, image right) -->
-      <section
-        class="retail-section retail-section-alt retail-section-fullwidth retail-section-image-right"
-        id="farm-to-shelf"
-      >
-        <div
-          class="retail-section-inner retail-section-fullwidth-inner retail-section-reverse"
-        >
-          <div class="retail-section-media">
-            <div class="retail-media-shape">
-              <img
-                src="https://harvestepz.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-25-at-16.35.42.jpeg"
-                alt="Farm to shelf supply chain"
-              />
-            </div>
-          </div>
-          <div class="retail-section-content">
-            <h2 class="retail-section-heading">
-              Controlled Sourcing: Seed To Jar Oversight
-            </h2>
-            <div class="retail-section-text">
-              <p>
-                Fresco Flavors implements a controlled sourcing model that
-                oversees the process from farmer selection, cultivation to
-                harvesting to the point the herbs reach the freeze-drying
-                facility. This is to ensure consistent quality standards and
-                dependable supply for our retail partners.
-              </p>
-            </div>
-            <!-- <a href="/contact" class="contact-us-btn retail-btn">Contact Us </a> -->
-          </div>
-        </div>
-      </section>
+      <section class="recipe-body" aria-label="Recipe content">
+        <div class="recipe-body-inner">
+          <div class="recipe-columns">
+            <div class="key-products" aria-label="Key products">
+              <h3 class="key-products__title">KEY PRODUCTS</h3>
 
-      <!-- Section 1: Intro (full width, image left, text right) -->
-      <section
-        class="retail-section retail-section-intro retail-section-fullwidth text-white"
-        id="retail-overview"
-      >
-        <div
-          class="retail-section-inner retail-section-fullwidth-inner retail-section-image-left"
-        >
-          <div class="retail-section-content">
-            <h2 class="retail-section-heading">
-              Food Safety & Full Traceability
-            </h2>
-            <p class="retail-intro-text">
-              Our operations follow internationally recognized food safety
-              standards and meet U.S. regulatory expectations, including FDA
-              guidelines. Every pack is batch-coded and fully traceable from
-              harvest date to processing providing accountability and retailer
-              confidence.
-            </p>
-          </div>
-          <div class="retail-section-media">
-            <div class="retail-media-shape">
-              <img
-                src="https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4392-1-scaled.jpg"
-                alt="Vertically integrated organic herb production"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+              <div class="key-products__grid">
+                <article class="key-product">
+                  <a
+                    class="key-product__media"
+                    href="/product-details"
+                    aria-label="View McCormick Black Currant Finishing Sugar, 2.75 oz"
+                  >
+                    <img
+                      class="key-product__image"
+                      src="https://newvashaepz.com/wp-content/uploads/2026/03/Basil-scaled.png"
+                      alt="McCormick Black Currant Finishing Sugar, 2.75 oz"
+                      loading="lazy"
+                    />
+                  </a>
 
-      <!-- Section 4: How it Works / Operational Efficiency -->
-      <section class="retail-how-it-works" id="operational-efficiency">
-        <div class="retail-how-it-works-bg" aria-hidden="true"></div>
-        <div class="retail-section-inner retail-how-it-works-inner">
-          <div class="retail-how-it-works-heading-container">
-            <h2 class="retail-how-it-works-heading">Operational Efficiency</h2>
-            <div class="divider"></div>
-            <p class="retail-how-it-works-lead">
-              Partnering with Fresco Flavors means optimizing your operations
-              and mitigating common retail challenges.
-            </p>
-          </div>
-          <div class="retail-steps-grid">
-            <!-- Step 01: Image top, text below -->
-            <div class="retail-step retail-step-image-top">
-              <div class="retail-step-image-wrap">
-                <img
-                  src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-28-at-16.00.37-e1764335434457.jpeg"
-                  alt="Freeze-dried herbs with extended shelf life"
-                  loading="lazy"
-                />
-              </div>
-              <div class="retail-step-content">
-                <span class="retail-step-num">01</span>
-                <h3 class="retail-step-title">Longer Shelf Life</h3>
-                <p class="retail-step-desc">
-                  Extended shelf stability helps retailers reduce spoilage,
-                  lower shrink, and maintain consistent quality.
-                </p>
-              </div>
-            </div>
-            <!-- Step 02: Text top, image below -->
-            <div class="retail-step retail-step-text-top">
-              <div class="retail-step-content">
-                <span class="retail-step-num">02</span>
-                <h3 class="retail-step-title">Light Weight</h3>
-                <p class="retail-step-desc">
-                  Light weight freeze-dried herbs in smart, convenient packs
-                  designed for easy shipping and display. No cold chain needed.
-                </p>
-              </div>
-              <div class="retail-step-image-wrap">
-                <img
-                  src="https://newvashaepz.com/wp-content/uploads/2026/03/0A0A2210.jpg"
-                  alt="Ready-to-use herb formats"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-            <!-- Step 03: Image top, text below -->
-            <div class="retail-step retail-step-image-top">
-              <div class="retail-step-image-wrap">
-                <img
-                  src="https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4532-scaled.jpg"
-                  alt="Year-round supply chain"
-                  loading="lazy"
-                />
-              </div>
-              <div class="retail-step-content">
-                <span class="retail-step-num">03</span>
-                <h3 class="retail-step-title">Year-Round Availability</h3>
-                <p class="retail-step-desc">
-                  All-year availability eliminates seasonal shortfalls and
-                  concerns on stock outs.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- <a href="/contact" class="contact-us-btn retail-btn retail-how-it-works-cta"
-            >Partner With Us
-          </a> -->
-        </div>
-      </section>
+                  <div class="key-product__info">
+                    <a class="key-product__name" href="/product-details">
+                      Freeze-Dried Basil
+                    </a>
+                    <div class="key-product__price">$14.00</div>
+                    <button
+                      type="button"
+                      class="key-product__add"
+                      aria-label="Add McCormick Black Currant Finishing Sugar to cart"
+                    >
+                      ADD
+                    </button>
+                  </div>
+                </article>
 
-      <!-- CTA -->
-      <section class="cta">
-        <img
-          class="cta-bg"
-          src="https://plantechkenya.com/wp-content/uploads/2026/02/copy-space-greens-condimentsrtger-1.jpg"
-          alt=""
-        />
-        <div class="cta-inner">
-          <h2 class="cta-heading">Ready to Stock Premium Organic Herbs?</h2>
-          <p class="cta-desc">
-            Partner with Fresco Flavors and bring reliable, traceable,
-            shelf-ready herbs to your customers.
-          </p>
-          <a href="/contact" class="cta-btn">Get Started </a>
+                <article class="key-product">
+                  <a
+                    class="key-product__media"
+                    href="/product-details"
+                    aria-label="View McCormick All Natural Pure Vanilla Extract, 4 fl oz"
+                  >
+                    <img
+                      class="key-product__image"
+                      src="https://newvashaepz.com/wp-content/uploads/2026/03/Cilantro-scaled.png"
+                      alt="McCormick All Natural Pure Vanilla Extract, 4 fl oz"
+                      loading="lazy"
+                    />
+                  </a>
+
+                  <div class="key-product__info">
+                    <a class="key-product__name" href="/product-details">
+                      Freeze-Dried Cilantro
+                    </a>
+                    <div class="key-product__price">$9.00</div>
+                    <button
+                      type="button"
+                      class="key-product__add"
+                      aria-label="Add McCormick Vanilla Extract to cart"
+                    >
+                      ADD
+                    </button>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="recipe-columns">
+              <article class="recipe-instructions" aria-label="Instructions">
+                <h2 class="recipe-section-heading">Instructions</h2>
+
+                <ol class="recipe-steps">
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">1</span>
+                    <p class="recipe-step-text">
+                      Preheat the oven to 350°F (175°C)
+                    </p>
+                  </li>
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">2</span>
+                    <p class="recipe-step-text">
+                      Mix the dry ingredients in a large bowl. Bring the water
+                      to a boil
+                    </p>
+                  </li>
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">3</span>
+                    <p class="recipe-step-text">
+                      Add vinegar and egg whites to the dry ingredients, and
+                      combine well. Add boiling water, while beating with a hand
+                      mixer for about 30 seconds. Don't over mix the dough, the
+                      consistency should resemble Play-Doh.
+                    </p>
+                  </li>
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">4</span>
+                    <p class="recipe-step-text">
+                      Moisten hands with a little olive oil and shape dough into
+                      6 separate rolls. Place on a greased baking sheet. Top
+                      with optional sesame seeds.
+                    </p>
+                  </li>
+
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">5</span>
+                    <p class="recipe-step-text">
+                      Preheat the oven to 350°F (175°C)
+                    </p>
+                  </li>
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">6</span>
+                    <p class="recipe-step-text">
+                      Mix the dry ingredients in a large bowl. Bring the water
+                      to a boil
+                    </p>
+                  </li>
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">7</span>
+                    <p class="recipe-step-text">
+                      Add vinegar and egg whites to the dry ingredients, and
+                      combine well. Add boiling water, while beating with a hand
+                      mixer for about 30 seconds. Don't over mix the dough, the
+                      consistency should resemble Play-Doh.
+                    </p>
+                  </li>
+                  <li class="recipe-step">
+                    <span class="recipe-step-number" aria-hidden="true">8</span>
+                    <p class="recipe-step-text">
+                      Moisten hands with a little olive oil and shape dough into
+                      6 separate rolls. Place on a greased baking sheet. Top
+                      with optional sesame seeds.
+                    </p>
+                  </li>
+                </ol>
+              </article>
+
+              <aside class="recipe-ingredients" aria-label="Ingredients">
+                <div class="ingredients-card">
+                  <div class="ingredients-card-header">
+                    <h2 class="recipe-section-heading ingredients-heading">
+                      Ingredients
+                    </h2>
+                  </div>
+
+                  <div class="ingredients-controls">
+                    <div class="servings">
+                      <div class="servings-label">Servings:</div>
+                      <div
+                        class="servings-control"
+                        role="group"
+                        aria-label="Servings"
+                      >
+                        <button
+                          type="button"
+                          class="servings-btn"
+                          aria-label="Decrease servings"
+                        >
+                          −
+                        </button>
+                        <div class="servings-value" aria-live="polite">4</div>
+                        <button
+                          type="button"
+                          class="servings-btn"
+                          aria-label="Increase servings"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="units" role="group" aria-label="Units">
+                      <button type="button" class="unit-btn unit-btn-active">
+                        Metric
+                      </button>
+                      <button type="button" class="unit-btn">US</button>
+                    </div>
+                  </div>
+
+                  <ul class="ingredients-list">
+                    <li class="ingredient">
+                      <span class="ingredient-name"
+                        >Ground psyllium husk powder</span
+                      >
+                      <span class="ingredient-amount">80 ml (50 g)</span>
+                    </li>
+                    <li class="ingredient">
+                      <span class="ingredient-name">Almond flour</span>
+                      <span class="ingredient-amount">300 ml (140 g)</span>
+                    </li>
+                    <li class="ingredient">
+                      <span class="ingredient-name">Baking powder</span>
+                      <span class="ingredient-amount">2 tsp</span>
+                    </li>
+                    <li class="ingredient">
+                      <span class="ingredient-name">Sea salt</span>
+                      <span class="ingredient-amount">1 tsp</span>
+                    </li>
+                  </ul>
+
+                  <div class="ingredients-card-footer">
+                    <a
+                      href="/shop"
+                      class="ingredients-card-footer-btn btn cta-btn"
+                    >
+                      <span> BUY INGREDIENTS </span>
+                    </a>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -557,7 +570,6 @@
         <button
           type="button"
           class="footer-scroll-top"
-          
           aria-label="Scroll to top"
         >
           <i class="fa-solid fa-arrow-up"></i>
@@ -565,8 +577,8 @@
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/assets/scripts/global.js"></script>
     <script src="/assets/scripts/search.js"></script>
-    <script src="/assets/scripts/index.js"></script>
   </body>
 </html>

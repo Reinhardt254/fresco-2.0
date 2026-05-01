@@ -153,8 +153,8 @@
 .hero-cta {
   display: inline-block;
   padding: 1rem 2rem;
-  font-size: 0.875rem;
-  letter-spacing: 0.2rem;
+  font-size: 1.1rem;
+  letter-spacing: normal;
   transition:
     background-color 0.25s ease,
     transform 0.2s ease;
@@ -397,7 +397,7 @@
 
 .our-commitment .contact-us-btn {
   padding: 1rem 2rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -509,7 +509,7 @@
 
 .process-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
   align-items: flex-start;
   padding-top: 2rem;
@@ -977,6 +977,10 @@
   .food-recipes-stat-label {
     font-size: 12px;
   }
+
+  .food-recipes-button-container {
+    padding-top: 3rem;
+  } 
 }
 
 /* ==================== Mobile Responsive Styles ==================== */

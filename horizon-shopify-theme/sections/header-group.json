@@ -28,9 +28,7 @@
           "blocks": {}
         }
       },
-      "block_order": [
-        "announcement_BxgCk9"
-      ],
+      "block_order": ["announcement_BxgCk9"],
       "disabled": true,
       "name": "t:names.announcement_bar",
       "settings": {
@@ -73,7 +71,7 @@
           "type": "explore_item",
           "settings": {
             "title": "Recipes",
-            "url": "/pages/about/#recipes",
+            "url": "/pages/recipes",
             "icon_image": "shopify://shop_images/mortar.png"
           }
         }
@@ -97,8 +95,5 @@
       }
     }
   },
-  "order": [
-    "header_announcements_9jGBFp",
-    "header_section"
-  ]
+  "order": ["header_announcements_9jGBFp", "header_section"]
 }

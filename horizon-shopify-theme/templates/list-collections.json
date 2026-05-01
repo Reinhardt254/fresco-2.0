@@ -15,7 +15,7 @@
       "settings": {
         "count_text": "20+",
         "subtitle": "Herbs",
-        "description": "Organically grown herbs, carefully harvested at peak freshness and freeze dried to lock in flavor, color and aroma packed for convenience. No chopping, no cleaning, just instant fresco flavour added to soups, sauces and salads. Elevate your cooking from good to unforgettable.",
+        "description": "Organically grown herbs, carefully harvested at peak freshness and freeze-dried to lock in flavor, color and aroma packed for convenience. No chopping, no cleaning, just instant fresco flavor added to soups, sauces and salads. Elevate your cooking from good to unforgettable.",
         "overlay_center_url": "https://img.freepik.com/free-vector/hand-drawn-basil-drawing-illustration_23-2150840443.jpg",
         "overlay_left_url": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview.png",
         "overlay_right_url": "https://plantechkenya.com/wp-content/uploads/2026/02/dried-herbs-spilled-from-glass-jar-white-background_1012140-1044.png"
@@ -44,7 +44,7 @@
             "collection": "",
             "label": "Home cooking",
             "discount_tag": "20% OFF",
-            "headline": "Everyday flavours made effortless",
+            "headline": "Everyday flavors made effortless",
             "description": "",
             "link_text": "Shop home favourites",
             "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/Untitled-design-4.png",
@@ -150,9 +150,7 @@
               "blocks": {}
             }
           },
-          "block_order": [
-            "text_fRMQMR"
-          ]
+          "block_order": ["text_fRMQMR"]
         },
         "static-collection-card": {
           "type": "_collection-card",
@@ -214,14 +212,10 @@
               "blocks": {}
             }
           },
-          "block_order": [
-            "collection_title_7YgBPU"
-          ]
+          "block_order": ["collection_title_7YgBPU"]
         }
       },
-      "block_order": [
-        "group_4FtiAg"
-      ],
+      "block_order": ["group_4FtiAg"],
       "disabled": true,
       "name": "t:names.collection_list",
       "settings": {

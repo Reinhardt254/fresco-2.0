@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 /* 
 #f4e5c9; */
-
+  
 /* CSS Root Variables - All Colors */
 :root {
   --primary-green: #81b03f;
@@ -47,8 +47,13 @@ button {
   font-family: "Josefin Sans", sans-serif !important;
 }
 
+div.sub-heading {
+  display: none !important
+};
+
 button {
   border-radius: 1px !important;
+  text-transform: capitalize !important;
 }
 
 .contact-us-btn-icon {
@@ -157,7 +162,7 @@ div.sub-heading {
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 1px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 0.2rem;
   text-align: center;
   text-decoration: none;
@@ -1686,13 +1691,14 @@ body.no-scroll {
 }
 
 .category-link {
+  text-transform: capitalize !important;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0.55rem 1.5rem;
   border-radius: 999px;
   background-color: #ffffff;
-  color: #2b2521;
+  color: var(--dark-green-background);
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 600;
@@ -2143,7 +2149,7 @@ body.no-scroll {
   background-color: var(--primary-green);
   color: #fff;
   padding: 1rem 2rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
 
   display: flex;
@@ -2151,11 +2157,18 @@ body.no-scroll {
   justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.7s ease;
+  text-transform: capitalize;
   border: none;
   outline: none;
   text-decoration: none;
   line-height: 1 !important;
+}
+
+.cta-btn span {
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  margin-top: 5px;
 }
 
 .cta-btn svg {
@@ -2165,8 +2178,8 @@ body.no-scroll {
 }
 
 .cta-btn:hover {
-  background-color: #fff;
-  color: var(--primary-green);
+  background-color: var(--dark-green-background);
+  color: #fff;
 }
 
 .cta-btn:hover svg {

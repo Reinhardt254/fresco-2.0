@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Fresco - Freeze-Dried Herbs & Organic Products</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,11 +17,20 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- <link rel="stylesheet" href="/styles.css" /> -->
+    <link rel="stylesheet" href="/assets/styles/home.css" />
     <link rel="stylesheet" href="/assets/styles/global.css" />
-    <link rel="stylesheet" href="/assets/styles/contact.css" />
+    <link rel="stylesheet" href="/assets/styles/recipe.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
   </head>
   <body>
@@ -43,7 +52,7 @@
         <!-- Desktop Navigation -->
         <div class="nav left-nav desktop-nav">
           <div class="nav-links">
-            <a href="/">Home</a>
+            <a class="active" href="/">Home</a>
             <div class="nav-dropdown">
               <a href="/about" class="nav-dropdown-trigger">Explore</a>
               <div class="nav-dropdown-menu">
@@ -87,7 +96,7 @@
                 </div>
               </div>
             </div>
-            <a class="active" href="/contact">Contact</a>
+            <a href="/contact">Contact</a>
           </div>
         </div>
 
@@ -120,7 +129,7 @@
               id="search-open-icon"
               class="fa-solid fa-magnifying-glass search-icon"
             ></i>
-            <a href="#">
+            <a href="/#">
               <i class="fa-solid fa-user user-icon"></i>
             </a>
             <a href="/cart">
@@ -146,7 +155,7 @@
             </button>
           </div>
           <nav class="mobile-nav-links">
-            <a href="/" class="mobile-nav-link">Home</a>
+            <a href="/" class="mobile-nav-link active">Home</a>
             <div class="mobile-nav-dropdown">
               <a href="/about" class="mobile-nav-link mobile-dropdown-trigger">
                 Explore
@@ -163,175 +172,341 @@
                 <a href="/recipes" class="mobile-dropdown-link">Recipes</a>
               </div>
             </div>
-            <a href="/contact" class="mobile-nav-link active">Contact</a>
+            <a href="/contact" class="mobile-nav-link">Contact</a>
             <a href="/shop" class="mobile-nav-link">Shop Now</a>
           </nav>
         </div>
       </div>
     </header>
 
-    <main class="contact-page">
-      <section class="contact-page-layout">
-        <img
-          src="https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4367.jpg"
-          alt=""
-        />
-        <div class="layout-content">
-          <h1>Contact <span class="highlight"> Us </span></h1>
-          <p>
-            We're here to help you with any questions or concerns you may have.
-          </p>
-        </div>
-
-        <div class="hero-overlay">
-          <div class="overlay-items">
-            <div class="top-left-overlay overlay-item">
-              <img
-                src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A7607.png"
-                alt=""
-              />
-            </div>
-
-            <div class="top-right-overlay overlay-item">
-              <img
-                src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A0462-scaled-1-1.png"
-                alt=""
-              />
-            </div>
-
-            <div class="bottom-left-overlay overlay-item">
-              <img
-                src="https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A7607.png"
-                alt=""
-              />
-            </div>
-
-            <div class="bottom-right-overlay overlay-item">
-              <img
-                src="https://plantechkenya.com/wp-content/uploads/2026/02/dried-herbs-spilled-from-glass-jar-white-background_1012140-1044.png"
-                alt=""
-              />
+    <main class="recipe-page">
+      <section class="recipe-hero" aria-label="Recipe hero">
+        <div class="recipe-container">
+          <div class="recipe-hero-card">
+            <img
+              class="recipe-hero-image"
+              src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=2400&q=80"
+              alt=""
+            />
+            <div class="recipe-hero-overlay" aria-hidden="true"></div>
+            <div class="recipe-hero-content">
+              <p class="recipe-hero-eyebrow">We are a team made</p>
+              <div class="separator"></div>
+              <h1 class="recipe-hero-title">
+                up of professional chefs, kitchen & newbies
+              </h1>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="contact-main">
-        <div class="contact-main-container">
-          <!-- Left: contact cards 2x2 + map -->
-          <div class="contact-main-left">
-            <div class="contact-cards-grid">
-              <div class="contact-card">
-                <div class="contact-card-icon">
-                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                </div>
-                <h3 class="contact-card-label">Phone</h3>
-                <p class="contact-card-detail">
-                  <a href="tel:+19018965814">+1 (901) 896-5814</a>
-                </p>
-              </div>
-              <div class="contact-card">
-                <div class="contact-card-icon">
-                  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                </div>
-                <h3 class="contact-card-label">Whatsapp</h3>
-                <p class="contact-card-detail">
-                  <a href="https://wa.me/19018965814">+1 (901) 896-5814</a>
-                </p>
-              </div>
-              <div class="contact-card">
-                <div class="contact-card-icon">
-                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                </div>
-                <h3 class="contact-card-label">Email</h3>
-                <p class="contact-card-detail">
-                  <a href="mailto:info@frescoflavors.com"
-                    >info@frescoflavors.com</a
-                  >
-                </p>
-              </div>
-              <div class="contact-card">
-                <div class="contact-card-icon">
-                  <i class="fa-solid fa-shop" aria-hidden="true"></i>
-                </div>
-                <h3 class="contact-card-label">Our Shop</h3>
-                <p class="contact-card-detail">
-                  7910 Moriarty Rd, Cordova, TN 38018
-                </p>
-              </div>
-            </div>
-            <div class="contact-map-wrap">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d61881.489831128325!2d-89.83236344471175!3d35.19412175135412!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2ske!4v1764248724074!5m2!1sen!2ske"
-                width="100%"
-                height="100%"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Location map"
-              ></iframe>
-            </div>
-          </div>
-          <!-- Right: Get In Touch form -->
-          <div class="contact-main-right">
-            <h2 class="contact-form-heading">Get In Touch</h2>
-            <p class="contact-form-desc">
-              We're here to help you with any questions or concerns. Send us a
-              message and we'll get back to you as soon as we can.
-            </p>
-            <form
-              class="contact-form-fields"
-              action="#"
-              method="post"
-              aria-label="Contact form"
+      <section class="recipe-posts" aria-label="Blog posts">
+        <div class="recipe-container">
+          <div class="recipe-section-header">
+            <h2 class="recipe-section-title">RECIPES</h2>
+            <!-- <div
+              class="recipe-filters"
+              role="tablist"
+              aria-label="Recipe categories"
             >
-              <div class="contact-field">
-                <label for="contact-name">Name</label>
-                <input
-                  type="text"
-                  id="contact-name"
-                  name="name"
-                  placeholder="Your name"
-                  required
-                  class="contact-form-input"
-                />
-              </div>
-              <div class="contact-field">
-                <label for="contact-email">Email</label>
-                <input
-                  type="email"
-                  id="contact-email"
-                  name="email"
-                  placeholder="example@yourmail.com"
-                  required
-                  class="contact-form-input"
-                />
-              </div>
-              <div class="contact-field">
-                <label for="contact-subject">Subject</label>
-                <input
-                  type="text"
-                  id="contact-subject"
-                  name="subject"
-                  placeholder="Title..."
-                  class="contact-form-input"
-                />
-              </div>
-              <div class="contact-field">
-                <label for="contact-message">Message</label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  placeholder="Type here..."
-                  rows="5"
-                  class="contact-form-textarea"
-                ></textarea>
-              </div>
-              <button type="submit" class="contact-form-submit">
-                Send Now
+              <button
+                class="recipe-filter recipe-filter-active"
+                role="tab"
+                aria-selected="true"
+                type="button"
+              >
+                All categories
               </button>
-            </form>
+              <button
+                class="recipe-filter"
+                role="tab"
+                aria-selected="false"
+                type="button"
+              >
+                Breakfast
+              </button>
+              <button
+                class="recipe-filter"
+                role="tab"
+                aria-selected="false"
+                type="button"
+              >
+                Lunch
+              </button>
+              <button
+                class="recipe-filter"
+                role="tab"
+                aria-selected="false"
+                type="button"
+              >
+                Vegan
+              </button>
+              <button
+                class="recipe-filter"
+                role="tab"
+                aria-selected="false"
+                type="button"
+              >
+                Snacks
+              </button>
+              <button
+                class="recipe-filter"
+                role="tab"
+                aria-selected="false"
+                type="button"
+              >
+                Desserts
+              </button>
+            </div> -->
+          </div>
+
+          <div class="recipe-grid" aria-label="Recipe list">
+            <a
+              class="recipe-card"
+              href="/recipes/garden-fresh-tomato-basil-soup"
+              aria-label="Garden Fresh Tomato Basil Soup recipe"
+            >
+              <img
+                class="recipe-card-image"
+                src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=80"
+                alt="Garden Fresh Tomato Basil Soup"
+              />
+              <div class="recipe-card-body">
+                <p class="recipe-card-date">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  <span class="recipe-card-date-text">April 24, 2026</span>
+                </p>
+                <h3 class="recipe-card-title">Garden Fresh Tomato Basil Soup</h3>
+              </div>
+            </a>
+
+            <a
+              class="recipe-card"
+              href="/recipes/garden-herb-roasted-chicken"
+              aria-label="The Ultimate Garden Herb Roasted Chicken recipe"
+            >
+              <img
+                class="recipe-card-image"
+                src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80"
+                alt="The Ultimate Garden Herb Roasted Chicken"
+              />
+              <div class="recipe-card-body">
+                <p class="recipe-card-date">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  <span class="recipe-card-date-text">April 24, 2026</span>
+                </p>
+                <h3 class="recipe-card-title">
+                  The Ultimate Garden Herb Roasted Chicken
+                </h3>
+              </div>
+            </a>
+
+            <a
+              class="recipe-card"
+              href="/recipes/garlic-and-chive-potato-soup"
+              aria-label="Creamy Garlic & Chive Potato Soup recipe"
+            >
+              <img
+                class="recipe-card-image"
+                src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=80"
+                alt="Creamy Garlic & Chive Potato Soup"
+              />
+              <div class="recipe-card-body">
+                <p class="recipe-card-date">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  <span class="recipe-card-date-text">April 24, 2026</span>
+                </p>
+                <h3 class="recipe-card-title">Creamy Garlic & Chive Potato Soup</h3>
+              </div>
+            </a>
+
+            <a
+              class="recipe-card"
+              href="/recipes/herbed-beef-and-veggie-stew"
+              aria-label="Slow-Simmered Herbed Beef & Veggie Stew recipe"
+            >
+              <img
+                class="recipe-card-image"
+                src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=900&q=80"
+                alt="Slow-Simmered Herbed Beef & Veggie Stew"
+              />
+              <div class="recipe-card-body">
+                <p class="recipe-card-date">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  <span class="recipe-card-date-text">April 24, 2026</span>
+                </p>
+                <h3 class="recipe-card-title">
+                  Slow-Simmered Herbed Beef & Veggie Stew
+                </h3>
+              </div>
+            </a>
+
+            <a
+              class="recipe-card"
+              href="/recipes/lemon-mint-cilantro-sheet-pan-chicken"
+              aria-label="Lemon-Mint & Cilantro Sheet Pan Chicken recipe"
+            >
+              <img
+                class="recipe-card-image"
+                src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80"
+                alt="Lemon-Mint & Cilantro Sheet Pan Chicken"
+              />
+              <div class="recipe-card-body">
+                <p class="recipe-card-date">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  <span class="recipe-card-date-text">April 24, 2026</span>
+                </p>
+                <h3 class="recipe-card-title">
+                  Lemon-Mint & Cilantro Sheet Pan Chicken
+                </h3>
+              </div>
+            </a>
+
+            <a
+              class="recipe-card"
+              href="/recipes/garden-herb-grilled-veggies"
+              aria-label="Garden Herb Grilled Veggies recipe"
+            >
+              <img
+                class="recipe-card-image"
+                src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=80"
+                alt="Garden Herb Grilled Veggies"
+              />
+              <div class="recipe-card-body">
+                <p class="recipe-card-date">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  <span class="recipe-card-date-text">April 24, 2026</span>
+                </p>
+                <h3 class="recipe-card-title">Garden Herb Grilled Veggies</h3>
+              </div>
+            </a>
+
+            <!-- <a
+              class="recipe-card"
+              href="/recipes/classic-herbed-lasagna"
+              aria-label="Classic Herbed Lasagna recipe"
+            >
+              <img
+                class="recipe-card-image"
+                src="https://img.freepik.com/free-photo/pork-hock-german-with-sauces-dark-background_1150-45508.jpg?uid=R146131911&ga=GA1.1.581567367.1776776698&semt=ais_hybrid&w=740&q=80"
+                alt="Classic Herbed Lasagna"
+              />
+              <div class="recipe-card-body">
+                <p class="recipe-card-date">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  <span class="recipe-card-date-text">April 24, 2026</span>
+                </p>
+                <h3 class="recipe-card-title">Classic Herbed Lasagna</h3>
+              </div>
+            </a>
+
+            <a
+              class="recipe-card"
+              href="/recipes/elevated-avocado-toast-eggs"
+              aria-label="Elevated Avocado Toast & Eggs recipe"
+            >
+              <img
+                class="recipe-card-image"
+                src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=80"
+                alt="Elevated Avocado Toast & Eggs"
+              />
+              <div class="recipe-card-body">
+                <p class="recipe-card-date">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  <span class="recipe-card-date-text">April 24, 2026</span>
+                </p>
+                <h3 class="recipe-card-title">Elevated Avocado Toast & Eggs</h3>
+              </div>
+            </a> -->
+          </div>
+        </div>
+      </section>
+
+      <section class="recipe-chefs" aria-label="Learn from top chefs">
+        <div class="recipe-container">
+          <div class="recipe-chefs-header">
+            <h2 class="recipe-chefs-title">Learn from top chefs</h2>
+          </div>
+
+          <div class="chef-row" aria-label="Chef list">
+            <article class="chef-card">
+              <img
+                class="chef-photo"
+                src="https://img.freepik.com/free-photo/man-holding-vegetables-dark-pan_114579-30538.jpg?uid=R146131911&ga=GA1.1.581567367.1776776698&semt=ais_hybrid&w=740&q=80"
+                alt="Chef portrait"
+              />
+              <div class="chef-body">
+                <div class="chef-name">Samuel</div>
+                <div class="chef-role">Master Chef</div>
+              </div>
+            </article>
+
+            <article class="chef-card">
+              <img
+                class="chef-photo"
+                src="https://img.freepik.com/free-photo/chef-mixing-salad-ingredients_23-2148794094.jpg?uid=R146131911&ga=GA1.1.581567367.1776776698&semt=ais_hybrid&w=740&q=80"
+                alt="Chef portrait"
+              />
+              <div class="chef-body">
+                <div class="chef-name">Cynthia</div>
+                <div class="chef-role">Sous Chef</div>
+              </div>
+            </article>
+
+            <article class="chef-card chef-card-featured">
+              <img
+                class="chef-photo"
+                src="https://img.freepik.com/premium-photo/professional-restaurant-chef-photo_728472-3688.jpg?uid=R146131911&ga=GA1.1.581567367.1776776698&semt=ais_hybrid&w=740&q=80"
+                alt="Chef portrait"
+              />
+              <div class="chef-body">
+                <div class="chef-name">Matthew</div>
+                <div class="chef-role">Private Chef</div>
+              </div>
+            </article>
+
+            <article class="chef-card">
+              <img
+                class="chef-photo"
+                src="https://img.freepik.com/free-photo/chef-cooking-kitchen-while-wearing-professional-attire_23-2151208288.jpg?uid=R146131911&ga=GA1.1.581567367.1776776698&semt=ais_hybrid&w=740&q=80"
+                alt="Chef portrait"
+              />
+              <div class="chef-body">
+                <div class="chef-name">Alicia</div>
+                <div class="chef-role">Pastry Chef</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="recipe-newsletter"
+        aria-label="Fresh inspiration via email"
+      >
+        <div class="recipe-container">
+          <div class="newsletter-card">
+            <div class="newsletter-art" aria-hidden="true"></div>
+            <div class="newsletter-content">
+              <h2 class="newsletter-title">Fresh inspiration via email</h2>
+              <form
+                class="newsletter-form"
+                action="/#"
+                method="get"
+                aria-label="Newsletter signup"
+              >
+                <input
+                  class="newsletter-input"
+                  type="email"
+                  name="email"
+                  placeholder="Your email address"
+                  required
+                />
+                <button class="newsletter-btn" type="submit">
+                  Subscribe Now
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -365,7 +540,6 @@
           </form>
         </div>
       </div>
-
       <div class="footer-newsletter-divider"></div>
       <div class="footer-main">
         <div class="footer-container footer-columns">
@@ -376,7 +550,6 @@
                 alt="Fresco Flavors Logo"
               />
             </div>
-            <!-- <p class="footer-tagline">— Organic — Store —</p> -->
             <p class="footer-company-desc">
               Bringing the best herbs in every jar. 100% Organic, from Kenya to
               the World.
@@ -390,8 +563,8 @@
               </li>
               <li>
                 <i class="fa-solid fa-location-dot" aria-hidden="true"></i
-                ><span>
-                  7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA</span
+                ><span
+                  >7910 Moriarty Rd, Cordova, Tennessee, TN 38018, USA</span
                 >
               </li>
               <li>
@@ -469,7 +642,6 @@
           </div>
         </div>
       </div>
-
       <div class="footer-bottom">
         <div class="footer-container footer-bottom-inner">
           <p class="footer-copyright">
@@ -503,6 +675,8 @@
         </button>
       </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/assets/scripts/global.js"></script>
     <script src="/assets/scripts/search.js"></script>
   </body>
