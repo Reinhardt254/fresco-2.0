@@ -2131,6 +2131,7 @@ body.no-scroll {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.5rem;
+  text-align: center !important;
 }
 
 .cta-desc {
