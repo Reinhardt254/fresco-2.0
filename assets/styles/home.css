@@ -789,11 +789,27 @@
 }
 
 .our-mission-icon img {
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   position: relative;
   z-index: 1;
   object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.our-mission-icon .controlled-sourcing-icon-img {
+  padding-top: 3px;
+  padding-left: 2px;
+}
+
+.our-mission-icon .locked-in-flavor-icon-img {
+  padding-top: 4px;
+  padding-left: 4px;
+}
+
+.our-mission-icon .longer-shelf-life-icon-img {
+  padding-top: 4px;
+  padding-left: 4px;
 }
 
 .our-mission-label {
