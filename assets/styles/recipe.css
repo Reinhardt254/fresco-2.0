@@ -394,7 +394,11 @@
   }
 
   .recipe-hero-card {
-    height: 210px;
+    height: 410px;
+  }
+
+  .recipe-hero-title {
+    font-size: 2.5rem;
   }
 
   .recipe-grid {
