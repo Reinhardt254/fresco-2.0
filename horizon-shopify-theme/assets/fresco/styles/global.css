@@ -1146,7 +1146,9 @@ body.no-scroll {
 }
 
 .footer-newsletter-btn:hover {
-  background-color: #4a7a3a;
+  /* background-color: var(--dark-green-background) !important; */
+  background-color: var(--primary-green) !important;
+  color: var(--white-color) !important;
 }
 
 .footer-newsletter-divider {

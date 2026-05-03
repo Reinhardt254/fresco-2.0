@@ -963,25 +963,21 @@ body.no-scroll {
 .hero-overlay-global .top-left-overlay {
   top: 0;
   left: -10px;
-  transform: rotate(90deg);
 }
 
 .hero-overlay-global .top-right-overlay {
   top: 0;
-  right: -20px;
-  transform: rotate(180deg);
+  right: 0px;
 }
 
 .hero-overlay-global .bottom-left-overlay {
-  bottom: -10px;
-  left: -10px;
-  transform: rotate(10deg);
+  bottom: 0px;
+  left: 0px;
 }
 
 .hero-overlay-global .bottom-right-overlay {
-  bottom: -10px;
+  bottom: 0px;
   right: 0;
-  transform: rotate(-90deg);
 }
 
 /* .hero-overlay-global .bottom-right-overlay.leaf {
@@ -1007,7 +1003,6 @@ body.no-scroll {
   }
 
   .hero-overlay-global .bottom-right-overlay.leaf {
-    transform: rotate(-90deg);
     height: 100px;
     width: auto;
     bottom: -20px;
@@ -1145,7 +1140,8 @@ body.no-scroll {
 }
 
 .footer-newsletter-btn:hover {
-  background-color: #4a7a3a;
+  background-color: var(--dark-green-background) !important;
+  color: var(--white-color) !important;
 }
 
 .footer-newsletter-divider {
@@ -1247,7 +1243,7 @@ body.no-scroll {
 
 .footer-contact i {
   width: 16px;
-  color: #2c2c2c;
+  color: var(--primary-green);
   flex-shrink: 0;
 }
 

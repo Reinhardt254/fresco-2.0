@@ -39,58 +39,6 @@
   overflow: hidden;
  }
 
- .contact-page-layout .overlay-items {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
- }
-
- .contact-page-layout .overlay-item {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
- }
-
- .contact-page-layout .overlay-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
- }
-
-
- .contact-page-layout .top-left-overlay {
-  top: 0;
-  left: -10px;
-  transform: rotate(90deg);
- }
-
- .contact-page-layout .top-right-overlay {
-  top: 0;
-  right: -10px;
-  transform: rotate(180deg);
- }
-
- .contact-page-layout .bottom-left-overlay {
-  bottom: 0;
-  left: -10px;
-  transform: rotate(10deg);
- }
-
- .contact-page-layout .bottom-right-overlay {
-  bottom: -70px;
-  right: 0;
-  transform: rotate(0deg);
-  height: 300px;
-  width: auto;
- }
-
-
  .contact-page-layout img {
    width: 100%;
    height: 100%;
@@ -362,7 +310,7 @@
   }
 
   .contact-page-layout {
-    height: 350px;
+    height: 450px;
   }
 
   .contact-main-container {

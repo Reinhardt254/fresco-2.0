@@ -447,7 +447,7 @@
 .promo {
   margin: 0;
 }
-  
+
 .promo-card {
   border-radius: 5px;
   border: 0px solid #e3e3e38a;
@@ -753,6 +753,12 @@
   flex-shrink: 0;
 }
 
+@media (max-width: 480px) {
+  .product-details-tabs-section {
+    padding: 2rem 0 1rem 0;
+  }
+}
+
 /* Sell Sheet */
 
 .sell-sheet {
@@ -812,7 +818,6 @@
   align-items: center;
   width: auto;
 
-
   position: absolute;
   right: 50px;
   bottom: 50px;
@@ -830,7 +835,7 @@
   padding: 10px;
 }
 
-.sell-sheet__tag-image  img {
+.sell-sheet__tag-image img {
   width: 80%;
   height: 80%;
   display: block;
@@ -908,8 +913,20 @@
 
 .sell-sheet__content {
   padding: 6px 26px 24px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 18px;
+  box-sizing: border-box;
+}
+
+.sell-sheet__copy {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  box-sizing: border-box;
 }
 
 .sell-sheet__headline {
@@ -1020,7 +1037,7 @@
   font-weight: 900;
   font-size: 44px;
   line-height: 1;
-  color: #81b03f;;
+  color: #81b03f;
   letter-spacing: -0.02em;
 }
 
@@ -1029,7 +1046,7 @@
   font-weight: 500;
   font-size: 22px;
   line-height: 1.05;
-  color: #81b03fe0;;
+  color: #81b03fe0;
 }
 
 .sell-sheet__brand-meta {
@@ -1037,7 +1054,7 @@
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.02em;
-  color: #81b03fe0;;
+  color: #81b03fe0;
 }
 
 .sell-sheet__contact {
@@ -1089,7 +1106,7 @@
 }
 
 .sell-sheet__uses_thumbs_details {
-  --sell-sheet-spec-accent: #0f3d2e;;
+  --sell-sheet-spec-accent: #0f3d2e;
   --sell-sheet-spec-card-border: rgba(15, 61, 46, 0.18);
   --sell-sheet-spec-card-shadow: 0 14px 32px rgba(0, 0, 0, 0.06);
 
@@ -1224,7 +1241,6 @@
   color: #0f3d2e;
 }
 
-
 .additional-information-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1251,6 +1267,7 @@
 @media (max-width: 860px) {
   .sell-sheet__header {
     grid-template-columns: 1fr;
+    padding: 0.8rem;
   }
 
   .sell-sheet__header-right {
@@ -1258,7 +1275,8 @@
   }
 
   .sell-sheet__thumbs {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     justify-items: start;
   }
 
@@ -1286,6 +1304,30 @@
   .sell-sheet__cta {
     justify-items: start;
     text-align: left;
+  }
+
+  .additional-information-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    align-items: start;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  .sell-sheet__copy {
+    gap: 0rem;
+  }
+
+  .sell-sheet__content {
+    padding: 0.8rem;
+  }
+
+  .sell-sheet__headline {
+    font-size: 1.8rem;
   }
 }
 
@@ -1566,7 +1608,7 @@
   }
 
   .product-details-container {
-    width: 92%;
+    width: 95%;
   }
 
   .product-details-actions {
