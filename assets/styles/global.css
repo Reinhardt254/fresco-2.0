@@ -1129,7 +1129,7 @@ body.no-scroll {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
+  text-transform: capitalize !important;
   color: #fff;
   background-color: var(--primary-green);
   border: none;
@@ -2163,9 +2163,15 @@ body.no-scroll {
 }
 
 .cta-btn span {
-  text-transform: capitalize;
+  text-transform: capitalize !important;
   font-size: 1.1rem;
   margin-top: 5px;
+}
+
+@media (max-width: 680px) {
+  .cta-btn span {
+    font-size: 1rem;
+  }
 }
 
 .cta-btn svg {
