@@ -714,7 +714,7 @@
   padding: 0.8rem 1rem 0.6rem 1rem;
   font-size: 0.875rem;
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform: capitalize !important;
   letter-spacing: 0.03em;
   color: #fff;
   background-color: var(--primary-green);

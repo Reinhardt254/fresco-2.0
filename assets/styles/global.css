@@ -1390,7 +1390,8 @@ body.no-scroll {
 }
 
 .footer-scroll-top:hover {
-  background-color: #4a7a3a;
+  background-color: var(--dark-green-background) !important;
+  color: var(--white-color);
 }
 
 /* Responsive */
