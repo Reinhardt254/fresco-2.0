@@ -565,7 +565,7 @@
 }
 
 .cart-summary-checkout:hover {
-  background-color: #009f5d;
+  background-color: var(--dark-green-background);
 }
 
 .cart-benefits {
@@ -596,7 +596,7 @@
   width: 60px;
   height: 60px;
   border-radius: 999px;
-  background-color: #226e55;
+  background-color: var(--dark-green-background);
   display: flex;
   align-items: center;
   justify-content: center;
