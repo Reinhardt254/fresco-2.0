@@ -791,7 +791,10 @@
 .sell-sheet__hero {
   border-radius: 4px;
   overflow: hidden;
-  background: #f6f6f6;
+  background: #f6f6f600;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
 }
 
 .sell-sheet__hero-image {
@@ -889,9 +892,15 @@
   border-radius: 999px;
   overflow: hidden;
   margin: 0;
-  border: 3px solid rgba(123, 18, 48, 0.14);
+  border: 2px solid #165540;
   background: #f5f5f5;
 }
+
+
+/* .sell-sheet__thumb img:first-child {
+  object-fit: contain;
+} */
+
 
 .sell-sheet__thumb img {
   width: 100%;
@@ -899,6 +908,7 @@
   object-fit: cover;
   display: block;
 }
+
 
 .sell-sheet__thumb-label {
   font-family: "Poppins", sans-serif;
@@ -909,6 +919,7 @@
   margin-top: 10px;
   text-align: center;
   color: #0f3d2e;
+  display: none !important;
 }
 
 .sell-sheet__content {
@@ -925,14 +936,15 @@
   display: grid;
   justify-content: center;
   align-items: center;
-  gap: 18px;
+  gap: 0px;
   box-sizing: border-box;
+  padding-bottom: 2rem;
 }
 
 .sell-sheet__headline {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  font-size: 44px;
+  font-size: 2rem;
   line-height: 1.03;
   letter-spacing: -0.02em;
   color: #165540;
@@ -1025,6 +1037,7 @@
   border-top: 1px solid #e0e0e0;
   padding-top: 25px;
   margin-top: 25px;
+  width: 100%;
 }
 
 .sell-sheet__brand {
@@ -1111,11 +1124,146 @@
   --sell-sheet-spec-card-shadow: 0 14px 32px rgba(0, 0, 0, 0.06);
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 22px;
   align-items: stretch;
   width: 100%;
   height: 100%;
+}
+
+.sell-sheet__spec-card--profile {
+  border-color: rgba(43, 124, 97, 0.22);
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(255, 255, 255, 0.65) inset;
+}
+
+.sell-sheet__spec-card-header--profile {
+  position: relative;
+  align-items: flex-start;
+  background: linear-gradient(
+    135deg,
+    #0c3528 0%,
+    #0f3d2e 42%,
+    #1a6b52 100%
+  );
+  padding-bottom: 16px;
+}
+
+.sell-sheet__spec-card-header--profile .sell-sheet__spec-card-title {
+  font-size: clamp(22px, 2.6vw, 28px);
+  font-style: normal;
+  letter-spacing: -0.02em;
+}
+
+.sell-sheet__spec-card-header--profile .sell-sheet__spec-card-subtitle {
+  opacity: 0.82;
+  letter-spacing: 0.12em;
+}
+
+.sell-sheet__profile-focus {
+  flex: none;
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  text-align: right;
+}
+
+.sell-sheet__profile-focus-line {
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.sell-sheet__spec-card-body--profile {
+  padding: 18px 18px 20px;
+  background: linear-gradient(180deg, #f3faf7 0%, #ffffff 55%);
+}
+
+.sell-sheet__profile-flavor-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.sell-sheet__profile-chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 7px 12px;
+  border-radius: 999px;
+  color: #0f3d2e;
+  border: 1px solid rgba(43, 124, 97, 0.35);
+  background: rgba(43, 124, 97, 0.1);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+}
+
+.sell-sheet__profile-lead {
+  margin: 0 0 18px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #1a3d33;
+  max-width: 52ch;
+}
+
+.sell-sheet__profile-foot {
+  display: grid;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(15, 61, 46, 0.12);
+}
+
+.sell-sheet__profile-foot-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2b7c61;
+}
+
+.sell-sheet__profile-pill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sell-sheet__profile-pill-list li {
+  margin: 0;
+}
+
+.sell-sheet__profile-pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: #0f3d2e;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 61, 46, 0.12);
+  box-shadow: 0 6px 14px rgba(15, 61, 46, 0.06);
 }
 
 .sell-sheet__spec-card {
@@ -1151,11 +1299,11 @@
   line-height: 1.05;
   font-weight: 700;
   letter-spacing: 0.01em;
-  font-style: italic;
+  font-style: normal;
 }
 
 .sell-sheet__spec-card-subtitle {
-  margin-top: 2px;
+  margin-top: 8px;
   font-family: "Poppins", sans-serif;
   font-size: 13px;
   font-weight: 600;
@@ -1180,6 +1328,15 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.sell-sheet__spec-card-meta-line-label {
+  font-weight: 600;
+}
+
+.sell-sheet__spec-card-meta-line-value {
+  font-weight: 400;
+  margin-left: 0.5rem;
 }
 
 .sell-sheet__spec-card-badge {
@@ -1291,6 +1448,17 @@
 
   .sell-sheet__uses_thumbs_details {
     grid-template-columns: 1fr;
+  }
+
+  .sell-sheet__spec-card-header--profile {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .sell-sheet__profile-focus {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    text-align: center;
   }
 
   .sell-sheet__forms {
