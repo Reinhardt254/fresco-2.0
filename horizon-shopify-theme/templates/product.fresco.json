@@ -57,11 +57,9 @@
         "related_max": 8,
         "related_title_prefix": "Related",
         "related_title_highlight": "Products",
-        "related_subtitle": "Discover more freeze-dried favorites to pair with this product."
+        "related_subtitle": "Discover more Fresco Flavors favorites to pair with this product."
       }
     }
   },
-  "order": [
-    "fresco_product_main"
-  ]
+  "order": ["fresco_product_main"]
 }

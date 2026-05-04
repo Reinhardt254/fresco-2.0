@@ -136,9 +136,7 @@
                   "blocks": {}
                 }
               },
-              "block_order": [
-                "text_xpVMaM"
-              ]
+              "block_order": ["text_xpVMaM"]
             },
             "text_fresco_rating": {
               "type": "text",
@@ -387,7 +385,7 @@
         "related_max": 8,
         "related_title_prefix": "Related",
         "related_title_highlight": "Products",
-        "related_subtitle": "Discover more freeze-dried favorites to pair with this product."
+        "related_subtitle": "Discover more Fresco Flavors favorites to pair with this product."
       }
     }
   },
