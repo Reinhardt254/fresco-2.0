@@ -250,12 +250,21 @@
 /* ---------- Toolbar ---------- */
 .products-toolbar {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 1rem 1.5rem;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   border-bottom: 0px solid #e8e8e8;
+  width: 100%;
+}
+
+.products-toolbar-right-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .products-search-wrap {
@@ -309,6 +318,8 @@
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .products-sort-wrap {
@@ -755,12 +766,20 @@
     max-width: none;
   }
 
+  .products-toolbar-right-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .products-results-count {
-    text-align: center;
+    text-align: left;
   }
 
   .products-toolbar-right {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .products-layout {

@@ -974,7 +974,7 @@
 
 @media (max-width: 768px) {
   .our-mission {
-    padding: 1rem 0 3rem 0;
+    padding: 3rem 0 3rem 0;
   }
 
   .our-mission-points-container {
@@ -1316,8 +1316,7 @@
 
 @media only screen and (max-width: 768px) {
   .partners-new {
-    padding: 2.5rem 0;
-    padding-top: 0;
+    padding: 1rem 0;
   }
 
   .partners-new .container {
