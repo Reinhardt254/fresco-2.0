@@ -886,9 +886,11 @@ body.no-scroll {
     margin-left: auto;
   }
 
-  .header-actions-mobile i {
+  .header-actions-mobile i, .header-actions-mobile a {
     cursor: pointer;
     transition: color 0.2s ease;
+    color: #101010;
+    line-height: 1;
   }
 
   .header-actions-mobile i:hover {
