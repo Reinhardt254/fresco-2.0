@@ -757,6 +757,16 @@
   .product-details-tabs-section {
     padding: 2rem 0 1rem 0;
   }
+
+  .product-details-tabs-nav {
+    gap: 0.5rem;
+    justify-content: space-between;
+  }
+
+  .product-details-tab-btn {
+    padding: 14px 5px;
+    justify-content: space-between;
+  }
 }
 
 /* Sell Sheet */
@@ -1489,6 +1499,7 @@
 
   .sell-sheet__copy {
     gap: 0rem;
+    padding-bottom: 1rem;
   }
 
   .sell-sheet__content {
