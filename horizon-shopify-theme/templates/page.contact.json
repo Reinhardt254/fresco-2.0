@@ -13,14 +13,15 @@
       "type": "fresco-contact-hero",
       "name": "Fresco Contact Hero",
       "settings": {
-        "background_image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4367.jpg",
+        "background_image": "shopify://shop_images/0A0A4367.jpg",
+        "background_image_url_fallback": "",
         "heading_prefix": "Contact",
         "heading_highlight": "Us",
         "subheading": "We're here to help you with any questions or concerns you may have.",
-        "overlay_top_left_url": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A7607.png",
-        "overlay_top_right_url": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A0462-scaled-1-1.png",
-        "overlay_bottom_left_url": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview-1.png",
-        "overlay_bottom_right_url": "https://plantechkenya.com/wp-content/uploads/2026/02/dried-herbs-spilled-from-glass-jar-white-background_1012140-1044.png"
+        "overlay_top_left": "shopify://shop_images/Untitled-design-3.png",
+        "overlay_top_right": "shopify://shop_images/Untitled-design-2-3.png",
+        "overlay_bottom_left": "shopify://shop_images/Untitled-design-2-4.png",
+        "overlay_bottom_right": "shopify://shop_images/Untitled-design-2-1-1.png"
       }
     },
     "fresco_contact_main_t8Ns5W": {
@@ -49,5 +50,8 @@
       }
     }
   },
-  "order": ["fresco_contact_hero_Q2v4Lm", "fresco_contact_main_t8Ns5W"]
+  "order": [
+    "fresco_contact_hero_Q2v4Lm",
+    "fresco_contact_main_t8Ns5W"
+  ]
 }

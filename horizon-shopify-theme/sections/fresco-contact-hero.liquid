@@ -7,28 +7,60 @@
   >
   <div class="layout-content">
     <h1>{{ section.settings.heading_prefix }} <span class="highlight">{{ section.settings.heading_highlight }}</span></h1>
-    <p>
+    {% comment %} <p>
       {{ section.settings.subheading }}
-    </p>
+    </p> {% endcomment %}
   </div>
 
-  <div class="hero-overlay">
+  <div class="hero-overlay-global">
     <div class="overlay-items">
-      <div class="top-left-overlay overlay-item">
-        <img src="{{ section.settings.overlay_top_left_url }}" alt="" width="400" height="400">
-      </div>
+      {%- if section.settings.overlay_top_left != blank -%}
+        <div class="top-left-overlay overlay-item">
+          <img
+            src="{{ section.settings.overlay_top_left | image_url: width: 400 }}"
+            alt=""
+            width="200"
+            height="200"
+            loading="lazy"
+          >
+        </div>
+      {%- endif -%}
 
-      <div class="top-right-overlay overlay-item">
-        <img src="{{ section.settings.overlay_top_right_url }}" alt="" width="400" height="400">
-      </div>
+      {%- if section.settings.overlay_top_right != blank -%}
+        <div class="top-right-overlay overlay-item">
+          <img
+            src="{{ section.settings.overlay_top_right | image_url: width: 400 }}"
+            alt=""
+            width="200"
+            height="200"
+            loading="lazy"
+          >
+        </div>
+      {%- endif -%}
 
-      <div class="bottom-left-overlay overlay-item">
-        <img src="{{ section.settings.overlay_bottom_left_url }}" alt="" width="400" height="400">
-      </div>
+      {%- if section.settings.overlay_bottom_left != blank -%}
+        <div class="bottom-left-overlay overlay-item">
+          <img
+            src="{{ section.settings.overlay_bottom_left | image_url: width: 400 }}"
+            alt=""
+            width="200"
+            height="200"
+            loading="lazy"
+          >
+        </div>
+      {%- endif -%}
 
-      <div class="bottom-right-overlay overlay-item">
-        <img src="{{ section.settings.overlay_bottom_right_url }}" alt="" width="400" height="400">
-      </div>
+      {%- if section.settings.overlay_bottom_right != blank -%}
+        <div class="bottom-right-overlay overlay-item">
+          <img
+            src="{{ section.settings.overlay_bottom_right | image_url: width: 400 }}"
+            alt=""
+            width="200"
+            height="200"
+            loading="lazy"
+          >
+        </div>
+      {%- endif -%}
     </div>
   </div>
 </section>
@@ -44,10 +76,10 @@
     { "type": "text", "id": "heading_prefix", "label": "Heading prefix", "default": "Contact" },
     { "type": "text", "id": "heading_highlight", "label": "Heading highlight", "default": "Us" },
     { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "We're here to help you with any questions or concerns you may have." },
-    { "type": "text", "id": "overlay_top_left_url", "label": "Top left overlay URL", "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/04/0A0A7607.png" },
-    { "type": "text", "id": "overlay_top_right_url", "label": "Top right overlay URL", "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A0462-scaled-1-1.png" },
-    { "type": "text", "id": "overlay_bottom_left_url", "label": "Bottom left overlay URL", "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview-1.png" },
-    { "type": "text", "id": "overlay_bottom_right_url", "label": "Bottom right overlay URL", "default": "https://plantechkenya.com/wp-content/uploads/2026/02/dried-herbs-spilled-from-glass-jar-white-background_1012140-1044.png" }
+    { "type": "image_picker", "id": "overlay_top_left", "label": "Top left overlay image" },
+    { "type": "image_picker", "id": "overlay_top_right", "label": "Top right overlay image" },
+    { "type": "image_picker", "id": "overlay_bottom_left", "label": "Bottom left overlay image" },
+    { "type": "image_picker", "id": "overlay_bottom_right", "label": "Bottom right overlay image" }
   ],
   "presets": [{ "name": "Fresco Contact Hero" }]
 }

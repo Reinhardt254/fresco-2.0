@@ -1,47 +1,39 @@
-<section class="product-page-layout">
-  <div class="bottom-container">
-    <div class="text-content">
-      {%- if collection != blank -%}
-        <h2>{{ collection.products_count }}+</h2>
-        <h3>{{ collection.title }}</h3>
-        {%- if collection.description != blank -%}
-          <p>{{ collection.description }}</p>
-        {%- else -%}
-          <p>{{ section.settings.description }}</p>
-        {%- endif -%}
-      {%- else -%}
-        <h2>{{ section.settings.count_text }}</h2>
-        <h3>{{ section.settings.subtitle }}</h3>
-        <p>{{ section.settings.description }}</p>
+<section class="product-page-hero" {{ section.shopify_attributes }}>
+  <div class="product-page-hero-inner">
+    <div class="product-page-hero-media" aria-hidden="true">
+      {%- if section.settings.hero_image != blank -%}
+        <img
+          class="product-page-hero-image"
+          src="{{ section.settings.hero_image | image_url: width: 2400 }}"
+          alt="{{ section.settings.hero_image.alt | default: section.settings.hero_image_alt | escape }}"
+          width="2400"
+          height="1350"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        >
+      {%- elsif section.settings.hero_image_url_fallback != blank -%}
+        <img
+          class="product-page-hero-image"
+          src="{{ section.settings.hero_image_url_fallback }}"
+          alt="{{ section.settings.hero_image_alt | escape }}"
+          width="2400"
+          height="1350"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        >
       {%- endif -%}
     </div>
 
-    <div class="overlay-center-bottom">
-      <img
-        src="{{ section.settings.overlay_center_url }}"
-        alt=""
-        width="500"
-        height="500"
-        loading="lazy"
-      >
-    </div>
-    <div class="overlay-left-bottom">
-      <img
-        src="{{ section.settings.overlay_left_url }}"
-        alt=""
-        width="500"
-        height="500"
-        loading="lazy"
-      >
-    </div>
-    <div class="overlay-right-bottom">
-      <img
-        src="{{ section.settings.overlay_right_url }}"
-        alt=""
-        width="500"
-        height="500"
-        loading="lazy"
-      >
+    <div class="product-page-hero-content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="product-page-hero-eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h1 class="product-page-hero-title">
+        {{ section.settings.title_main }}
+        <span class="product-page-hero-title-accent">{{ section.settings.title_accent }}</span>
+      </h1>
     </div>
   </div>
 </section>
@@ -49,51 +41,57 @@
 {% schema %}
 {
   "name": "Fresco Collection Hero",
-  "tag": "div",
+  "tag": "section",
+  "class": "section-fresco-collection-hero",
   "enabled_on": {
     "templates": ["collection", "list-collections"]
   },
   "settings": [
     {
-      "type": "text",
-      "id": "count_text",
-      "label": "Count text (fallback)",
-      "default": "20+"
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero background image"
     },
     {
       "type": "text",
-      "id": "subtitle",
-      "label": "Subtitle (fallback)",
-      "default": "Herbs"
-    },
-    {
-      "type": "textarea",
-      "id": "description",
-      "label": "Description (fallback)",
-      "default": "Organically grown herbs, carefully harvested at peak freshness and freeze-dried to lock in flavor, color and aroma packed for convenience. No chopping, no cleaning, just instant fresco flavor added to soups, sauces and salads. Elevate your cooking from good to unforgettable."
+      "id": "hero_image_url_fallback",
+      "label": "Hero image URL fallback",
+      "default": "https://harvestepz.com/wp-content/uploads/2026/05/Untitled-design-1-1.png"
     },
     {
       "type": "text",
-      "id": "overlay_center_url",
-      "label": "Center overlay image URL",
-      "default": "https://img.freepik.com/free-vector/hand-drawn-basil-drawing-illustration_23-2150840443.jpg"
+      "id": "hero_image_alt",
+      "label": "Hero image alt text",
+      "default": "Fresco Flavors herbs"
     },
     {
       "type": "text",
-      "id": "overlay_left_url",
-      "label": "Left overlay image URL",
-      "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview.png"
+      "id": "eyebrow",
+      "label": "Eyebrow (optional)",
+      "info": "Small line above the title. Leave blank to hide."
     },
     {
       "type": "text",
-      "id": "overlay_right_url",
-      "label": "Right overlay image URL",
-      "default": "https://plantechkenya.com/wp-content/uploads/2026/02/dried-herbs-spilled-from-glass-jar-white-background_1012140-1044.png"
+      "id": "title_main",
+      "label": "Title (first line)",
+      "default": "Fresco Flavors"
+    },
+    {
+      "type": "text",
+      "id": "title_accent",
+      "label": "Title accent (highlight line)",
+      "default": "Freeze-Dried Herbs"
     }
   ],
   "presets": [
     {
-      "name": "Fresco Collection Hero"
+      "name": "Fresco Collection Hero",
+      "settings": {
+        "hero_image_url_fallback": "https://harvestepz.com/wp-content/uploads/2026/05/Untitled-design-1-1.png",
+        "hero_image_alt": "Fresco Flavors herbs",
+        "title_main": "Fresco Flavors",
+        "title_accent": "Freeze-Dried Herbs"
+      }
     }
   ]
 }

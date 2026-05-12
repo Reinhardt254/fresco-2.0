@@ -13,10 +13,10 @@
       "type": "fresco-about-hero",
       "name": "Fresco About Hero",
       "settings": {
-        "overlay_top_left": "shopify://shop_images/0A0A0462-scaled-1-1.png",
-        "overlay_top_right": "shopify://shop_images/0A0A7607.png",
-        "overlay_bottom_left": "shopify://shop_images/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview-1.png",
-        "overlay_bottom_right": "shopify://shop_images/0A0A9691-1-scaled-removebg-preview.png",
+        "overlay_top_left": "shopify://shop_images/Untitled-design-3.png",
+        "overlay_top_right": "shopify://shop_images/Untitled-design-2-3.png",
+        "overlay_bottom_left": "shopify://shop_images/Untitled-design-2-4.png",
+        "overlay_bottom_right": "shopify://shop_images/Untitled-design-2-1-1.png",
         "hero_image": "shopify://shop_images/team.jpg",
         "hero_image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4403.jpg",
         "hero_title": "Peak Harvest Quality, Perfectly Preserved.",
@@ -46,40 +46,55 @@
           "type": "process_step",
           "settings": {
             "step_number": "1",
-            "icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/sprout.png",
+            "icon": "shopify://shop_images/smart-house_6053298_1.png",
+            "icon_url_fallback": "",
             "icon_alt": "Planting icon",
-            "step_subhead": "Step 01",
-            "step_description": "Planting"
+            "step_subhead": "Planting",
+            "step_description": "Seedlings are grown and distributed to vetted farmers, ensuring rigorous quality control from the very start."
           }
         },
         "process_step_2": {
           "type": "process_step",
           "settings": {
             "step_number": "2",
-            "icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/farming.png",
+            "icon": "shopify://shop_images/farming_1.png",
+            "icon_url_fallback": "",
             "icon_alt": "Harvesting icon",
-            "step_subhead": "Step 02",
-            "step_description": "Harvesting"
+            "step_subhead": "Harvesting",
+            "step_description": "Herbs are harvested at peak maturity from our controlled organic farms, maximizing natural potency and flavor."
           }
         },
         "process_step_3": {
           "type": "process_step",
           "settings": {
             "step_number": "3",
-            "icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/production-automation.png",
+            "icon": "shopify://shop_images/defrost_5660324.png",
+            "icon_url_fallback": "",
             "icon_alt": "Processing icon",
-            "step_subhead": "Step 03",
-            "step_description": "Processing & Packaging"
+            "step_subhead": "Processing",
+            "step_description": "Herbs are flash freeze-dried at our facility, perfectly preserving retail-grade flavor, aroma, and vibrant structure."
           }
         },
         "process_step_4": {
           "type": "process_step",
           "settings": {
             "step_number": "4",
-            "icon_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/supply-chain.png",
+            "icon": "shopify://shop_images/conveyor_2460616.png",
+            "icon_url_fallback": "",
             "icon_alt": "Distribution icon",
-            "step_subhead": "Step 04",
-            "step_description": "Distribution & Retail"
+            "step_subhead": "Packaging",
+            "step_description": "Traceable, batch-coded packaging ensures product integrity and full safety compliance for your retail shelves."
+          }
+        },
+        "process_step_Vy8fk9": {
+          "type": "process_step",
+          "settings": {
+            "step_number": "5",
+            "icon": "shopify://shop_images/supply-chain.png",
+            "icon_url_fallback": "",
+            "icon_alt": "Distribution icon",
+            "step_subhead": "Distribution",
+            "step_description": "Streamlined logistics deliver export-ready herbs directly to your distribution centers within guaranteed timelines."
           }
         }
       },
@@ -87,7 +102,8 @@
         "process_step_1",
         "process_step_2",
         "process_step_3",
-        "process_step_4"
+        "process_step_4",
+        "process_step_Vy8fk9"
       ],
       "name": "Fresco About Process",
       "settings": {
@@ -118,7 +134,7 @@
           "settings": {
             "item_number": "-03",
             "item_title": "Social & Environmental Impact",
-            "item_text": "We support sustainable agriculture and responsible production while creating employment opportunities for local communities across Kenya, from farms to processing facilities."
+            "item_text": "We champion sustainable and regenerative agriculture, fostering responsible production and creating employment opportunities for local communities across Kenya, from farm to facility."
           }
         }
       },
@@ -140,7 +156,9 @@
         "stat_card_1": {
           "type": "stat_card",
           "settings": {
-            "icon_class": "fa-solid fa-fire-flame-curved",
+            "icon_image": "shopify://shop_images/2347743.png",
+            "icon_image_url_fallback": "",
+            "icon_alt": "",
             "value": "Full flavor",
             "label": "100% natural <br>in every recipe"
           }
@@ -148,15 +166,19 @@
         "stat_card_2": {
           "type": "stat_card",
           "settings": {
-            "icon_class": "fa-solid fa-seedling",
+            "icon_image": "shopify://shop_images/11307589.png",
+            "icon_image_url_fallback": "",
+            "icon_alt": "",
             "value": "Zero waste",
-            "label": "24 + Months <br>shelf life"
+            "label": "24+ Months <br>shelf life"
           }
         },
         "stat_card_3": {
           "type": "stat_card",
           "settings": {
-            "icon_class": "fa-solid fa-scissors",
+            "icon_image": "shopify://shop_images/cooking_3972122.png",
+            "icon_image_url_fallback": "",
+            "icon_alt": "",
             "value": "Labor saving",
             "label": "Quick & Easy<br>to use"
           }
@@ -170,20 +192,30 @@
       "name": "Fresco About Recipes",
       "settings": {
         "kicker": "Everyday Recipes",
-        "heading": "Cook with Our Freeze-Dried Herbs",
-        "copy": "Turn simple dishes into standout meals with a single sprinkle. Our freeze-dried herbs lock in garden-fresh flavor, so you can cook vibrant pastas, soups, salads, and grills in minutes-no washing, chopping, or waste.",
-        "badge_image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/organic.png",
+        "heading": "Cook with Fresco Flavors Herbs",
+        "copy": "Turn simple dishes into standout meals with a single sprinkle. Our freeze-dried herbs lock in garden-fresh flavor, so you can cook vibrant pastas, soups, salads, and grills in minutes—no washing, chopping, or waste.",
+        "badge_image": "shopify://shop_images/organic_1.png",
+        "badge_image_url_fallback": "",
         "badge_image_alt": "Organic badge",
-        "col1_large_image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/Product-development45.jpg",
+        "col1_large_image": "shopify://shop_images/vegetables-frying-pan_23-2147753689.jpg",
+        "col1_large_image_url_fallback": "",
         "col1_large_image_alt": "Fresh artisan salad bowl",
-        "col1_small_image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/closeup-tumeric-powder-spice-spoon.jpg",
+        "col1_large_link": "https://frescofoodservice.vercel.app/",
+        "col1_small_image": "shopify://shop_images/stir-frying-beef-with-sweet-peppers-green-beans_2829-20111.jpg",
+        "col1_small_image_url_fallback": "",
         "col1_small_image_alt": "Artisan pasta dish",
-        "col2_small_image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/Supplementspic.jpg",
+        "col1_small_link": "",
+        "col2_small_image": "shopify://shop_images/tomato-soup-with-basil-bowl_114579-11606.jpg",
+        "col2_small_image_url_fallback": "",
         "col2_small_image_alt": "Gourmet sandwich stack",
-        "col2_large_image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/bowl-green-olive-oil-with-wooden-bowl-basil.jpg",
+        "col2_small_link": "",
+        "col2_large_image": "shopify://shop_images/grilled-chicken-breasts-with-vegetables_23-2148189826.jpg",
+        "col2_large_image_url_fallback": "",
         "col2_large_image_alt": "Crispy side dish platter",
+        "col2_large_link": "",
         "button_label": "View All Recipes",
-        "button_link": "shopify://blogs/news"
+        "button_link": "shopify://blogs/news",
+        "button_open_new_tab": false
       }
     },
     "fresco_cta_UihjDD": {

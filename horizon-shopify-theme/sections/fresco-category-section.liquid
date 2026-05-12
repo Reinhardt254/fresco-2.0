@@ -1,5 +1,5 @@
 {%- comment -%}
-  Fresco Categories section - dynamic blocks, each linked to a Shopify collection.
+  Fresco Categories section - dynamic blocks, each can link anywhere (optional collection fallback).
   Uses existing Swiper init in `assets/fresco/scripts/index.js` for `.category-swiper`.
 {%- endcomment -%}
 
@@ -66,8 +66,9 @@
                       {%- endif -%}
                     </p>
                     <a
-                      href="{% if col != blank %}{{ col.url }}{% else %}/collections{% endif %}"
+                      href="{% if block.settings.link_url != blank %}{{ block.settings.link_url }}{% elsif col != blank %}{{ col.url }}{% else %}/collections{% endif %}"
                       class="category-link"
+                      {% if block.settings.link_open_new_tab %}target="_blank" rel="noopener"{% endif %}
                     >
                       {{ block.settings.link_text }}
                     </a>
@@ -200,6 +201,18 @@
           "id": "link_text",
           "label": "Link text",
           "default": "Explore collection"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL (optional)",
+          "info": "If set, this overrides the collection link."
+        },
+        {
+          "type": "checkbox",
+          "id": "link_open_new_tab",
+          "label": "Open link in new tab",
+          "default": false
         },
         {
           "type": "image_picker",

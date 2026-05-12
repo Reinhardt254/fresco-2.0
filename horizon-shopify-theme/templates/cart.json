@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "fresco_cart_main": {
@@ -36,9 +45,9 @@
       "settings": {
         "title_prefix": "Shopping",
         "title_highlight": "Cart",
-        "overlay_center_url": "https://img.freepik.com/free-vector/hand-drawn-basil-drawing-illustration_23-2150840443.jpg",
-        "overlay_left_url": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview.png",
-        "overlay_right_url": "https://plantechkenya.com/wp-content/uploads/2026/02/dried-herbs-spilled-from-glass-jar-white-background_1012140-1044.png",
+        "overlay_center_url": "",
+        "overlay_left": "shopify://shop_images/Untitled-design-2-4.png",
+        "overlay_right": "shopify://shop_images/Untitled-design-2-1-1.png",
         "recommended_collection": "all",
         "rec_max_products": 8,
         "rec_title_prefix": "Recommended",

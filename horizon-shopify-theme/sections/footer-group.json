@@ -132,7 +132,7 @@
       "settings": {
         "enable_newsletter": true,
         "newsletter_heading": "Subscribe Newsletter",
-        "newsletter_desc": "Get e-mail updates about our latest shop and special offers.",
+        "newsletter_desc": "Get e-mail updates about our latest products and news",
         "show_policy": false,
         "show_payment_icons": true
       }

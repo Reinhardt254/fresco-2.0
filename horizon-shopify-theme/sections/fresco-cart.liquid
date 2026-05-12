@@ -7,33 +7,28 @@
           {{ section.settings.title_prefix }} <span class="highlight">{{ section.settings.title_highlight }}</span>
         </h2>
       </div>
-      <div class="overlay-center-bottom">
-        <img
-          src="{{ section.settings.overlay_center_url }}"
-          alt=""
-          width="500"
-          height="500"
-          loading="lazy"
-        >
-      </div>
-      <div class="overlay-left-bottom">
-        <img
-          src="{{ section.settings.overlay_left_url }}"
-          alt=""
-          width="500"
-          height="500"
-          loading="lazy"
-        >
-      </div>
-      <div class="overlay-right-bottom">
-        <img
-          src="{{ section.settings.overlay_right_url }}"
-          alt=""
-          width="500"
-          height="500"
-          loading="lazy"
-        >
-      </div>
+      {%- if section.settings.overlay_left != blank -%}
+        <div class="overlay-left-bottom">
+          <img
+            src="{{ section.settings.overlay_left | image_url: width: 1000 }}"
+            alt=""
+            width="500"
+            height="500"
+            loading="lazy"
+          >
+        </div>
+      {%- endif -%}
+      {%- if section.settings.overlay_right != blank -%}
+        <div class="overlay-right-bottom">
+          <img
+            src="{{ section.settings.overlay_right | image_url: width: 1000 }}"
+            alt=""
+            width="500"
+            height="500"
+            loading="lazy"
+          >
+        </div>
+      {%- endif -%}
     </div>
   </section>
 
@@ -298,7 +293,7 @@
     transition: background 0.2s;
   }
   .fresco-cart-empty-btn:hover {
-    background: #009f5d;
+    background: var(--dark-green-background);
   }
 </style>
 
@@ -432,16 +427,14 @@
       "default": "https://img.freepik.com/free-vector/hand-drawn-basil-drawing-illustration_23-2150840443.jpg"
     },
     {
-      "type": "text",
-      "id": "overlay_left_url",
-      "label": "Left overlay image URL",
-      "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2025/11/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview.png"
+      "type": "image_picker",
+      "id": "overlay_left",
+      "label": "Left bottom overlay image"
     },
     {
-      "type": "text",
-      "id": "overlay_right_url",
-      "label": "Right overlay image URL",
-      "default": "https://plantechkenya.com/wp-content/uploads/2026/02/dried-herbs-spilled-from-glass-jar-white-background_1012140-1044.png"
+      "type": "image_picker",
+      "id": "overlay_right",
+      "label": "Right bottom overlay image"
     },
     {
       "type": "collection",

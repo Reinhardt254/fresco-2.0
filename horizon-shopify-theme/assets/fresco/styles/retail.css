@@ -111,11 +111,12 @@
 
 .retail-hero-title {
   font-family: "Playfair Display", serif;
-  font-size: clamp(2rem, 5vw, 4.5rem);
-  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
   line-height: 1.2;
   color: #fff;
   margin: 0 0 0.75rem;
+  text-transform: uppercase;
 }
 
 .retail-hero-title .highlight {
@@ -151,7 +152,7 @@
 
 .retail-section-content::after {
   content: "";
-  background: url(https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f…&w=1060)
+  background: url(https://harvestepz.com/wp-content/uploads/2026/04/Frsco-Herbs-Background.png)
     no-repeat center center;
   background-size: cover;
   position: absolute;
@@ -168,7 +169,7 @@
 .retail-intro-text {
   position: relative;
   z-index: 10;
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.75;
   color: #0f3d2e;
@@ -315,6 +316,7 @@
   margin: 0rem 0;
   position: relative;
   z-index: 10;
+  text-transform: capitalize;
 }
 
 .retail-section-dark .retail-section-heading {
@@ -331,6 +333,7 @@
   height: 2px;
   background-color: var(--primary-green);
   margin: 0.5rem 0 0.5rem 0;
+  align-self: center !important;
 }
 
 .retail-section-heading-center {
@@ -481,7 +484,7 @@
 
 .retail-how-it-works::after {
   content: "";
-  background: url(https://img.freepik.com/free-vector/culinary-herbs-background_8365-49.jpg?t=st=1772527487~exp=1772531087~hmac=c83917f…&w=1060)
+  background: url(https://harvestepz.com/wp-content/uploads/2026/04/Frsco-Herbs-Background.png)
     no-repeat center center;
   background-size: cover;
   position: absolute;
@@ -549,8 +552,9 @@
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 600;
   color: #0f3d2e;
-  margin: 0 0 0.5rem;
+  margin: 0rem;
   letter-spacing: 0.02em;
+  line-height: 1.2;
 }
 
 .retail-how-it-works-lead {
@@ -740,7 +744,7 @@
   .retail-steps-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    max-width: 360px;
+    max-width: none;
     margin-left: auto;
     margin-right: auto;
   }
@@ -896,7 +900,7 @@
 
 @media (max-width: 480px) {
   .retail-hero {
-    min-height: 400px;
+    min-height: 450px;
   }
 
   .retail-hero-title {
@@ -905,6 +909,7 @@
 
   .retail-hero-tagline {
     font-size: 1.1rem;
+    margin-bottom: 1rem;
   }
 
   .retail-intro-text {

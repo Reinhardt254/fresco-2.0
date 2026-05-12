@@ -1,392 +1,340 @@
 .contact-page {
-   background: #ffffff;
-   color: #2c2c2c;
-   padding: 0rem 0 0rem 0;
-   min-height: 70vh;
-   overflow-x: hidden;
- }
- 
- .contact-page-layout {
-   position: relative;
-   width: 100%;
-   height: 600px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
-  
- .contact-page-layout::before {
-   content: "";
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background-color: #0f3d2e;
-   opacity: 0.75;
-   z-index: 1;
- }
-
- .contact-page-layout .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: #0f3d2e00;
-  opacity: 0.75;
-  pointer-events: none;
-  height: 100%;
-  width: 100%;
-  z-index: 2;
-  overflow: hidden;
- }
-
- .contact-page-layout .overlay-items {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
- }
-
- .contact-page-layout .overlay-item {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
- }
-
- .contact-page-layout .overlay-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
- }
-
-
- .contact-page-layout .top-left-overlay {
-  top: 0;
-  left: -10px;
-  transform: rotate(90deg);
- }
-
- .contact-page-layout .top-right-overlay {
-  top: 0;
-  right: -10px;
-  transform: rotate(180deg);
- }
-
- .contact-page-layout .bottom-left-overlay {
-  bottom: 0;
-  left: -10px;
- }
-
- .contact-page-layout .bottom-right-overlay {
-  bottom: -70px;
-  right: 0;
-  transform: rotate(0deg);
-  height: 300px;
-  width: auto;
- }
-
-
- .contact-page-layout img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
- }
- 
- .contact-page-layout .layout-content {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   width: 100%;
-   max-width: 800px;
-   height: 100%;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   z-index: 10;
- }
- 
- .contact-page-layout .layout-content h1 {
-   font-size: 4rem;
-   font-weight: 700;
-   color: #fff;
-   text-align: center;
-   text-transform: uppercase;
-   letter-spacing: 0.05em;
- }
-
- .contact-page-layout .layout-content h1 .highlight {
-  color: #81b03f;
- }
- 
- .contact-page-layout .layout-content p {
-   font-size: 1.25rem;
-   font-weight: 400;
-   text-align: center;
-   color: #fff;
-   letter-spacing: normal;
- }
-
-/* Contact main: left = cards + map, right = form */
-.contact-main {
-  padding: 4rem 0;
-  background: #fcfcfc;
-  position: relative;
-  z-index: 10;
+  background: #ffffff;
+  color: #2c2c2c;
+  padding: 0rem 0 0rem 0;
+  min-height: 70vh;
+  overflow-x: hidden;
 }
 
-.contact-main::after {
+.contact-page-layout {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.contact-page-layout::before {
   content: "";
-  background: url("https://img.freepik.com/premium-vector/wild-grass-seamless-pattern-field-herbs-garden-medical-plants-useful-seasonings-hand-drawn-vector-illustration_225753-1806.jpg?w=1480")
-    no-repeat center center;
-  background-size: cover;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.005;
-  z-index: 5;
+  background-color: #0f3d2e;
+  opacity: 0.75;
+  z-index: 1;
+}
+
+.contact-page-layout .hero-overlay {
+ position: absolute;
+ inset: 0;
+ background: #0f3d2e00;
+ opacity: 0.75;
+ pointer-events: none;
+ height: 100%;
+ width: 100%;
+ z-index: 2;
+ overflow: hidden;
+}
+
+.contact-page-layout img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-page-layout .layout-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.contact-page-layout .layout-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-page-layout .layout-content h1 .highlight {
+ color: #81b03f;
+}
+
+.contact-page-layout .layout-content p {
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+  letter-spacing: normal;
+}
+
+/* Contact main: left = cards + map, right = form */
+.contact-main {
+ padding: 4rem 0;
+ background: #fcfcfc;
+ position: relative;
+ z-index: 10;
+}
+
+.contact-main::after {
+ content: "";
+ background: url("https://img.freepik.com/premium-vector/wild-grass-seamless-pattern-field-herbs-garden-medical-plants-useful-seasonings-hand-drawn-vector-illustration_225753-1806.jpg?w=1480")
+   no-repeat center center;
+ background-size: cover;
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ opacity: 0.005;
+ z-index: 5;
 }
 
 .contact-main-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 92%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
-  position: relative;
-  z-index: 10;
+ max-width: 1200px;
+ margin: 0 auto;
+ width: 92%;
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 3rem;
+ align-items: start;
+ position: relative;
+ z-index: 10;
 }
 
 /* Left: 2x2 contact cards + map */
 .contact-main-left {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+ display: flex;
+ flex-direction: column;
+ gap: 1.5rem;
 }
 
 .contact-cards-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 1rem;
 }
 
 .contact-card {
-  background-color: #e4e3e380;
-  border-radius: 10px;
-  padding: 1.5rem 1.25rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  position: relative;
-  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); */
+ background-color: #e4e3e380;
+ border-radius: 10px;
+ padding: 1.5rem 1.25rem;
+ text-align: center;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 0.75rem;
+ position: relative;
+ /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); */
 }
 
 .contact-card-icon {
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary-green);
-  font-size: 2rem;
+ width: 48px;
+ height: 48px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: var(--primary-green);
+ font-size: 2rem;
 }
 
 .contact-card-label {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #2c2c2c;
-  margin: 0;
+ font-size: 1rem;
+ font-weight: 700;
+ color: #2c2c2c;
+ margin: 0;
 }
 
 .contact-card-detail {
-  font-size: 0.9rem;
-  color: #4a4a4a;
-  margin: 0;
-  line-height: 1.4;
+ font-size: 0.9rem;
+ color: #4a4a4a;
+ margin: 0;
+ line-height: 1.4;
 }
 
 .contact-card-detail a {
-  color: #4a4a4a;
-  text-decoration: none;
+ color: #4a4a4a;
+ text-decoration: none;
 }
 
 .contact-card-detail a:hover {
-  color: var(--primary-green);
+ color: var(--primary-green);
 }
 
 .contact-map-wrap {
-  width: 100%;
-  height: 320px;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #eee;
+ width: 100%;
+ height: 330px;
+ border-radius: 8px;
+ overflow: hidden;
+ background: #eee;
 }
 
 .contact-map-wrap iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
+ display: block;
+ width: 100%;
+ height: 100%;
 }
 
 /* Right: Get In Touch form */
 .contact-main-right {
-  padding: 0 0 0 0.5rem;
+ padding: 0 0 0 0.5rem;
 }
 
 .contact-form-heading {
-  font-size: 1.875rem;
-  font-weight: 700;
-  color: #2c2c2c;
-  margin: 0 0 0.75rem;
+ font-size: 1.875rem;
+ font-weight: 700;
+ color: #2c2c2c;
+ margin: 0 0 0.75rem;
 }
 
 .contact-form-desc {
-  font-size: 0.95rem;
-  color: #6a6a6a;
-  line-height: 1.6;
-  margin: 0 0 1.75rem;
+ font-size: 0.95rem;
+ color: #6a6a6a;
+ line-height: 1.6;
+ margin: 0 0 1.75rem;
 }
 
 .contact-form-fields {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+ display: flex;
+ flex-direction: column;
+ gap: 1.25rem;
 }
 
 .contact-field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
+ display: flex;
+ flex-direction: column;
+ gap: 0.35rem;
 }
 
 .contact-field label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #2c2c2c;
+ font-size: 0.9rem;
+ font-weight: 600;
+ color: #2c2c2c;
 }
 
 .contact-form-input,
 .contact-form-textarea {
-  width: 100%;
-  padding: 0.85rem 1rem;
-  font-size: 1rem;
-  font-family: inherit;
-  color: #222;
-  background: #fff;
-  border: 1px solid #d4d4d4;
-  border-radius: 8px;
-  box-sizing: border-box;
-  transition: border-color 0.2s;
+ width: 100%;
+ padding: 0.85rem 1rem;
+ font-size: 1rem;
+ font-family: inherit;
+ color: #222;
+ background: #fff;
+ border: 1px solid #d4d4d4;
+ border-radius: 8px;
+ box-sizing: border-box;
+ transition: border-color 0.2s;
 }
 
 .contact-form-input::placeholder,
 .contact-form-textarea::placeholder {
-  color: #999;
+ color: #999;
 }
 
 .contact-form-input:focus,
 .contact-form-textarea:focus {
-  outline: none;
-  border-color: var(--primary-green);
+ outline: none;
+ border-color: var(--primary-green);
 }
 
 .contact-form-textarea {
-  resize: vertical;
-  min-height: 200px;
+ resize: vertical;
+ min-height: 200px;
 }
 
 .contact-form-submit {
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #fff;
-  background-color: #0f3d2e;
-  border: none;
-  border-radius: 5px !important;
-  cursor: pointer;
-  margin-top: 0.25rem;
-  transition: background-color 0.2s;
+ padding: 1rem 1.5rem;
+ font-size: 1rem;
+ font-weight: 700;
+ color: #fff;
+ background-color: var(--primary-green);
+ border: none;
+ border-radius: 5px !important;
+ cursor: pointer;
+ margin-top: 0.25rem;
+ transition: background-color 0.2s;
 }
- 
+
 .contact-form-submit:hover {
-  background-color: #9e4730;
+ background-color: var(--dark-green-background);
 }
 
 @media (max-width: 900px) {
-  .contact-main-container {
-    grid-template-columns: 1fr;
-    width: 94%;
-  }
+ .contact-main-container {
+   grid-template-columns: 1fr;
+   width: 94%;
+ }
 
-  .contact-main-right {
-    padding: 0;
-  }
+ .contact-main-right {
+   padding: 0;
+ }
 
-  .contact-cards-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+ .contact-cards-grid {
+   grid-template-columns: 1fr 1fr;
+ }
 
-  .contact-card {
-    background-color: #e4e3e380;
-    border-radius: 10px;
-    padding: 1.5rem 1.25rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    position: relative;
-    /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); */
-  }
+ .contact-card {
+   background-color: #e4e3e380;
+   border-radius: 10px;
+   padding: 1.5rem 1.25rem;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 0.75rem;
+   position: relative;
+   /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); */
+ }
 
-  .contact-map-wrap {
-    height: 280px;
-  }
+ .contact-map-wrap {
+   height: 280px;
+ }
 }
 
 @media (max-width: 560px) {
-  .contact-page-layout .layout-content {
-    max-width: 90vw;
-  }
+ .contact-page-layout .layout-content {
+   max-width: 90vw;
+ }
 
-  .contact-page-layout {
-    height: 350px;
-  }
+ .contact-page-layout {
+   height: 450px;
+ }
 
-  .contact-main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3.5rem;
-  }
+ .contact-main-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 3.5rem;
+ }
 
-  .contact-main {
-    padding: 2rem 0 4rem 0;
-  }
-  
-  .contact-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+ .contact-main {
+   padding: 2rem 0 4rem 0;
+ }
+ 
+ .contact-cards-grid {
+   grid-template-columns: repeat(2, 1fr);
+ }
 
-  .contact-page-layout .layout-content h1 {
-    font-size: 2.5rem;
-  }
+ .contact-page-layout .layout-content h1 {
+   font-size: 2.5rem;
+ }
 
-  .contact-page-layout .layout-content p {
-    font-size: 1rem;
-  }
+ .contact-page-layout .layout-content p {
+   font-size: 1rem;
+ }
 }
 
- 

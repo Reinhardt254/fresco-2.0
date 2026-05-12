@@ -12,12 +12,49 @@
     "fresco_retail_hero_v4Km8Q": {
       "type": "fresco-retail-hero",
       "name": "Fresco Retail Hero",
+      "blocks": {
+        "retail_title_seg_1": {
+          "type": "title_segment",
+          "settings": {
+            "text": "Your supply remains as",
+            "highlight": false
+          }
+        },
+        "retail_title_seg_2": {
+          "type": "title_segment",
+          "settings": {
+            "text": "stable ",
+            "highlight": true
+          }
+        },
+        "retail_title_seg_3": {
+          "type": "title_segment",
+          "settings": {
+            "text": "as it is",
+            "highlight": false
+          }
+        },
+        "retail_title_seg_4": {
+          "type": "title_segment",
+          "settings": {
+            "text": " scalable. ",
+            "highlight": true
+          }
+        }
+      },
+      "block_order": [
+        "retail_title_seg_1",
+        "retail_title_seg_2",
+        "retail_title_seg_3",
+        "retail_title_seg_4"
+      ],
       "settings": {
+        "overlay_top_left": "shopify://shop_images/Untitled-design-3.png",
+        "overlay_top_right": "shopify://shop_images/Untitled-design-2-3.png",
+        "overlay_bottom_left": "shopify://shop_images/Untitled-design-2-4.png",
+        "overlay_bottom_right": "shopify://shop_images/Untitled-design-2-1-1.png",
         "hero_image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/african-young-couple-with-shopping-trolley-shoppin-2026-01-07-00-04-03-utc-scaled.jpg",
-        "title_prefix": "Vertically Integrated",
-        "title_highlight": "Organic Herbs",
-        "title_suffix": "You Can Rely On.",
-        "tagline": "Premium organic herbs for US supermarkets",
+        "tagline": "We meet the demands of a modern market.",
         "button_label": "Contact Us",
         "button_link": "shopify://pages/contact"
       }
@@ -36,8 +73,8 @@
       "type": "fresco-retail-farm-to-shelf",
       "name": "Fresco Retail Farm Shelf",
       "settings": {
-        "heading": "Single-Source Control",
-        "description": "Fresco Flavors operates on a single-source supply model, overseeing cultivation, harvesting, freeze-drying, and packaging. This vertical integration ensures quality consistency, full production oversight, and a dependable supply chain from farm to shelf.",
+        "heading": "Controlled Sourcing: Seed To Jar Oversight",
+        "description": "Fresco Flavors implements a controlled sourcing model that oversees the process from farmer selection, cultivation to harvesting to the point the herbs reach the freeze-drying facility. This is to ensure consistent quality standards and dependable supply for our retail partners.",
         "image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2026/01/0A0A5318-scaled.jpg",
         "image_alt": "Farm to shelf supply chain"
       }
@@ -71,8 +108,8 @@
           "settings": {
             "layout": "text_top",
             "step_number": "02",
-            "title": "Ready to Use",
-            "description": "Lightweight freeze-dried herbs in smart, convenient packs designed for effortless cooking and everyday versatility.",
+            "title": "Light Weight",
+            "description": "Freeze-dried herbs in smart, convenient packs designed for easy shipping and display. No cold chain needed.",
             "image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A2210.jpg",
             "image_alt": "Ready-to-use herb formats"
           }

@@ -14,9 +14,29 @@
         {% for block in section.blocks %}
           {% if block.type == 'stat_card' %}
             <div class="food-recipes-stat-card" {{ block.shopify_attributes }}>
-              <span class="food-recipes-stat-icon"><i class="{{ block.settings.icon_class }}"></i></span>
+              <div class="food-recipes-stat-icon">
+                {% if block.settings.icon_image != blank %}
+                  <img
+                    src="{{ block.settings.icon_image | image_url: width: 256 }}"
+                    alt="{{ block.settings.icon_image.alt | default: block.settings.icon_alt | escape }}"
+                    class="food-recipes-stat-icon-img"
+                    width="64"
+                    height="64"
+                    loading="lazy"
+                  >
+                {% elsif block.settings.icon_image_url_fallback != blank %}
+                  <img
+                    src="{{ block.settings.icon_image_url_fallback }}"
+                    alt="{{ block.settings.icon_alt | escape }}"
+                    class="food-recipes-stat-icon-img"
+                    width="64"
+                    height="64"
+                    loading="lazy"
+                  >
+                {% endif %}
+              </div>
               <span class="food-recipes-stat-value">{{ block.settings.value }}</span>
-              <span class="food-recipes-stat-label">{{ block.settings.label }}</span>
+              <span class="food-recipes-stat-label">{{ block.settings.label | newline_to_br }}</span>
             </div>
           {% endif %}
         {% endfor %}
@@ -30,43 +50,96 @@
           alt="{{ section.settings.badge_image_alt | escape }}"
           width="100"
           height="100"
+          loading="lazy"
         >
       </div>
       <div class="food-recipes-grid">
         <div class="column">
           <div class="food-recipes-image large-image">
-            <img
-              src="{% if section.settings.col1_large_image != blank %}{{ section.settings.col1_large_image | image_url: width: 1200 }}{% else %}{{ section.settings.col1_large_image_url_fallback }}{% endif %}"
-              alt="{{ section.settings.col1_large_image_alt | escape }}"
-              width="1200"
-              height="900"
-            >
+            {% if section.settings.col1_large_link != blank %}
+              <a href="{{ section.settings.col1_large_link }}">
+                <img
+                  src="{% if section.settings.col1_large_image != blank %}{{ section.settings.col1_large_image | image_url: width: 1200 }}{% else %}{{ section.settings.col1_large_image_url_fallback }}{% endif %}"
+                  alt="{{ section.settings.col1_large_image_alt | escape }}"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                >
+              </a>
+            {% else %}
+              <img
+                src="{% if section.settings.col1_large_image != blank %}{{ section.settings.col1_large_image | image_url: width: 1200 }}{% else %}{{ section.settings.col1_large_image_url_fallback }}{% endif %}"
+                alt="{{ section.settings.col1_large_image_alt | escape }}"
+                width="1200"
+                height="900"
+                loading="lazy"
+              >
+            {% endif %}
           </div>
           <div class="food-recipes-image small-image">
-            <img
-              src="{% if section.settings.col1_small_image != blank %}{{ section.settings.col1_small_image | image_url: width: 900 }}{% else %}{{ section.settings.col1_small_image_url_fallback }}{% endif %}"
-              alt="{{ section.settings.col1_small_image_alt | escape }}"
-              width="900"
-              height="700"
-            >
+            {% if section.settings.col1_small_link != blank %}
+              <a href="{{ section.settings.col1_small_link }}">
+                <img
+                  src="{% if section.settings.col1_small_image != blank %}{{ section.settings.col1_small_image | image_url: width: 900 }}{% else %}{{ section.settings.col1_small_image_url_fallback }}{% endif %}"
+                  alt="{{ section.settings.col1_small_image_alt | escape }}"
+                  width="900"
+                  height="700"
+                  loading="lazy"
+                >
+              </a>
+            {% else %}
+              <img
+                src="{% if section.settings.col1_small_image != blank %}{{ section.settings.col1_small_image | image_url: width: 900 }}{% else %}{{ section.settings.col1_small_image_url_fallback }}{% endif %}"
+                alt="{{ section.settings.col1_small_image_alt | escape }}"
+                width="900"
+                height="700"
+                loading="lazy"
+              >
+            {% endif %}
           </div>
         </div>
         <div class="column">
           <div class="food-recipes-image small-image">
-            <img
-              src="{% if section.settings.col2_small_image != blank %}{{ section.settings.col2_small_image | image_url: width: 900 }}{% else %}{{ section.settings.col2_small_image_url_fallback }}{% endif %}"
-              alt="{{ section.settings.col2_small_image_alt | escape }}"
-              width="900"
-              height="700"
-            >
+            {% if section.settings.col2_small_link != blank %}
+              <a href="{{ section.settings.col2_small_link }}">
+                <img
+                  src="{% if section.settings.col2_small_image != blank %}{{ section.settings.col2_small_image | image_url: width: 900 }}{% else %}{{ section.settings.col2_small_image_url_fallback }}{% endif %}"
+                  alt="{{ section.settings.col2_small_image_alt | escape }}"
+                  width="900"
+                  height="700"
+                  loading="lazy"
+                >
+              </a>
+            {% else %}
+              <img
+                src="{% if section.settings.col2_small_image != blank %}{{ section.settings.col2_small_image | image_url: width: 900 }}{% else %}{{ section.settings.col2_small_image_url_fallback }}{% endif %}"
+                alt="{{ section.settings.col2_small_image_alt | escape }}"
+                width="900"
+                height="700"
+                loading="lazy"
+              >
+            {% endif %}
           </div>
           <div class="food-recipes-image large-image">
-            <img
-              src="{% if section.settings.col2_large_image != blank %}{{ section.settings.col2_large_image | image_url: width: 1200 }}{% else %}{{ section.settings.col2_large_image_url_fallback }}{% endif %}"
-              alt="{{ section.settings.col2_large_image_alt | escape }}"
-              width="1200"
-              height="900"
-            >
+            {% if section.settings.col2_large_link != blank %}
+              <a href="{{ section.settings.col2_large_link }}">
+                <img
+                  src="{% if section.settings.col2_large_image != blank %}{{ section.settings.col2_large_image | image_url: width: 1200 }}{% else %}{{ section.settings.col2_large_image_url_fallback }}{% endif %}"
+                  alt="{{ section.settings.col2_large_image_alt | escape }}"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                >
+              </a>
+            {% else %}
+              <img
+                src="{% if section.settings.col2_large_image != blank %}{{ section.settings.col2_large_image | image_url: width: 1200 }}{% else %}{{ section.settings.col2_large_image_url_fallback }}{% endif %}"
+                alt="{{ section.settings.col2_large_image_alt | escape }}"
+                width="1200"
+                height="900"
+                loading="lazy"
+              >
+            {% endif %}
           </div>
         </div>
       </div>
@@ -74,7 +147,13 @@
   </div>
 
   <div class="food-recipes-button-container">
-    <a href="{{ section.settings.button_link }}" class="cta-btn">{{ section.settings.button_label }}</a>
+    <a
+      href="{% if section.settings.button_link != blank %}{{ section.settings.button_link }}{% else %}#{% endif %}"
+      class="cta-btn"
+      {% if section.settings.button_open_new_tab %}target="_blank" rel="noopener"{% endif %}
+    >
+      {{ section.settings.button_label }}
+    </a>
   </div>
 </section>
 
@@ -85,35 +164,45 @@
   "class": "section-fresco-about-recipes",
   "settings": [
     { "type": "text", "id": "kicker", "label": "Kicker", "default": "Everyday Recipes" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Cook with Our Freeze-Dried Herbs" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Cook with Fresco Flavors Herbs" },
     {
       "type": "textarea",
       "id": "copy",
       "label": "Copy",
-      "default": "Turn simple dishes into standout meals with a single sprinkle. Our freeze-dried herbs lock in garden-fresh flavor, so you can cook vibrant pastas, soups, salads, and grills in minutes-no washing, chopping, or waste."
+      "default": "Turn simple dishes into standout meals with a single sprinkle. Our freeze-dried herbs lock in garden-fresh flavor, so you can cook vibrant pastas, soups, salads, and grills in minutes—no washing, chopping, or waste."
     },
     { "type": "image_picker", "id": "badge_image", "label": "Badge image" },
     { "type": "text", "id": "badge_image_url_fallback", "label": "Badge image URL fallback", "default": "https://newvashaepz.com/wp-content/uploads/2026/02/organic.png" },
-    { "type": "text", "id": "badge_image_alt", "label": "Badge image alt", "default": "Organic badge" },
+    { "type": "text", "id": "badge_image_alt", "label": "Badge image alt" },
 
     { "type": "image_picker", "id": "col1_large_image", "label": "Column 1 large image" },
-    { "type": "text", "id": "col1_large_image_url_fallback", "label": "Column 1 large image URL fallback", "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/Product-development45.jpg" },
+    { "type": "text", "id": "col1_large_image_url_fallback", "label": "Column 1 large image URL fallback", "default": "https://harvestepz.com/wp-content/uploads/2026/05/vegetables-frying-pan_23-2147753689.jpg" },
     { "type": "text", "id": "col1_large_image_alt", "label": "Column 1 large image alt", "default": "Fresh artisan salad bowl" },
+    { "type": "url", "id": "col1_large_link", "label": "Column 1 large image link" },
 
     { "type": "image_picker", "id": "col1_small_image", "label": "Column 1 small image" },
-    { "type": "text", "id": "col1_small_image_url_fallback", "label": "Column 1 small image URL fallback", "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/closeup-tumeric-powder-spice-spoon.jpg" },
+    { "type": "text", "id": "col1_small_image_url_fallback", "label": "Column 1 small image URL fallback", "default": "https://harvestepz.com/wp-content/uploads/2026/05/stir-frying-beef-with-sweet-peppers-green-beans_2829-20111.jpg" },
     { "type": "text", "id": "col1_small_image_alt", "label": "Column 1 small image alt", "default": "Artisan pasta dish" },
+    { "type": "url", "id": "col1_small_link", "label": "Column 1 small image link" },
 
     { "type": "image_picker", "id": "col2_small_image", "label": "Column 2 small image" },
-    { "type": "text", "id": "col2_small_image_url_fallback", "label": "Column 2 small image URL fallback", "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/Supplementspic.jpg" },
+    { "type": "text", "id": "col2_small_image_url_fallback", "label": "Column 2 small image URL fallback", "default": "https://harvestepz.com/wp-content/uploads/2026/05/tomato-soup-with-basil-bowl_114579-11606.jpg" },
     { "type": "text", "id": "col2_small_image_alt", "label": "Column 2 small image alt", "default": "Gourmet sandwich stack" },
+    { "type": "url", "id": "col2_small_link", "label": "Column 2 small image link" },
 
     { "type": "image_picker", "id": "col2_large_image", "label": "Column 2 large image" },
-    { "type": "text", "id": "col2_large_image_url_fallback", "label": "Column 2 large image URL fallback", "default": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/bowl-green-olive-oil-with-wooden-bowl-basil.jpg" },
+    { "type": "text", "id": "col2_large_image_url_fallback", "label": "Column 2 large image URL fallback", "default": "https://harvestepz.com/wp-content/uploads/2026/05/grilled-chicken-breasts-with-vegetables_23-2148189826.jpg" },
     { "type": "text", "id": "col2_large_image_alt", "label": "Column 2 large image alt", "default": "Crispy side dish platter" },
+    { "type": "url", "id": "col2_large_link", "label": "Column 2 large image link" },
 
     { "type": "text", "id": "button_label", "label": "Button label", "default": "View All Recipes" },
-    { "type": "url", "id": "button_link", "label": "Button link" }
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    {
+      "type": "checkbox",
+      "id": "button_open_new_tab",
+      "label": "Open button link in new tab",
+      "default": false
+    }
   ],
   "blocks": [
     {
@@ -121,9 +210,17 @@
       "name": "Stat card",
       "limit": 6,
       "settings": [
-        { "type": "text", "id": "icon_class", "label": "Icon class", "default": "fa-solid fa-fire-flame-curved" },
+        { "type": "image_picker", "id": "icon_image", "label": "Icon image" },
+        { "type": "text", "id": "icon_image_url_fallback", "label": "Icon image URL fallback" },
+        { "type": "text", "id": "icon_alt", "label": "Icon alt text (optional)" },
         { "type": "text", "id": "value", "label": "Value", "default": "Full flavor" },
-        { "type": "text", "id": "label", "label": "Label", "default": "100% natural <br />in every recipe" }
+        {
+          "type": "textarea",
+          "id": "label",
+          "label": "Label",
+          "info": "Use line breaks for multiple lines.",
+          "default": "100% natural\nin every recipe"
+        }
       ]
     }
   ],
@@ -131,26 +228,50 @@
     {
       "name": "Fresco About Recipes",
       "blocks": [
-        { "type": "stat_card", "settings": { "icon_class": "fa-solid fa-fire-flame-curved", "value": "Full flavor", "label": "100% natural <br />in every recipe" } },
-        { "type": "stat_card", "settings": { "icon_class": "fa-solid fa-seedling", "value": "Zero waste", "label": "24 + Months <br />shelf life" } },
-        { "type": "stat_card", "settings": { "icon_class": "fa-solid fa-scissors", "value": "Labor saving", "label": "Quick & Easy<br />to use" } }
+        {
+          "type": "stat_card",
+          "settings": {
+            "icon_image_url_fallback": "https://harvestepz.com/wp-content/uploads/2026/05/2347743.png",
+            "value": "Full flavor",
+            "label": "100% natural\nin every recipe"
+          }
+        },
+        {
+          "type": "stat_card",
+          "settings": {
+            "icon_image_url_fallback": "https://harvestepz.com/wp-content/uploads/2026/05/11307589.png",
+            "value": "Zero waste",
+            "label": "24+ Months\nshelf life"
+          }
+        },
+        {
+          "type": "stat_card",
+          "settings": {
+            "icon_image_url_fallback": "https://harvestepz.com/wp-content/uploads/2026/05/cooking_3972122.png",
+            "value": "Labor saving",
+            "label": "Quick & Easy\nto use"
+          }
+        }
       ],
       "settings": {
         "kicker": "Everyday Recipes",
-        "heading": "Cook with Our Freeze-Dried Herbs",
-        "copy": "Turn simple dishes into standout meals with a single sprinkle. Our freeze-dried herbs lock in garden-fresh flavor, so you can cook vibrant pastas, soups, salads, and grills in minutes-no washing, chopping, or waste.",
+        "heading": "Cook with Fresco Flavors Herbs",
+        "copy": "Turn simple dishes into standout meals with a single sprinkle. Our freeze-dried herbs lock in garden-fresh flavor, so you can cook vibrant pastas, soups, salads, and grills in minutes—no washing, chopping, or waste.",
         "badge_image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/02/organic.png",
-        "badge_image_alt": "Organic badge",
-        "col1_large_image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/Product-development45.jpg",
+        "col1_large_image_url_fallback": "https://harvestepz.com/wp-content/uploads/2026/05/vegetables-frying-pan_23-2147753689.jpg",
+        "col1_large_link": "/recipes/garden-herb-grilled-veggies/",
         "col1_large_image_alt": "Fresh artisan salad bowl",
-        "col1_small_image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/closeup-tumeric-powder-spice-spoon.jpg",
+        "col1_small_image_url_fallback": "https://harvestepz.com/wp-content/uploads/2026/05/stir-frying-beef-with-sweet-peppers-green-beans_2829-20111.jpg",
+        "col1_small_link": "/recipes/herbed-beef-and-veggie-stew/",
         "col1_small_image_alt": "Artisan pasta dish",
-        "col2_small_image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/Supplementspic.jpg",
+        "col2_small_image_url_fallback": "https://harvestepz.com/wp-content/uploads/2026/05/tomato-soup-with-basil-bowl_114579-11606.jpg",
+        "col2_small_link": "/recipes/garlic-and-chive-potato-soup/",
         "col2_small_image_alt": "Gourmet sandwich stack",
-        "col2_large_image_url_fallback": "https://mediumorchid-gazelle-252922.hostingersite.com/wp-content/uploads/2024/07/bowl-green-olive-oil-with-wooden-bowl-basil.jpg",
+        "col2_large_image_url_fallback": "https://harvestepz.com/wp-content/uploads/2026/05/grilled-chicken-breasts-with-vegetables_23-2148189826.jpg",
+        "col2_large_link": "/recipes/lemon-mint-cilantro-sheet-pan-chicken/",
         "col2_large_image_alt": "Crispy side dish platter",
         "button_label": "View All Recipes",
-        "button_link": "shopify://blogs/news"
+        "button_link": "/recipes"
       }
     }
   ]

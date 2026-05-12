@@ -58,10 +58,23 @@
   </div>
   <div class="retail-hero-overlay"></div>
   <div class="retail-hero-content">
+    {%- assign title_segments = section.blocks | where: 'type', 'title_segment' -%}
     <h1 class="retail-hero-title">
-      {{ section.settings.title_prefix }}
-      <span class="highlight">{{ section.settings.title_highlight }}</span>
-      {{ section.settings.title_suffix }}
+      {%- if title_segments.size > 0 -%}
+        {%- for block in title_segments -%}
+          {%- if block.settings.text != blank -%}
+            {%- if block.settings.highlight -%}
+              <span class="highlight">{{ block.settings.text }}</span>
+            {%- else -%}
+              {{ block.settings.text }}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- else -%}
+        {{ section.settings.title_prefix }}
+        <span class="highlight">{{ section.settings.title_highlight }}</span>
+        {{ section.settings.title_suffix }}
+      {%- endif -%}
     </h1>
     <p class="retail-hero-tagline">
       {{ section.settings.tagline }}
@@ -111,19 +124,22 @@
       "type": "text",
       "id": "title_prefix",
       "label": "Title prefix",
-      "default": "Vertically Integrated"
+      "default": "Vertically Integrated",
+      "info": "Fallback heading: used only when no Heading segment blocks are added."
     },
     {
       "type": "text",
       "id": "title_highlight",
       "label": "Highlighted title text",
-      "default": "Organic Herbs"
+      "default": "Organic Herbs",
+      "info": "Fallback heading: used only when no Heading segment blocks are added."
     },
     {
       "type": "text",
       "id": "title_suffix",
       "label": "Title suffix",
-      "default": "You Can Rely On."
+      "default": "You Can Rely On.",
+      "info": "Fallback heading: used only when no Heading segment blocks are added."
     },
     {
       "type": "text",
@@ -143,9 +159,48 @@
       "label": "Button link"
     }
   ],
+  "blocks": [
+    {
+      "type": "title_segment",
+      "name": "Heading segment",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Your supply remains as"
+        },
+        {
+          "type": "checkbox",
+          "id": "highlight",
+          "label": "Highlight (green)",
+          "default": false
+        }
+      ]
+    }
+  ],
   "presets": [
     {
       "name": "Fresco Retail Hero",
+      "blocks": [
+        {
+          "type": "title_segment",
+          "settings": { "text": "Your supply remains as", "highlight": false }
+        },
+        {
+          "type": "title_segment",
+          "settings": { "text": "stable ", "highlight": true }
+        },
+        {
+          "type": "title_segment",
+          "settings": { "text": "as it is", "highlight": false }
+        },
+        {
+          "type": "title_segment",
+          "settings": { "text": " scalable. ", "highlight": true }
+        }
+      ],
       "settings": {
         "hero_image_url_fallback": "https://newvashaepz.com/wp-content/uploads/2026/03/african-young-couple-with-shopping-trolley-shoppin-2026-01-07-00-04-03-utc-scaled.jpg",
         "title_prefix": "Vertically Integrated",
@@ -159,4 +214,3 @@
   ]
 }
 {% endschema %}
- 
