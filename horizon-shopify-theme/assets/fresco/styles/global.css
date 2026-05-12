@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 /* 
 #f4e5c9; */
-
+  
 /* CSS Root Variables - All Colors */
 :root {
   --primary-green: #81b03f;
@@ -47,8 +47,13 @@ button {
   font-family: "Josefin Sans", sans-serif !important;
 }
 
+div.sub-heading {
+  display: none !important
+};
+
 button {
   border-radius: 1px !important;
+  text-transform: capitalize !important;
 }
 
 .contact-us-btn-icon {
@@ -157,7 +162,7 @@ div.sub-heading {
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 1px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 0.2rem;
   text-align: center;
   text-decoration: none;
@@ -510,11 +515,6 @@ div.sub-heading {
   .dropdown-icon {
     width: 40px;
     height: 40px;
-  }
-  .cart-count-bubble {
-    position: absolute;
-    top: -5px;
-    right: -10px;
   }
 }
 
@@ -886,9 +886,11 @@ body.no-scroll {
     margin-left: auto;
   }
 
-  .header-actions-mobile i {
+  .header-actions-mobile i, .header-actions-mobile a {
     cursor: pointer;
     transition: color 0.2s ease;
+    color: #101010;
+    line-height: 1;
   }
 
   .header-actions-mobile i:hover {
@@ -949,8 +951,8 @@ body.no-scroll {
 
 .hero-overlay-global .overlay-item {
   position: absolute;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   object-fit: contain;
 }
 
@@ -963,35 +965,30 @@ body.no-scroll {
 .hero-overlay-global .top-left-overlay {
   top: 0;
   left: -10px;
-  transform: rotate(90deg);
 }
 
 .hero-overlay-global .top-right-overlay {
   top: 0;
-  right: -10px;
-  transform: rotate(180deg);
+  right: 0px;
 }
 
 .hero-overlay-global .bottom-left-overlay {
-  bottom: 0;
-  left: -10px;
+  bottom: 0px;
+  left: 0px;
 }
 
 .hero-overlay-global .bottom-right-overlay {
-  bottom: -70px;
+  bottom: 0px;
   right: 0;
-  transform: rotate(0deg);
-  height: 300px;
-  width: auto;
 }
 
-.hero-overlay-global .bottom-right-overlay.leaf {
+/* .hero-overlay-global .bottom-right-overlay.leaf {
   bottom: -90px;
   right: -40px;
   transform: rotate(-90deg);
   height: 250px;
   width: auto;
-}
+} */
 
 .hero-overlay-global img {
   width: 100%;
@@ -1007,13 +1004,12 @@ body.no-scroll {
     object-fit: contain;
   }
 
-  .hero-overlay-global .bottom-right-overlay.leaf {
-    transform: rotate(-90deg);
+  /* .hero-overlay-global .bottom-right-overlay.leaf {
     height: 100px;
     width: auto;
     bottom: -20px;
     right: -20px;
-  }
+  } */
 }
 
 /* ========== Footer - Pixel-perfect layout ========== */
@@ -1132,10 +1128,10 @@ body.no-scroll {
 .footer-newsletter-btn {
   height: 48px;
   padding: 0 28px;
-  font-size: 12px;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
+  text-transform: capitalize !important;
   color: #fff;
   background-color: var(--primary-green);
   border: none;
@@ -1146,8 +1142,7 @@ body.no-scroll {
 }
 
 .footer-newsletter-btn:hover {
-  /* background-color: var(--dark-green-background) !important; */
-  background-color: var(--primary-green) !important;
+  background-color: var(--dark-green-background) !important;
   color: var(--white-color) !important;
 }
 
@@ -1250,7 +1245,7 @@ body.no-scroll {
 
 .footer-contact i {
   width: 16px;
-  color: #2c2c2c;
+  color: var(--primary-green);
   flex-shrink: 0;
 }
 
@@ -1397,7 +1392,8 @@ body.no-scroll {
 }
 
 .footer-scroll-top:hover {
-  background-color: #4a7a3a;
+  background-color: var(--dark-green-background) !important;
+  color: var(--white-color);
 }
 
 /* Responsive */
@@ -1683,6 +1679,7 @@ body.no-scroll {
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 10px;
+  text-transform: capitalize;
 }
 
 .category-description {
@@ -1693,17 +1690,19 @@ body.no-scroll {
 }
 
 .category-link {
+  text-transform: capitalize !important;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0.55rem 1.5rem;
   border-radius: 999px;
   background-color: #ffffff;
-  color: #2b2521;
+  color: var(--dark-green-background);
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.06em;
+  text-transform: capitalize;
 }
 
 .category-link:hover {
@@ -1745,7 +1744,7 @@ body.no-scroll {
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
-    padding: 0.5rem 0 2.5rem 0;
+    padding: 2.5rem 0 2.5rem 0;
   }
 
   .category-section .container {
@@ -1910,7 +1909,7 @@ body.no-scroll {
   text-decoration: none;
   background-color: var(--white-color);
   padding: 10px;
-  padding-bottom: 5px !important;
+  padding-bottom: 0px;
   position: relative !important;
   top: auto !important;
   left: auto !important;
@@ -1951,12 +1950,11 @@ body.no-scroll {
 }
 
 .product-name {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--dark-text-color);
   margin-bottom: 8px;
   line-height: 1.4;
-  text-align: center;
 }
 
 .product-name span {
@@ -2056,7 +2054,7 @@ body.no-scroll {
   }
 
   .featured-products {
-    padding: 30px 10px;
+    padding: 3rem 0;
   }
 
   .banner {
@@ -2069,15 +2067,6 @@ body.no-scroll {
 
   .banner-headline {
     font-size: 28px;
-  }
-
-  .product-name {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--dark-text-color);
-    margin-bottom: 8px;
-    line-height: 1.4;
-    text-align: center;
   }
 }
 
@@ -2146,6 +2135,7 @@ body.no-scroll {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.5rem;
+  text-align: center !important;
 }
 
 .cta-desc {
@@ -2160,7 +2150,7 @@ body.no-scroll {
   background-color: var(--primary-green);
   color: #fff;
   padding: 1rem 2rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
 
   display: flex;
@@ -2168,11 +2158,24 @@ body.no-scroll {
   justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.7s ease;
+  text-transform: capitalize;
   border: none;
   outline: none;
   text-decoration: none;
   line-height: 1 !important;
+}
+
+.cta-btn span {
+  text-transform: capitalize !important;
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+@media (max-width: 680px) {
+  .cta-btn span {
+    font-size: 1rem;
+  }
 }
 
 .cta-btn svg {
@@ -2182,8 +2185,8 @@ body.no-scroll {
 }
 
 .cta-btn:hover {
-  background-color: #fff;
-  color: var(--primary-green);
+  background-color: var(--dark-green-background);
+  color: #fff;
 }
 
 .cta-btn:hover svg {

@@ -18,7 +18,9 @@
       <div class="layout-content-inner-text column">
         {%- if section.settings.heading_prefix != blank -%}
           <h1>
-            {{ section.settings.heading_prefix }} <span class="highlight">{{ section.settings.highlight_1 }}</span> <span class="highlight">{{ section.settings.highlight_2 }}</span> {{ section.settings.heading_suffix }}
+            {{ section.settings.heading_prefix }} 
+            <span class="highlight">{{ section.settings.highlight_1 }}</span> {{ section.settings.heading_suffix }}
+            <span class="highlight">{{ section.settings.highlight_2 }}</span> 
           </h1>
         {%- endif -%}
 

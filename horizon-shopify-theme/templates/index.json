@@ -31,17 +31,21 @@
           }
         }
       },
-      "block_order": ["slide_VcBfjC", "slide_rTz4N9", "slide_ky6trA"],
+      "block_order": [
+        "slide_VcBfjC",
+        "slide_rTz4N9",
+        "slide_ky6trA"
+      ],
       "name": "Fresco Hero",
       "settings": {
-        "overlay_top_left": "shopify://shop_images/0A0A0462-scaled-1-1.png",
-        "overlay_top_right": "shopify://shop_images/0A0A7607.png",
-        "overlay_bottom_left": "shopify://shop_images/2df5240e-e386-4ccd-a324-bdcf03915804-removebg-preview-1.png",
-        "overlay_bottom_right": "shopify://shop_images/0A0A9691-1-scaled-removebg-preview.png",
-        "heading": "Bringing the Best Herbs",
-        "highlight_text": "Best",
-        "subheading": "100% Organic, from Kenya to the World.",
-        "button_label": "Shop Now",
+        "overlay_top_left": "shopify://shop_images/Untitled-design-3.png",
+        "overlay_top_right": "shopify://shop_images/Untitled-design-2-3.png",
+        "overlay_bottom_left": "shopify://shop_images/Untitled-design-2-4.png",
+        "overlay_bottom_right": "shopify://shop_images/Untitled-design-2-1-1.png",
+        "heading": "Discover the taste of Nature",
+        "highlight_text": "of Nature",
+        "subheading": "Freshness without fragility",
+        "button_label": "Learn More",
         "button_link": "shopify://collections/all",
         "button_open_new_tab": false,
         "social_heading": "Follow Us",
@@ -57,13 +61,13 @@
       "settings": {
         "left_image_url": "https://newvashaepz.com/wp-content/uploads/2025/11/DJI_20250826170440_0288_D.jpg",
         "right_image_url": "https://newvashaepz.com/wp-content/uploads/2026/03/0A0A4520-scaled.jpg",
-        "heading_prefix": "Harvested at",
+        "heading_prefix": "HARVESTED AT",
         "highlight_1": "Peak,",
-        "highlight_2": "Preserved",
-        "heading_suffix": "with Purpose.",
-        "description": "Fresco herbs are organically grown, harvested at peak, and freeze-dried at origin to capture the true taste of nature.",
+        "highlight_2": "PRESERVED",
+        "heading_suffix": "EXPERTLY",
+        "description": "Fresco Flavors herbs are freeze-dried right where they grow, locking in the natural oils and aromatics. It’s the true taste of nature, longer shelf life and ready to use whenever you are.",
         "button_label": "Explore Fresco Flavors",
-        "button_link": "shopify://collections/frontpage"
+        "button_link": "shopify://pages/about"
       }
     },
     "fresco_our_mission_f7xjdL": {
@@ -281,7 +285,11 @@
           }
         }
       },
-      "block_order": ["cat_slide_1", "cat_slide_2", "cat_slide_3"],
+      "block_order": [
+        "cat_slide_1",
+        "cat_slide_2",
+        "cat_slide_3"
+      ],
       "name": "Fresco Categories",
       "settings": {
         "sub_heading_text": "Categories",

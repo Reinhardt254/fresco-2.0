@@ -5,6 +5,7 @@
   min-height: 60vh;
 }
 
+
 .about-page-layout {
   width: 100%;
   height: 100%;
@@ -212,6 +213,7 @@
   }
 }
 
+
 /* ====================Our Commitment section================= */
 .our-commitment {
   background-color: var(--light-green);
@@ -230,8 +232,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://harvestepz.com/wp-content/uploads/2026/04/Frsco-Herbs-Background.png")
-    no-repeat center center;
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -467,8 +468,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://harvestepz.com/wp-content/uploads/2026/04/Frsco-Herbs-Background.png")
-    no-repeat center center;
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -595,6 +595,7 @@
   }
 }
 
+
 /* =========== Food Recipes / Behind the Brand Section START =========== */
 .food-recipes {
   background-color: #0f3d2e;
@@ -613,8 +614,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://harvestepz.com/wp-content/uploads/2026/04/Frsco-Herbs-Background.png")
-    no-repeat center center;
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat center center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1023,6 +1023,7 @@
     height: 36px;
     width: 36px;
   }
+
 }
 
 /* Hero section - small mobile */

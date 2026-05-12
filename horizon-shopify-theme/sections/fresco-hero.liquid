@@ -99,9 +99,19 @@
         {%- if section.settings.heading != blank -%}
           <h1>
             {%- if section.settings.highlight_text != blank and section.settings.heading contains section.settings.highlight_text -%}
+              {%- comment -%}
+                Ruby split drops a trailing empty segment, so for "... of Nature" with highlight "of Nature"
+                parts becomes one element and parts.last duplicates parts.first. Rejoin tail segments instead.
+              {%- endcomment -%}
               {%- assign parts = section.settings.heading | split: section.settings.highlight_text -%}
+              {%- assign heading_after = '' -%}
+              {%- if parts.size > 1 -%}
+                {%- assign tail_len = parts.size | minus: 1 -%}
+                {%- assign tail = parts | slice: 1, tail_len -%}
+                {%- assign heading_after = tail | join: section.settings.highlight_text -%}
+              {%- endif -%}
               {{ parts.first | strip }}<br>
-              <span class="highlight">{{ section.settings.highlight_text }}</span>{{ parts.last }}
+              <span class="highlight">{{ section.settings.highlight_text }}</span>{{ heading_after }}
             {%- else -%}
               {{ section.settings.heading | newline_to_br }}
             {%- endif -%}

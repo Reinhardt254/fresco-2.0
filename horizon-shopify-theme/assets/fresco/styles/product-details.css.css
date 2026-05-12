@@ -26,11 +26,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://harvestepz.com/wp-content/uploads/2026/04/Frsco-Herbs-Background.png")
-    no-repeat;
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif") no-repeat;
   background-size: cover;
   background-position: top;
-  opacity: 0.01;
+  opacity: 0.010;
   z-index: 5;
 }
 
@@ -94,7 +93,7 @@
 .product-details-main-image:hover {
   transform: scale(1.05);
 }
-
+ 
 /* Right column – product info */
 .product-details-info {
   width: 50%;
@@ -269,7 +268,7 @@
   color: #2e7d32;
 }
 
-/* QuantityADD to cart row */
+/* Quantity + Add to cart row */
 .product-details-actions {
   display: flex;
   align-items: center;
@@ -323,7 +322,7 @@
   background-color: #c2c2c2;
   color: #ffffff;
 }
-
+ 
 .product-details-qty-plus:hover {
   background-color: #d6d6d6;
   color: #ffffff;
@@ -376,7 +375,7 @@
   transition:
     background 0.2s,
     transform 0.1s;
-  width: 100%;
+    width: 100%;
 }
 
 .product-details-add-to-cart:hover {
@@ -807,7 +806,7 @@
 
 .related-products-section::before {
   content: "";
-  background: url("https://harvestepz.com/wp-content/uploads/2026/04/Frsco-Herbs-Background.png")
+  background: url("https://newvashaepz.com/wp-content/uploads/2026/03/culinary-herbs-background_8365-49.avif")
     no-repeat;
   background-size: cover;
   background-position: top;
@@ -953,7 +952,7 @@
 }
 
 .product-card-add:hover {
-  opacity: 0.95;
+ opacity: 0.95;
 }
 
 .product-card__link {
@@ -1114,18 +1113,12 @@
   pointer-events: none;
 }
 
-.product-details--fresco
-  .fresco-product-details
-  > .group-block:first-of-type
-  .group-block-content {
+.product-details--fresco .fresco-product-details > .group-block:first-of-type .group-block-content {
   padding-right: 6.5rem;
 }
 
 @media screen and (max-width: 749px) {
-  .product-details--fresco
-    .fresco-product-details
-    > .group-block:first-of-type
-    .group-block-content {
+  .product-details--fresco .fresco-product-details > .group-block:first-of-type .group-block-content {
     padding-right: 0;
     padding-top: 2.5rem;
   }
@@ -1162,10 +1155,7 @@
   color: #6cb24c;
 }
 
-.product-details--fresco
-  .fresco-product-details
-  product-price
-  .compare-at-price {
+.product-details--fresco .fresco-product-details product-price .compare-at-price {
   font-size: 16px;
   font-weight: 400;
   color: #b0b0b0;
@@ -1180,10 +1170,7 @@
   margin-bottom: 18px;
 }
 
-.product-details--fresco
-  .fresco-product-details
-  .variant-option--buttons
-  legend {
+.product-details--fresco .fresco-product-details .variant-option--buttons legend {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -1207,18 +1194,13 @@
     color 0.2s;
 }
 
-.product-details--fresco
-  .fresco-product-details
-  .variant-option__button-label:has(input:checked) {
+.product-details--fresco .fresco-product-details .variant-option__button-label:has(input:checked) {
   background: #e6f6ea !important;
   border-color: #6cb24c !important;
   color: #2e7d32 !important;
 }
 
-.product-details--fresco
-  .fresco-product-details
-  .variant-option__button:focus-visible
-  + .variant-option__button-label {
+.product-details--fresco .fresco-product-details .variant-option__button:focus-visible + .variant-option__button-label {
   outline: 2px solid #6cb24c !important;
   outline-offset: 2px;
 }
@@ -1227,9 +1209,7 @@
   margin-bottom: 24px;
 }
 
-.product-details--fresco
-  .fresco-product-details
-  .product-form-buttons--stacked {
+.product-details--fresco .fresco-product-details .product-form-buttons--stacked {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -1237,18 +1217,12 @@
   gap: 14px;
 }
 
-.product-details--fresco
-  .fresco-product-details
-  .product-form-buttons--stacked
-  > .quantity-selector-wrapper {
+.product-details--fresco .fresco-product-details .product-form-buttons--stacked > .quantity-selector-wrapper {
   flex: 0 0 auto;
   width: auto;
 }
 
-.product-details--fresco
-  .fresco-product-details
-  .product-form-buttons--stacked
-  .quantity-selector {
+.product-details--fresco .fresco-product-details .product-form-buttons--stacked .quantity-selector {
   border-radius: 5px;
   border: 1px solid #c5c5c5bb;
   height: 48px;
@@ -1260,26 +1234,17 @@
   justify-content: space-around;
 }
 
-.product-details--fresco
-  .fresco-product-details
-  .product-form-buttons--stacked
-  > add-to-cart-component {
+.product-details--fresco .fresco-product-details .product-form-buttons--stacked > add-to-cart-component {
   flex: 1 1 160px;
   min-width: 0;
 }
 
-.product-details--fresco
-  .fresco-product-details
-  .product-form-buttons--stacked
-  > .wishlist-button-block {
+.product-details--fresco .fresco-product-details .product-form-buttons--stacked > .wishlist-button-block {
   flex: 0 0 auto;
   align-self: stretch;
 }
 
-.product-details--fresco
-  .fresco-product-details
-  .wishlist-button-block
-  .product-details-wishlist {
+.product-details--fresco .fresco-product-details .wishlist-button-block .product-details-wishlist {
   width: 48px;
   height: 48px;
   min-width: 48px;
@@ -1308,17 +1273,12 @@
   background: #5fa042 !important;
 }
 
-.product-details--fresco
-  .fresco-product-details
-  .product-form-buttons--stacked
-  .accelerated-checkout-block {
+.product-details--fresco .fresco-product-details .product-form-buttons--stacked .accelerated-checkout-block {
   flex: 1 0 100%;
   width: 100%;
 }
 
-.product-details--fresco
-  .fresco-product-details
-  .shopify-payment-button__button--unbranded {
+.product-details--fresco .fresco-product-details .shopify-payment-button__button--unbranded {
   font-family: "Poppins", sans-serif !important;
   font-size: 12px !important;
   font-weight: 600 !important;
@@ -1330,3 +1290,4 @@
   background: #ffffff !important;
   min-height: 48px !important;
 }
+
