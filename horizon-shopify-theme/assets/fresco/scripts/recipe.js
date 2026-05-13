@@ -32,7 +32,7 @@ function initKeyProductsSwiper() {
       speed: 450,
       watchOverflow: true,
       grabCursor: true,
-      loop: useLoop,
+      loop: true,
       navigation: {
         prevEl,
         nextEl,
@@ -43,7 +43,7 @@ function initKeyProductsSwiper() {
           spaceBetween: 25,
         },
         1024: {
-          slidesPerView: 4,
+          slidesPerView: 3,
           spaceBetween: 25,
         },
       },

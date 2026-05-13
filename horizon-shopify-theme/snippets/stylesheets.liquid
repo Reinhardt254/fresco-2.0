@@ -32,6 +32,12 @@
 {%- if template.name == 'collection' or template.name == 'list-collections' -%}
   {{ 'fresco/styles/shop.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
+{%- if template.name == 'blog' and template.suffix == 'recipes' -%}
+  {{ 'fresco/styles/recipe.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+{%- if template.name == 'article' and template.suffix == 'recipe' -%}
+  {{ 'fresco/styles/recipe-details.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
 {%- if template.name == 'product' -%}
   {{ 'fresco/styles/product-details.css.css' | asset_url | stylesheet_tag }}
 {%- elsif template.name == 'page' and template.suffix == 'wishlist' -%}

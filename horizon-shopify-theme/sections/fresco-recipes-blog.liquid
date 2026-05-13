@@ -1,0 +1,208 @@
+{%- comment -%}
+  Recipe index for a blog using the alternate template "recipes" (blog.recipes.json).
+  Assign this template to your Recipes blog in the theme editor (e.g. blog handle: recipes → /blogs/recipes).
+
+  Card meta uses Article metafields (same as recipe article template):
+  - recipe.prep_time / custom.prep_time — single line text
+  - recipe.cook_time / custom.cook_time — single line text
+  - recipe.servings / custom.servings — integer
+{%- endcomment -%}
+
+<div class="recipe-page" {{ section.shopify_attributes }}>
+  <div class="recipe-container">
+    <div class="recipe-hero">
+      <div class="recipe-hero-card">
+        {%- if section.settings.hero_image != blank -%}
+          <img
+            class="recipe-hero-image"
+            src="{{ section.settings.hero_image | image_url: width: 2000 }}"
+            alt="{{ section.settings.hero_image.alt | default: section.settings.hero_image_alt | escape }}"
+            width="1600"
+            height="900"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          >
+        {%- elsif section.settings.hero_image_url_fallback != blank -%}
+          <img
+            class="recipe-hero-image"
+            src="{{ section.settings.hero_image_url_fallback }}"
+            alt="{{ section.settings.hero_image_alt | escape }}"
+            width="1600"
+            height="900"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          >
+        {%- endif -%}
+        <div class="recipe-hero-overlay" aria-hidden="true"></div>
+        <div class="recipe-hero-content">
+          {%- if section.settings.hero_eyebrow != blank -%}
+            <p class="recipe-hero-eyebrow">{{ section.settings.hero_eyebrow }}</p>
+          {%- endif -%}
+          <h1 class="recipe-hero-title">
+            {%- if section.settings.hero_heading != blank -%}
+              {{ section.settings.hero_heading }}
+            {%- else -%}
+              {{ blog.title }}
+            {%- endif -%}
+          </h1>
+          <div class="separator" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="recipe-posts">
+      <div class="recipe-section-header">
+        <h2 class="recipe-section-title">{{ section.settings.grid_heading | default: 'Latest recipes' }}</h2>
+      </div>
+
+      {%- paginate blog.articles by section.settings.articles_per_page -%}
+        <div class="recipe-grid">
+          {%- for article in blog.articles -%}
+            <a href="{{ article.url }}" class="recipe-card">
+              {%- if article.image != blank -%}
+                <img
+                  class="recipe-card-image"
+                  src="{{ article.image | image_url: width: 900 }}"
+                  alt="{{ article.image.alt | default: article.title | escape }}"
+                  width="600"
+                  height="400"
+                  loading="lazy"
+                >
+              {%- else -%}
+                {{ 'lifestyle-1' | placeholder_svg_tag: 'recipe-card-image' }}
+              {%- endif -%}
+              <div class="recipe-card-body">
+                {%- liquid
+                  assign card_prep = article.metafields.recipe.prep_time
+                  if card_prep == blank
+                    assign card_prep = article.metafields.custom.prep_time
+                  endif
+                  assign card_cook = article.metafields.recipe.cook_time
+                  if card_cook == blank
+                    assign card_cook = article.metafields.custom.cook_time
+                  endif
+                  assign card_servings = article.metafields.recipe.servings
+                  if card_servings == blank
+                    assign card_servings = article.metafields.custom.servings
+                  endif
+
+                  assign card_meta_parts = ''
+                  if card_prep != blank and card_prep.value != blank
+                    assign card_meta_parts = card_meta_parts | append: section.settings.card_prep_label | append: ': ' | append: card_prep.value
+                  endif
+                  if card_cook != blank and card_cook.value != blank
+                    if card_meta_parts != blank
+                      assign card_meta_parts = card_meta_parts | append: ' | '
+                    endif
+                    assign card_meta_parts = card_meta_parts | append: section.settings.card_cook_label | append: ': ' | append: card_cook.value
+                  endif
+                  if card_servings != blank
+                    if card_meta_parts != blank
+                      assign card_meta_parts = card_meta_parts | append: ' | '
+                    endif
+                    assign card_meta_parts = card_meta_parts | append: section.settings.card_serves_label | append: ': ' | append: card_servings.value
+                  endif
+                -%}
+                {%- if card_meta_parts != blank -%}
+                  <div class="recipe-card-meta">
+                    <span class="recipe-card-meta-text">{{ card_meta_parts }}</span>
+                  </div>
+                {%- endif -%}
+                <h3 class="recipe-card-title">{{ article.title }}</h3>
+              </div>
+            </a>
+          {%- endfor -%}
+        </div>
+
+        {%- if paginate.pages > 1 -%}
+          <nav class="recipe-pagination" aria-label="Pagination">
+            {{ paginate | default_pagination }}
+          </nav>
+        {%- endif -%}
+      {%- endpaginate -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Fresco recipes blog",
+  "tag": "section",
+  "class": "section-fresco-recipes-blog",
+  "enabled_on": {
+    "templates": ["blog"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_url_fallback",
+      "label": "Hero image URL fallback",
+      "default": "https://harvestepz.com/wp-content/uploads/2026/05/Untitled-design-1-1.png"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_alt",
+      "label": "Hero image alt text",
+      "default": "Fresco Flavors recipes"
+    },
+    {
+      "type": "text",
+      "id": "hero_eyebrow",
+      "label": "Hero eyebrow",
+      "default": "Everyday recipes"
+    },
+    {
+      "type": "text",
+      "id": "hero_heading",
+      "label": "Hero heading",
+      "default": "Cook with Fresco",
+      "info": "Leave blank to use the blog title."
+    },
+    {
+      "type": "text",
+      "id": "grid_heading",
+      "label": "Grid section heading",
+      "default": "Latest recipes"
+    },
+    {
+      "type": "text",
+      "id": "card_prep_label",
+      "label": "Card meta: Prep time label",
+      "default": "Prep Time"
+    },
+    {
+      "type": "text",
+      "id": "card_cook_label",
+      "label": "Card meta: Cook time label",
+      "default": "Cook Time"
+    },
+    {
+      "type": "text",
+      "id": "card_serves_label",
+      "label": "Card meta: Serves label",
+      "default": "Serves"
+    },
+    {
+      "type": "range",
+      "id": "articles_per_page",
+      "label": "Articles per page",
+      "min": 6,
+      "max": 24,
+      "step": 1,
+      "default": 12
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco recipes blog"
+    }
+  ]
+}
+{% endschema %}

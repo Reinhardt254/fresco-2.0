@@ -71,7 +71,7 @@
           "type": "explore_item",
           "settings": {
             "title": "Recipes",
-            "url": "/pages/recipes",
+            "url": "/blogs/recipes",
             "icon_image": "shopify://shop_images/mortar.png"
           }
         }

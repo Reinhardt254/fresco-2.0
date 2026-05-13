@@ -97,7 +97,7 @@ if (categorySwiperEl) {
         spaceBetween: 18,
       },
       1024: {
-        slidesPerView: 3,
+        slidesPerView: 2,
         spaceBetween: 20,
       },
       // 1320: {

@@ -180,25 +180,18 @@
   line-height: 1.25;
 }
 
-.recipe-card-date {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.875rem;
+.recipe-card-meta {
+  display: block;
+  font-size: 0.8125rem;
   color: rgba(44, 44, 44, 0.55);
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.35rem;
+  line-height: 1.35;
 }
 
-.recipe-card-date-text {
-  font-size: 0.875rem;
-  color: rgba(44, 44, 44, 0.55);
-  margin-bottom: 0rem;
-}
-
-.recipe-card-date i {
-  font-size: 0.875rem;
-  color: rgba(44, 44, 44, 0.55);
-  margin-bottom: 0rem;
+.recipe-card-meta-text {
+  display: block;
+  font-size: inherit;
+  color: inherit;
 }
 
 /* ============================================================= */

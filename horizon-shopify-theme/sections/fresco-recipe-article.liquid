@@ -1,0 +1,384 @@
+{%- comment -%}
+  Recipe article layout (alternate template "recipe" → article.recipe.json).
+
+  Create Article metafields (Settings → Custom data → Articles):
+  - Namespace "recipe", key "ingredients" — List: Single line text
+    Each line: plain ingredient text, or "Ingredient name | Amount" (name left, amount right).
+  - Namespace "recipe", key "key_products" — List: Product (optional)
+  - Namespace "recipe", key "servings" — Integer (optional)
+  - Namespace "recipe", key "prep_time" — Single line text (optional, e.g. "15m")
+  - Namespace "recipe", key "cook_time" — Single line text (optional, e.g. "25m")
+  - Namespace "recipe", key "intro" — Multi-line text (optional; falls back to excerpt)
+  - Namespace "recipe", key "top_title" — Single line text (hero first line; article title is not shown in the hero)
+  - Namespace "recipe", key "bottom_title" — Single line text (hero second line)
+
+  Fallback namespace "custom" with the same keys is also read if "recipe" is empty.
+{%- endcomment -%}
+
+{%- liquid
+  assign ingredients_meta = article.metafields.recipe.ingredients
+  if ingredients_meta == blank
+    assign ingredients_meta = article.metafields.custom.ingredients
+  endif
+
+  assign key_products_meta = article.metafields.recipe.key_products
+  if key_products_meta == blank
+    assign key_products_meta = article.metafields.custom.key_products
+  endif
+
+  assign servings_meta = article.metafields.recipe.servings
+  if servings_meta == blank
+    assign servings_meta = article.metafields.custom.servings
+  endif
+
+  assign prep_time_meta = article.metafields.recipe.prep_time
+  if prep_time_meta == blank
+    assign prep_time_meta = article.metafields.custom.prep_time
+  endif
+
+  assign cook_time_meta = article.metafields.recipe.cook_time
+  if cook_time_meta == blank
+    assign cook_time_meta = article.metafields.custom.cook_time
+  endif
+
+  assign intro_meta = article.metafields.recipe.intro
+  if intro_meta == blank
+    assign intro_meta = article.metafields.custom.intro
+  endif
+
+  assign top_title_meta = article.metafields.recipe.top_title
+  if top_title_meta == blank
+    assign top_title_meta = article.metafields.custom.top_title
+  endif
+
+  assign bottom_title_meta = article.metafields.recipe.bottom_title
+  if bottom_title_meta == blank
+    assign bottom_title_meta = article.metafields.custom.bottom_title
+  endif
+
+  assign hero_title_from_meta = false
+  if top_title_meta != blank and top_title_meta.value != blank
+    assign hero_title_from_meta = true
+  endif
+  if bottom_title_meta != blank and bottom_title_meta.value != blank
+    assign hero_title_from_meta = true
+  endif
+
+  assign share_url = request.origin | append: article.url
+-%}
+
+<div class="recipe-details" {{ section.shopify_attributes }}>
+  <div class="recipe-hero">
+    <div class="recipe-hero-inner">
+      <div class="recipe-hero-media">
+        {%- if article.image != blank -%}
+          <img
+            class="recipe-hero-image"
+            src="{{ article.image | image_url: width: 2000 }}"
+            alt="{{ article.image.alt | default: article.title | escape }}"
+            width="1600"
+            height="900"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          >
+        {%- else -%}
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'recipe-hero-image' }}
+        {%- endif -%}
+      </div>
+
+      <div class="recipe-hero-title">
+        <h1 class="recipe-title">
+          {%- if top_title_meta != blank and top_title_meta.value != blank -%}
+            <span class="recipe-title-line">{{ top_title_meta.value }}</span>
+          {%- endif -%}
+          {%- if bottom_title_meta != blank and bottom_title_meta.value != blank -%}
+            <span class="recipe-title-line">{{ bottom_title_meta.value }}</span>
+          {%- endif -%}
+          {%- unless hero_title_from_meta -%}
+            <span class="visually-hidden">{{ article.title }}</span>
+          {%- endunless -%}
+        </h1>
+        {%- liquid
+          assign hero_meta_parts = ''
+          if prep_time_meta != blank and prep_time_meta.value != blank
+            assign hero_meta_parts = hero_meta_parts | append: section.settings.hero_prep_label | append: ': ' | append: prep_time_meta.value
+          endif
+          if cook_time_meta != blank and cook_time_meta.value != blank
+            if hero_meta_parts != blank
+              assign hero_meta_parts = hero_meta_parts | append: ' | '
+            endif
+            assign hero_meta_parts = hero_meta_parts | append: section.settings.hero_cook_label | append: ': ' | append: cook_time_meta.value
+          endif
+          if servings_meta != blank
+            if hero_meta_parts != blank
+              assign hero_meta_parts = hero_meta_parts | append: ' | '
+            endif
+            assign hero_meta_parts = hero_meta_parts | append: section.settings.hero_serves_label | append: ': ' | append: servings_meta.value
+          endif
+        -%}
+        {%- if hero_meta_parts != blank -%}
+          <p class="recipe-meta">
+            <span>{{ hero_meta_parts }}</span>
+          </p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  <div class="recipe-body">
+    <div class="recipe-body-inner recipe-columns">
+      <div class="recipe-column-main">
+        <div class="recipe-share">
+          <a
+            class="recipe-share-btn"
+            href="https://www.facebook.com/sharer.php?u={{ share_url | url_encode }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Share on Facebook"
+          >
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+          <a
+            class="recipe-share-btn"
+            href="https://twitter.com/intent/tweet?url={{ share_url | url_encode }}&text={{ article.title | url_encode }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Share on X"
+          >
+            <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+          </a>
+          <a
+            class="recipe-share-btn"
+            href="https://pinterest.com/pin/create/button/?url={{ share_url | url_encode }}&description={{ article.title | url_encode }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Share on Pinterest"
+          >
+            <i class="fa-brands fa-pinterest-p" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        {%- assign intro_text = article.excerpt -%}
+        {%- if intro_meta != blank and intro_meta.value != blank -%}
+          {%- assign intro_text = intro_meta.value -%}
+        {%- endif -%}
+        {%- if intro_text != blank -%}
+          <p class="recipe-intro">{{ intro_text }}</p>
+        {%- endif -%}
+
+        {%- if key_products_meta != blank and key_products_meta.value.size > 0 -%}
+          {%- assign key_products_count = key_products_meta.value.size -%}
+          {%- assign key_products_wrapper_id = 'key-products-swiper-wrapper-' | append: section.id -%}
+          <div class="recipe-key-products recipe-key-products--main">
+            <h2 class="key-products__title">{{ section.settings.key_products_heading }}</h2>
+            <div class="key-products__carousel" data-key-product-count="{{ key_products_count }}">
+              <div
+                class="swiper key-products__swiper"
+                aria-roledescription="carousel"
+                aria-label="{{ section.settings.key_products_heading | escape }}"
+              >
+                <div class="swiper-wrapper" id="{{ key_products_wrapper_id }}">
+                  {%- for product in key_products_meta.value -%}
+                    {%- assign variant = product.selected_or_first_available_variant -%}
+                    <div
+                      class="swiper-slide"
+                      role="group"
+                      aria-roledescription="slide"
+                      aria-label="{{ forloop.index }} / {{ key_products_count }}"
+                    >
+                      <article class="key-product">
+                        <a
+                          class="key-product__media"
+                          href="{{ product.url }}"
+                          aria-label="Shop {{ product.title | escape }}"
+                        >
+                          {%- if product.featured_image != blank -%}
+                            <img
+                              class="key-product__image"
+                              src="{{ product.featured_image | image_url: width: 600 }}"
+                              alt="{{ product.featured_image.alt | default: product.title | escape }}"
+                              width="300"
+                              height="375"
+                              loading="lazy"
+                            >
+                          {%- else -%}
+                            {{ 'product-1' | placeholder_svg_tag: 'key-product__image' }}
+                          {%- endif -%}
+                        </a>
+                        <div class="key-product__info">
+                          <a class="key-product__name" href="{{ product.url }}">{{ product.title }}</a>
+                          <div class="key-product__price">{{ product.price | money }}</div>
+                        </div>
+                        {%- if variant.available -%}
+                          <form
+                            class="key-product__add-form"
+                            method="post"
+                            action="{{ routes.cart_add_url }}"
+                            accept-charset="UTF-8"
+                          >
+                            <input type="hidden" name="form_type" value="product">
+                            <input type="hidden" name="utf8" value="✓">
+                            <input type="hidden" name="id" value="{{ variant.id }}">
+                            <input type="hidden" name="quantity" value="1">
+                            <button
+                              type="submit"
+                              name="add"
+                              class="key-product__add"
+                              aria-label="{{ 'products.product.add_to_cart' | t }} {{ product.title | escape }}"
+                            >
+                              <span class="key-product__add-text">{{ section.settings.add_to_cart_label }}</span>
+                            </button>
+                          </form>
+                        {%- else -%}
+                          <a class="key-product__add" href="{{ product.url }}">
+                            <span class="key-product__add-text">{{ section.settings.view_product_label }}</span>
+                          </a>
+                        {%- endif -%}
+                      </article>
+                    </div>
+                  {%- endfor -%}
+                </div>
+                <button
+                  class="key-products__nav key-products__nav--prev"
+                  type="button"
+                  aria-label="{{ 'accessibility.slideshow_previous' | t }}"
+                  aria-controls="{{ key_products_wrapper_id }}"
+                >
+                  <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button
+                  class="key-products__nav key-products__nav--next"
+                  type="button"
+                  aria-label="{{ 'accessibility.slideshow_next' | t }}"
+                  aria-controls="{{ key_products_wrapper_id }}"
+                >
+                  <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+
+        <h2 class="recipe-section-heading recipe-instructions-heading">{{ section.settings.instructions_heading }}</h2>
+        <div class="rte recipe-article-content">
+          {{ article.content }}
+        </div>
+      </div>
+
+      <aside class="recipe-sidebar">
+        {%- if ingredients_meta != blank and ingredients_meta.value.size > 0 -%}
+          <div class="ingredients-card">
+            <h2 class="recipe-section-heading ingredients-heading">{{ section.settings.ingredients_heading }}</h2>
+            <div class="ingredients-controls">
+              <div class="servings">
+                <span class="servings-label">{{ section.settings.ingredients_servings_label }}</span>
+                <div class="servings-control">
+                  <span class="servings-value">
+                    {%- if servings_meta != blank -%}
+                      {{ servings_meta.value }}
+                    {%- else -%}
+                      —
+                    {%- endif -%}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <ul class="ingredients-list">
+              {%- for line in ingredients_meta.value -%}
+                {%- assign ing = line | strip -%}
+                {%- if ing == blank -%}
+                  {%- continue -%}
+                {%- endif -%}
+                {%- assign amount_part = '' -%}
+                {%- assign name_part = ing -%}
+                {%- if ing contains '|' -%}
+                  {%- assign name_part = ing | split: '|' | first | strip -%}
+                  {%- assign amount_part = ing | split: '|' | last | strip -%}
+                {%- endif -%}
+                <li class="ingredient">
+                  <span>{{ name_part }}</span>
+                  {%- if amount_part != blank -%}
+                    <span class="ingredient-amount">{{ amount_part }}</span>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+      </aside>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Fresco recipe article",
+  "tag": "section",
+  "class": "section-fresco-recipe-article",
+  "enabled_on": {
+    "templates": ["article"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "hero_prep_label",
+      "label": "Hero meta: Prep time label",
+      "default": "Prep Time"
+    },
+    {
+      "type": "text",
+      "id": "hero_cook_label",
+      "label": "Hero meta: Cook time label",
+      "default": "Cook Time"
+    },
+    {
+      "type": "text",
+      "id": "hero_serves_label",
+      "label": "Hero meta: Serves label",
+      "default": "Serves"
+    },
+    {
+      "type": "text",
+      "id": "ingredients_heading",
+      "label": "Ingredients heading",
+      "default": "Ingredients"
+    },
+    {
+      "type": "text",
+      "id": "ingredients_servings_label",
+      "label": "Servings label (ingredients card)",
+      "default": "Servings"
+    },
+    {
+      "type": "text",
+      "id": "instructions_heading",
+      "label": "Instructions heading",
+      "default": "Instructions"
+    },
+    {
+      "type": "text",
+      "id": "key_products_heading",
+      "label": "Key products heading",
+      "default": "KEY PRODUCTS"
+    },
+    {
+      "type": "text",
+      "id": "add_to_cart_label",
+      "label": "Add to cart button",
+      "default": "Add to cart"
+    },
+    {
+      "type": "text",
+      "id": "view_product_label",
+      "label": "Sold out / view product label",
+      "default": "View product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco recipe article"
+    }
+  ]
+}
+{% endschema %}

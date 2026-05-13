@@ -149,5 +149,8 @@
       <script src="{{ 'fresco/scripts/index.js' | asset_url }}" defer></script>
     {% endif %}
     <script src="{{ 'fresco/scripts/search.js' | asset_url }}" defer></script>
+    {% if template.name == 'article' and template.suffix == 'recipe' %}
+      <script src="{{ 'fresco/scripts/recipe.js' | asset_url }}" defer></script>
+    {% endif %}
   </body>
 </html>
