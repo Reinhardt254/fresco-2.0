@@ -1,5 +1,11 @@
 {%- assign current_variant = product.selected_or_first_available_variant -%}
 {%- assign product_form_id = 'fresco-product-form-' | append: section.id -%}
+{%- liquid
+  assign sell_sheet_enabled = false
+  if product.metafields.custom.sell_sheet_show.value == true
+    assign sell_sheet_enabled = true
+  endif
+-%}
 
 <main class="product-details-main">
   <section class="product-details-section">
@@ -220,7 +226,9 @@
           aria-selected="true"
           aria-controls="tab-description"
           id="tab-btn-description"
-        >Description</button>
+        >
+          {{ section.settings.tab_description_label | escape }}
+        </button>
         <button
           type="button"
           class="product-details-tab-btn"
@@ -228,15 +236,21 @@
           aria-selected="false"
           aria-controls="tab-additional"
           id="tab-btn-additional"
-        >Additional Information</button>
-        <button
-          type="button"
-          class="product-details-tab-btn"
-          role="tab"
-          aria-selected="false"
-          aria-controls="tab-reviews"
-          id="tab-btn-reviews"
-        >Reviews</button>
+        >
+          {{ section.settings.tab_additional_label | escape }}
+        </button>
+        {%- if sell_sheet_enabled -%}
+          <button
+            type="button"
+            class="product-details-tab-btn"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-sell-sheet"
+            id="tab-btn-sell-sheet"
+          >
+            {{ section.settings.tab_sell_sheet_label | escape }}
+          </button>
+        {%- endif -%}
       </div>
       <div class="product-details-tabs-underline"></div>
 
@@ -329,15 +343,23 @@
         {%- endif -%}
       </div>
 
-      <div
-        id="tab-reviews"
-        class="product-details-tab-panel"
-        role="tabpanel"
-        aria-labelledby="tab-btn-reviews"
-        hidden
-      >
-        <p class="product-details-tab-content">No reviews yet.</p>
-      </div>
+      {%- if sell_sheet_enabled -%}
+        <div
+          id="tab-sell-sheet"
+          class="product-details-tab-panel product-details-tab-panel--sell-sheet"
+          role="tabpanel"
+          aria-labelledby="tab-btn-sell-sheet"
+          hidden
+        >
+          <div class="product-details-tab-content product-details-tab-content--sell-sheet">
+            {% render 'fresco-product-sell-sheet',
+              product: product,
+              section_label: section.settings.sell_sheet_section_aria_label,
+              empty_text: section.settings.sell_sheet_empty_text
+            %}
+          </div>
+        </div>
+      {%- endif -%}
     </div>
   </section>
 
@@ -654,6 +676,41 @@
   "name": "Fresco Product",
   "tag": "section",
   "settings": [
+    {
+      "type": "header",
+      "content": "Product tabs"
+    },
+    {
+      "type": "text",
+      "id": "tab_description_label",
+      "label": "Description tab label",
+      "default": "Description"
+    },
+    {
+      "type": "text",
+      "id": "tab_additional_label",
+      "label": "Additional information tab label",
+      "default": "Additional Information"
+    },
+    {
+      "type": "text",
+      "id": "tab_sell_sheet_label",
+      "label": "Sell sheet tab label",
+      "default": "Sell sheet",
+      "info": "Shown when product metafield “Sell sheet: show tab” is enabled."
+    },
+    {
+      "type": "text",
+      "id": "sell_sheet_section_aria_label",
+      "label": "Sell sheet (accessibility label)",
+      "default": "Product sell sheet"
+    },
+    {
+      "type": "textarea",
+      "id": "sell_sheet_empty_text",
+      "label": "Sell sheet empty state text",
+      "default": "Sell sheet content has not been added for this product yet. Add the sell sheet metafields in the product admin."
+    },
     {
       "type": "header",
       "content": "Rating"

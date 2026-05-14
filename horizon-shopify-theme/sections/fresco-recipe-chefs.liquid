@@ -1,0 +1,138 @@
+{%- if section.blocks.size > 0 -%}
+  <section
+    class="recipe-chefs"
+    aria-label="{{ section.settings.section_aria_label | escape }}"
+    {{ section.shopify_attributes }}
+  >
+    <div class="recipe-container">
+      {%- if section.settings.heading != blank -%}
+        <div class="recipe-chefs-header">
+          <h2 class="recipe-chefs-title">{{ section.settings.heading | escape }}</h2>
+        </div>
+      {%- endif -%}
+
+      <div class="chef-row" aria-label="{{ section.settings.row_aria_label | escape }}">
+        {%- for block in section.blocks -%}
+          <article
+            class="chef-card{% if block.settings.chef_featured %} chef-card-featured{% endif %}"
+            {% if block.settings.chef_name != blank %}
+              aria-labelledby="chef-name-{{ block.id }}"
+            {% endif %}
+            {{ block.shopify_attributes }}
+          >
+            {%- if block.settings.image != blank -%}
+              {%- liquid
+                assign chef_photo_alt = block.settings.image.alt
+                if chef_photo_alt == blank
+                  assign chef_photo_alt = block.settings.chef_name | append: ' portrait'
+                endif
+              -%}
+              <img
+                class="chef-photo"
+                src="{{ block.settings.image | image_url: width: 800 }}"
+                alt="{{ chef_photo_alt | escape }}"
+                width="600"
+                height="750"
+                loading="lazy"
+                decoding="async"
+              >
+            {%- elsif block.settings.image_url_fallback != blank -%}
+              <img
+                class="chef-photo"
+                src="{{ block.settings.image_url_fallback }}"
+                alt="{{ block.settings.chef_name | default: 'Chef' | append: ' portrait' | escape }}"
+                width="600"
+                height="750"
+                loading="lazy"
+                decoding="async"
+              >
+            {%- else -%}
+              {{ 'lifestyle-2' | placeholder_svg_tag: 'chef-photo' }}
+            {%- endif -%}
+            <div class="chef-body">
+              {%- if block.settings.chef_name != blank -%}
+                <h3 id="chef-name-{{ block.id }}" class="chef-name">{{ block.settings.chef_name | escape }}</h3>
+              {%- endif -%}
+              {%- if block.settings.chef_role != blank -%}
+                <div class="chef-role">{{ block.settings.chef_role | escape }}</div>
+              {%- endif -%}
+            </div>
+          </article>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Fresco recipe chefs",
+  "tag": "section",
+  "class": "section-fresco-recipe-chefs",
+  "enabled_on": {
+    "templates": ["blog"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Learn from top chefs"
+    },
+    {
+      "type": "text",
+      "id": "section_aria_label",
+      "label": "Section aria label",
+      "default": "Learn from top chefs"
+    },
+    {
+      "type": "text",
+      "id": "row_aria_label",
+      "label": "Chef row aria label",
+      "default": "Chef list"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "chef",
+      "name": "Chef",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "image_url_fallback",
+          "label": "Photo URL fallback",
+          "info": "Used when no theme image is selected."
+        },
+        {
+          "type": "text",
+          "id": "chef_name",
+          "label": "Name",
+          "default": "Chef"
+        },
+        {
+          "type": "text",
+          "id": "chef_role",
+          "label": "Role",
+          "default": "Chef"
+        },
+        {
+          "type": "checkbox",
+          "id": "chef_featured",
+          "label": "Featured styling",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco recipe chefs"
+    }
+  ]
+}
+{% endschema %}

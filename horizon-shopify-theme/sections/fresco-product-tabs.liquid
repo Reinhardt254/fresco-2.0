@@ -1,4 +1,10 @@
 {%- assign tabs_id = section.id -%}
+{%- liquid
+  assign sell_sheet_enabled = false
+  if product.metafields.custom.sell_sheet_show.value == true
+    assign sell_sheet_enabled = true
+  endif
+-%}
 
 <section
   id="fresco-product-tabs-{{ tabs_id }}"
@@ -27,16 +33,18 @@
       >
         {{ section.settings.additional_tab_label | escape }}
       </button>
-      <button
-        type="button"
-        class="product-details-tab-btn"
-        role="tab"
-        aria-selected="false"
-        aria-controls="tab-reviews-{{ tabs_id }}"
-        id="tab-btn-reviews-{{ tabs_id }}"
-      >
-        {{ section.settings.reviews_tab_label | escape }}
-      </button>
+      {%- if sell_sheet_enabled -%}
+        <button
+          type="button"
+          class="product-details-tab-btn"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tab-sell-sheet-{{ tabs_id }}"
+          id="tab-btn-sell-sheet-{{ tabs_id }}"
+        >
+          {{ section.settings.sell_sheet_tab_label | escape }}
+        </button>
+      {%- endif -%}
     </div>
     <div class="product-details-tabs-underline"></div>
 
@@ -133,15 +141,23 @@
       {%- endif -%}
     </div>
 
-    <div
-      id="tab-reviews-{{ tabs_id }}"
-      class="product-details-tab-panel"
-      role="tabpanel"
-      aria-labelledby="tab-btn-reviews-{{ tabs_id }}"
-      hidden
-    >
-      <p class="product-details-tab-content">{{ section.settings.reviews_empty_text }}</p>
-    </div>
+    {%- if sell_sheet_enabled -%}
+      <div
+        id="tab-sell-sheet-{{ tabs_id }}"
+        class="product-details-tab-panel product-details-tab-panel--sell-sheet"
+        role="tabpanel"
+        aria-labelledby="tab-btn-sell-sheet-{{ tabs_id }}"
+        hidden
+      >
+        <div class="product-details-tab-content product-details-tab-content--sell-sheet">
+          {% render 'fresco-product-sell-sheet',
+            product: product,
+            section_label: section.settings.sell_sheet_section_aria_label,
+            empty_text: section.settings.sell_sheet_empty_text
+          %}
+        </div>
+      </div>
+    {%- endif -%}
   </div>
 
   <script>
@@ -200,15 +216,22 @@
     },
     {
       "type": "text",
-      "id": "reviews_tab_label",
-      "label": "Reviews tab label",
-      "default": "Reviews"
+      "id": "sell_sheet_tab_label",
+      "label": "Sell sheet tab label",
+      "default": "Sell sheet",
+      "info": "Shown when the product metafield “Sell sheet: show tab” is enabled."
     },
     {
       "type": "text",
-      "id": "reviews_empty_text",
-      "label": "Reviews empty text",
-      "default": "No reviews yet."
+      "id": "sell_sheet_section_aria_label",
+      "label": "Sell sheet section (accessibility label)",
+      "default": "Product sell sheet"
+    },
+    {
+      "type": "textarea",
+      "id": "sell_sheet_empty_text",
+      "label": "Sell sheet empty state text",
+      "default": "Sell sheet content has not been added for this product yet. Add the sell sheet metafields in the product admin."
     },
     {
       "type": "text",
@@ -224,4 +247,3 @@
   ]
 }
 {% endschema %}
-

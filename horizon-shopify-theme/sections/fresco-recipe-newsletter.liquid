@@ -1,0 +1,103 @@
+{%- liquid
+  assign newsletter_form_id = 'RecipeNewsletter-' | append: section.id
+-%}
+
+<section
+  class="recipe-newsletter"
+  aria-label="{{ section.settings.section_aria_label | escape }}"
+  {{ section.shopify_attributes }}
+>
+  <div class="recipe-container">
+    <div class="newsletter-card">
+      <div class="newsletter-art" aria-hidden="true"></div>
+      <div class="newsletter-content">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="newsletter-title">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+
+        {%- form 'customer', id: newsletter_form_id, class: 'newsletter-form' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter, recipes">
+          {%- if form.posted_successfully? -%}
+            <p class="newsletter-feedback newsletter-feedback--success" role="status">
+              {{ section.settings.success_message | escape }}
+            </p>
+          {%- endif -%}
+          {%- if form.errors -%}
+            <div class="newsletter-feedback newsletter-feedback--error" role="alert">
+              {{ form.errors | default_errors }}
+            </div>
+          {%- endif -%}
+          <div class="newsletter-form-row">
+            <input
+              class="newsletter-input"
+              type="email"
+              name="contact[email]"
+              value="{{ form.email }}"
+              placeholder="{{ section.settings.placeholder | escape }}"
+              autocomplete="email"
+              aria-label="{{ section.settings.input_aria_label | escape }}"
+              required
+            >
+            <button class="newsletter-btn" type="submit">
+              {{ section.settings.button_label | escape }}
+            </button>
+          </div>
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fresco recipe newsletter",
+  "tag": "section",
+  "class": "section-fresco-recipe-newsletter",
+  "enabled_on": {
+    "templates": ["blog"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Get fresh inspiration via email"
+    },
+    {
+      "type": "text",
+      "id": "section_aria_label",
+      "label": "Section aria label",
+      "default": "Fresh inspiration via email"
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Email placeholder",
+      "default": "Your email address"
+    },
+    {
+      "type": "text",
+      "id": "input_aria_label",
+      "label": "Email field aria label",
+      "default": "Email address"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Submit button label",
+      "default": "Subscribe Now"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Thanks for subscribing."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fresco recipe newsletter"
+    }
+  ]
+}
+{% endschema %}

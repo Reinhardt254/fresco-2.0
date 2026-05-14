@@ -372,8 +372,9 @@
       "settings": {
         "description_tab_label": "Description",
         "additional_tab_label": "Additional Information",
-        "reviews_tab_label": "Reviews",
-        "reviews_empty_text": "No reviews yet.",
+        "sell_sheet_tab_label": "Sell sheet",
+        "sell_sheet_section_aria_label": "Product sell sheet",
+        "sell_sheet_empty_text": "Sell sheet content has not been added for this product yet. Add the sell sheet metafields in the product admin.",
         "empty_description_text": "No description available."
       }
     },

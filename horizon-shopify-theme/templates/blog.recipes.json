@@ -11,8 +11,86 @@
   "sections": {
     "main": {
       "type": "fresco-recipes-blog",
-      "settings": {}
+      "settings": {
+        "hero_image": "shopify://shop_images/photo-1547592166-23ac45744acd.avif",
+        "hero_image_url_fallback": "https://harvestepz.com/wp-content/uploads/2026/05/Untitled-design-1-1.png",
+        "hero_image_alt": "Fresco Flavors recipes",
+        "hero_eyebrow": "Everyday recipes",
+        "hero_heading": "Cook with Fresco",
+        "grid_heading": "Latest recipes",
+        "card_prep_label": "Prep Time",
+        "card_cook_label": "Cook Time",
+        "card_serves_label": "Serves",
+        "articles_per_page": 12
+      }
+    },
+    "fresco_recipe_chefs": {
+      "type": "fresco-recipe-chefs",
+      "blocks": {
+        "chef_polly": {
+          "type": "chef",
+          "settings": {
+            "image_url_fallback": "https://harvestepz.com/wp-content/uploads/2026/05/Screenshot-2026-05-03-203647.png",
+            "chef_name": "Polly",
+            "chef_role": "Master Chef",
+            "chef_featured": false
+          }
+        },
+        "chef_cynthia": {
+          "type": "chef",
+          "settings": {
+            "image_url_fallback": "https://img.freepik.com/free-photo/chef-mixing-salad-ingredients_23-2148794094.jpg?w=740&q=80",
+            "chef_name": "Cynthia",
+            "chef_role": "Sous Chef",
+            "chef_featured": false
+          }
+        },
+        "chef_matthew": {
+          "type": "chef",
+          "settings": {
+            "image_url_fallback": "https://img.freepik.com/premium-photo/professional-restaurant-chef-photo_728472-3688.jpg?w=740&q=80",
+            "chef_name": "Matthew",
+            "chef_role": "Private Chef",
+            "chef_featured": true
+          }
+        },
+        "chef_alicia": {
+          "type": "chef",
+          "settings": {
+            "image_url_fallback": "https://img.freepik.com/free-photo/chef-cooking-kitchen-while-wearing-professional-attire_23-2151208288.jpg?w=740&q=80",
+            "chef_name": "Alicia",
+            "chef_role": "Pastry Chef",
+            "chef_featured": false
+          }
+        }
+      },
+      "block_order": [
+        "chef_polly",
+        "chef_cynthia",
+        "chef_matthew",
+        "chef_alicia"
+      ],
+      "settings": {
+        "heading": "Learn from top chefs",
+        "section_aria_label": "Learn from top chefs",
+        "row_aria_label": "Chef list"
+      }
+    },
+    "fresco_recipe_newsletter": {
+      "type": "fresco-recipe-newsletter",
+      "settings": {
+        "heading": "Get fresh inspiration via email",
+        "section_aria_label": "Fresh inspiration via email",
+        "placeholder": "Your email address",
+        "input_aria_label": "Email address",
+        "button_label": "Subscribe Now",
+        "success_message": "Thanks for subscribing."
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "fresco_recipe_chefs",
+    "fresco_recipe_newsletter"
+  ]
 }

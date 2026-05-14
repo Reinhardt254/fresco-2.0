@@ -1,0 +1,250 @@
+{% comment %}
+  Product sell sheet from metafields (namespace `custom`). See project handoff / merchant doc for field list and JSON shape for spec cards.
+
+  @param product {object} Product (required)
+  @param section_label {string} aria-label for the section
+  @param empty_text {string} Shown when the tab is on but no sell-sheet fields are filled yet
+{% endcomment %}
+{%- liquid
+  assign mf = product.metafields.custom
+  assign hero = mf.sell_sheet_hero_image.value
+  assign tag_img = mf.sell_sheet_tag_image.value
+  assign headline = mf.sell_sheet_headline.value
+  assign intro = mf.sell_sheet_intro.value
+  assign info_bullets = mf.sell_sheet_info_bullets.value
+  assign usage_images = mf.sell_sheet_usage_images.value
+  assign usage_captions = mf.sell_sheet_usage_captions.value
+  assign spec_cards = mf.sell_sheet_spec_cards.value
+  assign more_heading = mf.sell_sheet_more_heading.value | default: 'Information'
+  assign more_bullets = mf.sell_sheet_more_bullets.value
+  assign more_image = mf.sell_sheet_more_image.value
+  assign cta_text = mf.sell_sheet_cta_text.value
+
+  assign has_any = false
+  if hero != blank
+    assign has_any = true
+  endif
+  if headline != blank or intro != blank
+    assign has_any = true
+  endif
+  if info_bullets != blank and info_bullets.size > 0
+    assign has_any = true
+  endif
+  if usage_images != blank and usage_images.size > 0
+    assign has_any = true
+  endif
+  if spec_cards != blank
+    assign has_any = true
+  endif
+  if more_bullets != blank and more_bullets.size > 0
+    assign has_any = true
+  endif
+  if more_image != blank
+    assign has_any = true
+  endif
+  if cta_text != blank
+    assign has_any = true
+  endif
+
+  assign sell_sheet_more_block = false
+  if more_image != blank
+    assign sell_sheet_more_block = true
+  endif
+  if more_bullets != blank and more_bullets.size > 0
+    assign sell_sheet_more_block = true
+  endif
+  if sell_sheet_more_block
+    assign has_any = true
+  endif
+-%}
+
+{%- unless has_any -%}
+  <p class="product-details-tab-content sell-sheet-tab-empty">{{ empty_text | escape }}</p>
+{%- else -%}
+  <section class="sell-sheet" aria-label="{{ section_label | escape }}">
+    <div class="sell-sheet__page">
+      <div class="sell-sheet__topbar" aria-hidden="true"></div>
+
+      <header class="sell-sheet__header">
+        <div class="sell-sheet__hero">
+          {%- if hero != blank -%}
+            <img
+              class="sell-sheet__hero-image"
+              src="{{ hero | image_url: width: 1600 }}"
+              alt="{{ hero.alt | default: product.title | escape }}"
+              loading="lazy"
+              width="1200"
+              height="675"
+            >
+          {%- endif -%}
+        </div>
+
+        {%- if tag_img != blank -%}
+          <div class="sell-sheet__tag">
+            <div class="sell-sheet__tag-image">
+              <img
+                src="{{ tag_img | image_url: width: 200 }}"
+                alt="{{ tag_img.alt | escape }}"
+                loading="lazy"
+                width="120"
+                height="120"
+              >
+            </div>
+          </div>
+        {%- endif -%}
+      </header>
+
+      <main class="sell-sheet__content">
+        {%- if headline != blank or intro != blank -%}
+          <div class="sell-sheet__copy">
+            {%- if headline != blank -%}
+              <h2 class="sell-sheet__headline">{{ headline | escape }}</h2>
+            {%- endif -%}
+            {%- if intro != blank -%}
+              <div class="sell-sheet__body">{{ intro | escape | newline_to_br }}</div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- if usage_images != blank and usage_images.size > 0 -%}
+          <div class="sell-sheet__uses_thumbs">
+            <div class="sell-sheet__thumbs" aria-label="Product usage">
+              {%- for img in usage_images -%}
+                {%- liquid
+                  assign cap = ''
+                  if usage_captions != blank
+                    assign cap = usage_captions[forloop.index0]
+                  endif
+                  assign thumb_alt = cap
+                  if thumb_alt == blank
+                    assign thumb_alt = img.alt
+                  endif
+                  if thumb_alt == blank
+                    assign thumb_alt = 'Usage'
+                  endif
+                -%}
+                <div class="sell-sheet__thumb-item">
+                  <figure class="sell-sheet__thumb">
+                    <img
+                      src="{{ img | image_url: width: 600 }}"
+                      alt="{{ thumb_alt | escape }}"
+                      loading="lazy"
+                      width="400"
+                      height="400"
+                    >
+                  </figure>
+                  {%- if cap != blank -%}
+                    <div class="sell-sheet__thumb-label">{{ cap | escape }}</div>
+                  {%- endif -%}
+                </div>
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if info_bullets != blank and info_bullets.size > 0 -%}
+          <div class="sell-sheet__copy">
+            <h2 class="sell-sheet__sub-headline">Information</h2>
+            <ul class="sell-sheet__info-list">
+              {%- for line in info_bullets -%}
+                <li>{{ line | escape }}</li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+
+        {%- if spec_cards != blank -%}
+          <div class="sell-sheet__uses_thumbs_details" aria-label="Product specifications">
+            {%- for card in spec_cards -%}
+              <article class="sell-sheet__spec-card">
+                <header class="sell-sheet__spec-card-header">
+                  <div class="sell-sheet__spec-card-heading">
+                    {%- if card.title != blank -%}
+                      <h3 class="sell-sheet__spec-card-title">{{ card.title | escape }}</h3>
+                    {%- endif -%}
+                    {%- if card.meta_lines != blank -%}
+                      <div class="sell-sheet__spec-card-meta">
+                        {%- for line in card.meta_lines -%}
+                          <div class="sell-sheet__spec-card-meta-line">{{ line | escape }}</div>
+                        {%- endfor -%}
+                      </div>
+                    {%- endif -%}
+                  </div>
+                  {%- if card.badge_lines != blank and card.badge_lines.size > 0 -%}
+                    <div class="sell-sheet__spec-card-badge" aria-label="Organic option">
+                      {%- for bline in card.badge_lines -%}
+                        {%- unless forloop.first -%}<br>{%- endunless -%}
+                        {{- bline | escape -}}
+                      {%- endfor -%}
+                    </div>
+                  {%- endif -%}
+                </header>
+
+                {%- if card.rows != blank and card.rows.size > 0 -%}
+                  <div class="sell-sheet__spec-card-body">
+                    <dl class="sell-sheet__spec-list">
+                      {%- for row in card.rows -%}
+                        <div class="sell-sheet__spec-row">
+                          <dt>{{ row.dt | escape }}</dt>
+                          <dd>{{ row.dd | escape }}</dd>
+                        </div>
+                      {%- endfor -%}
+                    </dl>
+                  </div>
+                {%- endif -%}
+              </article>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        {%- if sell_sheet_more_block -%}
+          <div class="additional-information">
+            <div class="additional-information-grid">
+              {%- if more_bullets != blank and more_bullets.size > 0 -%}
+                <div class="informatio-card">
+                  <div class="sell-sheet__copy">
+                    <h2 class="sell-sheet__sub-headline">{{ more_heading | escape }}</h2>
+                    <ul class="sell-sheet__info-list">
+                      {%- for line in more_bullets -%}
+                        <li>{{ line | escape }}</li>
+                      {%- endfor -%}
+                    </ul>
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if more_image != blank -%}
+                <div class="informatio-card">
+                  <img
+                    src="{{ more_image | image_url: width: 900 }}"
+                    alt="{{ more_image.alt | escape }}"
+                    loading="lazy"
+                    width="600"
+                    height="400"
+                  >
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+
+        <div class="sell-sheet__footer">
+          <div class="sell-sheet__brand">
+            <div class="sell-sheet__brand-mark">
+              Fresco Flavors<span aria-hidden="true">®</span>
+            </div>
+            <div class="sell-sheet__brand-sub">Herbs &amp; Spices</div>
+            <div class="sell-sheet__contact">
+              <div class="sell-sheet__contact-line">info@frescoflavors.com</div>
+              <div class="sell-sheet__contact-line">frescoflavors.com • +1 (901) 896-5814</div>
+            </div>
+          </div>
+          {%- if cta_text != blank -%}
+            <div class="sell-sheet__cta">
+              <div class="sell-sheet__cta-text">{{ cta_text | escape }}</div>
+            </div>
+          {%- endif -%}
+        </div>
+      </main>
+    </div>
+  </section>
+{%- endunless -%}
