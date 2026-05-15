@@ -1,0 +1,117 @@
+{% comment %}
+  One sell-sheet spec area: either a standard spec card (basil Chopped layout) or a profile card (basil Culinary profile layout).
+
+  Standard meta (optional): meta_label + meta_value → one meta-line with nested spans (matches shop/basil/index.html).
+  Badge: optional `Line1|Line2` (first `|` only).
+  Rows: list of `dt|dd` (first `|` only).
+
+  Profile mode: when `subtitle` is non-blank — renders sell-sheet__spec-card--profile; ignores badge, meta, rows.
+
+  @param product {object} Product (for stable heading id)
+  @param card_index {number} 1, 2, or 3
+  @param title {string}
+  @param subtitle {string} If non-blank → profile card
+  @param meta_label {string} Standard only — outer label text
+  @param meta_value {string} Standard only — inner value text
+  @param badge_line {string} Standard only
+  @param rows {array} Standard only
+  @param profile_chips {array} Profile only
+  @param profile_lead {string} Profile only (multi-line ok)
+  @param profile_foot_label {string} Profile only
+  @param profile_pills {array} Profile only
+{% endcomment %}
+{%- liquid
+  assign profile_hid = 'sell-sheet-profile-heading-' | append: product.id | append: '-' | append: card_index
+-%}
+
+{%- if title != blank and subtitle != blank -%}
+  <article
+    class="sell-sheet__spec-card sell-sheet__spec-card--profile"
+    aria-labelledby="{{ profile_hid }}"
+  >
+    <header class="sell-sheet__spec-card-header sell-sheet__spec-card-header--profile">
+      <div class="sell-sheet__spec-card-heading">
+        <h3 class="sell-sheet__spec-card-title" id="{{ profile_hid }}">
+          {{ title | escape }}
+        </h3>
+        <p class="sell-sheet__spec-card-subtitle">{{ subtitle | escape }}</p>
+      </div>
+    </header>
+
+    <div class="sell-sheet__spec-card-body sell-sheet__spec-card-body--profile">
+      {%- if profile_chips != blank and profile_chips.size > 0 -%}
+        <div class="sell-sheet__profile-flavor-row" aria-label="Flavor notes">
+          {%- for chip in profile_chips -%}
+            <span class="sell-sheet__profile-chip">{{ chip | escape }}</span>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+      {%- if profile_lead != blank -%}
+        <p class="sell-sheet__profile-lead">{{ profile_lead | escape | newline_to_br }}</p>
+      {%- endif -%}
+      {%- if profile_pills != blank and profile_pills.size > 0 -%}
+        {%- assign foot_lbl = profile_foot_label | default: 'Shines in' -%}
+        <div class="sell-sheet__profile-foot">
+          <span class="sell-sheet__profile-foot-label">{{ foot_lbl | escape }}</span>
+          <ul class="sell-sheet__profile-pill-list">
+            {%- for pill in profile_pills -%}
+              <li>
+                <span class="sell-sheet__profile-pill">{{ pill | escape }}</span>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+    </div>
+  </article>
+{%- elsif title != blank -%}
+  <article class="sell-sheet__spec-card">
+    <header class="sell-sheet__spec-card-header">
+      <div class="sell-sheet__spec-card-heading">
+        <h3 class="sell-sheet__spec-card-title">{{ title | escape }}</h3>
+        {%- if meta_label != blank or meta_value != blank -%}
+          <div class="sell-sheet__spec-card-meta">
+            <div class="sell-sheet__spec-card-meta-line">
+              <span class="sell-sheet__spec-card-meta-line-label">
+                {{- meta_label | escape -}}
+                {%- if meta_value != blank -%}
+                  <span class="sell-sheet__spec-card-meta-line-value">{{ meta_value | escape }}</span>
+                {%- endif -%}
+              </span>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+      {%- if badge_line != blank -%}
+        <div class="sell-sheet__spec-card-badge" aria-label="Organic option">
+          {%- liquid
+            assign badge_parts = badge_line | split: '|'
+          -%}
+          {%- if badge_parts.size > 1 -%}
+            {{- badge_parts[0] | strip | escape -}}<br />
+            {%- assign badge_rest = badge_parts | slice: 1, badge_parts.size | join: '|' | strip -%}
+            {{- badge_rest | escape -}}
+          {%- else -%}
+            {{- badge_line | escape -}}
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </header>
+
+    {%- if rows != blank and rows.size > 0 -%}
+      <div class="sell-sheet__spec-card-body">
+        <dl class="sell-sheet__spec-list">
+          {%- for row in rows -%}
+            {%- assign row_parts = row | split: '|' -%}
+            {%- assign row_dt = row_parts[0] | strip -%}
+            {%- assign row_dd = row_parts | slice: 1, row_parts.size | join: '|' | strip -%}
+            <div class="sell-sheet__spec-row">
+              <dt>{{ row_dt | escape }}</dt>
+              <dd>{{ row_dd | escape }}</dd>
+            </div>
+          {%- endfor -%}
+        </dl>
+      </div>
+    {%- endif -%}
+  </article>
+{%- endif -%}

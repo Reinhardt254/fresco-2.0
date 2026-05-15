@@ -1,9 +1,15 @@
 {% comment %}
-  Product sell sheet from metafields (namespace `custom`). See project handoff / merchant doc for field list and JSON shape for spec cards.
+  Product sell sheet from product metafields (namespace `custom`). Data-only; layout matches product-details/index.html.
+
+  Spec cards: up to 3 cards. Each card uses single-line + list fields (no JSON).
+  - Standard card: `sell_sheet_spec_N_meta_label` + `sell_sheet_spec_N_meta_value` (one meta line, nested spans like basil).
+  - Profile card: set `sell_sheet_spec_N_subtitle` (non-blank) → uses profile chips / lead / pills metafields; ignores badge, meta, rows for that slot.
+  - Badge: optional `Highlight|Rest` (first `|` → line break between lines in the badge).
+  - Rows list: each line `Label|value` (first `|` separates dt from dd; additional `|` characters stay in the value).
 
   @param product {object} Product (required)
   @param section_label {string} aria-label for the section
-  @param empty_text {string} Shown when the tab is on but no sell-sheet fields are filled yet
+  @param empty_text {string} Empty state when tab is on but no sell-sheet content
 {% endcomment %}
 {%- liquid
   assign mf = product.metafields.custom
@@ -14,11 +20,46 @@
   assign info_bullets = mf.sell_sheet_info_bullets.value
   assign usage_images = mf.sell_sheet_usage_images.value
   assign usage_captions = mf.sell_sheet_usage_captions.value
-  assign spec_cards = mf.sell_sheet_spec_cards.value
   assign more_heading = mf.sell_sheet_more_heading.value | default: 'Information'
   assign more_bullets = mf.sell_sheet_more_bullets.value
   assign more_image = mf.sell_sheet_more_image.value
   assign cta_text = mf.sell_sheet_cta_text.value
+
+  assign s1_title = mf.sell_sheet_spec_1_title.value
+  assign s1_subtitle = mf.sell_sheet_spec_1_subtitle.value
+  assign s1_meta_label = mf.sell_sheet_spec_1_meta_label.value
+  assign s1_meta_value = mf.sell_sheet_spec_1_meta_value.value
+  assign s1_badge = mf.sell_sheet_spec_1_badge.value
+  assign s1_rows = mf.sell_sheet_spec_1_rows.value
+  assign s1_profile_chips = mf.sell_sheet_spec_1_profile_chips.value
+  assign s1_profile_lead = mf.sell_sheet_spec_1_profile_lead.value
+  assign s1_profile_foot_label = mf.sell_sheet_spec_1_profile_foot_label.value
+  assign s1_profile_pills = mf.sell_sheet_spec_1_profile_pills.value
+  assign s2_title = mf.sell_sheet_spec_2_title.value
+  assign s2_subtitle = mf.sell_sheet_spec_2_subtitle.value
+  assign s2_meta_label = mf.sell_sheet_spec_2_meta_label.value
+  assign s2_meta_value = mf.sell_sheet_spec_2_meta_value.value
+  assign s2_badge = mf.sell_sheet_spec_2_badge.value
+  assign s2_rows = mf.sell_sheet_spec_2_rows.value
+  assign s2_profile_chips = mf.sell_sheet_spec_2_profile_chips.value
+  assign s2_profile_lead = mf.sell_sheet_spec_2_profile_lead.value
+  assign s2_profile_foot_label = mf.sell_sheet_spec_2_profile_foot_label.value
+  assign s2_profile_pills = mf.sell_sheet_spec_2_profile_pills.value
+  assign s3_title = mf.sell_sheet_spec_3_title.value
+  assign s3_subtitle = mf.sell_sheet_spec_3_subtitle.value
+  assign s3_meta_label = mf.sell_sheet_spec_3_meta_label.value
+  assign s3_meta_value = mf.sell_sheet_spec_3_meta_value.value
+  assign s3_badge = mf.sell_sheet_spec_3_badge.value
+  assign s3_rows = mf.sell_sheet_spec_3_rows.value
+  assign s3_profile_chips = mf.sell_sheet_spec_3_profile_chips.value
+  assign s3_profile_lead = mf.sell_sheet_spec_3_profile_lead.value
+  assign s3_profile_foot_label = mf.sell_sheet_spec_3_profile_foot_label.value
+  assign s3_profile_pills = mf.sell_sheet_spec_3_profile_pills.value
+
+  assign has_spec_cards = false
+  if s1_title != blank or s2_title != blank or s3_title != blank
+    assign has_spec_cards = true
+  endif
 
   assign has_any = false
   if hero != blank
@@ -33,7 +74,7 @@
   if usage_images != blank and usage_images.size > 0
     assign has_any = true
   endif
-  if spec_cards != blank
+  if has_spec_cards
     assign has_any = true
   endif
   if more_bullets != blank and more_bullets.size > 0
@@ -84,7 +125,7 @@
             <div class="sell-sheet__tag-image">
               <img
                 src="{{ tag_img | image_url: width: 200 }}"
-                alt="{{ tag_img.alt | escape }}"
+                alt=""
                 loading="lazy"
                 width="120"
                 height="120"
@@ -101,7 +142,7 @@
               <h2 class="sell-sheet__headline">{{ headline | escape }}</h2>
             {%- endif -%}
             {%- if intro != blank -%}
-              <div class="sell-sheet__body">{{ intro | escape | newline_to_br }}</div>
+              <p class="sell-sheet__body">{{ intro | escape | newline_to_br }}</p>
             {%- endif -%}
           </div>
         {%- endif -%}
@@ -153,47 +194,53 @@
           </div>
         {%- endif -%}
 
-        {%- if spec_cards != blank -%}
-          <div class="sell-sheet__uses_thumbs_details" aria-label="Product specifications">
-            {%- for card in spec_cards -%}
-              <article class="sell-sheet__spec-card">
-                <header class="sell-sheet__spec-card-header">
-                  <div class="sell-sheet__spec-card-heading">
-                    {%- if card.title != blank -%}
-                      <h3 class="sell-sheet__spec-card-title">{{ card.title | escape }}</h3>
-                    {%- endif -%}
-                    {%- if card.meta_lines != blank -%}
-                      <div class="sell-sheet__spec-card-meta">
-                        {%- for line in card.meta_lines -%}
-                          <div class="sell-sheet__spec-card-meta-line">{{ line | escape }}</div>
-                        {%- endfor -%}
-                      </div>
-                    {%- endif -%}
-                  </div>
-                  {%- if card.badge_lines != blank and card.badge_lines.size > 0 -%}
-                    <div class="sell-sheet__spec-card-badge" aria-label="Organic option">
-                      {%- for bline in card.badge_lines -%}
-                        {%- unless forloop.first -%}<br>{%- endunless -%}
-                        {{- bline | escape -}}
-                      {%- endfor -%}
-                    </div>
-                  {%- endif -%}
-                </header>
-
-                {%- if card.rows != blank and card.rows.size > 0 -%}
-                  <div class="sell-sheet__spec-card-body">
-                    <dl class="sell-sheet__spec-list">
-                      {%- for row in card.rows -%}
-                        <div class="sell-sheet__spec-row">
-                          <dt>{{ row.dt | escape }}</dt>
-                          <dd>{{ row.dd | escape }}</dd>
-                        </div>
-                      {%- endfor -%}
-                    </dl>
-                  </div>
-                {%- endif -%}
-              </article>
-            {%- endfor -%}
+        {%- if has_spec_cards -%}
+          <div
+            class="sell-sheet__uses_thumbs_details"
+            aria-label="Product specifications"
+          >
+            {% render 'fresco-sell-sheet-spec-card',
+              product: product,
+              card_index: 1,
+              title: s1_title,
+              subtitle: s1_subtitle,
+              meta_label: s1_meta_label,
+              meta_value: s1_meta_value,
+              badge_line: s1_badge,
+              rows: s1_rows,
+              profile_chips: s1_profile_chips,
+              profile_lead: s1_profile_lead,
+              profile_foot_label: s1_profile_foot_label,
+              profile_pills: s1_profile_pills
+            %}
+            {% render 'fresco-sell-sheet-spec-card',
+              product: product,
+              card_index: 2,
+              title: s2_title,
+              subtitle: s2_subtitle,
+              meta_label: s2_meta_label,
+              meta_value: s2_meta_value,
+              badge_line: s2_badge,
+              rows: s2_rows,
+              profile_chips: s2_profile_chips,
+              profile_lead: s2_profile_lead,
+              profile_foot_label: s2_profile_foot_label,
+              profile_pills: s2_profile_pills
+            %}
+            {% render 'fresco-sell-sheet-spec-card',
+              product: product,
+              card_index: 3,
+              title: s3_title,
+              subtitle: s3_subtitle,
+              meta_label: s3_meta_label,
+              meta_value: s3_meta_value,
+              badge_line: s3_badge,
+              rows: s3_rows,
+              profile_chips: s3_profile_chips,
+              profile_lead: s3_profile_lead,
+              profile_foot_label: s3_profile_foot_label,
+              profile_pills: s3_profile_pills
+            %}
           </div>
         {%- endif -%}
 
@@ -216,7 +263,7 @@
                 <div class="informatio-card">
                   <img
                     src="{{ more_image | image_url: width: 900 }}"
-                    alt="{{ more_image.alt | escape }}"
+                    alt=""
                     loading="lazy"
                     width="600"
                     height="400"
